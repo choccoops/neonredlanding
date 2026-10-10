@@ -1,0 +1,184 @@
+<div class="nh-ed">
+  {{#if mattMissing}}
+  <div class="nh-banner nh-banner-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Error.NoMatt"}}</div>
+  {{/if}}
+
+  {{!-- ================= PAGE ================= --}}
+  <section class="nh-ed-left">
+    <h3>{{localize "NEONHUB.Editor.Page"}}</h3>
+    <label>{{localize "NEONHUB.Editor.PageTitle"}}<input type="text" data-path="title" value="{{d.title}}"></label>
+    <label>{{localize "NEONHUB.Editor.PageSubtitle"}}<input type="text" data-path="subtitle" value="{{d.subtitle}}"></label>
+    <label class="nh-check"><input type="checkbox" data-path="showTitle" data-dtype="Boolean" {{checked d.showTitle}}> {{localize "NEONHUB.Editor.ShowTitle"}}</label>
+    <label>{{localize "NEONHUB.Editor.Theme"}}
+      <select data-path="theme">{{#each themes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    <label>{{localize "NEONHUB.Editor.Background"}}
+      <span class="nh-file"><input type="text" data-path="background" value="{{d.background}}"><button type="button" data-action="pickFile" data-target="background" data-type="image" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-image"></i></button></span>
+    </label>
+    <label>{{localize "NEONHUB.Editor.Dim"}} <input type="range" min="0" max="0.9" step="0.05" data-path="dim" data-dtype="Number" value="{{d.dim}}"></label>
+    <div class="nh-two">
+      <label>{{localize "NEONHUB.Editor.Size"}}
+        <select data-path="size">{{#each sizes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <label>{{localize "NEONHUB.Editor.Columns"}}<input type="number" min="1" max="8" data-path="columns" data-dtype="Number" value="{{d.columns}}"></label>
+    </div>
+    <label>{{localize "NEONHUB.Editor.Layout"}}
+      <select data-path="layout">{{#each layouts}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    <p class="nh-hint">{{localize "NEONHUB.Editor.LayoutHint"}}</p>
+    <label>{{localize "NEONHUB.Editor.ClickSound"}}
+      <span class="nh-file"><input type="text" data-path="clickSound" value="{{d.clickSound}}"><button type="button" data-action="pickFile" data-target="clickSound" data-type="audio" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-audio"></i></button></span>
+    </label>
+
+    <h3>{{localize "NEONHUB.Editor.Buttons"}} <button type="button" class="nh-mini" data-action="addButton"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Editor.Add"}}</button></h3>
+    <ol class="nh-ed-list" data-drop="list">
+      {{#each buttons}}
+      <li class="{{#if selected}}selected{{/if}} {{#if issue}}has-issue{{/if}}">
+        <button type="button" class="nh-ed-pick" data-action="select" data-id="{{id}}">
+          <i class="{{icon}}"></i>
+          <span><b>{{label}}</b><small>{{action}}{{#if gmOnly}} &middot; GM{{/if}}</small></span>
+          {{#if issue}}<i class="fa-solid fa-circle-exclamation nh-issue" aria-label="{{localize 'NEONHUB.Editor.HasIssue'}}"></i>{{/if}}
+        </button>
+        <span class="nh-ed-move">
+          <button type="button" data-action="moveButton" data-index="{{index}}" data-dir="-1" {{#if first}}disabled{{/if}} aria-label="{{localize 'NEONHUB.Editor.MoveUp'}}"><i class="fa-solid fa-chevron-up"></i></button>
+          <button type="button" data-action="moveButton" data-index="{{index}}" data-dir="1" {{#if last}}disabled{{/if}} aria-label="{{localize 'NEONHUB.Editor.MoveDown'}}"><i class="fa-solid fa-chevron-down"></i></button>
+        </span>
+      </li>
+      {{else}}
+      <li class="nh-hint">{{localize "NEONHUB.Editor.NoButtons"}}</li>
+      {{/each}}
+    </ol>
+    <p class="nh-hint"><i class="fa-solid fa-download"></i> {{localize "NEONHUB.Editor.DropList"}}</p>
+  </section>
+
+  {{!-- ================= PREVIEW ================= --}}
+  <section class="nh-ed-center">
+    <div class="nh-preview-wrap"><canvas class="nh-preview" aria-label="{{localize 'NEONHUB.Editor.Preview'}}"></canvas></div>
+    <p class="nh-overflow nh-hint"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Editor.Overflow"}}</p>
+    <p class="nh-hint">{{localize "NEONHUB.Editor.PreviewHint"}}</p>
+  </section>
+
+  {{!-- ================= SELECTED BUTTON ================= --}}
+  <section class="nh-ed-right">
+    {{#if sel}}
+    <h3>{{localize "NEONHUB.Editor.Button"}}
+      <span class="nh-ed-tools">
+        <button type="button" class="nh-mini" data-action="duplicateButton" aria-label="{{localize 'NEONHUB.Editor.Duplicate'}}" data-tooltip="{{localize 'NEONHUB.Editor.Duplicate'}}"><i class="fa-solid fa-clone"></i></button>
+        <button type="button" class="nh-mini" data-action="removeButton" aria-label="{{localize 'NEONHUB.Editor.Remove'}}" data-tooltip="{{localize 'NEONHUB.Editor.Remove'}}"><i class="fa-solid fa-trash"></i></button>
+      </span>
+    </h3>
+    {{#if sel.issue}}<p class="nh-issue-line"><i class="fa-solid fa-circle-exclamation"></i> {{sel.issue}}</p>{{/if}}
+    <label>{{localize "NEONHUB.Editor.Label"}}<input type="text" data-path="buttons.{{sel.index}}.label" value="{{sel.label}}"></label>
+    <label>{{localize "NEONHUB.Editor.Subtitle"}}<input type="text" data-path="buttons.{{sel.index}}.subtitle" value="{{sel.subtitle}}"></label>
+    <div class="nh-two">
+      <label>{{localize "NEONHUB.Editor.Icon"}}
+        <span class="nh-icon-field"><i class="{{sel.icon}}"></i><input type="text" data-path="buttons.{{sel.index}}.icon" value="{{sel.icon}}" placeholder="fa-solid fa-star"></span>
+      </label>
+      <label>{{localize "NEONHUB.Editor.ButtonSize"}}
+        <select data-path="buttons.{{sel.index}}.size">{{#each sel.sizes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+    </div>
+    <label>{{localize "NEONHUB.Editor.Image"}}
+      <span class="nh-file"><input type="text" data-path="buttons.{{sel.index}}.image" value="{{sel.image}}"><button type="button" data-action="pickFile" data-target="buttons.{{sel.index}}.image" data-type="image" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-image"></i></button></span>
+    </label>
+    <div class="nh-two">
+      <label>{{localize "NEONHUB.Editor.Color"}}<input type="color" data-path="buttons.{{sel.index}}.color" value="{{sel.colorValue}}"></label>
+      <label class="nh-check"><input type="checkbox" data-path="buttons.{{sel.index}}.gmOnly" data-dtype="Boolean" {{checked sel.gmOnly}}> {{localize "NEONHUB.Editor.GmOnly"}}</label>
+    </div>
+
+    <h3>{{localize "NEONHUB.Editor.OnClick"}}</h3>
+    <label>{{localize "NEONHUB.Editor.Action"}}
+      <select data-path="buttons.{{sel.index}}.action.type">{{#each sel.actionTypes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+
+    {{#if sel.is.actor}}
+    <label class="nh-check"><input type="checkbox" data-path="buttons.{{sel.index}}.action.ownCharacter" data-dtype="Boolean" {{checked sel.action.ownCharacter}}> {{localize "NEONHUB.Editor.OwnCharacter"}}</label>
+    {{/if}}
+
+    {{#if sel.targetOptions.length}}
+    {{#unless sel.action.ownCharacter}}
+    <label>{{localize (concat "NEONHUB.Editor.Target." sel.action.type)}}
+      <select data-path="buttons.{{sel.index}}.action.target">
+        <option value="">{{localize "NEONHUB.Editor.Choose"}}</option>
+        {{#each sel.targetOptions}}
+          {{#if group}}<optgroup label="{{group}}">{{/if}}
+          {{#each options}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          {{#if group}}</optgroup>{{/if}}
+        {{/each}}
+      </select>
+    </label>
+    <div class="nh-drop" data-drop="target"><i class="fa-solid fa-download"></i> {{#if sel.targetName}}{{sel.targetName}} <button type="button" class="nh-mini" data-action="clearTarget" aria-label="{{localize 'NEONHUB.Editor.Clear'}}"><i class="fa-solid fa-xmark"></i></button>{{else}}{{localize "NEONHUB.Editor.DropTarget"}}{{/if}}</div>
+    {{/unless}}
+    {{/if}}
+
+    {{#if sel.is.hq}}<button type="button" class="nh-mini" data-action="newHQ"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Editor.NewHQ"}}</button>{{/if}}
+    {{#if sel.marketMissing}}<p class="nh-hint nh-warn">{{localize "NEONHUB.Editor.MarketMissing"}}</p>{{/if}}
+
+    {{#if sel.is.scene}}
+    <label>{{localize "NEONHUB.Editor.SceneMode"}}
+      <select data-path="buttons.{{sel.index}}.action.sceneMode">{{#each sel.sceneModes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    {{/if}}
+
+    {{#if sel.is.journal}}
+    <label class="nh-check"><input type="checkbox" data-path="buttons.{{sel.index}}.action.ignorePermission" data-dtype="Boolean" {{checked sel.action.ignorePermission}}> {{localize "NEONHUB.Editor.IgnorePermission"}}</label>
+    {{/if}}
+
+    {{#if sel.is.sound}}
+    <label>{{localize "NEONHUB.Editor.SoundFile"}}
+      <span class="nh-file"><input type="text" data-path="buttons.{{sel.index}}.action.file" value="{{sel.action.file}}"><button type="button" data-action="pickFile" data-target="buttons.{{sel.index}}.action.file" data-type="audio" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-audio"></i></button></span>
+    </label>
+    {{/if}}
+    {{#if sel.is.image}}
+    <label>{{localize "NEONHUB.Editor.ImageFile"}}
+      <span class="nh-file"><input type="text" data-path="buttons.{{sel.index}}.action.file" value="{{sel.action.file}}"><button type="button" data-action="pickFile" data-target="buttons.{{sel.index}}.action.file" data-type="image" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-image"></i></button></span>
+    </label>
+    <label>{{localize "NEONHUB.Editor.Caption"}}<input type="text" data-path="buttons.{{sel.index}}.action.caption" value="{{sel.action.caption}}"></label>
+    {{/if}}
+    {{#if sel.is.playlist}}
+    <label>{{localize "NEONHUB.Editor.PlayMode"}}
+      <select data-path="buttons.{{sel.index}}.action.playMode">{{#each sel.playModes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    {{/if}}
+    {{#if (or sel.is.sound sel.is.playlist)}}
+    <div class="nh-two">
+      <label>{{localize "NEONHUB.Editor.Volume"}}<input type="range" min="0" max="1" step="0.05" data-path="buttons.{{sel.index}}.action.volume" data-dtype="Number" value="{{sel.action.volume}}"></label>
+      <label class="nh-check"><input type="checkbox" data-path="buttons.{{sel.index}}.action.loop" data-dtype="Boolean" {{checked sel.action.loop}}> {{localize "NEONHUB.Editor.Loop"}}</label>
+    </div>
+    {{#if sel.is.playlist}}<p class="nh-hint">{{localize "NEONHUB.Editor.PlaylistHint"}}</p>{{/if}}
+    {{/if}}
+    {{#if sel.is.macro}}
+    <label>{{localize "NEONHUB.Editor.RunAs"}}
+      <select data-path="buttons.{{sel.index}}.action.runAs">
+        <option value="player" {{#if (eq sel.action.runAs "player")}}selected{{/if}}>{{localize "NEONHUB.Editor.RunAsPlayer"}}</option>
+        <option value="gm" {{#if (eq sel.action.runAs "gm")}}selected{{/if}}>{{localize "NEONHUB.Editor.RunAsGM"}}</option>
+      </select>
+    </label>
+    {{/if}}
+
+    {{#if sel.usesAudience}}
+    <label>{{localize "NEONHUB.Editor.ShowTo"}}
+      <select data-path="buttons.{{sel.index}}.action.audience">{{#each sel.audiences}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    {{/if}}
+
+    <label>{{localize "NEONHUB.Editor.ButtonSound"}}
+      <span class="nh-file"><input type="text" data-path="buttons.{{sel.index}}.clickSound" value="{{sel.clickSound}}" placeholder="{{localize 'NEONHUB.Editor.UsePageSound'}}"><button type="button" data-action="pickFile" data-target="buttons.{{sel.index}}.clickSound" data-type="audio" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-audio"></i></button></span>
+    </label>
+    {{else}}
+    <p class="nh-hint nh-ed-empty">{{localize "NEONHUB.Editor.PickButton"}}</p>
+    {{/if}}
+  </section>
+
+  <footer class="nh-ed-footer">
+    <span class="nh-dirty {{#if dirty}}visible{{/if}}"><i class="fa-solid fa-circle"></i> {{localize "NEONHUB.Editor.NotBuilt"}}</span>
+    {{#if issueCount}}<span class="nh-issue-count"><i class="fa-solid fa-circle-exclamation"></i> {{localize "NEONHUB.Editor.Issues" n=issueCount}}</span>{{/if}}
+    {{#if scene}}
+    <button type="button" data-action="viewScene"><i class="fa-solid fa-eye"></i> {{localize "NEONHUB.Editor.View"}}</button>
+    <button type="button" data-action="activateScene" {{#if scene.active}}disabled{{/if}}><i class="fa-solid fa-bullseye"></i> {{#if scene.active}}{{localize "NEONHUB.Editor.Active"}}{{else}}{{localize "NEONHUB.Editor.Activate"}}{{/if}}</button>
+    {{/if}}
+    <button type="button" class="nh-primary" data-action="build" {{#if building}}disabled{{/if}}>
+      {{#if building}}<i class="fa-solid fa-spinner fa-spin"></i> <span class="nh-progress">{{progress}}</span>{{else}}<i class="fa-solid fa-hammer"></i> {{#if scene}}{{localize "NEONHUB.Editor.Rebuild"}}{{else}}{{localize "NEONHUB.Editor.Build"}}{{/if}}{{/if}}
+    </button>
+  </footer>
+</div>

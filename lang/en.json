@@ -1,0 +1,453 @@
+{
+  "NEONHUB": {
+    "Theme": {
+      "neon": "Neon broker",
+      "corpo": "Corpo boutique",
+      "street": "Street stall",
+      "nomad": "Nomad trading post",
+      "terminal": "Data terminal",
+      "netmarket": "Black market net",
+      "ripperdoc": "Ripperdoc clinic",
+      "fixer": "Fixer's ledger"
+    },
+    "Action": {
+      "scene": "Go to a scene",
+      "journal": "Open a journal",
+      "actor": "Open a character sheet",
+      "shop": "Open a Neon Market shop",
+      "hq": "Open a Headquarters",
+      "sound": "Play a sound",
+      "playlist": "Control a playlist",
+      "image": "Show an image",
+      "macro": "Run a macro",
+      "none": "Nothing (decoration)",
+      "ownCharacter": "Their own character"
+    },
+    "Audience": {
+      "trigger": "Just the player who clicked",
+      "everyone": "Everyone",
+      "players": "All players",
+      "gm": "Only the GM"
+    },
+    "SceneMode": {
+      "trigger": "Take the player who clicked there",
+      "everyone": "Pull everyone's view there",
+      "activate": "Make it the active scene for everyone"
+    },
+    "PlayMode": {
+      "play": "Play",
+      "stop": "Stop",
+      "pause": "Pause",
+      "next": "Next track",
+      "prev": "Previous track"
+    },
+    "Size": {
+      "normal": "Normal",
+      "wide": "Wide (2 × 1)",
+      "tall": "Tall (1 × 2)",
+      "large": "Large (2 × 2)"
+    },
+    "Starter": {
+      "Map": "Night City",
+      "MapSub": "Head out into the streets",
+      "Sheet": "My character",
+      "SheetSub": "Open your character sheet",
+      "HQ": "Headquarters",
+      "HQSub": "The crew's home base",
+      "Market": "Night market",
+      "MarketSub": "Gear, chrome and no questions"
+    },
+    "UI": {
+      "NewHub": "New hub",
+      "Headquarters": "Headquarters",
+      "EditHub": "Edit hub page",
+      "MakeHub": "Turn into a hub page"
+    },
+    "Matt": {
+      "Group": "Neon Hub (Cyberpunk RED)",
+      "OpenShop": "Open Neon Market shop",
+      "OpenHQ": "Open Headquarters",
+      "PickShop": "Select an actor with a Neon Market shop",
+      "Headquarters": "Headquarters",
+      "UnknownHQ": "Unknown Headquarters"
+    },
+    "Editor": {
+      "Title": "Hub page",
+      "TitleNew": "New hub page",
+      "DefaultName": "Night City Hub",
+      "DefaultSubtitle": "Pick where to go next",
+      "Page": "Page",
+      "PageTitle": "Title",
+      "PageSubtitle": "Subtitle",
+      "ShowTitle": "Show title on the page",
+      "Theme": "Theme",
+      "Background": "Background image",
+      "Browse": "Browse files",
+      "Dim": "Darken background",
+      "Size": "Page size",
+      "Columns": "Columns",
+      "Layout": "Button layout",
+      "LayoutGrid": "Grid (automatic)",
+      "LayoutManual": "Keep tiles where I put them",
+      "LayoutHint": "With “Keep tiles where I put them”, move and resize the button tiles on the scene, then rebuild: each button is redrawn at its new size and spot. New buttons still go into the grid.",
+      "ClickSound": "Click sound for every button",
+      "Buttons": "Buttons",
+      "Add": "Add",
+      "NoButtons": "No buttons yet.",
+      "DropList": "Drop a scene, journal, actor, playlist or macro here to add a button for it.",
+      "Preview": "Preview of the hub page",
+      "PreviewHint": "Click a button in the preview to edit it.",
+      "Overflow": "Too many rows to fit. Add columns, use a bigger page, or make some buttons smaller.",
+      "Button": "Button",
+      "Duplicate": "Duplicate",
+      "Remove": "Delete",
+      "Label": "Label",
+      "Subtitle": "Subtitle",
+      "Icon": "Icon",
+      "ButtonSize": "Size",
+      "Image": "Picture (optional)",
+      "Color": "Accent color",
+      "GmOnly": "GM only",
+      "OnClick": "When clicked",
+      "Action": "Action",
+      "OwnCharacter": "Open the clicking player's own character",
+      "Target": {
+        "scene": "Scene",
+        "journal": "Journal or page",
+        "actor": "Actor",
+        "shop": "Shop",
+        "hq": "Headquarters",
+        "playlist": "Playlist or track",
+        "macro": "Macro"
+      },
+      "Choose": "Choose…",
+      "DropTarget": "Or drop a document here",
+      "Clear": "Clear",
+      "NewHQ": "New Headquarters",
+      "MarketMissing": "Neon Market isn't active, so this button won't open anything until it is.",
+      "SceneMode": "Who goes",
+      "IgnorePermission": "Show it even if the player can't normally see it",
+      "SoundFile": "Sound file",
+      "ImageFile": "Image file",
+      "Caption": "Caption",
+      "PlayMode": "Playlist action",
+      "Volume": "Volume",
+      "Loop": "Loop",
+      "PlaylistHint": "Playlists play for everyone, as they always do in Foundry.",
+      "RunAs": "Run as",
+      "RunAsPlayer": "The player who clicked",
+      "RunAsGM": "The GM",
+      "ShowTo": "Show to",
+      "ButtonSound": "Click sound",
+      "UsePageSound": "Use the page's click sound",
+      "PickButton": "Pick a button on the left or in the preview.",
+      "NotBuilt": "Changes not built yet",
+      "Issues": "{n} buttons need attention",
+      "View": "View scene",
+      "Activate": "Make active scene",
+      "Active": "Active scene",
+      "Build": "Build hub scene",
+      "Rebuild": "Rebuild scene",
+      "BuildWithIssues": "{n} buttons are missing what they open, so they won't do anything when clicked. Build anyway?",
+      "Built": "Built {name}. Players click its buttons with the token layer selected (the default for players).",
+      "BuildFailed": "The hub couldn't be built: {error}",
+      "Unsaved": "Unbuilt changes",
+      "UnsavedBody": "Close without building? Your changes will be lost.",
+      "Untitled": "Untitled",
+      "NewButton": "New button",
+      "Missing": "(missing document)",
+      "WholeJournal": "— Whole journal —",
+      "WholePlaylist": "— Whole playlist —",
+      "DropUnsupported": "Drop a scene, journal, page, actor, playlist, track or macro.",
+      "HasIssue": "Needs attention",
+      "MoveUp": "Move up",
+      "MoveDown": "Move down",
+      "Issue": {
+        "NoTarget": "Choose what this button opens.",
+        "NoHQ": "Choose a Headquarters (or make one).",
+        "NoFile": "Choose a file.",
+        "Empty": "Give the button a label, icon or picture."
+      }
+    },
+    "Error": {
+      "NoMatt": "Neon Hub needs Monk's Active Tile Triggers. Install and enable it to build hub pages.",
+      "NoMarket": "Neon Market isn't active, so this shop can't open.",
+      "NoGM": "A GM must be connected for this.",
+      "Timeout": "The GM didn't answer in time.",
+      "GMOnly": "Only the GM can do that.",
+      "NoHQ": "That Headquarters no longer exists.",
+      "NotCrew": "Only the crew of this Headquarters can open it.",
+      "NotAllowed": "Players can't do that here.",
+      "Declined": "The GM declined.",
+      "IPBelowZero": "That would take HQ IP below zero.",
+      "NoWealth": "{name} has no eurobuck wallet.",
+      "PayerNotCrew": "The payer must be a crew member.",
+      "NoCrewWallets": "No crew member has a eurobuck wallet.",
+      "ShortFunds": "Not enough eurobucks: {names}.",
+      "Upload": "Couldn't save {file}. Check that you can upload files to this world's folder.",
+      "WrongSystem": "Neon Hub is built for Cyberpunk RED - CORE. This world runs {system}, so Headquarters money and Humanity won't work."
+    },
+    "Ledger": {
+      "Improvement": "{name} for {hq}",
+      "Rent": "Rent for {hq}",
+      "Morale": "Morale Boost at {hq}",
+      "Refund": "Refund (purchase cancelled)"
+    },
+    "Improvement": {
+      "evidenceWall": {
+        "Name": "Evidence Wall",
+        "Tag": "Investigation bonuses for Lawmen",
+        "Base": "Lawmen working an ongoing investigation here get +2 to Composition, Criminology, Cryptography, Deduction, Education, Forgery, Library Search and Photography/Film Checks.",
+        "Upgrade": "The Lawman bonus rises to +3. Medias can use the wall too, and a story they build on it counts their Credibility Rank as 1 higher for Believability when it's published."
+      },
+      "garage": {
+        "Name": "Garage",
+        "Tag": "A crew car and room to work on it",
+        "Base": "Comes with a Compact Groundcar the crew owns. It can take Vehicle Upgrades but can't be sold, and the Nomad Moto Role Ability doesn't apply to it. If it's destroyed beyond repair, the Garage and its Upgrade are lost with no refund.",
+        "Upgrade": "A Nomad can spend a week of downtime to re-pick their Moto Role Ability choices (vehicles or Vehicle Upgrades), as long as all their vehicles are working and at full HP."
+      },
+      "lockup": {
+        "Name": "Lockup",
+        "Tag": "Somewhere to hold a prisoner",
+        "Base": "A soundproof cell for one prisoner. Breaking out takes BODY 13 or higher.",
+        "Upgrade": "Holds up to three prisoners in separate cells. Lawmen get +2 to Interrogation Checks on a prisoner who has been held at least a day."
+      },
+      "lounge": {
+        "Name": "Lounge",
+        "Tag": "Meet clients on home turf",
+        "Base": "During in-person meetings here, Fixers get +2 to Bribery, Bureaucracy, Business, Conversation, Human Perception, Persuasion and Trading Checks.",
+        "Upgrade": "Fixers (contacts and clients) and Medias (access and sources) get +2 to Checks to set up those in-person meetings, as the GM sees fit."
+      },
+      "medbay": {
+        "Name": "Medbay",
+        "Tag": "Faster healing, better surgery",
+        "Base": "The crew heals naturally as if their BODY were 2 higher. Medtechs get +2 to First Aid, Paramedic and Surgery Checks here.",
+        "Upgrade": "Medtechs can use Science (Chemistry) to upgrade, fabricate and invent street drugs as if they had the Maker Role Ability, with Expertise equal to their Medical Tech level."
+      },
+      "moraleBoost": {
+        "Name": "Morale Boost",
+        "Tag": "Comforts that keep the crew human",
+        "Base": "Recreation and decor that make the place feel like home. Every crew member's monthly Lifestyle cost drops by 50eb. It has ten numbered Upgrades, each adding a benefit; some later ones replace earlier ones.",
+        "Upgrade": "See the ten levels below."
+      },
+      "rentReduction": {
+        "Name": "Rent Reduction",
+        "Tag": "Cheaper rent, more beds",
+        "Base": "Rent is charged one row lower on the Real Estate table (skipping corp-provided rows); a Cube Hotel room drops to 100eb a month. It can't apply to an HQ the crew doesn't pay rent on.",
+        "Upgrade": "Each Upgrade adds one bed (and, if the GM agrees, a room) with no extra Housing cost, up to double the HQ's original number of beds."
+      },
+      "serverRoom": {
+        "Name": "Server Room",
+        "Tag": "A NET Architecture guarding home",
+        "Base": "Also costs 20,000eb, spent on home defenses using the Home Security 2045 rules (CP:R p. 217). What's bought can't be resold or removed, and unspent money is lost.",
+        "Upgrade": "Netrunners can upgrade, fabricate and invent cyberdecks, cyberdeck hardware and programs as if they had the Maker Role Ability, with Expertise equal to their Interface Rank."
+      },
+      "studio": {
+        "Name": "Studio",
+        "Tag": "A space to create",
+        "Base": "Rockerboys get +2 to Acting, Composition, Play Instrument, Paint/Draw/Sculpt and Photography/Film Checks here.",
+        "Upgrade": "Spend a week of downtime per round of refinement on a project for a stacking +2 on related Checks. Rolling a 1 wipes the built-up bonus. The GM may allow Legendary (DV29) projects."
+      },
+      "trainingArea": {
+        "Name": "Training Area",
+        "Tag": "Practice between jobs",
+        "Base": "Spend a week of downtime to Practice one of: Athletics, Archery, Autofire, Brawling, Evasion, Handgun, Heavy Weapons, Martial Arts, Melee Weapon or Shoulder Arms. It gets +1 until the crew next earns Group IP or Practices again.",
+        "Upgrade": "Solos can Practice two Skills from the list instead of one."
+      },
+      "workshop": {
+        "Name": "Workshop",
+        "Tag": "Two Tech projects at once",
+        "Base": "When a Tech spends time on Upgrade, Fabrication or Invention Expertise here, the same time also counts toward a second project.",
+        "Upgrade": "The same time also counts toward a third project."
+      },
+      "workstation": {
+        "Name": "Workstation",
+        "Tag": "An Exec team member steps up",
+        "Base": "Pick one Exec Team Member when it's bought. They become an Improved Team Member: a full crew member who earns IP and an equal share of pay, and is loyal to their boss. If access to the Workstation is lost, they stop earning IP and pay but keep what they already bought.",
+        "Upgrade": "The Improved Team Member ignores the Loyalty System and stays loyal unless betrayed. If an Upgraded Workstation is lost, it must be restored before any other HQ spending, or the Team Member leaves."
+      }
+    },
+    "Morale": {
+      "1": "Each month, every crew member regains 1d6/2 Humanity, up to their maximum.",
+      "2": "The crew heals as if their BODY were 1 higher. Stacks with the Medbay.",
+      "3": "The crew gains +1 LUCK, including Exec Improved Team Members (the only way NPCs get LUCK).",
+      "4": "Each month, every crew member regains 1d6 Humanity instead (replaces level 1).",
+      "5": "Fixers get +2 to Trading when negotiating pay. Others can haggle for 20% more as if they had Operator Rank 5, without that bonus.",
+      "6": "When Hustling, roll twice on the Hustle table and pick the result.",
+      "7": "The crew gains another +1 LUCK.",
+      "8": "When Hustling, roll twice and earn from both rolls (replaces level 6).",
+      "9": "Each month, roll 1d6 twice and regain the higher in Humanity (replaces level 4).",
+      "10": "A custom benefit designed with the GM."
+    },
+    "HQ": {
+      "Title": "Headquarters",
+      "DefaultName": "New Headquarters",
+      "Subtitle": "Crew headquarters",
+      "New": "New Headquarters",
+      "Choose": "Which Headquarters?",
+      "NoneYet": "There are no Headquarters yet.",
+      "NoneVisible": "Your crew doesn't have a Headquarters yet.",
+      "PickImage": "Choose a picture",
+      "MissingActor": "(deleted actor)",
+      "MissingLink": "(deleted)",
+      "NotCharacter": "{name} isn't a character, so Humanity and wallet features won't apply to them.",
+      "Status": {
+        "active": "Active",
+        "lost": "No access",
+        "destroyed": "Destroyed"
+      },
+      "StatusHint": {
+        "active": "",
+        "lost": "The crew has lost access, so none of the HQ's benefits apply until access is back (paying overdue rent restores it).",
+        "destroyed": "The HQ was destroyed. Every Improvement is gone; the crew starts over."
+      },
+      "Stat": {
+        "IP": "HQ IP",
+        "Each": "{cost} per Improvement or Upgrade",
+        "Rent": "Rent / month",
+        "Paid": "Paid",
+        "Due": "Due",
+        "Beds": "Beds",
+        "Morale": "Morale Boost",
+        "Healing": "Healing",
+        "HealingHint": "to BODY when healing",
+        "Luck": "LUCK",
+        "Lifestyle": "Lifestyle",
+        "PerMember": "per member / month"
+      },
+      "Tab": {
+        "improvements": "Improvements",
+        "setup": "Setup",
+        "log": "History"
+      },
+      "Award": "Award",
+      "AwardAmount": "HQ IP to award",
+      "AwardReason": "Reason (e.g. mission)",
+      "AwardTip": "The crew earns HQ IP equal to the Group IP it gets after a mission. Use a negative number to take IP away.",
+      "AwardHint": "Enter how much HQ IP to award.",
+      "PayRent": "Pay rent",
+      "NewMonth": "New month",
+      "NewMonthConfirm": "Start a new month? Morale Boost Humanity is rolled and applied for every crew character, rent becomes due, and a summary goes to chat.",
+      "State": {
+        "Available": "Available",
+        "Owned": "Bought",
+        "Upgraded": "Upgraded",
+        "Maxed": "Fully upgraded"
+      },
+      "CostLine": "{cost} HQ IP",
+      "Base": "Improvement",
+      "Upgrade": "Upgrade",
+      "UpgradeEach": "Each Upgrade",
+      "Upgrades": "Upgrades",
+      "Link": {
+        "vehicle": "Crew vehicle",
+        "netarch": "NET Architecture",
+        "teamMember": "Improved Team Member"
+      },
+      "LinkHint": {
+        "vehicle": "Drop the crew's vehicle (an item or actor) here.",
+        "netarch": "Drop the NET Architecture item, or its scene, here.",
+        "teamMember": "Drop the Exec Team Member's actor here."
+      },
+      "NoLink": "Not set yet.",
+      "ClearLink": "Clear",
+      "Notes": "Notes",
+      "NotesHint": "Prisoners, projects, which Skills were practiced…",
+      "DoBuy": "Buy ({cost} HQ IP)",
+      "DoUpgrade": "Upgrade ({cost} HQ IP)",
+      "ProposeBuy": "Propose to the GM",
+      "ProposeUpgrade": "Propose Upgrade to the GM",
+      "Confirm": {
+        "Buy": "Spend {cost} HQ IP on {name}?",
+        "Upgrade": "Spend {cost} HQ IP to upgrade {name}?",
+        "Propose": "Ask the GM to spend {cost} HQ IP on {name}? Spending HQ IP is a crew decision, so talk it over first.",
+        "ProposeUpgrade": "Ask the GM to spend {cost} HQ IP to upgrade {name}?"
+      },
+      "Done": {
+        "Bought": "{name} is now part of the HQ.",
+        "Upgraded": "{name} upgraded.",
+        "RentPaid": "Rent paid."
+      },
+      "Block": {
+        "Unknown": "Unknown Improvement.",
+        "NoAccess": "The crew has no access to the HQ right now.",
+        "Owned": "Already bought.",
+        "RentFree": "This HQ is rent-free, so Rent Reduction can't apply.",
+        "NoIP": "Not enough HQ IP.",
+        "NotOwned": "Buy the Improvement first.",
+        "MaxUpgrades": "No more Upgrades available."
+      },
+      "Pay": {
+        "Body": "Who pays {amount}?",
+        "Split": "Split evenly across the crew",
+        "Confirm": "Pay",
+        "ServerRoom": "Server Room equipment",
+        "Rent": "Pay rent"
+      },
+      "Request": {
+        "Title": "Crew request",
+        "Body": "{user} asks to {what} for {hq}.",
+        "purchase": "buy {name} ({cost} HQ IP)",
+        "upgrade": "upgrade {name} ({cost} HQ IP)",
+        "PayRent": "pay rent ({rent})"
+      },
+      "Log": {
+        "Awarded": "HQ IP awarded",
+        "Removed": "HQ IP removed",
+        "Bought": "Bought {name}",
+        "Upgraded": "Upgraded {name}",
+        "RentPaid": "Rent paid ({rent})",
+        "NewMonth": "Month {n} began",
+        "MarkedOwned": "{name} marked as bought (no IP spent)",
+        "MarkedRemoved": "{name} removed",
+        "Status": {
+          "active": "Access restored",
+          "lost": "Access lost",
+          "destroyed": "HQ destroyed"
+        }
+      },
+      "LogEmpty": "Nothing has happened yet.",
+      "Field": {
+        "name": "Name",
+        "location": "Location",
+        "kind": "Space",
+        "kindHint": "Studio apartment, cargo container…",
+        "theme": "Theme",
+        "rent": "Rent per month (eb)",
+        "reducedRent": "Rent with Rent Reduction (eb)",
+        "reducedRentHint": "One row lower on the Real Estate table",
+        "beds": "Beds (before Rent Reduction)",
+        "status": "Access",
+        "rentFree": "Rent-free (owned or given by a patron)",
+        "rentPaid": "This month's rent is paid",
+        "playersSeeAll": "Every player can open it, not just the crew",
+        "ip": "HQ IP"
+      },
+      "Crew": "Crew",
+      "CrewHint": "Drop the crew's characters here. Players who own a crew character can open this HQ.",
+      "RemoveCrew": "Remove from crew",
+      "Bookkeeping": "Bookkeeping",
+      "BookkeepingHint": "Set what the HQ already has without spending HQ IP, for crews that started their HQ before this module.",
+      "Delete": "Delete Headquarters",
+      "DeleteConfirm": "Delete {name} and its history? This can't be undone.",
+      "RentFree": "Rent-free",
+      "Formula": {
+        "floor1d62": "1d6/2 (rounded down)",
+        "1d6": "1d6",
+        "2d6kh": "the higher of two 1d6"
+      },
+      "Chat": {
+        "Bought": "{hq} bought {name}.",
+        "Upgraded": "{hq} upgraded {name}.",
+        "IPLeft": "{ip} HQ IP left.",
+        "Month": "Month {n}",
+        "NoBenefits": "No access to the HQ this month, so no benefits apply.",
+        "Humanity": "Morale Boost: each crew member regains {formula} Humanity.",
+        "HumanityRow": "rolled {rolled}, +{gained} → {value}/{max}",
+        "NoCrew": "No crew characters to roll for.",
+        "RentDue": "Rent of {rent} is due.",
+        "Lifestyle": "Morale Boost: each crew member's Lifestyle costs {discount} less this month."
+      }
+    }
+  }
+}

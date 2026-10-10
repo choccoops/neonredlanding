@@ -1,0 +1,16 @@
+<div class="neon-hub-chat nh-month">
+  <header><i class="fa-solid fa-calendar-check"></i> <strong>{{hq.name}}</strong> &middot; {{localize "NEONHUB.HQ.Chat.Month" n=month}}</header>
+  {{#if lost}}<p class="nh-due">{{localize "NEONHUB.HQ.Chat.NoBenefits"}}</p>{{/if}}
+  {{#if formula}}
+  <p>{{localize "NEONHUB.HQ.Chat.Humanity" formula=formula}}</p>
+  <ul>
+    {{#each rows}}
+    <li><span>{{name}}</span><span>{{localize "NEONHUB.HQ.Chat.HumanityRow" rolled=rolled gained=gained value=value max=max}}</span></li>
+    {{else}}
+    <li>{{localize "NEONHUB.HQ.Chat.NoCrew"}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+  {{#if rent}}<p>{{localize "NEONHUB.HQ.Chat.RentDue" rent=rent}}</p>{{/if}}
+  {{#if discount}}<p>{{localize "NEONHUB.HQ.Chat.Lifestyle" discount=discount}}</p>{{/if}}
+</div>

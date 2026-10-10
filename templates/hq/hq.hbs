@@ -1,0 +1,203 @@
+<div class="nh-hq {{themeClass}} {{#if inactive}}is-inactive{{/if}} {{#if busy}}is-busy{{/if}}" style="{{style}}">
+  {{#if missing}}
+  <p class="nh-empty">{{localize "NEONHUB.Error.NoHQ"}}</p>
+  {{else}}
+  <header class="nh-hq-header">
+    <div class="nh-hq-art" {{#if isGM}}data-action="pickImage" data-tooltip="{{localize 'NEONHUB.HQ.PickImage'}}"{{/if}}>
+      {{#if hq.img}}<img src="{{hq.img}}" alt="">{{else}}<i class="fa-solid fa-house-signal"></i>{{/if}}
+    </div>
+    <div class="nh-hq-title">
+      <h1>{{hq.name}}</h1>
+      <p>{{#if hq.location}}{{hq.location}} &middot; {{/if}}{{#if hq.housing.kind}}{{hq.housing.kind}}{{else}}{{localize "NEONHUB.HQ.Subtitle"}}{{/if}}</p>
+    </div>
+    <span class="nh-status nh-status-{{hq.status}}">{{statusLabel}}</span>
+    <ul class="nh-crew-strip">
+      {{#each crew}}
+      <li data-action="openCrew" data-uuid="{{uuid}}" data-tooltip="{{name}}{{#if roles.length}} &middot; {{#each roles}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}}">
+        <img src="{{img}}" alt="{{name}}">
+      </li>
+      {{/each}}
+    </ul>
+  </header>
+
+  {{#if inactive}}
+  <div class="nh-hq-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{localize (concat "NEONHUB.HQ.StatusHint." hq.status)}}</div>
+  {{/if}}
+
+  <section class="nh-hq-stats">
+    <div class="nh-stat nh-stat-ip"><span>{{localize "NEONHUB.HQ.Stat.IP"}}</span><strong>{{stats.ip}}</strong><small>{{localize "NEONHUB.HQ.Stat.Each" cost=stats.cost}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Rent"}}</span><strong>{{stats.rent}}</strong><small class="{{#unless stats.rentPaid}}nh-due{{/unless}}">{{#if stats.rentPaid}}{{localize "NEONHUB.HQ.Stat.Paid"}}{{else}}{{localize "NEONHUB.HQ.Stat.Due"}}{{/if}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Beds"}}</span><strong>{{stats.beds}}</strong></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Morale"}}</span><strong>{{stats.morale}}<em>/10</em></strong></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Healing"}}</span><strong>{{#if stats.healing}}+{{stats.healing}}{{else}}&mdash;{{/if}}</strong><small>{{localize "NEONHUB.HQ.Stat.HealingHint"}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Luck"}}</span><strong>{{#if stats.luck}}+{{stats.luck}}{{else}}&mdash;{{/if}}</strong></div>
+    {{#if stats.lifestyle}}<div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Lifestyle"}}</span><strong>&minus;{{stats.lifestyle}}</strong><small>{{localize "NEONHUB.HQ.Stat.PerMember"}}</small></div>{{/if}}
+  </section>
+
+  <nav class="nh-tabs" role="tablist">
+    <button type="button" role="tab" class="{{#if tab.improvements}}active{{/if}}" data-action="tab" data-tab="improvements"><i class="fa-solid fa-cubes"></i> {{localize "NEONHUB.HQ.Tab.improvements"}}</button>
+    {{#if isGM}}<button type="button" role="tab" class="{{#if tab.setup}}active{{/if}}" data-action="tab" data-tab="setup"><i class="fa-solid fa-sliders"></i> {{localize "NEONHUB.HQ.Tab.setup"}}</button>{{/if}}
+    <button type="button" role="tab" class="{{#if tab.log}}active{{/if}}" data-action="tab" data-tab="log"><i class="fa-solid fa-list"></i> {{localize "NEONHUB.HQ.Tab.log"}}</button>
+    {{#if isGM}}
+    <div class="nh-gm-tools">
+      <input type="number" name="awardAmount" placeholder="IP" aria-label="{{localize 'NEONHUB.HQ.AwardAmount'}}">
+      <input type="text" name="awardReason" placeholder="{{localize 'NEONHUB.HQ.AwardReason'}}">
+      <button type="button" data-action="award" data-tooltip="{{localize 'NEONHUB.HQ.AwardTip'}}"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.HQ.Award"}}</button>
+      <button type="button" data-action="payRent"><i class="fa-solid fa-money-bill"></i> {{localize "NEONHUB.HQ.PayRent"}}</button>
+      <button type="button" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.HQ.NewMonth"}}</button>
+    </div>
+    {{else}}
+    <div class="nh-gm-tools"><button type="button" data-action="payRent"><i class="fa-solid fa-money-bill"></i> {{localize "NEONHUB.HQ.PayRent"}}</button></div>
+    {{/if}}
+  </nav>
+
+  {{#if tab.improvements}}
+  <div class="nh-hq-main">
+    <div class="nh-hq-scroll">
+      <div class="nh-cards">
+        {{#each cards}}
+        <button type="button" class="nh-card {{#if owned}}owned{{/if}} {{#if upgraded}}upgraded{{/if}} {{#if focused}}focused{{/if}}" data-action="focus" data-key="{{key}}">
+          <i class="{{icon}} nh-card-icon" aria-hidden="true"></i>
+          <span class="nh-card-name">{{name}}</span>
+          <span class="nh-card-tag">{{tagline}}</span>
+          {{#if pips}}
+          <span class="nh-pips">{{#each pips}}<i class="{{#if on}}on{{/if}}"></i>{{/each}}</span>
+          {{else}}
+          <span class="nh-card-state">{{#if upgraded}}{{localize "NEONHUB.HQ.State.Upgraded"}}{{else if owned}}{{localize "NEONHUB.HQ.State.Owned"}}{{else}}{{localize "NEONHUB.HQ.State.Available"}}{{/if}}</span>
+          {{/if}}
+          {{#if benefits}}<span class="nh-card-crew"><i class="fa-solid fa-user"></i> {{benefits}}</span>{{/if}}
+        </button>
+        {{/each}}
+      </div>
+    </div>
+
+    {{#if focus}}
+    <aside class="nh-hq-detail">
+      <div class="nh-hq-detail-body">
+        <header><i class="{{focus.icon}}"></i><h2>{{focus.name}}</h2></header>
+        <p class="nh-cost">{{localize "NEONHUB.HQ.CostLine" cost=focus.cost}}{{#if focus.eb}} + {{focus.eb}}{{/if}}</p>
+
+        {{#if focus.isMorale}}
+        <p>{{focus.base}}</p>
+        <ol class="nh-levels">
+          {{#each focus.levels}}
+          <li class="{{#if owned}}owned{{/if}} {{#if active}}active{{/if}} {{#if next}}next{{/if}}"><b>{{n}}</b><span>{{text}}</span></li>
+          {{/each}}
+        </ol>
+        {{else}}
+        <h3>{{localize "NEONHUB.HQ.Base"}} {{#if focus.owned}}<i class="fa-solid fa-check"></i>{{/if}}</h3>
+        <p>{{focus.base}}</p>
+        {{#if focus.baseCrew}}<p class="nh-who"><i class="fa-solid fa-user-check"></i> {{focus.baseCrew}}</p>{{/if}}
+        <h3>{{#if focus.repeatable}}{{localize "NEONHUB.HQ.UpgradeEach"}}{{else}}{{localize "NEONHUB.HQ.Upgrade"}}{{/if}} {{#if focus.upgrades}}<i class="fa-solid fa-check"></i>{{#if focus.repeatable}} &times;{{focus.upgrades}}/{{focus.max}}{{/if}}{{/if}}</h3>
+        <p>{{focus.upgrade}}</p>
+        {{#if focus.upgradeCrew}}<p class="nh-who"><i class="fa-solid fa-user-check"></i> {{focus.upgradeCrew}}</p>{{/if}}
+        {{/if}}
+
+        {{#if focus.linkKind}}
+        <h3>{{focus.linkLabel}}</h3>
+        <div class="nh-link {{#if isGM}}droppable{{/if}}" data-drop="link">
+          {{#if focus.link}}
+          <a data-action="openLink" data-uuid="{{focus.link.uuid}}">{{#if focus.link.img}}<img src="{{focus.link.img}}" alt="">{{/if}} {{focus.link.name}}</a>
+          {{#if isGM}}<button type="button" class="nh-icon" data-action="clearLink" aria-label="{{localize 'NEONHUB.HQ.ClearLink'}}"><i class="fa-solid fa-xmark"></i></button>{{/if}}
+          {{else}}
+          <span class="nh-hint">{{#if isGM}}{{localize (concat "NEONHUB.HQ.LinkHint." focus.linkKind)}}{{else}}{{localize "NEONHUB.HQ.NoLink"}}{{/if}}</span>
+          {{/if}}
+        </div>
+        {{/if}}
+
+        {{#if isGM}}
+        <h3>{{localize "NEONHUB.HQ.Notes"}}</h3>
+        <textarea data-path="improvements.{{focus.key}}.notes" rows="3" placeholder="{{localize 'NEONHUB.HQ.NotesHint'}}">{{focus.notes}}</textarea>
+        {{else if focus.notes}}
+        <h3>{{localize "NEONHUB.HQ.Notes"}}</h3>
+        <p class="nh-notes">{{focus.notes}}</p>
+        {{/if}}
+      </div>
+      <footer class="nh-hq-detail-actions">
+        {{#if focus.owned}}
+          {{#if focus.maxed}}
+          <span class="nh-hint"><i class="fa-solid fa-circle-check"></i> {{localize "NEONHUB.HQ.State.Maxed"}}</span>
+          {{else}}
+          <button type="button" class="nh-cta" data-action="upgrade" {{#unless focus.canUpgrade}}disabled{{/unless}}>
+            <i class="fa-solid fa-angles-up"></i> {{#if isGM}}{{localize "NEONHUB.HQ.DoUpgrade" cost=focus.cost}}{{else}}{{localize "NEONHUB.HQ.ProposeUpgrade"}}{{/if}}
+          </button>
+          {{#if focus.upBlock}}<span class="nh-hint">{{focus.upBlock}}</span>{{/if}}
+          {{/if}}
+        {{else}}
+          <button type="button" class="nh-cta" data-action="purchase" {{#unless focus.canBuy}}disabled{{/unless}}>
+            <i class="fa-solid fa-cart-plus"></i> {{#if isGM}}{{localize "NEONHUB.HQ.DoBuy" cost=focus.cost}}{{else}}{{localize "NEONHUB.HQ.ProposeBuy"}}{{/if}}
+          </button>
+          {{#if focus.buyBlock}}<span class="nh-hint">{{focus.buyBlock}}</span>{{/if}}
+        {{/if}}
+      </footer>
+    </aside>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{#if tab.setup}}
+  <div class="nh-hq-scroll nh-setup">
+    <div class="nh-setup-grid">
+      <label>{{localize "NEONHUB.HQ.Field.name"}}<input type="text" data-path="name" value="{{hq.name}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.location"}}<input type="text" data-path="location" value="{{hq.location}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.kind"}}<input type="text" data-path="housing.kind" value="{{hq.housing.kind}}" placeholder="{{localize 'NEONHUB.HQ.Field.kindHint'}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.theme"}}
+        <select data-path="theme">{{#each themes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <label>{{localize "NEONHUB.HQ.Field.rent"}}<input type="number" min="0" data-path="housing.rent" data-dtype="Number" value="{{hq.housing.rent}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.reducedRent"}}<input type="number" min="0" data-path="housing.reducedRent" data-dtype="NumberOrNull" value="{{hq.housing.reducedRent}}" placeholder="{{localize 'NEONHUB.HQ.Field.reducedRentHint'}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.beds"}}<input type="number" min="1" data-path="housing.beds" data-dtype="Number" value="{{hq.housing.beds}}"></label>
+      <label>{{localize "NEONHUB.HQ.Field.status"}}
+        <select data-path="status">{{#each statuses}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <label class="nh-check"><input type="checkbox" data-path="housing.rentFree" {{checked hq.housing.rentFree}}> {{localize "NEONHUB.HQ.Field.rentFree"}}</label>
+      <label class="nh-check"><input type="checkbox" data-path="housing.rentPaid" {{checked hq.housing.rentPaid}}> {{localize "NEONHUB.HQ.Field.rentPaid"}}</label>
+      <label class="nh-check"><input type="checkbox" data-path="playersSeeAll" {{checked hq.playersSeeAll}}> {{localize "NEONHUB.HQ.Field.playersSeeAll"}}</label>
+      <label>{{localize "NEONHUB.HQ.Field.ip"}}<input type="number" min="0" data-path="ip" data-dtype="Number" value="{{hq.ip}}"></label>
+    </div>
+
+    <h3>{{localize "NEONHUB.HQ.Crew"}}</h3>
+    <div class="nh-crew-drop" data-drop="crew">
+      {{#each crew}}
+      <div class="nh-crew-row {{#if missing}}missing{{/if}}">
+        <img src="{{img}}" alt="">
+        <span class="nh-crew-name">{{name}}</span>
+        <span class="nh-crew-roles">{{#each roles}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+        {{#if wealth}}<span class="nh-crew-eb">{{wealth}}</span>{{/if}}
+        <button type="button" class="nh-icon" data-action="removeCrew" data-uuid="{{uuid}}" aria-label="{{localize 'NEONHUB.HQ.RemoveCrew'}}"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      {{/each}}
+      <p class="nh-hint"><i class="fa-solid fa-download"></i> {{localize "NEONHUB.HQ.CrewHint"}}</p>
+    </div>
+
+    <h3>{{localize "NEONHUB.HQ.Bookkeeping"}}</h3>
+    <p class="nh-hint">{{localize "NEONHUB.HQ.BookkeepingHint"}}</p>
+    <table class="nh-book">
+      {{#each cards}}
+      <tr>
+        <td><i class="{{icon}}"></i> {{name}}</td>
+        <td><label class="nh-check"><input type="checkbox" data-path="improvements.{{key}}.owned" {{checked owned}}> {{localize "NEONHUB.HQ.State.Owned"}}</label></td>
+        <td><label>{{localize "NEONHUB.HQ.Upgrades"}} <input type="number" min="0" max="{{max}}" data-path="improvements.{{key}}.upgrades" data-dtype="Number" value="{{upgrades}}"></label> / {{max}}</td>
+      </tr>
+      {{/each}}
+    </table>
+
+    <h3>{{localize "NEONHUB.HQ.Notes"}}</h3>
+    <textarea data-path="notes" rows="4">{{hq.notes}}</textarea>
+    <div class="nh-danger"><button type="button" data-action="deleteHQ"><i class="fa-solid fa-trash"></i> {{localize "NEONHUB.HQ.Delete"}}</button></div>
+  </div>
+  {{/if}}
+
+  {{#if tab.log}}
+  <div class="nh-hq-scroll">
+    <ul class="nh-log">
+      {{#each log}}
+      <li><time>{{date}}</time><span>{{text}}</span>{{#if deltaText}}<b class="{{#if positive}}plus{{else}}minus{{/if}}">{{deltaText}}</b>{{/if}}<small>{{user}}</small></li>
+      {{else}}
+      <li class="nh-hint">{{localize "NEONHUB.HQ.LogEmpty"}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  {{/if}}
+</div>

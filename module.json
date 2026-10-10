@@ -1,0 +1,29 @@
+{
+  "id": "cpr-neon-hub",
+  "title": "Neon Hub: Landing Pages & Headquarters for Cyberpunk RED",
+  "description": "Build clickable landing-page hub scenes with Monk's Active Tile Triggers, and run crew Headquarters from the No Place Like Home rules, for the Cyberpunk RED - CORE system.",
+  "version": "1.0.0",
+  "authors": [{ "name": "Neon Hub contributors" }],
+  "compatibility": { "minimum": "12", "verified": "12" },
+  "relationships": {
+    "systems": [
+      { "id": "cyberpunk-red-core", "type": "system", "compatibility": { "minimum": "0.92", "verified": "0.92.4" } }
+    ],
+    "requires": [
+      { "id": "monks-active-tiles", "type": "module", "compatibility": { "minimum": "12.02" } }
+    ],
+    "recommends": [
+      { "id": "cpr-neon-market", "type": "module", "reason": "Lets hub buttons open Neon Market shops." }
+    ]
+  },
+  "esmodules": ["scripts/main.js"],
+  "styles": ["styles/neon-hub.css"],
+  "languages": [{ "lang": "en", "name": "English", "path": "lang/en.json" }],
+  "socket": true,
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "MIT",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}

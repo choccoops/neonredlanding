@@ -609,3 +609,23 @@
 .neon-hub .is-light .nh-ls-status-due,
 .neon-hub .is-light .nh-due { color: #a86a00 !important; }
 .neon-hub .is-light .nh-ls-badges li.warn { color: #a86a00; }
+
+/* ---------- Lifestyle: calendars ---------- */
+.neon-hub .nh-ls-cal { color: var(--nh-muted); }
+.neon-hub .nh-ls-calendars { display: grid; gap: 4px; margin-bottom: 14px; }
+.neon-hub .nh-ls-calrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: var(--nh-panel);
+  border: 1px solid var(--nh-line);
+  border-left: 3px solid var(--cal);
+}
+.neon-hub .nh-ls-calrow button { margin-left: auto !important; padding: 3px 10px; font-size: 12px; }
+.neon-hub .nh-ls-calrent { color: #f3e600; }
+.neon-hub .is-light .nh-ls-calrent { color: #a86a00; }
+.neon-hub .nh-ls-caldot { display: inline-block; width: 8px; height: 8px; background: var(--cal); transform: rotate(45deg); box-shadow: 0 0 5px var(--cal); }
+.neon-hub .nh-ls-calname { white-space: nowrap; }

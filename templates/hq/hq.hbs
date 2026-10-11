@@ -26,7 +26,7 @@
 
   <section class="nh-hq-stats">
     <div class="nh-stat nh-stat-ip"><span>{{localize "NEONHUB.HQ.Stat.IP"}}</span><strong>{{stats.ip}}</strong><small>{{localize "NEONHUB.HQ.Stat.Each" cost=stats.cost}}</small></div>
-    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Rent"}}</span><strong>{{stats.rent}}</strong><small class="{{#unless stats.rentPaid}}nh-due{{/unless}}">{{#if stats.rentPaid}}{{localize "NEONHUB.HQ.Stat.Paid"}}{{else}}{{localize "NEONHUB.HQ.Stat.Due"}}{{/if}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Rent"}}</span><strong>{{stats.rent}}</strong><small class="{{#unless stats.rentPaid}}nh-due{{/unless}}">{{#if stats.rentPaid}}{{localize "NEONHUB.HQ.Stat.Paid"}}{{else}}{{localize "NEONHUB.HQ.Stat.Due"}}{{/if}}{{#if stats.nextRent}} &middot; {{stats.nextRent}}{{/if}}</small></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Beds"}}</span><strong>{{stats.beds}}</strong></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Morale"}}</span><strong>{{stats.morale}}<em>/10</em></strong></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.HQ.Stat.Healing"}}</span><strong>{{#if stats.healing}}+{{stats.healing}}{{else}}&mdash;{{/if}}</strong><small>{{localize "NEONHUB.HQ.Stat.HealingHint"}}</small></div>
@@ -158,6 +158,11 @@
       <label class="nh-check"><input type="checkbox" data-path="housing.rentPaid" {{checked hq.housing.rentPaid}}> {{localize "NEONHUB.HQ.Field.rentPaid"}}</label>
       <label class="nh-check"><input type="checkbox" data-path="playersSeeAll" {{checked hq.playersSeeAll}}> {{localize "NEONHUB.HQ.Field.playersSeeAll"}}</label>
       <label>{{localize "NEONHUB.HQ.Field.ip"}}<input type="number" min="0" data-path="ip" data-dtype="Number" value="{{hq.ip}}"></label>
+      {{#if calendars}}
+      <label>{{localize "NEONHUB.HQ.Field.calendar"}}
+        <select data-path="calendarId">{{#each calendars}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      {{/if}}
     </div>
 
     <h3>{{localize "NEONHUB.HQ.Crew"}}</h3>

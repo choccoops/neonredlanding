@@ -1,6 +1,8 @@
 import { MODULE_ID, THEMES } from "../constants.js";
 import { HQStore, isActive, lifestyleDiscount, monthlyRent } from "../hq/hq-data.js";
-import { CATEGORIES, LS_FLAG, defaultLifestyle, describeItem } from "./ls-data.js";
+import { CalendarStore } from "../calendar/cal-store.js";
+import { nextRentDay } from "../calendar/cal-dates.js";
+import { CATEGORIES, LS_FLAG, defaultLifestyle, describeItem, monthsOwed } from "./ls-data.js";
 
 const { deepClone } = foundry.utils;
 
@@ -8,6 +10,7 @@ const { deepClone } = foundry.utils;
 export const LS_STATE_SETTING = "lifestyleState";
 export const LS_MANAGE_SETTING = "lifestylePlayerManage";
 export const LS_DEBT_SETTING = "lifestyleAllowDebt";
+export const LS_AUTOBILL_SETTING = "lifestyleAutoBill";
 /** Actor flag with that character's billing record. */
 export const LS_ACTOR_FLAG = "lifestyleState";
 /** World folder that homebrew lifestyle items are created in. */
@@ -40,6 +43,50 @@ export const LifestyleStore = {
       type: Boolean,
       default: true
     });
+    game.settings.register(MODULE_ID, LS_AUTOBILL_SETTING, {
+      name: "NEONHUB.Lifestyle.Setting.AutoBill",
+      hint: "NEONHUB.Lifestyle.Setting.AutoBillHint",
+      scope: "world",
+      config: true,
+      type: Boolean,
+      default: false
+    });
+  },
+
+  get autoBill() {
+    try {
+      return !!game.settings.get(MODULE_ID, LS_AUTOBILL_SETTING);
+    } catch {
+      return false;
+    }
+  },
+
+  /**
+   * Which month a character is billed for and how many they owe.
+   * With calendars, the character's calendar sets the month (its rent periods);
+   * without any, the shared month counter in this module's state does.
+   * @returns {{ mode: "calendar"|"counter", calendar, period, owed, label, firstLabel, next }}
+   */
+  billing(actor) {
+    const state = this.actorState(actor);
+    const calendar = CalendarStore.all().length ? CalendarStore.forActor(actor) : null;
+    if (calendar) {
+      const period = CalendarStore.period(calendar);
+      const owed = monthsOwed({ period, paidPeriod: state.paidPeriod });
+      return {
+        mode: "calendar",
+        calendar,
+        period,
+        owed,
+        label: CalendarStore.periodLabel(period),
+        firstLabel: CalendarStore.periodLabel(period - Math.max(owed, 1) + 1),
+        next: nextRentDay(calendar, calendar.rentDay)
+      };
+    }
+    const month = this.month;
+    const owed = state.paidMonth >= month ? 0 : 1;
+    const label = this.monthLabel(month);
+    return { mode: "counter", calendar: null, period: month, owed, label, firstLabel: label, next: null };
   },
 
   get state() {
@@ -94,11 +141,16 @@ export const LifestyleStore = {
   /*  Characters                              */
   /* ---------------------------------------- */
 
-  /** A character's billing record: the last month paid and recent bills. */
+  /**
+   * A character's billing record: the last counter month and calendar rent period paid
+   * (null if never billed by calendar), and recent bills.
+   */
   actorState(actor) {
     const raw = actor?.getFlag?.(MODULE_ID, LS_ACTOR_FLAG) ?? {};
+    const pp = Number(raw.paidPeriod);
     return {
       paidMonth: Math.max(0, Math.floor(Number(raw.paidMonth) || 0)),
+      paidPeriod: raw.paidPeriod === null || raw.paidPeriod === undefined || !Number.isFinite(pp) ? null : Math.floor(pp),
       history: Array.isArray(raw.history) ? deepClone(raw.history) : []
     };
   },

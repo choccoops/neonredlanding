@@ -6,6 +6,8 @@ import {
   beds, monthlyRent, moraleLevel, activeMoraleLevels, luckBonus, healingBodyBonus, lifestyleDiscount, canView, logEntry
 } from "./hq-data.js";
 import { HQOps } from "./hq-ops.js";
+import { CalendarStore } from "../calendar/cal-store.js";
+import { nextRentDay } from "../calendar/cal-dates.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -133,6 +135,8 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
     });
 
     const focus = this.#focusContext(hq, crewByRole);
+    const calendar = CalendarStore.forHQ(hq);
+    const next = calendar ? nextRentDay(calendar, calendar.rentDay) : null;
 
     return {
       hq,
@@ -154,8 +158,13 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
         morale: moraleLevel(hq),
         luck: luckBonus(hq),
         healing: healingBodyBonus(hq),
-        lifestyle: lifestyleDiscount(hq) ? eb(lifestyleDiscount(hq)) : null
+        lifestyle: lifestyleDiscount(hq) ? eb(lifestyleDiscount(hq)) : null,
+        nextRent: next ? (next.today ? L("NEONHUB.Calendar.Rent.Today") : L("NEONHUB.Calendar.Rent.In", { n: next.days })) : null
       },
+      calendars: CalendarStore.all().length
+        ? [{ key: "", label: L("NEONHUB.HQ.Field.calendarCrew"), selected: !hq.calendarId }, ...CalendarStore.all().map((c) => ({ key: c.id, label: c.name, selected: c.id === hq.calendarId }))]
+        : null,
+      calendarName: calendar?.name ?? null,
       log: [...hq.log].reverse().map((e) => ({
         ...e,
         date: new Date(e.t).toLocaleString(game.i18n.lang, { dateStyle: "medium", timeStyle: "short" }),

@@ -2,7 +2,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
   normalizeLifestyle, describeItem, lineCost, computeBill, humanityBonus, payoffAmount, loanTerms,
-  advanceLoans, reminders, packagesToDeactivate, pushHistory, billStatus, excerpt, changeKeyLabel, cprSlug, MAX_HISTORY
+  advanceLoans, reminders, packagesToDeactivate, pushHistory, billStatus, excerpt, changeKeyLabel, cprSlug, MAX_HISTORY,
+  computeMonths, monthsOwed
 } from "../scripts/lifestyle/ls-data.js";
 
 const M = "cpr-neon-hub";
@@ -102,6 +103,32 @@ test("advanceLoans counts installment loans down and reports the finished ones",
   const { updates, finished } = advanceLoans([a, b, c, unset]);
   assert.deepEqual(updates, [{ id: a.id, monthsLeft: 2 }]);
   assert.deepEqual(finished, [b.id]);
+});
+
+test("computeMonths bills several months and stops a loan when it's paid off", () => {
+  const rent = d({ category: "housing", monthly: 1000 });
+  const food = d({ category: "lifestyle", monthly: 300, tier: 2 });
+  const car = d({ category: "loan", monthly: 500, loan: { kind: "installment", monthsLeft: 2 } });
+  const three = computeMonths([rent, food, car], 3, { moraleDiscount: 50 });
+  assert.equal(three.months, 3);
+  assert.equal(three.groups.housing, 3000);
+  assert.equal(three.groups.lifestyle, 750, "discount applies each month");
+  assert.equal(three.discount, 150);
+  assert.equal(three.groups.loans, 1000, "only the two payments left");
+  assert.equal(three.total, 4750);
+  assert.deepEqual(three.finished, [car.id]);
+  assert.equal(three.lines.find((l) => l.id === car.id).months, 2);
+  const one = computeMonths([rent, car], 1);
+  assert.deepEqual(one.loans, [{ id: car.id, monthsLeft: 1 }]);
+  assert.equal(one.total, computeBill([rent, car]).total);
+});
+
+test("monthsOwed", () => {
+  assert.equal(monthsOwed({ period: 100, paidPeriod: null }), 1, "never billed: this month");
+  assert.equal(monthsOwed({ period: 100, paidPeriod: 100 }), 0);
+  assert.equal(monthsOwed({ period: 103, paidPeriod: 100 }), 3);
+  assert.equal(monthsOwed({ period: 140, paidPeriod: 100 }), 12, "capped");
+  assert.equal(monthsOwed({ period: 99, paidPeriod: 100 }), 0, "date moved back");
 });
 
 test("reminders list rough nights and monthly checks for active items only", () => {

@@ -22,7 +22,8 @@
       "macro": "Run a macro",
       "none": "Nothing (decoration)",
       "ownCharacter": "Their own character",
-      "lifestyle": "Open Lifestyle"
+      "lifestyle": "Open Lifestyle",
+      "calendar": "Open calendar"
     },
     "Audience": {
       "trigger": "Just the player who clicked",
@@ -58,7 +59,9 @@
       "Market": "Night market",
       "MarketSub": "Gear, chrome and no questions",
       "Lifestyle": "Lifestyle",
-      "LifestyleSub": "Rent, food and monthly bills"
+      "LifestyleSub": "Rent, food and monthly bills",
+      "Calendar": "Calendar",
+      "CalendarSub": "Today's date and rent day"
     },
     "UI": {
       "NewHub": "New hub",
@@ -73,7 +76,8 @@
       "PickShop": "Select an actor with a Neon Market shop",
       "Headquarters": "Headquarters",
       "UnknownHQ": "Unknown Headquarters",
-      "OpenLifestyle": "Open Lifestyle"
+      "OpenLifestyle": "Open Lifestyle",
+      "OpenCalendar": "Open calendar"
     },
     "Editor": {
       "Title": "Hub page",
@@ -425,7 +429,9 @@
         "rentFree": "Rent-free (owned or given by a patron)",
         "rentPaid": "This month's rent is paid",
         "playersSeeAll": "Every player can open it, not just the crew",
-        "ip": "HQ IP"
+        "ip": "HQ IP",
+        "calendar": "Calendar",
+        "calendarCrew": "The crew's calendar"
       },
       "Crew": "Crew",
       "CrewHint": "Drop the crew's characters here. Players who own a crew character can open this HQ.",
@@ -532,7 +538,8 @@
         "Wallet": "Wallet",
         "After": "after paying: {after}",
         "Humanity": "Furnishings",
-        "HumanityHint": "to monthly Humanity recovery"
+        "HumanityHint": "to monthly Humanity recovery",
+        "Owed": "Owes {n} months: {total}"
       },
       "Group": {
         "housing": "Housing",
@@ -632,7 +639,7 @@
         "Buy": "Buy {item} for {amount} from {name}'s wallet?",
         "AskTitle": "Ask the GM",
         "Ask": "Ask the GM to add {item}?",
-        "BillAll": "Charge every character who hasn't paid for {month}?"
+        "BillAll": "Charge every character who owes for their month?"
       },
       "Done": {
         "Paid": "{name}'s bill is paid.",
@@ -670,7 +677,8 @@
         "InDebt": "In debt. Time to find work, a fixer, or a loan shark.",
         "LoanDone": "{item} is paid off.",
         "HQRent": "{hq}: rent {rent} (about {share} each) is paid through the Headquarters.",
-        "Response": "{item}: rounds until help arrives"
+        "Response": "{item}: rounds until help arrives",
+        "Months": "{n} months"
       },
       "Error": {
         "NoActor": "That character no longer exists.",
@@ -686,7 +694,9 @@
         "Manage": "Players manage their own lifestyle",
         "ManageHint": "Players can add, switch on and off, and remove lifestyle items on their own characters. Corporate perks always need the GM. When off, players ask the GM.",
         "Debt": "Bills can put characters in debt",
-        "DebtHint": "When on, a monthly bill is paid even if the wallet goes below zero (Cyberpunk RED allows negative eurobucks). When off, a character who can't pay stays due."
+        "DebtHint": "When on, a monthly bill is paid even if the wallet goes below zero (Cyberpunk RED allows negative eurobucks). When off, a character who can't pay stays due.",
+        "AutoBill": "Charge bills automatically on rent day",
+        "AutoBillHint": "When a calendar passes its rent day, charge every character living by it straight away. When off, bills just become due."
       },
       "Config": {
         "Title": "Lifestyle settings",
@@ -745,7 +755,174 @@
         "Character": "Character",
         "Wallet": "Wallet",
         "Monthly": "Monthly bill",
-        "Status": "This month"
+        "Status": "This month",
+        "Calendar": "Calendar"
+      },
+      "OwedMonths": "{n} months: {total}",
+      "PayMonths": "Pay {n} months ({amount})",
+      "RentMonth": "rent month: {month}",
+      "AutoBillOn": "Bills are charged automatically on each calendar's rent day.",
+      "AutoBillOff": "On each calendar's rent day, bills become due; players pay them, or use Bill everyone due. Auto-charging is in Configure Settings → Neon Hub."
+    },
+    "Calendar": {
+      "Title": "Calendar",
+      "Kicker": "NC.CHRONO",
+      "Groups": "Groups",
+      "Yours": "yours",
+      "None": "No calendars yet",
+      "Timeline": "TIMELINE",
+      "Current": "CURRENT DATE",
+      "DayOfYear": "day",
+      "Shift": "SHIFT",
+      "Now": "NOW",
+      "Target": "TARGET",
+      "DblClickHint": "Click a day to target it; double-click to make it today at once.",
+      "Apply": "Set as today",
+      "ReadOnly": "View only: the GM sets the date",
+      "NoSignal": "NO SIGNAL",
+      "EmptyGM": "Make a calendar for each group. Its date runs that group's rent and lifestyle months.",
+      "EmptyPlayer": "The GM hasn't shared a calendar with you yet.",
+      "New": "New calendar",
+      "Edit": "Name, rent day, color, players",
+      "Duplicate": "Duplicate",
+      "Delete": "Delete calendar",
+      "DeleteBody": "Delete {name}? This can't be undone. Characters on it move to the first calendar.",
+      "MoveUp": "Move up",
+      "MoveDown": "Move down",
+      "PrevMonth": "Previous month",
+      "NextMonth": "Next month",
+      "ToCurrent": "To today",
+      "ToChat": "Post the date to chat",
+      "DefaultName": "Group {n}",
+      "CopyName": "{name} (copy)",
+      "Notify": "{name}: it's now {date}",
+      "Unit": {
+        "D": "d",
+        "M": "mo"
+      },
+      "Field": {
+        "Day": "Day",
+        "Month": "Month",
+        "Year": "Year"
+      },
+      "Rent": {
+        "Label": "RENT DAY",
+        "In": "in {n} days",
+        "Today": "today",
+        "PaidCount": "{paid}/{total} paid",
+        "YouOwe": "{months} month(s) due",
+        "OpenLifestyle": "Open Lifestyle",
+        "Go": "To rent day",
+        "GoTip": "Move the date to the next rent day: a new month starts for this calendar's characters and Headquarters"
+      },
+      "Moon": {
+        "new": "New moon",
+        "waxingCrescent": "Waxing crescent",
+        "firstQuarter": "First quarter",
+        "waxingGibbous": "Waxing gibbous",
+        "full": "Full moon",
+        "waningGibbous": "Waning gibbous",
+        "lastQuarter": "Last quarter",
+        "waningCrescent": "Waning crescent",
+        "At": "{phase}, {time}",
+        "ZoneTip": "Moon phases follow the real sky; days are counted in this time zone (Configure Settings → Neon Hub)."
+      },
+      "Dialog": {
+        "Name": "Name",
+        "Start": "Starting date",
+        "RentDay": "Rent day",
+        "RentDayHint": "Day of the month rent and lifestyle bills come due (a later day than the month has means its last day).",
+        "Accent": "Color",
+        "Players": "Who can see it",
+        "PlayersHint": "Nobody ticked: every player sees it. Someone ticked: only they and the GM do, and their characters are billed by this calendar.",
+        "NoPlayers": "There are no players in this world yet.",
+        "Create": "Create",
+        "Save": "Save"
+      },
+      "Chat": {
+        "Kicker": "GROUP DATE",
+        "RentKicker": "RENT DAY",
+        "RentDue": "Rent and lifestyle bills are due.",
+        "RentMonths": "{n} rent days passed: rent and lifestyle bills are due for each month.",
+        "Capped": "More than a year passed; Headquarters rolled 12 months.",
+        "HQs": "New month at {hqs}.",
+        "Billed": "{n} bills charged."
+      },
+      "Error": {
+        "RentDay": "The date moved, but rent day failed: {error}"
+      },
+      "Setting": {
+        "Zone": "Calendar time zone",
+        "ZoneHint": "IANA time zone the calendar's days are counted in, which decides the day each moon phase lands on. Night City is America/Los_Angeles.",
+        "WeekStart": "First day of the week",
+        "WeekStartHint": "Which day the calendar grid starts on (just for you).",
+        "Monday": "Monday",
+        "Sunday": "Sunday",
+        "Moon": "Show moon phases",
+        "MoonHint": "Show the real Moon's phase on each day of the calendar (just for you).",
+        "Notify": "Notify on date change",
+        "NotifyHint": "Pop up a notice when the GM changes the date of a calendar you can see."
+      },
+      "Month": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+      },
+      "Weekday": {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
+      },
+      "WeekdayShort": {
+        "0": "Sun",
+        "1": "Mon",
+        "2": "Tue",
+        "3": "Wed",
+        "4": "Thu",
+        "5": "Fri",
+        "6": "Sat"
+      },
+      "Jump": {
+        "Title": "Several rent days",
+        "Body": "This passes {n} rent days. Start each of those months (lifestyle bills for every month, Headquarters roll each month), or just move the date as a time skip?",
+        "Rent": "Start {n} months",
+        "Skip": "Just move the date"
+      },
+      "Notes": {
+        "Kicker": "NOTES",
+        "None": "No notes on this day.",
+        "Add": "Add a note",
+        "Title": "Title",
+        "Text": "Note (drag in journals, actors or items to link them)",
+        "Untitled": "Untitled note",
+        "Save": "Save",
+        "Cancel": "Cancel",
+        "Edit": "Edit",
+        "Delete": "Delete note",
+        "DeleteBody": "Delete the note {title}?",
+        "Empty": "Write a title or some text first.",
+        "ShareGM": "Visible to players",
+        "SharePlayer": "Share with my group",
+        "Show": "Show to the others",
+        "Hide": "Hide from the others",
+        "GM": "GM",
+        "GMOnly": "GM only",
+        "Private": "Private",
+        "Players": "Players",
+        "Group": "Group"
       }
     }
   }

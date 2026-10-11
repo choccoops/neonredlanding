@@ -1,0 +1,202 @@
+<div class="nh-cal {{#if busy}}is-busy{{/if}}">
+
+  {{!-- ============ calendars ============ --}}
+  <aside class="nh-cal-side">
+    <header class="nh-cal-side-head">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Calendar.Kicker"}}</span>
+      <span class="nh-cal-side-title">{{localize "NEONHUB.Calendar.Groups"}}</span>
+    </header>
+    <ol class="nh-cal-list">
+      {{#each calendars}}
+      <li class="nh-cal-item {{#if active}}is-active{{/if}}" data-action="select" data-id="{{id}}" style="--cal: {{color}}">
+        <span class="nh-cal-item-name">{{name}}</span>
+        <span class="nh-cal-item-meta">
+          <span class="nh-cal-item-date">{{short}}</span>
+          {{#if mine}}<span class="nh-cal-tag">{{localize "NEONHUB.Calendar.Yours"}}</span>{{/if}}
+          {{#if ../isGM}}{{#if restricted}}<i class="fa-solid fa-user-lock nh-cal-item-lock" data-tooltip="{{playersLabel}}"></i>{{/if}}{{/if}}
+        </span>
+      </li>
+      {{else}}
+      <li class="nh-cal-list-empty">{{localize "NEONHUB.Calendar.None"}}</li>
+      {{/each}}
+    </ol>
+    {{#if isGM}}<button type="button" class="nh-cal-btn nh-cal-btn-new" data-action="create"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Calendar.New"}}</button>{{/if}}
+  </aside>
+
+  {{!-- ============ active calendar ============ --}}
+  <section class="nh-cal-main">
+  {{#if active}}
+    <header class="nh-cal-head" style="--cal: {{active.color}}">
+      <div class="nh-cal-head-text">
+        <span class="nh-cal-kicker">// {{localize "NEONHUB.Calendar.Timeline"}}{{#if isGM}}{{#if active.playersLabel}} · <i class="fa-solid fa-user-lock"></i> {{active.playersLabel}}{{/if}}{{/if}}</span>
+        <h2 class="nh-cal-name" data-text="{{active.name}}">{{active.name}}</h2>
+      </div>
+      <div class="nh-cal-tools">
+        <button type="button" class="nh-cal-icon" data-action="chat" data-tooltip="{{localize 'NEONHUB.Calendar.ToChat'}}" aria-label="{{localize 'NEONHUB.Calendar.ToChat'}}"><i class="fa-solid fa-comment-dots"></i></button>
+        {{#if isGM}}
+        <button type="button" class="nh-cal-icon" data-action="moveUp" data-tooltip="{{localize 'NEONHUB.Calendar.MoveUp'}}" aria-label="{{localize 'NEONHUB.Calendar.MoveUp'}}"><i class="fa-solid fa-arrow-up"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="moveDown" data-tooltip="{{localize 'NEONHUB.Calendar.MoveDown'}}" aria-label="{{localize 'NEONHUB.Calendar.MoveDown'}}"><i class="fa-solid fa-arrow-down"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="edit" data-tooltip="{{localize 'NEONHUB.Calendar.Edit'}}" aria-label="{{localize 'NEONHUB.Calendar.Edit'}}"><i class="fa-solid fa-pen"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="duplicate" data-tooltip="{{localize 'NEONHUB.Calendar.Duplicate'}}" aria-label="{{localize 'NEONHUB.Calendar.Duplicate'}}"><i class="fa-solid fa-clone"></i></button>
+        <button type="button" class="nh-cal-icon is-danger" data-action="remove" data-tooltip="{{localize 'NEONHUB.Calendar.Delete'}}" aria-label="{{localize 'NEONHUB.Calendar.Delete'}}"><i class="fa-solid fa-trash"></i></button>
+        {{/if}}
+      </div>
+    </header>
+
+    <div class="nh-cal-readout" style="--cal: {{active.color}}">
+      <div class="nh-cal-readout-label">{{localize "NEONHUB.Calendar.Current"}}</div>
+      <div class="nh-cal-readout-body">
+        <div class="nh-cal-readout-day" data-text="{{active.dd}}">{{active.dd}}</div>
+        <div class="nh-cal-readout-rest">
+          <span class="nh-cal-readout-month">{{active.monthName}} <b>{{active.year}}</b></span>
+          <span class="nh-cal-readout-weekday">{{active.weekday}}</span>
+          <span class="nh-cal-readout-code">{{active.dd}}.{{active.mm}}.{{active.year}} · {{localize "NEONHUB.Calendar.DayOfYear"}} {{active.doy}}</span>
+        </div>
+        {{#if isGM}}
+        <div class="nh-cal-shift">
+          <span class="nh-cal-shift-label">{{localize "NEONHUB.Calendar.Shift"}}</span>
+          <div class="nh-cal-shift-row">
+            <button type="button" data-action="shift" data-unit="month" data-amount="-1">−1 {{localize "NEONHUB.Calendar.Unit.M"}}</button>
+            <button type="button" data-action="shift" data-unit="day" data-amount="-7">−7 {{localize "NEONHUB.Calendar.Unit.D"}}</button>
+            <button type="button" data-action="shift" data-unit="day" data-amount="-1">−1 {{localize "NEONHUB.Calendar.Unit.D"}}</button>
+          </div>
+          <div class="nh-cal-shift-row">
+            <button type="button" data-action="shift" data-unit="day" data-amount="1">+1 {{localize "NEONHUB.Calendar.Unit.D"}}</button>
+            <button type="button" data-action="shift" data-unit="day" data-amount="7">+7 {{localize "NEONHUB.Calendar.Unit.D"}}</button>
+            <button type="button" data-action="shift" data-unit="month" data-amount="1">+1 {{localize "NEONHUB.Calendar.Unit.M"}}</button>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="nh-cal-rent {{#if rent.today}}is-today{{/if}} {{#if rent.soon}}is-soon{{/if}}" style="--cal: {{active.color}}">
+      <span class="nh-cal-rent-label"><i class="fa-solid fa-house-chimney"></i> {{localize "NEONHUB.Calendar.Rent.Label"}} //</span>
+      <span class="nh-cal-rent-count">{{rent.text}}</span>
+      {{#unless rent.today}}<span class="nh-cal-rent-date">{{rent.date}}</span>{{/unless}}
+      {{#if rent.bills}}
+        {{#if rent.bills.gm}}
+        <button type="button" class="nh-cal-chip {{#if rent.bills.due}}is-due{{/if}}" data-action="lifestyle" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.OpenLifestyle'}}">{{rent.bills.text}}</button>
+        {{else}}
+        {{#each rent.bills.list}}<button type="button" class="nh-cal-chip {{#if due}}is-due{{/if}}" data-action="lifestyle" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.OpenLifestyle'}}">{{name}}: {{text}}</button>{{/each}}
+        {{/if}}
+      {{/if}}
+      {{#if isGM}}<button type="button" class="nh-cal-btn nh-cal-rent-go" data-action="toRentDay" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.GoTip'}}"><i class="fa-solid fa-forward-step"></i> {{localize "NEONHUB.Calendar.Rent.Go"}}</button>{{/if}}
+    </div>
+
+    <nav class="nh-cal-nav">
+      <button type="button" class="nh-cal-icon" data-action="prevMonth" aria-label="{{localize 'NEONHUB.Calendar.PrevMonth'}}"><i class="fa-solid fa-chevron-left"></i></button>
+      <select class="nh-cal-nav-month" aria-label="{{localize 'NEONHUB.Calendar.Field.Month'}}">
+        {{#each nav.months}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+      <input type="number" class="nh-cal-nav-year" value="{{nav.year}}" min="1" max="9999" aria-label="{{localize 'NEONHUB.Calendar.Field.Year'}}">
+      <button type="button" class="nh-cal-icon" data-action="nextMonth" aria-label="{{localize 'NEONHUB.Calendar.NextMonth'}}"><i class="fa-solid fa-chevron-right"></i></button>
+      {{#if moonZone}}<span class="nh-cal-zone" data-tooltip="{{localize 'NEONHUB.Calendar.Moon.ZoneTip'}}"><i class="fa-solid fa-moon"></i> {{moonZone}}</span>{{/if}}
+      <button type="button" class="nh-cal-btn nh-cal-nav-now {{#if nav.onCurrent}}is-dim{{/if}}" data-action="toCurrent"><i class="fa-solid fa-crosshairs"></i> {{localize "NEONHUB.Calendar.ToCurrent"}}</button>
+    </nav>
+
+    <div class="nh-cal-body">
+    <div class="nh-cal-grid {{#if isGM}}is-editable{{/if}}" style="--cal: {{active.color}}">
+      {{#each weekdays}}<div class="nh-cal-wd {{#if weekend}}is-weekend{{/if}}">{{label}}</div>{{/each}}
+      {{#each cells}}
+      <div class="nh-cal-day {{#if other}}is-other{{/if}} {{#if weekend}}is-weekend{{/if}} {{#if current}}is-current{{/if}} {{#if selected}}is-selected{{/if}} {{#if rent}}is-rent{{/if}} {{#if viewing}}is-viewing{{/if}}"
+           data-action="pick" data-y="{{y}}" data-m="{{m}}" data-d="{{d}}">
+        <span class="nh-cal-day-num">{{d}}</span>
+        {{#if current}}<span class="nh-cal-day-flag">{{localize "NEONHUB.Calendar.Now"}}</span>{{else}}{{#if rent}}<span class="nh-cal-day-rent" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.Label'}}"><i class="fa-solid fa-house-chimney"></i></span>{{/if}}{{/if}}
+        {{#if moon}}
+        <svg class="nh-cal-moon {{#if moon.principal}}is-principal{{/if}}" viewBox="-10 -10 20 20" data-tooltip="{{moon.tip}}" role="img" aria-label="{{moon.tip}}">
+          <circle r="9" class="nh-cal-moon-dark"/><path d="{{moon.path}}" class="nh-cal-moon-lit"/>
+        </svg>
+        {{/if}}
+        {{#if markers.length}}
+        <span class="nh-cal-day-markers">{{#each markers}}<i style="--mark: {{color}}" data-tooltip="{{name}}"></i>{{/each}}</span>
+        {{/if}}
+        {{#if note}}<span class="nh-cal-day-note is-{{note.kind}}" data-tooltip="{{note.tip}}"><i class="fa-solid fa-note-sticky"></i>{{#if note.count}}<b>{{note.count}}</b>{{/if}}</span>{{/if}}
+      </div>
+      {{/each}}
+    </div>
+
+    {{!-- ============ notes for the open day ============ --}}
+    <aside class="nh-cal-notes" style="--cal: {{active.color}}">
+      <header>
+        <span class="nh-cal-kicker">// {{localize "NEONHUB.Calendar.Notes.Kicker"}}</span>
+        <span class="nh-cal-notes-day">{{notes.label}}{{#if notes.today}} <em>{{localize "NEONHUB.Calendar.Now"}}</em>{{/if}}</span>
+      </header>
+      <div class="nh-cal-notes-list">
+        {{#each notes.list}}
+        <article class="nh-cal-note {{#if gm}}is-gm{{/if}} {{#if shared}}is-shared{{/if}}" data-note="{{id}}">
+          {{#if editing}}
+          <div class="nh-cal-note-form">
+            <input type="text" name="title" value="{{../notes.editing.title}}" maxlength="80" placeholder="{{localize 'NEONHUB.Calendar.Notes.Title'}}" aria-label="{{localize 'NEONHUB.Calendar.Notes.Title'}}">
+            <textarea name="text" rows="5" placeholder="{{localize 'NEONHUB.Calendar.Notes.Text'}}" aria-label="{{localize 'NEONHUB.Calendar.Notes.Text'}}">{{../notes.editing.text}}</textarea>
+            <label class="nh-cal-note-share"><input type="checkbox" name="shared" {{#if ../notes.editing.shared}}checked{{/if}}> {{../notes.shareLabel}}</label>
+            <div class="nh-cal-note-buttons">
+              <button type="button" class="nh-cal-btn" data-action="noteCancel">{{localize "NEONHUB.Calendar.Notes.Cancel"}}</button>
+              <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="noteSave"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Calendar.Notes.Save"}}</button>
+            </div>
+          </div>
+          {{else}}
+          <header>
+            <h4>{{title}}</h4>
+            {{#if canEdit}}
+            <button type="button" class="nh-cal-note-vis" data-action="noteShare" data-tooltip="{{#if shared}}{{localize 'NEONHUB.Calendar.Notes.Hide'}}{{else}}{{localize 'NEONHUB.Calendar.Notes.Show'}}{{/if}}" aria-label="{{#if shared}}{{localize 'NEONHUB.Calendar.Notes.Hide'}}{{else}}{{localize 'NEONHUB.Calendar.Notes.Show'}}{{/if}}"><i class="fa-solid {{#if shared}}fa-eye{{else}}fa-eye-slash{{/if}}"></i></button>
+            <button type="button" class="nh-cal-note-vis" data-action="noteEdit" aria-label="{{localize 'NEONHUB.Calendar.Notes.Edit'}}" data-tooltip="{{localize 'NEONHUB.Calendar.Notes.Edit'}}"><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="nh-cal-note-vis is-danger" data-action="noteDelete" aria-label="{{localize 'NEONHUB.Calendar.Notes.Delete'}}" data-tooltip="{{localize 'NEONHUB.Calendar.Notes.Delete'}}"><i class="fa-solid fa-trash"></i></button>
+            {{/if}}
+          </header>
+          {{#if html}}<div class="nh-cal-note-text">{{{html}}}</div>{{/if}}
+          <footer>
+            <span>{{author}}</span>
+            <span class="nh-cal-note-badge">{{#if shared}}<i class="fa-solid fa-eye"></i> {{#if gm}}{{localize "NEONHUB.Calendar.Notes.Players"}}{{else}}{{localize "NEONHUB.Calendar.Notes.Group"}}{{/if}}{{else}}<i class="fa-solid fa-eye-slash"></i> {{#if gm}}{{localize "NEONHUB.Calendar.Notes.GMOnly"}}{{else}}{{localize "NEONHUB.Calendar.Notes.Private"}}{{/if}}{{/if}}</span>
+          </footer>
+          {{/if}}
+        </article>
+        {{else}}
+        {{#unless notes.adding}}<p class="nh-cal-notes-empty">{{localize "NEONHUB.Calendar.Notes.None"}}</p>{{/unless}}
+        {{/each}}
+        {{#if notes.adding}}
+        <article class="nh-cal-note is-new">
+          <div class="nh-cal-note-form">
+            <input type="text" name="title" value="" maxlength="80" placeholder="{{localize 'NEONHUB.Calendar.Notes.Title'}}" aria-label="{{localize 'NEONHUB.Calendar.Notes.Title'}}" autofocus>
+            <textarea name="text" rows="5" placeholder="{{localize 'NEONHUB.Calendar.Notes.Text'}}" aria-label="{{localize 'NEONHUB.Calendar.Notes.Text'}}"></textarea>
+            <label class="nh-cal-note-share"><input type="checkbox" name="shared"> {{notes.shareLabel}}</label>
+            <div class="nh-cal-note-buttons">
+              <button type="button" class="nh-cal-btn" data-action="noteCancel">{{localize "NEONHUB.Calendar.Notes.Cancel"}}</button>
+              <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="noteSave"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Calendar.Notes.Save"}}</button>
+            </div>
+          </div>
+        </article>
+        {{/if}}
+      </div>
+      {{#unless notes.editing}}<button type="button" class="nh-cal-btn nh-cal-note-add" data-action="noteAdd"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Calendar.Notes.Add"}}</button>{{/unless}}
+    </aside>
+    </div>
+
+    {{#if isGM}}
+    <footer class="nh-cal-foot nh-cal-target">
+      <span class="nh-cal-foot-label">{{localize "NEONHUB.Calendar.Target"}} //</span>
+      <div class="nh-cal-date-inputs">
+        <input type="number" data-field="day" value="{{target.day}}" min="1" max="31" aria-label="{{localize 'NEONHUB.Calendar.Field.Day'}}">
+        <span>.</span>
+        <input type="number" data-field="month" value="{{target.month}}" min="1" max="12" aria-label="{{localize 'NEONHUB.Calendar.Field.Month'}}">
+        <span>.</span>
+        <input type="number" data-field="year" value="{{target.year}}" min="1" max="9999" class="is-year" aria-label="{{localize 'NEONHUB.Calendar.Field.Year'}}">
+      </div>
+      <span class="nh-cal-foot-weekday">{{target.weekday}}</span>
+      <i class="fa-solid fa-circle-info nh-cal-foot-info" data-tooltip="{{localize 'NEONHUB.Calendar.DblClickHint'}}"></i>
+      <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="apply" {{#unless target.changed}}disabled{{/unless}}><i class="fa-solid fa-bolt"></i> {{localize "NEONHUB.Calendar.Apply"}}</button>
+    </footer>
+    {{else}}
+    <footer class="nh-cal-foot is-readonly"><i class="fa-solid fa-lock"></i> {{localize "NEONHUB.Calendar.ReadOnly"}}</footer>
+    {{/if}}
+
+  {{else}}
+    <div class="nh-cal-empty">
+      <i class="fa-solid fa-calendar-xmark"></i>
+      <h2>{{localize "NEONHUB.Calendar.NoSignal"}}</h2>
+      <p>{{#if isGM}}{{localize "NEONHUB.Calendar.EmptyGM"}}{{else}}{{localize "NEONHUB.Calendar.EmptyPlayer"}}{{/if}}</p>
+      {{#if isGM}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="create"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Calendar.New"}}</button>{{/if}}
+    </div>
+  {{/if}}
+  </section>
+</div>

@@ -230,10 +230,12 @@ export const MATT = {
       fn: async (args = {}) => {
         const { action } = args;
         const entities = await app.getEntities(args, "actors");
-        const actor = entities.map((e) => (e instanceof TokenDocument ? e.actor : e)).find((e) => e instanceof Actor);
-        if (!actor) return;
+        // An unlinked token's shop belongs to that token: send the token, which Neon Market resolves itself.
+        const source = entities.map((e) => (e instanceof Token ? e.document : e)).find((e) => e instanceof Actor || (e instanceof TokenDocument && e.actor));
+        if (!source) return;
+        const actor = source instanceof TokenDocument ? source.actor : source;
         const users = app.getForPlayers(action.data.showto || "trigger", args);
-        if (users.length) HubSocket.emit("openShop", { uuid: actor.uuid }, users);
+        if (users.length) HubSocket.emit("openShop", { uuid: source.uuid }, users);
         return { entities: [actor] };
       },
       content: async (trigger, action) => {

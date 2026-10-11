@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.6.1
+
+- **Fixed: shop buttons didn't list Neon Market shops set up on tokens.** Neon Market's shop settings open from the token HUD, and an unlinked token (how Cyberpunk RED NPCs come by default) keeps its shop on the token, not on the actor in the Actors directory, which was the only place the list looked. The list now also shows those token shops, grouped by scene, and the button opens that token's shop.
+- **Closed shops are listed too.** The list only showed shops ticked *Open for business*, and Neon Market starts shops closed. It now lists every shop, marks closed ones, and warns on a button whose shop is closed (players clicking it would get "shop closed").
+- **Dropping a shop's actor now makes a shop button**, open or closed, on the button list or a button's drop zone. Dropping an actor that isn't a shop on a shop button says so instead of doing nothing, and a drop that fails shows the error.
+- Each drop zone says what it takes ("Or drop a shop's actor here", "Or drop a scene here", …).
+- The hub editor no longer breaks for shop buttons when Neon Market is disabled.
+
 ## 1.6.0
 
 - **Skip time.** A Cyberpunk 2077-style time skip, from the **Skip** button on the calendar's time strip (GM) or `skipTime()` in the API. It opens on everyone's screen: players drag the hand around a 24-hour dial and vote, everyone sees the votes and the group's call (the median vote), and the GM goes with the call, any one vote or their own dial. Then every screen winds the clock through the skip: the sky over a Night City skyline turns from day to night, the sun and moon rise and set (sun times from SmallTime, the moon from its real phase), and each sunrise, sunset, moonrise, moonset and midnight is called out as it passes. The world clock moves on at the end, so calendars change day as usual.

@@ -3,21 +3,17 @@
 Same process as Neon Market: pushing a version tag builds a release with a `module.json` and
 `module.zip` that Foundry installs and updates from.
 
-## First-time setup
+## Repository
 
-Create an empty, **public** repository named `cpr-neon-hub` on GitHub or GitLab, then from this folder:
-
-```bash
-git remote add origin https://github.com/YOUR-NAME/cpr-neon-hub.git
-git push -u origin main --tags
-```
-
-The `v1.0.0` tag runs the first release (**Actions** on GitHub, **Build > Pipelines** on GitLab).
+The module is published from the public GitHub repository
+[choccoops/neonredlanding](https://github.com/choccoops/neonredlanding), which is this folder's
+`origin` remote. Builds run under its **Actions** tab.
 
 **Manifest URL for Foundry's Install Module box:**
 
-- GitHub: `https://github.com/YOUR-NAME/cpr-neon-hub/releases/latest/download/module.json`
-- GitLab: `https://gitlab.com/YOUR-NAME/cpr-neon-hub/-/releases/permalink/latest/downloads/module.json`
+`https://github.com/choccoops/neonredlanding/releases/latest/download/module.json`
+
+`.gitlab-ci.yml` is kept for a GitLab mirror; one isn't set up.
 
 ## Releasing an update
 

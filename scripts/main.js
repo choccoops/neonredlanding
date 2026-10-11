@@ -19,6 +19,7 @@ import { NotesStore } from "./calendar/cal-notes.js";
 import { Messenger } from "./messenger.js";
 import { HubHover } from "./hub/hover.js";
 import { Clock } from "./calendar/clock.js";
+import { SkipTimeApp } from "./calendar/skip-app.js";
 import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
@@ -131,6 +132,9 @@ Hooks.once("init", () => {
       return Clock.setTime(minutes);
     },
 
+    /** GM: open the Skip time window on everyone's screen; players vote, the GM winds the clock on. */
+    skipTime: () => SkipTimeApp.start(),
+
     /** Open a Night City Messenger window here (inbox, compose, contacts; GM: networks, admin). Needs that module. */
     openMessenger: (view = "inbox") => Messenger.open(view),
     /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
@@ -139,7 +143,7 @@ Hooks.once("init", () => {
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
     hoverStatus: () => HubHover.status(),
 
-    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp }
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp }
   };
 });
 
@@ -152,6 +156,7 @@ Hooks.once("ready", () => {
   HubSocket.on("openLifestyle", () => LifestyleApp.open());
   HubSocket.on("openCalendar", () => CalendarApp.open());
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
+  SkipTimeApp.registerSocket();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
 

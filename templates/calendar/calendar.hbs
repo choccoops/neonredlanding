@@ -79,6 +79,7 @@
       <div class="nh-cal-clock-steps">
         {{#each clock.steps}}<button type="button" data-action="clockStep" data-minutes="{{minutes}}">{{label}}</button>{{/each}}
       </div>
+      <button type="button" class="nh-cal-btn nh-cal-clock-skip" data-action="skipTime" data-tooltip="{{localize 'NEONHUB.Skip.Tip'}}"><i class="fa-solid fa-forward-fast"></i> {{localize "NEONHUB.Skip.Open"}}</button>
       {{/if}}
       <span class="nh-cal-clock-link {{#unless clock.follows}}is-off{{/unless}}" data-tooltip="{{#if clock.follows}}{{localize 'NEONHUB.Clock.FollowsTip'}}{{else}}{{localize 'NEONHUB.Clock.NotFollowingTip'}}{{/if}}"><i class="fa-solid {{#if clock.follows}}fa-link{{else}}fa-link-slash{{/if}}"></i></span>
       <button type="button" class="nh-cal-icon" data-action="smallTime" data-tooltip="{{localize 'NEONHUB.Clock.Toggle'}}" aria-label="{{localize 'NEONHUB.Clock.Toggle'}}"><i class="fa-solid fa-circle-half-stroke"></i></button>

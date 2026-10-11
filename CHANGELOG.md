@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0
+
+- **Skip time.** A Cyberpunk 2077-style time skip, from the **Skip** button on the calendar's time strip (GM) or `skipTime()` in the API. It opens on everyone's screen: players drag the hand around a 24-hour dial and vote, everyone sees the votes and the group's call (the median vote), and the GM goes with the call, any one vote or their own dial. Then every screen winds the clock through the skip: the sky over a Night City skyline turns from day to night, the sun and moon rise and set (sun times from SmallTime, the moon from its real phase), and each sunrise, sunset, moonrise, moonset and midnight is called out as it passes. The world clock moves on at the end, so calendars change day as usual.
+
 ## 1.5.0
 
 The calendar runs on SmallTime's clock.

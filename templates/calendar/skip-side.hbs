@@ -1,0 +1,46 @@
+<aside class="nh-skip-side">
+  <header>
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Skip.Kicker"}}</span>
+    <span class="nh-skip-side-title">{{localize "NEONHUB.Skip.Votes"}}</span>
+  </header>
+  <ul class="nh-skip-votes">
+    {{#each users}}
+    <li class="{{#if self}}is-self{{/if}}" style="--player: {{color}}">
+      <i class="nh-skip-dot"></i><span class="nh-skip-voter">{{name}}</span>
+      {{#if label}}
+        {{#if ../isGM}}<button type="button" class="nh-skip-vote" data-action="adopt" data-minutes="{{minutes}}" data-tooltip="{{localize 'NEONHUB.Skip.UseVote'}}" {{#if ../running}}disabled{{/if}}>{{label}}</button>
+        {{else}}<b class="nh-skip-vote">{{label}}</b>{{/if}}
+      {{else}}<em>{{localize "NEONHUB.Skip.Waiting"}}</em>{{/if}}
+    </li>
+    {{else}}
+    <li class="is-empty">{{localize "NEONHUB.Skip.NoPlayers"}}</li>
+    {{/each}}
+  </ul>
+
+  <div class="nh-skip-call">
+    <span>{{localize "NEONHUB.Skip.Call"}} //</span>
+    {{#if call}}<b>{{call.label}}</b>{{#if isGM}}<button type="button" class="nh-cal-btn" data-action="adopt" data-minutes="{{call.minutes}}" {{#if running}}disabled{{/if}}>{{localize "NEONHUB.Skip.UseCall"}}</button>{{/if}}
+    {{else}}<em>{{localize "NEONHUB.Skip.NoVotes"}}</em>{{/if}}
+  </div>
+
+  <div class="nh-skip-nudge">
+    <button type="button" data-action="nudge" data-minutes="-60" {{#if running}}disabled{{/if}}>−1h</button>
+    <button type="button" data-action="nudge" data-minutes="-15" {{#if running}}disabled{{/if}}>−15m</button>
+    <button type="button" data-action="nudge" data-minutes="15" {{#if running}}disabled{{/if}}>+15m</button>
+    <button type="button" data-action="nudge" data-minutes="60" {{#if running}}disabled{{/if}}>+1h</button>
+  </div>
+
+  <div class="nh-skip-along">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Skip.Along"}}</span>
+    <ul class="nh-skip-events"></ul>
+  </div>
+
+  <footer class="nh-skip-foot">
+    {{#if isGM}}
+    <button type="button" class="nh-cal-btn" data-action="cancel" {{#if running}}disabled{{/if}}>{{localize "NEONHUB.Skip.Cancel"}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="run" {{#if running}}disabled{{/if}}><i class="fa-solid fa-forward-fast"></i> {{localize "NEONHUB.Skip.Run"}} <span data-dial-label>{{dial}}</span></button>
+    {{else}}
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="vote" {{#if running}}disabled{{/if}}><i class="fa-solid fa-hand"></i> {{#if voted}}{{localize "NEONHUB.Skip.ChangeVote"}}{{else}}{{localize "NEONHUB.Skip.Vote"}}{{/if}} <span data-dial-label>{{dial}}</span></button>
+    {{/if}}
+  </footer>
+</aside>

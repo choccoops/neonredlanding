@@ -35,7 +35,8 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
     window: { title: "NEONHUB.HQ.Title", icon: "fa-solid fa-house-signal", resizable: true },
     position: { width: 1120, height: 780 },
     actions: {
-      tab: HQApp.#onTab,
+      // Not "tab": ApplicationV2 handles data-action="tab" itself and never calls ours.
+      view: HQApp.#onTab,
       focus: HQApp.#onFocus,
       purchase: HQApp.#onPurchase,
       upgrade: HQApp.#onUpgrade,

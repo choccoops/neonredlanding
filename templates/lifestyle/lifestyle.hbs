@@ -42,13 +42,13 @@
 
   <nav class="nh-tabs" role="tablist">
     {{#if actor}}
-    <button type="button" role="tab" class="{{#if tab.current}}active{{/if}}" data-action="tab" data-tab="current"><i class="fa-solid fa-wallet"></i> {{localize "NEONHUB.Lifestyle.Tab.current"}}</button>
-    <button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>
-    <button type="button" role="tab" class="{{#if tab.bills}}active{{/if}}" data-action="tab" data-tab="bills"><i class="fa-solid fa-receipt"></i> {{localize "NEONHUB.Lifestyle.Tab.bills"}}</button>
+    <button type="button" role="tab" class="{{#if tab.current}}active{{/if}}" data-action="view" data-tab="current"><i class="fa-solid fa-wallet"></i> {{localize "NEONHUB.Lifestyle.Tab.current"}}</button>
+    <button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="view" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>
+    <button type="button" role="tab" class="{{#if tab.bills}}active{{/if}}" data-action="view" data-tab="bills"><i class="fa-solid fa-receipt"></i> {{localize "NEONHUB.Lifestyle.Tab.bills"}}</button>
     {{/if}}
     {{#if isGM}}
-    <button type="button" role="tab" class="{{#if tab.month}}active{{/if}}" data-action="tab" data-tab="month"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Lifestyle.Tab.month"}}</button>
-    {{#unless actor}}<button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>{{/unless}}
+    <button type="button" role="tab" class="{{#if tab.month}}active{{/if}}" data-action="view" data-tab="month"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Lifestyle.Tab.month"}}</button>
+    {{#unless actor}}<button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="view" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>{{/unless}}
     {{/if}}
     <div class="nh-gm-tools">
       {{#if canPay}}<button type="button" class="nh-cta" data-action="pay"><i class="fa-solid fa-money-bill-wave"></i> {{#if owed}}{{localize "NEONHUB.Lifestyle.PayMonths" n=owed.months amount=payAmount}}{{else}}{{localize "NEONHUB.Lifestyle.PayNow" amount=payAmount}}{{/if}}</button>{{/if}}
@@ -107,7 +107,7 @@
     <div class="nh-ls-empty">
       <i class="fa-solid fa-person-shelter"></i>
       <p>{{localize "NEONHUB.Lifestyle.Empty"}}</p>
-      <button type="button" class="nh-cta" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.BrowseCatalog"}}</button>
+      <button type="button" class="nh-cta" data-action="view" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.BrowseCatalog"}}</button>
     </div>
     {{/if}}
   </div>

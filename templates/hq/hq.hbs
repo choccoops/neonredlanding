@@ -35,9 +35,9 @@
   </section>
 
   <nav class="nh-tabs" role="tablist">
-    <button type="button" role="tab" class="{{#if tab.improvements}}active{{/if}}" data-action="tab" data-tab="improvements"><i class="fa-solid fa-cubes"></i> {{localize "NEONHUB.HQ.Tab.improvements"}}</button>
-    {{#if isGM}}<button type="button" role="tab" class="{{#if tab.setup}}active{{/if}}" data-action="tab" data-tab="setup"><i class="fa-solid fa-sliders"></i> {{localize "NEONHUB.HQ.Tab.setup"}}</button>{{/if}}
-    <button type="button" role="tab" class="{{#if tab.log}}active{{/if}}" data-action="tab" data-tab="log"><i class="fa-solid fa-list"></i> {{localize "NEONHUB.HQ.Tab.log"}}</button>
+    <button type="button" role="tab" class="{{#if tab.improvements}}active{{/if}}" data-action="view" data-tab="improvements"><i class="fa-solid fa-cubes"></i> {{localize "NEONHUB.HQ.Tab.improvements"}}</button>
+    {{#if isGM}}<button type="button" role="tab" class="{{#if tab.setup}}active{{/if}}" data-action="view" data-tab="setup"><i class="fa-solid fa-sliders"></i> {{localize "NEONHUB.HQ.Tab.setup"}}</button>{{/if}}
+    <button type="button" role="tab" class="{{#if tab.log}}active{{/if}}" data-action="view" data-tab="log"><i class="fa-solid fa-list"></i> {{localize "NEONHUB.HQ.Tab.log"}}</button>
     {{#if isGM}}
     <div class="nh-gm-tools">
       <input type="number" name="awardAmount" placeholder="IP" aria-label="{{localize 'NEONHUB.HQ.AwardAmount'}}">

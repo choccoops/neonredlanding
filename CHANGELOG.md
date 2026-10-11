@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1
+
+- **Fixed: hovered buttons didn't light up.** Neon Hub changed only the tile's mesh, and Foundry v12 redrew the tile from its own texture straight away. The lit image now goes on both, the way Monk's Active Tile Triggers swaps tile images, and the pointer is read the way MATT reads it for its hover triggers. No rebuild needed if you rebuilt for 1.4.0.
+- New console helper for troubleshooting: `game.modules.get("cpr-neon-hub").api.hoverStatus()`.
+
 ## 1.4.0
 
 Hub buttons react to the pointer.

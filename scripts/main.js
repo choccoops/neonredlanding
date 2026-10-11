@@ -118,6 +118,9 @@ Hooks.once("init", () => {
     /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
     showMessenger: (view = "inbox", userIds = null) => HubSocket.emit("openMessenger", { view }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
 
+    /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
+    hoverStatus: () => HubHover.status(),
+
     apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp }
   };
 });

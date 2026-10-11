@@ -1,0 +1,169 @@
+{
+  "_id": "VAkXc55HiEtePLLS",
+  "_key": "!items!VAkXc55HiEtePLLS",
+  "name": "Heartthrob",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/blue_glass.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 700,
+  "system": {
+    "description": {
+      "value": "<p><strong>Primary (2 hours):</strong> single, ready to mingle and open to almost any offer. +2 Conversation and Dance; −2 Deduction, Human Perception and Persuasion.</p><p><strong>Secondary (DV15):</strong> addicted. −1 Resist Torture/Drugs. Now and then the GM tells you that you crave a rush; any drug will do.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "consumed": "Heartthrob Primary"
+  },
+  "effects": [
+    {
+      "_id": "4opLUKw8PkJZKEA6",
+      "_key": "!items.effects!VAkXc55HiEtePLLS.4opLUKw8PkJZKEA6",
+      "name": "Heartthrob Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/blue_glass.svg",
+      "changes": [
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "bonuses.deduction",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "-2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "BG4D3TtmY57eEzmc",
+      "_key": "!items.effects!VAkXc55HiEtePLLS.BG4D3TtmY57eEzmc",
+      "name": "Heartthrob Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/blue_glass.svg",
+      "changes": [
+        {
+          "key": "bonuses.resistTortureOrDrugs",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

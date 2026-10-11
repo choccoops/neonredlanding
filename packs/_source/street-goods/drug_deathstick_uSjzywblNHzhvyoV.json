@@ -1,0 +1,149 @@
+{
+  "_id": "uSjzywblNHzhvyoV",
+  "_key": "!items!uSjzywblNHzhvyoV",
+  "name": "Deathstick",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p><strong>Primary (1 hour):</strong> you shrug off pain: +2 damage reduction, but your Death Save penalty is 1 higher.</p><p><strong>Secondary (DV15):</strong> addicted. −1 damage reduction and Death Save penalty 2 higher.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "consumed": "Deathstick Primary"
+  },
+  "effects": [
+    {
+      "_id": "mWBWeQffuZzKzD6q",
+      "_key": "!items.effects!uSjzywblNHzhvyoV.mWBWeQffuZzKzD6q",
+      "name": "Deathstick Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+      "changes": [
+        {
+          "key": "bonuses.universalDamageReduction",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "bonuses.deathSavePenalty",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat",
+              "1": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "KBQR3UIwtwLXPQHG",
+      "_key": "!items.effects!uSjzywblNHzhvyoV.KBQR3UIwtwLXPQHG",
+      "name": "Deathstick Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+      "changes": [
+        {
+          "key": "bonuses.universalDamageReduction",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.deathSavePenalty",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat",
+              "1": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

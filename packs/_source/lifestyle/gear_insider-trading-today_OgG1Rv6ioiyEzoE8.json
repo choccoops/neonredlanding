@@ -1,0 +1,117 @@
+{
+  "_id": "OgG1Rv6ioiyEzoE8",
+  "_key": "!items!OgG1Rv6ioiyEzoE8",
+  "name": "Insider Trading Today",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+  "folder": "AjAxrLpsmQYRMYh1",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Market tips, deal gossip, and who's about to be bought out.</p><p>Screamsheet subscription: <strong>50eb a month</strong>.</p><p>Each month, a <strong>DV15 Library Search</strong> Check tracks down the latest issue.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "ux8bgboyUPsEbBA2",
+      "_key": "!items.effects!OgG1Rv6ioiyEzoE8.ux8bgboyUPsEbBA2",
+      "name": "Insider Trading Today",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+      "changes": [
+        {
+          "key": "bonuses.business",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.trading",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "subscription",
+        "monthly": 50,
+        "check": {
+          "skill": "Library Search",
+          "dv": 15
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

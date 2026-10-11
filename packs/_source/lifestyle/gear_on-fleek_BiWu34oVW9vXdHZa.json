@@ -1,0 +1,117 @@
+{
+  "_id": "BiWu34oVW9vXdHZa",
+  "_key": "!items!BiWu34oVW9vXdHZa",
+  "name": "On Fleek",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+  "folder": "AjAxrLpsmQYRMYh1",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p>Who's wearing what, who's seen where, and what's out of style by Friday.</p><p>Screamsheet subscription: <strong>50eb a month</strong>.</p><p>Each month, a <strong>DV15 Library Search</strong> Check tracks down the latest issue.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "IX1u5jzK2raqh5Qu",
+      "_key": "!items.effects!BiWu34oVW9vXdHZa.IX1u5jzK2raqh5Qu",
+      "name": "On Fleek",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.streetwise",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "subscription",
+        "monthly": 50,
+        "check": {
+          "skill": "Library Search",
+          "dv": 15
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

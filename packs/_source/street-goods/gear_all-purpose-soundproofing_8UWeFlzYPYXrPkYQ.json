@@ -1,0 +1,96 @@
+{
+  "_id": "8UWeFlzYPYXrPkYQ",
+  "_key": "!items!8UWeFlzYPYXrPkYQ",
+  "name": "All-Purpose Soundproofing",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/goods/soundproofing.svg",
+  "folder": "Y9FMWz5M5Etny5z6",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Soundproofs one room completely. +2 Concentration when working there (situational). Installing it may break a corporate housing contract; ask HR first.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "toggled",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "Hn2MvFwQpi4cEsTn",
+      "_key": "!items.effects!8UWeFlzYPYXrPkYQ.Hn2MvFwQpi4cEsTn",
+      "name": "Soundproofed Room",
+      "img": "modules/cpr-neon-hub/assets/goods/soundproofing.svg",
+      "changes": [
+        {
+          "key": "bonuses.concentration",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

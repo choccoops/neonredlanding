@@ -7,6 +7,11 @@ import { HQOps } from "./hq/hq-ops.js";
 import { HQApp } from "./hq/hq-app.js";
 import { HubBuilder } from "./hub/builder.js";
 import { HubEditor } from "./hub/hub-editor.js";
+import { LS_FLAG } from "./lifestyle/ls-data.js";
+import { LifestyleStore } from "./lifestyle/ls-store.js";
+import { LifestyleOps } from "./lifestyle/ls-ops.js";
+import { LifestyleApp } from "./lifestyle/ls-app.js";
+import { LifestyleItemConfig } from "./lifestyle/ls-item-config.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -22,11 +27,15 @@ Hooks.on("setupTileActions", (app) => {
 
 Hooks.once("init", () => {
   HQStore.register();
+  LifestyleStore.register();
 
   Compat.loadTemplates([
     `${TEMPLATE_PATH}/hub/editor.hbs`,
     `${TEMPLATE_PATH}/hq/hq.hbs`,
-    `${TEMPLATE_PATH}/hq/month-card.hbs`
+    `${TEMPLATE_PATH}/hq/month-card.hbs`,
+    `${TEMPLATE_PATH}/lifestyle/lifestyle.hbs`,
+    `${TEMPLATE_PATH}/lifestyle/bill-card.hbs`,
+    `${TEMPLATE_PATH}/lifestyle/item-config.hbs`
   ]);
 
   game.modules.get(MODULE_ID).api = {
@@ -49,15 +58,32 @@ Hooks.once("init", () => {
     /** GM: give a Headquarters HQ IP (the DLC: equal to the Group IP from a mission). */
     awardHQIP: (id, amount, reason) => HQOps.awardIP(id, amount, reason),
     createHQ: () => HQApp.create(),
-    apps: { HubEditor, HQApp }
+
+    /** Open the Lifestyle window on this client (an Actor or uuid; default: your own character). */
+    openLifestyle: (actor = null) => LifestyleApp.open(actor),
+    /** GM: open each listed user's own Lifestyle window (default: every connected player). */
+    showLifestyle: (userIds = null) => HubSocket.emit("openLifestyle", {}, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
+    /** This month's bill for a character: { items, bill: { lines, groups, discount, total }, wallet, status, ... }. */
+    lifestyleBill: async (actor) => LifestyleOps.billFor(typeof actor === "string" ? await fromUuid(actor) : actor),
+    /** Pay this month's lifestyle bill for a character (owners and GM). */
+    payLifestyle: async (actor) => LifestyleOps.perform("pay", { actor: typeof actor === "string" ? actor : actor.uuid }),
+    /** GM: start the next month. Options: { hqs: true, bill: false }. */
+    newLifestyleMonth: (options = {}) => LifestyleOps.newMonth(options),
+    /** GM: charge every character whose bill is due. */
+    billLifestyles: () => LifestyleOps.billAll(),
+    lifestyleMonth: () => LifestyleStore.month,
+
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig }
   };
 });
 
 Hooks.once("ready", () => {
   HubSocket.init();
   HQOps.init();
+  LifestyleOps.init();
   HubSocket.on("openShop", ({ uuid }) => MATT.openShop(uuid));
   HubSocket.on("openHQ", ({ id }) => HQApp.open(id));
+  HubSocket.on("openLifestyle", () => LifestyleApp.open());
 
   if (!game.user.isGM) return;
   if (game.system.id !== SYSTEM_ID) ui.notifications.warn(L("NEONHUB.Error.WrongSystem", { system: game.system.title }));
@@ -68,10 +94,48 @@ Hooks.once("ready", () => {
 /*  Keep open windows current                 */
 /* ------------------------------------------ */
 
-Hooks.on(`${MODULE_ID}.hqChanged`, () => HQApp.refreshAll());
+Hooks.on(`${MODULE_ID}.hqChanged`, () => {
+  HQApp.refreshAll();
+  LifestyleApp.refresh();
+});
+Hooks.on(`${MODULE_ID}.lifestyleChanged`, () => LifestyleApp.refresh());
 Hooks.on("updateActor", (actor) => {
   for (const app of HQApp.instances.values()) if (app.hq?.crew.includes(actor.uuid)) app.render();
+  LifestyleApp.refreshFor(actor);
 });
+
+/* ------------------------------------------ */
+/*  Lifestyle items                           */
+/* ------------------------------------------ */
+
+/**
+ * Keep lifestyle state right however an item changes, including from the CPR sheet's own
+ * equip toggle: one lifestyle package active at a time, and the CPR actor's
+ * system.lifestyle fields mirrored. Writes made by LifestyleOps are tagged and skipped here.
+ */
+function onLifestyleItem(item, options, userId, { activated = false, touched = false } = {}) {
+  const flagged = !!item.getFlag?.(MODULE_ID, LS_FLAG);
+  const actor = item.parent;
+  if (!(actor instanceof Actor)) {
+    // A world or compendium item: the catalog may have changed.
+    if (flagged || touched) LifestyleApp.refresh({ catalog: true });
+    return;
+  }
+  LifestyleApp.refreshFor(actor);
+  if (!flagged || userId !== game.user.id || options?.neonHub === "lifestyle") return;
+  (async () => {
+    if (activated) await LifestyleOps.keepOnePackage(actor, item.id);
+    await LifestyleOps.syncActor(actor);
+  })().catch((err) => console.warn(`${MODULE_ID} | lifestyle sync failed for ${actor.name}`, err));
+}
+
+Hooks.on("createItem", (item, options, userId) => onLifestyleItem(item, options, userId, { activated: item.system?.equipped === "equipped" }));
+Hooks.on("updateItem", (item, changes, options, userId) => {
+  const touched = foundry.utils.hasProperty(changes, `flags.${MODULE_ID}`);
+  if (!item.getFlag?.(MODULE_ID, LS_FLAG) && !touched) return;
+  onLifestyleItem(item, options, userId, { activated: foundry.utils.getProperty(changes, "system.equipped") === "equipped", touched });
+});
+Hooks.on("deleteItem", (item, options, userId) => onLifestyleItem(item, options, userId));
 
 /* ------------------------------------------ */
 /*  Entry points in the sidebar               */
@@ -98,8 +162,40 @@ Hooks.on("renderSceneDirectory", (app, html) => {
 });
 
 Hooks.on("renderActorDirectory", (app, html) => {
-  if (!game.user.isGM && !HQStore.visibleTo().length) return;
-  addHeaderButton(html, { cls: "neon-hub-hq", icon: "fa-solid fa-house-signal", label: L("NEONHUB.UI.Headquarters"), onClick: () => chooseHQ() });
+  if (game.user.isGM || HQStore.visibleTo().length) {
+    addHeaderButton(html, { cls: "neon-hub-hq", icon: "fa-solid fa-house-signal", label: L("NEONHUB.UI.Headquarters"), onClick: () => chooseHQ() });
+  }
+  if (game.user.isGM || LifestyleStore.viewable().length) {
+    addHeaderButton(html, { cls: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", label: L("NEONHUB.Lifestyle.Title"), onClick: () => LifestyleApp.open() });
+  }
+});
+
+/* ------------------------------------------ */
+/*  Sheet header buttons                      */
+/* ------------------------------------------ */
+
+const lifestyleForActor = (actor) => actor?.type === "character" && (game.user.isGM || actor.isOwner);
+const lifestyleForItem = (item) => game.user.isGM && item?.type === "gear";
+
+// CPR 0.92 sheets are Application V1.
+Hooks.on("getActorSheetHeaderButtons", (sheet, buttons) => {
+  const actor = sheet.actor ?? sheet.document;
+  if (!lifestyleForActor(actor)) return;
+  buttons.unshift({ label: "NEONHUB.Lifestyle.Title", class: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", onclick: () => LifestyleApp.open(actor) });
+});
+Hooks.on("getItemSheetHeaderButtons", (sheet, buttons) => {
+  const item = sheet.item ?? sheet.document;
+  if (!lifestyleForItem(item)) return;
+  buttons.unshift({ label: "NEONHUB.Lifestyle.Short", class: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", onclick: () => LifestyleItemConfig.open(item) });
+});
+// Application V2 sheets (a later CPR release on Foundry v13+).
+Hooks.on("getHeaderControlsActorSheetV2", (sheet, controls) => {
+  if (!lifestyleForActor(sheet.document)) return;
+  controls.unshift({ label: "NEONHUB.Lifestyle.Title", icon: "fa-solid fa-wallet", action: "neonHubLifestyle", onClick: () => LifestyleApp.open(sheet.document) });
+});
+Hooks.on("getHeaderControlsItemSheetV2", (sheet, controls) => {
+  if (!lifestyleForItem(sheet.document)) return;
+  controls.unshift({ label: "NEONHUB.Lifestyle.Short", icon: "fa-solid fa-wallet", action: "neonHubLifestyle", onClick: () => LifestyleItemConfig.open(sheet.document) });
 });
 
 const sceneContext = (_app, options) => {

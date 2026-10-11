@@ -1,0 +1,66 @@
+{
+  "_id": "IInDzjUvOyuEdQr5",
+  "_key": "!items!IInDzjUvOyuEdQr5",
+  "name": "Car Loan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/car-loan.svg",
+  "folder": "9LpUevlP6OX6Cb6P",
+  "sort": 500,
+  "system": {
+    "description": {
+      "value": "<p>Enough money for the vehicle you've had your eye on. Put down 10% of its price; you get the rest.</p><p>Then pay 5% of the price at the start of each month for 20 months. Pay it off early to stop the payments.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "loan",
+        "monthly": 0,
+        "loan": {
+          "kind": "installment",
+          "principal": 0,
+          "ratePct": 5,
+          "downPct": 10,
+          "termMonths": 20
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

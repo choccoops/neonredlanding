@@ -1,0 +1,62 @@
+{
+  "_id": "r1kUPqIEkqCuDebF",
+  "_key": "!items!r1kUPqIEkqCuDebF",
+  "name": "Trauma Team Executive",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/trauma-executive.svg",
+  "folder": "mZr13A6u9BRnmCJ6",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>Trauma Team's fastest response and recovery in their cryotanks, surgery included at no extra cost.</p><p>REO Meatwagon may try to get there first and take the job.</p><p>Health plan: <strong>1000eb a month</strong>. Help arrives in <strong>1d6</strong> rounds.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Core",
+      "page": 223
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 1000,
+        "minTier": 0,
+        "response": "1d6",
+        "perk": false
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

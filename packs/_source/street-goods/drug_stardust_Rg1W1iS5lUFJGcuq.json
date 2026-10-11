@@ -1,0 +1,302 @@
+{
+  "_id": "Rg1W1iS5lUFJGcuq",
+  "_key": "!items!Rg1W1iS5lUFJGcuq",
+  "name": "Stardust",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/synthcoke.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p><strong>Primary (4 hours):</strong> you're a star. +2 COOL, DEX, Conversation and Charismatic Impact.</p><p><strong>Secondary (DV15):</strong> addicted. −1 to the same. Before a scheduled performance without a dose, you also suffer Performance Anxiety: −2 to Acting, Composition, Concentration, Conversation, Dance, Human Perception, Personal Grooming, Play Instrument and Wardrobe & Style (switch on the Performance Anxiety effect; apply Play Instrument by hand).</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "consumed": "Stardust Primary"
+  },
+  "effects": [
+    {
+      "_id": "exyXYhIHYIYj6s1n",
+      "_key": "!items.effects!Rg1W1iS5lUFJGcuq.exyXYhIHYIYj6s1n",
+      "name": "Stardust Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/synthcoke.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "system.stats.dex.value",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "bonuses.charismaticImpact",
+          "mode": 2,
+          "value": "2"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat",
+              "2": "role",
+              "3": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "b0B7SIv75Lv4WtTk",
+      "_key": "!items.effects!Rg1W1iS5lUFJGcuq.b0B7SIv75Lv4WtTk",
+      "name": "Stardust Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/synthcoke.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "system.stats.dex.value",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.charismaticImpact",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat",
+              "2": "role",
+              "3": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "G5fFi1D3SxvYNYR6",
+      "_key": "!items.effects!Rg1W1iS5lUFJGcuq.G5fFi1D3SxvYNYR6",
+      "name": "Performance Anxiety",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/synthcoke.svg",
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.composition",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.concentration",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.personalGrooming",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "-2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill",
+              "6": "skill",
+              "7": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "6": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "7": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

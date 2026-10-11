@@ -1,0 +1,129 @@
+{
+  "_id": "8iO1hoV4pmXCpXwH",
+  "_key": "!items!8iO1hoV4pmXCpXwH",
+  "name": "WakeUP!",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Instant caffeine pods; a pack of ten. Made for the Koff Popper.</p><p><strong>Primary (1 hour):</strong> +2 to all actions while you're suffering a Rough Night (a situational modifier you switch on when rolling).</p><p><strong>Secondary (DV13):</strong> addicted. −1 to all actions.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 10,
+    "price": {
+      "market": 20
+    },
+    "consumed": "WakeUP! Primary"
+  },
+  "effects": [
+    {
+      "_id": "psd8jRQqLxe0l3U9",
+      "_key": "!items.effects!8iO1hoV4pmXCpXwH.psd8jRQqLxe0l3U9",
+      "name": "WakeUP! Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+      "changes": [
+        {
+          "key": "bonuses.allActions",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "misc"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "PEAMgNYkEWcECICJ",
+      "_key": "!items.effects!8iO1hoV4pmXCpXwH.PEAMgNYkEWcECICJ",
+      "name": "WakeUP! Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+      "changes": [
+        {
+          "key": "bonuses.allActions",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "misc"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

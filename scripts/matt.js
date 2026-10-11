@@ -21,6 +21,7 @@ export const MATT = {
   /** Custom action keys this module registers inside MATT. */
   ACTION_SHOP: `${MODULE_ID}.openshop`,
   ACTION_HQ: `${MODULE_ID}.openhq`,
+  ACTION_LIFESTYLE: `${MODULE_ID}.openlifestyle`,
 
   makeId() {
     return foundry.utils.randomID(16);
@@ -117,6 +118,9 @@ export const MATT = {
       case "hq":
         if (a.target) push(this.ACTION_HQ, { hq: a.target, showto: audience });
         break;
+      case "lifestyle":
+        push(this.ACTION_LIFESTYLE, { showto: audience });
+        break;
       case "sound":
         if (!a.file) break;
         push("playsound", {
@@ -157,7 +161,7 @@ export const MATT = {
   /* ---------------------------------------- */
 
   /**
-   * Register "Open Neon Market shop" and "Open Headquarters" in MATT's action list.
+   * Register "Open Neon Market shop", "Open Headquarters" and "Open Lifestyle" in MATT's action list.
    * MATT runs actions on the active GM's client, so each action works out who should
    * see the window and asks those clients to open it.
    */
@@ -231,6 +235,21 @@ export const MATT = {
       content: async (trigger, action) => {
         const name = HQStore.get(action.data?.hq)?.name ?? i18n("NEONHUB.Matt.UnknownHQ");
         return `<span class="action-style">${i18n(trigger.name)}</span> <span class="entity-style">${Handlebars.escapeExpression(name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
+      }
+    });
+
+    // Each client opens its own character's Lifestyle (the GM gets the month overview).
+    app.registerTileAction(MODULE_ID, "openlifestyle", {
+      name: "NEONHUB.Matt.OpenLifestyle",
+      ctrls: [showtoCtrl],
+      values: { showto },
+      fn: async (args = {}) => {
+        const { action } = args;
+        const users = app.getForPlayers(action.data.showto || "trigger", args);
+        if (users.length) HubSocket.emit("openLifestyle", {}, users);
+      },
+      content: async (trigger, action) => {
+        return `<span class="action-style">${i18n(trigger.name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
       }
     });
   },

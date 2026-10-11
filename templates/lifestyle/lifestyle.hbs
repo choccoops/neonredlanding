@@ -1,0 +1,232 @@
+<div class="nh-hq nh-ls {{themeClass}} {{#if busy}}is-busy{{/if}}" style="{{style}}">
+  <header class="nh-hq-header">
+    <div class="nh-hq-art" {{#if actor}}data-action="openSheet" data-tooltip="{{localize 'NEONHUB.Lifestyle.OpenSheet'}}"{{/if}}>
+      {{#if actor}}<img src="{{actor.img}}" alt="">{{else}}<i class="fa-solid fa-wallet"></i>{{/if}}
+    </div>
+    <div class="nh-hq-title">
+      <h1>{{#if actor}}{{actor.name}}{{else}}{{localize "NEONHUB.Lifestyle.Title"}}{{/if}}</h1>
+      <p>{{localize "NEONHUB.Lifestyle.Subtitle"}} &middot; {{monthLabel}}</p>
+    </div>
+    {{#if actor}}<span class="nh-status nh-ls-status-{{status}}">{{statusLabel}}</span>{{/if}}
+    {{#if characters.length}}
+    <select name="actor" class="nh-ls-picker" aria-label="{{localize 'NEONHUB.Lifestyle.PickCharacter'}}">
+      {{#unless actor}}<option value="">{{localize "NEONHUB.Lifestyle.PickCharacter"}}</option>{{/unless}}
+      {{#each characters}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+    </select>
+    {{/if}}
+  </header>
+
+  {{#if actor}}
+  {{#unless actor.hasWallet}}<div class="nh-hq-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Lifestyle.NoWallet"}}</div>{{/unless}}
+  <section class="nh-hq-stats">
+    <div class="nh-stat nh-stat-ip"><span>{{localize "NEONHUB.Lifestyle.Stat.Monthly"}}</span><strong>{{stats.total}}</strong><small>{{#if paid}}{{localize "NEONHUB.Lifestyle.Stat.PaidThisMonth"}}{{else}}<span class="nh-due">{{localize "NEONHUB.Lifestyle.Stat.DueThisMonth"}}</span>{{/if}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Stat.Wallet"}}</span><strong>{{wallet}}</strong><small class="{{#if stats.afterNegative}}nh-ls-neg{{/if}}">{{localize "NEONHUB.Lifestyle.Stat.After" after=stats.after}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.housing"}}</span><strong>{{stats.housing}}</strong></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.lifestyle"}}</span><strong>{{stats.lifestyleCost}}</strong><small>{{stats.lifestyle}}{{#if stats.discount}} &middot; &minus;{{stats.discount}}{{/if}}</small></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.memberships"}}</span><strong>{{stats.memberships}}</strong></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.transport"}}</span><strong>{{stats.transport}}</strong></div>
+    <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.loans"}}</span><strong>{{stats.loans}}</strong></div>
+    {{#if stats.humanity}}<div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Stat.Humanity"}}</span><strong>+{{stats.humanity}}</strong><small>{{localize "NEONHUB.Lifestyle.Stat.HumanityHint"}}</small></div>{{/if}}
+  </section>
+
+  {{#each hqs}}
+  <div class="nh-ls-hq {{#unless active}}is-inactive{{/unless}}">
+    <i class="fa-solid fa-house-signal"></i>
+    <span>{{localize "NEONHUB.Lifestyle.HQLine" hq=name status=statusLabel}}</span>
+    <span>{{#if shareText}}{{localize "NEONHUB.Lifestyle.HQRent" rent=rentText share=shareText}} &middot; {{#if rentPaid}}{{localize "NEONHUB.HQ.Stat.Paid"}}{{else}}<b class="nh-due">{{localize "NEONHUB.HQ.Stat.Due"}}</b>{{/if}}{{else}}{{rentText}}{{/if}}</span>
+    {{#if discountText}}<span class="nh-ls-good">{{localize "NEONHUB.Lifestyle.HQDiscount" discount=discountText}}</span>{{/if}}
+    <button type="button" data-action="openHQ" data-id="{{id}}"><i class="fa-solid fa-arrow-up-right-from-square"></i> {{localize "NEONHUB.Lifestyle.OpenHQ"}}</button>
+  </div>
+  {{/each}}
+  {{/if}}
+
+  <nav class="nh-tabs" role="tablist">
+    {{#if actor}}
+    <button type="button" role="tab" class="{{#if tab.current}}active{{/if}}" data-action="tab" data-tab="current"><i class="fa-solid fa-wallet"></i> {{localize "NEONHUB.Lifestyle.Tab.current"}}</button>
+    <button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>
+    <button type="button" role="tab" class="{{#if tab.bills}}active{{/if}}" data-action="tab" data-tab="bills"><i class="fa-solid fa-receipt"></i> {{localize "NEONHUB.Lifestyle.Tab.bills"}}</button>
+    {{/if}}
+    {{#if isGM}}
+    <button type="button" role="tab" class="{{#if tab.month}}active{{/if}}" data-action="tab" data-tab="month"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Lifestyle.Tab.month"}}</button>
+    {{#unless actor}}<button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>{{/unless}}
+    {{/if}}
+    <div class="nh-gm-tools">
+      {{#if canPay}}<button type="button" class="nh-cta" data-action="pay"><i class="fa-solid fa-money-bill-wave"></i> {{localize "NEONHUB.Lifestyle.PayNow" amount=stats.total}}</button>{{/if}}
+      {{#if isGM}}{{#unless tab.month}}<button type="button" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.Lifestyle.NewMonth"}}</button>{{/unless}}{{/if}}
+    </div>
+  </nav>
+
+  {{!-- ================= CURRENT ================= --}}
+  {{#if tab.current}}
+  <div class="nh-hq-scroll">
+    {{#if reminders.length}}
+    <ul class="nh-ls-reminders">{{#each reminders}}<li><i class="fa-solid fa-dice-d20"></i> {{this}}</li>{{/each}}</ul>
+    {{/if}}
+    {{#each groups}}
+    <section class="nh-ls-group">
+      <h3><span>{{label}}</span>{{#if total}}<b>{{total}}</b>{{/if}}</h3>
+      <div class="nh-ls-grid">
+        {{#each cards}}
+        <article class="nh-ls-item {{#if active}}is-active{{/if}}" data-item="{{id}}">
+          <header>
+            <img src="{{img}}" alt="">
+            <div>
+              <h4>{{name}}</h4>
+              <span class="nh-ls-cat"><i class="{{icon}}"></i> {{category}}</span>
+            </div>
+            {{#if canToggle}}
+            <button type="button" class="nh-ls-switch {{#if active}}on{{/if}}" data-action="toggle" role="switch" aria-checked="{{#if active}}true{{else}}false{{/if}}" data-tooltip="{{#if active}}{{localize 'NEONHUB.Lifestyle.Deactivate'}}{{else}}{{localize 'NEONHUB.Lifestyle.Activate'}}{{/if}}">
+              <span>{{#if active}}{{localize "NEONHUB.Lifestyle.Active"}}{{else}}{{localize "NEONHUB.Lifestyle.Inactive"}}{{/if}}</span>
+            </button>
+            {{else}}
+            <span class="nh-ls-switch static {{#if active}}on{{/if}}"><span>{{#if active}}{{localize "NEONHUB.Lifestyle.Active"}}{{else}}{{localize "NEONHUB.Lifestyle.Inactive"}}{{/if}}</span></span>
+            {{/if}}
+          </header>
+          <p class="nh-ls-cost">{{costText}}</p>
+          {{#if badges.length}}<ul class="nh-ls-badges">{{#each badges}}<li class="{{#if warn}}warn{{/if}}"><i class="{{icon}}"></i> {{text}}</li>{{/each}}</ul>{{/if}}
+          {{#if effects}}<p class="nh-ls-effects"><i class="fa-solid fa-bolt"></i> {{effects}}</p>{{/if}}
+          {{#if description}}<p class="nh-ls-desc">{{description}}</p>{{/if}}
+          <footer>
+            {{#if showAmount}}
+            <label class="nh-ls-amount">{{localize "NEONHUB.Lifestyle.Quantity"}} <input type="number" min="1" value="{{amount}}" data-amount="{{id}}" {{#unless canAmount}}disabled{{/unless}}></label>
+            {{/if}}
+            {{#if canCall}}<button type="button" data-action="call"><i class="fa-solid fa-truck-medical"></i> {{localize "NEONHUB.Lifestyle.Call"}}</button>{{/if}}
+            {{#if buyHome}}<button type="button" data-action="buyHome"><i class="fa-solid fa-key"></i> {{localize "NEONHUB.Lifestyle.BuyHome" amount=buyHome}}</button>{{/if}}
+            {{#if payoff}}<button type="button" data-action="payoff"><i class="fa-solid fa-hand-holding-dollar"></i> {{localize "NEONHUB.Lifestyle.Payoff" amount=payoff}}</button>{{/if}}
+            <span class="nh-ls-spacer"></span>
+            {{#if canOpen}}<button type="button" class="nh-icon-btn" data-action="openItem" aria-label="{{localize 'NEONHUB.Lifestyle.OpenItem'}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.OpenItem'}}"><i class="fa-solid fa-file-lines"></i></button>{{/if}}
+            {{#if canConfig}}<button type="button" class="nh-icon-btn" data-action="configItem" aria-label="{{localize 'NEONHUB.Lifestyle.Configure'}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.Configure'}}"><i class="fa-solid fa-sliders"></i></button>{{/if}}
+            {{#if canRemove}}<button type="button" class="nh-icon-btn" data-action="remove" aria-label="{{localize 'NEONHUB.Lifestyle.Remove'}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.Remove'}}"><i class="fa-solid fa-trash"></i></button>{{/if}}
+          </footer>
+        </article>
+        {{/each}}
+      </div>
+    </section>
+    {{/each}}
+    {{#if empty}}
+    <div class="nh-ls-empty">
+      <i class="fa-solid fa-person-shelter"></i>
+      <p>{{localize "NEONHUB.Lifestyle.Empty"}}</p>
+      <button type="button" class="nh-cta" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.BrowseCatalog"}}</button>
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{!-- ================= CATALOG ================= --}}
+  {{#if tab.catalog}}
+  <div class="nh-ls-toolbar">
+    <div class="nh-ls-filters">
+      {{#each catalog.filters}}<button type="button" class="{{#if active}}active{{/if}}" data-action="filter" data-filter="{{key}}">{{#if icon}}<i class="{{icon}}"></i> {{/if}}{{label}}</button>{{/each}}
+    </div>
+    <input type="search" name="search" value="{{catalog.search}}" placeholder="{{localize 'NEONHUB.Lifestyle.Search'}}" aria-label="{{localize 'NEONHUB.Lifestyle.Search'}}">
+    {{#if isGM}}<button type="button" data-action="newHomebrew"><i class="fa-solid fa-flask"></i> {{localize "NEONHUB.Lifestyle.NewHomebrew"}}</button>{{/if}}
+  </div>
+  <div class="nh-hq-scroll">
+    {{#if catalog.packMissing}}<p class="nh-hq-warning">{{localize "NEONHUB.Lifestyle.PackMissing"}}</p>{{/if}}
+    {{#unless actor}}<p class="nh-hint nh-ls-pickhint">{{localize "NEONHUB.Lifestyle.PickToAdd"}}</p>{{/unless}}
+    <div class="nh-ls-grid">
+      {{#each catalog.entries}}
+      <article class="nh-ls-item nh-ls-offer {{#if owned}}is-owned{{/if}}" data-uuid="{{uuid}}" data-search="{{search}}">
+        <header>
+          <img src="{{img}}" alt="">
+          <div>
+            <h4>{{name}}</h4>
+            <span class="nh-ls-cat"><i class="{{icon}}"></i> {{category}}{{#if world}} &middot; {{localize "NEONHUB.Lifestyle.Homebrew"}}{{/if}}</span>
+          </div>
+          {{#if owned}}<span class="nh-ls-owned">{{localize "NEONHUB.Lifestyle.Owned"}}</span>{{/if}}
+        </header>
+        <p class="nh-ls-cost">{{costText}}</p>
+        {{#if badges.length}}<ul class="nh-ls-badges">{{#each badges}}<li class="{{#if warn}}warn{{/if}}"><i class="{{icon}}"></i> {{text}}</li>{{/each}}</ul>{{/if}}
+        {{#if effects}}<p class="nh-ls-effects"><i class="fa-solid fa-bolt"></i> {{effects}}</p>{{/if}}
+        {{#if description}}<p class="nh-ls-desc">{{description}}</p>{{/if}}
+        <footer>
+          {{#if template}}
+          <button type="button" class="nh-cta" data-action="copyTemplate"><i class="fa-solid fa-clone"></i> {{localize "NEONHUB.Lifestyle.UseTemplate"}}</button>
+          {{else}}
+          {{#if canAdd}}<button type="button" class="nh-cta" data-action="add"><i class="fa-solid fa-plus"></i> {{addLabel}}</button>{{/if}}
+          {{#if ../isGM}}<button type="button" class="nh-icon-btn" data-action="copyTemplate" aria-label="{{localize 'NEONHUB.Lifestyle.CopyToWorld'}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.CopyToWorld'}}"><i class="fa-solid fa-copy"></i></button>{{/if}}
+          {{/if}}
+        </footer>
+      </article>
+      {{/each}}
+    </div>
+    <p class="nh-hint nh-ls-noresults" {{#if catalog.entries.length}}hidden{{/if}}>{{localize "NEONHUB.Lifestyle.NoResults"}}</p>
+  </div>
+  {{/if}}
+
+  {{!-- ================= BILLS ================= --}}
+  {{#if tab.bills}}
+  <div class="nh-hq-scroll">
+    <ul class="nh-ls-history">
+      {{#each history}}
+      <li>
+        <details>
+          <summary>
+            <span class="nh-ls-hlabel">{{label}}</span>
+            <time>{{date}}</time>
+            <b>&minus;{{total}}</b>
+            <span class="{{#if debt}}nh-ls-neg{{/if}}">{{localize "NEONHUB.Lifestyle.Chat.Balance"}} {{after}}</span>
+          </summary>
+          <ul>
+            {{#each lines}}<li><span>{{name}}</span><span>{{cost}}</span></li>{{/each}}
+            {{#if discount}}<li class="nh-ls-good"><span>{{localize "NEONHUB.Lifestyle.MoraleDiscount"}}</span><span>&minus;{{discount}}</span></li>{{/if}}
+          </ul>
+          <small>{{localize "NEONHUB.Lifestyle.PaidBy" user=user}}</small>
+        </details>
+      </li>
+      {{else}}
+      <li class="nh-hint">{{localize "NEONHUB.Lifestyle.NoBills"}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+
+  {{!-- ================= MONTH (GM) ================= --}}
+  {{#if tab.month}}
+  <div class="nh-hq-scroll">
+    <div class="nh-ls-monthbar">
+      <div>
+        <h2>{{monthLabel}}</h2>
+        <p class="nh-hint">{{localize "NEONHUB.Lifestyle.DueCount" n=overview.due}}</p>
+      </div>
+      <button type="button" data-action="billAll" {{#unless overview.due}}disabled{{/unless}}><i class="fa-solid fa-file-invoice-dollar"></i> {{localize "NEONHUB.Lifestyle.BillAll"}}</button>
+      <button type="button" class="nh-cta" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.Lifestyle.NewMonth"}}</button>
+    </div>
+    <table class="nh-ls-table">
+      <thead><tr><th>{{localize "NEONHUB.Lifestyle.Col.Character"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Wallet"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Monthly"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Status"}}</th><th></th></tr></thead>
+      <tbody>
+        {{#each overview.rows}}
+        <tr data-actor="{{id}}" class="{{#if selected}}selected{{/if}}">
+          <td><a data-action="viewActor"><img src="{{img}}" alt=""> <span><b>{{name}}</b><small>{{owners}}</small></span></a></td>
+          <td class="{{#if negative}}nh-ls-neg{{/if}}">{{wallet}}</td>
+          <td>{{total}}</td>
+          <td><span class="nh-ls-pill nh-ls-status-{{status}}">{{statusLabel}}</span></td>
+          <td class="nh-ls-rowtools">
+            {{#if paid}}
+            <button type="button" data-action="markPaid" data-paid="false" data-tooltip="{{localize 'NEONHUB.Lifestyle.MarkDueTip'}}"><i class="fa-solid fa-rotate-left"></i> {{localize "NEONHUB.Lifestyle.MarkDue"}}</button>
+            {{else}}
+            <button type="button" data-action="payFor"><i class="fa-solid fa-money-bill-wave"></i> {{localize "NEONHUB.Lifestyle.Charge"}}</button>
+            <button type="button" data-action="markPaid" data-paid="true" data-tooltip="{{localize 'NEONHUB.Lifestyle.MarkPaidTip'}}"><i class="fa-solid fa-check"></i></button>
+            {{/if}}
+          </td>
+        </tr>
+        {{else}}
+        <tr><td colspan="5" class="nh-hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="nh-ls-settings">
+      <label>{{localize "NEONHUB.HQ.Field.theme"}}
+        <select name="theme">{{#each overview.themes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+      </label>
+      <p class="nh-hint">
+        <i class="fa-solid fa-gear"></i>
+        {{#if overview.manage}}{{localize "NEONHUB.Lifestyle.ManageOn"}}{{else}}{{localize "NEONHUB.Lifestyle.ManageOff"}}{{/if}}
+        {{#if overview.debt}}{{localize "NEONHUB.Lifestyle.DebtOn"}}{{else}}{{localize "NEONHUB.Lifestyle.DebtOff"}}{{/if}}
+        {{localize "NEONHUB.Lifestyle.SettingsWhere"}}
+      </p>
+    </div>
+  </div>
+  {{/if}}
+</div>

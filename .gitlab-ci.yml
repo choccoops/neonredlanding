@@ -14,11 +14,13 @@ variables:
 build:
   extends: .on_version_tag
   stage: build
-  image: node:20-alpine
+  image: node:22-alpine
   script:
     - apk add --no-cache jq zip
-    - for f in $(find scripts -name "*.js"); do node --input-type=module --check < "$f"; done
-    - jq empty module.json lang/*.json
+    - npm ci
+    - npm run check
+    - npm test
+    - npm run build:packs
     - VERSION="${CI_COMMIT_TAG#v}"
     - >
       jq --arg v "$VERSION" --arg url "$CI_PROJECT_URL"
@@ -28,7 +30,7 @@ build:
       module.json > module.tmp && mv module.tmp module.json
     - awk -v v="## $VERSION" '$0==v{f=1;next} /^## /{if(f)exit} f' CHANGELOG.md > RELEASE_NOTES.md
     - '[ -s RELEASE_NOTES.md ] || echo "See CHANGELOG.md" > RELEASE_NOTES.md'
-    - zip -r module.zip module.json scripts templates styles lang docs README.md CHANGELOG.md LICENSE
+    - zip -r module.zip module.json scripts templates styles lang assets packs docs README.md CHANGELOG.md LICENSE -x "packs/_source/*"
   artifacts:
     paths: [module.json, module.zip, RELEASE_NOTES.md]
 

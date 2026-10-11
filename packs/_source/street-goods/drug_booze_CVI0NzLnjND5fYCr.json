@@ -1,0 +1,229 @@
+{
+  "_id": "CVI0NzLnjND5fYCr",
+  "_key": "!items!CVI0NzLnjND5fYCr",
+  "name": "Booze",
+  "type": "drug",
+  "img": "modules/cpr-neon-hub/assets/goods/bottle.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>For when you want a drink without getting smashed.</p><p><strong>Primary (2 hours):</strong> +1 to Acting, Contortionist, Conversation, Dance, Human Perception and Persuasion.</p><p><strong>Secondary (DV13):</strong> addicted. −1 to the same Skills.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 10
+    },
+    "consumed": "Booze Primary"
+  },
+  "effects": [
+    {
+      "_id": "fc6nFaiYImJiPCZH",
+      "_key": "!items.effects!CVI0NzLnjND5fYCr.fc6nFaiYImJiPCZH",
+      "name": "Booze Primary",
+      "img": "modules/cpr-neon-hub/assets/goods/bottle.svg",
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.contortionist",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "HnBj1PrQiKISebZn",
+      "_key": "!items.effects!CVI0NzLnjND5fYCr.HnBj1PrQiKISebZn",
+      "name": "Booze Addiction",
+      "img": "modules/cpr-neon-hub/assets/goods/bottle.svg",
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.contortionist",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

@@ -1,6 +1,6 @@
-# Neon Hub: Landing Pages & Headquarters for Cyberpunk RED
+# Neon Hub: Landing Pages, Headquarters & Lifestyle for Cyberpunk RED
 
-Two tools for **Cyberpunk RED - CORE** on Foundry VTT:
+Three tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
@@ -9,6 +9,10 @@ Two tools for **Cyberpunk RED - CORE** on Foundry VTT:
 - **Headquarters.** A crew HQ screen built on the *No Place Like Home* rules: HQ IP, the twelve
   Improvements and their Upgrades, the ten Morale Boost levels, rent and access, the Server Room's
   eurobuck cost, and a monthly Humanity roll.
+- **Lifestyle.** Each character's rent and monthly expenses as equippable items: housing,
+  lifestyle packages, memberships, health plans, screamsheets, transit, fuel, loans and
+  furnishings, billed monthly through the wealth ledger, with compendiums of ready-made items
+  and templates for your own.
 
 | Requirement | Version |
 | --- | --- |
@@ -47,6 +51,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
    | Open a character sheet | A chosen actor, or **the clicking player's own character** | MATT `openactor` |
    | Open a Neon Market shop | Opens the shop on the clicker's screen | Neon Hub's own MATT action |
    | Open a Headquarters | Opens the crew HQ screen | Neon Hub's own MATT action |
+   | Open Lifestyle | Opens each clicking player's own Lifestyle window (the GM gets the month overview) | Neon Hub's own MATT action |
    | Play a sound | For the clicker or everyone | MATT `playsound` |
    | Control a playlist | Play, stop, pause, next, previous | MATT `playlist` |
    | Show an image | Image popout with a caption | MATT `showimage` |
@@ -67,7 +72,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
 - The tiles are ordinary MATT tiles. You can open one with MATT's own editor and add more actions;
   rebuilding replaces the action list, so add extra steps after you're done with the hub editor.
-- Neon Hub's two actions also appear in MATT's own action list (group *Neon Hub*), so you can use
+- Neon Hub's three actions also appear in MATT's own action list (group *Neon Hub*), so you can use
   them on any tile.
 
 ## Headquarters
@@ -109,6 +114,91 @@ module. They are not the DLC's own wording. *No Place Like Home* (R. Talsorian G
 is free from R. Talsorian; check it for full details. To adjust a summary, edit `lang/en.json`
 under `NEONHUB.Improvement` and `NEONHUB.Morale`.
 
+## Lifestyle
+
+Rent, food and everything else a character pays for each month. Open it from the **Lifestyle**
+button on a character sheet, in the **Actors** sidebar or on the Headquarters screen, or from a hub
+button set to *Open Lifestyle*.
+
+**How it works.** A lifestyle item is an ordinary Cyberpunk RED **gear** item with Neon Hub's
+lifestyle settings. It shows in the gear tab like anything else.
+
+- **Active means equipped.** Equipping the item, either with the switch in the Lifestyle window or
+  CPR's own equip toggle, makes it active. Active items are billed each month and their Active
+  Effects (stat and skill bonuses) apply, because their usage is *equipped*. Switch an item off to
+  stop both without losing it.
+- Only one **lifestyle package** is active at a time; switching one on switches the others off.
+- **Quantity** multiplies the cost, e.g. fuel for two cars.
+- Add items with the catalog's **Add** button, so loans pay out and furnishings are charged. An
+  item dragged straight from the compendium onto a sheet arrives switched off and free; a car loan
+  added that way does nothing until the GM sets its amount and months on its Lifestyle settings.
+
+**The window**
+
+- **Expenses** lists the character's items by group, with the month's bill, wallet, what's left
+  after paying, and reminders (rough nights, monthly checks). Items have their own buttons: **Buy**
+  a rented home outright (no more rent), **Pay off** a loan, **Call it in** on a health plan (rolls
+  the response time to chat).
+- **Catalog** lists Neon Hub's lifestyle compendium plus any lifestyle items in the world's Items
+  sidebar (homebrew). **Add** puts one on the character, active. Furnishings are paid for up front.
+  Loans pay out their cash; a car loan asks for the vehicle's price, takes 10% down and sets 20
+  monthly payments.
+- **Bills** shows the character's last 24 bills.
+- **Month** (GM) shows every player character's wallet, bill and status, with **Charge**,
+  **Mark paid** and **Bill everyone due**. **New month** starts the next month. It can also charge
+  everyone at once and start a new month at every Headquarters.
+
+**Paying.** **Pay this month** charges the bill through the CPR wealth ledger and posts a receipt
+to the owner and GM. Installment loans count down, and paid-off ones are removed. Bills can push a
+wallet below zero (CPR allows negative eurobucks); the *Bills can put characters in debt* setting
+turns that off.
+
+**Who can do what.** Owners can always pay their bills, pay off loans, buy their home and roll
+health plans. With *Players manage their own lifestyle* on (the default), they can also add,
+switch and remove items. Otherwise, and for corporate perks or removing a loan, they send the GM a
+request to confirm, like Headquarters purchases.
+
+**With Headquarters**
+
+- Crew of an active HQ with **Morale Boost** get its 50eb lifestyle discount on every bill.
+- The window shows the HQ's rent and each member's share. Rent is still paid on the HQ screen.
+- Active **furnishings** add their Humanity bonus (+1 to +3, best set only) to the HQ's monthly
+  Morale Boost Humanity roll.
+
+**Homebrew (GM)**
+
+- **New homebrew item** in the catalog creates a world item in a *Neon Hub: Lifestyle homebrew*
+  folder and opens its settings.
+- The compendium's **Homebrew Templates** folder has a blank item per category; **Make a homebrew
+  copy** copies one into the world.
+- Any gear item's sheet has a **Lifestyle** header button: set its category, monthly cost and the
+  category's details (sleeps, purchase price, Rough Night DV; package tier; response time; Humanity
+  bonus; loan terms; a monthly check like *Library Search DV15*), or turn an item into a lifestyle
+  item. Add bonuses on the item's Effects tab.
+
+**Compendiums**
+
+| Compendium | Contents |
+| --- | --- |
+| Neon Hub: Lifestyle | 11 homes (rents from the core rules, with purchase prices), the 4 core lifestyle packages and 4 "+" membership packages with stat bonuses, 7 memberships, 6 health plans, 7 screamsheets, 6 transit passes, 3 fuel tiers, 5 loans, 9 furniture sets, and 10 homebrew templates |
+| Neon Hub: Street Goods & Lifepath | One-time items: 8 homebrew street drugs (Primary and Addiction effects), the Rough Night and Living the Good Life conditions, 15 food and livestock items, 5 home goods, and 8 Local Expert districts the core skill list doesn't have |
+
+The numbers and rules come from the core rules and from the **Datapool: Lifestyles** homebrew
+compendium by aru.guy and Henzard; the descriptions and icons are Neon Hub's own. Compared with
+Datapool:
+
+- Bonuses to Streetwise now apply (the original used a key CPR doesn't recognise).
+- Smokestack's effects match its text (+2 / −1 COOL).
+- Stardust's Performance Anxiety leaves out Play Instrument, which CPR splits into one skill per
+  instrument.
+- Core duplicates are left out: MRE, Kibble Pack, the Language skills and 13 of the Local Experts
+  are already in Cyberpunk RED's own compendiums.
+
+**Data.** Item settings live in `flags.cpr-neon-hub.lifestyle`, a character's bills in
+`flags.cpr-neon-hub.lifestyleState`, and the month in a world setting. Neon Hub also mirrors
+active housing, lifestyle package and health plans into the actor's `system.lifestyle.housing`,
+`lifeStyle` and `traumaTeam` fields (part of CPR's data model, not shown on the 0.92 sheet).
+
 ## Macros and API
 
 ```js
@@ -120,6 +210,14 @@ hub.listHQs();                 // Headquarters this user can see
 hub.openHQ(id);                // open one on this client
 hub.showHQ(id);                // GM: open it on every connected player's screen
 await hub.awardHQIP(id, 20, "Arasaka extraction"); // GM
+
+hub.openLifestyle();           // your own character's Lifestyle window (or pass an Actor/uuid)
+hub.showLifestyle();           // GM: open it on every connected player's screen
+await hub.lifestyleBill(actor);   // { bill: { lines, groups, discount, total }, wallet, status, ... }
+await hub.payLifestyle(actor);    // pay this month's bill
+await hub.newLifestyleMonth({ hqs: true, bill: true }); // GM: next month, roll HQ months, bill everyone
+await hub.billLifestyles();       // GM: charge everyone still due
+hub.lifestyleMonth();             // the current month number
 ```
 
 ## Data this module relies on
@@ -128,7 +226,7 @@ await hub.awardHQIP(id, 20, "Arasaka extraction"); // GM
 checked unchanged in 14.01. Tiles use `flags["monks-active-tiles"]` with `trigger: "click"`,
 `pointer: true` and `allowpaused: true`. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
-hook as `cpr-neon-hub.openshop` and `cpr-neon-hub.openhq`.
+hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq` and `cpr-neon-hub.openlifestyle`.
 
 **Cyberpunk RED - CORE 0.92.4.**
 
@@ -138,6 +236,9 @@ hook as `cpr-neon-hub.openshop` and `cpr-neon-hub.openhq`.
 | Humanity | `system.derivedStats.humanity.value / .max / .transactions`, then `actor.setMaxHumanity()` |
 | Roles | `system.roleInfo.activeRole` and items of type `role` |
 | Ledger lines | `CPR.ledger.increaseSentence` / `decreaseSentence`, reason `"... - <user>"` |
+| Lifestyle items | `gear` items: `system.equipped` (`"equipped"` = active), `system.usage: "equipped"`, `system.amount`, `system.price.market` |
+| Lifestyle fields | `system.lifestyle.housing / lifeStyle / traumaTeam` `.cost` and `.description` |
+| Skill bonuses | Active Effect keys `bonuses.<skill>` named as CPR's `SystemUtils.slugify` names skills |
 
 Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`). Hub layouts are stored on
 their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
@@ -147,7 +248,8 @@ their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
 - Every window uses **ApplicationV2**.
 - `scripts/compat.js` resolves APIs that move into `foundry.*` in v13 (FilePicker, TextEditor,
   renderTemplate, loadTemplates), falling back to the v12 globals.
-- Sidebar hooks are registered under both the v12 and v13 names.
+- Sidebar hooks are registered under both the v12 and v13 names, and sheet header buttons for both
+  Application V1 sheets (CPR 0.92) and V2 sheets.
 - MATT's tile and action format is the same in its v12 and v14 releases.
 - `module.json` declares v12 as verified with no maximum. When the CPR team ships their v13
   release, test there and bump `verified`.
@@ -156,12 +258,27 @@ their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
 
 - Tested with unit tests and rendered previews, not yet in a live Foundry world. Try it on a copy
   first.
+- Lifestyle billing is per character; it doesn't split an HQ's rent (pay that on the HQ screen).
 - Uploading images needs the GM to have file upload permission (the default for GMs). On The Forge,
   images go to your Forge asset library.
 - Generated images are new files each time a button changes; old ones stay in the world folder and
   can be deleted by hand.
 
+## Building from source
+
+Releases are built by the workflows; you only need this to work on the module. With Node 22:
+
+```bash
+npm ci
+npm run check        # scripts parse, JSON is valid, every localization key exists
+npm test             # lifestyle rules unit tests
+npm run build:packs  # compile packs/_source/*/ into Foundry compendium packs
+```
+
+Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lifestyle` and
+`packs/street-goods` folders aren't committed.
+
 ## License
 
-MIT. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
+MIT. Icons in `assets/` are original to Neon Hub. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. This is unofficial fan content and isn't approved or endorsed by R. Talsorian Games.

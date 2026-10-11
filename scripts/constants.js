@@ -86,6 +86,7 @@ export const BUTTON_ACTIONS = {
   actor: { icon: "fa-solid fa-id-card", label: "NEONHUB.Action.actor" },
   shop: { icon: "fa-solid fa-store", label: "NEONHUB.Action.shop" },
   hq: { icon: "fa-solid fa-house-signal", label: "NEONHUB.Action.hq" },
+  lifestyle: { icon: "fa-solid fa-wallet", label: "NEONHUB.Action.lifestyle" },
   sound: { icon: "fa-solid fa-volume-high", label: "NEONHUB.Action.sound" },
   playlist: { icon: "fa-solid fa-music", label: "NEONHUB.Action.playlist" },
   image: { icon: "fa-solid fa-image", label: "NEONHUB.Action.image" },

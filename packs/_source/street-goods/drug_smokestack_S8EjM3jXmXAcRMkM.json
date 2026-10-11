@@ -1,0 +1,129 @@
+{
+  "_id": "S8EjM3jXmXAcRMkM",
+  "_key": "!items!S8EjM3jXmXAcRMkM",
+  "name": "Smokestack",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 500,
+  "system": {
+    "description": {
+      "value": "<p><strong>Primary (10 minutes):</strong> cool and collected. +2 COOL.</p><p><strong>Secondary (DV13):</strong> addicted. −1 COOL. You always want another one.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 10
+    },
+    "consumed": "Smokestack Primary"
+  },
+  "effects": [
+    {
+      "_id": "S7uqZamgZBGpGesb",
+      "_key": "!items.effects!S8EjM3jXmXAcRMkM.S7uqZamgZBGpGesb",
+      "name": "Smokestack Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "wBVZhupcc26WweXe",
+      "_key": "!items.effects!S8EjM3jXmXAcRMkM.wBVZhupcc26WweXe",
+      "name": "Smokestack Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/generic_street_drugs.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

@@ -45,9 +45,13 @@
       <button type="button" data-action="award" data-tooltip="{{localize 'NEONHUB.HQ.AwardTip'}}"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.HQ.Award"}}</button>
       <button type="button" data-action="payRent"><i class="fa-solid fa-money-bill"></i> {{localize "NEONHUB.HQ.PayRent"}}</button>
       <button type="button" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.HQ.NewMonth"}}</button>
+      <button type="button" data-action="openLifestyle" data-tooltip="{{localize 'NEONHUB.HQ.LifestyleTip'}}"><i class="fa-solid fa-wallet"></i></button>
     </div>
     {{else}}
-    <div class="nh-gm-tools"><button type="button" data-action="payRent"><i class="fa-solid fa-money-bill"></i> {{localize "NEONHUB.HQ.PayRent"}}</button></div>
+    <div class="nh-gm-tools">
+      <button type="button" data-action="payRent"><i class="fa-solid fa-money-bill"></i> {{localize "NEONHUB.HQ.PayRent"}}</button>
+      <button type="button" data-action="openLifestyle" data-tooltip="{{localize 'NEONHUB.HQ.LifestyleTip'}}"><i class="fa-solid fa-wallet"></i> {{localize "NEONHUB.Lifestyle.Short"}}</button>
+    </div>
     {{/if}}
   </nav>
 

@@ -86,6 +86,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         defaultButton({ label: L("NEONHUB.Starter.Map"), subtitle: L("NEONHUB.Starter.MapSub"), icon: "fa-solid fa-map-location-dot", action: { type: "scene" } }),
         defaultButton({ label: L("NEONHUB.Starter.Sheet"), subtitle: L("NEONHUB.Starter.SheetSub"), icon: "fa-solid fa-id-card", action: { type: "actor", ownCharacter: true } }),
         defaultButton({ label: L("NEONHUB.Starter.HQ"), subtitle: L("NEONHUB.Starter.HQSub"), icon: "fa-solid fa-house-signal", action: { type: "hq" } }),
+        defaultButton({ label: L("NEONHUB.Starter.Lifestyle"), subtitle: L("NEONHUB.Starter.LifestyleSub"), icon: "fa-solid fa-wallet", action: { type: "lifestyle" } }),
         defaultButton({ label: L("NEONHUB.Starter.Market"), subtitle: L("NEONHUB.Starter.MarketSub"), icon: "fa-solid fa-store", action: { type: "shop" } })
       ]
     });
@@ -124,7 +125,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         playModes: opt(["play", "stop", "pause", "next", "prev"].map((k) => [k, L(`NEONHUB.PlayMode.${k}`)]), a.playMode),
         colorValue: b.color || THEMES[d.theme].accent,
         is: Object.fromEntries(Object.keys(BUTTON_ACTIONS).map((k) => [k, a.type === k])),
-        usesAudience: ["journal", "actor", "shop", "hq", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
+        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
         targetName: a.target ? this.#nameOf(a.type, a.target) : null,
         targetOptions: this.#targetOptions(a.type, a.target),
         marketMissing: a.type === "shop" && !game.modules.get(MARKET_ID)?.active

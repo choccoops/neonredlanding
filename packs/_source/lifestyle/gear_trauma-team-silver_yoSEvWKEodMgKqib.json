@@ -1,0 +1,62 @@
+{
+  "_id": "yoSEvWKEodMgKqib",
+  "_key": "!items!yoSEvWKEodMgKqib",
+  "name": "Trauma Team Silver",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/trauma-silver.svg",
+  "folder": "mZr13A6u9BRnmCJ6",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>Link your Biomonitor to your Agent and Trauma Team comes to pull you out of a life-threatening situation, then treats you in their cryotanks.</p><p>Surgery isn't included: paramedics operate if you agree to pay, and the bill is due by the end of the month.</p><p>REO Meatwagon may try to get there first and take the job.</p><p>Health plan: <strong>500eb a month</strong>. Help arrives in <strong>2d6</strong> rounds.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Core",
+      "page": 223
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 500,
+        "minTier": 4,
+        "response": "2d6",
+        "perk": false
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

@@ -6,8 +6,10 @@ import {
   HQStore, HQ_COST, IMPROVEMENTS, purchaseBlocker, upgradeBlocker, humanityFormula, monthlyRent,
   lifestyleDiscount, logEntry, maxUpgrades
 } from "./hq-data.js";
+import { humanityBonus } from "../lifestyle/ls-data.js";
+import { LifestyleStore } from "../lifestyle/ls-store.js";
 
-const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
+const L =(k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
 const eb = (n) => `${Math.round(Number(n) || 0).toLocaleString(game.i18n.lang)}eb`;
 
@@ -144,10 +146,12 @@ export class HQOps {
       for (const uuid of hq.crew) {
         const actor = await fromUuid(uuid);
         if (!actor || !CPR.hasHumanity(actor)) continue;
-        const roll = await new Roll(formula).evaluate();
+        // Lifestyle: a character's best home furnishings add to Humanity recovery.
+        const bonus = humanityBonus(LifestyleStore.items(actor));
+        const roll = await new Roll(bonus ? `${formula} + ${bonus}` : formula).evaluate();
         const gained = await CPR.restoreHumanity(actor, roll.total, L("NEONHUB.Ledger.Morale", { hq: hq.name }));
         const { value, max } = CPR.getHumanity(actor);
-        rows.push({ name: actor.name, rolled: roll.total, gained, value, max });
+        rows.push({ name: actor.name, rolled: roll.total, bonus, gained, value, max });
       }
     }
     hq.month += 1;

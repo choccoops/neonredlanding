@@ -1,0 +1,96 @@
+{
+  "_id": "wBY5aBmgAKy4aRet",
+  "_key": "!items!wBY5aBmgAKy4aRet",
+  "name": "Bags of Grain",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/goods/sack.svg",
+  "folder": "rBzg2yC5l92PJJyc",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Barely food, but it isn't kibble. Feeding it to livestock helps with their care (+2 Animal Handling, situational).</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "toggled",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 20
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "ZT1yk3UxsDcIXgCU",
+      "_key": "!items.effects!wBY5aBmgAKy4aRet.ZT1yk3UxsDcIXgCU",
+      "name": "Animal Feed",
+      "img": "modules/cpr-neon-hub/assets/goods/sack.svg",
+      "changes": [
+        {
+          "key": "bonuses.animalHandling",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

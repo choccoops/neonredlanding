@@ -1,0 +1,62 @@
+{
+  "_id": "7cAT6bdO8QSLmWrD",
+  "_key": "!items!7cAT6bdO8QSLmWrD",
+  "name": "Corpo-Care Gold",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/corpo-care-gold.svg",
+  "folder": "mZr13A6u9BRnmCJ6",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Your employer's Trauma Team contract, linked to your Biomonitor.</p><p>Surgery isn't included: paramedics operate if you agree to pay, and the bill is due by the end of the month.</p><p>REO Meatwagon may try to get there first and take the job.</p><p>Corporate perk: free while you have the job. Help arrives in <strong>2d6</strong> rounds.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 0,
+        "minTier": 0,
+        "response": "2d6",
+        "perk": true
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

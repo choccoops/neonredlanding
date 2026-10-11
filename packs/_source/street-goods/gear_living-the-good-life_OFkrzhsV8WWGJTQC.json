@@ -1,0 +1,96 @@
+{
+  "_id": "OFkrzhsV8WWGJTQC",
+  "_key": "!items!OFkrzhsV8WWGJTQC",
+  "name": "Living the Good Life",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/goods/good-life.svg",
+  "folder": "T3cPFxOd1hf4L294",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Time off with the crew. <strong>+1 to all actions</strong> while the good mood lasts.</p><p>At the GM's discretion, a real break also restores Humanity: [[/r 1d6 # Humanity]] for a good night, [[/r 2d6 # Humanity]] for a great one.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "always",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "zu1AW2e9IcWmUiPb",
+      "_key": "!items.effects!OFkrzhsV8WWGJTQC.zu1AW2e9IcWmUiPb",
+      "name": "Living the Good Life",
+      "img": "modules/cpr-neon-hub/assets/goods/good-life.svg",
+      "changes": [
+        {
+          "key": "bonuses.allActions",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "misc"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

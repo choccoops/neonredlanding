@@ -1,0 +1,115 @@
+{
+  "_id": "8PPcIE67cqt6upxn",
+  "_key": "!items!8PPcIE67cqt6upxn",
+  "name": "Good Prepak+",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/good-prepak-plus.svg",
+  "folder": "bCdDF3UexvDH6Ys6",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>Decent food that keeps you quick and steady.</p><p>Membership package: <strong>500eb a month</strong>, cheaper than the Good Prepak package because it's meant to be combined with memberships. While active: <strong>MOVE +1, WILL +1</strong>.</p><p>Memberships offered at this level:</p><ul><li>REO Meatsavers</li><li>TicketMiser Season Pass</li><li>Shave & Save Club</li><li>Cryobank Storage</li><li>HerbalCare Direct</li><li>BrainBuster Videos</li></ul>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "BeSSsEaU8U1mFkvy",
+      "_key": "!items.effects!8PPcIE67cqt6upxn.BeSSsEaU8U1mFkvy",
+      "name": "Good Prepak+",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/good-prepak-plus.svg",
+      "changes": [
+        {
+          "key": "system.stats.move.value",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.stats.will.value",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 500,
+        "tier": 3,
+        "plus": true
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

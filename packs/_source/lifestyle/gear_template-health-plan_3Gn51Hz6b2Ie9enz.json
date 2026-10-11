@@ -1,0 +1,61 @@
+{
+  "_id": "3Gn51Hz6b2Ie9enz",
+  "_key": "!items!3Gn51Hz6b2Ie9enz",
+  "name": "Template: Health Plan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/template.svg",
+  "folder": "XbUmI008plrJ2fYs",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>A blank health plan for your own homebrew. In the Lifestyle window's catalog, use <strong>Make a homebrew copy</strong> (GM), then set its cost and details with the <strong>Lifestyle</strong> button on the item sheet. Add stat or skill bonuses on the Effects tab; they apply while the item is active.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 0,
+        "template": true,
+        "response": "1d6"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

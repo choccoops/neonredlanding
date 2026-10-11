@@ -5,7 +5,7 @@
   <p>{{localize "NEONHUB.HQ.Chat.Humanity" formula=formula}}</p>
   <ul>
     {{#each rows}}
-    <li><span>{{name}}</span><span>{{localize "NEONHUB.HQ.Chat.HumanityRow" rolled=rolled gained=gained value=value max=max}}</span></li>
+    <li><span>{{name}}</span><span>{{localize "NEONHUB.HQ.Chat.HumanityRow" rolled=rolled gained=gained value=value max=max}}{{#if bonus}} {{localize "NEONHUB.HQ.Chat.FurnishingBonus" bonus=bonus}}{{/if}}</span></li>
     {{else}}
     <li>{{localize "NEONHUB.HQ.Chat.NoCrew"}}</li>
     {{/each}}

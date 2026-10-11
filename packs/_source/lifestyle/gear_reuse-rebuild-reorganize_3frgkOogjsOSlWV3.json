@@ -1,0 +1,117 @@
+{
+  "_id": "3frgkOogjsOSlWV3",
+  "_key": "!items!3frgkOogjsOSlWV3",
+  "name": "Reuse Rebuild Reorganize",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+  "folder": "AjAxrLpsmQYRMYh1",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>Fix it, strip it, rewire it: keeping things out of the landfill one repair at a time.</p><p>Screamsheet subscription: <strong>50eb a month</strong>.</p><p>Each month, a <strong>DV15 Library Search</strong> Check tracks down the latest issue.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "k4YbMHAP6yhNiog0",
+      "_key": "!items.effects!3frgkOogjsOSlWV3.k4YbMHAP6yhNiog0",
+      "name": "Reuse Rebuild Reorganize",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+      "changes": [
+        {
+          "key": "bonuses.basicTech",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.electronicsAndSecurityTech",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "subscription",
+        "monthly": 50,
+        "check": {
+          "skill": "Library Search",
+          "dv": 15
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

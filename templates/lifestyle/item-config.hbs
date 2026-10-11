@@ -1,0 +1,100 @@
+<div class="nh-lsc">
+  {{#if notGear}}<p class="nh-hint nh-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Lifestyle.Config.NotGear"}}</p>{{/if}}
+  {{#if isNew}}<p class="nh-hint">{{localize "NEONHUB.Lifestyle.Config.NewHint"}}</p>{{/if}}
+
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Category"}}</label>
+    <select name="category">{{#each categories}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+  </div>
+
+  {{#unless oneTime}}{{#unless is.loan}}
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Monthly"}}</label>
+    <input type="number" name="monthly" min="0" step="1" value="{{d.monthly}}">
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.MonthlyHint"}}</p>
+  </div>
+  {{/unless}}{{/unless}}
+  {{#if oneTime}}<p class="hint">{{localize "NEONHUB.Lifestyle.Config.OneTimeHint"}}</p>{{/if}}
+
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Perk"}}</label>
+    <input type="checkbox" name="perk" {{checked d.perk}}>
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.PerkHint"}}</p>
+  </div>
+
+  {{#if is.housing}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.housing"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Sleeps"}}</label><input type="number" name="sleeps" min="0" value="{{d.sleeps}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Rooms"}}</label><input type="number" name="rooms" min="0" value="{{d.rooms}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Parking"}}</label><input type="number" name="parking" min="0" value="{{d.parking}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.BuyPrice"}}</label><input type="number" name="buyPrice" min="0" value="{{d.buyPrice}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.BuyPriceHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Owned"}}</label><input type="checkbox" name="owned" {{checked d.owned}}></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.RoughNight"}}</label><input type="number" name="roughNight" min="0" max="30" value="{{d.roughNight}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.RoughNightHint"}}</p></div>
+  </fieldset>
+  {{/if}}
+
+  {{#if is.lifestyle}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.lifestyle"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Tier"}}</label><select name="tier" data-dtype="Number">{{#each tiers}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Plus"}}</label><input type="checkbox" name="plus" {{checked d.plus}}><p class="hint">{{localize "NEONHUB.Lifestyle.Config.PlusHint"}}</p></div>
+  </fieldset>
+  {{/if}}
+
+  {{#if membershipLike}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Group.memberships"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.MinTier"}}</label><select name="minTier" data-dtype="Number">{{#each minTiers}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><p class="hint">{{localize "NEONHUB.Lifestyle.Config.MinTierHint"}}</p></div>
+    {{#if is.health}}<div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Response"}}</label><input type="text" name="response" value="{{d.response}}" placeholder="1d6"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.ResponseHint"}}</p></div>{{/if}}
+  </fieldset>
+  {{/if}}
+
+  {{#if is.furnishing}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.furnishing"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Humanity"}}</label><input type="number" name="humanity" min="0" max="10" value="{{d.humanity}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.HumanityHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Furnishes"}}</label><select name="furnishes">{{#each furnishes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+  </fieldset>
+  {{/if}}
+
+  {{#if is.loan}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.loan"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.LoanKind"}}</label><select name="loan.kind">{{#each loanKinds}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Principal"}}</label><input type="number" name="loan.principal" min="0" value="{{d.loan.principal}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.PrincipalHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Rate"}}</label><input type="number" name="loan.ratePct" min="0" max="100" step="0.5" value="{{d.loan.ratePct}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.RateHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Monthly"}}</label><input type="number" name="monthly" min="0" value="{{d.monthly}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.LoanMonthlyHint"}}</p></div>
+    {{#if installment}}
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Down"}}</label><input type="number" name="loan.downPct" min="0" max="100" value="{{d.loan.downPct}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Term"}}</label><input type="number" name="loan.termMonths" min="0" value="{{d.loan.termMonths}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.MonthsLeft"}}</label><input type="number" name="loan.monthsLeft" min="0" value="{{d.loan.monthsLeft}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.MonthsLeftHint"}}</p></div>
+    {{/if}}
+  </fieldset>
+  {{/if}}
+
+  {{#unless is.housing}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Config.MonthlyCheck"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.CheckSkill"}}</label><input type="text" name="check.skill" value="{{d.check.skill}}" placeholder="Library Search"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.CheckDV"}}</label><input type="number" name="check.dv" min="0" max="30" value="{{d.check.dv}}"></div>
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.CheckHint"}}</p>
+  </fieldset>
+  {{/unless}}
+
+  <div class="form-group stacked">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Notes"}}</label>
+    <textarea name="notes" rows="2">{{d.notes}}</textarea>
+  </div>
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Template"}}</label>
+    <input type="checkbox" name="template" {{checked d.template}}>
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.TemplateHint"}}</p>
+  </div>
+  <p class="hint">{{localize "NEONHUB.Lifestyle.Config.EffectsHint"}}</p>
+
+  <footer class="form-footer">
+    {{#unless isNew}}<button type="button" data-action="unflag"><i class="fa-solid fa-link-slash"></i> {{localize "NEONHUB.Lifestyle.Config.Unflag"}}</button>{{/unless}}
+    <button type="submit"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Lifestyle.Config.Save"}}</button>
+  </footer>
+</div>

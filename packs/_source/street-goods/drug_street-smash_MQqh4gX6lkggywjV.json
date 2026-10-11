@@ -1,0 +1,229 @@
+{
+  "_id": "MQqh4gX6lkggywjV",
+  "_key": "!items!MQqh4gX6lkggywjV",
+  "name": "Street Smash",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/smash.svg",
+  "folder": "FQW5vCzdta2bYB3o",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Cheap because it's re-bottled from last night's party leftovers. It tastes like it.</p><p><strong>Primary (4 hours):</strong> +1 to Acting, Contortionist, Conversation, Dance, Human Perception and Persuasion.</p><p><strong>Secondary (DV15):</strong> addicted. −2 to the same Skills.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "snorted",
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 5
+    },
+    "consumed": "Street Smash Primary"
+  },
+  "effects": [
+    {
+      "_id": "qwoKI8uZCCqWqr1T",
+      "_key": "!items.effects!MQqh4gX6lkggywjV.qwoKI8uZCCqWqr1T",
+      "name": "Street Smash Primary",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/smash.svg",
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.contortionist",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "XoF27TjL78WBNwhb",
+      "_key": "!items.effects!MQqh4gX6lkggywjV.XoF27TjL78WBNwhb",
+      "name": "Street Smash Addiction",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/smash.svg",
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.contortionist",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "-2"
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "-2"
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {},
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

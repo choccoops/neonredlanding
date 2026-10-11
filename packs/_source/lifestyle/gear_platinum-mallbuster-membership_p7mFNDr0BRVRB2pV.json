@@ -1,0 +1,114 @@
+{
+  "_id": "p7mFNDr0BRVRB2pV",
+  "_key": "!items!p7mFNDr0BRVRB2pV",
+  "name": "Platinum Mallbuster Membership",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/mallbuster.svg",
+  "folder": "47pGdHr2u1nVkDtL",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p>A personal shopper, private boutiques and free Champaradise while you browse. 20% off fashion.</p><p>Membership: <strong>500eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "4k1gat6ECN0HNazQ",
+      "_key": "!items.effects!p7mFNDr0BRVRB2pV.4k1gat6ECN0HNazQ",
+      "name": "Platinum Mallbuster Membership",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/mallbuster.svg",
+      "changes": [
+        {
+          "key": "bonuses.trading",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 500,
+        "minTier": 4
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

@@ -46,7 +46,8 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
       clearLink: HQApp.#onClearLink,
       pickImage: HQApp.#onPickImage,
       toggleImprovement: HQApp.#onToggleImprovement,
-      deleteHQ: HQApp.#onDeleteHQ
+      deleteHQ: HQApp.#onDeleteHQ,
+      openLifestyle: HQApp.#onOpenLifestyle
     }
   };
 
@@ -446,6 +447,11 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
     if (!ok) return;
     await HQStore.delete(this.hqId);
     this.close();
+  }
+
+  /** The crew's monthly expenses. Through the API so the two windows don't import each other. */
+  static #onOpenLifestyle() {
+    game.modules.get(MODULE_ID).api?.openLifestyle();
   }
 
   _onClose(options) {

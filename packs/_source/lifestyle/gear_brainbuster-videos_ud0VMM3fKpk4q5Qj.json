@@ -1,0 +1,104 @@
+{
+  "_id": "ud0VMM3fKpk4q5Qj",
+  "_key": "!items!ud0VMM3fKpk4q5Qj",
+  "name": "BrainBuster Videos",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/braindance.svg",
+  "folder": "47pGdHr2u1nVkDtL",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>Viewing pods across the city and a braindance library you can download by Agent. A Neural Link is needed for full-sensory formats; a Braindance Viewer for watching at home.</p><p>Membership: <strong>10eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 10
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "gArE4b1r3aw38V82",
+      "_key": "!items.effects!ud0VMM3fKpk4q5Qj.gArE4b1r3aw38V82",
+      "name": "BrainBuster Videos",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/braindance.svg",
+      "changes": [
+        {
+          "key": "bonuses.streetwise",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 10,
+        "minTier": 1
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

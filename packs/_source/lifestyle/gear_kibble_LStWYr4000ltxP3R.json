@@ -1,0 +1,105 @@
+{
+  "_id": "LStWYr4000ltxP3R",
+  "_key": "!items!LStWYr4000ltxP3R",
+  "name": "Kibble+",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/kibble-plus.svg",
+  "folder": "bCdDF3UexvDH6Ys6",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Kibble, every meal, every day. It's hard to stay cool when that's all there is.</p><p>Membership package: <strong>90eb a month</strong>, cheaper than the Kibble package because it's meant to be combined with memberships. While active: <strong>COOL -1</strong>.</p><p>Memberships offered at this level:</p><ul><li>Discount Supplement Shack</li><li>BrainBuster Videos</li></ul>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 90
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "0YUgHt9E2G6UCPMp",
+      "_key": "!items.effects!LStWYr4000ltxP3R.0YUgHt9E2G6UCPMp",
+      "name": "Kibble+",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/kibble-plus.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 90,
+        "tier": 1,
+        "plus": true
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

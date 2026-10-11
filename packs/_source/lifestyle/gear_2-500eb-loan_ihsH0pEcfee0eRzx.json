@@ -1,0 +1,64 @@
+{
+  "_id": "ihsH0pEcfee0eRzx",
+  "_key": "!items!ihsH0pEcfee0eRzx",
+  "name": "2,500eb Loan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/loan.svg",
+  "folder": "9LpUevlP6OX6Cb6P",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Cash now from someone who'll find you later: you get <strong>2,500eb</strong>.</p><p>Every month you owe <strong>250eb</strong> in interest. Paying back the full 2,500eb clears it.</p><p>Fall behind and your lender becomes a story hook.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "loan",
+        "monthly": 250,
+        "loan": {
+          "kind": "interest",
+          "principal": 2500,
+          "ratePct": 10
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

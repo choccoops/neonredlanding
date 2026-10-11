@@ -1,0 +1,124 @@
+{
+  "_id": "XqS8XFSGSIl090ru",
+  "_key": "!items!XqS8XFSGSIl090ru",
+  "name": "Executive Diamond Club",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/diamond.svg",
+  "folder": "47pGdHr2u1nVkDtL",
+  "sort": 500,
+  "system": {
+    "description": {
+      "value": "<p>Entry to nearly every executive lounge and restaurant in Night City and beyond. Club points cover one free hotel night a month.</p><p>Membership: <strong>500eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "1KJ3MCI8M3r81iIR",
+      "_key": "!items.effects!XqS8XFSGSIl090ru.1KJ3MCI8M3r81iIR",
+      "name": "Executive Diamond Club",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/diamond.svg",
+      "changes": [
+        {
+          "key": "bonuses.bribery",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.business",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": true
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 500,
+        "minTier": 4
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

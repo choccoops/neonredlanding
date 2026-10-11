@@ -1,0 +1,117 @@
+{
+  "_id": "46SwbBvwfyaScChG",
+  "_key": "!items!46SwbBvwfyaScChG",
+  "name": "They Walk Among Us",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+  "folder": "AjAxrLpsmQYRMYh1",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Blurry photos and leaked footage proving the conspiracy goes all the way up. Probably.</p><p>Screamsheet subscription: <strong>50eb a month</strong>.</p><p>Each month, a <strong>DV15 Library Search</strong> Check tracks down the latest issue.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "SK36XkUXpcB0Fm3B",
+      "_key": "!items.effects!46SwbBvwfyaScChG.SK36XkUXpcB0Fm3B",
+      "name": "They Walk Among Us",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+      "changes": [
+        {
+          "key": "bonuses.interrogation",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.photographyAndFilm",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "subscription",
+        "monthly": 50,
+        "check": {
+          "skill": "Library Search",
+          "dv": 15
+        }
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

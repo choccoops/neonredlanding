@@ -1,0 +1,125 @@
+{
+  "_id": "iPVmBG8nO4KmM0j3",
+  "_key": "!items!iPVmBG8nO4KmM0j3",
+  "name": "Fresh Food+",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/fresh-food-plus.svg",
+  "folder": "bCdDF3UexvDH6Ys6",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Real food, and your body knows it.</p><p>Membership package: <strong>1000eb a month</strong>, cheaper than the Fresh Food package because it's meant to be combined with memberships. While active: <strong>MOVE +1, WILL +1, BODY +1</strong>.</p><p>Memberships offered at this level:</p><ul><li>Trauma Team Silver</li><li>Executive Diamond Club</li><li>Platinum Mallbuster Membership</li><li>REO Meatsavers</li><li>TicketMiser Season Pass</li><li>Shave & Save Club</li><li>HerbalCare Direct</li><li>Cryobank Storage</li><li>BrainBuster Videos</li></ul>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "IcEGGggzckZIQ0Y9",
+      "_key": "!items.effects!iPVmBG8nO4KmM0j3.IcEGGggzckZIQ0Y9",
+      "name": "Fresh Food+",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/fresh-food-plus.svg",
+      "changes": [
+        {
+          "key": "system.stats.move.value",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.stats.will.value",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.stats.body.value",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat",
+              "2": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 1000,
+        "tier": 4,
+        "plus": true
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

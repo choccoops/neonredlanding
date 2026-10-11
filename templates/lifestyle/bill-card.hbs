@@ -1,0 +1,22 @@
+<div class="neon-hub-chat nh-ls-chat">
+  <header><i class="fa-solid fa-file-invoice-dollar"></i> <strong>{{name}}</strong> &middot; {{label}}</header>
+  {{#each groups}}
+  <details>
+    <summary><span>{{label}}</span><b>{{totalText}}</b></summary>
+    <ul>
+      {{#each lines}}<li><span>{{name}}{{#if amount}} &times;{{amount}}{{/if}}</span><span>{{cost}}</span></li>{{/each}}
+    </ul>
+  </details>
+  {{else}}
+  <p>{{localize "NEONHUB.Lifestyle.Chat.NothingDue"}}</p>
+  {{/each}}
+  {{#if discount}}<p class="nh-ls-discount">{{localize "NEONHUB.Lifestyle.Chat.Discount" discount=discount}}</p>{{/if}}
+  <ul class="nh-ls-totals">
+    <li><span>{{localize "NEONHUB.Lifestyle.Chat.Paid"}}</span><b>{{total}}</b></li>
+    <li><span>{{localize "NEONHUB.Lifestyle.Chat.Balance"}}</span><b class="{{#if debt}}nh-due{{/if}}">{{after}}</b></li>
+  </ul>
+  {{#if debt}}<p class="nh-due">{{localize "NEONHUB.Lifestyle.Chat.InDebt"}}</p>{{/if}}
+  {{#each finished}}<p><i class="fa-solid fa-circle-check"></i> {{localize "NEONHUB.Lifestyle.Chat.LoanDone" item=this}}</p>{{/each}}
+  {{#each hqs}}<p class="nh-ls-note"><i class="fa-solid fa-house-signal"></i> {{localize "NEONHUB.Lifestyle.Chat.HQRent" hq=name rent=rent share=share}}</p>{{/each}}
+  {{#each notes}}<p class="nh-ls-note"><i class="fa-solid fa-dice-d20"></i> {{this}}</p>{{/each}}
+</div>

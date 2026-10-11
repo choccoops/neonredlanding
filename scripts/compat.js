@@ -29,6 +29,10 @@ export const Compat = {
     return ns("foundry.applications.apps.ImagePopout") ?? globalThis.ImagePopout;
   },
 
+  get FormDataExtended() {
+    return ns("foundry.applications.ux.FormDataExtended") ?? globalThis.FormDataExtended;
+  },
+
   renderTemplate(path, data) {
     const fn = ns("foundry.applications.handlebars.renderTemplate") ?? globalThis.renderTemplate;
     return fn(path, data);

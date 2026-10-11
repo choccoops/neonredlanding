@@ -24,7 +24,7 @@ export class LifestyleItemConfig extends HandlebarsApplicationMixin(ApplicationV
   }
 
   static DEFAULT_OPTIONS = {
-    classes: ["neon-hub", "nh-ls-config"],
+    classes: ["neon-hub", "nh-ls-config", "nh-cal-dialog"],
     tag: "form",
     window: { title: "NEONHUB.Lifestyle.Config.Title", icon: "fa-solid fa-sliders", resizable: true },
     position: { width: 500, height: "auto" },
@@ -104,6 +104,7 @@ export class LifestyleItemConfig extends HandlebarsApplicationMixin(ApplicationV
 
   static async #onUnflag() {
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.Lifestyle.Config.Unflag") },
       content: `<p>${Handlebars.escapeExpression(L("NEONHUB.Lifestyle.Config.UnflagBody", { name: this.item.name }))}</p>`,
       rejectClose: false

@@ -19,6 +19,12 @@ export const HQ_SETTING = "headquarters";
  * and matches Neon Market's theme names so a hub and its shops look alike.
  */
 export const THEMES = {
+  /** The calendar's look: black chrome, notched corners, Tektur. The default. */
+  chrome: {
+    label: "NEONHUB.Theme.chrome", accent: "#ff2a6d", accent2: "#05d9e8",
+    bg: "#07070b", bg2: "#0d0d15", panel: "rgba(13,13,21,0.92)", text: "#d8dbec", muted: "#6e7290",
+    display: "Neon Hub Tektur", body: "Signika", cut: 16, glow: true, scanlines: true, chrome: true
+  },
   neon: {
     label: "NEONHUB.Theme.neon", accent: "#ff2a6d", accent2: "#05d9e8",
     bg: "#0d0221", bg2: "#2a0a4a", panel: "rgba(18,6,38,0.88)", text: "#f4ecff", muted: "#a898c4",
@@ -88,11 +94,24 @@ export const BUTTON_ACTIONS = {
   hq: { icon: "fa-solid fa-house-signal", label: "NEONHUB.Action.hq" },
   lifestyle: { icon: "fa-solid fa-wallet", label: "NEONHUB.Action.lifestyle" },
   calendar: { icon: "fa-solid fa-calendar-days", label: "NEONHUB.Action.calendar" },
+  messenger: { icon: "fa-solid fa-mobile-screen-button", label: "NEONHUB.Action.messenger" },
   sound: { icon: "fa-solid fa-volume-high", label: "NEONHUB.Action.sound" },
   playlist: { icon: "fa-solid fa-music", label: "NEONHUB.Action.playlist" },
   image: { icon: "fa-solid fa-image", label: "NEONHUB.Action.image" },
   macro: { icon: "fa-solid fa-terminal", label: "NEONHUB.Action.macro" },
   none: { icon: "fa-solid fa-circle-info", label: "NEONHUB.Action.none" }
+};
+
+/** The default theme for new hub pages, Headquarters and the Lifestyle window. */
+export const DEFAULT_THEME = "chrome";
+
+/** Night City Messenger windows a hub button can open (its module, when installed). */
+export const MESSENGER_VIEWS = {
+  inbox: { icon: "fa-solid fa-envelope", gm: false },
+  compose: { icon: "fa-solid fa-pen-to-square", gm: false },
+  contacts: { icon: "fa-solid fa-address-book", gm: false },
+  networks: { icon: "fa-solid fa-network-wired", gm: true },
+  admin: { icon: "fa-solid fa-terminal", gm: true }
 };
 
 /** Who an action is shown to. Keys match MATT's own "for" lists. */

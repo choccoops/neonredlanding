@@ -1,4 +1,4 @@
-import { MODULE_ID, HQ_SETTING, THEMES } from "../constants.js";
+import { MODULE_ID, HQ_SETTING, THEMES, DEFAULT_THEME } from "../constants.js";
 
 const { deepClone, mergeObject } = foundry.utils;
 
@@ -43,7 +43,7 @@ export function normalizeHQ(raw = {}) {
     name: game.i18n?.localize?.("NEONHUB.HQ.DefaultName") ?? "Headquarters",
     location: "",
     img: "",
-    theme: "neon",
+    theme: DEFAULT_THEME,
     notes: "",
     crew: [],
     playersSeeAll: false,
@@ -57,7 +57,7 @@ export function normalizeHQ(raw = {}) {
     month: 0
   };
   const hq = mergeObject(base, deepClone(raw), { inplace: false, insertKeys: true, insertValues: true });
-  if (!THEMES[hq.theme]) hq.theme = "neon";
+  if (!THEMES[hq.theme]) hq.theme = DEFAULT_THEME;
   if (!["active", "lost", "destroyed"].includes(hq.status)) hq.status = "active";
   hq.calendarId = typeof hq.calendarId === "string" ? hq.calendarId : "";
   hq.crew = Array.isArray(hq.crew) ? [...new Set(hq.crew.filter((u) => typeof u === "string" && u))] : [];

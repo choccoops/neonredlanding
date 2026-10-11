@@ -479,3 +479,33 @@
   .nh-cal-body { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
   .nh-cal-notes { max-height: 210px; }
 }
+
+/* ---------- every Neon Hub dialog and form (they share .nh-cal-dialog) ---------- */
+.nh-cal-dialog select,
+.nh-cal-dialog textarea {
+  margin: 0;
+  padding: 0 8px;
+  border: 1px solid var(--nc-line-2);
+  border-radius: 0;
+  background: var(--nc-bg-2);
+  color: var(--nc-text);
+  font-family: "Signika", sans-serif;
+  font-size: 13px;
+  box-shadow: none;
+}
+.nh-cal-dialog select { height: 30px; }
+.nh-cal-dialog textarea { padding: 6px 8px; }
+.nh-cal-dialog select option { background: var(--nc-bg-2); color: var(--nc-text); }
+.nh-cal-dialog :is(select, textarea):focus { outline: none; border-color: var(--nc-cyan); box-shadow: 0 0 0 1px var(--nc-cyan); }
+.nh-cal-dialog input[type="checkbox"] { accent-color: var(--nc-pink); }
+.nh-cal-dialog fieldset { border: 1px solid var(--nc-line); border-radius: 0; background: rgba(13, 13, 21, 0.6); }
+.nh-cal-dialog legend { font-family: var(--nc-display); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--nc-yellow); }
+.nh-cal-dialog .hint,
+.nh-cal-dialog p.hint { color: var(--nc-dim); }
+.nh-cal-dialog .window-content :is(.form-footer, .dialog-buttons) button { clip-path: var(--notch); font-family: var(--nc-display); border-radius: 0; }
+.nh-cal-dialog .window-content .form-footer button[data-action="unflag"] { background: var(--nc-bg-3); border-color: var(--nc-line-2); color: var(--nc-text); }
+.nh-cal-dialog .window-content .form-footer button[data-action="unflag"]:hover { background: rgba(255, 42, 109, 0.12); border-color: var(--nc-pink); color: var(--nc-pink); }
+/* choice dialogs (pick a Headquarters, a homebrew category) */
+.nh-cal-dialog.neon-hub-choose .window-content .form-footer { flex-wrap: wrap; }
+.nh-cal-dialog.neon-hub-choose .window-content .form-footer button { flex: 1 1 45%; background: var(--nc-bg-3); border-color: var(--nc-line-2); color: var(--nc-text); }
+.nh-cal-dialog.neon-hub-choose .window-content .form-footer button:hover { background: rgba(5, 217, 232, 0.08); border-color: var(--nc-cyan); color: var(--nc-cyan); }

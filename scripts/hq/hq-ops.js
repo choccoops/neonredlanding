@@ -37,6 +37,7 @@ export class HQOps {
       ? L("NEONHUB.HQ.Request.PayRent", { rent: eb(monthlyRent(hq)) })
       : L(`NEONHUB.HQ.Request.${op}`, { name: L(`NEONHUB.Improvement.${payload.key}.Name`), cost: HQ_COST });
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.HQ.Request.Title") },
       content: `<p>${L("NEONHUB.HQ.Request.Body", { user: esc(user.name), what: esc(what), hq: esc(hq.name) })}</p>`,
       rejectClose: false

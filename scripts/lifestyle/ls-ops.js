@@ -74,6 +74,7 @@ export class LifestyleOps {
     if (!actor.testUserPermission(user, "OWNER")) throw new Error(L("NEONHUB.Error.NotAllowed"));
     const what = await this.#describeRequest(op, payload, actor);
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.Lifestyle.Request.Title") },
       content: `<p>${L("NEONHUB.Lifestyle.Request.Body", { user: esc(user.name), what: esc(what), name: esc(actor.name) })}</p>`,
       rejectClose: false

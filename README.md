@@ -4,8 +4,9 @@ Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
-  players to a scene, opens a journal or character sheet, opens a Neon Market shop or the crew's
-  Headquarters, plays sound, shows an image or runs a macro.
+  players to a scene, opens a journal or character sheet, opens a Neon Market shop, the crew's
+  Headquarters, Lifestyle, the calendar or Night City Messenger, plays sound, shows an image or
+  runs a macro.
 - **Headquarters.** A crew HQ screen built on the *No Place Like Home* rules: HQ IP, the twelve
   Improvements and their Upgrades, the ten Morale Boost levels, rent and access, the Server Room's
   eurobuck cost, and a monthly Humanity roll.
@@ -23,6 +24,14 @@ Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
 | Cyberpunk RED - CORE | 0.92 (checked against the 0.92.4 source) |
 | Monk's Active Tile Triggers | 12.02 or later (required) |
 | Neon Market | optional, for shop buttons |
+| [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) | optional, for messenger buttons |
+
+![A landing page in the Night City chrome theme](docs/hub-page.webp)
+
+**One look.** Everything in Neon Hub shares the calendar's style: black chrome, notched corners,
+`//` labels and the Tektur typeface. New hub pages, Headquarters and the Lifestyle window use the
+**Night City chrome** theme; the other eight themes are still there for pages and HQs that suit
+them (existing ones keep the theme they had).
 
 ![Hub page themes](docs/hub-themes.webp)
 
@@ -56,6 +65,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
    | Open a Headquarters | Opens the crew HQ screen | Neon Hub's own MATT action |
    | Open Lifestyle | Opens each clicking player's own Lifestyle window (the GM gets the month overview) | Neon Hub's own MATT action |
    | Open calendar | Opens the calendar window for whoever it's shown to | Neon Hub's own MATT action |
+   | Open Night City Messenger | Opens the clicker's Agent inbox, a new message or contacts; GM: Network Management or the Admin Panel | Neon Hub's own MATT action |
    | Play a sound | For the clicker or everyone | MATT `playsound` |
    | Control a playlist | Play, stop, pause, next, previous | MATT `playlist` |
    | Show an image | Image popout with a caption | MATT `showimage` |
@@ -76,7 +86,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
 - The tiles are ordinary MATT tiles. You can open one with MATT's own editor and add more actions;
   rebuilding replaces the action list, so add extra steps after you're done with the hub editor.
-- Neon Hub's four actions also appear in MATT's own action list (group *Neon Hub*), so you can use
+- Neon Hub's five actions also appear in MATT's own action list (group *Neon Hub*), so you can use
   them on any tile.
 
 ## Headquarters
@@ -274,6 +284,27 @@ The calendar's layout and look follow Vokashu's **Cyberpunk Calendar** module, r
 Hub; none of its code is used. The Tektur font is © 2023 The Tektur Project Authors, under the SIL
 Open Font License 1.1 (`fonts/Tektur-OFL.txt`).
 
+## Night City Messenger
+
+[Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) by
+christinophrappuccino (MIT) gives every character an Agent with messages, contacts and eurobuck
+transfers, plus networks, data shards, terminals and hacking. It's a separate module with its own
+look, its own updates and its own sounds; install it alongside Neon Hub to use it.
+
+With both enabled, a hub button set to **Open Night City Messenger** opens one of its windows for
+the player who clicks (or whoever the button shows to):
+
+| Opens | Who |
+| --- | --- |
+| Inbox (the character's Agent) | everyone |
+| New message | everyone |
+| Contacts | everyone |
+| Network Management | GM (players get their inbox) |
+| Admin Panel | GM (players get their inbox) |
+
+The new starter hub page includes a **Messenger** button. Without Night City Messenger the button
+does nothing but say so, and the hub editor warns about it.
+
 ## Macros and API
 
 ```js
@@ -302,6 +333,8 @@ await hub.setDate("Afterlife Crew", { year: 2045, month: 11, day: 1 }); // GM; {
 await hub.addDays("Afterlife Crew", 7);  // GM
 await hub.toRentDay("Afterlife Crew");   // GM: jump to the next rent day
 hub.dateToChat("Afterlife Crew");
+hub.openMessenger("contacts");   // Night City Messenger: inbox, compose, contacts (GM: networks, admin)
+hub.showMessenger("inbox");      // GM: open it on every connected player's screen
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
@@ -312,8 +345,10 @@ await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title:
 checked unchanged in 14.01. Tiles use `flags["monks-active-tiles"]` with `trigger: "click"`,
 `pointer: true` and `allowpaused: true`. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
-hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle` and
-`cpr-neon-hub.opencalendar`.
+hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle`,
+`cpr-neon-hub.opencalendar` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
+through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openContacts`,
+`openNetworkManagement`, `openAdmin`).
 
 **Cyberpunk RED - CORE 0.92.4.**
 

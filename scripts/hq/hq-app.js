@@ -1,4 +1,4 @@
-import { MODULE_ID, TEMPLATE_PATH, THEMES } from "../constants.js";
+import { MODULE_ID, TEMPLATE_PATH, THEMES, DEFAULT_THEME } from "../constants.js";
 import { Compat } from "../compat.js";
 import { CPR } from "../cpr.js";
 import {
@@ -103,7 +103,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const hq = this.hq;
     if (!hq) return { missing: true };
     const isGM = game.user.isGM;
-    const theme = THEMES[hq.theme] ?? THEMES.neon;
+    const theme = THEMES[hq.theme] ?? THEMES[DEFAULT_THEME];
 
     const crew = [];
     for (const uuid of hq.crew) {
@@ -320,6 +320,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
       options.push(`<option value="${esc(uuid)}">${esc(a.name)} (${eb(CPR.getWealth(a))})</option>`);
     }
     const choice = await Compat.DialogV2.prompt({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L(titleKey) },
       content: `<p>${esc(L("NEONHUB.HQ.Pay.Body", { amount: eb(amount) }))}</p><div class="form-group"><select name="payer">${options.join("")}</select></div>`,
       ok: { label: L("NEONHUB.HQ.Pay.Confirm"), callback: (event, button) => button.form.elements.payer.value },
@@ -353,6 +354,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
       if (!payment) return;
     } else {
       const ok = await Compat.DialogV2.confirm({
+        classes: ["neon-hub", "nh-cal-dialog"],
         window: { title: name },
         content: `<p>${esc(L(game.user.isGM ? "NEONHUB.HQ.Confirm.Buy" : "NEONHUB.HQ.Confirm.Propose", { name, cost: HQ_COST }))}</p>`,
         rejectClose: false
@@ -366,6 +368,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const key = target.dataset.key ?? this.focus;
     const name = L(`NEONHUB.Improvement.${key}.Name`);
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: name },
       content: `<p>${esc(L(game.user.isGM ? "NEONHUB.HQ.Confirm.Upgrade" : "NEONHUB.HQ.Confirm.ProposeUpgrade", { name, cost: HQ_COST }))}</p>`,
       rejectClose: false
@@ -383,6 +386,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onNewMonth() {
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.HQ.NewMonth") },
       content: `<p>${esc(L("NEONHUB.HQ.NewMonthConfirm"))}</p>`,
       rejectClose: false
@@ -449,6 +453,7 @@ export class HQApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onDeleteHQ() {
     const ok = await Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.HQ.Delete") },
       content: `<p>${esc(L("NEONHUB.HQ.DeleteConfirm", { name: this.hq.name }))}</p>`,
       rejectClose: false

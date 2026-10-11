@@ -25,6 +25,7 @@ Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
 | Monk's Active Tile Triggers | 12.02 or later (required) |
 | Neon Market | optional, for shop buttons |
 | [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) | optional, for messenger buttons |
+| [SmallTime](https://github.com/unsoluble/smalltime) | optional: 1.24.0 on Foundry v12, for the world clock in the calendar |
 
 ![A landing page in the Night City chrome theme](docs/hub-page.webp)
 
@@ -283,8 +284,30 @@ time. Days are counted in Night City's time zone (`America/Los_Angeles`), which 
 phase lands on. Change it in the *Calendar time zone* setting. Each player can hide the moon in
 their own settings.
 
-**Settings.** *Calendar time zone* (world). *First day of the week*, *Show moon phases* and
-*Notify on date change* (per player).
+**Time of day, with SmallTime.** With [SmallTime](https://github.com/unsoluble/smalltime)
+enabled (1.24.0, its last release for Foundry v12; later ones need v13), the calendar runs on the
+world clock that SmallTime shows:
+
+- **Days follow the clock.** Each time the world clock passes midnight, every calendar that moves
+  with the clock goes on a day, with rent days, bills and HQ months as usual. It doesn't matter what
+  moved the clock: SmallTime's buttons, the calendar's, a macro or combat rounds. Going back past
+  midnight moves the calendars back. A calendar's own **±1 d / ±7 d / ±1 mo** buttons still change
+  only that calendar and leave the clock alone, so groups can be on different dates.
+- **Moves with the world clock** is on for every calendar; untick it in the calendar's settings
+  (the pen button) for one that should stay put, like a flashback. A link icon on the time strip
+  shows which way it's set.
+- **Time controls in the calendar (GM).** The time strip shows the time and has SmallTime's step
+  buttons (its *small* and *large step* settings), a slider for the time of day (night, dawn, day
+  and dusk along it, from SmallTime's sunrise and sunset), and a button that shows or hides
+  SmallTime's own window. These move the same world clock, so SmallTime's window and its darkness
+  link follow along. The slider stays on the same day; step past midnight to change the day.
+- Players see the time when SmallTime lets them see its clock in that scene.
+- **SmallTime's moon** is set to the real Moon's phase on the date of the first calendar that moves
+  with the clock, which also drives SmallTime's moonlight darkness. Turn off *SmallTime shows the
+  real Moon* to set it by hand in SmallTime.
+
+**Settings.** *Calendar time zone* and *SmallTime shows the real Moon* (world). *First day of the
+week*, *Show moon phases* and *Notify on date change* (per player).
 
 The calendar's layout and look follow Vokashu's **Cyberpunk Calendar** module, rebuilt for Neon
 Hub; none of its code is used. The Tektur font is © 2023 The Tektur Project Authors, under the SIL
@@ -339,6 +362,9 @@ await hub.setDate("Afterlife Crew", { year: 2045, month: 11, day: 1 }); // GM; {
 await hub.addDays("Afterlife Crew", 7);  // GM
 await hub.toRentDay("Afterlife Crew");   // GM: jump to the next rent day
 hub.dateToChat("Afterlife Crew");
+hub.time();                       // world clock: { minutes, time: "21:47" }
+await hub.advanceTime(90);        // GM: 90 minutes on; following calendars change day at midnight
+await hub.setTime("06:00");       // GM: time of day, same day (or minutes after midnight)
 hub.openMessenger("contacts");   // Night City Messenger: inbox, compose, contacts (GM: networks, admin)
 hub.showMessenger("inbox");      // GM: open it on every connected player's screen
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
@@ -377,6 +403,13 @@ Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`), calend
 (`cpr-neon-hub.calendars`), the GM's calendar notes in `cpr-neon-hub.calendarNotes`, and each
 player's notes in their user's `flags.cpr-neon-hub.calendarNotes`. Hub layouts are stored on
 their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
+
+**SmallTime.** Read from SmallTime 1.24.0. It keeps the time of day in Foundry's world time
+(`game.time.worldTime`, midnight at every multiple of 86,400 seconds, no offset outside PF2e) and
+moves it with `game.time.advance`, so Neon Hub watches the core `updateWorldTime` hook and moves
+the clock the same way. It reads SmallTime's `small-step`, `large-step`, `time-format`,
+`sunrise-*` / `sunset-*` settings and its `clockAuth` permission, writes its `moon-phase` setting
+(0 new to 7 waning crescent), and toggles its window with `SmallTimeApp.toggleAppVis("toggle")`.
 
 ## Forward compatibility (Foundry v13+)
 

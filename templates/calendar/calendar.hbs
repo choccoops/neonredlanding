@@ -70,6 +70,21 @@
       </div>
     </div>
 
+    {{#if clock}}
+    <div class="nh-cal-clock {{#if clock.day}}is-day{{else}}is-night{{/if}}" style="--cal: {{active.color}}">
+      <span class="nh-cal-clock-label"><i class="fa-solid {{#if clock.day}}fa-sun{{else}}fa-moon{{/if}}"></i> {{localize "NEONHUB.Clock.Label"}} //</span>
+      <span class="nh-cal-clock-time">{{clock.time}}</span>
+      {{#if isGM}}
+      <input type="range" class="nh-cal-clock-slider" min="0" max="1439" step="1" value="{{clock.minutes}}" style="{{clock.sky}}" aria-label="{{localize 'NEONHUB.Clock.Slider'}}">
+      <div class="nh-cal-clock-steps">
+        {{#each clock.steps}}<button type="button" data-action="clockStep" data-minutes="{{minutes}}">{{label}}</button>{{/each}}
+      </div>
+      {{/if}}
+      <span class="nh-cal-clock-link {{#unless clock.follows}}is-off{{/unless}}" data-tooltip="{{#if clock.follows}}{{localize 'NEONHUB.Clock.FollowsTip'}}{{else}}{{localize 'NEONHUB.Clock.NotFollowingTip'}}{{/if}}"><i class="fa-solid {{#if clock.follows}}fa-link{{else}}fa-link-slash{{/if}}"></i></span>
+      <button type="button" class="nh-cal-icon" data-action="smallTime" data-tooltip="{{localize 'NEONHUB.Clock.Toggle'}}" aria-label="{{localize 'NEONHUB.Clock.Toggle'}}"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </div>
+    {{/if}}
+
     <div class="nh-cal-rent {{#if rent.today}}is-today{{/if}} {{#if rent.soon}}is-soon{{/if}}" style="--cal: {{active.color}}">
       <span class="nh-cal-rent-label"><i class="fa-solid fa-house-chimney"></i> {{localize "NEONHUB.Calendar.Rent.Label"}} //</span>
       <span class="nh-cal-rent-count">{{rent.text}}</span>

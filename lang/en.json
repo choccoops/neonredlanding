@@ -946,6 +946,19 @@
       "Missing": "Night City Messenger isn't installed or enabled in this world.",
       "NotReady": "Night City Messenger is still starting up. Try again in a moment.",
       "Failed": "Night City Messenger couldn't open that window. See the console for details."
+    },
+    "Clock": {
+      "Label": "Time",
+      "Slider": "Time of day",
+      "Toggle": "Show or hide SmallTime",
+      "Follow": "Moves with the world clock",
+      "FollowHint": "With SmallTime: each time the clock passes midnight, this calendar moves on a day (rent days included). Going back past midnight moves it back.",
+      "FollowsTip": "This calendar moves on a day when the clock passes midnight.",
+      "NotFollowingTip": "This calendar doesn't follow the clock. Edit it to turn that on.",
+      "Setting": {
+        "Moon": "SmallTime shows the real Moon",
+        "MoonHint": "Sets SmallTime's moon (and its moonlight darkness) to the real Moon's phase on the date of the first calendar that moves with the world clock."
+      }
     }
   }
 }

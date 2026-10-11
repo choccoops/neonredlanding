@@ -17,8 +17,15 @@ export async function calendarDialog(calendar = null) {
     name: L("NEONHUB.Calendar.DefaultName", { n: list.length + 1 }),
     color: ACCENTS[list.length % ACCENTS.length],
     players: [],
-    rentDay: 1
+    rentDay: 1,
+    clock: true
   };
+  // Only offered with SmallTime, but kept either way.
+  const clockField = game.modules.get("smalltime")?.active ? `
+    <div class="form-group">
+      <label class="nh-check"><input type="checkbox" name="clock" ${data.clock !== false ? "checked" : ""}> ${esc(L("NEONHUB.Clock.Follow"))}</label>
+      <p class="hint">${esc(L("NEONHUB.Clock.FollowHint"))}</p>
+    </div>` : "";
 
   const accents = ACCENTS.includes(data.color) ? ACCENTS : [...ACCENTS, data.color];
   const swatches = accents.map((c) => `
@@ -58,6 +65,7 @@ export async function calendarDialog(calendar = null) {
       <input type="number" name="rentDay" value="${data.rentDay}" min="1" max="31">
       <p class="hint">${esc(L("NEONHUB.Calendar.Dialog.RentDayHint"))}</p>
     </div>
+    ${clockField}
     <div class="form-group stacked">
       <label>${esc(L("NEONHUB.Calendar.Dialog.Accent"))}</label>
       <div class="nh-cal-swatches">${swatches}</div>
@@ -85,6 +93,7 @@ export async function calendarDialog(calendar = null) {
           color: form.querySelector("input[name=color]:checked")?.value ?? data.color,
           players: [...form.querySelectorAll("input[name=players]:checked")].map((i) => i.value)
         };
+        if (form.elements.clock) result.clock = form.elements.clock.checked;
         if (isNew) Object.assign(result, clampDate({ day: form.elements.day.value, month: form.elements.month.value, year: form.elements.year.value }));
         return result;
       }

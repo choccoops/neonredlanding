@@ -280,6 +280,64 @@
 .nh-cal-app .window-content button.nh-cal-chip.is-due { border-color: #ff8a1f; background: rgba(255, 138, 31, 0.1); color: #ff8a1f; }
 .nh-cal-app .window-content button.nh-cal-rent-go { margin-left: auto; height: 26px; font-size: 11px; }
 
+/* ---------- world clock (SmallTime) ---------- */
+.nh-cal-clock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 6px 10px;
+  border: 1px solid var(--nc-line);
+  border-left: 3px solid var(--nc-cyan);
+  background: rgba(5, 217, 232, 0.04);
+}
+.nh-cal-clock.is-night { border-left-color: #9d4dff; background: rgba(157, 77, 255, 0.06); }
+.nh-cal-clock-label { font-family: var(--nc-display); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--nc-cyan); white-space: nowrap; }
+.nh-cal-clock.is-night .nh-cal-clock-label { color: #b98cff; }
+.nh-cal-clock-time { min-width: 5.2em; font-family: var(--nc-display); font-size: 19px; letter-spacing: 0.1em; color: #fff; font-variant-numeric: tabular-nums; text-shadow: 0 0 8px rgba(5, 217, 232, 0.45); }
+.nh-cal-clock.is-night .nh-cal-clock-time { text-shadow: 0 0 8px rgba(157, 77, 255, 0.55); }
+.nh-cal-app .window-content input.nh-cal-clock-slider {
+  flex: 1 1 160px;
+  min-width: 120px;
+  height: 8px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--nc-line-2);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  /* Night, dawn, day, dusk, night: stops from SmallTime's sunrise and sunset. */
+  background: linear-gradient(90deg,
+    #0b0820 0%, #0b0820 var(--rise-a, 12.5%), #ff8a1f calc((var(--rise-a, 12.5%) + var(--rise-b, 29.2%)) / 2), #05d9e8 var(--rise-b, 29.2%),
+    #05d9e8 var(--set-a, 72.9%), #ff2a6d calc((var(--set-a, 72.9%) + var(--set-b, 91.7%)) / 2), #0b0820 var(--set-b, 91.7%), #0b0820 100%);
+  cursor: pointer;
+}
+.nh-cal-clock-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 10px; height: 20px; border: 1px solid #000; background: #fff; box-shadow: 0 0 8px var(--cal); }
+.nh-cal-clock-slider::-moz-range-thumb { width: 10px; height: 20px; border: 1px solid #000; border-radius: 0; background: #fff; box-shadow: 0 0 8px var(--cal); }
+.nh-cal-clock-slider::-moz-range-track { background: transparent; }
+.nh-cal-clock-steps { display: flex; gap: 4px; }
+.nh-cal-app .window-content .nh-cal-clock-steps button {
+  width: 46px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--nc-line-2);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--nc-text);
+  font-family: "Signika", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+}
+.nh-cal-app .window-content .nh-cal-clock-steps button:hover { border-color: var(--nc-cyan); color: #fff; background: rgba(5, 217, 232, 0.2); }
+.nh-cal-clock-link { color: #39ff88; font-size: 12px; }
+.nh-cal-clock-link.is-off { color: var(--nc-dim); }
+.nh-cal-clock .nh-cal-clock-link { margin-left: auto; }
+.nh-cal-app .window-content .nh-cal-clock button.nh-cal-icon { flex-basis: 26px; width: 26px; height: 26px; }
+
+/* follow-the-clock checkbox in the calendar dialog */
+.nh-cal-dialog form .form-group label.nh-check { display: flex; align-items: center; gap: 8px; font-family: "Signika", sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--nc-text) !important; }
+.nh-cal-dialog form .form-group label.nh-check input { flex: 0 0 auto; margin: 0; accent-color: var(--nc-cyan); }
+
 /* ---------- month navigation ---------- */
 .nh-cal-nav { display: flex; align-items: center; gap: 6px; }
 .nh-cal-app .window-content .nh-cal-nav select { flex: 0 0 160px; width: 160px; text-transform: uppercase; }

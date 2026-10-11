@@ -78,6 +78,8 @@ export const CalendarStore = {
       color: /^#[0-9a-f]{6}$/i.test(raw.color ?? "") ? raw.color : ACCENTS[0],
       players: Array.isArray(raw.players) ? [...new Set(raw.players.filter((p) => typeof p === "string" && p))] : [],
       rentDay: Math.min(31, Math.max(1, Math.floor(Number(raw.rentDay)) || 1)),
+      // Moves on a day each time the world clock passes midnight (with SmallTime).
+      clock: raw.clock !== false,
       ...date
     };
   },
@@ -179,7 +181,7 @@ export const CalendarStore = {
     const list = this.all();
     const calendar = list.find((c) => c.id === id);
     if (!calendar) return null;
-    for (const key of ["name", "color", "players", "rentDay"]) if (key in changes) calendar[key] = deepClone(changes[key]);
+    for (const key of ["name", "color", "players", "rentDay", "clock"]) if (key in changes) calendar[key] = deepClone(changes[key]);
     await this._save(list);
     return this.get(id);
   },

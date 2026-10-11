@@ -18,6 +18,8 @@ import { CalendarApp } from "./calendar/cal-app.js";
 import { NotesStore } from "./calendar/cal-notes.js";
 import { Messenger } from "./messenger.js";
 import { HubHover } from "./hub/hover.js";
+import { Clock } from "./calendar/clock.js";
+import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -37,6 +39,8 @@ Hooks.once("init", () => {
   LifestyleStore.register();
   CalendarStore.register();
   NotesStore.register();
+  Clock.register();
+  Clock.init();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -113,6 +117,20 @@ Hooks.once("init", () => {
       return c && CalendarStore.canSee(c) ? NotesStore.create(c, date, data) : null;
     },
 
+    /** Time of day on the world clock (SmallTime's clock): { minutes, time } where time is "HH:MM". */
+    time: () => {
+      const minutes = minutesOfDay(game.time.worldTime);
+      return { minutes, time: `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}` };
+    },
+    /** GM: move the world clock by minutes (negative goes back). Calendars that follow it change day at midnight. */
+    advanceTime: (minutes) => Clock.advance(Number(minutes) * 60),
+    /** GM: set the time of day, "HH:MM" or minutes after midnight, without changing the day. */
+    setTime: (time) => {
+      const minutes = typeof time === "string" ? parseTime(time) : Number(time);
+      if (minutes === null || !Number.isFinite(minutes)) throw new Error(`Not a time: ${time}`);
+      return Clock.setTime(minutes);
+    },
+
     /** Open a Night City Messenger window here (inbox, compose, contacts; GM: networks, admin). Needs that module. */
     openMessenger: (view = "inbox") => Messenger.open(view),
     /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
@@ -179,6 +197,7 @@ Hooks.on(`${MODULE_ID}.calendarChanged`, (list) => {
 });
 
 Hooks.on(`${MODULE_ID}.calendarNotesChanged`, () => CalendarApp.refresh());
+Hooks.on("updateWorldTime", () => CalendarApp.instance?.updateClock());
 // Players' notes live on their User.
 Hooks.on("updateUser", (user, changes) => {
   if (foundry.utils.hasProperty(changes, `flags.${MODULE_ID}`)) CalendarApp.refresh();

@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.0
+
+The calendar runs on SmallTime's clock.
+
+- **Days follow the world clock.** With [SmallTime](https://github.com/unsoluble/smalltime) 1.24.0 (its last release for Foundry v12) enabled, each calendar moves on a day whenever the world clock passes midnight, whatever moved it: SmallTime, the calendar, a macro or combat. Rent days, bills and HQ months run as usual, and going back past midnight moves the calendars back. Each calendar can opt out with **Moves with the world clock** in its settings.
+- **Time controls in the calendar.** A time strip under the date shows the time to the GM, and to players when SmallTime lets them see the clock. The GM gets SmallTime's small and large steps, a day/night slider for the time of day, and a button that shows or hides SmallTime's window. SmallTime's window and darkness link follow along.
+- **SmallTime shows the real Moon.** SmallTime's moon phase, and the moonlight darkness that goes with it, is set to the real Moon on the date of the first calendar that follows the clock (a world setting turns this off).
+- API: `time()`, `advanceTime(minutes)` and `setTime("HH:MM")`.
+
 ## 1.4.1
 
 - **Fixed: hovered buttons didn't light up.** Neon Hub changed only the tile's mesh, and Foundry v12 redrew the tile from its own texture straight away. The lit image now goes on both, the way Monk's Active Tile Triggers swaps tile images, and the pointer is read the way MATT reads it for its hover triggers. No rebuild needed if you rebuilt for 1.4.0.

@@ -10,6 +10,8 @@ import { moonDays, litPath } from "./moon.js";
 import { LifestyleStore } from "../lifestyle/ls-store.js";
 import { NotesStore } from "./cal-notes.js";
 import { dayMarker, dayKey } from "./cal-notes-data.js";
+import { Clock } from "./clock.js";
+import { formatTime, isDaytime } from "./clock-time.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -63,7 +65,9 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       noteCancel: CalendarApp.#onNoteCancel,
       noteSave: CalendarApp.#onNoteSave,
       noteDelete: CalendarApp.#onNoteDelete,
-      noteShare: CalendarApp.#onNoteShare
+      noteShare: CalendarApp.#onNoteShare,
+      clockStep: CalendarApp.#onClockStep,
+      smallTime: CalendarApp.#onSmallTime
     }
   };
 
@@ -164,6 +168,7 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         months: Array.from({ length: 12 }, (_, i) => ({ value: i + 1, label: L(`NEONHUB.Calendar.Month.${i + 1}`), selected: i + 1 === this.view.month })),
         onCurrent: this.view.year === active.year && this.view.month === active.month
       },
+      clock: Clock.visible ? { ...Clock.view(), follows: active.clock } : null,
       ...this.#grid(active, calendars),
       notes: await this.#notesContext(active),
       target: {
@@ -311,6 +316,11 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
     form?.querySelector("input[name=title]")?.focus({ preventScroll: true });
     if (!game.user.isGM) return;
 
+    // The time slider previews while dragging and sets the time on release.
+    const slider = html.querySelector(".nh-cal-clock-slider");
+    slider?.addEventListener("input", (ev) => this.#showClock(Number(ev.currentTarget.value)));
+    slider?.addEventListener("change", (ev) => this.#run(() => Clock.setTime(Number(ev.currentTarget.value))));
+
     for (const input of html.querySelectorAll(".nh-cal-target input[data-field]")) {
       input.addEventListener("change", (ev) => {
         const field = ev.currentTarget.dataset.field;
@@ -330,6 +340,27 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         this.#apply();
       });
     }
+  }
+
+  /** The world clock moved: update the time in place, without redrawing the window. */
+  updateClock() {
+    if (!this.rendered) return;
+    const slider = this.element.querySelector(".nh-cal-clock-slider");
+    if (slider && document.activeElement === slider && slider.matches(":active")) return;
+    this.#showClock(Clock.minutes);
+    if (slider) slider.value = Clock.minutes;
+  }
+
+  #showClock(minutes) {
+    const strip = this.element?.querySelector(".nh-cal-clock");
+    if (!strip) return;
+    const options = Clock.options;
+    const day = isDaytime(minutes, options);
+    strip.classList.toggle("is-day", day);
+    strip.classList.toggle("is-night", !day);
+    strip.querySelector(".nh-cal-clock-time").textContent = formatTime(minutes, options.hour12);
+    const icon = strip.querySelector(".nh-cal-clock-label i");
+    if (icon) icon.className = `fa-solid ${day ? "fa-sun" : "fa-moon"}`;
   }
 
   async #run(fn) {
@@ -482,6 +513,14 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onChat() {
     if (this.active) await CalendarOps.toChat(this.active.id);
+  }
+
+  static async #onClockStep(event, target) {
+    await this.#run(() => Clock.advance(Number(target.dataset.minutes) * 60));
+  }
+
+  static #onSmallTime() {
+    Clock.toggleSmallTime();
   }
 
   /** The Lifestyle window: your own character, or the GM's month overview. */

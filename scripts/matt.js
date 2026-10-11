@@ -41,15 +41,35 @@ export const MATT = {
     }
   },
 
+  /** Triggers a working hub button listens to. */
+  BUTTON_TRIGGERS: ["click", "hoverin", "hoverout"],
+
+  /**
+   * Wrap a button's actions in MATT landings (anchor actions) so one tile can answer
+   * clicks and hovers. MATT starts a trigger after the landing named "_" + its trigger,
+   * and a landing with "stop when reached" ends the run:
+   *   [_click] actions… [_hoverin, stop] [_hoverout, stop]
+   * Clicks run the actions; hovers run nothing. (Hover triggers are what put a tile in
+   * MATT's hover list, which is where its pointer cursor is applied. The lit image is
+   * swapped on each player's own screen by Neon Hub, see hub/hover.js.)
+   */
+  withLandings(actions) {
+    if (!actions.length) return actions;
+    const landing = (tag, stop) => ({ id: this.makeId(), action: "anchor", data: { tag, stop } });
+    return [landing("_click", false), ...actions, landing("_hoverin", true), landing("_hoverout", true)];
+  },
+
   /**
    * Tile flags for a clickable hub button. Mirrors what MATT itself writes when it
    * creates a click tile from a dropped Scene or Macro, plus the pointer cursor and
-   * "works while paused" switches a hub needs.
+   * "works while paused" switches a hub needs. Working buttons also listen to hover,
+   * which is what makes MATT show its pointer cursor over them.
    */
   tileFlags(actions, { gmOnly = false } = {}) {
+    const live = actions.length > 0;
     return {
-      active: actions.length > 0,
-      trigger: "click",
+      active: live,
+      trigger: live ? [...this.BUTTON_TRIGGERS] : "click",
       restriction: "all",
       controlled: gmOnly ? "gm" : "all",
       pertoken: false,
@@ -60,7 +80,7 @@ export const MATT = {
       usealpha: false,
       vision: false,
       record: false,
-      actions
+      actions: this.withLandings(actions)
     };
   },
 

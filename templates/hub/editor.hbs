@@ -26,6 +26,7 @@
       <select data-path="layout">{{#each layouts}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
     </label>
     <p class="nh-hint">{{localize "NEONHUB.Editor.LayoutHint"}}</p>
+    <label class="nh-check"><input type="checkbox" data-path="hover" data-dtype="Boolean" {{checked d.hover}}> {{localize "NEONHUB.Editor.Hover"}}</label>
     <label>{{localize "NEONHUB.Editor.ClickSound"}}
       <span class="nh-file"><input type="text" data-path="clickSound" value="{{d.clickSound}}"><button type="button" data-action="pickFile" data-target="clickSound" data-type="audio" aria-label="{{localize 'NEONHUB.Editor.Browse'}}"><i class="fa-solid fa-file-audio"></i></button></span>
     </label>

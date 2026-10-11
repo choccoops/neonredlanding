@@ -30,3 +30,11 @@ test("v13's namespaced classes win when present", () => {
   assert.equal(Compat.FilePicker.upload(), "v13");
   delete foundry.applications;
 });
+
+test("Compat.loadTexture uses v12's global function, or v13's namespaced one", () => {
+  vm.runInThisContext(`function loadTexture(src) { return "v12:" + src; }`);
+  assert.equal(Compat.loadTexture("a.webp"), "v12:a.webp");
+  foundry.canvas = { loadTexture: (src) => "v13:" + src };
+  assert.equal(Compat.loadTexture("a.webp"), "v13:a.webp");
+  delete foundry.canvas;
+});

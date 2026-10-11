@@ -26,3 +26,9 @@ test("messenger, calendar and lifestyle buttons need no target", () => {
   }));
   assert.deepEqual(validateHub(hub), {});
 });
+
+test("buttons light up on hover unless the page turns it off", () => {
+  assert.equal(defaultHub().hover, true);
+  assert.equal(normalizeHub({}).hover, true, "pages built before 1.4.0 get it");
+  assert.equal(normalizeHub({ hover: false }).hover, false);
+});

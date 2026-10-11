@@ -295,7 +295,13 @@ export async function renderBackground(hub, { load = loadImage } = {}) {
 /*  Buttons                                   */
 /* ------------------------------------------ */
 
-export async function renderButton(button, hub, w, h, { load = loadImage, glyph = iconGlyph } = {}) {
+/**
+ * Draw one button. With `hover`, draw its lit state instead (shown while the pointer is
+ * over it): the panel fills with the accent and the label turns dark, the calendar's
+ * button hover; picture buttons get an accent wash. The border and corner stripe switch
+ * to the second accent with a stronger glow.
+ */
+export async function renderButton(button, hub, w, h, { load = loadImage, glyph = iconGlyph, hover = false } = {}) {
   const theme = THEMES[hub.theme];
   const s = Math.min(w / 400, h / 200, 1.6) || 1;
   await ensureFonts(theme);
@@ -304,6 +310,10 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   const canvas = makeCanvas(w, h);
   const ctx = canvas.getContext("2d");
   const accent = button.color || theme.accent;
+  // Lit border and stripe: the second accent, unless the button is already that colour.
+  const edge = hover ? (accent.toLowerCase() === theme.accent2.toLowerCase() ? theme.accent : theme.accent2) : accent;
+  // Text and icons drawn over the accent fill when lit.
+  const ink = theme.light ? "#ffffff" : theme.bg;
   const cut = Math.round((theme.cut ?? 0) * s);
   const radius = theme.radius ? Math.round(theme.radius * s) : 0;
   const x = glowPad;
@@ -314,15 +324,15 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   // Panel
   ctx.save();
   if (theme.glow && !theme.light) {
-    ctx.shadowColor = hexToRgba(accent, 0.75);
-    ctx.shadowBlur = 16 * s;
+    ctx.shadowColor = hexToRgba(hover ? edge : accent, hover ? 0.95 : 0.75);
+    ctx.shadowBlur = (hover ? 26 : 16) * s;
   } else if (theme.light) {
     ctx.shadowColor = "rgba(20,30,45,0.18)";
     ctx.shadowBlur = 18 * s;
     ctx.shadowOffsetY = 6 * s;
   }
   cutPath(ctx, x, y, bw, bh, cut, radius);
-  ctx.fillStyle = theme.panel;
+  ctx.fillStyle = hover && !button.image ? accent : theme.panel;
   ctx.fill();
   ctx.restore();
 
@@ -341,6 +351,18 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
     shade.addColorStop(1, hexToRgba(shadeColor, 0.9));
     ctx.fillStyle = shade;
     ctx.fillRect(x, y, bw, bh);
+    if (hover) {
+      ctx.fillStyle = hexToRgba(accent, 0.28);
+      ctx.fillRect(x, y, bw, bh);
+    }
+  } else if (hover) {
+    // A soft highlight across the lit panel.
+    const lit = ctx.createLinearGradient(x, y, x, y + bh);
+    lit.addColorStop(0, "rgba(255,255,255,0.22)");
+    lit.addColorStop(0.55, "rgba(255,255,255,0)");
+    lit.addColorStop(1, "rgba(0,0,0,0.12)");
+    ctx.fillStyle = lit;
+    ctx.fillRect(x, y, bw, bh);
   } else {
     const sheen = ctx.createLinearGradient(x, y, x + bw, y + bh);
     sheen.addColorStop(0, hexToRgba(accent, theme.light ? 0.08 : 0.16));
@@ -349,7 +371,7 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
     ctx.fillRect(x, y, bw, bh);
   }
   // Accent bar
-  ctx.fillStyle = accent;
+  ctx.fillStyle = hover ? (img ? edge : ink) : accent;
   ctx.fillRect(x, y, Math.max(3, 5 * s), bh);
   if (theme.hazard) {
     for (let i = 0; i < bw + bh; i += 18 * s) {
@@ -361,14 +383,19 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
 
   // Border
   cutPath(ctx, x + 0.5, y + 0.5, bw - 1, bh - 1, cut, radius);
-  ctx.strokeStyle = hexToRgba(accent, theme.light ? 0.55 : 0.85);
-  ctx.lineWidth = Math.max(1, 1.5 * s);
+  ctx.strokeStyle = hover ? edge : hexToRgba(accent, theme.light ? 0.55 : 0.85);
+  ctx.lineWidth = Math.max(1, (hover ? 2.5 : 1.5) * s);
+  if (hover && theme.glow && !theme.light) {
+    ctx.shadowColor = edge;
+    ctx.shadowBlur = 12 * s;
+  }
   ctx.stroke();
+  ctx.shadowBlur = 0;
 
   // Chrome: a stripe of accent along the notched corner, like the calendar's date panel.
   if (theme.chrome && cut) {
     const band = Math.max(3, 6 * s);
-    ctx.fillStyle = accent;
+    ctx.fillStyle = hover ? edge : accent;
     ctx.beginPath();
     ctx.moveTo(x + bw - cut - band, y);
     ctx.lineTo(x + bw - cut, y);
@@ -393,8 +420,8 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   ctx.textBaseline = "alphabetic";
   if (g && !img) {
     ctx.font = `${g.weight} ${iconSize}px ${g.family}`;
-    ctx.fillStyle = accent;
-    if (theme.glow && !theme.light) {
+    ctx.fillStyle = hover ? ink : accent;
+    if (theme.glow && !theme.light && !hover) {
       ctx.shadowColor = accent;
       ctx.shadowBlur = 12 * s;
     }
@@ -412,9 +439,9 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
     // Small badge icon on pictures
     const bs = Math.round(26 * s);
     ctx.font = `${g.weight} ${Math.round(bs * 0.62)}px ${g.family}`;
-    ctx.fillStyle = hexToRgba(theme.bg, 0.8);
+    ctx.fillStyle = hover ? accent : hexToRgba(theme.bg, 0.8);
     ctx.fillRect(x + bw - pad - bs, y + pad, bs, bs);
-    ctx.fillStyle = accent;
+    ctx.fillStyle = hover ? ink : accent;
     ctx.textAlign = "center";
     ctx.fillText(g.char, x + bw - pad - bs / 2, y + pad + bs * 0.74);
   }
@@ -440,7 +467,7 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   else ty = y + (bh - blockH) / 2 + size;
 
   ctx.font = `${fontStyle} 400 ${size}px ${displayFamily}`.trim();
-  ctx.fillStyle = img && theme.light ? "#ffffff" : theme.text;
+  ctx.fillStyle = hover && !img ? ink : img && theme.light ? "#ffffff" : theme.text;
   if (img) {
     ctx.shadowColor = "rgba(0,0,0,0.8)";
     ctx.shadowBlur = 6 * s;
@@ -450,14 +477,14 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   track(ctx, 0);
   if (subLines.length) {
     ctx.font = `400 ${subSize}px ${bodyFamily}`;
-    ctx.fillStyle = img ? hexToRgba(theme.light ? "#ffffff" : theme.text, 0.85) : theme.muted;
+    ctx.fillStyle = hover && !img ? hexToRgba(ink, 0.78) : img ? hexToRgba(theme.light ? "#ffffff" : theme.text, 0.85) : theme.muted;
     subLines.forEach((line, i) => ctx.fillText(line, cx, ty + 8 * s + (i + 1) * subSize * 1.25));
   }
 
   if (button.gmOnly) {
     ctx.font = `700 ${Math.round(12 * Math.max(1, s))}px ${bodyFamily}`;
     ctx.textAlign = "right";
-    ctx.fillStyle = hexToRgba(accent, 0.9);
+    ctx.fillStyle = hover && !img ? ink : hexToRgba(accent, 0.9);
     ctx.fillText("GM", x + bw - pad, y + bh - pad * 0.6);
   }
   return canvas;

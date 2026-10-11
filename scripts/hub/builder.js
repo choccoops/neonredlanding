@@ -1,4 +1,4 @@
-import { MODULE_ID, MATT_ID, HUB_FLAG, TILE_FLAG, THEMES } from "../constants.js";
+import { MODULE_ID, MATT_ID, HUB_FLAG, TILE_FLAG, HOVER_FLAG, THEMES } from "../constants.js";
 import { Compat } from "../compat.js";
 import { MATT } from "../matt.js";
 import { normalizeHub, computeLayout, hashOf, slugify } from "./hub-data.js";
@@ -72,7 +72,9 @@ export class HubBuilder {
     }
 
     const folder = await this.#ensureFolder(`${slugify(hub.title)}-${scene.id}`);
-    const total = hub.buttons.length + 1;
+    // Working buttons also get a lit image for hover.
+    const lit = (button) => hub.hover && MATT.buildActions(button, hub).length > 0;
+    const total = 1 + hub.buttons.reduce((n, b) => n + (rects[b.id] ? (lit(b) ? 2 : 1) : 0), 0);
     let done = 0;
 
     // Background
@@ -88,8 +90,14 @@ export class HubBuilder {
       const r = rects[button.id];
       if (!r) continue;
       const canvas = await renderButton(button, hub, r.w, r.h);
-      const path = await this.#upload(canvas, folder, `btn-${button.id}-${hashOf({ button, theme: hub.theme, w: r.w, h: r.h, v: 2 })}`);
+      const key = hashOf({ button, theme: hub.theme, w: r.w, h: r.h, v: 3 });
+      const path = await this.#upload(canvas, folder, `btn-${button.id}-${key}`);
       progress(++done, total);
+      let hoverPath = "";
+      if (lit(button)) {
+        hoverPath = await this.#upload(await renderButton(button, hub, r.w, r.h, { hover: true }), folder, `btn-${button.id}-${key}-lit`);
+        progress(++done, total);
+      }
       const actions = MATT.buildActions(button, hub);
       const data = {
         x: r.x,
@@ -102,7 +110,7 @@ export class HubBuilder {
         locked: hub.layout !== "manual",
         flags: {
           [MATT_ID]: MATT.tileFlags(actions, { gmOnly: button.gmOnly }),
-          [MODULE_ID]: { [TILE_FLAG]: button.id }
+          [MODULE_ID]: { [TILE_FLAG]: button.id, [HOVER_FLAG]: hoverPath }
         }
       };
       const tile = existing.get(button.id);

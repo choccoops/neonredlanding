@@ -21,6 +21,7 @@ const V12 = {
   FormDataExtended: () => (typeof FormDataExtended === "undefined" ? undefined : FormDataExtended),
   renderTemplate: () => (typeof renderTemplate === "undefined" ? undefined : renderTemplate),
   loadTemplates: () => (typeof loadTemplates === "undefined" ? undefined : loadTemplates),
+  loadTexture: () => (typeof loadTexture === "undefined" ? undefined : loadTexture),
   ForgeVTT: () => (typeof ForgeVTT === "undefined" ? undefined : ForgeVTT)
 };
 const v12 = (name) => globalThis[name] ?? V12[name]();
@@ -58,6 +59,12 @@ export const Compat = {
   loadTemplates(paths) {
     const fn = ns("foundry.applications.handlebars.loadTemplates") ?? v12("loadTemplates");
     return fn(paths);
+  },
+
+  /** Load (or reuse) a canvas texture. */
+  loadTexture(src) {
+    const fn = ns("foundry.canvas.loadTexture") ?? v12("loadTexture");
+    return fn(src);
   },
 
   getDragEventData(event) {

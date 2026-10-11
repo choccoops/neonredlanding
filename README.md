@@ -120,6 +120,8 @@ under `NEONHUB.Improvement` and `NEONHUB.Morale`.
 
 ## Lifestyle
 
+![Lifestyle window](docs/lifestyle.webp)
+
 Rent, food and everything else a character pays for each month. Open it from the **Lifestyle**
 button on a character sheet, in the **Actors** sidebar or on the Headquarters screen, or from a hub
 button set to *Open Lifestyle*.
@@ -138,6 +140,8 @@ lifestyle settings. It shows in the gear tab like anything else.
   added that way does nothing until the GM sets its amount and months on its Lifestyle settings.
 
 **The window**
+
+![Lifestyle catalog](docs/lifestyle-catalog.webp)
 
 - **Expenses** lists the character's items by group, with the month's bill, wallet, what's left
   after paying, and reminders (rough nights, monthly checks). Items have their own buttons: **Buy**
@@ -209,6 +213,8 @@ active housing, lifestyle package and health plans into the actor's `system.life
 `lifeStyle` and `traumaTeam` fields (part of CPR's data model, not shown on the 0.92 sheet).
 
 ## Calendar
+
+![Calendar with day notes](docs/calendar.webp)
 
 Open it from the calendar button in the left toolbar (Token Controls), a hub button set to *Open
 calendar*, or the Lifestyle window. It works with no scene on the canvas.

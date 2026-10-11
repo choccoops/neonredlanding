@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+
+- **Fixed: building a hub page failed with "FP is undefined" on Foundry v12, and browse buttons did nothing.** Neon Hub looked up Foundry v12's FilePicker, TextEditor and FormDataExtended in a way that only works in v13. This also broke the hub editor's image and sound pickers, the HQ picture picker, dragging documents into the hub editor, HQ and calendar notes, links in notes, and saving Lifestyle item settings. All fixed, and uploads on The Forge go to your asset library.
+
 ## 1.3.0
 
 One look across Neon Hub, and a door to Night City Messenger.

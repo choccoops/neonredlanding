@@ -85,6 +85,8 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   inverted into its accent colour, with the second accent on its border (picture buttons get an
   accent wash). Each player sees only their own hover. Turn it off with **Light buttons up under
   the pointer** in the page settings. Pages built before 1.4.0 need one **Rebuild** to get it.
+  Lighting up works from the token layer, like MATT's hover triggers. If a button doesn't light up,
+  `game.modules.get("cpr-neon-hub").api.hoverStatus()` in the console lists the lit images loaded.
 - **GM only** buttons are hidden from players and only respond to the GM.
 - Want buttons in exact spots? Set **Button layout** to *Keep tiles where I put them* and rebuild
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.

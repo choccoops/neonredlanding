@@ -15,10 +15,10 @@ export const HubHover = {
   current: null,
   /** Lit images of the buttons on the viewed scene: tile id -> texture. */
   lit: new Map(),
-  /** The canvas element the pointer listeners are attached to. */
-  view: null,
 
   init() {
+    // Same pointer source as MATT's own hover triggers.
+    document.body.addEventListener("pointermove", () => this.move());
     Hooks.on("canvasReady", () => this.prepare());
     Hooks.on("canvasTearDown", () => this.reset());
     Hooks.on("createTile", (doc) => this.changed(doc));
@@ -30,12 +30,6 @@ export const HubHover = {
   /** Load the lit images of the scene's buttons and listen to the pointer. */
   async prepare() {
     this.reset();
-    const view = canvas.app?.view;
-    if (view && view !== this.view) {
-      view.addEventListener("pointermove", (event) => this.move(event));
-      view.addEventListener("pointerleave", () => this.leave());
-      this.view = view;
-    }
     const scene = canvas.scene;
     for (const doc of scene?.tiles ?? []) await this.load(doc, scene);
   },
@@ -64,13 +58,13 @@ export const HubHover = {
     this.lit.clear();
   },
 
-  move(event) {
-    if (!this.lit.size || !canvas.ready) return;
-    // While the GM arranges tiles, show them as they are.
-    if (canvas.tiles?.active) return this.leave();
-    const rect = this.view.getBoundingClientRect();
-    const point = canvas.stage.worldTransform.applyInverse(new PIXI.Point(event.clientX - rect.left, event.clientY - rect.top));
-    const tile = this.tileAt(point);
+  move() {
+    if (!this.lit.size || !canvas?.ready) return;
+    // Buttons are clicked from the token layer (like MATT's hover); on other layers, show tiles as they are.
+    if (!canvas.tokens?.active) return this.leave();
+    const pointer = canvas.app?.renderer?.events?.pointer;
+    if (!pointer) return;
+    const tile = this.tileAt(pointer.getLocalPosition(canvas.stage));
     if (tile === this.current?.tile && tile?.mesh === this.current?.mesh) return;
     this.leave();
     if (tile) this.enter(tile);
@@ -81,7 +75,7 @@ export const HubHover = {
     let best = null;
     for (const id of this.lit.keys()) {
       const tile = canvas.tiles?.get(id);
-      if (!tile?.visible || !tile.mesh || tile.document.hidden && !game.user.isGM) continue;
+      if (!tile?.mesh || (tile.document.hidden && !game.user.isGM)) continue;
       const { x: tx, y: ty, width, height } = tile.document;
       const left = Math.min(tx, tx + width), top = Math.min(ty, ty + height);
       if (x < left || x > left + Math.abs(width) || y < top || y > top + Math.abs(height)) continue;
@@ -93,13 +87,33 @@ export const HubHover = {
   enter(tile) {
     const texture = this.lit.get(tile.id);
     if (!texture) return;
-    this.current = { tile, mesh: tile.mesh, original: tile.mesh.texture };
-    tile.mesh.texture = texture;
+    this.current = { tile, mesh: tile.mesh, original: tile.texture ?? tile.mesh.texture };
+    this.show(tile, texture);
   },
 
   leave() {
     const hovered = this.current;
     this.current = null;
-    if (hovered && !hovered.mesh.destroyed && hovered.tile.mesh === hovered.mesh) hovered.mesh.texture = hovered.original;
+    if (hovered && !hovered.mesh.destroyed && hovered.tile.mesh === hovered.mesh) this.show(hovered.tile, hovered.original);
+  },
+
+  /**
+   * Put a texture on a tile the way MATT's own image actions do: the tile keeps its texture
+   * and redraws its mesh from it, so both must change, then the mesh is fitted to the tile.
+   */
+  show(tile, texture) {
+    tile.texture = texture;
+    tile.mesh.texture = texture;
+    tile._refreshMesh?.();
+  },
+
+  /** For troubleshooting from the console. */
+  status() {
+    return {
+      scene: canvas.scene?.name,
+      tokenLayer: !!canvas.tokens?.active,
+      lit: [...this.lit.keys()].map((id) => canvas.tiles?.get(id)?.document?.getFlag(MODULE_ID, HOVER_FLAG)),
+      hovered: this.current?.tile.id ?? null
+    };
   }
 };

@@ -9,6 +9,8 @@ export const TEMPLATE_PATH = `modules/${MODULE_ID}/templates`;
 export const HUB_FLAG = "hub";
 /** Tile flag that ties a generated tile back to its hub element. */
 export const TILE_FLAG = "element";
+/** Tile flag with the path of a button's lit (hovered) image. */
+export const HOVER_FLAG = "hover";
 
 /** World setting that stores every Headquarters. */
 export const HQ_SETTING = "headquarters";

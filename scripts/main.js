@@ -17,6 +17,7 @@ import { CalendarOps } from "./calendar/cal-ops.js";
 import { CalendarApp } from "./calendar/cal-app.js";
 import { NotesStore } from "./calendar/cal-notes.js";
 import { Messenger } from "./messenger.js";
+import { HubHover } from "./hub/hover.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -36,6 +37,7 @@ Hooks.once("init", () => {
   LifestyleStore.register();
   CalendarStore.register();
   NotesStore.register();
+  HubHover.init();
 
   Compat.loadTemplates([
     `${TEMPLATE_PATH}/hub/editor.hbs`,

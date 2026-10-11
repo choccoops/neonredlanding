@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.4.0
+
+Hub buttons react to the pointer.
+
+- **Hand cursor.** Working buttons now show Monk's Active Tile Triggers' pointer cursor. Their tiles trigger on click and hover, with landings that keep hovering from running the click actions.
+- **Lit buttons.** Each working button gets a second, lit image: the button inverted into its accent colour, dark text and icon, and the second accent on its border and corner stripe (picture buttons get an accent wash over the picture). It's swapped in on each player's own screen while they hover, so it works for players while the GM is online and nobody sees anyone else's hover. Turn it off per page with **Light buttons up under the pointer**.
+- Existing hub pages need one **Rebuild** to get both.
+
 ## 1.3.1
 
 - **Fixed: building a hub page failed with "FP is undefined" on Foundry v12, and browse buttons did nothing.** Neon Hub looked up Foundry v12's FilePicker, TextEditor and FormDataExtended in a way that only works in v13. This also broke the hub editor's image and sound pickers, the HQ picture picker, dragging documents into the hub editor, HQ and calendar notes, links in notes, and saving Lifestyle item settings. All fixed, and uploads on The Forge go to your asset library.

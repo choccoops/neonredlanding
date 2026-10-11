@@ -81,6 +81,10 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
 - Players click buttons with the token layer selected, which is their default. A GM on the Tiles
   layer selects tiles instead of clicking them; switch to the token layer to test.
 - Buttons work while the game is paused.
+- **Hover.** The pointer turns into a hand over a working button, and the button lights up:
+  inverted into its accent colour, with the second accent on its border (picture buttons get an
+  accent wash). Each player sees only their own hover. Turn it off with **Light buttons up under
+  the pointer** in the page settings. Pages built before 1.4.0 need one **Rebuild** to get it.
 - **GM only** buttons are hidden from players and only respond to the GM.
 - Want buttons in exact spots? Set **Button layout** to *Keep tiles where I put them* and rebuild
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
@@ -342,8 +346,13 @@ await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title:
 ## Data this module relies on
 
 **Monk's Active Tile Triggers.** Action data was read from MATT 12.02, the last v12 release, and
-checked unchanged in 14.01. Tiles use `flags["monks-active-tiles"]` with `trigger: "click"`,
-`pointer: true` and `allowpaused: true`. Entity fields are stored the way MATT's own editor stores
+checked unchanged in 14.01. Tiles use `flags["monks-active-tiles"]` with
+`trigger: ["click", "hoverin", "hoverout"]`, `pointer: true` and `allowpaused: true`. MATT only
+shows the hand cursor for tiles with a hover trigger, so working buttons have one; their action
+list starts with a `_click` landing and ends with `_hoverin` and `_hoverout` landings that stop at
+once, so hovering never runs the click actions. The lit image is not a MATT action (MATT runs
+players' hover actions only when no GM is connected): its path is in the tile's
+`flags["cpr-neon-hub"].hover`, and each client swaps the tile's texture locally under the pointer. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
 hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle`,
 `cpr-neon-hub.opencalendar` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
@@ -390,6 +399,8 @@ their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
   images go to your Forge asset library.
 - Generated images are new files each time a button changes; old ones stay in the world folder and
   can be deleted by hand.
+- Buttons with an action list edited in MATT's own editor keep working, but if you remove the
+  `_hoverin` / `_hoverout` landings, hovering runs the click actions; rebuild to restore them.
 
 ## Building from source
 

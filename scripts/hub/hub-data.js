@@ -39,6 +39,7 @@ export function defaultHub(overrides = {}) {
     columns: 4,
     layout: "grid",
     showTitle: true,
+    hover: true,
     clickSound: "",
     buttons: [],
     ...overrides
@@ -86,6 +87,7 @@ export function normalizeHub(raw = {}) {
   h.columns = Math.min(8, Math.max(1, Math.floor(Number(h.columns) || 4)));
   h.layout = h.layout === "manual" ? "manual" : "grid";
   h.showTitle = h.showTitle !== false;
+  h.hover = h.hover !== false;
   h.clickSound = String(h.clickSound ?? "");
   h.buttons = Array.isArray(h.buttons) ? h.buttons.map(normalizeButton) : [];
   return h;

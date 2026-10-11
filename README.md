@@ -302,6 +302,16 @@ world clock that SmallTime shows:
   SmallTime's own window. These move the same world clock, so SmallTime's window and its darkness
   link follow along. The slider stays on the same day; step past midnight to change the day.
 - Players see the time when SmallTime lets them see its clock in that scene.
+- **Skip time** (GM, the **Skip** button on the time strip) opens a Cyberpunk 2077-style window
+  on everyone's screen. Players drag the hand around a 24-hour dial to how long they'd skip and
+  vote; everyone sees the votes and the **group's call** (the median vote, so one wild vote can't
+  drag it). The GM uses the call, any one vote, or sets the dial, then **Skip**: every screen winds
+  the clock through it, with the sky over a Night City skyline going from day to night and back,
+  the sun and moon rising and setting, and each sunrise, sunset, moonrise, moonset and midnight
+  called out as it passes. The world clock moves on at the end, so calendars change day as usual.
+  Sun times come from SmallTime's sunrise and sunset; the moon rises with the sun when new and at
+  sunset when full, about 50 minutes later each day, using its real phase. **Call it off** closes
+  it for everyone. Up to 24 hours at a time.
 - **SmallTime's moon** is set to the real Moon's phase on the date of the first calendar that moves
   with the clock, which also drives SmallTime's moonlight darkness. Turn off *SmallTime shows the
   real Moon* to set it by hand in SmallTime.
@@ -365,6 +375,7 @@ hub.dateToChat("Afterlife Crew");
 hub.time();                       // world clock: { minutes, time: "21:47" }
 await hub.advanceTime(90);        // GM: 90 minutes on; following calendars change day at midnight
 await hub.setTime("06:00");       // GM: time of day, same day (or minutes after midnight)
+hub.skipTime();                   // GM: open Skip time on everyone's screen
 hub.openMessenger("contacts");   // Night City Messenger: inbox, compose, contacts (GM: networks, admin)
 hub.showMessenger("inbox");      // GM: open it on every connected player's screen
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read

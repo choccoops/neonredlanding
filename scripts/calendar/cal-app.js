@@ -11,6 +11,7 @@ import { LifestyleStore } from "../lifestyle/ls-store.js";
 import { NotesStore } from "./cal-notes.js";
 import { dayMarker, dayKey } from "./cal-notes-data.js";
 import { Clock } from "./clock.js";
+import { SkipTimeApp } from "./skip-app.js";
 import { formatTime, isDaytime } from "./clock-time.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -67,7 +68,8 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       noteDelete: CalendarApp.#onNoteDelete,
       noteShare: CalendarApp.#onNoteShare,
       clockStep: CalendarApp.#onClockStep,
-      smallTime: CalendarApp.#onSmallTime
+      smallTime: CalendarApp.#onSmallTime,
+      skipTime: CalendarApp.#onSkipTime
     }
   };
 
@@ -521,6 +523,10 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static #onSmallTime() {
     Clock.toggleSmallTime();
+  }
+
+  static #onSkipTime() {
+    SkipTimeApp.start();
   }
 
   /** The Lifestyle window: your own character, or the GM's month overview. */

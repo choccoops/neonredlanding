@@ -1,0 +1,38 @@
+<div class="nh-skip-stage">
+  <div class="nh-skip-sky-wrap">
+    <svg class="nh-skip-sky" viewBox="0 0 {{sky.w}} {{sky.h}}" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="nh-skip-sky-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" class="nh-skip-sky-top" stop-color="#06041a"/>
+          <stop offset="1" class="nh-skip-sky-bottom" stop-color="#180a30"/>
+        </linearGradient>
+        <radialGradient id="nh-skip-sun-glow"><stop offset="0" stop-color="#fff3b0" stop-opacity="0.9"/><stop offset="1" stop-color="#ff8a1f" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="{{sky.w}}" height="{{sky.h}}" fill="url(#nh-skip-sky-grad)"/>
+      <g class="nh-skip-stars">{{#each stars}}<circle cx="{{x}}" cy="{{y}}" r="{{r}}"/>{{/each}}</g>
+      <g class="nh-skip-sun"><circle r="22" fill="url(#nh-skip-sun-glow)"/><circle r="9" class="nh-skip-sun-disc"/></g>
+      <g class="nh-skip-moon"><circle r="9" class="nh-skip-moon-dark"/><path class="nh-skip-moon-lit" d=""/></g>
+      <line x1="0" y1="{{sky.horizon}}" x2="{{sky.w}}" y2="{{sky.horizon}}" class="nh-skip-horizon"/>
+      <path d="{{skyline}}" class="nh-skip-skyline"/>
+      <g class="nh-skip-windows">{{#each windows}}<rect x="{{x}}" y="{{y}}" width="2" height="3" class="is-{{c}}"/>{{/each}}</g>
+    </svg>
+    <span class="nh-skip-clock"></span>
+    <div class="nh-skip-toast"></div>
+  </div>
+
+  <svg class="nh-skip-dial {{#if running}}is-locked{{/if}}" viewBox="-140 -140 280 280" role="slider" aria-label="{{localize 'NEONHUB.Skip.Dial'}}">
+    <circle r="{{r}}" class="nh-skip-ring"/>
+    {{#each ticks}}<line x1="{{x1}}" y1="{{y1}}" x2="{{x2}}" y2="{{y2}}" class="nh-skip-tick {{#if major}}is-major{{/if}}"/>{{/each}}
+    {{#each numerals}}<text x="{{x}}" y="{{y}}" class="nh-skip-num">{{text}}</text>{{/each}}
+    {{#each markers}}<circle cx="{{x}}" cy="{{y}}" r="3" class="nh-skip-marker is-{{kind}}"/>{{/each}}
+    <path class="nh-skip-arc" d=""/>
+    <line x1="0" y1="0" x2="0" y2="-{{r}}" class="nh-skip-hand"/>
+    <g class="nh-skip-start"><circle r="5"/></g>
+    <g class="nh-skip-knob"><circle r="11" class="nh-skip-knob-halo"/><circle r="6"/></g>
+    <circle r="62" class="nh-skip-face"/>
+    <text y="-22" class="nh-skip-from"></text>
+    <text y="10" class="nh-skip-amount"></text>
+    <text y="34" class="nh-skip-to"></text>
+    <text y="52" class="nh-skip-days"></text>
+  </svg>
+</div>

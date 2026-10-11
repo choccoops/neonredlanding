@@ -1,0 +1,9 @@
+<div class="nh-cal-card nh-cal-rentcard" style="--cal: {{color}}">
+  <div class="nh-cal-card-kicker">// {{localize "NEONHUB.Calendar.Chat.RentKicker"}}</div>
+  <div class="nh-cal-card-name">{{name}} · {{label}}</div>
+  <p>{{#if months}}{{localize "NEONHUB.Calendar.Chat.RentMonths" n=months}}{{else}}{{localize "NEONHUB.Calendar.Chat.RentDue"}}{{/if}}</p>
+  {{#if capped}}<p class="nh-cal-card-warn">{{localize "NEONHUB.Calendar.Chat.Capped"}}</p>{{/if}}
+  {{#if hqs}}<p><i class="fa-solid fa-house-signal"></i> {{localize "NEONHUB.Calendar.Chat.HQs" hqs=hqs}}</p>{{/if}}
+  {{#if billed}}<p><i class="fa-solid fa-file-invoice-dollar"></i> {{localize "NEONHUB.Calendar.Chat.Billed" n=billed}}</p>{{/if}}
+  {{#if failed}}<p class="nh-cal-card-warn">{{localize "NEONHUB.Lifestyle.Done.BillFailed" names=failed}}</p>{{/if}}
+</div>

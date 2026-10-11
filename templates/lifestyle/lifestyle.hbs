@@ -5,7 +5,7 @@
     </div>
     <div class="nh-hq-title">
       <h1>{{#if actor}}{{actor.name}}{{else}}{{localize "NEONHUB.Lifestyle.Title"}}{{/if}}</h1>
-      <p>{{localize "NEONHUB.Lifestyle.Subtitle"}} &middot; {{monthLabel}}</p>
+      <p>{{localize "NEONHUB.Lifestyle.Subtitle"}} &middot; {{monthLabel}}{{#if calendarName}} <span class="nh-ls-cal">({{calendarName}})</span>{{/if}}{{#if rentNext}} &middot; <i class="fa-solid fa-house-chimney"></i> {{rentNext}}{{/if}}</p>
     </div>
     {{#if actor}}<span class="nh-status nh-ls-status-{{status}}">{{statusLabel}}</span>{{/if}}
     {{#if characters.length}}
@@ -19,7 +19,7 @@
   {{#if actor}}
   {{#unless actor.hasWallet}}<div class="nh-hq-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Lifestyle.NoWallet"}}</div>{{/unless}}
   <section class="nh-hq-stats">
-    <div class="nh-stat nh-stat-ip"><span>{{localize "NEONHUB.Lifestyle.Stat.Monthly"}}</span><strong>{{stats.total}}</strong><small>{{#if paid}}{{localize "NEONHUB.Lifestyle.Stat.PaidThisMonth"}}{{else}}<span class="nh-due">{{localize "NEONHUB.Lifestyle.Stat.DueThisMonth"}}</span>{{/if}}</small></div>
+    <div class="nh-stat nh-stat-ip"><span>{{localize "NEONHUB.Lifestyle.Stat.Monthly"}}</span><strong>{{stats.total}}</strong><small>{{#if paid}}{{localize "NEONHUB.Lifestyle.Stat.PaidThisMonth"}}{{else}}{{#if owed}}<span class="nh-due">{{localize "NEONHUB.Lifestyle.Stat.Owed" n=owed.months total=owed.total}}</span>{{else}}<span class="nh-due">{{localize "NEONHUB.Lifestyle.Stat.DueThisMonth"}}</span>{{/if}}{{/if}}</small></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Stat.Wallet"}}</span><strong>{{wallet}}</strong><small class="{{#if stats.afterNegative}}nh-ls-neg{{/if}}">{{localize "NEONHUB.Lifestyle.Stat.After" after=stats.after}}</small></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.housing"}}</span><strong>{{stats.housing}}</strong></div>
     <div class="nh-stat"><span>{{localize "NEONHUB.Lifestyle.Group.lifestyle"}}</span><strong>{{stats.lifestyleCost}}</strong><small>{{stats.lifestyle}}{{#if stats.discount}} &middot; &minus;{{stats.discount}}{{/if}}</small></div>
@@ -51,8 +51,8 @@
     {{#unless actor}}<button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="tab" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>{{/unless}}
     {{/if}}
     <div class="nh-gm-tools">
-      {{#if canPay}}<button type="button" class="nh-cta" data-action="pay"><i class="fa-solid fa-money-bill-wave"></i> {{localize "NEONHUB.Lifestyle.PayNow" amount=stats.total}}</button>{{/if}}
-      {{#if isGM}}{{#unless tab.month}}<button type="button" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.Lifestyle.NewMonth"}}</button>{{/unless}}{{/if}}
+      {{#if canPay}}<button type="button" class="nh-cta" data-action="pay"><i class="fa-solid fa-money-bill-wave"></i> {{#if owed}}{{localize "NEONHUB.Lifestyle.PayMonths" n=owed.months amount=payAmount}}{{else}}{{localize "NEONHUB.Lifestyle.PayNow" amount=payAmount}}{{/if}}</button>{{/if}}
+      {{#if isGM}}{{#unless tab.month}}{{#if calendarMode}}<button type="button" data-action="openCalendar"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Calendar.Title"}}</button>{{else}}<button type="button" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.Lifestyle.NewMonth"}}</button>{{/if}}{{/unless}}{{/if}}
     </div>
   </nav>
 
@@ -191,16 +191,36 @@
         <p class="nh-hint">{{localize "NEONHUB.Lifestyle.DueCount" n=overview.due}}</p>
       </div>
       <button type="button" data-action="billAll" {{#unless overview.due}}disabled{{/unless}}><i class="fa-solid fa-file-invoice-dollar"></i> {{localize "NEONHUB.Lifestyle.BillAll"}}</button>
+      {{#if overview.calendarMode}}
+      <button type="button" class="nh-cta" data-action="openCalendar"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Calendar.Title"}}</button>
+      {{else}}
       <button type="button" class="nh-cta" data-action="newMonth"><i class="fa-solid fa-calendar-plus"></i> {{localize "NEONHUB.Lifestyle.NewMonth"}}</button>
+      {{/if}}
     </div>
+    {{#if overview.calendarMode}}
+    <div class="nh-ls-calendars">
+      {{#each overview.calendars}}
+      <div class="nh-ls-calrow" data-calendar="{{id}}" style="--cal: {{color}}">
+        <i class="nh-ls-caldot"></i>
+        <b>{{name}}</b>
+        <span>{{date}}</span>
+        <span class="nh-hint">{{localize "NEONHUB.Lifestyle.RentMonth" month=label}}</span>
+        <span class="nh-ls-calrent"><i class="fa-solid fa-house-chimney"></i> {{rent}}</span>
+        <button type="button" data-action="toRentDay" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.GoTip'}}"><i class="fa-solid fa-forward-step"></i> {{localize "NEONHUB.Calendar.Rent.Go"}}</button>
+      </div>
+      {{/each}}
+      <p class="nh-hint">{{#if overview.autoBill}}{{localize "NEONHUB.Lifestyle.AutoBillOn"}}{{else}}{{localize "NEONHUB.Lifestyle.AutoBillOff"}}{{/if}}</p>
+    </div>
+    {{/if}}
     <table class="nh-ls-table">
-      <thead><tr><th>{{localize "NEONHUB.Lifestyle.Col.Character"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Wallet"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Monthly"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Status"}}</th><th></th></tr></thead>
+      <thead><tr><th>{{localize "NEONHUB.Lifestyle.Col.Character"}}</th>{{#if overview.calendarMode}}<th>{{localize "NEONHUB.Lifestyle.Col.Calendar"}}</th>{{/if}}<th>{{localize "NEONHUB.Lifestyle.Col.Wallet"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Monthly"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Status"}}</th><th></th></tr></thead>
       <tbody>
         {{#each overview.rows}}
         <tr data-actor="{{id}}" class="{{#if selected}}selected{{/if}}">
           <td><a data-action="viewActor"><img src="{{img}}" alt=""> <span><b>{{name}}</b><small>{{owners}}</small></span></a></td>
+          {{#if ../overview.calendarMode}}<td>{{#if calendar}}<span class="nh-ls-calname" style="--cal: {{calendar.color}}"><i class="nh-ls-caldot"></i> {{calendar.name}}</span>{{/if}}</td>{{/if}}
           <td class="{{#if negative}}nh-ls-neg{{/if}}">{{wallet}}</td>
-          <td>{{total}}</td>
+          <td>{{total}}{{#if owed}}<br><small class="nh-due">{{owed}}</small>{{/if}}</td>
           <td><span class="nh-ls-pill nh-ls-status-{{status}}">{{statusLabel}}</span></td>
           <td class="nh-ls-rowtools">
             {{#if paid}}
@@ -212,7 +232,7 @@
           </td>
         </tr>
         {{else}}
-        <tr><td colspan="5" class="nh-hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</td></tr>
+        <tr><td colspan="6" class="nh-hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</td></tr>
         {{/each}}
       </tbody>
     </table>

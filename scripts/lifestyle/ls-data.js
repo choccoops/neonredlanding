@@ -189,6 +189,52 @@ export function advanceLoans(items) {
   return { updates, finished };
 }
 
+/**
+ * Several months' bills at once (the calendar jumped past more than one rent day).
+ * Installment loans count down month by month, so a loan with one payment left
+ * is charged once, not every month.
+ * @returns {{ months, total, groups, discount, lines, loans: {id, monthsLeft}[], finished: string[] }}
+ */
+export function computeMonths(items, months = 1, opts = {}) {
+  const n = Math.max(1, Math.floor(months) || 1);
+  let current = items.map((d) => ({ ...d, loan: { ...d.loan } }));
+  const groups = Object.fromEntries(GROUPS.map((g) => [g, 0]));
+  const lines = new Map();
+  const finished = [];
+  let discount = 0;
+  for (let i = 0; i < n; i++) {
+    const bill = computeBill(current, opts);
+    discount += bill.discount;
+    for (const g of GROUPS) groups[g] += bill.groups[g];
+    for (const l of bill.lines) {
+      const line = lines.get(l.id) ?? { ...l, cost: 0, months: 0 };
+      line.cost += l.cost;
+      if (l.cost > 0) line.months += 1;
+      lines.set(l.id, line);
+    }
+    const step = advanceLoans(current);
+    for (const u of step.updates) current.find((d) => d.id === u.id).loan.monthsLeft = u.monthsLeft;
+    finished.push(...step.finished);
+    current = current.filter((d) => !step.finished.includes(d.id));
+  }
+  const loans = current
+    .filter((d) => d.category === "loan" && d.loan.kind === "installment" && d.active)
+    .map((d) => ({ id: d.id, monthsLeft: d.loan.monthsLeft }))
+    .filter((u) => items.find((d) => d.id === u.id)?.loan.monthsLeft !== u.monthsLeft);
+  const total = GROUPS.reduce((sum, g) => sum + groups[g], 0);
+  return { months: n, total, groups, discount, lines: [...lines.values()], loans, finished };
+}
+
+/**
+ * How many months a character owes.
+ * Calendar mode: rent periods since the last one paid (capped), or 1 for someone never billed.
+ * Without a calendar: the shared month counter.
+ */
+export function monthsOwed({ period, paidPeriod = null, cap = 12 }) {
+  if (paidPeriod === null || paidPeriod === undefined) return 1;
+  return Math.min(cap, Math.max(0, period - paidPeriod));
+}
+
 /** Things to remember at the table this month (rough nights, monthly checks). */
 export function reminders(items) {
   const out = [];
@@ -214,9 +260,10 @@ export function pushHistory(history, entry) {
   return list.slice(-MAX_HISTORY);
 }
 
-/** "paid", "due" or "debt" for a character this month. */
-export function billStatus({ paidMonth = 0, month = 1, wallet = 0 } = {}) {
+/** "paid", "due" or "debt" for a character: from months owed, or the counter month paid. */
+export function billStatus({ paidMonth = 0, month = 1, wallet = 0, owed } = {}) {
   if (wallet < 0) return "debt";
+  if (owed !== undefined) return owed > 0 ? "due" : "paid";
   return paidMonth >= month ? "paid" : "due";
 }
 

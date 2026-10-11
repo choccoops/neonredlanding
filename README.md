@@ -1,6 +1,6 @@
-# Neon Hub: Landing Pages, Headquarters & Lifestyle for Cyberpunk RED
+# Neon Hub: Landing Pages, Headquarters, Lifestyle & Calendar for Cyberpunk RED
 
-Three tools for **Cyberpunk RED - CORE** on Foundry VTT:
+Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
@@ -13,6 +13,9 @@ Three tools for **Cyberpunk RED - CORE** on Foundry VTT:
   lifestyle packages, memberships, health plans, screamsheets, transit, fuel, loans and
   furnishings, billed monthly through the wealth ledger, with compendiums of ready-made items
   and templates for your own.
+- **Calendar.** Group calendars, one per crew, each with its own date and rent day. Passing rent
+  day starts the month for that group's lifestyle bills and Headquarters, and every day shows the
+  real Moon's phase.
 
 | Requirement | Version |
 | --- | --- |
@@ -52,6 +55,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
    | Open a Neon Market shop | Opens the shop on the clicker's screen | Neon Hub's own MATT action |
    | Open a Headquarters | Opens the crew HQ screen | Neon Hub's own MATT action |
    | Open Lifestyle | Opens each clicking player's own Lifestyle window (the GM gets the month overview) | Neon Hub's own MATT action |
+   | Open calendar | Opens the calendar window for whoever it's shown to | Neon Hub's own MATT action |
    | Play a sound | For the clicker or everyone | MATT `playsound` |
    | Control a playlist | Play, stop, pause, next, previous | MATT `playlist` |
    | Show an image | Image popout with a caption | MATT `showimage` |
@@ -72,7 +76,7 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
 - The tiles are ordinary MATT tiles. You can open one with MATT's own editor and add more actions;
   rebuilding replaces the action list, so add extra steps after you're done with the hub editor.
-- Neon Hub's three actions also appear in MATT's own action list (group *Neon Hub*), so you can use
+- Neon Hub's four actions also appear in MATT's own action list (group *Neon Hub*), so you can use
   them on any tile.
 
 ## Headquarters
@@ -194,10 +198,75 @@ Datapool:
 - Core duplicates are left out: MRE, Kibble Pack, the Language skills and 13 of the Local Experts
   are already in Cyberpunk RED's own compendiums.
 
+**With calendars.** Once the GM makes a calendar, it runs the months (see below): each character
+is billed by their group's calendar, the window shows that month ("November 2045") and the days
+to rent day, and a character who missed several rent days owes each month (up to 12). Without a
+calendar, the GM starts months with **New month** as before.
+
 **Data.** Item settings live in `flags.cpr-neon-hub.lifestyle`, a character's bills in
 `flags.cpr-neon-hub.lifestyleState`, and the month in a world setting. Neon Hub also mirrors
 active housing, lifestyle package and health plans into the actor's `system.lifestyle.housing`,
 `lifeStyle` and `traumaTeam` fields (part of CPR's data model, not shown on the 0.92 sheet).
+
+## Calendar
+
+Open it from the calendar button in the left toolbar (Token Controls), a hub button set to *Open
+calendar*, or the Lifestyle window. It works with no scene on the canvas.
+
+**Calendars per group.** The GM makes a calendar for each group of edgerunners, with its own
+name, color, date, rent day and players. Players see the calendars open to them (no players ticked
+means everyone) and can page through months, but only the GM changes dates. A **yours** tag marks a
+player's own group, and colored diamonds on the grid show where the other calendars are.
+
+**Setting the date (GM).**
+- **±1 d, ±7 d, ±1 mo** move the date.
+- Click a day to target it, then **Set as today**; double-click a day to set it at once; or type
+  the date in the **Target** fields.
+- **To rent day** jumps to the next rent day.
+- The speech-bubble button posts the date to chat (whispered to the group if it has players).
+- Players get a notice when the GM changes a calendar they can see.
+
+**Notes.** Click a day to open its notes beside the grid. Anyone who can see the calendar can
+write notes there, Simple Calendar style:
+
+- The GM's notes are hidden from players until **Visible to players** is on.
+- A player's notes are private to them (and the GM) until they tick **Share with my group**,
+  which shows them to everyone who can see that calendar.
+- The GM sees, edits and deletes every note; players edit their own. The eye button shows or
+  hides a note in one click.
+- Days with notes are marked on the grid: yellow for shared, cyan for private, grey for the GM's
+  hidden ones. Drag a journal, actor or item into a note to link it.
+- Player notes are saved on the player's own user, so they can write them without a GM online.
+- Hiding is done in the interface. Foundry sends world settings and user data to every client,
+  so a player reading the game data directly could find a hidden note; keep real secrets elsewhere.
+
+**Rent day.** Each calendar has a rent day (the 1st by default; a day later than the month has
+falls on its last day). The window counts down to it and marks it on the grid. Players see whether
+their characters have paid, and the GM sees how many have. When the GM moves a calendar past
+its rent day:
+
+- A new month begins for every character on that calendar (their player is on it, or it's the
+  first calendar): lifestyle bills become due. Turn on *Charge bills automatically on rent day* to
+  charge them at once.
+- Every Headquarters on that calendar rolls its new month (Morale Boost Humanity, rent due). Pick
+  an HQ's calendar on its Setup tab; by default it follows its crew.
+- A rent-day notice goes to the group's chat.
+- Jumping past several rent days asks first: **Start N months** (bills for each month, HQ months
+  for each) or **Just move the date** (a time skip: nobody owes for the skipped months).
+
+**The Moon.** Every day shows the real Moon's phase, computed with the full method of Jean Meeus,
+*Astronomical Algorithms* (chapter 49), which places new, first quarter, full and last quarter moons
+to within a minute or two. Those four phases glow on the day they happen; hover for the name and
+time. Days are counted in Night City's time zone (`America/Los_Angeles`), which decides the day a
+phase lands on. Change it in the *Calendar time zone* setting. Each player can hide the moon in
+their own settings.
+
+**Settings.** *Calendar time zone* (world). *First day of the week*, *Show moon phases* and
+*Notify on date change* (per player).
+
+The calendar's layout and look follow Vokashu's **Cyberpunk Calendar** module, rebuilt for Neon
+Hub; none of its code is used. The Tektur font is © 2023 The Tektur Project Authors, under the SIL
+Open Font License 1.1 (`fonts/Tektur-OFL.txt`).
 
 ## Macros and API
 
@@ -217,7 +286,18 @@ await hub.lifestyleBill(actor);   // { bill: { lines, groups, discount, total },
 await hub.payLifestyle(actor);    // pay this month's bill
 await hub.newLifestyleMonth({ hqs: true, bill: true }); // GM: next month, roll HQ months, bill everyone
 await hub.billLifestyles();       // GM: charge everyone still due
-hub.lifestyleMonth();             // the current month number
+hub.lifestyleMonth();             // the counter month (worlds without calendars)
+
+hub.openCalendar();               // the calendar window on this client
+hub.showCalendar();               // GM: open it on every connected player's screen
+hub.listCalendars();              // calendars this user can see
+hub.getDate("Afterlife Crew");    // { year, month, day } by id or name
+await hub.setDate("Afterlife Crew", { year: 2045, month: 11, day: 1 }); // GM; { rent: false } skips billing
+await hub.addDays("Afterlife Crew", 7);  // GM
+await hub.toRentDay("Afterlife Crew");   // GM: jump to the next rent day
+hub.dateToChat("Afterlife Crew");
+hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
+await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
 
 ## Data this module relies on
@@ -226,7 +306,8 @@ hub.lifestyleMonth();             // the current month number
 checked unchanged in 14.01. Tiles use `flags["monks-active-tiles"]` with `trigger: "click"`,
 `pointer: true` and `allowpaused: true`. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
-hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq` and `cpr-neon-hub.openlifestyle`.
+hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle` and
+`cpr-neon-hub.opencalendar`.
 
 **Cyberpunk RED - CORE 0.92.4.**
 
@@ -240,7 +321,9 @@ hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq` and `cpr-neon-hub.openlif
 | Lifestyle fields | `system.lifestyle.housing / lifeStyle / traumaTeam` `.cost` and `.description` |
 | Skill bonuses | Active Effect keys `bonuses.<skill>` named as CPR's `SystemUtils.slugify` names skills |
 
-Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`). Hub layouts are stored on
+Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`), calendars in another
+(`cpr-neon-hub.calendars`), the GM's calendar notes in `cpr-neon-hub.calendarNotes`, and each
+player's notes in their user's `flags.cpr-neon-hub.calendarNotes`. Hub layouts are stored on
 their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
 
 ## Forward compatibility (Foundry v13+)
@@ -259,6 +342,9 @@ their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
 - Tested with unit tests and rendered previews, not yet in a live Foundry world. Try it on a copy
   first.
 - Lifestyle billing is per character; it doesn't split an HQ's rent (pay that on the HQ screen).
+- An HQ's rent is one "due" flag: a jump past several rent days rolls each HQ month but leaves one
+  rent payment due.
+- Calendars are Gregorian dates without a time of day.
 - Uploading images needs the GM to have file upload permission (the default for GMs). On The Forge,
   images go to your Forge asset library.
 - Generated images are new files each time a button changes; old ones stay in the world folder and
@@ -280,5 +366,6 @@ Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lif
 
 ## License
 
-MIT. Icons in `assets/` are original to Neon Hub. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
+MIT. Icons in `assets/` are original to Neon Hub. The Tektur font (`fonts/`) is under the SIL Open
+Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. This is unofficial fan content and isn't approved or endorsed by R. Talsorian Games.

@@ -5,7 +5,7 @@ import { HubSocket } from "../socket.js";
 import { HQStore } from "../hq/hq-data.js";
 import { HQOps } from "../hq/hq-ops.js";
 import {
-  LS_FLAG, CATEGORIES, GROUPS, normalizeLifestyle, computeBill, lineCost, advanceLoans, reminders,
+  LS_FLAG, CATEGORIES, GROUPS, normalizeLifestyle, computeBill, computeMonths, lineCost, reminders,
   payoffAmount, loanTerms, packagesToDeactivate, pushHistory, billStatus
 } from "./ls-data.js";
 import { LifestyleStore, LS_ACTOR_FLAG } from "./ls-store.js";
@@ -126,18 +126,27 @@ export class LifestyleOps {
     return item;
   }
 
-  /** The bill this character would pay now, with everything the window and chat card show. */
+  /**
+   * The bill this character would pay now, with everything the window and chat card show.
+   * `bill` is one month; `due` covers every month owed (several when the calendar jumped
+   * past more than one rent day).
+   */
   static billFor(actor) {
     const items = LifestyleStore.items(actor);
-    const bill = computeBill(items, { moraleDiscount: LifestyleStore.moraleDiscount(actor) });
+    const opts = { moraleDiscount: LifestyleStore.moraleDiscount(actor) };
+    const bill = computeBill(items, opts);
     const state = LifestyleStore.actorState(actor);
+    const billing = LifestyleStore.billing(actor);
+    const due = billing.owed ? computeMonths(items, billing.owed, opts) : null;
     const wallet = CPR.hasWealth(actor) ? CPR.getWealth(actor) : 0;
     return {
       items,
       bill,
+      due,
       state,
+      billing,
       wallet,
-      status: billStatus({ paidMonth: state.paidMonth, month: LifestyleStore.month, wallet }),
+      status: billStatus({ owed: billing.owed, wallet }),
       reminders: reminders(items)
     };
   }
@@ -147,55 +156,59 @@ export class LifestyleOps {
   /* ---------------------------------------- */
 
   /**
-   * Pay this month's bill for one character.
+   * Pay what a character owes: this month, or every month since their last bill.
    * @returns {Promise<object>} what was paid (for the chat card)
    */
   static async pay(actorUuid, { user = game.user, card = true } = {}) {
     const actor = await this.#actor(actorUuid);
     if (!CPR.hasWealth(actor)) throw new Error(L("NEONHUB.Error.NoWealth", { name: actor.name }));
-    const month = LifestyleStore.month;
-    const { items, bill, state, wallet } = this.billFor(actor);
-    if (state.paidMonth >= month) throw new Error(L("NEONHUB.Lifestyle.Error.AlreadyPaid", { name: actor.name }));
-    if (!LifestyleStore.allowDebt && wallet < bill.total) {
-      throw new Error(L("NEONHUB.Error.ShortFunds", { names: `${actor.name} (${eb(wallet)}/${eb(bill.total)})` }));
+    const { items, due, state, billing, wallet } = this.billFor(actor);
+    if (!due) throw new Error(L("NEONHUB.Lifestyle.Error.AlreadyPaid", { name: actor.name }));
+    if (!LifestyleStore.allowDebt && wallet < due.total) {
+      throw new Error(L("NEONHUB.Error.ShortFunds", { names: `${actor.name} (${eb(wallet)}/${eb(due.total)})` }));
     }
-    const label = LifestyleStore.monthLabel(month);
-    if (bill.total > 0) await CPR.changeWealth(actor, -bill.total, L("NEONHUB.Lifestyle.Ledger.Month", { month: label }), user.name);
+    const label = due.months > 1 ? `${billing.firstLabel} – ${billing.label}` : billing.label;
+    if (due.total > 0) await CPR.changeWealth(actor, -due.total, L("NEONHUB.Lifestyle.Ledger.Month", { month: label }), user.name);
 
     // Installment loans count down; paid-off ones leave the sheet.
-    const { updates, finished } = advanceLoans(items);
-    const finishedNames = finished.map((id) => actor.items.get(id)?.name).filter(Boolean);
-    if (updates.length) {
-      await actor.updateEmbeddedDocuments("Item", updates.map((u) => ({ _id: u.id, [`flags.${MODULE_ID}.${LS_FLAG}.loan.monthsLeft`]: u.monthsLeft })), own());
+    const finishedNames = due.finished.map((id) => actor.items.get(id)?.name).filter(Boolean);
+    if (due.loans.length) {
+      await actor.updateEmbeddedDocuments("Item", due.loans.map((u) => ({ _id: u.id, [`flags.${MODULE_ID}.${LS_FLAG}.loan.monthsLeft`]: u.monthsLeft })), own());
     }
-    if (finished.length) await actor.deleteEmbeddedDocuments("Item", finished, own());
+    if (due.finished.length) await actor.deleteEmbeddedDocuments("Item", due.finished, own());
 
     const after = CPR.getWealth(actor);
     const entry = {
-      month,
+      month: billing.period,
+      months: due.months,
       label,
-      total: bill.total,
-      discount: bill.discount,
+      total: due.total,
+      discount: due.discount,
       after,
       at: Date.now(),
       user: user.name,
-      lines: bill.lines.filter((l) => l.cost > 0).map((l) => ({ name: l.name, cost: l.cost, group: l.group }))
+      lines: due.lines.filter((l) => l.cost > 0).map((l) => ({ name: l.name, cost: l.cost, group: l.group, months: l.months }))
     };
-    await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, { paidMonth: month, history: pushHistory(state.history, entry) });
+    const record = { ...state, history: pushHistory(state.history, entry) };
+    if (billing.mode === "calendar") record.paidPeriod = billing.period;
+    else record.paidMonth = billing.period;
+    await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, record);
     await this.syncActor(actor);
 
-    const result = { actor, bill, label, before: wallet, after, finished: finishedNames, reminders: reminders(LifestyleStore.items(actor)) };
+    const result = { actor, bill: due, label, before: wallet, after, finished: finishedNames, reminders: reminders(LifestyleStore.items(actor)) };
     if (card) await this.postBill(result);
     return result;
   }
 
-  /** GM: bill every character whose bill is still due. */
-  static async billAll({ user = game.user } = {}) {
+  /** GM: bill every character who owes, optionally only those living by one calendar. */
+  static async billAll({ user = game.user, calendarId = null } = {}) {
     if (!game.user.isGM) throw new Error(L("NEONHUB.Error.GMOnly"));
     const paid = [];
     const failed = [];
     for (const actor of LifestyleStore.characters()) {
-      if (LifestyleStore.actorState(actor).paidMonth >= LifestyleStore.month) continue;
+      const billing = LifestyleStore.billing(actor);
+      if (!billing.owed) continue;
+      if (calendarId && billing.calendar?.id !== calendarId) continue;
       try {
         paid.push(await this.pay(actor, { user }));
       } catch (err) {
@@ -206,8 +219,9 @@ export class LifestyleOps {
   }
 
   /**
-   * GM: start the next month. Optionally runs every active Headquarters' new month too
-   * (Morale Boost Humanity, rent due) and bills everyone straight away.
+   * GM, without calendars: start the next counter month. Optionally runs every
+   * Headquarters' new month too and bills everyone straight away.
+   * (With calendars, moving a calendar past its rent day does this.)
    */
   static async newMonth({ hqs = true, bill = false } = {}) {
     if (!game.user.isGM) throw new Error(L("NEONHUB.Error.GMOnly"));
@@ -234,13 +248,33 @@ export class LifestyleOps {
     return { month, label, hqs: hqResults, billing };
   }
 
-  /** GM bookkeeping: mark this month paid (or due) without moving money. */
+  /** GM bookkeeping: mark what's owed as paid (or this month as due) without moving money. */
   static async markPaid(actorUuid, paid = true) {
     if (!game.user.isGM) throw new Error(L("NEONHUB.Error.GMOnly"));
     const actor = await this.#actor(actorUuid);
     const state = LifestyleStore.actorState(actor);
-    const month = LifestyleStore.month;
-    await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, { paidMonth: paid ? month : Math.min(state.paidMonth, month - 1), history: state.history });
+    const billing = LifestyleStore.billing(actor);
+    const record = { ...state };
+    if (billing.mode === "calendar") record.paidPeriod = paid ? billing.period : billing.period - 1;
+    else record.paidMonth = paid ? billing.period : Math.min(state.paidMonth, billing.period - 1);
+    await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, record);
+  }
+
+  /**
+   * GM: when calendars start running months, carry everyone's standing over:
+   * a character paid up for the counter month is paid for their calendar's current
+   * month; anyone else owes it. Runs once per character.
+   */
+  static async adoptCalendars() {
+    if (!game.user.isGM) return;
+    for (const actor of LifestyleStore.characters()) {
+      const state = LifestyleStore.actorState(actor);
+      if (state.paidPeriod !== null) continue;
+      const billing = LifestyleStore.billing(actor);
+      if (billing.mode !== "calendar") return;
+      const paidUp = state.paidMonth >= LifestyleStore.month;
+      await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, { ...state, paidPeriod: paidUp ? billing.period : billing.period - 1 });
+    }
   }
 
   static async postBill({ actor, bill, label, before, after, finished, reminders: notes }) {
@@ -248,12 +282,13 @@ export class LifestyleOps {
       label: L(`NEONHUB.Lifestyle.Group.${g}`),
       total: bill.groups[g],
       totalText: eb(bill.groups[g]),
-      lines: bill.lines.filter((l) => l.group === g && l.cost > 0).map((l) => ({ name: l.name, amount: l.amount > 1 ? l.amount : null, cost: eb(l.cost) }))
+      lines: bill.lines.filter((l) => l.group === g && l.cost > 0).map((l) => ({ name: l.name, amount: l.amount > 1 ? l.amount : null, months: l.months > 1 ? l.months : null, cost: eb(l.cost) }))
     })).filter((g) => g.total > 0 || g.lines.length);
     const content = await Compat.renderTemplate(`${TEMPLATE_PATH}/lifestyle/bill-card.hbs`, {
       name: actor.name,
       img: actor.img,
       label,
+      months: bill.months > 1 ? bill.months : null,
       groups,
       discount: bill.discount ? eb(bill.discount) : null,
       total: eb(bill.total),

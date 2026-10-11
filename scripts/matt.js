@@ -22,6 +22,7 @@ export const MATT = {
   ACTION_SHOP: `${MODULE_ID}.openshop`,
   ACTION_HQ: `${MODULE_ID}.openhq`,
   ACTION_LIFESTYLE: `${MODULE_ID}.openlifestyle`,
+  ACTION_CALENDAR: `${MODULE_ID}.opencalendar`,
 
   makeId() {
     return foundry.utils.randomID(16);
@@ -121,6 +122,9 @@ export const MATT = {
       case "lifestyle":
         push(this.ACTION_LIFESTYLE, { showto: audience });
         break;
+      case "calendar":
+        push(this.ACTION_CALENDAR, { showto: audience });
+        break;
       case "sound":
         if (!a.file) break;
         push("playsound", {
@@ -161,7 +165,7 @@ export const MATT = {
   /* ---------------------------------------- */
 
   /**
-   * Register "Open Neon Market shop", "Open Headquarters" and "Open Lifestyle" in MATT's action list.
+   * Register "Open Neon Market shop", "Open Headquarters", "Open Lifestyle" and "Open calendar" in MATT's action list.
    * MATT runs actions on the active GM's client, so each action works out who should
    * see the window and asks those clients to open it.
    */
@@ -247,6 +251,19 @@ export const MATT = {
         const { action } = args;
         const users = app.getForPlayers(action.data.showto || "trigger", args);
         if (users.length) HubSocket.emit("openLifestyle", {}, users);
+      },
+      content: async (trigger, action) => {
+        return `<span class="action-style">${i18n(trigger.name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
+      }
+    });
+
+    app.registerTileAction(MODULE_ID, "opencalendar", {
+      name: "NEONHUB.Matt.OpenCalendar",
+      ctrls: [showtoCtrl],
+      values: { showto },
+      fn: async (args = {}) => {
+        const users = app.getForPlayers(args.action.data.showto || "trigger", args);
+        if (users.length) HubSocket.emit("openCalendar", {}, users);
       },
       content: async (trigger, action) => {
         return `<span class="action-style">${i18n(trigger.name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;

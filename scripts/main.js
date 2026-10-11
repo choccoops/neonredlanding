@@ -12,6 +12,11 @@ import { LifestyleStore } from "./lifestyle/ls-store.js";
 import { LifestyleOps } from "./lifestyle/ls-ops.js";
 import { LifestyleApp } from "./lifestyle/ls-app.js";
 import { LifestyleItemConfig } from "./lifestyle/ls-item-config.js";
+import { CalendarStore } from "./calendar/cal-store.js";
+import { CalendarOps } from "./calendar/cal-ops.js";
+import { CalendarApp } from "./calendar/cal-app.js";
+import { NotesStore } from "./calendar/cal-notes.js";
+import { sameDate } from "./calendar/cal-dates.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -28,6 +33,8 @@ Hooks.on("setupTileActions", (app) => {
 Hooks.once("init", () => {
   HQStore.register();
   LifestyleStore.register();
+  CalendarStore.register();
+  NotesStore.register();
 
   Compat.loadTemplates([
     `${TEMPLATE_PATH}/hub/editor.hbs`,
@@ -35,7 +42,10 @@ Hooks.once("init", () => {
     `${TEMPLATE_PATH}/hq/month-card.hbs`,
     `${TEMPLATE_PATH}/lifestyle/lifestyle.hbs`,
     `${TEMPLATE_PATH}/lifestyle/bill-card.hbs`,
-    `${TEMPLATE_PATH}/lifestyle/item-config.hbs`
+    `${TEMPLATE_PATH}/lifestyle/item-config.hbs`,
+    `${TEMPLATE_PATH}/calendar/calendar.hbs`,
+    `${TEMPLATE_PATH}/calendar/date-card.hbs`,
+    `${TEMPLATE_PATH}/calendar/rent-card.hbs`
   ]);
 
   game.modules.get(MODULE_ID).api = {
@@ -73,7 +83,34 @@ Hooks.once("init", () => {
     billLifestyles: () => LifestyleOps.billAll(),
     lifestyleMonth: () => LifestyleStore.month,
 
-    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig }
+    /** Open the calendar window on this client. */
+    openCalendar: () => CalendarApp.open(),
+    /** GM: open it on every connected player's screen (or the listed user ids). */
+    showCalendar: (userIds = null) => HubSocket.emit("openCalendar", {}, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
+    /** Calendars this user can see. */
+    listCalendars: () => CalendarStore.visibleTo(),
+    /** { year, month, day } of a calendar (by id or name), if this user can see it. */
+    getDate: (idOrName) => {
+      const c = CalendarStore.get(idOrName);
+      return c && CalendarStore.canSee(c) ? { year: c.year, month: c.month, day: c.day } : null;
+    },
+    /** GM: set a calendar's date; passing its rent day starts the new month ({ rent: false } skips billing). */
+    setDate: (idOrName, date, options = {}) => CalendarOps.setDate(idOrName, date, options),
+    /** GM: move a calendar by days (negative goes back). */
+    addDays: (idOrName, days) => CalendarOps.shift(idOrName, { days }),
+    /** GM: jump a calendar to its next rent day. */
+    toRentDay: (idOrName) => CalendarOps.toRentDay(idOrName),
+    /** Post a calendar's date to chat. */
+    dateToChat: (idOrName) => CalendarOps.toChat(idOrName),
+    /** Notes on a calendar this user can read (all, or one { year, month, day }). */
+    notes: (idOrName, date = null) => NotesStore.visible(CalendarStore.get(idOrName), date),
+    /** Add a note as this user: { title, text, shared }. */
+    addNote: (idOrName, date, data) => {
+      const c = CalendarStore.get(idOrName);
+      return c && CalendarStore.canSee(c) ? NotesStore.create(c, date, data) : null;
+    },
+
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp }
   };
 });
 
@@ -84,6 +121,9 @@ Hooks.once("ready", () => {
   HubSocket.on("openShop", ({ uuid }) => MATT.openShop(uuid));
   HubSocket.on("openHQ", ({ id }) => HQApp.open(id));
   HubSocket.on("openLifestyle", () => LifestyleApp.open());
+  HubSocket.on("openCalendar", () => CalendarApp.open());
+  calendarSnapshot = CalendarStore.all();
+  if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
 
   if (!game.user.isGM) return;
   if (game.system.id !== SYSTEM_ID) ui.notifications.warn(L("NEONHUB.Error.WrongSystem", { system: game.system.title }));
@@ -99,6 +139,66 @@ Hooks.on(`${MODULE_ID}.hqChanged`, () => {
   LifestyleApp.refresh();
 });
 Hooks.on(`${MODULE_ID}.lifestyleChanged`, () => LifestyleApp.refresh());
+
+/* ------------------------------------------ */
+/*  Calendars                                 */
+/* ------------------------------------------ */
+
+let calendarSnapshot = [];
+
+/** Every window that shows dates or what's due follows the calendars. */
+Hooks.on(`${MODULE_ID}.calendarChanged`, (list) => {
+  CalendarApp.refresh();
+  LifestyleApp.refresh();
+  HQApp.refreshAll();
+  if (!list) return;
+  const before = new Map(calendarSnapshot.map((c) => [c.id, c]));
+  calendarSnapshot = CalendarStore.all();
+  if (game.user.isGM) {
+    LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
+    return;
+  }
+  if (!game.settings.get(MODULE_ID, "calendarNotify")) return;
+  for (const c of calendarSnapshot) {
+    const old = before.get(c.id);
+    if (!old || sameDate(old, c) || !CalendarStore.canSee(c)) continue;
+    ui.notifications.info(L("NEONHUB.Calendar.Notify", { name: c.name, date: `${L(`NEONHUB.Calendar.Month.${c.month}`)} ${c.day}, ${c.year}` }));
+  }
+});
+
+Hooks.on(`${MODULE_ID}.calendarNotesChanged`, () => CalendarApp.refresh());
+// Players' notes live on their User.
+Hooks.on("updateUser", (user, changes) => {
+  if (foundry.utils.hasProperty(changes, `flags.${MODULE_ID}`)) CalendarApp.refresh();
+});
+
+/**
+ * A calendar button in the left toolbar's Token Controls, for everyone.
+ * v12 passes an array of control groups; v13 an object of them keyed by name.
+ */
+Hooks.on("getSceneControlButtons", (controls) => {
+  const tool = { name: "neonHubCalendar", title: "NEONHUB.Calendar.Title", icon: "fa-solid fa-calendar-days", button: true, visible: true };
+  if (Array.isArray(controls)) {
+    controls.find((c) => c.name === "token")?.tools.push({ ...tool, onClick: () => CalendarApp.toggle() });
+    return;
+  }
+  const token = controls.tokens ?? controls.token;
+  if (!token) return;
+  token.tools.neonHubCalendar = { ...tool, order: Object.keys(token.tools).length, onChange: () => CalendarApp.toggle() };
+});
+
+// With no scene on the canvas Foundry ignores tool clicks, but a calendar is still useful then.
+Hooks.on("renderSceneControls", (app, html) => {
+  if (canvas?.ready) return;
+  const button = Compat.element(html)?.querySelector('[data-tool="neonHubCalendar"]');
+  if (!button || button.dataset.neonHub) return;
+  button.dataset.neonHub = "1";
+  button.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    CalendarApp.toggle();
+  });
+});
 Hooks.on("updateActor", (actor) => {
   for (const app of HQApp.instances.values()) if (app.hq?.crew.includes(actor.uuid)) app.render();
   LifestyleApp.refreshFor(actor);

@@ -49,6 +49,8 @@ export function normalizeHQ(raw = {}) {
     playersSeeAll: false,
     status: "active",
     housing: { kind: "", rent: 0, reducedRent: null, rentFree: false, beds: 1, rentPaid: true },
+    /** Calendar whose rent day starts this HQ's months; blank follows its crew. */
+    calendarId: "",
     ip: 0,
     improvements: Object.fromEntries(Object.keys(IMPROVEMENTS).map((k) => [k, { owned: false, upgrades: 0, notes: "", link: "" }])),
     log: [],
@@ -57,6 +59,7 @@ export function normalizeHQ(raw = {}) {
   const hq = mergeObject(base, deepClone(raw), { inplace: false, insertKeys: true, insertValues: true });
   if (!THEMES[hq.theme]) hq.theme = "neon";
   if (!["active", "lost", "destroyed"].includes(hq.status)) hq.status = "active";
+  hq.calendarId = typeof hq.calendarId === "string" ? hq.calendarId : "";
   hq.crew = Array.isArray(hq.crew) ? [...new Set(hq.crew.filter((u) => typeof u === "string" && u))] : [];
   hq.ip = Math.max(0, Math.floor(Number(hq.ip) || 0));
   hq.housing.rent = Math.max(0, Math.floor(Number(hq.housing.rent) || 0));

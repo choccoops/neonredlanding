@@ -10,6 +10,8 @@ import {
 import { LifestyleStore, LS_PACK } from "./ls-store.js";
 import { LifestyleOps } from "./ls-ops.js";
 import { LifestyleItemConfig } from "./ls-item-config.js";
+import { CalendarStore } from "../calendar/cal-store.js";
+import { nextRentDay } from "../calendar/cal-dates.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -58,6 +60,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       newMonth: LifestyleApp.#onNewMonth,
       billAll: LifestyleApp.#onBillAll,
       openHQ: LifestyleApp.#onOpenHQ,
+      openCalendar: LifestyleApp.#onOpenCalendar,
+      toRentDay: LifestyleApp.#onToRentDay,
       openSheet: LifestyleApp.#onOpenSheet
     }
   };
@@ -130,7 +134,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       isGM,
       themeClass: `theme-${state.theme}${theme.light ? " is-light" : ""}`,
       style: `--nh-accent:${theme.accent};--nh-accent-2:${theme.accent2};--nh-bg:${theme.bg};--nh-bg-2:${theme.bg2};--nh-panel:${theme.panel};--nh-text:${theme.text};--nh-muted:${theme.muted};--nh-display:"${theme.display}";`,
-      monthLabel: LifestyleStore.monthLabel(),
+      calendarMode: CalendarStore.all().length > 0,
+      monthLabel: CalendarStore.all().length ? CalendarStore.periodLabel(CalendarStore.period(CalendarStore.all()[0])) : LifestyleStore.monthLabel(),
       characters: [...new Set([...LifestyleStore.viewable(), ...(actor ? [actor] : [])])]
         .map((a) => ({ id: a.id, name: a.name, selected: a.id === this.actorId })),
       tab: { current: this.tab === "current", catalog: this.tab === "catalog", bills: this.tab === "bills", month: this.tab === "month" },
@@ -145,12 +150,12 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   #actorContext(actor) {
-    const { items, bill, state, wallet, status, reminders } = LifestyleOps.billFor(actor);
+    const { items, bill, due, state, billing, wallet, status, reminders } = LifestyleOps.billFor(actor);
     const isOwner = actor.isOwner;
     const canManage = LifestyleStore.canManage(actor);
     const skillNames = this.#skillNames(actor);
-    const month = LifestyleStore.month;
     const tier = activeTier(items);
+    const owing = due ? due.total : 0;
 
     const groups = GROUPS.map((g) => {
       const cards = items.filter((d) => d.group === g).sort((a, b) => Number(b.active) - Number(a.active) || a.name.localeCompare(b.name))
@@ -173,8 +178,13 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       wallet: eb(wallet),
       status,
       statusLabel: L(`NEONHUB.Lifestyle.Status.${status}`),
-      paid: state.paidMonth >= month,
-      canPay: isOwner && state.paidMonth < month && CPR.hasWealth(actor),
+      paid: !billing.owed,
+      canPay: isOwner && billing.owed > 0 && CPR.hasWealth(actor),
+      monthLabel: billing.label,
+      rentNext: billing.next ? (billing.next.today ? L("NEONHUB.Calendar.Rent.Today") : L("NEONHUB.Calendar.Rent.In", { n: billing.next.days })) : null,
+      calendarName: billing.calendar?.name ?? null,
+      owed: billing.owed > 1 ? { months: billing.owed, total: eb(owing), range: `${billing.firstLabel} – ${billing.label}` } : null,
+      payAmount: eb(owing),
       stats: {
         total: eb(bill.total),
         housing: eb(bill.groups.housing),
@@ -183,8 +193,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
         memberships: eb(bill.groups.memberships),
         transport: eb(bill.groups.transport),
         loans: eb(bill.groups.loans),
-        after: eb(wallet - (state.paidMonth >= month ? 0 : bill.total)),
-        afterNegative: wallet - (state.paidMonth >= month ? 0 : bill.total) < 0,
+        after: eb(wallet - owing),
+        afterNegative: wallet - owing < 0,
         humanity: humanityBonus(items),
         discount: bill.discount ? eb(bill.discount) : null
       },
@@ -393,7 +403,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   #overviewContext(state) {
     const rows = LifestyleStore.characters().map((actor) => {
-      const { bill, wallet, status, state: s } = LifestyleOps.billFor(actor);
+      const { bill, due, wallet, status, billing } = LifestyleOps.billFor(actor);
       const owners = game.users.filter((u) => !u.isGM && actor.testUserPermission(u, "OWNER")).map((u) => u.name).join(", ");
       return {
         id: actor.id,
@@ -404,14 +414,30 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
         wallet: eb(wallet),
         negative: wallet < 0,
         total: eb(bill.total),
+        owed: billing.owed > 1 ? L("NEONHUB.Lifestyle.OwedMonths", { n: billing.owed, total: eb(due.total) }) : null,
         status,
         statusLabel: L(`NEONHUB.Lifestyle.Status.${status}`),
-        paid: s.paidMonth >= state.month,
+        paid: !billing.owed,
+        calendar: billing.calendar ? { name: billing.calendar.name, color: billing.calendar.color } : null,
         selected: actor.id === this.actorId
+      };
+    });
+    const calendars = CalendarStore.all().map((c) => {
+      const next = nextRentDay(c, c.rentDay);
+      return {
+        id: c.id,
+        name: c.name,
+        color: c.color,
+        date: `${L(`NEONHUB.Calendar.Month.${c.month}`)} ${c.day}, ${c.year}`,
+        label: CalendarStore.periodLabel(CalendarStore.period(c)),
+        rent: next.today ? L("NEONHUB.Calendar.Rent.Today") : L("NEONHUB.Calendar.Rent.In", { n: next.days })
       };
     });
     return {
       rows,
+      calendars,
+      calendarMode: calendars.length > 0,
+      autoBill: LifestyleStore.autoBill,
       due: rows.filter((r) => !r.paid).length,
       themes: Object.entries(THEMES).map(([key, t]) => ({ key, label: L(t.label), selected: key === state.theme })),
       manage: LifestyleStore.playersManage,
@@ -614,9 +640,11 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onPay() {
     const actor = this.actor;
     if (!actor) return;
-    const { bill, wallet } = LifestyleOps.billFor(actor);
-    const key = wallet - bill.total < 0 ? "NEONHUB.Lifestyle.Confirm.PayDebt" : "NEONHUB.Lifestyle.Confirm.Pay";
-    if (!(await this.#confirm("NEONHUB.Lifestyle.Confirm.PayTitle", key, { amount: eb(bill.total), month: LifestyleStore.monthLabel(), name: actor.name, after: eb(wallet - bill.total) }))) return;
+    const { due, billing, wallet } = LifestyleOps.billFor(actor);
+    if (!due) return;
+    const key = wallet - due.total < 0 ? "NEONHUB.Lifestyle.Confirm.PayDebt" : "NEONHUB.Lifestyle.Confirm.Pay";
+    const month = due.months > 1 ? `${billing.firstLabel} – ${billing.label}` : billing.label;
+    if (!(await this.#confirm("NEONHUB.Lifestyle.Confirm.PayTitle", key, { amount: eb(due.total), month, name: actor.name, after: eb(wallet - due.total) }))) return;
     await this.#perform("pay", { actor: actor.uuid }, { success: L("NEONHUB.Lifestyle.Done.Paid", { name: actor.name }) });
   }
 
@@ -661,7 +689,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   static async #onBillAll() {
-    if (!(await this.#confirm("NEONHUB.Lifestyle.BillAll", "NEONHUB.Lifestyle.Confirm.BillAll", { month: LifestyleStore.monthLabel() }))) return;
+    if (!(await this.#confirm("NEONHUB.Lifestyle.BillAll", "NEONHUB.Lifestyle.Confirm.BillAll"))) return;
     const result = await this.#perform("billAll", {});
     if (!result) return;
     ui.notifications.info(L("NEONHUB.Lifestyle.Done.Billed", { n: result.paid.length }));
@@ -672,6 +700,25 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static #onOpenHQ(event, target) {
     HQApp.open(target.dataset.id);
+  }
+
+  static #onOpenCalendar() {
+    game.modules.get(MODULE_ID).api?.openCalendar();
+  }
+
+  /** GM: move a calendar to its next rent day, which starts the month. */
+  static async #onToRentDay(event, target) {
+    const id = target.closest("[data-calendar]").dataset.calendar;
+    if (this.busy) return;
+    this.busy = true;
+    try {
+      await game.modules.get(MODULE_ID).api?.toRentDay(id);
+    } catch (err) {
+      ui.notifications.warn(err.message);
+    } finally {
+      this.busy = false;
+      if (this.rendered) this.render();
+    }
   }
 
   static #onOpenSheet() {

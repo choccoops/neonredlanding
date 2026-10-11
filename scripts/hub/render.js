@@ -120,6 +120,11 @@ function wrapLines(ctx, text, maxW, maxLines) {
   return lines;
 }
 
+/** Letter spacing in px, where the canvas supports it (Chromium/Electron; ignored elsewhere). */
+function track(ctx, px) {
+  if ("letterSpacing" in ctx) ctx.letterSpacing = `${Math.round(px * 10) / 10}px`;
+}
+
 function makeCanvas(w, h) {
   const c = document.createElement("canvas");
   c.width = Math.max(1, Math.round(w));
@@ -187,7 +192,7 @@ export async function renderBackground(hub, { load = loadImage } = {}) {
     }
   }
   if (theme.scanlines) {
-    ctx.fillStyle = theme.mono ? "rgba(0,0,0,0.28)" : "rgba(255,255,255,0.025)";
+    ctx.fillStyle = theme.mono ? "rgba(0,0,0,0.28)" : theme.chrome ? hexToRgba(theme.accent2, 0.035) : "rgba(255,255,255,0.025)";
     for (let y = 0; y < H; y += 3) ctx.fillRect(0, y, W, 1);
   }
   if (theme.hazard) {
@@ -228,9 +233,12 @@ export async function renderBackground(hub, { load = loadImage } = {}) {
     const titleSize = Math.round(84 * s);
     const family = fontStack(theme.display, theme.mono ? "monospace" : "sans-serif");
     const style = theme.italic ? "italic" : "";
-    const text = theme.mono || theme.hazard ? hub.title.toUpperCase() : hub.title;
+    const caps = theme.mono || theme.hazard || theme.chrome;
+    const text = caps ? hub.title.toUpperCase() : hub.title;
+    if (theme.chrome) track(ctx, titleSize * 0.1);
     const size = fitText(ctx, text, family, "400", titleSize, W - frame.margin * 2, 24, style);
-    const ty = frame.margin * 0.5 + size;
+    if (theme.chrome) track(ctx, size * 0.1);
+    const ty = frame.margin * 0.5 + size + (theme.chrome && hub.subtitle ? 26 * s : 0);
     ctx.textAlign = "center";
     ctx.textBaseline = "alphabetic";
     if (theme.glow && !theme.light) {
@@ -244,11 +252,29 @@ export async function renderBackground(hub, { load = loadImage } = {}) {
       ctx.fillText(text, W / 2 + 3 * s, ty);
       ctx.shadowBlur = 0;
     }
-    ctx.fillStyle = theme.text;
+    if (theme.chrome) {
+      // A faint cyan split, the way a cheap screen renders it.
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = hexToRgba(theme.accent2, 0.35);
+      ctx.fillText(text, W / 2 - 3 * s, ty);
+      ctx.shadowColor = theme.accent;
+      ctx.shadowBlur = 24 * s;
+      ctx.fillStyle = "#ffffff";
+    } else {
+      ctx.fillStyle = theme.text;
+    }
     ctx.fillText(text, W / 2, ty);
     ctx.shadowBlur = 0;
+    track(ctx, 0);
 
-    if (hub.subtitle) {
+    if (hub.subtitle && theme.chrome) {
+      // Subtitle as a kicker above the title: "// PICK WHERE TO GO NEXT"
+      ctx.font = `400 ${Math.round(22 * s)}px ${fontStack(theme.display)}`;
+      track(ctx, 22 * s * 0.3);
+      ctx.fillStyle = theme.muted;
+      ctx.fillText(`// ${hub.subtitle.toUpperCase()}`, W / 2, ty - size - 10 * s);
+      track(ctx, 0);
+    } else if (hub.subtitle) {
       ctx.font = `400 ${Math.round(28 * s)}px ${fontStack(theme.body)}`;
       ctx.fillStyle = theme.muted;
       ctx.fillText(hub.subtitle, W / 2, ty + 48 * s);
@@ -339,13 +365,26 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   ctx.lineWidth = Math.max(1, 1.5 * s);
   ctx.stroke();
 
+  // Chrome: a stripe of accent along the notched corner, like the calendar's date panel.
+  if (theme.chrome && cut) {
+    const band = Math.max(3, 6 * s);
+    ctx.fillStyle = accent;
+    ctx.beginPath();
+    ctx.moveTo(x + bw - cut - band, y);
+    ctx.lineTo(x + bw - cut, y);
+    ctx.lineTo(x + bw, y + cut);
+    ctx.lineTo(x + bw, y + cut + band);
+    ctx.closePath();
+    ctx.fill();
+  }
+
   // Icon + text. Wide buttons put the icon on the left; tall/square ones stack it on top.
   const g = button.icon ? glyph(button.icon) : null;
   const stacked = bh > bw * 0.75;
   const textMono = theme.mono;
   const displayFamily = fontStack(theme.display, textMono ? "monospace" : "sans-serif");
   const bodyFamily = fontStack(theme.body, textMono ? "monospace" : "sans-serif");
-  const labelText = theme.mono || theme.hazard ? button.label.toUpperCase() : button.label;
+  const labelText = theme.mono || theme.hazard || theme.chrome ? button.label.toUpperCase() : button.label;
   const iconSize = Math.round(Math.min(bh * (stacked ? 0.28 : 0.4), 64 * s));
   let tx = x + pad + 6 * s;
   let ty;
@@ -387,7 +426,9 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   ctx.textAlign = stacked ? "center" : "left";
   const cx = stacked ? x + bw / 2 : tx;
   const fontStyle = theme.italic ? "italic" : "";
+  if (theme.chrome) track(ctx, labelSize * 0.06);
   const size = fitText(ctx, labelText, displayFamily, "400", labelSize, maxW, 12, fontStyle);
+  if (theme.chrome) track(ctx, size * 0.06);
   let subLines = [];
   if (hasSub) {
     ctx.font = `400 ${subSize}px ${bodyFamily}`;
@@ -406,6 +447,7 @@ export async function renderButton(button, hub, w, h, { load = loadImage, glyph 
   }
   ctx.fillText(labelText, cx, ty);
   ctx.shadowBlur = 0;
+  track(ctx, 0);
   if (subLines.length) {
     ctx.font = `400 ${subSize}px ${bodyFamily}`;
     ctx.fillStyle = img ? hexToRgba(theme.light ? "#ffffff" : theme.text, 0.85) : theme.muted;

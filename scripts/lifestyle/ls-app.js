@@ -1,4 +1,4 @@
-import { MODULE_ID, TEMPLATE_PATH, THEMES } from "../constants.js";
+import { MODULE_ID, TEMPLATE_PATH, THEMES, DEFAULT_THEME } from "../constants.js";
 import { Compat } from "../compat.js";
 import { CPR } from "../cpr.js";
 import { HQApp } from "../hq/hq-app.js";
@@ -125,7 +125,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   async _prepareContext() {
     const isGM = game.user.isGM;
     const state = LifestyleStore.state;
-    const theme = THEMES[state.theme] ?? THEMES.neon;
+    const theme = THEMES[state.theme] ?? THEMES[DEFAULT_THEME];
     const actor = this.actor;
     // Without a character, the GM can still browse the catalog and run the month.
     if (!actor && !(isGM && ["month", "catalog"].includes(this.tab))) this.tab = isGM ? "month" : "current";
@@ -501,6 +501,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   async #confirm(titleKey, bodyKey, data = {}) {
     return Compat.DialogV2.confirm({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L(titleKey, data) },
       content: `<p>${esc(L(bodyKey, data))}</p>`,
       rejectClose: false
@@ -583,6 +584,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       let principal = ls.loan.principal;
       if (!principal) {
         principal = await Compat.DialogV2.prompt({
+          classes: ["neon-hub", "nh-cal-dialog"],
           window: { title: entry.name },
           content: `<p>${esc(L("NEONHUB.Lifestyle.Loan.AskPrincipal", { down: ls.loan.downPct, rate: ls.loan.ratePct, months: ls.loan.termMonths }))}</p><div class="form-group"><input type="number" name="principal" min="1" step="1" autofocus></div>`,
           ok: { label: L("NEONHUB.Lifestyle.Add.loan"), callback: (ev, button) => Number(button.form.elements.principal.value) || 0 },
@@ -625,7 +627,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       window: { title: L("NEONHUB.Lifestyle.NewHomebrew"), icon: "fa-solid fa-flask" },
       content: `<p>${esc(L("NEONHUB.Lifestyle.NewHomebrewBody"))}</p>`,
       buttons,
-      classes: ["neon-hub-choose"],
+      classes: ["neon-hub", "nh-cal-dialog", "neon-hub-choose"],
       rejectClose: false
     });
     if (!category) return;
@@ -670,6 +672,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onNewMonth() {
     const next = LifestyleStore.month + 1;
     const choice = await Compat.DialogV2.prompt({
+      classes: ["neon-hub", "nh-cal-dialog"],
       window: { title: L("NEONHUB.Lifestyle.NewMonth"), icon: "fa-solid fa-calendar-plus" },
       content: `<p>${esc(L("NEONHUB.Lifestyle.NewMonthBody", { month: L("NEONHUB.Lifestyle.MonthN", { n: next }) }))}</p>
         <div class="form-group"><label class="checkbox"><input type="checkbox" name="bill" checked> ${esc(L("NEONHUB.Lifestyle.NewMonthBill"))}</label></div>

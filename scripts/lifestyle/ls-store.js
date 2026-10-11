@@ -1,4 +1,4 @@
-import { MODULE_ID, THEMES } from "../constants.js";
+import { MODULE_ID, THEMES, DEFAULT_THEME } from "../constants.js";
 import { HQStore, isActive, lifestyleDiscount, monthlyRent } from "../hq/hq-data.js";
 import { CalendarStore } from "../calendar/cal-store.js";
 import { nextRentDay } from "../calendar/cal-dates.js";
@@ -23,7 +23,7 @@ export const LifestyleStore = {
       scope: "world",
       config: false,
       type: Object,
-      default: { month: 1, theme: "neon" },
+      default: { month: 1, theme: DEFAULT_THEME },
       onChange: () => Hooks.callAll(`${MODULE_ID}.lifestyleChanged`)
     });
     game.settings.register(MODULE_ID, LS_MANAGE_SETTING, {
@@ -95,7 +95,7 @@ export const LifestyleStore = {
       raw = game.settings.get(MODULE_ID, LS_STATE_SETTING) ?? {};
     } catch { /* not registered yet */ }
     const month = Math.max(1, Math.floor(Number(raw.month) || 1));
-    return { month, theme: THEMES[raw.theme] ? raw.theme : "neon" };
+    return { month, theme: THEMES[raw.theme] ? raw.theme : DEFAULT_THEME };
   },
 
   async setState(changes) {

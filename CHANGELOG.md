@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0
+
+One look across Neon Hub, and a door to Night City Messenger.
+
+- **Night City Messenger buttons.** A new hub button action and MATT action, *Open Night City Messenger*, open the clicker's Agent inbox, a new message or contacts, or (GM) Network Management and the Admin Panel, from christinophrappuccino's [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) module, installed alongside. The starter hub page has a Messenger button, and the API adds `openMessenger` and `showMessenger`.
+- **Night City chrome theme.** The calendar's look as a theme for hub pages, Headquarters and Lifestyle: black chrome, notched corners with an accent stripe, uppercase Tektur titles and scanlines. It's the default for new pages and HQs and for the Lifestyle window; existing pages and HQs keep their theme.
+- **Calendar styling everywhere.** Every Neon Hub window has the calendar's title bar; Headquarters and Lifestyle get notched panels, cards and buttons, `//` kickers and Tektur labels in any theme; the hub editor, item settings, dialogs and chat cards match.
+- **Icons** redrawn as notched black chrome tiles to match.
+- README screenshots updated, with a landing page and the chrome theme.
+
 ## 1.2.0
 
 Calendar: group calendars that run the rent month, with the real Moon.

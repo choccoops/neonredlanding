@@ -629,3 +629,199 @@
 .neon-hub .is-light .nh-ls-calrent { color: #a86a00; }
 .neon-hub .nh-ls-caldot { display: inline-block; width: 8px; height: 8px; background: var(--cal); transform: rotate(45deg); box-shadow: 0 0 5px var(--cal); }
 .neon-hub .nh-ls-calname { white-space: nowrap; }
+
+/* ==========================================================================
+   One look across Neon Hub: the calendar's chrome.
+   Title bars, notched panels and buttons, "//" kickers and letter-spaced
+   display type for every Neon Hub window. Colours still come from each
+   window's theme (--nh-*); the Night City chrome theme is the calendar's own.
+   ========================================================================== */
+.neon-hub {
+  --nh-notch: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  --nh-notch-card: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  --nh-notch-panel: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+
+/* ---------- window frames ---------- */
+.neon-hub.application {
+  border: 1px solid #36364f;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #000, 0 0 30px rgba(255, 42, 109, 0.16), 0 14px 42px rgba(0, 0, 0, 0.7);
+}
+.neon-hub.application > .window-header {
+  background: linear-gradient(90deg, #1a0712, #0d0d16 55%, #061419);
+  border-bottom: 1px solid #ff2a6d;
+  color: #d8dbec;
+  font-family: "Neon Hub Tektur", "Signika", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.neon-hub.application > .window-header .window-icon { color: #ff2a6d; }
+.neon-hub.application > .window-header button { color: #6e7290; }
+.neon-hub.application > .window-header button:hover { color: #05d9e8; text-shadow: 0 0 8px #05d9e8; }
+.neon-hub.nh-hq-app .window-content { background: #07070b; }
+
+/* ---------- Headquarters & Lifestyle ---------- */
+.neon-hub .nh-hq.theme-chrome {
+  background:
+    repeating-linear-gradient(0deg, rgba(5, 217, 232, 0.025) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at 85% -10%, rgba(255, 42, 109, 0.09), transparent 60%),
+    radial-gradient(ellipse at 5% 110%, rgba(5, 217, 232, 0.06), transparent 55%),
+    var(--nh-bg);
+}
+.neon-hub .nh-hq-art { clip-path: var(--nh-notch); }
+.neon-hub .theme-chrome .nh-hq-title h1 {
+  font-size: 28px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: -2px 0 rgba(5, 217, 232, 0.35), 0 0 14px color-mix(in srgb, var(--nh-accent) 70%, transparent);
+}
+.neon-hub .nh-hq-title p {
+  font-family: var(--nh-display), "Signika", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.neon-hub .nh-hq-title p::before { content: "// "; color: var(--nh-accent); }
+.neon-hub .nh-status,
+.neon-hub .nh-ls-pill { font-family: var(--nh-display), "Signika", sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+/* Stats: the calendar's date panel, notched with a corner stripe. */
+.neon-hub .nh-hq-stats { position: relative; clip-path: var(--nh-notch-panel); border-color: color-mix(in srgb, var(--nh-accent) 45%, var(--nh-line)); }
+.neon-hub .nh-hq-stats::after { content: ""; position: absolute; top: 0; right: 0; width: 26px; height: 26px; background: linear-gradient(225deg, var(--nh-accent) 0 9px, transparent 9px); pointer-events: none; }
+.neon-hub .nh-stat span { font-family: var(--nh-display), "Signika", sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; }
+.neon-hub .nh-stat strong { font-family: var(--nh-display), "Signika", sans-serif; font-weight: 400; letter-spacing: 0.04em; }
+.neon-hub .theme-chrome .nh-stat-ip strong { text-shadow: 0 0 14px color-mix(in srgb, var(--nh-accent) 60%, transparent); }
+
+/* Tabs and section headings */
+.neon-hub .nh-tabs > button { font-family: var(--nh-display), "Signika", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.neon-hub .nh-ls-group h3 span::before,
+.neon-hub .nh-setup h3::before { content: "// "; color: var(--nh-accent); }
+.neon-hub .nh-ls-group h3,
+.neon-hub .nh-setup h3 { text-transform: uppercase; letter-spacing: 0.12em; }
+.neon-hub .nh-hq-detail-body h3 { font-family: var(--nh-display), "Signika", sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; }
+.neon-hub .theme-chrome .nh-hq-detail-body h2,
+.neon-hub .theme-chrome .nh-card-name,
+.neon-hub .theme-chrome .nh-ls-monthbar h2 { text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Notched panels and cards */
+.neon-hub .nh-card,
+.neon-hub .nh-ls-item,
+.neon-hub .nh-ls-hq,
+.neon-hub .nh-ls-calrow,
+.neon-hub .nh-ls-history > li,
+.neon-hub .nh-hq-warning,
+.neon-hub .nh-ls-reminders,
+.neon-hub .nh-levels li { clip-path: var(--nh-notch-card); }
+.neon-hub .nh-ls-item h4 { font-family: var(--nh-display), "Signika", sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.neon-hub .nh-card-state,
+.neon-hub .nh-ls-cat,
+.neon-hub .nh-ls-badges li { letter-spacing: 0.06em; }
+
+/* Buttons: notched, display type */
+.neon-hub .nh-hq :is(.nh-cta, .nh-gm-tools button, .nh-hq-detail-actions button, .nh-ls-item > footer button:not(.nh-icon-btn),
+  .nh-ls-toolbar > button, .nh-ls-filters button, .nh-ls-hq button, .nh-ls-calrow button, .nh-ls-monthbar button,
+  .nh-ls-rowtools button, .nh-danger button, .nh-ls-empty button) {
+  clip-path: var(--nh-notch);
+  font-family: var(--nh-display), "Signika", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.neon-hub .nh-hq .nh-cta { font-size: 12px !important; font-weight: 400 !important; }
+.neon-hub .nh-hq .nh-cta:not(:disabled):hover { background: #f3e600 !important; border-color: #f3e600 !important; color: #0b0b00 !important; filter: none; }
+.neon-hub .nh-hq .nh-ls-switch { font-family: var(--nh-display), "Signika", sans-serif; letter-spacing: 0.14em; clip-path: var(--nh-notch); }
+.neon-hub .nh-hq :is(input, select, textarea) { border-radius: 0; }
+.neon-hub .nh-hq :is(input, select, textarea):focus { outline: none; border-color: var(--nh-accent-2); box-shadow: 0 0 0 1px var(--nh-accent-2); }
+
+/* ---------- hub editor ---------- */
+.neon-hub.nh-editor .window-content { background: #07070b; color: #d8dbec; }
+.neon-hub .nh-ed {
+  background: repeating-linear-gradient(0deg, rgba(5, 217, 232, 0.02) 0 1px, transparent 1px 3px), #07070b;
+  color: #d8dbec;
+  font-family: "Signika", sans-serif;
+}
+.neon-hub .nh-ed-left,
+.neon-hub .nh-ed-right,
+.neon-hub .nh-ed-footer { background: rgba(13, 13, 21, 0.96); border-color: #26263a !important; }
+.neon-hub .nh-ed-center { background: repeating-conic-gradient(rgba(127, 127, 160, 0.06) 0 25%, transparent 0 50%) 0 0 / 20px 20px, #07070b; }
+.neon-hub .nh-ed h3 {
+  font-family: "Neon Hub Tektur", "Signika", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f3e600;
+  border-bottom-color: #26263a;
+}
+.neon-hub .nh-ed h3::before { content: "// "; color: #ff2a6d; }
+.neon-hub .nh-ed label {
+  font-family: "Neon Hub Tektur", "Signika", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6e7290;
+}
+.neon-hub .nh-ed label.nh-check { color: #d8dbec; letter-spacing: 0.12em; }
+.neon-hub .nh-ed :is(input[type=text], input[type=number], select) {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #36364f;
+  border-radius: 0;
+  background: #0d0d15;
+  color: #d8dbec;
+  font-family: "Signika", sans-serif;
+  font-size: 13px;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: none;
+}
+.neon-hub .nh-ed :is(input, select):focus { outline: none; border-color: #05d9e8; box-shadow: 0 0 0 1px #05d9e8, 0 0 10px rgba(5, 217, 232, 0.25); }
+.neon-hub .nh-ed select option { background: #0d0d15; color: #d8dbec; }
+.neon-hub .nh-ed input[type=checkbox] { accent-color: #ff2a6d; }
+.neon-hub .nh-ed input[type=range] { accent-color: #05d9e8; }
+.neon-hub .nh-ed :is(.nh-mini, .nh-file button, .nh-ed-footer button, .nh-ed-tools button) {
+  border: 1px solid #36364f;
+  border-radius: 0;
+  background: #14141f;
+  color: #d8dbec;
+  font-family: "Neon Hub Tektur", "Signika", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  clip-path: var(--nh-notch);
+}
+.neon-hub .nh-ed :is(.nh-mini, .nh-file button, .nh-ed-footer button):hover:not(:disabled) { border-color: #05d9e8; color: #05d9e8; background: rgba(5, 217, 232, 0.08); }
+.neon-hub .nh-ed .nh-primary { background: #ff2a6d !important; border-color: #ff2a6d !important; color: #0b0006 !important; }
+.neon-hub .nh-ed .nh-primary:hover:not(:disabled) { background: #f3e600 !important; border-color: #f3e600 !important; color: #0b0b00 !important; }
+.neon-hub .nh-ed-list li { clip-path: var(--nh-notch-card); }
+.neon-hub .nh-ed-list li.selected { background: linear-gradient(90deg, rgba(255, 42, 109, 0.22), rgba(13, 13, 21, 0.9) 85%); outline: 1px solid #ff2a6d; }
+.neon-hub .nh-ed-pick b { font-family: "Neon Hub Tektur", "Signika", sans-serif; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+.neon-hub .nh-ed-pick small { color: #6e7290; }
+.neon-hub .nh-ed .nh-drop { border-radius: 0; border-color: #36364f; }
+.neon-hub .nh-ed .nh-hint { color: #6e7290; opacity: 1; }
+.neon-hub .nh-ed .nh-dirty { color: #ff8a1f; }
+
+/* ---------- chat cards ---------- */
+.neon-hub-chat {
+  position: relative;
+  padding: 8px 10px 10px;
+  border: 1px solid #ff2a6d;
+  background: linear-gradient(115deg, rgba(255, 42, 109, 0.14), transparent 70%), #09090e;
+  color: #d8dbec;
+  clip-path: var(--nh-notch-card, polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%));
+}
+.neon-hub-chat header { font-family: "Neon Hub Tektur", "Signika", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; }
+.neon-hub-chat header i { color: #ff2a6d; }
+.neon-hub-chat .nh-due { color: #ff8a1f; }
+.neon-hub-chat .nh-ls-discount { color: #39ff88; }
+.neon-hub-chat summary b,
+.neon-hub-chat .nh-ls-totals b { font-family: "Neon Hub Tektur", "Signika", sans-serif; font-weight: 400; color: #05d9e8; }
+.neon-hub .nh-ed h3 { justify-content: flex-start; }
+.neon-hub .nh-ed h3 > :is(.nh-ed-tools, .nh-mini) { margin-left: auto; }
+.neon-hub .nh-ed .nh-ed-pick { color: #d8dbec; }
+.neon-hub .nh-ed .nh-ed-pick > i:first-child { color: #ff2a6d; }
+.neon-hub .nh-ed .nh-ed-move button { color: #6e7290; }
+.neon-hub .nh-ed .nh-ed-footer button { height: 30px; padding: 0 14px; }

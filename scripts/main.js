@@ -16,6 +16,7 @@ import { CalendarStore } from "./calendar/cal-store.js";
 import { CalendarOps } from "./calendar/cal-ops.js";
 import { CalendarApp } from "./calendar/cal-app.js";
 import { NotesStore } from "./calendar/cal-notes.js";
+import { Messenger } from "./messenger.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -110,6 +111,11 @@ Hooks.once("init", () => {
       return c && CalendarStore.canSee(c) ? NotesStore.create(c, date, data) : null;
     },
 
+    /** Open a Night City Messenger window here (inbox, compose, contacts; GM: networks, admin). Needs that module. */
+    openMessenger: (view = "inbox") => Messenger.open(view),
+    /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
+    showMessenger: (view = "inbox", userIds = null) => HubSocket.emit("openMessenger", { view }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
+
     apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp }
   };
 });
@@ -122,6 +128,7 @@ Hooks.once("ready", () => {
   HubSocket.on("openHQ", ({ id }) => HQApp.open(id));
   HubSocket.on("openLifestyle", () => LifestyleApp.open());
   HubSocket.on("openCalendar", () => CalendarApp.open());
+  HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
 
@@ -332,7 +339,7 @@ async function chooseHQ() {
     window: { title: L("NEONHUB.UI.Headquarters"), icon: "fa-solid fa-house-signal" },
     content: `<p>${esc(L(hqs.length ? "NEONHUB.HQ.Choose" : "NEONHUB.HQ.NoneYet"))}</p>`,
     buttons,
-    classes: ["neon-hub-choose"],
+    classes: ["neon-hub", "nh-cal-dialog", "neon-hub-choose"],
     rejectClose: false
   });
   if (!choice) return;

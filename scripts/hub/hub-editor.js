@@ -1,4 +1,5 @@
-import { MODULE_ID, MARKET_ID, TEMPLATE_PATH, THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES } from "../constants.js";
+import { MODULE_ID, MARKET_ID, TEMPLATE_PATH, THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, MESSENGER_VIEWS } from "../constants.js";
+import { Messenger } from "../messenger.js";
 import { Compat } from "../compat.js";
 import { MATT } from "../matt.js";
 import { HQStore } from "../hq/hq-data.js";
@@ -88,6 +89,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         defaultButton({ label: L("NEONHUB.Starter.HQ"), subtitle: L("NEONHUB.Starter.HQSub"), icon: "fa-solid fa-house-signal", action: { type: "hq" } }),
         defaultButton({ label: L("NEONHUB.Starter.Lifestyle"), subtitle: L("NEONHUB.Starter.LifestyleSub"), icon: "fa-solid fa-wallet", action: { type: "lifestyle" } }),
         defaultButton({ label: L("NEONHUB.Starter.Calendar"), subtitle: L("NEONHUB.Starter.CalendarSub"), icon: "fa-solid fa-calendar-days", action: { type: "calendar" } }),
+        defaultButton({ label: L("NEONHUB.Starter.Messenger"), subtitle: L("NEONHUB.Starter.MessengerSub"), icon: "fa-solid fa-mobile-screen-button", action: { type: "messenger", view: "inbox" } }),
         defaultButton({ label: L("NEONHUB.Starter.Market"), subtitle: L("NEONHUB.Starter.MarketSub"), icon: "fa-solid fa-store", action: { type: "shop" } })
       ]
     });
@@ -126,10 +128,12 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         playModes: opt(["play", "stop", "pause", "next", "prev"].map((k) => [k, L(`NEONHUB.PlayMode.${k}`)]), a.playMode),
         colorValue: b.color || THEMES[d.theme].accent,
         is: Object.fromEntries(Object.keys(BUTTON_ACTIONS).map((k) => [k, a.type === k])),
-        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
+        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "messenger", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
         targetName: a.target ? this.#nameOf(a.type, a.target) : null,
         targetOptions: this.#targetOptions(a.type, a.target),
-        marketMissing: a.type === "shop" && !game.modules.get(MARKET_ID)?.active
+        marketMissing: a.type === "shop" && !game.modules.get(MARKET_ID)?.active,
+        messengerMissing: a.type === "messenger" && !Messenger.installed,
+        messengerViews: opt(Object.entries(MESSENGER_VIEWS).map(([k, v]) => [k, L(`NEONHUB.Messenger.View.${k}`) + (v.gm ? ` (${L("NEONHUB.Messenger.GMOnly")})` : "")]), a.view)
       };
     }
 
@@ -433,6 +437,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
     const issues = validateHub(this.draft, { hqExists: (id) => !!HQStore.get(id) });
     if (Object.keys(issues).length) {
       const ok = await Compat.DialogV2.confirm({
+        classes: ["neon-hub", "nh-cal-dialog"],
         window: { title: L("NEONHUB.Editor.Build") },
         content: `<p>${L("NEONHUB.Editor.BuildWithIssues", { n: Object.keys(issues).length })}</p>`,
         rejectClose: false
@@ -474,6 +479,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   async close(options = {}) {
     if (this.dirty && !options.force && this.draft.buttons.length) {
       const ok = await Compat.DialogV2.confirm({
+        classes: ["neon-hub", "nh-cal-dialog"],
         window: { title: L("NEONHUB.Editor.Unsaved") },
         content: `<p>${L("NEONHUB.Editor.UnsavedBody")}</p>`,
         rejectClose: false

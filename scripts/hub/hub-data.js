@@ -1,4 +1,4 @@
-import { THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES } from "../constants.js";
+import { THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, DEFAULT_THEME, MESSENGER_VIEWS } from "../constants.js";
 
 /**
  * Hub pages: the layout model and the layout engine.
@@ -32,7 +32,7 @@ export function defaultHub(overrides = {}) {
     version: HUB_VERSION,
     title: "Night City",
     subtitle: "Choose your destination",
-    theme: "neon",
+    theme: DEFAULT_THEME,
     size: "1920x1080",
     background: "",
     dim: 0.45,
@@ -69,6 +69,7 @@ export function normalizeButton(raw = {}) {
   a.loop = !!a.loop;
   a.caption = String(a.caption ?? "");
   a.runAs = a.runAs === "gm" ? "gm" : "player";
+  a.view = MESSENGER_VIEWS[a.view] ? a.view : "inbox";
   b.action = a;
   return b;
 }
@@ -78,7 +79,7 @@ export function normalizeHub(raw = {}) {
   h.version = HUB_VERSION;
   h.title = String(h.title ?? "");
   h.subtitle = String(h.subtitle ?? "");
-  if (!THEMES[h.theme]) h.theme = "neon";
+  if (!THEMES[h.theme]) h.theme = DEFAULT_THEME;
   if (!PAGE_SIZES[h.size]) h.size = "1920x1080";
   h.background = String(h.background ?? "");
   h.dim = Math.min(0.9, Math.max(0, Number(h.dim ?? 0.45)));

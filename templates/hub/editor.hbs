@@ -113,6 +113,12 @@
 
     {{#if sel.is.hq}}<button type="button" class="nh-mini" data-action="newHQ"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Editor.NewHQ"}}</button>{{/if}}
     {{#if sel.marketMissing}}<p class="nh-hint nh-warn">{{localize "NEONHUB.Editor.MarketMissing"}}</p>{{/if}}
+    {{#if sel.is.messenger}}
+    <label>{{localize "NEONHUB.Editor.MessengerView"}}
+      <select data-path="buttons.{{sel.index}}.action.view">{{#each sel.messengerViews}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    </label>
+    {{#if sel.messengerMissing}}<p class="nh-hint nh-warn">{{localize "NEONHUB.Editor.MessengerMissing"}}</p>{{/if}}
+    {{/if}}
 
     {{#if sel.is.scene}}
     <label>{{localize "NEONHUB.Editor.SceneMode"}}

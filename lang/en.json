@@ -1,6 +1,7 @@
 {
   "NEONHUB": {
     "Theme": {
+      "chrome": "Night City chrome",
       "neon": "Neon broker",
       "corpo": "Corpo boutique",
       "street": "Street stall",
@@ -23,7 +24,8 @@
       "none": "Nothing (decoration)",
       "ownCharacter": "Their own character",
       "lifestyle": "Open Lifestyle",
-      "calendar": "Open calendar"
+      "calendar": "Open calendar",
+      "messenger": "Open Night City Messenger"
     },
     "Audience": {
       "trigger": "Just the player who clicked",
@@ -61,7 +63,9 @@
       "Lifestyle": "Lifestyle",
       "LifestyleSub": "Rent, food and monthly bills",
       "Calendar": "Calendar",
-      "CalendarSub": "Today's date and rent day"
+      "CalendarSub": "Today's date and rent day",
+      "Messenger": "Messenger",
+      "MessengerSub": "Your Agent: messages and contacts"
     },
     "UI": {
       "NewHub": "New hub",
@@ -77,7 +81,9 @@
       "Headquarters": "Headquarters",
       "UnknownHQ": "Unknown Headquarters",
       "OpenLifestyle": "Open Lifestyle",
-      "OpenCalendar": "Open calendar"
+      "OpenCalendar": "Open calendar",
+      "OpenMessenger": "Open Night City Messenger",
+      "MessengerView": "Window"
     },
     "Editor": {
       "Title": "Hub page",
@@ -175,7 +181,9 @@
         "NoHQ": "Choose a Headquarters (or make one).",
         "NoFile": "Choose a file.",
         "Empty": "Give the button a label, icon or picture."
-      }
+      },
+      "MessengerView": "Opens",
+      "MessengerMissing": "Night City Messenger isn't active, so this button won't open anything until it's installed and enabled."
     },
     "Error": {
       "NoMatt": "Neon Hub needs Monk's Active Tile Triggers. Install and enable it to build hub pages.",
@@ -924,6 +932,19 @@
         "Players": "Players",
         "Group": "Group"
       }
+    },
+    "Messenger": {
+      "View": {
+        "inbox": "Inbox (their Agent)",
+        "compose": "New message",
+        "contacts": "Contacts",
+        "networks": "Network Management",
+        "admin": "Admin Panel"
+      },
+      "GMOnly": "GM only",
+      "Missing": "Night City Messenger isn't installed or enabled in this world.",
+      "NotReady": "Night City Messenger is still starting up. Try again in a moment.",
+      "Failed": "Night City Messenger couldn't open that window. See the console for details."
     }
   }
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- **Lavish Luxury** furniture now costs 10,000eb (it was 100eb, cheaper than the +2 set). Copies already added to characters or imported into a world keep their old price; fix those by hand or re-add them from the compendium.
+
 ## 1.1.0
 
 Lifestyle: rent and monthly expenses for every character.

@@ -8,6 +8,23 @@
  */
 const ns = (path) => foundry.utils.getProperty(globalThis, path);
 
+/**
+ * Foundry v12 globals, by name. v12 declares its classes with top-level `class`
+ * statements: global names a script can use, but not properties of globalThis, so
+ * `globalThis.FilePicker` is undefined there. Each is read as a bare identifier
+ * instead (which also picks up hosts that swap one out, like The Forge's FilePicker).
+ */
+const V12 = {
+  FilePicker: () => (typeof FilePicker === "undefined" ? undefined : FilePicker),
+  TextEditor: () => (typeof TextEditor === "undefined" ? undefined : TextEditor),
+  ImagePopout: () => (typeof ImagePopout === "undefined" ? undefined : ImagePopout),
+  FormDataExtended: () => (typeof FormDataExtended === "undefined" ? undefined : FormDataExtended),
+  renderTemplate: () => (typeof renderTemplate === "undefined" ? undefined : renderTemplate),
+  loadTemplates: () => (typeof loadTemplates === "undefined" ? undefined : loadTemplates),
+  ForgeVTT: () => (typeof ForgeVTT === "undefined" ? undefined : ForgeVTT)
+};
+const v12 = (name) => globalThis[name] ?? V12[name]();
+
 export const Compat = {
   get generation() {
     return Number(game.release?.generation ?? 12);
@@ -18,28 +35,28 @@ export const Compat = {
   },
 
   get FilePicker() {
-    return ns("foundry.applications.apps.FilePicker.implementation") ?? globalThis.FilePicker;
+    return ns("foundry.applications.apps.FilePicker.implementation") ?? v12("FilePicker");
   },
 
   get TextEditor() {
-    return ns("foundry.applications.ux.TextEditor.implementation") ?? globalThis.TextEditor;
+    return ns("foundry.applications.ux.TextEditor.implementation") ?? v12("TextEditor");
   },
 
   get ImagePopout() {
-    return ns("foundry.applications.apps.ImagePopout") ?? globalThis.ImagePopout;
+    return ns("foundry.applications.apps.ImagePopout") ?? v12("ImagePopout");
   },
 
   get FormDataExtended() {
-    return ns("foundry.applications.ux.FormDataExtended") ?? globalThis.FormDataExtended;
+    return ns("foundry.applications.ux.FormDataExtended") ?? v12("FormDataExtended");
   },
 
   renderTemplate(path, data) {
-    const fn = ns("foundry.applications.handlebars.renderTemplate") ?? globalThis.renderTemplate;
+    const fn = ns("foundry.applications.handlebars.renderTemplate") ?? v12("renderTemplate");
     return fn(path, data);
   },
 
   loadTemplates(paths) {
-    const fn = ns("foundry.applications.handlebars.loadTemplates") ?? globalThis.loadTemplates;
+    const fn = ns("foundry.applications.handlebars.loadTemplates") ?? v12("loadTemplates");
     return fn(paths);
   },
 
@@ -61,7 +78,7 @@ export const Compat = {
 
   /** Where generated images are uploaded: The Forge's asset library when hosted there, else the Data folder. */
   get uploadSource() {
-    const forge = globalThis.ForgeVTT;
+    const forge = v12("ForgeVTT");
     if (forge?.usingTheForge) return "forgevtt";
     return "data";
   }

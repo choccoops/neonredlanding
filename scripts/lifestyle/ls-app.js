@@ -41,7 +41,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     window: { title: "NEONHUB.Lifestyle.Title", icon: "fa-solid fa-wallet", resizable: true },
     position: { width: 1100, height: 800 },
     actions: {
-      tab: LifestyleApp.#onTab,
+      // Not "tab": ApplicationV2 handles data-action="tab" itself and never calls ours.
+      view: LifestyleApp.#onTab,
       filter: LifestyleApp.#onFilter,
       toggle: LifestyleApp.#onToggle,
       remove: LifestyleApp.#onRemove,

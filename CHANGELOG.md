@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.2
+
+- **Fixed: Lifestyle and Headquarters tabs did nothing on Foundry v12**, and neither did Lifestyle's **Browse catalog** button. Foundry's own windows claim clicks on anything marked as a "tab" action and handle them their own way, so Neon Hub's tab switching never ran. The catalog, bills, month overview and every HQ tab open again.
+
 ## 1.6.1
 
 - **Fixed: shop buttons didn't list Neon Market shops set up on tokens.** Neon Market's shop settings open from the token HUD, and an unlinked token (how Cyberpunk RED NPCs come by default) keeps its shop on the token, not on the actor in the Actors directory, which was the only place the list looked. The list now also shows those token shops, grouped by scene, and the button opens that token's shop.

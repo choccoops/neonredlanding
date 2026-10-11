@@ -108,7 +108,8 @@
         {{/each}}
       </select>
     </label>
-    <div class="nh-drop" data-drop="target"><i class="fa-solid fa-download"></i> {{#if sel.targetName}}{{sel.targetName}} <button type="button" class="nh-mini" data-action="clearTarget" aria-label="{{localize 'NEONHUB.Editor.Clear'}}"><i class="fa-solid fa-xmark"></i></button>{{else}}{{localize "NEONHUB.Editor.DropTarget"}}{{/if}}</div>
+    <div class="nh-drop" data-drop="target"><i class="fa-solid fa-download"></i> {{#if sel.targetName}}{{sel.targetName}} <button type="button" class="nh-mini" data-action="clearTarget" aria-label="{{localize 'NEONHUB.Editor.Clear'}}"><i class="fa-solid fa-xmark"></i></button>{{else}}{{sel.dropLabel}}{{/if}}</div>
+    {{#if sel.shopClosed}}<p class="nh-hint nh-warn"><i class="fa-solid fa-door-closed"></i> {{localize "NEONHUB.Editor.ShopClosedHint"}}</p>{{/if}}
     {{/unless}}
     {{/if}}
 

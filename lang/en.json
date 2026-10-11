@@ -136,7 +136,6 @@
         "macro": "Macro"
       },
       "Choose": "Choose…",
-      "DropTarget": "Or drop a document here",
       "Clear": "Clear",
       "NewHQ": "New Headquarters",
       "MarketMissing": "Neon Market isn't active, so this button won't open anything until it is.",
@@ -173,7 +172,7 @@
       "Missing": "(missing document)",
       "WholeJournal": "— Whole journal —",
       "WholePlaylist": "— Whole playlist —",
-      "DropUnsupported": "Drop a scene, journal, page, actor, playlist, track or macro.",
+      "DropUnsupported": "Drop a scene, journal, page, actor, Neon Market shop, playlist, track or macro.",
       "HasIssue": "Needs attention",
       "MoveUp": "Move up",
       "MoveDown": "Move down",
@@ -184,7 +183,29 @@
         "Empty": "Give the button a label, icon or picture."
       },
       "MessengerView": "Opens",
-      "MessengerMissing": "Night City Messenger isn't active, so this button won't open anything until it's installed and enabled."
+      "MessengerMissing": "Night City Messenger isn't active, so this button won't open anything until it's installed and enabled.",
+      "DropFor": {
+        "scene": "Or drop a scene here",
+        "journal": "Or drop a journal or page here",
+        "actor": "Or drop an actor here",
+        "shop": "Or drop a shop's actor here",
+        "playlist": "Or drop a playlist or track here",
+        "macro": "Or drop a macro here",
+        "hq": "",
+        "lifestyle": "",
+        "calendar": "",
+        "messenger": "",
+        "sound": "",
+        "image": "",
+        "none": ""
+      },
+      "ShopClosedTag": "closed",
+      "ShopClosed": "{name} isn't open for business yet. Players can't open it until you tick Open for business in its Neon Market settings.",
+      "ShopClosedHint": "This shop isn't open for business: players clicking it get \"shop closed\". Tick Open for business in the actor's Neon Market settings.",
+      "NotAShop": "{name} isn't a Neon Market shop. Set one up from the actor's Neon Market settings, or change the action to Open a character sheet.",
+      "DropFailed": "Couldn't use the dropped document: {error}",
+      "ShopActors": "Actors",
+      "ShopTokens": "Tokens on {scene}"
     },
     "Error": {
       "NoMatt": "Neon Hub needs Monk's Active Tile Triggers. Install and enable it to build hub pages.",

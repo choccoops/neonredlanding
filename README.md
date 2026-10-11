@@ -93,6 +93,11 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
 - The tiles are ordinary MATT tiles. You can open one with MATT's own editor and add more actions;
   rebuilding replaces the action list, so add extra steps after you're done with the hub editor.
+- **Shop buttons** list every Neon Market shop: on actors in the Actors directory, and on unlinked
+  tokens (a shop set up from a token's HUD belongs to that token), grouped by scene. Ones not yet
+  ticked *Open for business* in Neon Market are marked *closed*, and the editor warns you, since players can't open
+  a closed shop. Dropping a shop's actor anywhere on the editor (the button list or a button's drop
+  zone) makes a shop button for it.
 - Neon Hub's five actions also appear in MATT's own action list (group *Neon Hub*), so you can use
   them on any tile.
 

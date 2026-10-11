@@ -11,6 +11,18 @@ import { HubBuilder } from "./builder.js";
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const { deepClone, getProperty, setProperty, debounce } = foundry.utils;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
+/**
+ * A Neon Market shop, open or closed (null if it isn't one), on an actor or a token.
+ * Read straight from the flags: getFlag throws for a module that isn't active. An unlinked
+ * token's shop lives in its actor delta (Neon Market sets it up from the token HUD).
+ */
+function shopOf(doc) {
+  if (!doc) return null;
+  if (doc.documentName === "Token") {
+    return doc.delta?.flags?.[MARKET_ID]?.shop ?? doc._source?.delta?.flags?.[MARKET_ID]?.shop ?? (doc.actorLink ? shopOf(doc.actor) : null);
+  }
+  return doc.flags?.[MARKET_ID]?.shop ?? null;
+}
 
 /** Which document types each action accepts, and the action a dropped document implies. */
 const DROP_TYPES = {
@@ -130,6 +142,8 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         is: Object.fromEntries(Object.keys(BUTTON_ACTIONS).map((k) => [k, a.type === k])),
         usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "messenger", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
         targetName: a.target ? this.#nameOf(a.type, a.target) : null,
+        dropLabel: L(`NEONHUB.Editor.DropFor.${a.type}`),
+        shopClosed: a.type === "shop" && !!a.target && this.#shopClosed(a.target),
         targetOptions: this.#targetOptions(a.type, a.target),
         marketMissing: a.type === "shop" && !game.modules.get(MARKET_ID)?.active,
         messengerMissing: a.type === "messenger" && !Messenger.installed,
@@ -176,6 +190,17 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
     }
   }
 
+  /** A shop button's actor is a Neon Market shop that isn't open for business. */
+  #shopClosed(uuid) {
+    try {
+      const doc = fromUuidSync(uuid);
+      const shop = shopOf(doc) ?? shopOf(doc?.parent);
+      return !!shop && !shop.enabled;
+    } catch {
+      return false;
+    }
+  }
+
   /** Dropdown choices for the selected action's target. */
   #targetOptions(type, value) {
     const one = (doc, label = doc.name) => ({ key: doc.uuid, label, selected: doc.uuid === value });
@@ -191,8 +216,22 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       case "actor":
         return [{ group: null, options: sorted(game.actors).map((a) => one(a)) }];
       case "shop": {
-        const shops = sorted(game.actors.filter((a) => a.getFlag?.(MARKET_ID, "shop")?.enabled));
-        return [{ group: null, options: shops.map((a) => one(a, a.getFlag(MARKET_ID, "shop")?.identity?.name || a.name)) }];
+        // Every shop, open or not (a closed one can be set up now and opened later): world
+        // actors, then unlinked tokens with their own shop, by scene.
+        const label = (doc, shop) => {
+          const name = shop.identity?.name || doc.name;
+          return shop.enabled ? name : `${name} (${L("NEONHUB.Editor.ShopClosedTag")})`;
+        };
+        const groups = [{
+          group: game.scenes.size ? L("NEONHUB.Editor.ShopActors") : null,
+          options: sorted(game.actors.filter((a) => shopOf(a))).map((a) => one(a, label(a, shopOf(a))))
+        }];
+        for (const scene of sorted(game.scenes)) {
+          const tokens = scene.tokens.filter((t) => !t.actorLink && shopOf(t));
+          if (tokens.length) groups.push({ group: L("NEONHUB.Editor.ShopTokens", { scene: scene.name }), options: tokens.map((t) => one(t, label(t, shopOf(t)))) });
+        }
+        if (!groups[0].options.length && groups.length > 1) groups.shift();
+        return groups;
       }
       case "hq":
         return [{ group: null, options: HQStore.all().map((hq) => ({ key: hq.id, label: hq.name, selected: hq.id === value })) }];
@@ -221,14 +260,24 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       if (live) input.addEventListener("change", () => this.render());
     }
     for (const zone of root.querySelectorAll("[data-drop]")) {
-      zone.addEventListener("dragover", (ev) => {
+      const over = (ev) => {
         ev.preventDefault();
+        if (ev.dataTransfer) ev.dataTransfer.dropEffect = "link";
         zone.classList.add("drag-over");
+      };
+      zone.addEventListener("dragenter", over);
+      zone.addEventListener("dragover", over);
+      zone.addEventListener("dragleave", (ev) => {
+        if (!zone.contains(ev.relatedTarget)) zone.classList.remove("drag-over");
       });
-      zone.addEventListener("dragleave", () => zone.classList.remove("drag-over"));
       zone.addEventListener("drop", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
         zone.classList.remove("drag-over");
-        this.#onDrop(ev, zone.dataset.drop);
+        this.#onDrop(ev, zone.dataset.drop).catch((err) => {
+          console.error(`${MODULE_ID} | drop failed`, err);
+          ui.notifications.error(L("NEONHUB.Editor.DropFailed", { error: err.message }));
+        });
       });
     }
     const preview = root.querySelector("canvas.nh-preview");
@@ -319,34 +368,38 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   async #onDrop(ev, zone) {
-    ev.preventDefault();
     const data = Compat.getDragEventData(ev);
-    if (!data?.type) return;
-    const type = DROP_TYPES[data.type];
+    if (!data?.type) return ui.notifications.warn(L("NEONHUB.Editor.DropUnsupported"));
+    let type = DROP_TYPES[data.type];
     if (!type || !data.uuid) return ui.notifications.warn(L("NEONHUB.Editor.DropUnsupported"));
     const doc = await fromUuid(data.uuid);
-    if (!doc) return;
+    if (!doc) return ui.notifications.warn(L("NEONHUB.Editor.Missing"));
+    // An actor with a Neon Market shop (open or not) makes a shop button.
+    const shop = type === "actor" ? shopOf(doc) : null;
+    if (shop) type = "shop";
+    const current = this.draft.buttons[this.selectedIndex];
+    if (zone === "target" && current?.action.type === "shop" && type !== "shop") {
+      return ui.notifications.warn(L("NEONHUB.Editor.NotAShop", { name: doc.name }));
+    }
 
     let button;
     if (zone === "list") {
-      button = defaultButton({ label: doc.name, icon: BUTTON_ACTIONS[type].icon, action: { type } });
+      button = defaultButton({ label: shop?.identity?.name || doc.name, icon: BUTTON_ACTIONS[type].icon, action: { type } });
       this.draft.buttons.push(button);
     } else {
       button = this.draft.buttons[this.selectedIndex];
       if (!button) return;
-      if (button.action.type !== type && !(button.action.type === "shop" && type === "actor")) {
+      // A different kind of document switches the button to its action.
+      if (button.action.type !== type) {
         if (!button.icon || button.icon === BUTTON_ACTIONS[button.action.type]?.icon) button.icon = BUTTON_ACTIONS[type].icon;
         button.action.type = type;
       }
     }
     button.action.target = doc.uuid;
     button.action.ownCharacter = false;
-    // A Neon Market shop dropped as an actor becomes a shop button.
-    if (type === "actor" && doc.getFlag?.(MARKET_ID, "shop")?.enabled) {
-      button.action.type = "shop";
-      if (button.icon === BUTTON_ACTIONS.actor.icon) button.icon = BUTTON_ACTIONS.shop.icon;
-    }
-    if (!button.label || button.label === "New button") button.label = doc.name;
+    const name = shop?.identity?.name || doc.name;
+    if (!button.label || button.label === L("NEONHUB.Editor.NewButton") || button.label === "New button") button.label = name;
+    if (shop && !shop.enabled) ui.notifications.info(L("NEONHUB.Editor.ShopClosed", { name }));
     this.selected = button.id;
     this.draft = normalizeHub(this.draft);
     this.dirty = true;

@@ -80,6 +80,13 @@ export const CalendarStore = {
       rentDay: Math.min(31, Math.max(1, Math.floor(Number(raw.rentDay)) || 1)),
       // Moves on a day each time the world clock passes midnight (with SmallTime).
       clock: raw.clock !== false,
+      // Night City Weather: the weekday a forecast is issued (0 Sunday … 6 Saturday, -1 none),
+      // keeping weather planned ahead, and posting forecasts to chat.
+      weather: {
+        forecastDay: Number.isInteger(raw.weather?.forecastDay) && raw.weather.forecastDay >= -1 && raw.weather.forecastDay <= 6 ? raw.weather.forecastDay : 1,
+        auto: raw.weather?.auto !== false,
+        chat: raw.weather?.chat !== false
+      },
       ...date
     };
   },
@@ -181,7 +188,7 @@ export const CalendarStore = {
     const list = this.all();
     const calendar = list.find((c) => c.id === id);
     if (!calendar) return null;
-    for (const key of ["name", "color", "players", "rentDay", "clock"]) if (key in changes) calendar[key] = deepClone(changes[key]);
+    for (const key of ["name", "color", "players", "rentDay", "clock", "weather"]) if (key in changes) calendar[key] = deepClone(changes[key]);
     await this._save(list);
     return this.get(id);
   },

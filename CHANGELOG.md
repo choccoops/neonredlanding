@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.7.0
+
+Night City weather on the calendar, from R. Talsorian's free Night City Weather.
+
+- **Planned weather.** The GM plans weeks of weather per calendar from the DLC's tables: each day a temperature and a sky for the season, and Strange Weather on a 6 with its duration. Short events get a time of day; multi-day ones (flooding, inversion smog, cold snaps, heat waves, blackouts) carry on across the days. It can keep itself planned five weeks ahead as the date moves.
+- **Turn weather off.** Any condition can be unticked so it's never rolled (rolls on it are rolled again), with a 2070s preset that drops radioactive windstorms and blood rain.
+- **Hidden notes.** Each day's weather is a GM note on that day, with how it plays at the table (in Neon Hub's own words, with CP:R pages), revealed to players with the eye button.
+- **On the calendar.** Weather icons and temperatures on each day, multi-day events as a coloured band across the days. The GM sees the real weather, players what they'd know: past days, today, and the forecast.
+- **Weekly forecast.** On a set weekday players get a seven-day forecast, also posted to chat: reliable for tomorrow, shakier further out, temperatures as ranges, short strange weather as a chance that may be a false alarm, obvious multi-day storms called, blackouts never. Today's real weather is always shown.
+- API: `weather()`, `planWeather()`, `postForecast()`.
+- The calendar window opens a little taller to fit the forecast.
+
 ## 1.6.2
 
 - **Fixed: Lifestyle and Headquarters tabs did nothing on Foundry v12**, and neither did Lifestyle's **Browse catalog** button. Foundry's own windows claim clicks on anything marked as a "tab" action and handle them their own way, so Neon Hub's tab switching never ran. The catalog, bills, month overview and every HQ tab open again.

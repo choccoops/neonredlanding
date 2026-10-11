@@ -338,6 +338,103 @@
 .nh-cal-dialog form .form-group label.nh-check { display: flex; align-items: center; gap: 8px; font-family: "Signika", sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--nc-text) !important; }
 .nh-cal-dialog form .form-group label.nh-check input { flex: 0 0 auto; margin: 0; accent-color: var(--nc-cyan); }
 
+/* ---------- weather: forecast strip ---------- */
+.nh-cal-wx { display: flex; flex-direction: column; gap: 5px; padding: 6px 10px 7px; border: 1px solid var(--nc-line); border-left: 3px solid var(--nc-cyan); background: rgba(5, 217, 232, 0.03); }
+.nh-cal-wx-head { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; }
+.nh-cal-wx-label { font-family: var(--nc-display); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--nc-cyan); }
+.nh-cal-wx-issued, .nh-cal-wx-next { font-size: 12px; letter-spacing: 0.08em; color: var(--nc-dim); }
+.nh-cal-wx-issued { color: var(--nc-text); }
+.nh-cal-wx-tools { display: flex; gap: 6px; margin-left: auto; }
+.nh-cal-app .window-content button.nh-cal-wx-plan { height: 26px; padding: 0 10px; font-size: 10px; }
+.nh-cal-app .window-content .nh-cal-wx-tools button.nh-cal-icon { flex-basis: 26px; width: 26px; height: 26px; }
+.nh-cal-wx-empty { margin: 0; font-size: 12px; color: var(--nc-dim); }
+.nh-cal-wx-days { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+.nh-cal-wx-day {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  padding: 4px 6px 8px;
+  border: 1px solid var(--nc-line);
+  background: var(--nc-bg-2);
+  clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+}
+.nh-cal-wx-day.is-today { border-color: var(--wx); background: color-mix(in srgb, var(--wx) 14%, var(--nc-bg-2)); }
+.nh-cal-wx-day.is-forecast { border-style: dashed; }
+.nh-cal-wx-date { font-family: var(--nc-display); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--nc-dim); }
+.nh-cal-wx-day.is-today .nh-cal-wx-date { color: #fff; }
+.nh-cal-wx-main { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.nh-cal-wx-main i { font-size: 15px; color: var(--wx); filter: drop-shadow(0 0 4px color-mix(in srgb, var(--wx) 60%, transparent)); }
+.nh-cal-wx-day.is-forecast .nh-cal-wx-main i { opacity: 0.8; }
+.nh-cal-wx-temp { font-family: var(--nc-display); font-size: 12px; letter-spacing: 0.04em; color: var(--nc-text); overflow: hidden; text-overflow: ellipsis; }
+.nh-cal-wx-cond { font-size: 11px; color: var(--nc-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nh-cal-wx-day.is-forecast .nh-cal-wx-cond { font-style: italic; color: color-mix(in srgb, var(--nc-text) 75%, transparent); }
+.nh-cal-wx-extra { display: flex; align-items: center; gap: 6px; min-height: 13px; font-size: 10px; color: var(--nc-dim); }
+.nh-cal-wx-rain i { color: var(--nc-cyan); }
+.nh-cal-wx-risk { color: var(--wx); filter: drop-shadow(0 0 3px var(--wx)); }
+.nh-cal-wx-band {
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: 0;
+  height: 5px;
+  background: var(--band);
+  box-shadow: 0 0 6px var(--band);
+  font-size: 0;
+}
+.nh-cal-wx-band.is-start { left: 0; }
+.nh-cal-wx-band.is-end { right: 0; }
+
+/* ---------- weather: day cells ---------- */
+.nh-cal-day-wx { position: absolute; top: 6px; left: 30px; display: inline-flex; align-items: center; gap: 3px; font-size: 11px; line-height: 1; color: var(--wx); }
+.nh-cal-day-wx b { font-family: var(--nc-display); font-size: 9px; font-weight: 400; letter-spacing: 0.04em; color: var(--nc-dim); }
+.nh-cal-day-wx.is-forecast { opacity: 0.75; }
+.nh-cal-day-wx.is-forecast i { filter: none; }
+.nh-cal-day-wx:not(.is-forecast) i { filter: drop-shadow(0 0 3px color-mix(in srgb, var(--wx) 60%, transparent)); }
+.nh-cal-day.is-other .nh-cal-day-wx { opacity: 0.35; }
+/* Today's cell has the NOW tag up there: icon only. */
+.nh-cal-day.is-current .nh-cal-day-wx b { display: none; }
+.nh-cal-day-band { position: absolute; left: -2px; right: -2px; bottom: 0; height: 4px; background: var(--band); box-shadow: 0 0 5px var(--band); }
+.nh-cal-day-band.is-start { left: 0; }
+.nh-cal-day-band.is-end { right: 0; }
+.nh-cal-day-band.is-forecast { background: repeating-linear-gradient(90deg, var(--band) 0 6px, transparent 6px 9px); box-shadow: none; }
+.nh-cal-day.is-other .nh-cal-day-band { opacity: 0.35; }
+@container (max-width: 820px) {
+  .nh-cal-day-wx b { display: none; }
+  .nh-cal-wx-days { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ---------- weather: note ---------- */
+.nh-cal-note-wx .nh-cal-note-text p { margin: 0 0 4px; font-size: 12px; line-height: 1.35; }
+.nh-cal-note-wx .nh-cal-note-text b { font-weight: 600; color: #fff; }
+.nh-cal-note-wx h4 i { color: var(--nc-cyan); margin-right: 4px; }
+
+/* ---------- weather: dialog ---------- */
+.nh-wx-dialog .nh-wx-presets { display: flex; gap: 6px; margin-bottom: 6px; }
+.nh-wx-dialog .window-content .nh-wx-presets button { flex: 1; height: 26px; padding: 0 8px; border: 1px solid var(--nc-line-2); background: var(--nc-bg-3); color: var(--nc-text); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+.nh-wx-dialog .window-content .nh-wx-presets button:hover { border-color: var(--nc-cyan); color: var(--nc-cyan); }
+.nh-wx-dialog .nh-wx-conds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 10px; margin-bottom: 6px; }
+.nh-wx-dialog .nh-wx-group { grid-column: 1 / -1; font-family: var(--nc-display); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--nc-dim); }
+.nh-wx-dialog form .form-group label.nh-wx-cond { display: flex; align-items: center; gap: 6px; font-family: "Signika", sans-serif; font-size: 13px; letter-spacing: 0; text-transform: none; color: var(--nc-text) !important; }
+.nh-wx-dialog label.nh-wx-cond input { flex: 0 0 auto; margin: 0; accent-color: var(--nc-cyan); }
+.nh-wx-dialog label.nh-wx-cond i { width: 16px; text-align: center; color: var(--wx); }
+.nh-wx-dialog label.nh-wx-cond:has(input:not(:checked)) { opacity: 0.45; }
+.nh-wx-dialog select { width: 100%; }
+
+/* ---------- weather: chat card ---------- */
+.nh-wx-card-issued { display: block; color: var(--nc-dim); font-size: 11px; }
+.nh-wx-card-days { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; }
+.nh-wx-card-days li { display: grid; grid-template-columns: 44px 16px minmax(0, 1fr) auto; align-items: center; gap: 2px 6px; padding: 3px 6px; border-left: 2px solid var(--wx); background: rgba(255, 255, 255, 0.03); font-size: 12px; }
+.nh-wx-card-date { font-family: var(--nc-display); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--nc-dim); }
+.nh-wx-card-days li > i { color: var(--wx); text-align: center; }
+.nh-wx-card-cond { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nh-wx-card-temp { font-family: var(--nc-display); font-size: 11px; color: var(--nc-text); }
+.nh-wx-card-rain { grid-column: 3; font-size: 10px; color: var(--nc-dim); }
+.nh-wx-card-rain i { color: var(--nc-cyan); }
+.nh-wx-card-risks { grid-column: 4; display: flex; gap: 6px; font-size: 10px; }
+.nh-wx-card-risks span { color: var(--wx); }
+
 /* ---------- month navigation ---------- */
 .nh-cal-nav { display: flex; align-items: center; gap: 6px; }
 .nh-cal-app .window-content .nh-cal-nav select { flex: 0 0 160px; width: 160px; text-transform: uppercase; }

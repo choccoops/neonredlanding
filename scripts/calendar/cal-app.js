@@ -12,6 +12,10 @@ import { NotesStore } from "./cal-notes.js";
 import { dayMarker, dayKey } from "./cal-notes-data.js";
 import { Clock } from "./clock.js";
 import { SkipTimeApp } from "./skip-app.js";
+import { WeatherStore } from "./weather-store.js";
+import { WeatherView } from "./weather-view.js";
+import { weatherDialog } from "./weather-dialog.js";
+import { parseKey } from "./weather-data.js";
 import { formatTime, isDaytime } from "./clock-time.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -43,7 +47,7 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
     classes: ["neon-hub", "nh-cal-app"],
     tag: "div",
     window: { title: "NEONHUB.Calendar.Title", icon: "fa-solid fa-calendar-days", resizable: true },
-    position: { width: 1180, height: 740 },
+    position: { width: 1180, height: 840 },
     actions: {
       select: CalendarApp.#onSelect,
       create: CalendarApp.#onCreate,
@@ -69,7 +73,10 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       noteShare: CalendarApp.#onNoteShare,
       clockStep: CalendarApp.#onClockStep,
       smallTime: CalendarApp.#onSmallTime,
-      skipTime: CalendarApp.#onSkipTime
+      skipTime: CalendarApp.#onSkipTime,
+      weather: CalendarApp.#onWeather,
+      weatherReveal: CalendarApp.#onWeatherReveal,
+      forecastPost: CalendarApp.#onForecastPost
     }
   };
 
@@ -171,6 +178,7 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         onCurrent: this.view.year === active.year && this.view.month === active.month
       },
       clock: Clock.visible ? { ...Clock.view(), follows: active.clock } : null,
+      forecast: this.#forecastContext(active),
       ...this.#grid(active, calendars),
       notes: await this.#notesContext(active),
       target: {
@@ -219,13 +227,57 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         editing: this.editing?.id === n.id
       });
     }
+    // The day's planned weather, as a note: the GM's, hidden until revealed.
+    const data = WeatherStore.of(active.id);
+    const wxDay = data.days[dayKey(day)];
+    const revealed = data.revealed.includes(dayKey(day));
+    const weather = wxDay && (game.user.isGM || revealed) ? { html: WeatherView.note(wxDay), revealed, key: dayKey(day), canReveal: game.user.isGM } : null;
     return {
+      weather,
       label: `${L(`NEONHUB.Calendar.Weekday.${weekday(day)}`)}, ${L(`NEONHUB.Calendar.Month.${day.month}`)} ${day.day}, ${day.year}`,
       today: sameDate(day, active),
       list,
       editing: this.editing,
       adding: this.editing?.id === null,
       shareLabel: L(game.user.isGM ? "NEONHUB.Calendar.Notes.ShareGM" : "NEONHUB.Calendar.Notes.SharePlayer")
+    };
+  }
+
+  /**
+   * The weather strip: today's weather and the week's forecast as players see it.
+   * Null when the calendar has no weather (the GM gets a prompt to plan some).
+   */
+  #forecastContext(active) {
+    const isGM = game.user.isGM;
+    if (!WeatherStore.has(active.id)) return isGM ? { cards: [], empty: L("NEONHUB.Weather.NonePlanned"), gm: true } : null;
+    const data = WeatherStore.of(active.id);
+    const todayKey = dayKey(active);
+    const cards = [];
+    const dated = (key) => {
+      const date = parseKey(key);
+      return { weekday: L(`NEONHUB.Calendar.WeekdayShort.${weekday(date)}`), day: date.day };
+    };
+    const today = data.days[todayKey];
+    if (today) cards.push({ ...WeatherView.actual(today), ...dated(todayKey), today: true, event: today.event });
+    for (const f of data.forecast?.days ?? []) {
+      if (f.key <= todayKey || f.unknown) continue;
+      cards.push({ ...WeatherView.forecast(f), ...dated(f.key), predicted: true, event: f.event });
+    }
+    // Multi-day events as a band along the cards they cover.
+    cards.forEach((c, i) => {
+      if (!c.event) return;
+      const prev = cards[i - 1]?.event?.id === c.event.id;
+      const next = cards[i + 1]?.event?.id === c.event.id;
+      c.band = { color: WeatherView.headline({ cond: "clear", event: c.event }).color, start: !prev, end: !next, label: !prev ? WeatherView.cond(c.event.key) : "" };
+    });
+    const fd = active.weather.forecastDay;
+    const issued = data.forecast ? parseKey(data.forecast.issued) : null;
+    return {
+      cards,
+      gm: isGM,
+      has: !!data.forecast,
+      issued: issued ? L("NEONHUB.Weather.Issued", { day: L(`NEONHUB.Calendar.Weekday.${weekday(issued)}`), date: `${pad(issued.day)}.${pad(issued.month)}` }) : null,
+      next: fd >= 0 ? L("NEONHUB.Weather.NextIssue", { day: L(`NEONHUB.Calendar.Weekday.${fd}`) }) : L("NEONHUB.Weather.NoForecast")
     };
   }
 
@@ -257,7 +309,18 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       const dayNotes = notesByDay.get(dayKey(d)) ?? [];
       const wd = weekday(d);
       const moon = moons[i];
+      const seen = WeatherStore.seen(active, d);
+      const wx = seen ? (seen.actual ? { ...WeatherView.actual(seen.actual), predicted: false } : { ...WeatherView.forecast(seen.forecast), predicted: true }) : null;
+      const event = seen?.actual?.event ?? seen?.forecast?.event ?? null;
       return {
+        wx,
+        band: event ? {
+          color: WeatherView.headline({ cond: "clear", event }).color,
+          label: L("NEONHUB.Weather.EventDay", { name: WeatherView.cond(event.key), day: event.day, of: event.of }),
+          start: event.day === 1 || i % 7 === 0,
+          end: event.day === event.of || i % 7 === 6,
+          predicted: !!seen?.forecast
+        } : null,
         y: d.year,
         m: d.month,
         d: d.day,
@@ -527,6 +590,46 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static #onSkipTime() {
     SkipTimeApp.start();
+  }
+
+  /** GM: plan this calendar's weather and set how it's forecast. */
+  static async #onWeather() {
+    const active = this.active;
+    if (!active) return;
+    const result = await weatherDialog(active);
+    if (!result) return;
+    await this.#run(async () => {
+      await WeatherStore.setOff(result.off);
+      await CalendarStore.update(active.id, { weather: result.weather });
+      const calendar = CalendarStore.get(active.id);
+      if (result.action === "plan") {
+        await WeatherStore.plan(active.id, calendar, result.days);
+        ui.notifications.info(L("NEONHUB.Weather.Planned", { n: result.days, name: calendar.name }));
+      } else if (result.action === "clear") {
+        const ok = await Compat.DialogV2.confirm({
+          window: { title: L("NEONHUB.Weather.Dialog.Clear"), icon: "fa-solid fa-trash" },
+          classes: ["neon-hub", "nh-cal-dialog"],
+          content: `<p>${L("NEONHUB.Weather.Dialog.ClearBody", { name: `<b>${Handlebars.escapeExpression(calendar.name)}</b>` })}</p>`,
+          rejectClose: false
+        });
+        if (ok) await WeatherStore.clear(active.id);
+      } else if (WeatherStore.has(active.id)) {
+        await WeatherStore.issue(calendar, { force: true, post: false });
+      }
+    });
+  }
+
+  /** GM: show or hide a day's weather note to players. */
+  static async #onWeatherReveal(event, target) {
+    const active = this.active;
+    if (!active) return;
+    await this.#run(() => WeatherStore.reveal(active.id, target.dataset.key, target.dataset.shown !== "true"));
+  }
+
+  /** GM: post the week's forecast to chat again. */
+  static async #onForecastPost() {
+    const active = this.active;
+    if (active) await WeatherStore.postForecast(active);
   }
 
   /** The Lifestyle window: your own character, or the GM's month overview. */

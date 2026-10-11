@@ -321,6 +321,32 @@ world clock that SmallTime shows:
   with the clock, which also drives SmallTime's moonlight darkness. Turn off *SmallTime shows the
   real Moon* to set it by hand in SmallTime.
 
+**Night City weather.** Weather from R. Talsorian's free **Night City Weather** for Cyberpunk RED.
+Neon Hub uses its dice tables; the rules summaries are Neon Hub's own short versions, with core
+rulebook pages.
+
+- **Planning (GM).** The cloud button on a calendar (or **Weather** on its forecast strip) plans
+  days ahead from the calendar's date. Each day rolls a temperature and a sky (Clear, Overcast,
+  Light or Heavy Rain, sleet when it's cold) on the season's table, and a 6 goes to Strange Weather
+  with its duration: short events (acid rain for 3 hours from about 14:00) or ones that last days
+  (flooding, inversion smog, cold snaps, heat waves, blackouts), which carry on across the days
+  and set the temperature for cold snaps and heat waves. *Keep weather planned five weeks ahead*
+  extends it as the date moves.
+- **Weather you don't want.** Untick any condition and rolls that land on it are rolled again. The
+  **2070s** preset turns off radioactive windstorms and blood rain.
+- **Notes.** Each day's weather appears as a hidden note on that day for the GM, with how the
+  temperature and conditions play at the table. The eye button reveals it to players.
+- **The calendar.** Days show their weather beside the date, and multi-day events run as a coloured
+  band along the days they cover. The GM sees the real weather; players see what they'd know:
+  past days and today as they were, and the forecast (dashed, with temperature ranges) for the
+  days ahead.
+- **The weekly forecast.** On the calendar's forecast day (Monday by default) players get a
+  forecast for the next seven days, posted to the group's chat too. It's usually right about
+  tomorrow and close to a coin flip a week out, temperatures come as ranges that widen with
+  distance, and short strange weather shows only as a chance ("Acid Rain possible: 30%") that can
+  be missed or a false alarm. Obvious multi-day storms are called; blackouts never are. Players
+  find out for sure on the day: the forecast strip shows today's real weather.
+
 **Settings.** *Calendar time zone* and *SmallTime shows the real Moon* (world). *First day of the
 week*, *Show moon phases* and *Notify on date change* (per player).
 
@@ -381,6 +407,9 @@ hub.time();                       // world clock: { minutes, time: "21:47" }
 await hub.advanceTime(90);        // GM: 90 minutes on; following calendars change day at midnight
 await hub.setTime("06:00");       // GM: time of day, same day (or minutes after midnight)
 hub.skipTime();                   // GM: open Skip time on everyone's screen
+hub.weather("Afterlife Crew");    // today's weather as you see it: { actual } or { forecast }
+await hub.planWeather("Afterlife Crew", 42); // GM: plan six weeks from the calendar's date
+hub.postForecast("Afterlife Crew");          // GM: post the current forecast to chat
 hub.openMessenger("contacts");   // Night City Messenger: inbox, compose, contacts (GM: networks, admin)
 hub.showMessenger("inbox");      // GM: open it on every connected player's screen
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
@@ -418,7 +447,9 @@ through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openCo
 Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`), calendars in another
 (`cpr-neon-hub.calendars`), the GM's calendar notes in `cpr-neon-hub.calendarNotes`, and each
 player's notes in their user's `flags.cpr-neon-hub.calendarNotes`. Hub layouts are stored on
-their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout.
+their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout. Planned weather and
+forecasts are in a world setting (`cpr-neon-hub.calendarWeather`), as are the conditions turned
+off (`cpr-neon-hub.weatherOff`); like hidden notes, they reach every client.
 
 **SmallTime.** Read from SmallTime 1.24.0. It keeps the time of day in Foundry's world time
 (`game.time.worldTime`, midnight at every multiple of 86,400 seconds, no offset outside PF2e) and

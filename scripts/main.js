@@ -20,6 +20,7 @@ import { Messenger } from "./messenger.js";
 import { HubHover } from "./hub/hover.js";
 import { Clock } from "./calendar/clock.js";
 import { SkipTimeApp } from "./calendar/skip-app.js";
+import { WeatherStore } from "./calendar/weather-store.js";
 import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
@@ -42,6 +43,7 @@ Hooks.once("init", () => {
   NotesStore.register();
   Clock.register();
   Clock.init();
+  WeatherStore.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -132,6 +134,22 @@ Hooks.once("init", () => {
       return Clock.setTime(minutes);
     },
 
+    /** A day's weather as this user sees it: { actual } or { forecast }, or null. */
+    weather: (idOrName, date) => {
+      const c = CalendarStore.get(idOrName);
+      return c && CalendarStore.canSee(c) ? WeatherStore.seen(c, date ?? c) : null;
+    },
+    /** GM: plan a calendar's weather for a number of days from its date. */
+    planWeather: (idOrName, days = 42) => {
+      const c = CalendarStore.get(idOrName);
+      return c ? WeatherStore.plan(c.id, c, days) : null;
+    },
+    /** GM: post a calendar's current forecast to chat. */
+    postForecast: (idOrName) => {
+      const c = CalendarStore.get(idOrName);
+      return c ? WeatherStore.postForecast(c) : null;
+    },
+
     /** GM: open the Skip time window on everyone's screen; players vote, the GM winds the clock on. */
     skipTime: () => SkipTimeApp.start(),
 
@@ -159,6 +177,7 @@ Hooks.once("ready", () => {
   SkipTimeApp.registerSocket();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
+  if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
 
   if (!game.user.isGM) return;
   if (game.system.id !== SYSTEM_ID) ui.notifications.warn(L("NEONHUB.Error.WrongSystem", { system: game.system.title }));
@@ -191,6 +210,8 @@ Hooks.on(`${MODULE_ID}.calendarChanged`, (list) => {
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) {
     LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
+    // Keep weather planned ahead and issue the forecast when its day comes.
+    WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
     return;
   }
   if (!game.settings.get(MODULE_ID, "calendarNotify")) return;
@@ -202,6 +223,7 @@ Hooks.on(`${MODULE_ID}.calendarChanged`, (list) => {
 });
 
 Hooks.on(`${MODULE_ID}.calendarNotesChanged`, () => CalendarApp.refresh());
+Hooks.on(`${MODULE_ID}.weatherChanged`, () => CalendarApp.refresh());
 Hooks.on("updateWorldTime", () => CalendarApp.instance?.updateClock());
 // Players' notes live on their User.
 Hooks.on("updateUser", (user, changes) => {

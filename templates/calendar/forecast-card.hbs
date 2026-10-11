@@ -1,0 +1,17 @@
+<div class="nh-cal-card nh-wx-card" style="--cal: {{color}}">
+  <div class="nh-cal-card-kicker">// {{localize "NEONHUB.Weather.Service"}}</div>
+  <div class="nh-cal-card-name">{{localize "NEONHUB.Weather.WeekAhead"}} · {{name}}</div>
+  <small class="nh-wx-card-issued">{{localize "NEONHUB.Weather.IssuedOn"}} {{issued}}</small>
+  <ol class="nh-wx-card-days">
+    {{#each days}}
+    <li style="--wx: {{color}}">
+      <span class="nh-wx-card-date">{{date.weekday}} {{date.day}}</span>
+      <i class="fa-solid {{icon}}"></i>
+      <span class="nh-wx-card-cond">{{label}}</span>
+      <span class="nh-wx-card-temp">{{temp}}</span>
+      <span class="nh-wx-card-rain"><i class="fa-solid fa-umbrella"></i> {{rain}}%</span>
+      {{#if risks.length}}<span class="nh-wx-card-risks">{{#each risks}}<span style="--wx: {{color}}"><i class="fa-solid {{icon}}"></i> {{pct}}%</span>{{/each}}</span>{{/if}}
+    </li>
+    {{/each}}
+  </ol>
+</div>

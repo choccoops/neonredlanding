@@ -36,6 +36,7 @@
         {{#if isGM}}
         <button type="button" class="nh-cal-icon" data-action="moveUp" data-tooltip="{{localize 'NEONHUB.Calendar.MoveUp'}}" aria-label="{{localize 'NEONHUB.Calendar.MoveUp'}}"><i class="fa-solid fa-arrow-up"></i></button>
         <button type="button" class="nh-cal-icon" data-action="moveDown" data-tooltip="{{localize 'NEONHUB.Calendar.MoveDown'}}" aria-label="{{localize 'NEONHUB.Calendar.MoveDown'}}"><i class="fa-solid fa-arrow-down"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="weather" data-tooltip="{{localize 'NEONHUB.Weather.Open'}}" aria-label="{{localize 'NEONHUB.Weather.Open'}}"><i class="fa-solid fa-cloud-sun-rain"></i></button>
         <button type="button" class="nh-cal-icon" data-action="edit" data-tooltip="{{localize 'NEONHUB.Calendar.Edit'}}" aria-label="{{localize 'NEONHUB.Calendar.Edit'}}"><i class="fa-solid fa-pen"></i></button>
         <button type="button" class="nh-cal-icon" data-action="duplicate" data-tooltip="{{localize 'NEONHUB.Calendar.Duplicate'}}" aria-label="{{localize 'NEONHUB.Calendar.Duplicate'}}"><i class="fa-solid fa-clone"></i></button>
         <button type="button" class="nh-cal-icon is-danger" data-action="remove" data-tooltip="{{localize 'NEONHUB.Calendar.Delete'}}" aria-label="{{localize 'NEONHUB.Calendar.Delete'}}"><i class="fa-solid fa-trash"></i></button>
@@ -100,6 +101,38 @@
       {{#if isGM}}<button type="button" class="nh-cal-btn nh-cal-rent-go" data-action="toRentDay" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.GoTip'}}"><i class="fa-solid fa-forward-step"></i> {{localize "NEONHUB.Calendar.Rent.Go"}}</button>{{/if}}
     </div>
 
+    {{#if forecast}}
+    <div class="nh-cal-wx" style="--cal: {{active.color}}">
+      <div class="nh-cal-wx-head">
+        <span class="nh-cal-wx-label"><i class="fa-solid fa-satellite-dish"></i> {{localize "NEONHUB.Weather.Forecast"}} //</span>
+        {{#if forecast.issued}}<span class="nh-cal-wx-issued">{{forecast.issued}}</span>{{/if}}
+        <span class="nh-cal-wx-next">{{forecast.next}}</span>
+        {{#if forecast.gm}}
+        <span class="nh-cal-wx-tools">
+          {{#if forecast.has}}<button type="button" class="nh-cal-icon" data-action="forecastPost" data-tooltip="{{localize 'NEONHUB.Weather.Post'}}" aria-label="{{localize 'NEONHUB.Weather.Post'}}"><i class="fa-solid fa-bullhorn"></i></button>{{/if}}
+          <button type="button" class="nh-cal-btn nh-cal-wx-plan" data-action="weather"><i class="fa-solid fa-cloud-sun-rain"></i> {{localize "NEONHUB.Weather.Open"}}</button>
+        </span>
+        {{/if}}
+      </div>
+      {{#if forecast.cards.length}}
+      <ol class="nh-cal-wx-days">
+        {{#each forecast.cards}}
+        <li class="nh-cal-wx-day {{#if today}}is-today{{/if}} {{#if predicted}}is-forecast{{/if}}" style="--wx: {{color}}" data-tooltip="{{tip}}">
+          <span class="nh-cal-wx-date">{{#if today}}{{localize "NEONHUB.Calendar.Now"}}{{else}}{{weekday}} {{day}}{{/if}}</span>
+          <span class="nh-cal-wx-main"><i class="fa-solid {{icon}}"></i> <span class="nh-cal-wx-temp">{{temp}}</span></span>
+          <span class="nh-cal-wx-cond">{{label}}</span>
+          <span class="nh-cal-wx-extra">
+            {{#if predicted}}<span class="nh-cal-wx-rain"><i class="fa-solid fa-umbrella"></i> {{rain}}%</span>{{/if}}
+            {{#each risks}}<i class="fa-solid {{icon}} nh-cal-wx-risk" style="--wx: {{color}}" data-tooltip="{{label}}"></i>{{/each}}
+          </span>
+          {{#if band}}<span class="nh-cal-wx-band {{#if band.start}}is-start{{/if}} {{#if band.end}}is-end{{/if}}" style="--band: {{band.color}}">{{band.label}}</span>{{/if}}
+        </li>
+        {{/each}}
+      </ol>
+      {{else}}<p class="nh-cal-wx-empty">{{forecast.empty}}</p>{{/if}}
+    </div>
+    {{/if}}
+
     <nav class="nh-cal-nav">
       <button type="button" class="nh-cal-icon" data-action="prevMonth" aria-label="{{localize 'NEONHUB.Calendar.PrevMonth'}}"><i class="fa-solid fa-chevron-left"></i></button>
       <select class="nh-cal-nav-month" aria-label="{{localize 'NEONHUB.Calendar.Field.Month'}}">
@@ -127,6 +160,8 @@
         {{#if markers.length}}
         <span class="nh-cal-day-markers">{{#each markers}}<i style="--mark: {{color}}" data-tooltip="{{name}}"></i>{{/each}}</span>
         {{/if}}
+        {{#if wx}}<span class="nh-cal-day-wx {{#if wx.predicted}}is-forecast{{/if}}" style="--wx: {{wx.color}}" data-tooltip="{{#if wx.predicted}}{{localize 'NEONHUB.Weather.ForecastTip'}}: {{/if}}{{wx.tip}}"><i class="fa-solid {{wx.icon}}"></i><b>{{wx.short}}</b></span>{{/if}}
+        {{#if band}}<span class="nh-cal-day-band {{#if band.start}}is-start{{/if}} {{#if band.end}}is-end{{/if}} {{#if band.predicted}}is-forecast{{/if}}" style="--band: {{band.color}}" data-tooltip="{{band.label}}"></span>{{/if}}
         {{#if note}}<span class="nh-cal-day-note is-{{note.kind}}" data-tooltip="{{note.tip}}"><i class="fa-solid fa-note-sticky"></i>{{#if note.count}}<b>{{note.count}}</b>{{/if}}</span>{{/if}}
       </div>
       {{/each}}
@@ -139,6 +174,19 @@
         <span class="nh-cal-notes-day">{{notes.label}}{{#if notes.today}} <em>{{localize "NEONHUB.Calendar.Now"}}</em>{{/if}}</span>
       </header>
       <div class="nh-cal-notes-list">
+        {{#if notes.weather}}
+        <article class="nh-cal-note nh-cal-note-wx {{#if notes.weather.revealed}}is-shared{{else}}is-gm{{/if}}">
+          <header>
+            <h4><i class="fa-solid fa-cloud-sun-rain"></i> {{localize "NEONHUB.Weather.NoteTitle"}}</h4>
+            {{#if notes.weather.canReveal}}<button type="button" class="nh-cal-note-vis" data-action="weatherReveal" data-key="{{notes.weather.key}}" data-shown="{{notes.weather.revealed}}" data-tooltip="{{#if notes.weather.revealed}}{{localize 'NEONHUB.Calendar.Notes.Hide'}}{{else}}{{localize 'NEONHUB.Calendar.Notes.Show'}}{{/if}}" aria-label="{{#if notes.weather.revealed}}{{localize 'NEONHUB.Calendar.Notes.Hide'}}{{else}}{{localize 'NEONHUB.Calendar.Notes.Show'}}{{/if}}"><i class="fa-solid {{#if notes.weather.revealed}}fa-eye{{else}}fa-eye-slash{{/if}}"></i></button>{{/if}}
+          </header>
+          <div class="nh-cal-note-text">{{{notes.weather.html}}}</div>
+          <footer>
+            <span>{{localize "NEONHUB.Weather.Service"}}</span>
+            <span class="nh-cal-note-badge">{{#if notes.weather.revealed}}<i class="fa-solid fa-eye"></i> {{localize "NEONHUB.Calendar.Notes.Players"}}{{else}}<i class="fa-solid fa-eye-slash"></i> {{localize "NEONHUB.Calendar.Notes.GMOnly"}}{{/if}}</span>
+          </footer>
+        </article>
+        {{/if}}
         {{#each notes.list}}
         <article class="nh-cal-note {{#if gm}}is-gm{{/if}} {{#if shared}}is-shared{{/if}}" data-note="{{id}}">
           {{#if editing}}
@@ -168,7 +216,7 @@
           {{/if}}
         </article>
         {{else}}
-        {{#unless notes.adding}}<p class="nh-cal-notes-empty">{{localize "NEONHUB.Calendar.Notes.None"}}</p>{{/unless}}
+        {{#unless notes.adding}}{{#unless notes.weather}}<p class="nh-cal-notes-empty">{{localize "NEONHUB.Calendar.Notes.None"}}</p>{{/unless}}{{/unless}}
         {{/each}}
         {{#if notes.adding}}
         <article class="nh-cal-note is-new">

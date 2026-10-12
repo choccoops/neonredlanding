@@ -1,0 +1,31 @@
+<div class="neon-hub-chat nh-ls-chat nh-ls-hcard">
+  <header><i class="fa-solid fa-heart-pulse"></i> <strong>{{name}}</strong> &middot; {{title}}</header>
+  {{#if losses.length}}
+  <details open>
+    <summary><span>{{localize "NEONHUB.Lifestyle.Humanity.Losses"}}</span><b class="nh-due">&minus;{{loss}}</b></summary>
+    <ul>
+      {{#each losses}}<li><span>{{label}} <small>{{dice}}{{#if mod}} {{mod}}{{/if}}</small></span><span>{{result}}{{#if mod}} &rarr; {{total}}{{/if}}</span></li>{{/each}}
+      {{#if tax}}<li><span>{{localize "NEONHUB.Lifestyle.Humanity.Tax"}}</span><span>{{tax}}</span></li>{{/if}}
+    </ul>
+  </details>
+  {{else}}{{#if tax}}<p>{{localize "NEONHUB.Lifestyle.Humanity.Tax"}}: &minus;{{tax}}</p>{{/if}}{{/if}}
+  {{#if gains.length}}
+  <details open>
+    <summary><span>{{localize "NEONHUB.Lifestyle.Humanity.Gains"}}</span><b>+{{gain}}</b></summary>
+    <ul>
+      {{#each gains}}<li><span>{{label}} <small>{{dice}}{{#if mod}} {{mod}}{{/if}}</small></span><span>{{result}}{{#if mod}} &rarr; {{total}}{{/if}}</span></li>{{/each}}
+      {{#if credit}}<li><span>{{localize "NEONHUB.Lifestyle.Humanity.Credit"}}</span><span>{{credit}}</span></li>{{/if}}
+      {{#if art}}<li><span>{{localize "NEONHUB.Lifestyle.Humanity.Art"}}</span><span>{{art}}</span></li>{{/if}}
+    </ul>
+  </details>
+  {{else}}
+  {{#if credit}}<p>{{localize "NEONHUB.Lifestyle.Humanity.Credit"}}: +{{credit}}</p>{{/if}}
+  {{#if art}}<p>{{localize "NEONHUB.Lifestyle.Humanity.Art"}}: +{{art}}</p>{{/if}}
+  {{/if}}
+  <ul class="nh-ls-totals">
+    <li><span>{{localize "NEONHUB.Lifestyle.Humanity.Net"}}</span><b class="{{#if negative}}nh-due{{/if}}">{{net}}</b></li>
+    <li><span>{{localize "NEONHUB.Lifestyle.Humanity.Now"}}</span><b>{{before}} &rarr; {{after}} / {{max}}</b></li>
+  </ul>
+  {{#if capped}}<p class="nh-ls-note">{{localize "NEONHUB.Lifestyle.Humanity.Capped" n=capped}}</p>{{/if}}
+  {{#if psycho}}<p class="nh-due"><i class="fa-solid fa-skull"></i> {{localize "NEONHUB.Lifestyle.Humanity.Psycho"}}</p>{{/if}}
+</div>

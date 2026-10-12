@@ -1,0 +1,64 @@
+{
+  "_id": "3cuwGb2fOBwC4QsV",
+  "_key": "!items!3cuwGb2fOBwC4QsV",
+  "name": "Cube Hotel",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/cube-hotel.svg",
+  "folder": "W6c4gy1KCShUDwl8",
+  "sort": 500,
+  "system": {
+    "description": {
+      "value": "<p>A rented sleeping cube: one bed, sleeps one, no slots, no parking.</p><p>A <strong>1 Humanity Loss tax</strong> each month, and the megabuilding-or-worse roll.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "housing",
+        "monthly": 500,
+        "sleeps": 1,
+        "rooms": 1,
+        "tax": 1,
+        "env": "worse",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

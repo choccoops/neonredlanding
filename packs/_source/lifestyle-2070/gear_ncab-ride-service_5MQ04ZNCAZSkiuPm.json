@@ -1,0 +1,61 @@
+{
+  "_id": "5MQ04ZNCAZSkiuPm",
+  "_key": "!items!5MQ04ZNCAZSkiuPm",
+  "name": "NCab Ride-Service",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/redcab.svg",
+  "folder": "n2DxDYK9sQvPuaE6",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>Privacy and comfort for up to four. A cab arrives in <strong>1d6</strong> after you order it. It won't enter a Combat Zone, and the driver may bail if a ride turns hot (the car stays NightCab's).</p><p>Monthly fee: <strong>300eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 300
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "transport",
+        "monthly": 300,
+        "response": "1d6",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

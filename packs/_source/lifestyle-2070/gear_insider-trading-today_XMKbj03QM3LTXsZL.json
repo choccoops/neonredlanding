@@ -1,0 +1,118 @@
+{
+  "_id": "XMKbj03QM3LTXsZL",
+  "_key": "!items!XMKbj03QM3LTXsZL",
+  "name": "Insider Trading Today",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+  "folder": "e05pFX7iK8nxIuPJ",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>A market newsletter running since the '30s. Finding each new issue on the CitiNet takes a <strong>DV15 Library Search</strong> check every month. <strong>+1 Business and +1 Trading</strong>.</p><p>Other screamsheets turn up through Library Search too, usually around 50eb a month each.</p><p>Subscription: <strong>50eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "18CafGzhTIIE3u8A",
+      "_key": "!items.effects!XMKbj03QM3LTXsZL.18CafGzhTIIE3u8A",
+      "name": "Insider Trading Today",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/subscription.svg",
+      "changes": [
+        {
+          "key": "bonuses.business",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.trading",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "subscription",
+        "monthly": 50,
+        "check": {
+          "skill": "Library Search",
+          "dv": 15
+        },
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

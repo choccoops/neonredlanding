@@ -1,0 +1,61 @@
+{
+  "_id": "wxC8aNY3ciHj8LMi",
+  "_key": "!items!wxC8aNY3ciHj8LMi",
+  "name": "CombatCab Ride-Service",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/combat-cab.svg",
+  "folder": "n2DxDYK9sQvPuaE6",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p>The only safe ride through the Combat Zone short of Delamain. A cab arrives in <strong>1d6</strong>; roll 1d100 for how good the driver is. Many drivers run with 6th Street.</p><p>Monthly fee: <strong>600eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 600
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "transport",
+        "monthly": 600,
+        "response": "1d6",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

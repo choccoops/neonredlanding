@@ -1,0 +1,60 @@
+{
+  "_id": "aoyr5XUlsy8VDDUS",
+  "_key": "!items!aoyr5XUlsy8VDDUS",
+  "name": "CHOOH2 Road Fuel",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/fuel-road.svg",
+  "folder": "n2DxDYK9sQvPuaE6",
+  "sort": 1100,
+  "system": {
+    "description": {
+      "value": "<p>Fuel for cars and other road vehicles.</p><p>Each vehicle in your fleet needs its own; set the amount to how many. Unpaid by rent day, a vehicle won't run until you pay at a pump, and a vehicle's housing upgrade only counts as a home while it's fuelled. Fuel can also be scavenged, stolen or earned.</p><p><strong>250eb a month</strong> per vehicle.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 250
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "fuel",
+        "monthly": 250,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

@@ -59,6 +59,30 @@
   {{!-- ================= CURRENT ================= --}}
   {{#if tab.current}}
   <div class="nh-hq-scroll">
+    {{#if rules2070}}
+    <section class="nh-ls-home {{#if humanityDue}}is-due{{/if}}">
+      {{#if home}}
+      <div class="nh-ls-home-facts">
+        <span class="nh-ls-home-name"><i class="fa-solid fa-house"></i> {{home.name}}</span>
+        <span class="{{#if home.over}}nh-ls-neg{{/if}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.Home.SlotsTip'}}"><i class="fa-solid fa-table-cells"></i> {{localize "NEONHUB.Lifestyle.Home.Slots" used=home.used slots=home.slots}}</span>
+        <span><i class="fa-solid fa-bed"></i> {{localize "NEONHUB.Lifestyle.Home.Sleeps" n=home.sleeps}}</span>
+        <span data-tooltip="{{localize 'NEONHUB.Lifestyle.Home.ArtTip'}}"><i class="fa-solid fa-palette"></i> {{localize "NEONHUB.Lifestyle.Home.Art" n=home.art limit=home.artLimit hg=home.artHumanity}}</span>
+        {{#if home.furnishing}}<span><i class="fa-solid fa-couch"></i> {{home.furnishing}}</span>{{/if}}
+      </div>
+      {{#if home.over}}<p class="nh-ls-home-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Lifestyle.Home.Over"}}</p>{{/if}}
+      {{#if home.blocked}}<p class="nh-ls-home-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "NEONHUB.Lifestyle.Home.Blocked"}}</p>{{/if}}
+      {{#if home.unshown}}<p class="nh-hint">{{localize "NEONHUB.Lifestyle.Home.Unshown" n=home.unshown}}</p>{{/if}}
+      {{/if}}
+      <div class="nh-ls-home-tools">
+        {{#if humanityDue}}<span class="nh-due"><i class="fa-solid fa-heart-pulse"></i> {{localize "NEONHUB.Lifestyle.Humanity.Due"}}</span>{{/if}}
+        {{#if canMakeArt}}<button type="button" data-action="makeArt"><i class="fa-solid fa-palette"></i> {{localize "NEONHUB.Lifestyle.Art.Make"}}</button>{{/if}}
+        {{#if isGM}}
+        <button type="button" class="{{#if humanityDue}}nh-cta{{/if}}" data-action="humanityCheck"><i class="fa-solid fa-heart-pulse"></i> {{localize "NEONHUB.Lifestyle.Humanity.Button"}}</button>
+        <button type="button" data-action="incident"><i class="fa-solid fa-heart-crack"></i> {{localize "NEONHUB.Lifestyle.Incident.Button"}}</button>
+        {{/if}}
+      </div>
+    </section>
+    {{/if}}
     {{#if reminders.length}}
     <ul class="nh-ls-reminders">{{#each reminders}}<li><i class="fa-solid fa-dice-d20"></i> {{this}}</li>{{/each}}</ul>
     {{/if}}
@@ -90,7 +114,7 @@
             {{#if showAmount}}
             <label class="nh-ls-amount">{{localize "NEONHUB.Lifestyle.Quantity"}} <input type="number" min="1" value="{{amount}}" data-amount="{{id}}" {{#unless canAmount}}disabled{{/unless}}></label>
             {{/if}}
-            {{#if canCall}}<button type="button" data-action="call"><i class="fa-solid fa-truck-medical"></i> {{localize "NEONHUB.Lifestyle.Call"}}</button>{{/if}}
+            {{#if canCall}}<button type="button" data-action="call"><i class="fa-solid {{callIcon}}"></i> {{localize "NEONHUB.Lifestyle.Call"}}</button>{{/if}}
             {{#if buyHome}}<button type="button" data-action="buyHome"><i class="fa-solid fa-key"></i> {{localize "NEONHUB.Lifestyle.BuyHome" amount=buyHome}}</button>{{/if}}
             {{#if payoff}}<button type="button" data-action="payoff"><i class="fa-solid fa-hand-holding-dollar"></i> {{localize "NEONHUB.Lifestyle.Payoff" amount=payoff}}</button>{{/if}}
             <span class="nh-ls-spacer"></span>
@@ -125,6 +149,7 @@
   <div class="nh-hq-scroll">
     {{#if catalog.packMissing}}<p class="nh-hq-warning">{{localize "NEONHUB.Lifestyle.PackMissing"}}</p>{{/if}}
     {{#unless actor}}<p class="nh-hint nh-ls-pickhint">{{localize "NEONHUB.Lifestyle.PickToAdd"}}</p>{{/unless}}
+    <p class="nh-hint nh-ls-era"><i class="fa-solid fa-clock-rotate-left"></i> {{localize "NEONHUB.Lifestyle.CatalogEra" era=catalog.era}}</p>
     <div class="nh-ls-grid">
       {{#each catalog.entries}}
       <article class="nh-ls-item nh-ls-offer {{#if owned}}is-owned{{/if}}" data-uuid="{{uuid}}" data-search="{{search}}">
@@ -144,7 +169,7 @@
           {{#if template}}
           <button type="button" class="nh-cta" data-action="copyTemplate"><i class="fa-solid fa-clone"></i> {{localize "NEONHUB.Lifestyle.UseTemplate"}}</button>
           {{else}}
-          {{#if canAdd}}<button type="button" class="nh-cta" data-action="add"><i class="fa-solid fa-plus"></i> {{addLabel}}</button>{{/if}}
+          {{#if canAdd}}<button type="button" class="nh-cta" data-action="add" {{#if startsLater}}data-tooltip="{{localize 'NEONHUB.Lifestyle.Add.StartsLater'}}"{{/if}}><i class="fa-solid {{#if startsLater}}fa-hourglass-half{{else}}fa-plus{{/if}}"></i> {{addLabel}}</button>{{/if}}
           {{#if ../isGM}}<button type="button" class="nh-icon-btn" data-action="copyTemplate" aria-label="{{localize 'NEONHUB.Lifestyle.CopyToWorld'}}" data-tooltip="{{localize 'NEONHUB.Lifestyle.CopyToWorld'}}"><i class="fa-solid fa-copy"></i></button>{{/if}}
           {{/if}}
         </footer>
@@ -188,8 +213,9 @@
     <div class="nh-ls-monthbar">
       <div>
         <h2>{{monthLabel}}</h2>
-        <p class="nh-hint">{{localize "NEONHUB.Lifestyle.DueCount" n=overview.due}}</p>
+        <p class="nh-hint">{{localize "NEONHUB.Lifestyle.DueCount" n=overview.due}}{{#if overview.rules2070}} &middot; {{localize "NEONHUB.Lifestyle.Humanity.DueCount" n=overview.humanityDue}}{{/if}} &middot; {{overview.era}}</p>
       </div>
+      {{#if overview.rules2070}}<button type="button" data-action="incident"><i class="fa-solid fa-heart-crack"></i> {{localize "NEONHUB.Lifestyle.Incident.Button"}}</button>{{/if}}
       <button type="button" data-action="billAll" {{#unless overview.due}}disabled{{/unless}}><i class="fa-solid fa-file-invoice-dollar"></i> {{localize "NEONHUB.Lifestyle.BillAll"}}</button>
       {{#if overview.calendarMode}}
       <button type="button" class="nh-cta" data-action="openCalendar"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Calendar.Title"}}</button>
@@ -213,7 +239,7 @@
     </div>
     {{/if}}
     <table class="nh-ls-table">
-      <thead><tr><th>{{localize "NEONHUB.Lifestyle.Col.Character"}}</th>{{#if overview.calendarMode}}<th>{{localize "NEONHUB.Lifestyle.Col.Calendar"}}</th>{{/if}}<th>{{localize "NEONHUB.Lifestyle.Col.Wallet"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Monthly"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Status"}}</th><th></th></tr></thead>
+      <thead><tr><th>{{localize "NEONHUB.Lifestyle.Col.Character"}}</th>{{#if overview.calendarMode}}<th>{{localize "NEONHUB.Lifestyle.Col.Calendar"}}</th>{{/if}}<th>{{localize "NEONHUB.Lifestyle.Col.Wallet"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Monthly"}}</th><th>{{localize "NEONHUB.Lifestyle.Col.Status"}}</th>{{#if overview.rules2070}}<th>{{localize "NEONHUB.Lifestyle.Col.Humanity"}}</th>{{/if}}<th></th></tr></thead>
       <tbody>
         {{#each overview.rows}}
         <tr data-actor="{{id}}" class="{{#if selected}}selected{{/if}}">
@@ -222,6 +248,7 @@
           <td class="{{#if negative}}nh-ls-neg{{/if}}">{{wallet}}</td>
           <td>{{total}}{{#if owed}}<br><small class="nh-due">{{owed}}</small>{{/if}}</td>
           <td><span class="nh-ls-pill nh-ls-status-{{status}}">{{statusLabel}}</span></td>
+          {{#if ../overview.rules2070}}<td><button type="button" class="{{#if humanityDue}}nh-cta{{/if}}" data-action="humanityCheck" data-tooltip="{{localize 'NEONHUB.Lifestyle.Humanity.Button'}}"><i class="fa-solid fa-heart-pulse"></i> {{#if humanityDue}}{{localize "NEONHUB.Lifestyle.Humanity.DueShort"}}{{else}}{{localize "NEONHUB.Lifestyle.Humanity.Roll"}}{{/if}}</button></td>{{/if}}
           <td class="nh-ls-rowtools">
             {{#if paid}}
             <button type="button" data-action="markPaid" data-paid="false" data-tooltip="{{localize 'NEONHUB.Lifestyle.MarkDueTip'}}"><i class="fa-solid fa-rotate-left"></i> {{localize "NEONHUB.Lifestyle.MarkDue"}}</button>
@@ -232,7 +259,7 @@
           </td>
         </tr>
         {{else}}
-        <tr><td colspan="6" class="nh-hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</td></tr>
+        <tr><td colspan="7" class="nh-hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</td></tr>
         {{/each}}
       </tbody>
     </table>

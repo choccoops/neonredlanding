@@ -1,0 +1,65 @@
+{
+  "_id": "a83ecbuTcRJooOzl",
+  "_key": "!items!a83ecbuTcRJooOzl",
+  "name": "Vehicle with a Housing Upgrade",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/vehicle.svg",
+  "folder": "W6c4gy1KCShUDwl8",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>A vehicle fitted to live in: one bedroom, sleeps one, 1 houseware slot. It needs its fuel paid to count as a home.</p><p>A <strong>1 Humanity Loss tax</strong> each month, and the megabuilding-or-worse roll is 2d6 instead of 1d6.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "housing",
+        "monthly": 0,
+        "sleeps": 1,
+        "rooms": 1,
+        "slots": 1,
+        "tax": 1,
+        "env": "vehicle",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

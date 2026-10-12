@@ -1,0 +1,62 @@
+{
+  "_id": "PRp0fLm8e2aAgEfv",
+  "_key": "!items!PRp0fLm8e2aAgEfv",
+  "name": "Trauma Team Executive",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/trauma-executive.svg",
+  "folder": "A64mtawnpvJq1dAW",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Everything Trauma Team Silver does, faster: arrival in <strong>1d6 rounds</strong>, Surgery at no extra cost, and hospital rooms at 50eb a night.</p><p>Needs a Fresh Food lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Health plan: <strong>1,000eb a month</strong>. Surgery included.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 1000,
+        "minTier": 4,
+        "response": "1d6",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

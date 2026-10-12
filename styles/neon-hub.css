@@ -825,3 +825,49 @@
 .neon-hub .nh-ed .nh-ed-pick > i:first-child { color: #ff2a6d; }
 .neon-hub .nh-ed .nh-ed-move button { color: #6e7290; }
 .neon-hub .nh-ed .nh-ed-footer button { height: 30px; padding: 0 14px; }
+
+/* ==========================================================================
+   Lifestyle, 2070s: the home's slots and art, the Humanity tools, their dialogs and cards.
+   ========================================================================== */
+.neon-hub .nh-ls-home {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--nh-line, rgba(255, 255, 255, 0.12));
+  border-left: 3px solid var(--nh-accent-2);
+  background: color-mix(in srgb, var(--nh-accent-2) 6%, transparent);
+}
+.neon-hub .nh-ls-home.is-due { border-left-color: var(--nh-accent); background: color-mix(in srgb, var(--nh-accent) 8%, transparent); }
+.neon-hub .nh-ls-home-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; font-size: 13px; }
+.neon-hub .nh-ls-home-facts i { color: var(--nh-accent-2); margin-right: 3px; }
+.neon-hub .nh-ls-home-name { font-family: var(--nh-display), "Signika", sans-serif; font-size: 15px; letter-spacing: 0.06em; }
+.neon-hub .nh-ls-home-warn { margin: 0; font-size: 12px; color: #f5b83d; }
+.neon-hub .nh-ls-home-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 6px; }
+.neon-hub .nh-ls-home-tools .nh-due { margin-right: auto; font-size: 12px; }
+.neon-hub .nh-ls-home-tools button { padding: 4px 12px; font-size: 12px; }
+.neon-hub .nh-ls-era { margin: 0 0 10px; }
+.neon-hub .nh-ls-table td button.nh-cta { white-space: nowrap; }
+
+/* dialogs */
+.nh-ls-dialog .nh-ls-autolist { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
+.nh-ls-dialog .nh-ls-autolist li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--nc-text); }
+.nh-ls-dialog .nh-ls-autolist li b { margin-left: auto; font-family: var(--nc-display); font-weight: 400; }
+.nh-ls-dialog .nh-ls-autolist li i { color: var(--nc-dim); font-size: 10px; }
+.nh-ls-dialog .nh-ls-autolist li.is-loss b { color: var(--nc-pink); }
+.nh-ls-dialog .nh-ls-autolist li.is-gain b { color: #39ff88; }
+.nh-ls-dialog .nh-ls-ticks { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.nh-ls-dialog form .form-group label.nh-ls-tick { display: flex; align-items: center; gap: 6px; margin: 2px 0; font-family: "Signika", sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--nc-text) !important; }
+.nh-ls-dialog label.nh-ls-tick b { margin-left: auto; font-family: var(--nc-display); font-weight: 400; color: var(--nc-dim); }
+.nh-ls-dialog label.nh-ls-tick input[type="checkbox"] { flex: 0 0 auto; margin: 0; accent-color: var(--nc-cyan); }
+.nh-ls-dialog label.nh-ls-tick input[type="number"] { flex: 0 0 42px; width: 42px; height: 22px; }
+.nh-ls-dialog .form-group select + select { margin-left: 4px; }
+.nh-ls-dialog .form-group select { max-width: 100%; }
+.nh-ls-dialog .form-group.stacked select { width: 100%; }
+
+/* chat cards */
+.neon-hub-chat.nh-ls-hcard { border-left-color: #39ff88; }
+.neon-hub-chat.nh-ls-hcard summary b { margin-left: 8px; }
+.neon-hub-chat.nh-ls-hcard li > span:last-child { flex: 0 0 auto; white-space: nowrap; }
+.neon-hub-chat.nh-ls-acard { border-left-color: #9d4dff; }

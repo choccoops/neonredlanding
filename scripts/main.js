@@ -195,6 +195,7 @@ Hooks.on(`${MODULE_ID}.hqChanged`, () => {
   LifestyleApp.refresh();
 });
 Hooks.on(`${MODULE_ID}.lifestyleChanged`, () => LifestyleApp.refresh());
+Hooks.on(`${MODULE_ID}.lifestyleEraChanged`, () => LifestyleApp.refresh({ catalog: true }));
 
 /* ------------------------------------------ */
 /*  Calendars                                 */

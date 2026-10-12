@@ -7,7 +7,10 @@ import {
   LS_FLAG, CATEGORIES, GROUPS, normalizeLifestyle, lineCost, payoffAmount, humanityBonus, activeTier,
   excerpt, changeKeyLabel, cprSlug
 } from "./ls-data.js";
-import { LifestyleStore, LS_PACK } from "./ls-store.js";
+import { LifestyleStore } from "./ls-store.js";
+import { Lifestyle2070 } from "./ls-2070-ops.js";
+import { homeSummary, artOnDisplay, belowTier, MEMBERSHIP_CATEGORIES } from "./ls-2070.js";
+import { humanityDialog, incidentDialog, artDialog } from "./ls-2070-dialogs.js";
 import { LifestyleOps } from "./ls-ops.js";
 import { LifestyleItemConfig } from "./ls-item-config.js";
 import { CalendarStore } from "../calendar/cal-store.js";
@@ -63,7 +66,10 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       openHQ: LifestyleApp.#onOpenHQ,
       openCalendar: LifestyleApp.#onOpenCalendar,
       toRentDay: LifestyleApp.#onToRentDay,
-      openSheet: LifestyleApp.#onOpenSheet
+      openSheet: LifestyleApp.#onOpenSheet,
+      humanityCheck: LifestyleApp.#onHumanityCheck,
+      incident: LifestyleApp.#onIncident,
+      makeArt: LifestyleApp.#onMakeArt
     }
   };
 
@@ -173,6 +179,10 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     }));
 
     return {
+      rules2070: LifestyleStore.rules2070,
+      home: LifestyleStore.rules2070 ? this.#homeContext(items) : null,
+      humanityDue: LifestyleStore.rules2070 && Lifestyle2070.checkDue(actor),
+      canMakeArt: LifestyleStore.rules2070 && isOwner,
       actor: { id: actor.id, uuid: actor.uuid, name: actor.name, img: actor.img, hasWallet: CPR.hasWealth(actor) },
       isOwner,
       canManage,
@@ -218,9 +228,34 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
+  /** 2070s: the home's slots, sleepers and art. */
+  #homeContext(items) {
+    const home = homeSummary(items);
+    const art = artOnDisplay(items);
+    if (!home.home && !home.used && !art.shown.length && !art.unshown.length) return null;
+    return {
+      name: home.home?.name ?? L("NEONHUB.Lifestyle.Home.None"),
+      slots: home.slots,
+      used: home.used,
+      over: home.over,
+      sleeps: home.sleeps,
+      blocked: home.blocked,
+      furnishing: home.furnishing?.name ?? null,
+      art: art.shown.length,
+      artLimit: art.limit,
+      artHumanity: art.total,
+      unshown: art.unshown.length
+    };
+  }
+
   #itemCard(d, actor, { isOwner, canManage, skillNames }) {
     const item = actor.items.get(d.id);
     const badges = [];
+    if (d.pending) badges.push({ icon: "fa-solid fa-hourglass-half", text: L("NEONHUB.Lifestyle.Badge.Pending"), warn: true });
+    if (LifestyleStore.rules2070 && d.active && belowTier([d, ...LifestyleStore.items(actor).filter((x) => x.category === "lifestyle")]).length) {
+      badges.push({ icon: "fa-solid fa-ban", text: L("NEONHUB.Lifestyle.Badge.BelowTier", { tier: L(`NEONHUB.Lifestyle.Tier.${d.minTier}`) }), warn: true });
+    }
+    badges.push(...this.#badges2070(d));
     if (d.perk) badges.push({ icon: "fa-solid fa-building", text: L("NEONHUB.Lifestyle.Badge.Perk") });
     if (d.category === "housing") {
       if (d.owned) badges.push({ icon: "fa-solid fa-key", text: L("NEONHUB.Lifestyle.Badge.OwnedHome") });
@@ -253,6 +288,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       payoff: loan && isOwner ? eb(payoffAmount(d)) : null,
       buyHome: d.category === "housing" && d.buyPrice && !d.owned && isOwner ? eb(d.buyPrice) : null,
       canCall: !!d.response && d.active && isOwner,
+      callIcon: d.category === "transport" ? "fa-taxi" : "fa-truck-medical",
       canConfig: game.user.isGM,
       canOpen: !!item
     };
@@ -260,6 +296,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   #costText(d) {
     if (d.perk) return L("NEONHUB.Lifestyle.Cost.Perk");
+    if (d.upfront && !d.monthly && d.category !== "housing") return L("NEONHUB.Lifestyle.Cost.PaidUpfront");
+    if (d.category === "houseware" || d.category === "art") return L("NEONHUB.Lifestyle.Cost.Furnished");
     if (d.category === "housing" && d.owned) return L("NEONHUB.Lifestyle.Cost.Owned");
     if (d.category === "furnishing") return d.monthly ? L("NEONHUB.Lifestyle.Cost.Monthly", { cost: eb(d.monthly) }) : L("NEONHUB.Lifestyle.Cost.Furnished");
     if (d.category === "loan") {
@@ -274,6 +312,10 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   /** Catalog price line for an item not yet on the character. */
   #catalogCost(ls, price) {
     if (ls.perk) return L("NEONHUB.Lifestyle.Cost.Perk");
+    if (ls.upfront) {
+      const once = L("NEONHUB.Lifestyle.Cost.Upfront", { cost: eb(ls.upfront) });
+      return ls.monthly ? `${once} · ${L("NEONHUB.Lifestyle.Cost.Monthly", { cost: eb(ls.monthly) })}` : once;
+    }
     if (ls.category === "loan") {
       if (ls.loan.kind === "installment" && !ls.loan.principal) {
         return L("NEONHUB.Lifestyle.Cost.LoanTerms", { down: ls.loan.downPct, rate: ls.loan.ratePct, months: ls.loan.termMonths });
@@ -313,13 +355,16 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   async #catalogEntries() {
     if (this._catalog) return this._catalog;
     const entries = [];
-    const pack = game.packs.get(LS_PACK);
+    const era = LifestyleStore.era;
+    const pack = game.packs.get(LifestyleStore.pack);
     // Whole documents rather than the index: the catalog shows each item's Active Effects,
     // which a LevelDB index doesn't reliably include. The pack is small.
     const packItems = pack ? await pack.getDocuments() : [];
     for (const item of [...packItems, ...game.items]) {
       const flag = item.getFlag(MODULE_ID, LS_FLAG);
       if (!flag || (!item.pack && !item.visible)) continue;
+      // World homebrew made for the other era stays out of this one's catalog.
+      if (!item.pack && flag.era && String(flag.era) !== era) continue;
       entries.push({
         uuid: item.uuid,
         name: item.name,
@@ -342,6 +387,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const ownedNames = new Set((actor?.items ?? []).filter((i) => i.getFlag(MODULE_ID, LS_FLAG)).map((i) => i.name));
     const canManage = actor ? LifestyleStore.canManage(actor) : false;
     const isOwner = !!actor?.isOwner;
+    const actorTier = actor ? (activeTier(LifestyleStore.items(actor))?.tier ?? 0) : 0;
 
     const visible = entries.filter((e) => isGM || !e.ls.template);
     const shown = visible.filter((e) => {
@@ -363,7 +409,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     return {
       filters,
       search: this.search,
-      packMissing: !game.packs.get(LS_PACK),
+      packMissing: !game.packs.get(LifestyleStore.pack),
+      era: L(`NEONHUB.Lifestyle.Era.${LifestyleStore.era}`),
       entries: shown.map((e) => {
         const ls = e.ls;
         const badges = [];
@@ -375,6 +422,10 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
         if (ls.humanity) badges.push({ icon: "fa-solid fa-heart", text: L("NEONHUB.Lifestyle.Badge.Humanity", { n: ls.humanity }) });
         if (ls.check.skill && ls.check.dv) badges.push({ icon: "fa-solid fa-dice-d20", text: L("NEONHUB.Lifestyle.Badge.Check", { skill: ls.check.skill, dv: ls.check.dv }) });
         if (ls.response) badges.push({ icon: "fa-solid fa-stopwatch", text: L("NEONHUB.Lifestyle.Badge.Response", { formula: ls.response }) });
+        badges.push(...this.#badges2070(ls));
+        // 2070s: a membership above the character's lifestyle can't be taken (the GM can still add it).
+        const locked = LifestyleStore.rules2070 && !isGM && ls.minTier > actorTier;
+        if (locked) badges.push({ icon: "fa-solid fa-lock", text: L("NEONHUB.Lifestyle.Badge.NeedsTier", { tier: L(`NEONHUB.Lifestyle.Tier.${ls.minTier}`) }), warn: true });
         const ask = !isGM && (ls.perk || !canManage);
         return {
           uuid: e.uuid,
@@ -391,11 +442,30 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
           world: e.world,
           template: ls.template,
           owned: ownedNames.has(e.name),
-          canAdd: !!actor && (isGM || isOwner) && !ls.template,
-          addLabel: ask ? L("NEONHUB.Lifestyle.Add.Ask") : L(`NEONHUB.Lifestyle.Add.${ls.category === "loan" ? "loan" : CATEGORIES[ls.category].oneTime && e.price ? "buy" : "add"}`)
+          canAdd: !!actor && (isGM || isOwner) && !ls.template && !locked,
+          startsLater: LifestyleStore.rules2070 && MEMBERSHIP_CATEGORIES.has(ls.category) && !!actor && !LifestyleStore.billing(actor).owed,
+          addLabel: ask ? L("NEONHUB.Lifestyle.Add.Ask") : L(`NEONHUB.Lifestyle.Add.${ls.category === "loan" ? "loan" : ls.upfront || (CATEGORIES[ls.category].oneTime && e.price) ? "buy" : LifestyleStore.rules2070 && MEMBERSHIP_CATEGORIES.has(ls.category) && actor && !LifestyleStore.billing(actor).owed ? "later" : "add"}`)
         };
       })
     };
+  }
+
+  /** Badges for the 2070s fields: slots, sleepers, art, furnishing modifiers, Humanity tax and credit. */
+  #badges2070(ls) {
+    const out = [];
+    if (ls.upfront) out.push({ icon: "fa-solid fa-money-bill", text: L("NEONHUB.Lifestyle.Badge.Upfront", { cost: eb(ls.upfront) }) });
+    if (ls.slots && ls.category === "housing") out.push({ icon: "fa-solid fa-table-cells", text: L("NEONHUB.Lifestyle.Badge.HomeSlots", { n: ls.slots }) });
+    if (ls.slots && ls.category === "houseware") out.push({ icon: "fa-solid fa-table-cells", text: L("NEONHUB.Lifestyle.Badge.Slots", { n: ls.slots }) });
+    if (ls.capacity) out.push({ icon: "fa-solid fa-bed", text: L("NEONHUB.Lifestyle.Badge.Capacity", { n: ls.capacity }) });
+    if (ls.display) out.push({ icon: "fa-solid fa-image", text: L("NEONHUB.Lifestyle.Badge.Display") });
+    if (ls.category === "art" && ls.hg) out.push({ icon: "fa-solid fa-heart", text: L("NEONHUB.Lifestyle.Badge.ArtHumanity", { n: ls.hg }) });
+    if (ls.tax) out.push({ icon: "fa-solid fa-heart-crack", text: L("NEONHUB.Lifestyle.Badge.Tax", { n: ls.tax }), warn: true });
+    if (ls.credit) out.push({ icon: "fa-solid fa-heart", text: L("NEONHUB.Lifestyle.Badge.Credit", { n: ls.credit }) });
+    if (ls.lossMod) out.push({ icon: "fa-solid fa-heart-crack", text: L("NEONHUB.Lifestyle.Badge.LossMod", { n: ls.lossMod }), warn: true });
+    if (ls.gainMod) out.push({ icon: "fa-solid fa-heart", text: L("NEONHUB.Lifestyle.Badge.GainMod", { n: ls.gainMod }) });
+    if (ls.noUpgrades) out.push({ icon: "fa-solid fa-ban", text: L("NEONHUB.Lifestyle.Badge.NoUpgrades"), warn: true });
+    if (ls.env && LifestyleStore.rules2070) out.push({ icon: "fa-solid fa-dice", text: L(`NEONHUB.Lifestyle.EnvBadge.${ls.env}`), warn: ["kibble", "nonFresh", "worse", "vehicle", "streets"].includes(ls.env) });
+    return out;
   }
 
   /* ---------------------------------------- */
@@ -420,6 +490,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
         statusLabel: L(`NEONHUB.Lifestyle.Status.${status}`),
         paid: !billing.owed,
         calendar: billing.calendar ? { name: billing.calendar.name, color: billing.calendar.color } : null,
+        humanityDue: LifestyleStore.rules2070 && Lifestyle2070.checkDue(actor),
         selected: actor.id === this.actorId
       };
     });
@@ -442,7 +513,10 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       due: rows.filter((r) => !r.paid).length,
       themes: Object.entries(THEMES).map(([key, t]) => ({ key, label: L(t.label), selected: key === state.theme })),
       manage: LifestyleStore.playersManage,
-      debt: LifestyleStore.allowDebt
+      debt: LifestyleStore.allowDebt,
+      rules2070: LifestyleStore.rules2070,
+      era: L(`NEONHUB.Lifestyle.Era.${LifestyleStore.era}`),
+      humanityDue: LifestyleStore.rules2070 ? rows.filter((r) => r.humanityDue).length : 0
     };
   }
 
@@ -723,6 +797,32 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       this.busy = false;
       if (this.rendered) this.render();
     }
+  }
+
+  /** GM: the rent-day Humanity check for the character on screen or a row of the month table. */
+  static async #onHumanityCheck(event, target) {
+    const id = target.closest("[data-actor]")?.dataset.actor ?? this.actorId;
+    const actor = game.actors.get(id);
+    if (!actor) return;
+    const ticked = await humanityDialog(actor);
+    if (!ticked) return;
+    await this.#perform("humanityCheck", { actor: actor.uuid, ticked });
+  }
+
+  /** GM: a one-time Humanity incident for one or more characters. */
+  static async #onIncident() {
+    const result = await incidentDialog(this.actorId ? [this.actorId] : []);
+    if (!result?.actors.length) return;
+    await this.#perform("incident", { actor: null, actors: result.actors, incident: result.incident });
+  }
+
+  /** Make a piece of art (the character's owner or the GM). */
+  static async #onMakeArt() {
+    const actor = this.actor;
+    if (!actor) return;
+    const art = await artDialog(actor);
+    if (!art) return;
+    await this.#perform("makeArt", { actor: actor.uuid, art });
   }
 
   static #onOpenSheet() {

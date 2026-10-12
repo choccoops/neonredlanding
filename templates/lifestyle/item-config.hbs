@@ -21,6 +21,16 @@
     <input type="checkbox" name="perk" {{checked d.perk}}>
     <p class="hint">{{localize "NEONHUB.Lifestyle.Config.PerkHint"}}</p>
   </div>
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.EraLabel"}}</label>
+    <select name="era">{{#each eras}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.EraHint"}}</p>
+  </div>
+  <div class="form-group">
+    <label>{{localize "NEONHUB.Lifestyle.Config.Upfront"}}</label>
+    <input type="number" name="upfront" min="0" step="1" value="{{d.upfront}}">
+    <p class="hint">{{localize "NEONHUB.Lifestyle.Config.UpfrontHint"}}</p>
+  </div>
 
   {{#if is.housing}}
   <fieldset>
@@ -32,6 +42,13 @@
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Owned"}}</label><input type="checkbox" name="owned" {{checked d.owned}}></div>
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.RoughNight"}}</label><input type="number" name="roughNight" min="0" max="30" value="{{d.roughNight}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.RoughNightHint"}}</p></div>
   </fieldset>
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Config.Legend2070"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Slots"}}</label><input type="number" name="slots" min="0" value="{{d.slots}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.SlotsHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Tax"}}</label><input type="number" name="tax" min="0" max="20" value="{{d.tax}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Credit"}}</label><input type="number" name="credit" min="0" max="20" value="{{d.credit}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.EnvLabel"}}</label><select name="env">{{#each housingEnvs}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><p class="hint">{{localize "NEONHUB.Lifestyle.Config.EnvHint"}}</p></div>
+  </fieldset>
   {{/if}}
 
   {{#if is.lifestyle}}
@@ -39,6 +56,7 @@
     <legend>{{localize "NEONHUB.Lifestyle.Category.lifestyle"}}</legend>
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Tier"}}</label><select name="tier" data-dtype="Number">{{#each tiers}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Plus"}}</label><input type="checkbox" name="plus" {{checked d.plus}}><p class="hint">{{localize "NEONHUB.Lifestyle.Config.PlusHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.EnvLabel"}}</label><select name="env">{{#each packageEnvs}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><p class="hint">{{localize "NEONHUB.Lifestyle.Config.EnvHint"}}</p></div>
   </fieldset>
   {{/if}}
 
@@ -50,11 +68,39 @@
   </fieldset>
   {{/if}}
 
+  {{#if is.transport}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.transport"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Response"}}</label><input type="text" name="response" value="{{d.response}}" placeholder="1d6"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.ResponseHintCab"}}</p></div>
+  </fieldset>
+  {{/if}}
+
   {{#if is.furnishing}}
   <fieldset>
     <legend>{{localize "NEONHUB.Lifestyle.Category.furnishing"}}</legend>
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Humanity"}}</label><input type="number" name="humanity" min="0" max="10" value="{{d.humanity}}"><p class="hint">{{localize "NEONHUB.Lifestyle.Config.HumanityHint"}}</p></div>
     <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Furnishes"}}</label><select name="furnishes">{{#each furnishes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Scarcity"}}</label><select name="scarcity" data-dtype="Number">{{#each scarcities}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><p class="hint">{{localize "NEONHUB.Lifestyle.Config.ScarcityHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.LossMod"}}</label><input type="number" name="lossMod" min="0" max="10" value="{{d.lossMod}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.GainMod"}}</label><input type="number" name="gainMod" min="0" max="10" value="{{d.gainMod}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.NoUpgrades"}}</label><input type="checkbox" name="noUpgrades" {{checked d.noUpgrades}}></div>
+  </fieldset>
+  {{/if}}
+
+  {{#if is.houseware}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.houseware"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.SlotsUsed"}}</label><input type="number" name="slots" min="0" value="{{d.slots}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Display"}}</label><input type="checkbox" name="display" {{checked d.display}}><p class="hint">{{localize "NEONHUB.Lifestyle.Config.DisplayHint"}}</p></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Capacity"}}</label><input type="number" name="capacity" min="0" max="10" value="{{d.capacity}}"></div>
+  </fieldset>
+  {{/if}}
+
+  {{#if is.art}}
+  <fieldset>
+    <legend>{{localize "NEONHUB.Lifestyle.Category.art"}}</legend>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.ArtHumanity"}}</label><input type="number" name="hg" min="0" max="30" value="{{d.hg}}"></div>
+    <div class="form-group"><label>{{localize "NEONHUB.Lifestyle.Config.Scarcity"}}</label><select name="scarcity" data-dtype="Number">{{#each scarcities}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select><p class="hint">{{localize "NEONHUB.Lifestyle.Config.ArtScarcityHint"}}</p></div>
   </fieldset>
   {{/if}}
 

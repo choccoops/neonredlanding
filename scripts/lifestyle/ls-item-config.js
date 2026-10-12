@@ -1,6 +1,7 @@
 import { MODULE_ID, TEMPLATE_PATH } from "../constants.js";
 import { Compat } from "../compat.js";
-import { CATEGORIES, LIFESTYLE_TIERS, LOAN_KINDS, FURNISHES, LS_FLAG, normalizeLifestyle } from "./ls-data.js";
+import { CATEGORIES, LIFESTYLE_TIERS, LOAN_KINDS, FURNISHES, LS_FLAG, normalizeLifestyle, ITEM_ERAS, HOUSING_ENVS, PACKAGE_ENVS } from "./ls-data.js";
+import { SCARCITY } from "./ls-2070.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const { expandObject } = foundry.utils;
@@ -71,6 +72,11 @@ export class LifestyleItemConfig extends HandlebarsApplicationMixin(ApplicationV
       is: Object.fromEntries(Object.keys(CATEGORIES).map((k) => [k, k === c])),
       oneTime: !!CATEGORIES[c].oneTime,
       membershipLike: ["membership", "health", "subscription"].includes(c),
+      responds: ["health", "transport"].includes(c),
+      eras: opt(ITEM_ERAS.map((k) => [k, L(`NEONHUB.Lifestyle.Config.Era.${k || "any"}`)]), d.era),
+      housingEnvs: opt(HOUSING_ENVS.map((k) => [k, L(`NEONHUB.Lifestyle.Config.Env.${k || "none"}`)]), d.env),
+      packageEnvs: opt(PACKAGE_ENVS.map((k) => [k, L(`NEONHUB.Lifestyle.Config.Env.${k || "none"}`)]), d.env),
+      scarcities: opt(SCARCITY.map((k, i) => [i, L(`NEONHUB.Lifestyle.Scarcity.${k}`)]), d.scarcity),
       installment: d.loan.kind === "installment"
     };
   }

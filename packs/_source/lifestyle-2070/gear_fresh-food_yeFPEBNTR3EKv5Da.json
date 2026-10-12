@@ -1,0 +1,116 @@
+{
+  "_id": "yeFPEBNTR3EKv5Da",
+  "_key": "!items!yeFPEBNTR3EKv5Da",
+  "name": "Fresh Food",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/fresh-food.svg",
+  "folder": "ghEG71OJAiaHZeSA",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Good PrePak for one meal, real fresh food for the other two. Calls and a weekly ten-minute video call to anywhere, a 20eb night out every day plus a 100eb and a 500eb evening each month. The full-body conversion perks of Good PrePak.</p><p><strong>+1 WILL and +1 to maximum EMP</strong> (+10 maximum Humanity). Eating this well adds a 2d6 Humanity Gain roll to the monthly check.</p><p>Lifestyle package: <strong>1,500eb a month</strong>. Opens every membership, including Trauma Team Executive.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "IfH4zWMNlauH9P1a",
+      "_key": "!items.effects!yeFPEBNTR3EKv5Da.IfH4zWMNlauH9P1a",
+      "name": "Fresh Food",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/fresh-food.svg",
+      "changes": [
+        {
+          "key": "system.stats.will.value",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "bonuses.maxHumanity",
+          "mode": 2,
+          "value": "10"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 1500,
+        "tier": 4,
+        "env": "fresh",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

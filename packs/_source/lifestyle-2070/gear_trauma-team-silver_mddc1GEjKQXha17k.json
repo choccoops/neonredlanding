@@ -1,0 +1,62 @@
+{
+  "_id": "mddc1GEjKQXha17k",
+  "_key": "!items!mddc1GEjKQXha17k",
+  "name": "Trauma Team Silver",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/trauma-silver.svg",
+  "folder": "A64mtawnpvJq1dAW",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>A card linked to your biomonitor. Seriously Wounded, you may crush it as a free action; it crushes itself if you're knocked out Seriously Wounded or reach Mortally Wounded. Trauma Team arrives in <strong>2d6 rounds</strong> (roll 1d12 too: REO may beat them to you).</p><p><ul><li>Paramedics perform Surgery if you agree to pay for it.</li><li>Free cryotank recovery, or a hospital room at 100eb a night; bills due by the end of the month.</li><li>Standard and Addiction Therapy available at participating clinics (at their cost).</li><li>Reliable, no extortion, trained to extract you mid-firefight. The card can be hacked.</li></ul></p><p>Needs a Good PrePak lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Health plan: <strong>500eb a month</strong>. Surgery not included.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 500,
+        "minTier": 3,
+        "response": "2d6",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

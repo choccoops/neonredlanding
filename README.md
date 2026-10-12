@@ -232,6 +232,59 @@ is billed by their group's calendar, the window shows that month ("November 2045
 to rent day, and a character who missed several rent days owes each month (up to 12). Without a
 calendar, the GM starts months with **New month** as before.
 
+### The 2070s: Living & Humanity Rework
+
+![2070s Lifestyle: the home's slots and art, the rent-day Humanity check, Make art and a Humanity incident](docs/lifestyle-2070.webp)
+
+**Pick the era per campaign.** *Lifestyle era* in the module settings chooses between **2045
+(Time of the Red)**, the catalog above and the default, and the **2070s**, built from a GM's
+Living & Humanity Rework homebrew (a 2070s update of the Datapool lifestyles). The 2070s have their
+own compendium, **Neon Hub: Lifestyle (2070s)**, which the catalog switches to, and these rules. The
+numbers and mechanics are the homebrew's; the descriptions are Neon Hub's own.
+
+**The 2070s catalog (88 items).**
+- **Lifestyle packages**: Kibble (100eb, −1 COOL and WILL), Generic PrePak (300eb), Good PrePak
+  (600eb, +1 WILL, the full-body-conversion perks) and Fresh Food (1,500eb, +1 WILL, +1 maximum EMP).
+- **Memberships and health plans by tier**, with their skill bonuses: BrainBuster and the Supplement
+  Shack (Kibble), HerbalCare, Shave & Save, Cryobank and REO Meatsavers (Generic PrePak),
+  TicketMiser, Cleansing Matrix and Trauma Team Silver (Good PrePak), Mallbuster, the Diamond Club
+  and Trauma Team Executive (Fresh Food), Corpo-Care Gold and Platinum, and the corporate housemate fee.
+  Health plans and cabs roll their arrival with **Call it in**.
+- **Transit**: the bus, NCART, NCab, North Oak Express, CombatCab, Delamain Ground and SkyRider,
+  and the lifetime Delamain Excelsior (20,000eb once); **fuel** for bikes, cars, AVs and boats;
+  Insider Trading Today; loan sharks and bank loans (bank loans need Good PrePak).
+- **Real estate**: from living on the street to a North Oak McMansion, with rent or purchase price,
+  bedrooms, how many it sleeps, parking, **houseware slots** and its Humanity tax or credit, plus
+  Living in a Ship.
+- **Furnishings** (bought per room): the nine megabuilding, apartment and North Oak sets, with their
+  quality and their modifiers to Humanity Loss and Gain rolls.
+- **Houseware**: the Augmented Reality Art Display, the Double-Trouble CyberBed, the Drinks Globe,
+  the Auto Barista, both showers, soundproofing, the SmartOven and the Virtual Barbeque, each taking
+  slots. **Art pieces** at each quality, and therapy and Immunoblockers for reference.
+
+**Rent day.** When a character pays the month:
+- Memberships bought after the last bill start now (until then they show *Starts on rent day*),
+  and memberships the lifestyle no longer covers are cancelled. Players can't take a membership
+  above their lifestyle; the GM can.
+- The month's **environmental Humanity check** comes due. The GM opens it from the character's
+  Lifestyle window or the month table: what their package, home, furnishings and displayed art
+  bring is filled in, and the GM ticks the rest (worked for a corp, deaths, a loved one, a week off,
+  a true friend…). One click rolls it all, adds the furnishings' modifiers, the home's tax or credit
+  and the art, adds Living the good life when it applies, and applies the net change through the
+  Humanity ledger with a chat card. Gains stop at maximum Humanity; losses can reach Cyberpsychosis.
+
+**Humanity incidents.** *Humanity incident* rolls the one-time Humanity Loss and Gain table (or
+custom dice) for any characters, furnishing modifiers included, partying included.
+
+**The home and art.** The Lifestyle window shows the home's houseware slots used, how many it
+sleeps, the furnishings, and the art on display. Each piece of art needs its own ARAD, a home shows
+no more pieces than it sleeps (a CyberBed's extra sleeper doesn't count), and a piece only counts in
+a room furnished at its quality or finer. Second-hand furnishings allow no upgrades at all.
+**Make art** spends the materials for a quality, rolls the art skill (Paint/Draw/Sculpt, Composition,
+Photography/Film, Play Instrument or Acting) against its DV, and on a success adds the piece, worth 1
+to 4+ Humanity a month on display. Music and acting can be performed too: the second skill's roll adds
+the quality it reaches.
+
 **Data.** Item settings live in `flags.cpr-neon-hub.lifestyle`, a character's bills in
 `flags.cpr-neon-hub.lifestyleState`, and the month in a world setting. Neon Hub also mirrors
 active housing, lifestyle package and health plans into the actor's `system.lifestyle.housing`,

@@ -19,4 +19,7 @@
   {{#each finished}}<p><i class="fa-solid fa-circle-check"></i> {{localize "NEONHUB.Lifestyle.Chat.LoanDone" item=this}}</p>{{/each}}
   {{#each hqs}}<p class="nh-ls-note"><i class="fa-solid fa-house-signal"></i> {{localize "NEONHUB.Lifestyle.Chat.HQRent" hq=name rent=rent share=share}}</p>{{/each}}
   {{#each notes}}<p class="nh-ls-note"><i class="fa-solid fa-dice-d20"></i> {{this}}</p>{{/each}}
+  {{#if started}}<p class="nh-ls-note"><i class="fa-solid fa-hourglass-end"></i> {{localize "NEONHUB.Lifestyle.Chat.Started" items=started}}</p>{{/if}}
+  {{#if cancelled}}<p class="nh-due"><i class="fa-solid fa-ban"></i> {{localize "NEONHUB.Lifestyle.Chat.Cancelled" items=cancelled}}</p>{{/if}}
+  {{#if humanityDue}}<p class="nh-ls-note"><i class="fa-solid fa-heart-pulse"></i> {{localize "NEONHUB.Lifestyle.Chat.HumanityDue"}}</p>{{/if}}
 </div>

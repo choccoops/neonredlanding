@@ -137,3 +137,39 @@ test("art tiers from a roll, and Super Luxury months", () => {
   assert.equal(artHumanity(ART_TIERS[1], 3), 2);
   assert.deepEqual(ART_TIERS.map((t) => t.dv), [19, 21, 24, 29, 29]);
 });
+
+test("households: the shared home comes first, housemates' houseware fills its slots but shows no art here", () => {
+  const items = [
+    item("housing", { slots: 0, sleeps: 1, env: "vehicle", tax: 1 }),
+    item("housing", { slots: 4, sleeps: 3, env: "upscale" }, { household: "h1", virtual: true, monthly: 834 }),
+    item("houseware", { slots: 1, display: true }),
+    item("houseware", { slots: 2, capacity: 1 }, { foreign: true }),
+    item("houseware", { slots: 1, display: true }, { foreign: true }),
+    item("furnishing", { scarcity: 2 }),
+    item("art", { hg: 2, scarcity: 2 }),
+    item("art", { hg: 1, scarcity: 1 })
+  ];
+  const home = homeSummary(items);
+  assert.equal(home.home.household, "h1");
+  assert.deepEqual([home.slots, home.used, home.sleeps, home.displays], [4, 4, 4, 1]);
+  assert.equal(artOnDisplay(items).shown.length, 1, "one ARAD of their own");
+  assert.deepEqual(automaticEffects(items).effects.map((e) => e.key), ["upscale"], "the household's home sets the monthly effects");
+});
+
+test("three weeks: a home's tax and credit only after 21 days; the street or a vehicle takes over", async () => {
+  const { defaultLiving, LIVING } = await import("../scripts/lifestyle/ls-2070.js");
+  assert.equal(defaultLiving(20), "none");
+  assert.equal(defaultLiving(21), "home");
+  assert.equal(defaultLiving(null), "home", "no dates, no assumption");
+  const items = [item("lifestyle", { tier: 1, env: "kibble" }), item("housing", { env: "upscale", credit: 1, tax: 0 }), item("housing", { slots: 0, tax: 3, env: "vehicle" }, { active: false })];
+  assert.equal(automaticEffects(items).credit, 1);
+  const fresh = automaticEffects(items, { living: "none" });
+  assert.deepEqual([fresh.credit, fresh.tax], [0, 2], "no home credit yet; Kibble's tax isn't a living-space tax");
+  assert.deepEqual(fresh.effects.map((e) => e.key), ["nonFresh", "upscale"], "the rolls still follow where they live");
+  const rough = automaticEffects(items, { living: "street" });
+  assert.deepEqual(rough.taxes, [{ key: "kibble", n: 2 }, { key: "street", n: 6 }]);
+  assert.equal(rough.credit, 0);
+  assert.deepEqual(Object.keys(LIVING), ["home", "none", "street", "vehicle", "vehicleUpgrade"]);
+  const check = monthlyCheck(items, { living: "vehicle" });
+  assert.equal(check.tax, 5);
+});

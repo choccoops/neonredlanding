@@ -360,6 +360,8 @@ export class LifestyleOps {
         throw new Error(L("NEONHUB.Error.ShortFunds", { names: `${actor.name} (${eb(CPR.getWealth(actor))}/${eb(-cash)})` }));
       }
     }
+    // The day they move in, for the 2070s three-week rule.
+    if (ls.category === "housing") ls.movedIn = Lifestyle2070.today(actor);
     // 2070s: memberships need the lifestyle for them, and once this month is paid they start on rent day.
     if (LifestyleStore.rules2070 && Lifestyle2070.addRule(actor, ls).pending) {
       ls.pending = true;
@@ -390,6 +392,7 @@ export class LifestyleOps {
     if (on && LifestyleStore.rules2070) Lifestyle2070.toggleRule(actor, this.#describe(actor, itemId));
     const pending = on && game.user.isGM ? { [`flags.${MODULE_ID}.${LS_FLAG}.pending`]: false } : {};
     await item.update({ "system.equipped": on ? "equipped" : "owned", ...pending }, own());
+    if (on) await Lifestyle2070.markMovedIn(actor, item);
     if (on) await this.keepOnePackage(actor, itemId);
     await this.syncActor(actor);
   }

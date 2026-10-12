@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.0
+
+- **Households.** A home several characters share, set up by the GM on the Lifestyle window's new **Households** tab: pick the home from the catalog (and its rent, if different), who lives there, and how rent is paid. **Split evenly** puts a share in each inhabitant's bill; **one character pays** puts it all in the payer's; **pool** lets anyone chip in from their wallet during the month until it's covered, with a chat note for each contribution.
+- Inhabitants see the household as their home on the Expenses tab, with their share, the payer, or the pool and a **Chip in** button.
+- **Three weeks in a home (2070s).** Moving in is dated on the character's calendar (adding or switching on a home, joining a household). In the rent-day Humanity check, a new *Living-space tax this month* choice starts on "None: under three weeks" when they've lived there under 21 days, else on the home's tax and credit, and offers the street (6), a vehicle (3) or an upgraded vehicle (1) for a month with time in those. Kibble's tax and the rolls are unaffected.
+- In the 2070s, the home's houseware slots are shared by everyone living there, CyberBeds add to how many it sleeps, and the home's Humanity tax, credit and monthly roll apply to each inhabitant; furnishings and art stay personal. Going over the home's sleepers asks the GM first.
+
 ## 1.9.2
 
 - **2070s Kibble:** living on Kibble is now a flat **2 Humanity tax** each month plus the 1d6 for living below Good PrePak, instead of two 1d6 rolls. Kibble already on characters follows the new rule without being re-added. The rent-day check lists each tax (Kibble, home) on its own line.

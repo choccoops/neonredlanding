@@ -4,6 +4,7 @@ import { CalendarStore } from "../calendar/cal-store.js";
 import { nextRentDay } from "../calendar/cal-dates.js";
 import { CATEGORIES, LS_FLAG, defaultLifestyle, describeItem, monthsOwed } from "./ls-data.js";
 import { ERAS, DEFAULT_ERA } from "./ls-2070.js";
+import { HouseholdStore } from "./ls-households.js";
 
 const { deepClone } = foundry.utils;
 
@@ -192,9 +193,13 @@ export const LifestyleStore = {
     };
   },
 
-  /** Every lifestyle item the actor has, described. */
+  /**
+   * Every lifestyle item the actor has, described, plus their household's home (their share of its
+   * rent) and their housemates' houseware (marked foreign: it shares the home's slots only).
+   */
   items(actor) {
-    return (actor?.items ?? []).filter((i) => i.type === "gear").map((i) => describeItem(i, MODULE_ID)).filter(Boolean);
+    const own = (actor?.items ?? []).filter((i) => i.type === "gear").map((i) => describeItem(i, MODULE_ID)).filter(Boolean);
+    return [...own, ...HouseholdStore.extraItems(actor)];
   },
 
   /** Characters with a player owner: the ones lifestyle billing is for. */

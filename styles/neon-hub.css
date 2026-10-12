@@ -872,3 +872,15 @@
 .neon-hub-chat.nh-ls-hcard summary b { margin-left: 8px; }
 .neon-hub-chat.nh-ls-hcard li > span:last-child { flex: 0 0 auto; white-space: nowrap; }
 .neon-hub-chat.nh-ls-acard { border-left-color: #9d4dff; }
+
+/* Households */
+.neon-hub .nh-hh-pool,
+.neon-hub .nh-hh-people { list-style: none; margin: 6px 0; padding: 0; display: grid; gap: 3px; font-size: 13px; }
+.neon-hub .nh-hh-pool li,
+.neon-hub .nh-hh-people li { display: flex; align-items: center; gap: 8px; }
+.neon-hub .nh-hh-pool li b,
+.neon-hub .nh-hh-people li b { margin-left: auto; font-weight: 400; color: var(--nh-accent-2); }
+.neon-hub .nh-hh-people img { width: 22px; height: 22px; border: 1px solid var(--nh-line); object-fit: cover; }
+.neon-hub .nh-hh-bar { height: 6px; margin: 6px 0 2px; background: color-mix(in srgb, var(--nh-text) 12%, transparent); }
+.neon-hub .nh-hh-bar span { display: block; height: 100%; background: var(--nh-accent); }
+.neon-hub .nh-hh-bar.is-covered span { background: #39ff88; }

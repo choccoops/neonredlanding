@@ -4,9 +4,12 @@ import { CPR } from "../cpr.js";
 import { LS_FLAG, activeTier, normalizeLifestyle } from "./ls-data.js";
 import {
   ENVIRONMENT, ART_TIERS, ART_SKILLS, PERFORMED_BY, MEMBERSHIP_CATEGORIES,
-  monthlyCheck, rollCheck, belowTier, bedroomFurnishing, artTierFor, artHumanity
+  monthlyCheck, rollCheck, belowTier, bedroomFurnishing, artTierFor, artHumanity, primaryHome
 } from "./ls-2070.js";
 import { LifestyleStore, LS_ACTOR_FLAG } from "./ls-store.js";
+import { HouseholdStore } from "./ls-households.js";
+import { CalendarStore } from "../calendar/cal-store.js";
+import { dayNumber } from "../calendar/cal-dates.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const eb = (n) => `${Math.round(Number(n) || 0).toLocaleString(game.i18n.lang)}eb`;
@@ -27,6 +30,32 @@ function owners(actor) {
  * with the lifestyle, the rent-day Humanity check, one-time Humanity incidents, and making art.
  */
 export const Lifestyle2070 = {
+  /* ---------------------------------------- */
+  /*  Three weeks in a home                   */
+  /* ---------------------------------------- */
+
+  /** Today on the character's calendar, as a day number (null without calendars). */
+  today(actor) {
+    const calendar = CalendarStore.forActor(actor);
+    return calendar ? dayNumber(calendar) : null;
+  },
+
+  /** The home they live in and how long they've been there: { home, since, days } (null days if undated). */
+  homeSince(actor) {
+    const home = primaryHome(LifestyleStore.items(actor));
+    if (!home) return null;
+    const since = home.household ? HouseholdStore.get(home.household)?.movedIn[actor.uuid] ?? null : home.movedIn;
+    const today = this.today(actor);
+    return { home, since, days: since !== null && since !== undefined && today !== null ? today - since : null };
+  },
+
+  /** A housing item was switched on: they've moved in today. */
+  async markMovedIn(actor, item) {
+    const flag = item?.getFlag?.(MODULE_ID, LS_FLAG);
+    if (!flag || flag.category !== "housing") return;
+    await item.update({ [`flags.${MODULE_ID}.${LS_FLAG}.movedIn`]: this.today(actor) }, own());
+  },
+
   /* ---------------------------------------- */
   /*  Memberships and tiers                   */
   /* ---------------------------------------- */

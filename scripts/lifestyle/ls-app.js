@@ -11,6 +11,10 @@ import { LifestyleStore } from "./ls-store.js";
 import { Lifestyle2070 } from "./ls-2070-ops.js";
 import { homeSummary, artOnDisplay, belowTier, MEMBERSHIP_CATEGORIES } from "./ls-2070.js";
 import { humanityDialog, incidentDialog, artDialog } from "./ls-2070-dialogs.js";
+import { HouseholdStore } from "./ls-households.js";
+import { HouseholdOps } from "./ls-household-ops.js";
+import { householdDialog, chipInDialog } from "./ls-household-dialog.js";
+import { monthlyRent, rentShare, capacity, moveIns } from "./ls-household-data.js";
 import { LifestyleOps } from "./ls-ops.js";
 import { LifestyleItemConfig } from "./ls-item-config.js";
 import { CalendarStore } from "../calendar/cal-store.js";
@@ -69,7 +73,11 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       openSheet: LifestyleApp.#onOpenSheet,
       humanityCheck: LifestyleApp.#onHumanityCheck,
       incident: LifestyleApp.#onIncident,
-      makeArt: LifestyleApp.#onMakeArt
+      makeArt: LifestyleApp.#onMakeArt,
+      newHousehold: LifestyleApp.#onNewHousehold,
+      editHousehold: LifestyleApp.#onEditHousehold,
+      deleteHousehold: LifestyleApp.#onDeleteHousehold,
+      chipIn: LifestyleApp.#onChipIn
     }
   };
 
@@ -135,7 +143,8 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const theme = THEMES[state.theme] ?? THEMES[DEFAULT_THEME];
     const actor = this.actor;
     // Without a character, the GM can still browse the catalog and run the month.
-    if (!actor && !(isGM && ["month", "catalog"].includes(this.tab))) this.tab = isGM ? "month" : "current";
+    if (!actor && !(isGM && ["month", "catalog", "households"].includes(this.tab))) this.tab = isGM ? "month" : "current";
+    if (this.tab === "households" && !isGM) this.tab = "current";
 
     const context = {
       isGM,
@@ -145,7 +154,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
       monthLabel: CalendarStore.all().length ? CalendarStore.periodLabel(CalendarStore.period(CalendarStore.all()[0])) : LifestyleStore.monthLabel(),
       characters: [...new Set([...LifestyleStore.viewable(), ...(actor ? [actor] : [])])]
         .map((a) => ({ id: a.id, name: a.name, selected: a.id === this.actorId })),
-      tab: { current: this.tab === "current", catalog: this.tab === "catalog", bills: this.tab === "bills", month: this.tab === "month" },
+      tab: { current: this.tab === "current", catalog: this.tab === "catalog", bills: this.tab === "bills", month: this.tab === "month", households: this.tab === "households" },
       busy: this.busy,
       actor: null
     };
@@ -153,6 +162,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     if (actor) Object.assign(context, this.#actorContext(actor));
     if (this.tab === "catalog") context.catalog = await this.#catalogContext(actor);
     if (isGM && this.tab === "month") context.overview = this.#overviewContext(state);
+    if (isGM && this.tab === "households") context.householdList = this.#householdsContext();
     return context;
   }
 
@@ -165,7 +175,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const owing = due ? due.total : 0;
 
     const groups = GROUPS.map((g) => {
-      const cards = items.filter((d) => d.group === g).sort((a, b) => Number(b.active) - Number(a.active) || a.name.localeCompare(b.name))
+      const cards = items.filter((d) => d.group === g && !d.foreign).sort((a, b) => Number(b.active) - Number(a.active) || a.name.localeCompare(b.name))
         .map((d) => this.#itemCard(d, actor, { isOwner, canManage, skillNames }));
       return { key: g, label: L(`NEONHUB.Lifestyle.Group.${g}`), total: bill.groups[g] ? eb(bill.groups[g]) : null, cards };
     }).filter((g) => g.cards.length);
@@ -228,6 +238,78 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
+  /** A household's home on an inhabitant's Expenses: who lives there, how rent is paid, the pool. */
+  #householdCard(d, actor, { isOwner }) {
+    const hh = HouseholdStore.get(d.household);
+    const people = HouseholdStore.inhabitants(hh);
+    const rent = monthlyRent(hh);
+    const status = hh.rentMode === "pool" ? HouseholdOps.pool(hh) : null;
+    const payer = people.find((a) => a.uuid === hh.payer);
+    let costText;
+    if (!rent) costText = d.owned ? L("NEONHUB.Lifestyle.Cost.Owned") : L("NEONHUB.Lifestyle.Cost.Perk");
+    else if (hh.rentMode === "split") costText = L("NEONHUB.Household.Cost.Split", { share: eb(rentShare(hh, actor.uuid)), rent: eb(rent), n: people.length });
+    else if (hh.rentMode === "payer") costText = hh.payer === actor.uuid ? L("NEONHUB.Household.Cost.PayerYou", { rent: eb(rent) }) : L("NEONHUB.Household.Cost.PaidBy", { name: payer?.name ?? "?", rent: eb(rent) });
+    else costText = L("NEONHUB.Household.Cost.Pool", { total: eb(status.total), rent: eb(rent) });
+    const extra = HouseholdStore.houseware(hh).reduce((n, w) => n + w.capacity * w.amount, 0);
+    const room = capacity(hh, extra);
+    const badges = [
+      { icon: "fa-solid fa-people-roof", text: L("NEONHUB.Household.Badge.Living", { n: room.living, sleeps: room.sleeps }), warn: room.over },
+      ...this.#badges2070(d)
+    ];
+    return {
+      id: d.id,
+      name: hh.name,
+      img: d.img || LifestyleStore.icon("housing"),
+      category: `${L("NEONHUB.Lifestyle.Category.housing")} · ${L("NEONHUB.Household.Label")}`,
+      icon: "fa-solid fa-people-roof",
+      active: true,
+      costText,
+      badges,
+      effects: "",
+      description: people.map((a) => a.name).join(", "),
+      household: {
+        id: hh.id,
+        pool: status ? people.map((a) => ({ name: a.name, amount: eb(status.paid[a.uuid] ?? 0) })) : null,
+        covered: status?.covered ?? false,
+        left: status ? eb(status.left) : null,
+        canChip: !!status && !status.covered && isOwner && !!rent,
+        isGM: game.user.isGM
+      }
+    };
+  }
+
+  /** GM: every household, with its home, rent, inhabitants, capacity and pool. */
+  #householdsContext() {
+    return HouseholdStore.all().map((hh) => {
+      const people = HouseholdStore.inhabitants(hh);
+      const rent = monthlyRent(hh);
+      const ware = HouseholdStore.houseware(hh);
+      const room = capacity(hh, ware.reduce((n, w) => n + w.capacity * w.amount, 0));
+      const used = ware.reduce((n, w) => n + w.slots * w.amount, 0);
+      const status = hh.rentMode === "pool" ? HouseholdOps.pool(hh) : null;
+      return {
+        id: hh.id,
+        name: hh.name,
+        img: hh.img || LifestyleStore.icon("housing"),
+        rent: rent ? eb(rent) : L("NEONHUB.Lifestyle.Cost.Free"),
+        mode: L(`NEONHUB.Household.Mode.${hh.rentMode}`),
+        payer: hh.rentMode === "payer" ? people.find((a) => a.uuid === hh.payer)?.name ?? "?" : null,
+        people: people.map((a) => ({
+          name: a.name,
+          img: a.img,
+          share: hh.rentMode === "pool" ? (status.paid[a.uuid] ? eb(status.paid[a.uuid]) : "—") : eb(rentShare(hh, a.uuid))
+        })),
+        living: room.living,
+        sleeps: room.sleeps,
+        over: room.over,
+        slots: hh.home.slots,
+        used,
+        overSlots: used > hh.home.slots,
+        pool: status ? { total: eb(status.total), rent: eb(status.rent), covered: status.covered, pct: status.rent ? Math.min(100, Math.round((status.total / status.rent) * 100)) : 100 } : null
+      };
+    });
+  }
+
   /** 2070s: the home's slots, sleepers and art. */
   #homeContext(items) {
     const home = homeSummary(items);
@@ -249,6 +331,7 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   #itemCard(d, actor, { isOwner, canManage, skillNames }) {
+    if (d.virtual) return this.#householdCard(d, actor, { isOwner });
     const item = actor.items.get(d.id);
     const badges = [];
     if (d.pending) badges.push({ icon: "fa-solid fa-hourglass-half", text: L("NEONHUB.Lifestyle.Badge.Pending"), warn: true });
@@ -825,6 +908,88 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const art = await artDialog(actor);
     if (!art) return;
     await this.#perform("makeArt", { actor: actor.uuid, art });
+  }
+
+  /** GM: set up a household around a home from the catalog. */
+  static async #onNewHousehold() {
+    const data = await householdDialog();
+    if (data) await this.#saveHousehold(null, data);
+  }
+
+  static async #onEditHousehold(event, target) {
+    const hh = HouseholdStore.get(target.closest("[data-household]").dataset.household);
+    if (!hh) return;
+    const data = await householdDialog(hh);
+    if (data) await this.#saveHousehold(hh, data);
+  }
+
+  async #saveHousehold(hh, data) {
+    try {
+      const changes = { name: data.name, rent: data.rent, rentMode: data.rentMode, payer: data.payer, inhabitants: data.inhabitants };
+      // Newcomers move in today; those who stay keep their date (the 2070s three-week rule).
+      changes.movedIn = moveIns(hh, data.inhabitants, (uuid) => {
+        const a = game.actors.get(uuid.split(".")[1]);
+        return a ? Lifestyle2070.today(a) : null;
+      });
+      if (data.homeSource) {
+        const source = await fromUuid(data.homeSource);
+        const flag = source?.getFlag?.(MODULE_ID, LS_FLAG);
+        if (!flag) throw new Error(L("NEONHUB.Lifestyle.Error.NoItem"));
+        Object.assign(changes, { home: normalizeLifestyle(flag), img: source.img, source: source.uuid });
+        changes.name ||= source.name;
+      } else if (!hh) {
+        throw new Error(L("NEONHUB.Household.Error.NoHome"));
+      }
+      changes.name ||= hh?.name ?? L("NEONHUB.Household.Label");
+      // Over the home's sleepers (CyberBeds count): warn, and let the GM go ahead.
+      const sleeps = (changes.home?.sleeps ?? hh.home.sleeps) + data.inhabitants
+        .map((uuid) => game.actors.get(uuid.split(".")[1]))
+        .filter(Boolean)
+        .flatMap((a) => LifestyleStore.items(a).filter((d) => d.active && d.category === "houseware" && !d.foreign && !d.virtual))
+        .reduce((n, w) => n + w.capacity * w.amount, 0);
+      if (data.inhabitants.length > sleeps) {
+        const ok = await Compat.DialogV2.confirm({
+          window: { title: L("NEONHUB.Household.Over.Title") },
+          classes: ["neon-hub", "nh-cal-dialog"],
+          content: `<p>${esc(L("NEONHUB.Household.Over.Body", { n: data.inhabitants.length, sleeps }))}</p>`,
+          rejectClose: false
+        });
+        if (!ok) return;
+      }
+      const elsewhere = HouseholdStore.all().filter((h) => h.id !== hh?.id && h.inhabitants.some((u) => data.inhabitants.includes(u)));
+      if (elsewhere.length) ui.notifications.warn(L("NEONHUB.Household.Elsewhere", { names: elsewhere.map((h) => h.name).join(", ") }));
+      if (hh) await HouseholdStore.update(hh.id, changes);
+      else await HouseholdStore.create(changes);
+    } catch (err) {
+      ui.notifications.warn(err.message);
+    }
+  }
+
+  static async #onDeleteHousehold(event, target) {
+    const hh = HouseholdStore.get(target.closest("[data-household]").dataset.household);
+    if (!hh) return;
+    const ok = await Compat.DialogV2.confirm({
+      window: { title: L("NEONHUB.Household.Delete") },
+      classes: ["neon-hub", "nh-cal-dialog"],
+      content: `<p>${esc(L("NEONHUB.Household.DeleteBody", { name: hh.name }))}</p>`,
+      rejectClose: false
+    });
+    if (ok) await HouseholdStore.remove(hh.id);
+  }
+
+  /** Chip into the household's rent pool from this character's wallet. */
+  static async #onChipIn(event, target) {
+    const actor = this.actor;
+    const hh = HouseholdStore.get(target.closest("[data-household]").dataset.household);
+    if (!actor || !hh) return;
+    const status = HouseholdOps.pool(hh);
+    const amount = await chipInDialog(hh, actor, status);
+    if (!amount) return;
+    try {
+      await HouseholdOps.contribute(hh.id, actor.uuid, amount);
+    } catch (err) {
+      ui.notifications.warn(err.message);
+    }
   }
 
   static #onOpenSheet() {

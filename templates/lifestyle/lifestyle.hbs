@@ -48,6 +48,7 @@
     {{/if}}
     {{#if isGM}}
     <button type="button" role="tab" class="{{#if tab.month}}active{{/if}}" data-action="view" data-tab="month"><i class="fa-solid fa-calendar-days"></i> {{localize "NEONHUB.Lifestyle.Tab.month"}}</button>
+    <button type="button" role="tab" class="{{#if tab.households}}active{{/if}}" data-action="view" data-tab="households"><i class="fa-solid fa-people-roof"></i> {{localize "NEONHUB.Household.Tab"}}</button>
     {{#unless actor}}<button type="button" role="tab" class="{{#if tab.catalog}}active{{/if}}" data-action="view" data-tab="catalog"><i class="fa-solid fa-store"></i> {{localize "NEONHUB.Lifestyle.Tab.catalog"}}</button>{{/unless}}
     {{/if}}
     <div class="nh-gm-tools">
@@ -109,8 +110,18 @@
           <p class="nh-ls-cost">{{costText}}</p>
           {{#if badges.length}}<ul class="nh-ls-badges">{{#each badges}}<li class="{{#if warn}}warn{{/if}}"><i class="{{icon}}"></i> {{text}}</li>{{/each}}</ul>{{/if}}
           {{#if effects}}<p class="nh-ls-effects"><i class="fa-solid fa-bolt"></i> {{effects}}</p>{{/if}}
+          {{#if household}}
+          <p class="nh-ls-desc"><i class="fa-solid fa-users"></i> {{description}}</p>
+          {{#if household.pool}}
+          <ul class="nh-hh-pool">{{#each household.pool}}<li><span>{{name}}</span><b>{{amount}}</b></li>{{/each}}</ul>
+          <p class="nh-hint">{{#if household.covered}}<i class="fa-solid fa-circle-check"></i> {{localize "NEONHUB.Household.Covered"}}{{else}}{{localize "NEONHUB.Household.Left" left=household.left}}{{/if}}</p>
+          {{/if}}
+          {{else}}
           {{#if description}}<p class="nh-ls-desc">{{description}}</p>{{/if}}
-          <footer>
+          {{/if}}
+          <footer {{#if household}}data-household="{{household.id}}"{{/if}}>
+            {{#if household.canChip}}<button type="button" class="nh-cta" data-action="chipIn"><i class="fa-solid fa-hand-holding-dollar"></i> {{localize "NEONHUB.Household.ChipIn.Button"}}</button>{{/if}}
+            {{#if household.isGM}}<button type="button" data-action="view" data-tab="households"><i class="fa-solid fa-people-roof"></i> {{localize "NEONHUB.Household.Manage"}}</button>{{/if}}
             {{#if showAmount}}
             <label class="nh-ls-amount">{{localize "NEONHUB.Lifestyle.Quantity"}} <input type="number" min="1" value="{{amount}}" data-amount="{{id}}" {{#unless canAmount}}disabled{{/unless}}></label>
             {{/if}}
@@ -204,6 +215,51 @@
       <li class="nh-hint">{{localize "NEONHUB.Lifestyle.NoBills"}}</li>
       {{/each}}
     </ul>
+  </div>
+  {{/if}}
+
+  {{!-- ================= HOUSEHOLDS (GM) ================= --}}
+  {{#if tab.households}}
+  <div class="nh-hq-scroll">
+    <div class="nh-ls-monthbar">
+      <div>
+        <h2>{{localize "NEONHUB.Household.Tab"}}</h2>
+        <p class="nh-hint">{{localize "NEONHUB.Household.Intro"}}</p>
+      </div>
+      <button type="button" class="nh-cta" data-action="newHousehold"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Household.New"}}</button>
+    </div>
+    <div class="nh-ls-grid">
+      {{#each householdList}}
+      <article class="nh-ls-item is-active nh-hh-card" data-household="{{id}}">
+        <header>
+          <img src="{{img}}" alt="">
+          <div>
+            <h4>{{name}}</h4>
+            <span class="nh-ls-cat"><i class="fa-solid fa-people-roof"></i> {{mode}}{{#if payer}}: {{payer}}{{/if}}</span>
+          </div>
+        </header>
+        <p class="nh-ls-cost">{{localize "NEONHUB.Household.RentLine" rent=rent}}</p>
+        <ul class="nh-ls-badges">
+          <li class="{{#if over}}warn{{/if}}"><i class="fa-solid fa-bed"></i> {{localize "NEONHUB.Household.Badge.Living" n=living sleeps=sleeps}}</li>
+          <li class="{{#if overSlots}}warn{{/if}}"><i class="fa-solid fa-table-cells"></i> {{localize "NEONHUB.Lifestyle.Home.Slots" used=used slots=slots}}</li>
+        </ul>
+        <ul class="nh-hh-people">
+          {{#each people}}<li><img src="{{img}}" alt=""><span>{{name}}</span><b>{{share}}</b></li>{{else}}<li class="nh-hint">{{localize "NEONHUB.Household.Empty"}}</li>{{/each}}
+        </ul>
+        {{#if pool}}
+        <div class="nh-hh-bar {{#if pool.covered}}is-covered{{/if}}"><span style="width: {{pool.pct}}%"></span></div>
+        <p class="nh-hint">{{localize "NEONHUB.Household.PoolLine" total=pool.total rent=pool.rent}}</p>
+        {{/if}}
+        <footer>
+          <span class="nh-ls-spacer"></span>
+          <button type="button" class="nh-icon-btn" data-action="editHousehold" aria-label="{{localize 'NEONHUB.Household.Edit'}}" data-tooltip="{{localize 'NEONHUB.Household.Edit'}}"><i class="fa-solid fa-pen"></i></button>
+          <button type="button" class="nh-icon-btn" data-action="deleteHousehold" aria-label="{{localize 'NEONHUB.Household.Delete'}}" data-tooltip="{{localize 'NEONHUB.Household.Delete'}}"><i class="fa-solid fa-trash"></i></button>
+        </footer>
+      </article>
+      {{else}}
+      <p class="nh-hint">{{localize "NEONHUB.Household.None"}}</p>
+      {{/each}}
+    </div>
   </div>
   {{/if}}
 

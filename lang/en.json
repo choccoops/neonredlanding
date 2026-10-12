@@ -913,7 +913,10 @@
         "CardTitle": "Rent-day Humanity, {month}",
         "TaxFrom": {
           "kibble": "Living on Kibble (tax)",
-          "home": "Where they live (tax)"
+          "home": "Where they live (tax)",
+          "street": "Lived on the street (tax)",
+          "vehicle": "Lived in a vehicle (tax)",
+          "vehicleUpgrade": "Lived in an upgraded vehicle (tax)"
         },
         "TaxMod": "Furnishings: +{n} to the tax"
       },
@@ -1024,6 +1027,18 @@
         "veryExpensive": "Very Expensive",
         "luxury": "Luxury",
         "superLuxury": "Super Luxury"
+      },
+      "Living": {
+        "Label": "Living-space tax this month",
+        "Home": "This home's: tax {tax}, credit {credit}",
+        "none": "None: under three weeks in this home",
+        "street": "Lived on the street this month: tax {n}",
+        "vehicle": "Lived in a vehicle this month: tax {n}",
+        "vehicleUpgrade": "Lived in an upgraded vehicle this month: tax {n}",
+        "Since": "In {home} since {date} ({days} days).",
+        "Undated": "In {home}; no move-in date recorded.",
+        "NoHome": "No home.",
+        "Hint": "A home's tax and credit count after {n} days there; any time on the street or in a vehicle this month, that tax applies instead. The rolls follow where they live either way."
       }
     },
     "Calendar": {
@@ -1335,6 +1350,81 @@
         "PresetAll": "All of it",
         "Preset2070": "2070s: no radioactive windstorms or blood rain",
         "ConditionsHint": "A roll that lands on weather you've turned off is rolled again. Applies to weather planned from now on: plan again to change days already planned."
+      }
+    },
+    "Household": {
+      "Tab": "Households",
+      "Label": "Household",
+      "New": "New household",
+      "Edit": "Edit household",
+      "Delete": "Delete household",
+      "DeleteBody": "Delete the household {name}? Its inhabitants keep their own items; the shared home and its pool go.",
+      "Intro": "Homes several characters live in. Each inhabitant's Lifestyle shows the home as theirs, with their part of the rent, the shared houseware slots and the home's Humanity effects.",
+      "None": "No households yet.",
+      "Empty": "Nobody lives here yet.",
+      "Manage": "Household",
+      "RentLine": "Rent: {rent} a month",
+      "PoolLine": "Pool this month: {total} of {rent}",
+      "Covered": "This month's rent is covered.",
+      "Left": "{left} still to put in this month.",
+      "Elsewhere": "Some of these characters also live in {names}; their Lifestyle uses the first household.",
+      "Pool": "Pool",
+      "Mode": {
+        "split": "Split evenly",
+        "payer": "One character pays",
+        "pool": "Pool until it's covered"
+      },
+      "Cost": {
+        "Split": "Your share: {share} of {rent} ({n} living here)",
+        "PayerYou": "You pay the rent: {rent}",
+        "PaidBy": "{name} pays the rent ({rent})",
+        "Pool": "Pool: {total} of {rent} this month"
+      },
+      "Badge": {
+        "Living": "{n} living here / sleeps {sleeps}"
+      },
+      "Over": {
+        "Title": "Over capacity",
+        "Body": "{n} inhabitants, but the home sleeps {sleeps} (CyberBeds included). Set it up anyway?"
+      },
+      "Dialog": {
+        "NewTitle": "New household",
+        "EditTitle": "Edit household",
+        "Create": "Create",
+        "Save": "Save",
+        "Intro": "Pick the home from the catalog, who lives there and how the rent is paid.",
+        "Name": "Name",
+        "NamePlaceholder": "The home's name",
+        "Home": "Home",
+        "KeepHome": "Keep the current home ({name})",
+        "Rent": "Rent a month",
+        "RentPlaceholder": "The home's own rent",
+        "RentHint": "Leave empty for the home's rent. Owned homes and perks cost nothing.",
+        "Mode": "Rent",
+        "ModeHint": "Split: each inhabitant's bill carries an even share. One character: the payer's bill carries all of it. Pool: anyone chips in during the month until it's covered.",
+        "Payer": "Who pays (one character)",
+        "Inhabitants": "Who lives here",
+        "InhabitantsHint": "They share the home's houseware slots and its Humanity effects. Each keeps their own furnishings and art."
+      },
+      "ChipIn": {
+        "Button": "Chip in",
+        "Title": "Chip in: {name}",
+        "Body": "{name}'s rent pool: {total} of {rent}, {left} to go.",
+        "Amount": "Amount",
+        "Wallet": "{name} has {wallet}.",
+        "Pay": "Pay into the pool"
+      },
+      "Chat": {
+        "ChippedIn": "{name} put {amount} into the rent.",
+        "Covered": "This month's rent is covered."
+      },
+      "Ledger": "Household rent: {name}",
+      "Error": {
+        "Missing": "That household no longer exists.",
+        "NotInhabitant": "They don't live there.",
+        "NotPool": "This household doesn't pay by pool.",
+        "NothingToPay": "The rent is already covered this month.",
+        "NoHome": "Pick a home for the household."
       }
     }
   }

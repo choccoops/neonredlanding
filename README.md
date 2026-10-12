@@ -232,6 +232,23 @@ is billed by their group's calendar, the window shows that month ("November 2045
 to rent day, and a character who missed several rent days owes each month (up to 12). Without a
 calendar, the GM starts months with **New month** as before.
 
+### Households
+
+A home several characters share. The GM sets one up on the **Households** tab of the Lifestyle
+window: pick the home from the catalog (its rent can be changed), who lives there, and how the rent
+is paid:
+- **Split evenly**: each inhabitant's monthly bill carries an even share.
+- **One character pays**: the payer's bill carries all of it; the others pay nothing for the home.
+- **Pool until it's covered**: nobody's bill carries it; during the month anyone **chips in** from
+  their own wallet until the rent is met (only what's still needed is taken). A new month starts an
+  empty pool. Players chip in themselves; the GM sees each household's progress.
+
+Each inhabitant's Lifestyle shows the household as their home, with its part of the rent. Owned
+homes and corporate perks cost nothing. In the 2070s the home's houseware slots are shared: every
+inhabitant's houseware fills them, and CyberBeds raise how many it sleeps. The home's Humanity tax,
+credit and monthly roll apply to each inhabitant, while furnishings and art stay their own. Moving
+in more people than the home sleeps asks before going ahead.
+
 ### The 2070s: Living & Humanity Rework
 
 ![2070s Lifestyle: the home's slots and art, the rent-day Humanity check, Make art and a Humanity incident](docs/lifestyle-2070.webp)
@@ -279,6 +296,13 @@ numbers and mechanics are the homebrew's; the descriptions are Neon Hub's own.
   megabuilding-or-worse 1d6 (2d6 in a vehicle), the upscale 2d6 gain, and for a ship the 1d6 for
   time outside the city too. Living on the street is a 6 tax and the 1d6; the 3d6 for living rough
   is the GM's tick, for when it fits what happened.
+- **Three weeks in a home.** A home's Humanity tax and credit only count after 21 days there; any
+  time on the street or in a vehicle that month, that tax applies instead. Neon Hub dates each
+  move-in on the character's calendar (adding or switching on a home, or joining a household), and
+  the check's *Living-space tax this month* starts on "None: under three weeks" when the dates say
+  so, else on the home's. The GM can pick the street, a vehicle or an upgraded vehicle instead. The
+  rolls follow where they live either way, and Kibble's tax always applies. Without calendars (or
+  for homes from before this was added) it starts on the home's.
 
 ![The GM's rent-day Humanity check: effects from the lifestyle filled in, the rest ticked by the GM](docs/lifestyle-2070-humanity.webp)
 

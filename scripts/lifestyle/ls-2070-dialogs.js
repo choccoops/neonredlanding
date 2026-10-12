@@ -1,6 +1,7 @@
 import { Compat } from "../compat.js";
 import { CPR } from "../cpr.js";
-import { ENVIRONMENT, INCIDENTS, ART_TIERS, PERFORMED_BY, automaticEffects } from "./ls-2070.js";
+import { ENVIRONMENT, INCIDENTS, ART_TIERS, PERFORMED_BY, LIVING, THREE_WEEKS, automaticEffects, defaultLiving } from "./ls-2070.js";
+import { fromDayNumber } from "../calendar/cal-dates.js";
 import { LifestyleStore } from "./ls-store.js";
 import { Lifestyle2070 } from "./ls-2070-ops.js";
 
@@ -15,7 +16,21 @@ const DIALOG = ["neon-hub", "nh-cal-dialog", "nh-ls-dialog"];
  */
 export async function humanityDialog(actor) {
   const items = LifestyleStore.items(actor);
-  const auto = automaticEffects(items);
+  const auto = automaticEffects(items, { living: "none" });
+  const full = automaticEffects(items, { living: "home" });
+  const where = Lifestyle2070.homeSince(actor);
+  const start = defaultLiving(where?.days ?? null);
+  const since = where?.since !== null && where?.since !== undefined ? fromDayNumber(where.since) : null;
+  const homeTax = full.taxes.find((t) => t.key === "home")?.n ?? 0;
+  const livingInfo = !where ? L("NEONHUB.Lifestyle.Living.NoHome")
+    : where.days === null ? L("NEONHUB.Lifestyle.Living.Undated", { home: where.home.name })
+      : L("NEONHUB.Lifestyle.Living.Since", { home: where.home.name, date: `${since.day}.${since.month}.${since.year}`, days: where.days });
+  const livingOptions = Object.entries(LIVING).map(([key, n]) => {
+    const label = key === "home"
+      ? L("NEONHUB.Lifestyle.Living.Home", { tax: homeTax, credit: full.credit })
+      : L(`NEONHUB.Lifestyle.Living.${key}`, { n });
+    return `<option value="${key}" ${key === start ? "selected" : ""}>${esc(label)}</option>`;
+  }).join("");
   const tickable = Lifestyle2070.tickable();
   const mods = [];
   const autoRows = auto.effects.map((e) => `<li class="is-${ENVIRONMENT[e.key].kind}"><i class="fa-solid fa-lock"></i> ${esc(L(`NEONHUB.Lifestyle.Env.${e.key}`))} <b>${e.dice}</b></li>`);
@@ -36,6 +51,11 @@ export async function humanityDialog(actor) {
       ${autoRows.length ? `<ul class="nh-ls-autolist">${autoRows.join("")}</ul>` : `<p class="hint">${esc(L("NEONHUB.Lifestyle.Humanity.NoAutomatic"))}</p>`}
       ${mods.length ? `<p class="hint">${esc(mods.join(" · "))}</p>` : ""}
     </div>
+    <div class="form-group">
+      <label>${esc(L("NEONHUB.Lifestyle.Living.Label"))}</label>
+      <select name="living">${livingOptions}</select>
+      <p class="hint">${esc(livingInfo)} ${esc(L("NEONHUB.Lifestyle.Living.Hint", { n: THREE_WEEKS }))}</p>
+    </div>
     <div class="nh-ls-ticks">
       <div class="form-group stacked"><label>${esc(L("NEONHUB.Lifestyle.Humanity.Losses"))}</label>${tickable.loss.map(tick).join("")}</div>
       <div class="form-group stacked"><label>${esc(L("NEONHUB.Lifestyle.Humanity.Gains"))}</label>${tickable.gain.map(tick).join("")}</div>
@@ -53,7 +73,7 @@ export async function humanityDialog(actor) {
       icon: "fa-solid fa-dice",
       callback: (event, button) => {
         const form = button.form;
-        const ticked = {};
+        const ticked = { living: form.elements.living.value };
         for (const t of [...tickable.loss, ...tickable.gain]) {
           const input = form.elements[t.key];
           if (!input) continue;

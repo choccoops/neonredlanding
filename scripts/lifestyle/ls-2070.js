@@ -110,11 +110,28 @@ const PACKAGE_ENV = {
 /** The Humanity tax of living on Kibble, each month. */
 export const KIBBLE_TAX = 2;
 
+/**
+ * The living-space tax this month. A home's tax and credit only count after three weeks there
+ * ("home"); before that, none ("none"); and any time on the street or in a vehicle that month,
+ * that tax takes over instead.
+ */
+export const LIVING = { home: null, none: 0, street: 6, vehicle: 3, vehicleUpgrade: 1 };
+export const THREE_WEEKS = 21;
+
+/** The living-space choice a check starts on: none under three weeks in the home, else the home's. */
+export function defaultLiving(daysInHome) {
+  return daysInHome !== null && daysInHome !== undefined && daysInHome < THREE_WEEKS ? "none" : "home";
+}
+
 const active = (items, category) => items.filter((d) => d?.active && d.category === category);
 
-/** The primary home: the active housing with the most room (a character can keep a car on the side). */
+/**
+ * The primary home: a household the character lives in, else the active housing with the most
+ * room (a character can keep a car on the side).
+ */
 export function primaryHome(items) {
-  return active(items, "housing").sort((a, b) => b.slots - a.slots || b.sleeps - a.sleeps || b.monthly - a.monthly)[0] ?? null;
+  return active(items, "housing").sort((a, b) => Number(!!b.household) - Number(!!a.household)
+    || b.slots - a.slots || b.sleeps - a.sleeps || b.monthly - a.monthly)[0] ?? null;
 }
 
 /** Furnishings don't stack: the finest active set (highest scarcity) is the one lived in. */
@@ -140,7 +157,8 @@ export function homeSummary(items) {
     used,
     over: used > slots,
     sleeps: (home?.sleeps ?? 0) + capacity,
-    displays: ware.filter((d) => d.display).reduce((n, d) => n + d.amount, 0),
+    // Housemates' ARADs show their own art, not this character's.
+    displays: ware.filter((d) => d.display && !d.foreign).reduce((n, d) => n + d.amount, 0),
     blocked: !!furnishing?.noUpgrades && ware.length > 0
   };
 }
@@ -170,7 +188,7 @@ export function artOnDisplay(items) {
  * `taxes` says where the tax comes from (the home, Kibble); `tax` is their total.
  * @returns {{ effects: {key, dice}[], taxes: {key, n}[], tax, credit, lossMod, gainMod, art }}
  */
-export function automaticEffects(items) {
+export function automaticEffects(items, { living = "home" } = {}) {
   const effects = [];
   const add = (key, dice = ENVIRONMENT[key].dice) => {
     if (!effects.some((e) => e.key === key)) effects.push({ key, dice });
@@ -182,12 +200,14 @@ export function automaticEffects(items) {
   const furnishing = bedroomFurnishing(items);
   const taxes = [];
   if (pkg?.env === "kibble") taxes.push({ key: "kibble", n: KIBBLE_TAX });
-  if (home?.tax) taxes.push({ key: "home", n: home.tax });
+  const space = LIVING[living] === undefined ? "home" : living;
+  if (space === "home" && home?.tax) taxes.push({ key: "home", n: home.tax });
+  if (LIVING[space]) taxes.push({ key: space, n: LIVING[space] });
   return {
     effects,
     taxes,
     tax: taxes.reduce((n, t) => n + t.n, 0),
-    credit: home?.credit ?? 0,
+    credit: space === "home" ? home?.credit ?? 0 : 0,
     lossMod: furnishing?.lossMod ?? 0,
     gainMod: furnishing?.gainMod ?? 0,
     art: artOnDisplay(items).total
@@ -203,7 +223,7 @@ export function automaticEffects(items) {
  * @returns {{ rolls: {key, kind, dice, mod}[], tax, credit, art, lossMod, gainMod }}
  */
 export function monthlyCheck(items, ticked = {}) {
-  const auto = automaticEffects(items);
+  const auto = automaticEffects(items, { living: ticked.living ?? "home" });
   const rolls = auto.effects.map((e) => ({ key: e.key, kind: ENVIRONMENT[e.key].kind, dice: e.dice, auto: true }));
   for (const [key, value] of Object.entries(ticked)) {
     const def = ENVIRONMENT[key];

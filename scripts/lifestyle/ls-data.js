@@ -74,6 +74,8 @@ export function normalizeLifestyle(raw = {}) {
     buyPrice: int(r.buyPrice),
     owned: !!r.owned,
     roughNight: int(r.roughNight, 0, 30),
+    // the day (on the character's calendar) they moved in, for the 2070s three-week rule
+    movedIn: r.movedIn === null || r.movedIn === undefined || r.movedIn === "" || !Number.isFinite(Number(r.movedIn)) ? null : Math.floor(Number(r.movedIn)),
     slots: int(r.slots, 0, 99),
     tax: int(r.tax, 0, 20),
     credit: int(r.credit, 0, 20),

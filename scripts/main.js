@@ -21,6 +21,9 @@ import { HubHover } from "./hub/hover.js";
 import { Clock } from "./calendar/clock.js";
 import { SkipTimeApp } from "./calendar/skip-app.js";
 import { WeatherStore } from "./calendar/weather-store.js";
+import { HouseholdStore } from "./lifestyle/ls-households.js";
+import { HouseholdOps } from "./lifestyle/ls-household-ops.js";
+import { Lifestyle2070 } from "./lifestyle/ls-2070-ops.js";
 import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
@@ -44,6 +47,7 @@ Hooks.once("init", () => {
   Clock.register();
   Clock.init();
   WeatherStore.register();
+  HouseholdStore.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -177,6 +181,7 @@ Hooks.once("ready", () => {
   HubSocket.on("openCalendar", () => CalendarApp.open());
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
   SkipTimeApp.registerSocket();
+  HouseholdOps.init();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
   if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
@@ -286,6 +291,8 @@ function onLifestyleItem(item, options, userId, { activated = false, touched = f
   if (!flagged || userId !== game.user.id || options?.neonHub === "lifestyle") return;
   (async () => {
     if (activated) await LifestyleOps.keepOnePackage(actor, item.id);
+    // A home switched on from the character sheet: they've moved in today.
+    if (activated) await Lifestyle2070.markMovedIn(actor, item);
     await LifestyleOps.syncActor(actor);
   })().catch((err) => console.warn(`${MODULE_ID} | lifestyle sync failed for ${actor.name}`, err));
 }

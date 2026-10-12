@@ -787,3 +787,33 @@
 .nh-skip-app .window-content .nh-skip-foot button.nh-cal-btn-primary { flex: 1; }
 .nh-skip-app .window-content button:disabled { opacity: 0.35; cursor: default; }
 .nh-cal-app .window-content button.nh-cal-clock-skip { height: 24px; padding: 0 10px; font-size: 10px; }
+
+/* ==========================================================================
+   The month, docked in the calendar or popped out in its own window.
+   ========================================================================== */
+.nh-cal-month { display: flex; flex-direction: column; gap: 9px; min-width: 0; min-height: 0; }
+.nh-cal-body.is-popout { grid-template-columns: minmax(0, 1fr); }
+.nh-cal-day-wx-label { display: none; }
+.nh-cal-popbar { display: flex; align-items: center; gap: 6px 12px; padding: 6px 10px; border: 1px solid var(--nc-line); border-left: 3px solid var(--nc-pink); background: rgba(255, 42, 109, 0.04); }
+.nh-cal-popbar-label { font-family: var(--nc-display); font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--nc-pink); }
+.nh-cal-popbar-month { font-family: var(--nc-display); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+.nh-cal-app .window-content .nh-cal-popbar button.nh-cal-btn { margin-left: auto; height: 26px; padding: 0 10px; font-size: 10px; }
+
+.nh-cal.nh-cal-month-window { display: flex; flex-direction: column; gap: 9px; height: 100%; padding: 12px 14px; }
+.nh-cal-month-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; }
+.nh-cal-month-head .nh-cal-kicker { width: 100%; }
+.nh-cal-month-name { font-family: var(--nc-display); font-size: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; text-shadow: 0 0 10px color-mix(in srgb, var(--cal) 70%, transparent); }
+.nh-cal-month-today { font-family: var(--nc-display); font-size: 12px; letter-spacing: 0.14em; color: var(--nc-cyan); }
+.nh-cal-month-window .nh-cal-month { flex: 1; }
+
+/* Popped out, days have room: weather spelled out under the date. */
+.nh-cal-month-app .nh-cal-day { min-height: 64px; }
+.nh-cal-month-app .nh-cal-day-num { font-size: 18px; }
+.nh-cal-month-app .nh-cal-day-wx { top: 30px; left: 7px; right: 7px; flex-wrap: wrap; gap: 2px 5px; font-size: 13px; }
+.nh-cal-month-app .nh-cal-day-wx b { display: inline; font-size: 10px; }
+.nh-cal-month-app .nh-cal-day-wx-label { display: block; width: 100%; font-family: "Signika", sans-serif; font-size: 11px; font-style: normal; line-height: 1.15; color: var(--nc-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nh-cal-month-app .nh-cal-day-wx.is-forecast .nh-cal-day-wx-label { font-style: italic; }
+.nh-cal-month-app .nh-cal-day-band { height: 5px; }
+@container (max-width: 700px) {
+  .nh-cal-month-app .nh-cal-day-wx-label { display: none; }
+}

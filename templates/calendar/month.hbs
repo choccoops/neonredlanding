@@ -1,0 +1,40 @@
+{{!-- The month: navigation and the six-week grid. In the calendar window, or popped out in its own. --}}
+<div class="nh-cal-month" style="--cal: {{active.color}}">
+    <nav class="nh-cal-nav">
+      <button type="button" class="nh-cal-icon" data-action="prevMonth" aria-label="{{localize 'NEONHUB.Calendar.PrevMonth'}}"><i class="fa-solid fa-chevron-left"></i></button>
+      <select class="nh-cal-nav-month" aria-label="{{localize 'NEONHUB.Calendar.Field.Month'}}">
+        {{#each nav.months}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+      </select>
+      <input type="number" class="nh-cal-nav-year" value="{{nav.year}}" min="1" max="9999" aria-label="{{localize 'NEONHUB.Calendar.Field.Year'}}">
+      <button type="button" class="nh-cal-icon" data-action="nextMonth" aria-label="{{localize 'NEONHUB.Calendar.NextMonth'}}"><i class="fa-solid fa-chevron-right"></i></button>
+      {{#if moonZone}}<span class="nh-cal-zone" data-tooltip="{{localize 'NEONHUB.Calendar.Moon.ZoneTip'}}"><i class="fa-solid fa-moon"></i> {{moonZone}}</span>{{/if}}
+      {{#if inWindow}}
+      <button type="button" class="nh-cal-icon" data-action="dock" data-tooltip="{{localize 'NEONHUB.Calendar.Dock'}}" aria-label="{{localize 'NEONHUB.Calendar.Dock'}}"><i class="fa-solid fa-down-left-and-up-right-to-center"></i></button>
+      {{else}}
+      <button type="button" class="nh-cal-icon" data-action="popOut" data-tooltip="{{localize 'NEONHUB.Calendar.PopOut'}}" aria-label="{{localize 'NEONHUB.Calendar.PopOut'}}"><i class="fa-solid fa-up-right-from-square"></i></button>
+      {{/if}}
+      <button type="button" class="nh-cal-btn nh-cal-nav-now {{#if nav.onCurrent}}is-dim{{/if}}" data-action="toCurrent"><i class="fa-solid fa-crosshairs"></i> {{localize "NEONHUB.Calendar.ToCurrent"}}</button>
+    </nav>
+
+    <div class="nh-cal-grid {{#if isGM}}is-editable{{/if}}" style="--cal: {{active.color}}">
+      {{#each weekdays}}<div class="nh-cal-wd {{#if weekend}}is-weekend{{/if}}">{{label}}</div>{{/each}}
+      {{#each cells}}
+      <div class="nh-cal-day {{#if other}}is-other{{/if}} {{#if weekend}}is-weekend{{/if}} {{#if current}}is-current{{/if}} {{#if selected}}is-selected{{/if}} {{#if rent}}is-rent{{/if}} {{#if viewing}}is-viewing{{/if}}"
+           data-action="pick" data-y="{{y}}" data-m="{{m}}" data-d="{{d}}">
+        <span class="nh-cal-day-num">{{d}}</span>
+        {{#if current}}<span class="nh-cal-day-flag">{{localize "NEONHUB.Calendar.Now"}}</span>{{else}}{{#if rent}}<span class="nh-cal-day-rent" data-tooltip="{{localize 'NEONHUB.Calendar.Rent.Label'}}"><i class="fa-solid fa-house-chimney"></i></span>{{/if}}{{/if}}
+        {{#if moon}}
+        <svg class="nh-cal-moon {{#if moon.principal}}is-principal{{/if}}" viewBox="-10 -10 20 20" data-tooltip="{{moon.tip}}" role="img" aria-label="{{moon.tip}}">
+          <circle r="9" class="nh-cal-moon-dark"/><path d="{{moon.path}}" class="nh-cal-moon-lit"/>
+        </svg>
+        {{/if}}
+        {{#if markers.length}}
+        <span class="nh-cal-day-markers">{{#each markers}}<i style="--mark: {{color}}" data-tooltip="{{name}}"></i>{{/each}}</span>
+        {{/if}}
+        {{#if wx}}<span class="nh-cal-day-wx {{#if wx.predicted}}is-forecast{{/if}}" style="--wx: {{wx.color}}" data-tooltip="{{#if wx.predicted}}{{localize 'NEONHUB.Weather.ForecastTip'}}: {{/if}}{{wx.tip}}"><i class="fa-solid {{wx.icon}}"></i><b>{{wx.short}}</b><em class="nh-cal-day-wx-label">{{wx.label}}</em></span>{{/if}}
+        {{#if band}}<span class="nh-cal-day-band {{#if band.start}}is-start{{/if}} {{#if band.end}}is-end{{/if}} {{#if band.predicted}}is-forecast{{/if}}" style="--band: {{band.color}}" data-tooltip="{{band.label}}"></span>{{/if}}
+        {{#if note}}<span class="nh-cal-day-note is-{{note.kind}}" data-tooltip="{{note.tip}}"><i class="fa-solid fa-note-sticky"></i>{{#if note.count}}<b>{{note.count}}</b>{{/if}}</span>{{/if}}
+      </div>
+      {{/each}}
+    </div>
+</div>

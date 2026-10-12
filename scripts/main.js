@@ -54,6 +54,8 @@ Hooks.once("init", () => {
     `${TEMPLATE_PATH}/lifestyle/bill-card.hbs`,
     `${TEMPLATE_PATH}/lifestyle/item-config.hbs`,
     `${TEMPLATE_PATH}/calendar/calendar.hbs`,
+    `${TEMPLATE_PATH}/calendar/month.hbs`,
+    `${TEMPLATE_PATH}/calendar/month-window.hbs`,
     `${TEMPLATE_PATH}/calendar/date-card.hbs`,
     `${TEMPLATE_PATH}/calendar/rent-card.hbs`
   ]);

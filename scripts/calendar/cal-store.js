@@ -64,6 +64,7 @@ export const CalendarStore = {
       default: true
     });
     game.settings.register(MODULE_ID, "calendarActive", { scope: "client", config: false, type: String, default: "" });
+    game.settings.register(MODULE_ID, "calendarPopout", { scope: "client", config: false, type: Boolean, default: false });
   },
 
   defaultDate() {

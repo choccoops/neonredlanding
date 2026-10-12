@@ -74,6 +74,8 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       clockStep: CalendarApp.#onClockStep,
       smallTime: CalendarApp.#onSmallTime,
       skipTime: CalendarApp.#onSkipTime,
+      popOut: CalendarApp.#onPopOut,
+      dock: CalendarApp.#onDock,
       weather: CalendarApp.#onWeather,
       weatherReveal: CalendarApp.#onWeatherReveal,
       forecastPost: CalendarApp.#onForecastPost
@@ -84,11 +86,29 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
     main: { template: `${TEMPLATE_PATH}/calendar/calendar.hbs`, scrollable: [".nh-cal-list", ".nh-cal-notes-list"] }
   };
 
-  static open() {
+  static async open() {
     this.instance ??= new this();
-    this.instance.render({ force: true });
+    await this.instance.render({ force: true });
     this.instance.bringToFront?.();
+    if (this.instance.popout) CalendarMonthApp.open(this.instance);
     return this.instance;
+  }
+
+  /** The month grid is in its own window (a per-user choice). */
+  get popout() {
+    return !!game.settings.get(MODULE_ID, "calendarPopout");
+  }
+
+  /** The month window's buttons run the calendar's own handlers, on the calendar's state. */
+  monthAction(action, event, target) {
+    const handlers = {
+      prevMonth: CalendarApp.#onPrevMonth,
+      nextMonth: CalendarApp.#onNextMonth,
+      toCurrent: CalendarApp.#onToCurrent,
+      pick: CalendarApp.#onPick,
+      dock: CalendarApp.#onDock
+    };
+    return handlers[action]?.call(this, event, target);
   }
 
   static toggle() {
@@ -172,7 +192,9 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         rentDay: active.rentDay,
         bills: this.#billsSummary(active)
       },
+      popout: this.popout,
       nav: {
+        monthName: L(`NEONHUB.Calendar.Month.${this.view.month}`),
         year: this.view.year,
         months: Array.from({ length: 12 }, (_, i) => ({ value: i + 1, label: L(`NEONHUB.Calendar.Month.${i + 1}`), selected: i + 1 === this.view.month })),
         onCurrent: this.view.year === active.year && this.view.month === active.month
@@ -352,9 +374,8 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
   /*  Rendering                               */
   /* ---------------------------------------- */
 
-  _onRender(context, options) {
-    super._onRender?.(context, options);
-    const html = this.element;
+  /** Month navigation and double-click-to-set, wherever the month is drawn (here or popped out). */
+  bindMonth(html) {
     html.querySelector(".nh-cal-nav-month")?.addEventListener("change", (ev) => {
       this.view.month = Number(ev.currentTarget.value);
       this.render();
@@ -363,6 +384,22 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       this.view = clampDate({ year: ev.currentTarget.value, month: this.view.month, day: 1 });
       this.render();
     });
+    if (!game.user.isGM) return;
+    for (const cell of html.querySelectorAll(".nh-cal-day")) {
+      cell.addEventListener("dblclick", (ev) => {
+        const { y, m, d } = ev.currentTarget.dataset;
+        this.target = { year: Number(y), month: Number(m), day: Number(d) };
+        this.#apply();
+      });
+    }
+  }
+
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    const html = this.element;
+    this.bindMonth(html);
+    // Keep a popped-out month in step.
+    if (CalendarMonthApp.instance?.rendered) CalendarMonthApp.instance.render();
     // Dropping a document into a note writes a link to it at the cursor.
     for (const area of html.querySelectorAll(".nh-cal-note-form textarea")) {
       area.addEventListener("drop", async (ev) => {
@@ -396,13 +433,6 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
         this.target = clampDate(next);
         this.view = { year: this.target.year, month: this.target.month };
         this.render();
-      });
-    }
-    for (const cell of html.querySelectorAll(".nh-cal-day")) {
-      cell.addEventListener("dblclick", (ev) => {
-        const { y, m, d } = ev.currentTarget.dataset;
-        this.target = { year: Number(y), month: Number(m), day: Number(d) };
-        this.#apply();
       });
     }
   }
@@ -588,6 +618,20 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
     Clock.toggleSmallTime();
   }
 
+  /** Pop the month grid out into its own window. */
+  static async #onPopOut() {
+    await game.settings.set(MODULE_ID, "calendarPopout", true);
+    await this.render();
+    CalendarMonthApp.open(this);
+  }
+
+  /** Put the month grid back in the calendar window. */
+  static async #onDock() {
+    await game.settings.set(MODULE_ID, "calendarPopout", false);
+    CalendarMonthApp.instance?.close({ docking: true });
+    if (this.rendered) this.render();
+  }
+
   static #onSkipTime() {
     SkipTimeApp.start();
   }
@@ -705,6 +749,76 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
   _onClose(options) {
     super._onClose?.(options);
     CalendarApp.instance = null;
+    // The month window goes with it, and comes back next time.
+    CalendarMonthApp.instance?.close({ docking: true });
+  }
+}
+
+/**
+ * The month grid in its own window, popped out of the calendar to give both room.
+ * It draws from the calendar window's state and runs its handlers, so picking a day here
+ * opens its notes there, and double-clicking (GM) sets the date as before.
+ */
+export class CalendarMonthApp extends HandlebarsApplicationMixin(ApplicationV2) {
+  static instance = null;
+
+  constructor(host, options = {}) {
+    super(options);
+    this.host = host;
+  }
+
+  static DEFAULT_OPTIONS = {
+    id: `${MODULE_ID}-calendar-month`,
+    classes: ["neon-hub", "nh-cal-app", "nh-cal-month-app"],
+    tag: "div",
+    window: { title: "NEONHUB.Calendar.MonthView", icon: "fa-solid fa-table-cells", resizable: true },
+    position: { width: 980, height: 720 },
+    actions: Object.fromEntries(["prevMonth", "nextMonth", "toCurrent", "pick", "dock"].map((action) => [
+      action, function (event, target) {
+        return this.host?.monthAction(action, event, target);
+      }
+    ]))
+  };
+
+  static PARTS = {
+    main: { template: `${TEMPLATE_PATH}/calendar/month-window.hbs` }
+  };
+
+  static open(host) {
+    if (!host) return null;
+    if (this.instance && this.instance.host !== host) this.instance.close({ docking: true });
+    this.instance ??= new this(host);
+    this.instance.render({ force: true });
+    return this.instance;
+  }
+
+  get title() {
+    const active = this.host?.active;
+    return active ? `${L("NEONHUB.Calendar.MonthView")}: ${active.name}` : L("NEONHUB.Calendar.MonthView");
+  }
+
+  async _prepareContext() {
+    if (!this.host) return { inWindow: true };
+    return { ...(await this.host._prepareContext()), inWindow: true };
+  }
+
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    this.host?.bindMonth(this.element);
+  }
+
+  /** Closed by hand: the grid goes back into the calendar window. */
+  async close(options = {}) {
+    if (!options.docking && this.host?.rendered) {
+      await game.settings.set(MODULE_ID, "calendarPopout", false);
+      this.host.render();
+    }
+    return super.close(options);
+  }
+
+  _onClose(options) {
+    super._onClose?.(options);
+    if (CalendarMonthApp.instance === this) CalendarMonthApp.instance = null;
   }
 }
 

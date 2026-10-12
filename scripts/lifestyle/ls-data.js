@@ -21,6 +21,8 @@ export const CATEGORIES = {
   fuel: { icon: "fa-solid fa-gas-pump", group: "transport", img: "fuel" },
   loan: { icon: "fa-solid fa-sack-dollar", group: "loans", img: "loan" },
   furnishing: { icon: "fa-solid fa-couch", group: "home", img: "furnishing", oneTime: true },
+  houseware: { icon: "fa-solid fa-blender", group: "home", img: "houseware", oneTime: true },
+  art: { icon: "fa-solid fa-palette", group: "home", img: "art", oneTime: true },
   other: { icon: "fa-solid fa-receipt", group: "other", img: "other" }
 };
 
@@ -29,6 +31,12 @@ export const GROUPS = ["housing", "lifestyle", "memberships", "transport", "loan
 export const LIFESTYLE_TIERS = 4;
 export const LOAN_KINDS = ["interest", "installment"];
 export const FURNISHES = ["", "container", "conapt", "house"];
+/** Eras an item belongs to ("" for any). */
+export const ITEM_ERAS = ["", "2045", "2070"];
+/** 2070s: what living somewhere does to the monthly Humanity check (see ls-2070.js). */
+export const HOUSING_ENVS = ["", "worse", "vehicle", "streets", "upscale", "ship"];
+/** 2070s: what a lifestyle package does to it. */
+export const PACKAGE_ENVS = ["", "kibble", "nonFresh", "fresh"];
 export const MAX_HISTORY = 24;
 
 const int = (v, min = 0, max = Number.MAX_SAFE_INTEGER) => {
@@ -54,6 +62,11 @@ export function normalizeLifestyle(raw = {}) {
     perk: !!r.perk,
     template: !!r.template,
     notes: str(r.notes),
+    era: ITEM_ERAS.includes(String(r.era ?? "")) ? String(r.era ?? "") : "",
+    // charged once when added (a lifetime pass, a home that can only be bought)
+    upfront: int(r.upfront),
+    // 2070s: bought mid-month, a membership starts on rent day
+    pending: !!r.pending,
     // housing
     sleeps: int(r.sleeps ?? 1, 0, 99),
     rooms: int(r.rooms, 0, 99),
@@ -61,6 +74,10 @@ export function normalizeLifestyle(raw = {}) {
     buyPrice: int(r.buyPrice),
     owned: !!r.owned,
     roughNight: int(r.roughNight, 0, 30),
+    slots: int(r.slots, 0, 99),
+    tax: int(r.tax, 0, 20),
+    credit: int(r.credit, 0, 20),
+    env: [...HOUSING_ENVS, ...PACKAGE_ENVS].includes(r.env) ? r.env : "",
     // lifestyle packages
     tier: int(r.tier, 0, LIFESTYLE_TIERS),
     plus: !!r.plus,
@@ -71,6 +88,15 @@ export function normalizeLifestyle(raw = {}) {
     // furnishings
     humanity: int(r.humanity, 0, 10),
     furnishes: FURNISHES.includes(r.furnishes) ? r.furnishes : "",
+    scarcity: int(r.scarcity, 0, 5),
+    lossMod: int(r.lossMod, 0, 10),
+    gainMod: int(r.gainMod, 0, 10),
+    noUpgrades: !!r.noUpgrades,
+    // houseware
+    display: !!r.display,
+    capacity: int(r.capacity, 0, 10),
+    // art
+    hg: int(r.hg, 0, 30),
     // loans
     loan: {
       kind: LOAN_KINDS.includes(loan.kind) ? loan.kind : "interest",
@@ -129,7 +155,7 @@ export function computeBill(items, { moraleDiscount = 0 } = {}) {
     if (!d?.active) continue;
     const cost = lineCost(d);
     groups[d.group] += cost;
-    if (cost > 0 || d.category !== "furnishing") lines.push({ id: d.id, name: d.name, category: d.category, group: d.group, amount: d.amount, cost });
+    if (cost > 0 || !CATEGORIES[d.category].oneTime) lines.push({ id: d.id, name: d.name, category: d.category, group: d.group, amount: d.amount, cost });
   }
   const discount = Math.min(int(moraleDiscount), groups.lifestyle);
   groups.lifestyle -= discount;

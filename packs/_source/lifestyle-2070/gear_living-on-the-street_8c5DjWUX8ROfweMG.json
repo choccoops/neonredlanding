@@ -1,0 +1,64 @@
+{
+  "_id": "8c5DjWUX8ROfweMG",
+  "_key": "!items!8c5DjWUX8ROfweMG",
+  "name": "Living on the Street",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/street.svg",
+  "folder": "W6c4gy1KCShUDwl8",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Homeless on the streets, in a tent in the Badlands or in a vehicle that doesn't lock. No rooms, no slots.</p><p>A <strong>6 Humanity Loss tax</strong> every month, plus the megabuilding-or-worse roll and the 3d6 for living on the streets in the monthly check.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "housing",
+        "monthly": 0,
+        "sleeps": 0,
+        "rooms": 0,
+        "tax": 6,
+        "env": "streets",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

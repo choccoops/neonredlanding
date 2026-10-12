@@ -1,0 +1,105 @@
+{
+  "_id": "FbcAMgCZvyDxDBlb",
+  "_key": "!items!FbcAMgCZvyDxDBlb",
+  "name": "Good PrePak",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/good-prepak.svg",
+  "folder": "ghEG71OJAiaHZeSA",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>A meal of Generic PrePak and two of Good PrePak a day, much like what a mid-range restaurant serves. A text to another city every day, a ten-minute call once a week, a 20eb night out every day.</p><p><strong>+1 WILL</strong> while you live this well. Full-body conversions get their monthly glucose solution included, recover HP equal to BODY per day of natural healing, and can be repaired to full HP (DV15 Cybertech, 4 hours; a failure still restores half).</p><p>Lifestyle package: <strong>600eb a month</strong>. Opens Good PrePak memberships, bank loans and Trauma Team Silver.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 600
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "sPDbYxgAS9b8z7MP",
+      "_key": "!items.effects!FbcAMgCZvyDxDBlb.sPDbYxgAS9b8z7MP",
+      "name": "Good PrePak",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/good-prepak.svg",
+      "changes": [
+        {
+          "key": "system.stats.will.value",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 600,
+        "tier": 3,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

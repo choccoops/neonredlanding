@@ -3,6 +3,7 @@ import { HQStore, isActive, lifestyleDiscount, monthlyRent } from "../hq/hq-data
 import { CalendarStore } from "../calendar/cal-store.js";
 import { nextRentDay } from "../calendar/cal-dates.js";
 import { CATEGORIES, LS_FLAG, defaultLifestyle, describeItem, monthsOwed } from "./ls-data.js";
+import { ERAS, DEFAULT_ERA } from "./ls-2070.js";
 
 const { deepClone } = foundry.utils;
 
@@ -11,11 +12,14 @@ export const LS_STATE_SETTING = "lifestyleState";
 export const LS_MANAGE_SETTING = "lifestylePlayerManage";
 export const LS_DEBT_SETTING = "lifestyleAllowDebt";
 export const LS_AUTOBILL_SETTING = "lifestyleAutoBill";
+export const LS_ERA_SETTING = "lifestyleEra";
 /** Actor flag with that character's billing record. */
 export const LS_ACTOR_FLAG = "lifestyleState";
 /** World folder that homebrew lifestyle items are created in. */
 export const LS_FOLDER_FLAG = "lifestyleFolder";
 export const LS_PACK = `${MODULE_ID}.lifestyle`;
+/** The compendium of an era's lifestyle items. */
+export const eraPack = (era) => `${MODULE_ID}.${(ERAS[era] ?? ERAS[DEFAULT_ERA]).pack}`;
 
 export const LifestyleStore = {
   register() {
@@ -51,6 +55,36 @@ export const LifestyleStore = {
       type: Boolean,
       default: false
     });
+    game.settings.register(MODULE_ID, LS_ERA_SETTING, {
+      name: "NEONHUB.Lifestyle.Setting.Era",
+      hint: "NEONHUB.Lifestyle.Setting.EraHint",
+      scope: "world",
+      config: true,
+      type: String,
+      choices: { 2045: "NEONHUB.Lifestyle.Era.2045", 2070: "NEONHUB.Lifestyle.Era.2070" },
+      default: DEFAULT_ERA,
+      onChange: () => Hooks.callAll(`${MODULE_ID}.lifestyleEraChanged`)
+    });
+  },
+
+  /** The campaign's lifestyle era: "2045" (Time of the Red) or "2070" (the Living & Humanity Rework). */
+  get era() {
+    try {
+      const era = String(game.settings.get(MODULE_ID, LS_ERA_SETTING));
+      return ERAS[era] ? era : DEFAULT_ERA;
+    } catch {
+      return DEFAULT_ERA;
+    }
+  },
+
+  /** The 2070s rules are on: rent-day Humanity, tiers, slots and art. */
+  get rules2070() {
+    return !!ERAS[this.era].rules;
+  },
+
+  /** The catalog's compendium for this era. */
+  get pack() {
+    return eraPack(this.era);
   },
 
   get autoBill() {
@@ -151,7 +185,10 @@ export const LifestyleStore = {
     return {
       paidMonth: Math.max(0, Math.floor(Number(raw.paidMonth) || 0)),
       paidPeriod: raw.paidPeriod === null || raw.paidPeriod === undefined || !Number.isFinite(pp) ? null : Math.floor(pp),
-      history: Array.isArray(raw.history) ? deepClone(raw.history) : []
+      history: Array.isArray(raw.history) ? deepClone(raw.history) : [],
+      // 2070s: the month (billing period) of the last rent-day Humanity check, and when one is due
+      humanityPeriod: Number.isFinite(Number(raw.humanityPeriod)) && raw.humanityPeriod !== null ? Math.floor(Number(raw.humanityPeriod)) : null,
+      humanityDue: Number.isFinite(Number(raw.humanityDue)) && raw.humanityDue !== null ? Math.floor(Number(raw.humanityDue)) : null
     };
   },
 

@@ -1,0 +1,105 @@
+{
+  "_id": "upxyG28FisPSpvm6",
+  "_key": "!items!upxyG28FisPSpvm6",
+  "name": "HerbalCare Direct",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/herbal.svg",
+  "folder": "pSZvQlPnIE2BFEcl",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p>The better supplement subscription. <strong>+1 Athletics</strong> and <strong>+1 HP recovered per day</strong>.</p><p>Needs a Generic PrePak lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Membership: <strong>100eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "vTFHC1p1H8ffbOUW",
+      "_key": "!items.effects!upxyG28FisPSpvm6.vTFHC1p1H8ffbOUW",
+      "name": "HerbalCare Direct",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/herbal.svg",
+      "changes": [
+        {
+          "key": "bonuses.athletics",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 100,
+        "minTier": 2,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

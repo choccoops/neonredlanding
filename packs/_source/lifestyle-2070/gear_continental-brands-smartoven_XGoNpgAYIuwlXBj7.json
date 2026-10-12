@@ -1,0 +1,104 @@
+{
+  "_id": "XGoNpgAYIuwlXBj7",
+  "_key": "!items!XGoNpgAYIuwlXBj7",
+  "name": "Continental Brands SmartOven",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/oven.svg",
+  "folder": "CJXsYfb7yBuJLCun",
+  "sort": 800,
+  "system": {
+    "description": {
+      "value": "<p>Fifty cooking modes from PrePak to fresh food, and a KibbleSuite that turns kibble into something hot. <strong>+1 Basic Tech</strong>.</p><p>For Generic PrePak lifestyles and up: once a month, cook a Professional Meal (3 hours of downtime, a Basic Tech check and food ingredients as materials). Shared with everyone living there, it can restore Humanity, more for better ingredients and a better roll.</p><p>Houseware can't be fabricated or haggled over, and only Fixers source it: bought from a catalogue it costs four times as much.</p><p><strong>1,000eb</strong> · 1 slot.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "OxVHTlBd7mvYc8P5",
+      "_key": "!items.effects!XGoNpgAYIuwlXBj7.OxVHTlBd7mvYc8P5",
+      "name": "Continental Brands SmartOven",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/oven.svg",
+      "changes": [
+        {
+          "key": "bonuses.basicTech",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "houseware",
+        "slots": 1,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

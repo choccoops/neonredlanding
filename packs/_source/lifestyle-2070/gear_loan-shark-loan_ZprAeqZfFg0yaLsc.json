@@ -1,0 +1,65 @@
+{
+  "_id": "ZprAeqZfFg0yaLsc",
+  "_key": "!items!ZprAeqZfFg0yaLsc",
+  "name": "Loan Shark Loan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/loan.svg",
+  "folder": "w86xpFe7pLFp58bb",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Fast money from whichever shark will deal with you, at any lifestyle. Interest every month until you pay off the whole principal.</p><p>Loan terms are found in play and vary a lot: set this one's principal and rate when you add it (or in its Lifestyle settings). Shark or bank, they get their money back.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "loan",
+        "monthly": 100,
+        "loan": {
+          "kind": "interest",
+          "principal": 1000,
+          "ratePct": 10
+        },
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

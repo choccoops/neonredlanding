@@ -9,6 +9,7 @@ import {
   payoffAmount, loanTerms, packagesToDeactivate, pushHistory, billStatus
 } from "./ls-data.js";
 import { LifestyleStore, LS_ACTOR_FLAG } from "./ls-store.js";
+import { Lifestyle2070 } from "./ls-2070-ops.js";
 
 const { hasProperty, getProperty } = foundry.utils;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -19,7 +20,7 @@ const eb = (n) => `${Math.round(Number(n) || 0).toLocaleString(game.i18n.lang)}e
 export const own = () => ({ neonHub: "lifestyle" });
 
 /** Owners may always do these to their own character: they only spend that character's money. */
-const OWNER_OPS = new Set(["pay", "payoff", "buyHome", "call"]);
+const OWNER_OPS = new Set(["pay", "payoff", "buyHome", "call", "makeArt"]);
 /** Owners may do these when the GM lets players manage their own lifestyle. */
 const MANAGE_OPS = new Set(["add", "toggle", "remove", "setAmount"]);
 /** What a player can ask the GM to do. */
@@ -103,6 +104,9 @@ export class LifestyleOps {
       case "markPaid": return this.markPaid(payload.actor, payload.paid);
       case "newMonth": return this.newMonth(payload);
       case "billAll": return this.billAll({ user });
+      case "makeArt": return Lifestyle2070.makeArt(payload.actor, payload.art, { user });
+      case "humanityCheck": return Lifestyle2070.humanityCheck(payload.actor, payload.ticked);
+      case "incident": return Lifestyle2070.incident(payload.actors, payload.incident);
       default: throw new Error(`Unknown lifestyle operation: ${op}`);
     }
   }
@@ -163,8 +167,10 @@ export class LifestyleOps {
   static async pay(actorUuid, { user = game.user, card = true } = {}) {
     const actor = await this.#actor(actorUuid);
     if (!CPR.hasWealth(actor)) throw new Error(L("NEONHUB.Error.NoWealth", { name: actor.name }));
-    const { items, due, state, billing, wallet } = this.billFor(actor);
-    if (!due) throw new Error(L("NEONHUB.Lifestyle.Error.AlreadyPaid", { name: actor.name }));
+    if (!this.billFor(actor).due) throw new Error(L("NEONHUB.Lifestyle.Error.AlreadyPaid", { name: actor.name }));
+    // 2070s: on rent day, waiting memberships start and lapsed ones are cancelled before the bill.
+    const changes = LifestyleStore.rules2070 ? await Lifestyle2070.rentDay(actor) : { started: [], cancelled: [] };
+    const { due, state, billing, wallet } = this.billFor(actor);
     if (!LifestyleStore.allowDebt && wallet < due.total) {
       throw new Error(L("NEONHUB.Error.ShortFunds", { names: `${actor.name} (${eb(wallet)}/${eb(due.total)})` }));
     }
@@ -193,10 +199,12 @@ export class LifestyleOps {
     const record = { ...state, history: pushHistory(state.history, entry) };
     if (billing.mode === "calendar") record.paidPeriod = billing.period;
     else record.paidMonth = billing.period;
+    // 2070s: paying opens the month's environmental Humanity check (the GM rolls it).
+    if (LifestyleStore.rules2070) record.humanityDue = billing.period;
     await actor.setFlag(MODULE_ID, LS_ACTOR_FLAG, record);
     await this.syncActor(actor);
 
-    const result = { actor, bill: due, label, before: wallet, after, finished: finishedNames, reminders: reminders(LifestyleStore.items(actor)) };
+    const result = { actor, bill: due, label, before: wallet, after, finished: finishedNames, reminders: reminders(LifestyleStore.items(actor)), ...changes, humanityDue: LifestyleStore.rules2070 };
     if (card) await this.postBill(result);
     return result;
   }
@@ -278,7 +286,7 @@ export class LifestyleOps {
     }
   }
 
-  static async postBill({ actor, bill, label, before, after, finished, reminders: notes }) {
+  static async postBill({ actor, bill, label, before, after, finished, reminders: notes, started = [], cancelled = [], humanityDue = false }) {
     const groups = GROUPS.map((g) => ({
       label: L(`NEONHUB.Lifestyle.Group.${g}`),
       total: bill.groups[g],
@@ -297,6 +305,9 @@ export class LifestyleOps {
       after: eb(after),
       debt: after < 0,
       finished,
+      started: started.join(", "),
+      cancelled: cancelled.join(", "),
+      humanityDue,
       notes: notes.map((r) => (r.kind === "roughNight"
         ? L("NEONHUB.Lifestyle.Reminder.RoughNight", { name: r.name, dv: r.dv })
         : L("NEONHUB.Lifestyle.Reminder.Check", { name: r.name, skill: r.skill, dv: r.dv }))),
@@ -343,11 +354,16 @@ export class LifestyleOps {
       if (terms.monthly !== null) ls.monthly = terms.monthly;
       if (ls.loan.kind === "installment") ls.loan.monthsLeft = terms.monthsLeft;
       cash = terms.cash;
-    } else if (CATEGORIES[ls.category].oneTime && data.system.price?.market > 0) {
-      cash = -Math.floor(data.system.price.market);
+    } else if (ls.upfront || (CATEGORIES[ls.category].oneTime && data.system.price?.market > 0)) {
+      cash = -Math.floor(ls.upfront || data.system.price.market);
       if (CPR.getWealth(actor) + cash < 0) {
         throw new Error(L("NEONHUB.Error.ShortFunds", { names: `${actor.name} (${eb(CPR.getWealth(actor))}/${eb(-cash)})` }));
       }
+    }
+    // 2070s: memberships need the lifestyle for them, and once this month is paid they start on rent day.
+    if (LifestyleStore.rules2070 && Lifestyle2070.addRule(actor, ls).pending) {
+      ls.pending = true;
+      data.system.equipped = "owned";
     }
     data.flags[MODULE_ID][LS_FLAG] = ls;
 
@@ -371,7 +387,9 @@ export class LifestyleOps {
     const actor = await this.#actor(actorUuid);
     const item = this.#item(actor, itemId);
     const on = active ?? item.system.equipped !== "equipped";
-    await item.update({ "system.equipped": on ? "equipped" : "owned" }, own());
+    if (on && LifestyleStore.rules2070) Lifestyle2070.toggleRule(actor, this.#describe(actor, itemId));
+    const pending = on && game.user.isGM ? { [`flags.${MODULE_ID}.${LS_FLAG}.pending`]: false } : {};
+    await item.update({ "system.equipped": on ? "equipped" : "owned", ...pending }, own());
     if (on) await this.keepOnePackage(actor, itemId);
     await this.syncActor(actor);
   }

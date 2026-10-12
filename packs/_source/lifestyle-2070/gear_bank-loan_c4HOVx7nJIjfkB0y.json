@@ -1,0 +1,68 @@
+{
+  "_id": "c4HOVx7nJIjfkB0y",
+  "_key": "!items!c4HOVx7nJIjfkB0y",
+  "name": "Bank Loan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/bank.svg",
+  "folder": "w86xpFe7pLFp58bb",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>Arasaka Financial, Asukaga & Finch and their kind: fairer terms if your credit's good. A down payment, then fixed monthly payments until it's done.</p><p>Needs a Good PrePak lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Loan terms are found in play and vary a lot: set this one's principal and rate when you add it (or in its Lifestyle settings). Shark or bank, they get their money back.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 0
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "loan",
+        "monthly": 0,
+        "minTier": 3,
+        "loan": {
+          "kind": "installment",
+          "principal": 0,
+          "ratePct": 5,
+          "downPct": 10,
+          "termMonths": 24
+        },
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

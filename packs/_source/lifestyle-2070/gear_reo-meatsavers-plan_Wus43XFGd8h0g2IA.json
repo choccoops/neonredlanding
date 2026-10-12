@@ -1,0 +1,62 @@
+{
+  "_id": "Wus43XFGd8h0g2IA",
+  "_key": "!items!Wus43XFGd8h0g2IA",
+  "name": "REO Meatsavers Plan",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/meatwagon.svg",
+  "folder": "A64mtawnpvJq1dAW",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>REO's armoured meatwagons will haul you off any corner. Calling them takes an Action; they arrive in <strong>1d12 rounds</strong> in combat, ten minutes otherwise.</p><p><ul><li>Paramedics stabilize you with cryopumps; no Surgery and no cryotank storage.</li><li>You stay in stasis until healed at your natural rate, at 200eb per day of recovery.</li><li>Addiction Therapy is available at REO's affiliated facilities (at its cost).</li><li>They're not reliable: they may pad the bill, extort you, or leave if it gets too hot.</li></ul></p><p>Needs a Generic PrePak lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Health plan: <strong>250eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 250
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "health",
+        "monthly": 250,
+        "minTier": 2,
+        "response": "1d12",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

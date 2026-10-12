@@ -1,0 +1,61 @@
+{
+  "_id": "c5GypPPsFBMRa1mJ",
+  "_key": "!items!c5GypPPsFBMRa1mJ",
+  "name": "Discount Supplement Shack",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/supplements.svg",
+  "folder": "pSZvQlPnIE2BFEcl",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Herbal supplements mailed to a permanent address each month. <strong>+1 HP recovered per day</strong>.</p><p>Without a Chemical Analyzer you can't be sure what's in the bottle: once a month the GM may swap the effect for another drug's.</p><p>Needs a Kibble lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Membership: <strong>50eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 50,
+        "minTier": 1,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

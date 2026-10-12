@@ -1,0 +1,65 @@
+{
+  "_id": "OAvBZDLqA7V1vvlG",
+  "_key": "!items!OAvBZDLqA7V1vvlG",
+  "name": "Megabuilding Pod",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/megabuilding.svg",
+  "folder": "W6c4gy1KCShUDwl8",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p>A pod in a megabuilding: one bedroom, sleeps two, 1 houseware slot, no parking. Buy it outright for 15,000eb.</p><p>The megabuilding-or-worse Humanity Loss roll each month.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "housing",
+        "monthly": 1000,
+        "buyPrice": 15000,
+        "sleeps": 2,
+        "rooms": 1,
+        "slots": 1,
+        "env": "worse",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

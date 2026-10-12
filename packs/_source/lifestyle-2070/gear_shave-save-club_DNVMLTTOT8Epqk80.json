@@ -1,0 +1,105 @@
+{
+  "_id": "DNVMLTTOT8Epqk80",
+  "_key": "!items!DNVMLTTOT8Epqk80",
+  "name": "Shave & Save Club",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/razor.svg",
+  "folder": "pSZvQlPnIE2BFEcl",
+  "sort": 400,
+  "system": {
+    "description": {
+      "value": "<p>Fresh blades at your door every month. <strong>+1 Personal Grooming</strong>.</p><p>Needs a Generic PrePak lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Membership: <strong>50eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 50
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "OwEuoMmKiXOINlgG",
+      "_key": "!items.effects!DNVMLTTOT8Epqk80.OwEuoMmKiXOINlgG",
+      "name": "Shave & Save Club",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/razor.svg",
+      "changes": [
+        {
+          "key": "bonuses.personalGrooming",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 50,
+        "minTier": 2,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

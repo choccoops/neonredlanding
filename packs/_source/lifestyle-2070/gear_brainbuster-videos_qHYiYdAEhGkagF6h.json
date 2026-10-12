@@ -1,0 +1,105 @@
+{
+  "_id": "qHYiYdAEhGkagF6h",
+  "_key": "!items!qHYiYdAEhGkagF6h",
+  "name": "BrainBuster Videos",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/braindance.svg",
+  "folder": "pSZvQlPnIE2BFEcl",
+  "sort": 200,
+  "system": {
+    "description": {
+      "value": "<p>Viewing pods across the city and a braindance library to download by Agent. <strong>+1 Streetwise</strong>.</p><p>Full-sensory formats need a Neuralware link; watching at home needs a Braindance Viewer.</p><p>Needs a Kibble lifestyle or better; it's cancelled if you drop below. Bought mid-month, it starts on rent day.</p><p>Membership: <strong>10eb a month</strong>.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 10
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "URFF9pMFADhAzuZ2",
+      "_key": "!items.effects!qHYiYdAEhGkagF6h.URFF9pMFADhAzuZ2",
+      "name": "BrainBuster Videos",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/braindance.svg",
+      "changes": [
+        {
+          "key": "bonuses.streetwise",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "membership",
+        "monthly": 10,
+        "minTier": 1,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

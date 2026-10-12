@@ -1,0 +1,116 @@
+{
+  "_id": "37Ze89WpYwGNBm0i",
+  "_key": "!items!37Ze89WpYwGNBm0i",
+  "name": "Kibble",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/kibble.svg",
+  "folder": "ghEG71OJAiaHZeSA",
+  "sort": 100,
+  "system": {
+    "description": {
+      "value": "<p>Two meals of Kibble a day, in whichever flavours the nearest Oasis has stocked this month. A CitiNet account gets you the Data Pool, calls and texts, and one 20eb night out a week.</p><p>Hard to keep your edge on it: <strong>−1 COOL and WILL</strong> while you live on Kibble. On rent day, choosing Kibble again costs Humanity (both Kibble effects in the monthly check).</p><p>Lifestyle package: <strong>100eb a month</strong>. Opens the Kibble-tier memberships.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "ztiu9CabnDu69wjv",
+      "_key": "!items.effects!37Ze89WpYwGNBm0i.ztiu9CabnDu69wjv",
+      "name": "Kibble",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/kibble.svg",
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "system.stats.will.value",
+          "mode": 2,
+          "value": "-1"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "lifestyle",
+        "monthly": 100,
+        "tier": 1,
+        "env": "kibble",
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

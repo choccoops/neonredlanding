@@ -1,0 +1,10 @@
+<div class="neon-hub-chat nh-ls-chat nh-ls-hcard">
+  <header><i class="fa-solid {{#if gain}}fa-heart{{else}}fa-heart-crack{{/if}}"></i> <strong>{{label}}</strong> &middot; {{#if gain}}{{localize "NEONHUB.Lifestyle.Incident.gain"}}{{else}}{{localize "NEONHUB.Lifestyle.Incident.loss"}}{{/if}} {{dice}}</header>
+  <ul>
+    {{#each rows}}
+    <li><span><b>{{name}}</b> <small>{{result}}{{#if mod}} +{{mod}}{{/if}}</small></span><span class="{{#unless ../gain}}nh-due{{/unless}}">{{#if ../gain}}+{{else}}&minus;{{/if}}{{applied}} &middot; {{before}} &rarr; {{after}}</span></li>
+    {{#if capped}}<li class="nh-ls-note"><small>{{localize "NEONHUB.Lifestyle.Incident.Capped"}}</small></li>{{/if}}
+    {{#if psycho}}<li class="nh-due"><small><i class="fa-solid fa-skull"></i> {{localize "NEONHUB.Lifestyle.Humanity.Psycho"}}</small></li>{{/if}}
+    {{/each}}
+  </ul>
+</div>

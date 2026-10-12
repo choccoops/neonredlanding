@@ -1,0 +1,104 @@
+{
+  "_id": "mzte6qB1Wof1VbEh",
+  "_key": "!items!mzte6qB1Wof1VbEh",
+  "name": "All-Purpose Soundproofing",
+  "type": "gear",
+  "img": "modules/cpr-neon-hub/assets/lifestyle/soundproof.svg",
+  "folder": "CJXsYfb7yBuJLCun",
+  "sort": 700,
+  "system": {
+    "description": {
+      "value": "<p>K-Tech soundproofing for one room: not a sound gets in.</p><p><strong>+2 to Concentration checks</strong> at home. May break corporate housing contracts: check with HR first.</p><p>Houseware can't be fabricated or haggled over, and only Fixers source it: bought from a catalogue it costs four times as much.</p><p><strong>1,000eb</strong> · 1 slot.</p>"
+    },
+    "favorite": false,
+    "source": {
+      "book": "Homebrew: Living & Humanity Rework",
+      "page": 0
+    },
+    "revealed": true,
+    "usage": "equipped",
+    "isElectronic": false,
+    "providesHardening": false,
+    "equipped": "owned",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "brand": "",
+    "amount": 1,
+    "price": {
+      "market": 1000
+    },
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "usedSlots": 0,
+      "slots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "bEOjz4NkNAlhtRU1",
+      "_key": "!items.effects!mzte6qB1Wof1VbEh.bEOjz4NkNAlhtRU1",
+      "name": "All-Purpose Soundproofing",
+      "img": "modules/cpr-neon-hub/assets/lifestyle/soundproof.svg",
+      "changes": [
+        {
+          "key": "bonuses.concentration",
+          "mode": 2,
+          "value": "2"
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "statuses": [],
+      "tint": "#ffffff",
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cpr-neon-hub": {
+      "lifestyle": {
+        "category": "houseware",
+        "slots": 1,
+        "era": "2070"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_stats": {
+    "systemId": "cyberpunk-red-core",
+    "systemVersion": "0.92.4",
+    "coreVersion": "12.331"
+  }
+}

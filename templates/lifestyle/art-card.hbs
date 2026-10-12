@@ -1,0 +1,15 @@
+<div class="neon-hub-chat nh-ls-chat nh-ls-acard">
+  <header><i class="fa-solid fa-palette"></i> <strong>{{name}}</strong> &middot; &ldquo;{{title}}&rdquo;</header>
+  <p>{{skill}} &middot; {{tier}} &middot; DV{{dv}}</p>
+  <ul class="nh-ls-totals">
+    <li><span>{{localize "NEONHUB.Lifestyle.Art.Rolled"}}{{#if crit}} <small>({{localize "NEONHUB.Lifestyle.Art.Crit"}})</small>{{/if}}{{#if fumble}} <small class="nh-due">({{localize "NEONHUB.Lifestyle.Art.Fumble"}})</small>{{/if}}</span><b class="{{#unless success}}nh-due{{/unless}}">{{total}}</b></li>
+    {{#if second}}{{#unless second.missing}}<li><span>{{second.skill}}</span><b>{{second.total}}{{#if second.reached}} &middot; {{second.reached}}{{/if}}</b></li>{{/unless}}{{/if}}
+    <li><span>{{localize "NEONHUB.Lifestyle.Art.Spent"}}</span><b>{{spent}}</b></li>
+  </ul>
+  {{#if success}}
+  <p><i class="fa-solid fa-circle-check"></i> {{localize "NEONHUB.Lifestyle.Art.Done" hg=hg}}</p>
+  {{#if second.missing}}<p class="nh-ls-note">{{localize "NEONHUB.Lifestyle.Art.NoPerformer" skill=second.skill}}</p>{{/if}}
+  {{else}}
+  <p class="nh-due"><i class="fa-solid fa-circle-xmark"></i> {{localize "NEONHUB.Lifestyle.Art.Failed"}}</p>
+  {{/if}}
+</div>

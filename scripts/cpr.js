@@ -1,4 +1,5 @@
 import { MODULE_ID, ROLES } from "./constants.js";
+import { cprSlug } from "./lifestyle/ls-data.js";
 
 const { getProperty, hasProperty, deepClone } = foundry.utils;
 
@@ -79,6 +80,46 @@ export const CPR = {
       }
     }
     return gained;
+  },
+
+  /**
+   * Take Humanity away (it can go below zero: Cyberpsychosis), record it in the Humanity
+   * ledger and let CPR re-sync EMP. Maximum Humanity is untouched.
+   * @returns {number} the amount lost
+   */
+  async loseHumanity(actor, amount, reason) {
+    if (!this.hasHumanity(actor)) return 0;
+    const lost = Math.max(0, Math.floor(amount));
+    if (!lost) return 0;
+    const total = this.getHumanity(actor).value - lost;
+    const update = { "system.derivedStats.humanity.value": total };
+    const ledger = getProperty(actor, "system.derivedStats.humanity.transactions");
+    if (Array.isArray(ledger)) {
+      update["system.derivedStats.humanity.transactions"] = [
+        ...deepClone(ledger),
+        [this._ledgerSentence("humanity", -lost, total), `${reason} - ${game.user.name}`]
+      ];
+    }
+    await actor.update(update);
+    if (typeof actor.setMaxHumanity === "function") {
+      try {
+        await actor.setMaxHumanity();
+      } catch (err) {
+        console.warn(`${MODULE_ID} | setMaxHumanity failed for ${actor.name}`, err);
+      }
+    }
+    return lost;
+  },
+
+  /** A skill's roll base on an actor: STAT + level + Active Effect bonus, or null if they lack it. */
+  skillBase(actor, skillName) {
+    const skill = actor?.items?.find((i) => i.type === "skill" && i.name === skillName);
+    if (!skill) return null;
+    const stat = String(getProperty(skill, "system.stat") ?? "");
+    const statValue = Number(getProperty(actor, `system.stats.${stat}.value`)) || 0;
+    const level = Number(getProperty(skill, "system.level")) || 0;
+    const bonus = Number(actor?.bonuses?.[cprSlug(skillName)]) || 0;
+    return { stat, statValue, level, bonus, base: statValue + level + bonus };
   },
 
   /* ---------------------------------------- */

@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.9.0
+
+Lifestyle for the 2070s, from a Living & Humanity Rework homebrew, alongside the 2045 Lifestyle.
+
+- **Lifestyle era.** A world setting picks the era per campaign: **2045 (Time of the Red)**, the original catalog and the default, or the **2070s**. World homebrew can belong to one era or both.
+- **Neon Hub: Lifestyle (2070s)** compendium, 88 items: the four 2070s lifestyle packages with their stat changes; memberships and health plans by lifestyle tier with their skill bonuses and arrival rolls; transit from the bus to the lifetime Delamain Excelsior, four fuels, a screamsheet, loan sharks and bank loans; real estate from the street to North Oak with houseware slots and Humanity tax or credit, and Living in a Ship; nine furnishing sets with their Humanity modifiers; houseware; art pieces; therapy and Immunoblockers for reference; homebrew templates. The existing pack is now labelled Lifestyle (2045).
+- **Rent day (2070s).** Memberships bought mid-month start on rent day, and lapse when the lifestyle drops below them. Paying opens the month's **environmental Humanity check**: the GM ticks what happened, Neon Hub fills in what the lifestyle brings, rolls it all with the furnishing modifiers, housing tax or credit and displayed art, adds Living the good life when earned, and applies the net through the Humanity ledger.
+- **Humanity incidents.** One-time Humanity Loss and Gain rolls for any characters, from the incident tables or custom dice.
+- **Houseware and art.** Housing has slots, houseware fills them, and the Lifestyle window shows slots, sleepers, furnishings and art on display. **Make art** pays the materials, rolls the art skill against the quality's DV and adds the piece; music and acting can be performed for more.
+- New item settings: era, up-front price, housing slots, Humanity tax and credit, the monthly Humanity effect, furnishing quality and modifiers, houseware slots, displays and extra sleepers, art Humanity. Cabs can be called like health plans.
+- New icons for houseware, art, ships, megabuildings, Delamain, therapy and more.
+
 ## 1.8.0
 
 - **Pop the month out.** A button beside the month picker moves the month grid into its own resizable window, so the calendar window keeps the date, time, rent, forecast and notes without crowding. Popped out, each day names its weather under the date. The two windows stay in step (pick a day in the month to read its notes; the GM's double-click still sets the date), and closing the month window docks it again. Each user's choice is remembered.

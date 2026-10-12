@@ -88,6 +88,9 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
   the pointer** in the page settings. Pages built before 1.4.0 need one **Rebuild** to get it.
   Lighting up works from the token layer, like MATT's hover triggers. If a button doesn't light up,
   `game.modules.get("cpr-neon-hub").api.hoverStatus()` in the console lists the lit images loaded.
+
+  ![Hub buttons idle and lit on hover](docs/hub-hover.webp)
+
 - **GM only** buttons are hidden from players and only respond to the GM.
 - Want buttons in exact spots? Set **Button layout** to *Keep tiles where I put them* and rebuild
   once (the tiles unlock), move or resize them on the scene, then rebuild again. Each button is redrawn at its new size.
@@ -236,7 +239,7 @@ active housing, lifestyle package and health plans into the actor's `system.life
 
 ## Calendar
 
-![Calendar with day notes](docs/calendar.webp)
+![Calendar with the time strip, weekly forecast, weather on each day and the GM's weather note](docs/calendar.webp)
 
 Open it from the calendar button in the left toolbar (Token Controls), a hub button set to *Open
 calendar*, or the Lifestyle window. It works with no scene on the canvas.
@@ -246,6 +249,8 @@ a window of its own, leaving the calendar window to the date, time, rent, foreca
 Popped out, days have room to name their weather. Both windows stay in step: pick a day in the
 month to read its notes in the calendar, and the GM can still double-click a day to set the date.
 Close the month window (or **Back into the calendar**) to dock it again; it remembers your choice.
+
+![The calendar with its month popped out into its own window](docs/calendar-popout.webp)
 
 **Calendars per group.** The GM makes a calendar for each group of edgerunners, with its own
 name, color, date, rent day and players. Players see the calendars open to them (no players ticked
@@ -323,6 +328,9 @@ world clock that SmallTime shows:
   Sun times come from SmallTime's sunrise and sunset; the moon rises with the sun when new and at
   sunset when full, about 50 minutes later each day, using its real phase. **Call it off** closes
   it for everyone. Up to 24 hours at a time.
+
+  ![Skip time winding through sunset, with the group's votes](docs/skip-time.webp)
+
 - **SmallTime's moon** is set to the real Moon's phase on the date of the first calendar that moves
   with the clock, which also drives SmallTime's moonlight darkness. Turn off *SmallTime shows the
   real Moon* to set it by hand in SmallTime.
@@ -330,6 +338,8 @@ world clock that SmallTime shows:
 **Night City weather.** Weather from R. Talsorian's free **Night City Weather** for Cyberpunk RED.
 Neon Hub uses its dice tables; the rules summaries are Neon Hub's own short versions, with core
 rulebook pages.
+
+![The Weather window: planning, the weekly forecast and which weather can happen](docs/weather.webp)
 
 - **Planning (GM).** The cloud button on a calendar (or **Weather** on its forecast strip) plans
   days ahead from the calendar's date. Each day rolls a temperature and a sky (Clear, Overcast,
@@ -352,6 +362,8 @@ rulebook pages.
   distance, and short strange weather shows only as a chance ("Acid Rain possible: 30%") that can
   be missed or a false alarm. Obvious multi-day storms are called; blackouts never are. Players
   find out for sure on the day: the forecast strip shows today's real weather.
+
+![A player's calendar: past days as they were, the forecast dashed, nothing further ahead](docs/calendar-player.webp)
 
 **Settings.** *Calendar time zone* and *SmallTime shows the real Moon* (world). *First day of the
 week*, *Show moon phases* and *Notify on date change* (per player).

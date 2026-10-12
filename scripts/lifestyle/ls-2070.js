@@ -53,7 +53,6 @@ export function artHumanity(tier, extraMonths = 0) {
  */
 export const ENVIRONMENT = {
   // Humanity loss
-  kibble: { kind: "loss", dice: "1d6", auto: true },
   nonFresh: { kind: "loss", dice: "1d6", auto: true },
   megabuilding: { kind: "loss", dice: "1d6", auto: true },
   corp: { kind: "loss", dice: "1d6", count: true },
@@ -89,21 +88,27 @@ export const INCIDENTS = {
   }
 };
 
-/** Housing `env`: which effects living there brings, and what it does to the megabuilding roll. */
+/**
+ * Housing `env`: which effects living there brings, and what it does to the megabuilding roll.
+ * The street's 3d6 for living rough is the GM's call each month (it's a tick, not automatic).
+ */
 const HOUSING_ENV = {
   worse: [["megabuilding"]],
   vehicle: [["megabuilding", "2d6"]],
-  streets: [["megabuilding"], ["warZone"]],
+  streets: [["megabuilding"]],
   upscale: [["upscale"]],
   ship: [["upscale"], ["outside"]]
 };
 
-/** Lifestyle package `env`. */
+/** Lifestyle package `env`. Kibble is below Good PrePak like Generic PrePak, and adds a flat tax. */
 const PACKAGE_ENV = {
-  kibble: [["kibble"], ["nonFresh"]],
+  kibble: [["nonFresh"]],
   nonFresh: [["nonFresh"]],
   fresh: [["freshFood"]]
 };
+
+/** The Humanity tax of living on Kibble, each month. */
+export const KIBBLE_TAX = 2;
 
 const active = (items, category) => items.filter((d) => d?.active && d.category === category);
 
@@ -162,7 +167,8 @@ export function artOnDisplay(items) {
 
 /**
  * Which environmental effects this month brings on its own, from the character's items.
- * @returns {{ effects: {key, dice}[], tax, credit, lossMod, gainMod, art }}
+ * `taxes` says where the tax comes from (the home, Kibble); `tax` is their total.
+ * @returns {{ effects: {key, dice}[], taxes: {key, n}[], tax, credit, lossMod, gainMod, art }}
  */
 export function automaticEffects(items) {
   const effects = [];
@@ -174,9 +180,13 @@ export function automaticEffects(items) {
   const home = primaryHome(items);
   for (const [key, dice] of HOUSING_ENV[home?.env] ?? []) add(key, dice);
   const furnishing = bedroomFurnishing(items);
+  const taxes = [];
+  if (pkg?.env === "kibble") taxes.push({ key: "kibble", n: KIBBLE_TAX });
+  if (home?.tax) taxes.push({ key: "home", n: home.tax });
   return {
     effects,
-    tax: home?.tax ?? 0,
+    taxes,
+    tax: taxes.reduce((n, t) => n + t.n, 0),
     credit: home?.credit ?? 0,
     lossMod: furnishing?.lossMod ?? 0,
     gainMod: furnishing?.gainMod ?? 0,
@@ -209,7 +219,7 @@ export function monthlyCheck(items, ticked = {}) {
   const losses = rolls.filter((r) => r.kind === "loss").length;
   if (gains >= 4 && losses < 3) rolls.push({ key: "goodLife", kind: "gain", dice: ENVIRONMENT.goodLife.dice, auto: true });
   for (const r of rolls) r.mod = r.kind === "loss" ? auto.lossMod : auto.gainMod;
-  return { rolls, tax: auto.tax, credit: auto.credit, art: auto.art, lossMod: auto.lossMod, gainMod: auto.gainMod };
+  return { rolls, taxes: auto.taxes, tax: auto.tax, credit: auto.credit, art: auto.art, lossMod: auto.lossMod, gainMod: auto.gainMod };
 }
 
 /**

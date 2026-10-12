@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.9.2
+
+- **2070s Kibble:** living on Kibble is now a flat **2 Humanity tax** each month plus the 1d6 for living below Good PrePak, instead of two 1d6 rolls. Kibble already on characters follows the new rule without being re-added. The rent-day check lists each tax (Kibble, home) on its own line.
+- **2070s Living on the Street:** the 6 Humanity tax and the megabuilding-or-worse 1d6 each month; the 3d6 for living on the streets is now the GM's tick in the rent-day check, for when it fits what happened, instead of automatic. Homes already on characters follow this too.
+
 ## 1.9.1
 
 - **2070s catalog:** each membership shows one *Needs Kibble / Generic PrePak / Good PrePak / Fresh Food* badge, with a lock when the character's lifestyle is below it, instead of the 2045 "in packages from tier" badge as well.

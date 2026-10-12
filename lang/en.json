@@ -828,10 +828,10 @@
           "none": "None",
           "worse": "Megabuilding or worse (1d6 loss)",
           "vehicle": "Vehicle (2d6 loss)",
-          "streets": "The street (1d6 + 3d6 loss)",
+          "streets": "The street (1d6 loss; the 3d6 is the GM's tick)",
           "upscale": "Upscale or better (2d6 gain)",
           "ship": "Ship (2d6 + 1d6 gain)",
-          "kibble": "Kibble (2 × 1d6 loss)",
+          "kibble": "Kibble (1d6 loss + 2 tax)",
           "nonFresh": "Below Good PrePak (1d6 loss)",
           "fresh": "Fresh Food (2d6 gain)"
         },
@@ -867,12 +867,12 @@
       },
       "CatalogEra": "Catalog: {era}. Change the era in the module settings.",
       "EnvBadge": {
-        "kibble": "Humanity Loss 2 × 1d6 a month",
+        "kibble": "Humanity Loss 1d6 + 2 tax a month",
         "nonFresh": "Humanity Loss 1d6 a month",
         "fresh": "Humanity Gain 2d6 a month",
         "worse": "Humanity Loss 1d6 a month",
         "vehicle": "Humanity Loss 2d6 a month",
-        "streets": "Humanity Loss 1d6 + 3d6 a month",
+        "streets": "Humanity Loss 1d6 a month",
         "upscale": "Humanity Gain 2d6 a month",
         "ship": "Humanity Gain 2d6 + 1d6 a month"
       },
@@ -900,7 +900,7 @@
         "Gains": "Humanity Gain",
         "GoodLife": "Four or more Humanity Gain effects with fewer than three Humanity Loss effects add Living the good life (3d6). Gains never go above maximum Humanity.",
         "Roll": "Roll it",
-        "Tax": "Housing Humanity tax",
+        "Tax": "Humanity tax",
         "Credit": "Housing Humanity credit",
         "Art": "Art on display",
         "LossMod": "Furnishings: +{n} to each Humanity Loss roll",
@@ -910,10 +910,14 @@
         "Capped": "{n} Humanity Gain lost to the maximum.",
         "Psycho": "Humanity at 0 or below: Cyberpsychosis.",
         "Ledger": "Rent-day Humanity, {month}",
-        "CardTitle": "Rent-day Humanity, {month}"
+        "CardTitle": "Rent-day Humanity, {month}",
+        "TaxFrom": {
+          "kibble": "Living on Kibble (tax)",
+          "home": "Where they live (tax)"
+        },
+        "TaxMod": "Furnishings: +{n} to the tax"
       },
       "Env": {
-        "kibble": "Chose Kibble for the new month",
         "nonFresh": "Lived on less than Good PrePak last month",
         "megabuilding": "Slept in a megabuilding or worse",
         "corp": "Worked for a corp (each)",

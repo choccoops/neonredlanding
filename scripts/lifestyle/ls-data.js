@@ -297,6 +297,8 @@ export function billStatus({ paidMonth = 0, month = 1, wallet = 0, owed } = {}) 
 export function excerpt(html, max = 160) {
   const text = String(html ?? "")
     .replace(/@UUID\[[^\]]*\]\{([^}]*)\}/g, "$1")
+    // Inline tags join their text; block tags break it with a space.
+    .replace(/<\/?(?:strong|b|em|i|u|span|a|small|sub|sup)\b[^>]*>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")

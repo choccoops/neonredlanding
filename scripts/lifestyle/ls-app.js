@@ -418,14 +418,16 @@ export class LifestyleApp extends HandlebarsApplicationMixin(ApplicationV2) {
         if (ls.category === "housing" && ls.sleeps) badges.push({ icon: "fa-solid fa-bed", text: L("NEONHUB.Lifestyle.Badge.Sleeps", { n: ls.sleeps }) });
         if (ls.category === "housing" && ls.roughNight) badges.push({ icon: "fa-solid fa-moon", text: L("NEONHUB.Lifestyle.Badge.RoughNight", { dv: ls.roughNight }), warn: true });
         if (ls.category === "lifestyle" && ls.tier) badges.push({ icon: "fa-solid fa-layer-group", text: L("NEONHUB.Lifestyle.Badge.Tier", { n: ls.tier }) + (ls.plus ? "+" : "") });
-        if (ls.minTier) badges.push({ icon: "fa-solid fa-utensils", text: L("NEONHUB.Lifestyle.Badge.MinTier", { n: ls.minTier }) });
+        if (ls.minTier && !LifestyleStore.rules2070) badges.push({ icon: "fa-solid fa-utensils", text: L("NEONHUB.Lifestyle.Badge.MinTier", { n: ls.minTier }) });
         if (ls.humanity) badges.push({ icon: "fa-solid fa-heart", text: L("NEONHUB.Lifestyle.Badge.Humanity", { n: ls.humanity }) });
         if (ls.check.skill && ls.check.dv) badges.push({ icon: "fa-solid fa-dice-d20", text: L("NEONHUB.Lifestyle.Badge.Check", { skill: ls.check.skill, dv: ls.check.dv }) });
         if (ls.response) badges.push({ icon: "fa-solid fa-stopwatch", text: L("NEONHUB.Lifestyle.Badge.Response", { formula: ls.response }) });
         badges.push(...this.#badges2070(ls));
         // 2070s: a membership above the character's lifestyle can't be taken (the GM can still add it).
         const locked = LifestyleStore.rules2070 && !isGM && ls.minTier > actorTier;
-        if (locked) badges.push({ icon: "fa-solid fa-lock", text: L("NEONHUB.Lifestyle.Badge.NeedsTier", { tier: L(`NEONHUB.Lifestyle.Tier.${ls.minTier}`) }), warn: true });
+        if (LifestyleStore.rules2070 && ls.minTier) {
+          badges.push({ icon: `fa-solid ${locked ? "fa-lock" : "fa-utensils"}`, text: L("NEONHUB.Lifestyle.Badge.NeedsTier", { tier: L(`NEONHUB.Lifestyle.Tier.${ls.minTier}`) }), warn: locked });
+        }
         const ask = !isGM && (ls.perk || !canManage);
         return {
           uuid: e.uuid,

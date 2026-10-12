@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.1
+
+- **2070s catalog:** each membership shows one *Needs Kibble / Generic PrePak / Good PrePak / Fresh Food* badge, with a lock when the character's lifestyle is below it, instead of the 2045 "in packages from tier" badge as well.
+- Item descriptions in the Lifestyle window no longer show a stray space before punctuation after bold text (both eras).
+- The rent-day Humanity check lines its two columns up at the top.
+- README: screenshots of the 2070s catalog and the rent-day Humanity check.
+
 ## 1.9.0
 
 Lifestyle for the 2070s, from a Living & Humanity Rework homebrew, alongside the 2045 Lifestyle.

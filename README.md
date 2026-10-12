@@ -271,9 +271,14 @@ numbers and mechanics are the homebrew's; the descriptions are Neon Hub's own.
 - The month's **environmental Humanity check** comes due. The GM opens it from the character's
   Lifestyle window or the month table: what their package, home, furnishings and displayed art
   bring is filled in, and the GM ticks the rest (worked for a corp, deaths, a loved one, a week off,
-  a true friend…). One click rolls it all, adds the furnishings' modifiers, the home's tax or credit
-  and the art, adds Living the good life when it applies, and applies the net change through the
-  Humanity ledger with a chat card. Gains stop at maximum Humanity; losses can reach Cyberpsychosis.
+  a true friend…). One click rolls it all, adds the furnishings' modifiers, the Humanity tax or
+  credit and the art, adds Living the good life when it applies, and applies the net change through
+  the Humanity ledger with a chat card. Gains stop at maximum Humanity; losses can reach Cyberpsychosis.
+- What comes automatically: Kibble is a 2 Humanity tax plus the 1d6 for living below Good PrePak;
+  Generic PrePak is the 1d6; Fresh Food a 2d6 gain. Homes add their tax or credit and roll: the
+  megabuilding-or-worse 1d6 (2d6 in a vehicle), the upscale 2d6 gain, and for a ship the 1d6 for
+  time outside the city too. Living on the street is a 6 tax and the 1d6; the 3d6 for living rough
+  is the GM's tick, for when it fits what happened.
 
 ![The GM's rent-day Humanity check: effects from the lifestyle filled in, the rest ticked by the GM](docs/lifestyle-2070-humanity.webp)
 

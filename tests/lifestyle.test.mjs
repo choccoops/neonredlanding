@@ -172,6 +172,7 @@ test("cprSlug matches CPR 0.92.4 SystemUtils.slugify", () => {
 
 test("excerpt and change labels", () => {
   assert.equal(excerpt("<p>Hello&nbsp;<b>choom</b></p>"), "Hello choom");
+  assert.equal(excerpt("<p>+1 <strong>Streetwise</strong>. Next</p><p>Two</p>"), "+1 Streetwise. Next Two", "inline tags don't leave a space before punctuation");
   assert.equal(excerpt("x".repeat(200), 10).length, 10);
   assert.equal(changeKeyLabel("system.stats.cool.value"), "COOL");
   assert.equal(changeKeyLabel("bonuses.wardrobeAndStyle"), "Wardrobe & Style");

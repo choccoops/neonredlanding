@@ -857,7 +857,8 @@
 .nh-ls-dialog .nh-ls-autolist li i { color: var(--nc-dim); font-size: 10px; }
 .nh-ls-dialog .nh-ls-autolist li.is-loss b { color: var(--nc-pink); }
 .nh-ls-dialog .nh-ls-autolist li.is-gain b { color: #39ff88; }
-.nh-ls-dialog .nh-ls-ticks { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.nh-ls-dialog .nh-ls-ticks { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; align-items: start; }
+.nh-ls-dialog .nh-ls-ticks .form-group { align-content: flex-start; justify-content: flex-start; }
 .nh-ls-dialog form .form-group label.nh-ls-tick { display: flex; align-items: center; gap: 6px; margin: 2px 0; font-family: "Signika", sans-serif; font-size: 12px; letter-spacing: 0; text-transform: none; color: var(--nc-text) !important; }
 .nh-ls-dialog label.nh-ls-tick b { margin-left: auto; font-family: var(--nc-display); font-weight: 400; color: var(--nc-dim); }
 .nh-ls-dialog label.nh-ls-tick input[type="checkbox"] { flex: 0 0 auto; margin: 0; accent-color: var(--nc-cyan); }

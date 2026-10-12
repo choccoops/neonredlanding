@@ -242,6 +242,8 @@ Living & Humanity Rework homebrew (a 2070s update of the Datapool lifestyles). T
 own compendium, **Neon Hub: Lifestyle (2070s)**, which the catalog switches to, and these rules. The
 numbers and mechanics are the homebrew's; the descriptions are Neon Hub's own.
 
+![The 2070s catalog as a player sees it: memberships by lifestyle tier, locked above theirs, starting on rent day](docs/lifestyle-2070-catalog.webp)
+
 **The 2070s catalog (88 items).**
 - **Lifestyle packages**: Kibble (100eb, −1 COOL and WILL), Generic PrePak (300eb), Good PrePak
   (600eb, +1 WILL, the full-body-conversion perks) and Fresh Food (1,500eb, +1 WILL, +1 maximum EMP).
@@ -272,6 +274,8 @@ numbers and mechanics are the homebrew's; the descriptions are Neon Hub's own.
   a true friend…). One click rolls it all, adds the furnishings' modifiers, the home's tax or credit
   and the art, adds Living the good life when it applies, and applies the net change through the
   Humanity ledger with a chat card. Gains stop at maximum Humanity; losses can reach Cyberpsychosis.
+
+![The GM's rent-day Humanity check: effects from the lifestyle filled in, the rest ticked by the GM](docs/lifestyle-2070-humanity.webp)
 
 **Humanity incidents.** *Humanity incident* rolls the one-time Humanity Loss and Gain table (or
 custom dice) for any characters, furnishing modifiers included, partying included.

@@ -36,20 +36,26 @@ test("houseware and art are paid once, not every month", () => {
   assert.equal(bill.lines.length, 1);
 });
 
-test("Kibble brings both Kibble effects, Generic PrePak one, Fresh Food a gain", () => {
-  assert.deepEqual(automaticEffects([item("lifestyle", { tier: 1, env: "kibble" })]).effects.map((e) => e.key), ["kibble", "nonFresh"]);
+test("Kibble: the below-Good-PrePak 1d6 and a flat 2 tax; Generic PrePak the 1d6; Fresh Food a gain", () => {
+  const kibble = automaticEffects([item("lifestyle", { tier: 1, env: "kibble" })]);
+  assert.deepEqual(kibble.effects.map((e) => e.key), ["nonFresh"]);
+  assert.deepEqual(kibble.taxes, [{ key: "kibble", n: 2 }]);
+  assert.equal(kibble.tax, 2);
   assert.deepEqual(automaticEffects([item("lifestyle", { tier: 2, env: "nonFresh" })]).effects.map((e) => e.key), ["nonFresh"]);
+  assert.equal(automaticEffects([item("lifestyle", { tier: 2, env: "nonFresh" })]).tax, 0);
   assert.deepEqual(automaticEffects([item("lifestyle", { tier: 3 })]).effects, []);
   assert.deepEqual(automaticEffects([item("lifestyle", { tier: 4, env: "fresh" })]).effects.map((e) => e.key), ["freshFood"]);
   assert.deepEqual(automaticEffects([item("lifestyle", { tier: 1, env: "kibble" }, { active: false })]).effects, [], "inactive packages don't count");
 });
 
-test("homes: megabuilding or worse, vehicles roll 2d6, the street adds 3d6, upscale and ships gain", () => {
+test("homes: megabuilding or worse, vehicles roll 2d6, the street taxes 6, upscale and ships gain", () => {
   const eff = (env, extra = {}) => automaticEffects([item("housing", { env, ...extra })]);
   assert.deepEqual(eff("worse").effects, [{ key: "megabuilding", dice: "1d6" }]);
   assert.deepEqual(eff("vehicle", { tax: 3 }).effects, [{ key: "megabuilding", dice: "2d6" }]);
   assert.equal(eff("vehicle", { tax: 3 }).tax, 3);
-  assert.deepEqual(eff("streets", { tax: 6 }).effects.map((e) => e.key), ["megabuilding", "warZone"]);
+  assert.deepEqual(eff("streets", { tax: 6 }).effects.map((e) => e.key), ["megabuilding"], "living rough (3d6) is the GM's tick");
+  assert.equal(eff("streets", { tax: 6 }).tax, 6);
+  assert.deepEqual(monthlyCheck([item("housing", { env: "streets", tax: 6 })], { warZone: true }).rolls.map((r) => [r.key, r.dice]), [["megabuilding", "1d6"], ["warZone", "3d6"]]);
   assert.deepEqual(eff("upscale", { credit: 1 }).effects, [{ key: "upscale", dice: "2d6" }]);
   assert.equal(eff("upscale", { credit: 1 }).credit, 1);
   assert.deepEqual(eff("ship").effects.map((e) => e.key), ["upscale", "outside"]);
@@ -57,7 +63,7 @@ test("homes: megabuilding or worse, vehicles roll 2d6, the street adds 3d6, upsc
 
 test("the GM's ticks join the automatic ones; counts repeat; auto effects can't be ticked", () => {
   const items = [item("lifestyle", { tier: 2, env: "nonFresh" }), item("housing", { env: "worse" })];
-  const check = monthlyCheck(items, { corp: 2, deaths10: true, kibble: true, friend: false });
+  const check = monthlyCheck(items, { corp: 2, deaths10: true, freshFood: true, friend: false });
   assert.deepEqual(check.rolls.map((r) => r.key), ["nonFresh", "megabuilding", "corp", "corp", "deaths10"]);
 });
 
@@ -78,10 +84,10 @@ test("rolling: furnishing modifiers add to each roll, tax and credit to the tota
     item("furnishing", { scarcity: 0, lossMod: 2, noUpgrades: true })
   ];
   const result = rollCheck(monthlyCheck(items), max);
-  assert.deepEqual(result.rolls.map((r) => [r.key, r.total]), [["kibble", 8], ["nonFresh", 8], ["megabuilding", 14]]);
-  assert.equal(result.tax, 5, "a loss modifier raises the tax too");
-  assert.equal(result.loss, 35);
-  assert.equal(result.net, -35);
+  assert.deepEqual(result.rolls.map((r) => [r.key, r.total]), [["nonFresh", 8], ["megabuilding", 14]]);
+  assert.equal(result.tax, 7, "Kibble's 2 and the vehicle's 3, plus the loss modifier once");
+  assert.equal(result.loss, 29);
+  assert.equal(result.net, -29);
 
   const nice = [item("housing", { env: "upscale", credit: 2, slots: 4, sleeps: 3 }), item("furnishing", { scarcity: 3, gainMod: 2 }),
     item("houseware", { slots: 1, display: true }), item("art", { hg: 3, scarcity: 3 })];

@@ -17,11 +17,12 @@ export async function humanityDialog(actor) {
   const items = LifestyleStore.items(actor);
   const auto = automaticEffects(items);
   const tickable = Lifestyle2070.tickable();
+  const mods = [];
   const autoRows = auto.effects.map((e) => `<li class="is-${ENVIRONMENT[e.key].kind}"><i class="fa-solid fa-lock"></i> ${esc(L(`NEONHUB.Lifestyle.Env.${e.key}`))} <b>${e.dice}</b></li>`);
-  if (auto.tax) autoRows.push(`<li class="is-loss"><i class="fa-solid fa-lock"></i> ${esc(L("NEONHUB.Lifestyle.Humanity.Tax"))} <b>${auto.tax}${auto.lossMod ? ` +${auto.lossMod}` : ""}</b></li>`);
+  for (const t of auto.taxes) autoRows.push(`<li class="is-loss"><i class="fa-solid fa-lock"></i> ${esc(L(`NEONHUB.Lifestyle.Humanity.TaxFrom.${t.key}`))} <b>${t.n}</b></li>`);
+  if (auto.tax && auto.lossMod) mods.unshift(L("NEONHUB.Lifestyle.Humanity.TaxMod", { n: auto.lossMod }));
   if (auto.credit) autoRows.push(`<li class="is-gain"><i class="fa-solid fa-lock"></i> ${esc(L("NEONHUB.Lifestyle.Humanity.Credit"))} <b>${auto.credit}${auto.gainMod ? ` +${auto.gainMod}` : ""}</b></li>`);
   if (auto.art) autoRows.push(`<li class="is-gain"><i class="fa-solid fa-lock"></i> ${esc(L("NEONHUB.Lifestyle.Humanity.Art"))} <b>${auto.art}</b></li>`);
-  const mods = [];
   if (auto.lossMod) mods.push(L("NEONHUB.Lifestyle.Humanity.LossMod", { n: auto.lossMod }));
   if (auto.gainMod) mods.push(L("NEONHUB.Lifestyle.Humanity.GainMod", { n: auto.gainMod }));
   const tick = (t) => t.count

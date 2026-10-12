@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.0
+
+- **Pop the month out.** A button beside the month picker moves the month grid into its own resizable window, so the calendar window keeps the date, time, rent, forecast and notes without crowding. Popped out, each day names its weather under the date. The two windows stay in step (pick a day in the month to read its notes; the GM's double-click still sets the date), and closing the month window docks it again. Each user's choice is remembered.
+
 ## 1.7.0
 
 Night City weather on the calendar, from R. Talsorian's free Night City Weather.

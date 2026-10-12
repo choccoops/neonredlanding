@@ -1,0 +1,12 @@
+<div class="nh-cal nh-cal-month-window">
+  {{#if active}}
+  <header class="nh-cal-month-head" style="--cal: {{active.color}}">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Calendar.Timeline"}}</span>
+    <span class="nh-cal-month-name">{{active.name}}</span>
+    <span class="nh-cal-month-today">{{active.dd}}.{{active.mm}}.{{active.year}} · {{active.weekday}}</span>
+  </header>
+  {{> "modules/cpr-neon-hub/templates/calendar/month.hbs"}}
+  {{else}}
+  <div class="nh-cal-empty"><i class="fa-solid fa-calendar-xmark"></i><h2>{{localize "NEONHUB.Calendar.NoSignal"}}</h2></div>
+  {{/if}}
+</div>

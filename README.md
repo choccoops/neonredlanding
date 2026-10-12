@@ -241,6 +241,12 @@ active housing, lifestyle package and health plans into the actor's `system.life
 Open it from the calendar button in the left toolbar (Token Controls), a hub button set to *Open
 calendar*, or the Lifestyle window. It works with no scene on the canvas.
 
+**Month in its own window.** The pop-out button beside the month picker moves the month grid into
+a window of its own, leaving the calendar window to the date, time, rent, forecast and notes.
+Popped out, days have room to name their weather. Both windows stay in step: pick a day in the
+month to read its notes in the calendar, and the GM can still double-click a day to set the date.
+Close the month window (or **Back into the calendar**) to dock it again; it remembers your choice.
+
 **Calendars per group.** The GM makes a calendar for each group of edgerunners, with its own
 name, color, date, rent day and players. Players see the calendars open to them (no players ticked
 means everyone) and can page through months, but only the GM changes dates. A **yours** tag marks a

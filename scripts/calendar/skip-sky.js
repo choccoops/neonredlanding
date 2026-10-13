@@ -111,14 +111,38 @@ export function groupCall(votes) {
   return list[Math.floor((list.length - 1) / 2)];
 }
 
-/** "+5h 30m", "+45m", "+24h". */
+/** "+5h 30m", "+45m", "+24h", and past a day "+5d 3h". */
 export function skipLabel(minutes) {
+  if (minutes > 1440) {
+    const d = Math.floor(minutes / 1440);
+    const h = Math.floor((minutes % 1440) / 60);
+    const m = minutes % 60;
+    return `+${d}d${h ? ` ${h}h` : ""}${m ? ` ${m}m` : ""}`;
+  }
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
   return `+${h ? `${h}h` : ""}${h && m ? " " : ""}${m || !h ? `${m}m` : ""}`;
 }
 
-/** How long the clock takes to wind through a skip on screen, in ms. */
+/** How long the clock takes to wind through a skip on screen, in ms: longer for days of downtime. */
 export function windDuration(minutes) {
+  if (minutes > 1440) return Math.round(Math.min(20000, 8000 + ((minutes - 1440) / 1440) * 600));
   return Math.round(Math.min(8000, 2400 + (minutes / 60) * 240));
+}
+
+/**
+ * Where the sky is during a wind of `minutes`, `skip` minutes in. Over three days or more the sky
+ * plays the first day, holds still through the middle days while the clock counts them, then plays
+ * the last day or two, so it never flickers from day to night. The hold starts and ends at the
+ * starting time of day, so it never jumps.
+ */
+export function skySkip(skip, minutes) {
+  const days = Math.floor(minutes / 1440);
+  if (days < 3 || skip < 1440 || skip >= (days - 1) * 1440) return skip;
+  return 1440;
+}
+
+/** The sky events a wind shows: those while the sky moves (see skySkip). */
+export function shownEvents(events, start, minutes) {
+  return events.filter((e) => skySkip(e.at - start, minutes) === e.at - start);
 }

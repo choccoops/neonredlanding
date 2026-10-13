@@ -16,7 +16,7 @@ Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
   and templates for your own.
 - **Calendar.** Group calendars, one per crew, each with its own date and rent day. Passing rent
   day starts the month for that group's lifestyle bills and Headquarters, and every day shows the
-  real Moon's phase.
+  real Moon's phase. Downtime gives the crew time to spend, for other modules' downtime actions too.
 
 | Requirement | Version |
 | --- | --- |
@@ -421,6 +421,29 @@ world clock that SmallTime shows:
   with the clock, which also drives SmallTime's moonlight darkness. Turn off *SmallTime shows the
   real Moon* to set it by hand in SmallTime.
 
+**Downtime.** The GM calls a stretch of downtime and each character taking part gets that much
+time to spend on downtime actions, from a pool of days, hours and minutes. Neon Hub keeps the
+books; what the time is spent on (healing, crafting, gigs, a module's own downtime actions) is up
+to the table and to other modules, which spend it through the API.
+
+- **Calling it (GM).** The mug button in the calendar's header opens **Downtime**. **Call
+  downtime** picks who takes part, a name for it ("After the Arasaka job") and either a set amount
+  in days, hours and minutes, or **put it to a vote**: like Skip time, players propose an amount
+  (1 day, 3 days, a week, two weeks, a month, or their own), everyone sees the votes and the
+  group's call, and the GM starts it with the call, a vote or their own number. A card goes to
+  chat with the total and who's in it, and Downtime opens for the GM and the players taking part.
+- **Spending it.** Each character's card shows the time left and spent and their log, each entry
+  placed on their calendar ("Mar 14–16") in the order it was spent. **Log downtime** spends time
+  by hand; other modules spend it for their own actions. Players can take back what they logged
+  by hand; the GM can take back anything. Players see only their own characters.
+- **Everyone's spent.** When the last character's time runs out, the GM gets a full-screen alert
+  and a whispered card. The GM reviews the log, then **Complete downtime**: a card sums it up
+  (with any time left unused), and the Skip time clock opens on every screen and winds through
+  the whole downtime on its own, counting the days (over three days, the sky plays the first and
+  last day and holds still in between rather than flickering). The world clock moves on at the end
+  and calendars change day with it. **Call it off** ends it without passing any time. Past downtime is listed
+  under *Earlier downtime*.
+
 **Night City weather.** Weather from R. Talsorian's free **Night City Weather** for Cyberpunk RED.
 Neon Hub uses its dice tables; the rules summaries are Neon Hub's own short versions, with core
 rulebook pages.
@@ -516,8 +539,33 @@ await hub.planWeather("Afterlife Crew", 42); // GM: plan six weeks from the cale
 hub.postForecast("Afterlife Crew");          // GM: post the current forecast to chat
 hub.openMessenger("contacts");   // Night City Messenger: inbox, compose, contacts (GM: networks, admin)
 hub.showMessenger("inbox");      // GM: open it on every connected player's screen
+hub.downtime.open();                    // the Downtime window
+hub.downtime.current();                 // the open downtime, or null
+hub.downtime.remaining(actor);          // minutes this character has left (0 if not taking part)
+hub.downtime.balance(actor);            // { total, spent, left, taking }
+hub.downtime.log(actor);                // their spends, each with from/to minutes into the downtime
+await hub.downtime.spend(actor, 2 * 1440, { label: "Crafting: smart scope", source: "my-module", data: { itemId } });
+await hub.downtime.refund(entryId);     // take a spend back
+await hub.downtime.start({ total: 3 * 1440, label: "Recovery", participants: [actor.uuid] }); // GM
+await hub.downtime.complete();          // GM: end it and wind the clock through it
+await hub.downtime.cancel();            // GM: call it off, no time passes
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
+```
+
+**Downtime for other modules.** Times are minutes (a day is 1440). `spend` works from any client:
+a player's spend is checked and saved by the GM, and it throws when there's no open downtime, the
+character isn't taking part or doesn't have enough left, so check `remaining` first. `source` names
+who logged it (shown in the log; anything but `"manual"` can only be taken back by the GM) and
+`data` is kept on the entry for your own use. Hooks fire on every client, with the downtime and,
+for spends and refunds, the entry:
+`cpr-neon-hub.downtimeStarted`, `.downtimeSpent`, `.downtimeRefunded`, `.downtimeAllSpent`,
+`.downtimeCompleted`, `.downtimeCancelled`, and `cpr-neon-hub.downtimeChanged` on any change.
+
+```js
+Hooks.on("cpr-neon-hub.downtimeSpent", (downtime, entry) => {
+  if (entry.source === "my-module") console.log(`${entry.label}: ${entry.minutes} minutes`);
+});
 ```
 
 ## Data this module relies on

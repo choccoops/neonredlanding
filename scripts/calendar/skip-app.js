@@ -4,7 +4,7 @@ import { CalendarStore } from "./cal-store.js";
 import { Clock } from "./clock.js";
 import { formatTime, minutesOfDay, DAY_MINUTES } from "./clock-time.js";
 import { phaseEvents, localMidnight, litPath } from "./moon.js";
-import { skyModel, sunAt, moonAt, skyEvents, skyColors, groupCall, skipLabel, windDuration } from "./skip-sky.js";
+import { skyModel, sunAt, moonAt, skyEvents, skyColors, groupCall, skipLabel, windDuration, skySkip, shownEvents } from "./skip-sky.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -74,6 +74,7 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     HubSocket.on("skipOpen", (payload, sender) => sender?.isGM && this.#open(payload, sender));
     HubSocket.on("skipVote", (payload, sender) => this.#vote(payload, sender));
     HubSocket.on("skipRun", (payload, sender) => sender?.isGM && this.instance?.runWind(payload));
+    HubSocket.on("skipAuto", (payload, sender) => sender?.isGM && this.#auto(payload, sender));
     HubSocket.on("skipClose", (payload, sender) => {
       if (!sender?.isGM || sender.isSelf || payload.id !== this.session?.id) return;
       this.session = null;
@@ -87,6 +88,26 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     if (this.session && this.instance?.rendered) return this.instance.bringToFront?.();
     const users = game.users.filter((u) => u.active).map((u) => u.id);
     HubSocket.emit("skipOpen", { id: foundry.utils.randomID(12), users }, users);
+  }
+
+  /**
+   * GM: wind the clock on by a set amount on everyone's screen at once, without a vote
+   * (the end of downtime). Resolves to the skip's id; the timeSkipped hook fires when it lands.
+   */
+  static auto(minutes, { label = "" } = {}) {
+    if (!game.user.isGM) throw new Error(L("NEONHUB.Error.GMOnly"));
+    const users = game.users.filter((u) => u.active).map((u) => u.id);
+    const id = foundry.utils.randomID(12);
+    HubSocket.emit("skipAuto", { id, users, minutes: Math.max(1, Math.round(minutes)), from: game.time.worldTime, label }, users);
+    return id;
+  }
+
+  static async #auto({ id, users, minutes, from, label }, sender) {
+    this.session = { id, gmId: sender.id, users, votes: {}, running: false, auto: true, label };
+    this.instance?.close({ fromSocket: true });
+    this.instance = new this();
+    await this.instance.render({ force: true });
+    await this.instance.runWind({ id, minutes, from });
   }
 
   static #open({ id, users }, sender) {
@@ -136,6 +157,8 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const isGM = game.user.isGM;
     context.isGM = isGM;
     context.running = !!session?.running;
+    context.auto = !!session?.auto;
+    context.autoLabel = session?.label || "";
     if (partId === "stage") return Object.assign(context, this.#stageContext());
 
     const votes = session?.votes ?? {};
@@ -267,7 +290,7 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     set(".nh-skip-days", days ? L(days > 1 ? "NEONHUB.Skip.Days" : "NEONHUB.Skip.Day", { n: days }) : "");
 
     // Sky: colours, stars, sun and moon. Until the clock winds, it's the sky right now.
-    const skyTime = this.wind ? now : start;
+    const skyTime = this.wind ? start + skySkip(skip, this.minutes) : start;
     const colors = skyColors(model, skyTime);
     root.querySelector(".nh-skip-sky-top")?.setAttribute("stop-color", colors.top);
     root.querySelector(".nh-skip-sky-bottom")?.setAttribute("stop-color", colors.bottom);
@@ -289,7 +312,7 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     // What happens along the way.
     const list = root.querySelector(".nh-skip-events");
     if (list && !this.wind) {
-      const events = skyEvents(model, start, start + skip);
+      const events = shownEvents(skyEvents(model, start, start + skip), start, skip);
       list.innerHTML = events.length
         ? events.map((e) => `<li class="is-${e.type}"><i class="fa-solid ${ICONS[e.type]}"></i> ${L(`NEONHUB.Skip.Event.${e.type}`)} <span>${formatTime(mod(e.at, DAY_MINUTES), hour12)}</span></li>`).join("")
         : `<li class="is-none">${L("NEONHUB.Skip.Nothing")}</li>`;
@@ -318,7 +341,7 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     await this.render();
     const start = minutesOfDay(from);
     const { model } = this.#sky(from);
-    const events = skyEvents(model, start, start + minutes);
+    const events = shownEvents(skyEvents(model, start, start + minutes), start, minutes);
     const duration = windDuration(minutes);
     const ease = (x) => (x < 0.5 ? 4 * x ** 3 : 1 - (-2 * x + 2) ** 3 / 2);
     this.element.classList.add("is-winding");
@@ -341,6 +364,7 @@ export class SkipTimeApp extends HandlebarsApplicationMixin(ApplicationV2) {
     if (game.user.id === session.gmId) {
       try {
         await Clock.advance(minutes * 60);
+        Hooks.callAll(`${MODULE_ID}.timeSkipped`, { id, minutes, from });
       } catch (err) {
         ui.notifications.error(err.message);
       }

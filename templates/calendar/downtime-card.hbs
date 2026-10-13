@@ -1,0 +1,12 @@
+<div class="nh-cal-card nh-dt-card">
+  <div class="nh-cal-card-kicker">// {{kicker}}</div>
+  <div class="nh-cal-card-name">{{label}}</div>
+  <div class="nh-dt-card-total">{{total}}</div>
+  {{#if names}}<p class="nh-dt-card-names"><i class="fa-solid fa-users"></i> {{names}}</p>{{/if}}
+  <p>{{body}}</p>
+  {{#if rows}}
+  <ul class="nh-dt-card-rows">
+    {{#each rows}}<li><span>{{name}}</span><b>{{spent}}</b>{{#if left}}<small>{{left}}</small>{{/if}}</li>{{/each}}
+  </ul>
+  {{/if}}
+</div>

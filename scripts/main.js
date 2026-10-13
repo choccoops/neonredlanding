@@ -24,6 +24,8 @@ import { WeatherStore } from "./calendar/weather-store.js";
 import { HouseholdStore } from "./lifestyle/ls-households.js";
 import { HouseholdOps } from "./lifestyle/ls-household-ops.js";
 import { Lifestyle2070 } from "./lifestyle/ls-2070-ops.js";
+import { Downtime } from "./calendar/downtime-store.js";
+import { DowntimeApp, DowntimeVoteApp, allSpentAlert } from "./calendar/downtime-app.js";
 import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
 
@@ -48,6 +50,7 @@ Hooks.once("init", () => {
   Clock.init();
   WeatherStore.register();
   HouseholdStore.register();
+  Downtime.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -156,6 +159,27 @@ Hooks.once("init", () => {
       return c ? WeatherStore.postForecast(c) : null;
     },
 
+    /**
+     * Downtime credits, for any module's downtime actions. Times are minutes.
+     * current(): the open call or null; remaining(actor): minutes left; log(actor): their spends;
+     * spend(actor, minutes, { label, source, data }): spend some (any client; the GM checks it), resolves to the entry;
+     * refund(entryId); open(): the Downtime window; start({ total, label, participants }) / complete() / cancel() for the GM.
+     * Hooks on every client: cpr-neon-hub.downtimeStarted, downtimeSpent, downtimeRefunded, downtimeAllSpent,
+     * downtimeCompleted, downtimeCancelled.
+     */
+    downtime: {
+      current: () => Downtime.current(),
+      remaining: (actor) => Downtime.balance(actor).left,
+      balance: (actor) => Downtime.balance(actor),
+      log: (actor) => Downtime.log(actor),
+      spend: (actor, minutes, details) => Downtime.spend(actor, minutes, details),
+      refund: (entryId) => Downtime.refund(entryId),
+      open: () => DowntimeApp.open(),
+      start: (options) => Downtime.start(options),
+      complete: () => Downtime.complete(),
+      cancel: () => Downtime.cancel()
+    },
+
     /** GM: open the Skip time window on everyone's screen; players vote, the GM winds the clock on. */
     skipTime: () => SkipTimeApp.start(),
 
@@ -182,6 +206,8 @@ Hooks.once("ready", () => {
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
   SkipTimeApp.registerSocket();
   HouseholdOps.init();
+  Downtime.init();
+  DowntimeVoteApp.registerSocket();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
   if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
@@ -232,6 +258,17 @@ Hooks.on(`${MODULE_ID}.calendarChanged`, (list) => {
 
 Hooks.on(`${MODULE_ID}.calendarNotesChanged`, () => CalendarApp.refresh());
 Hooks.on(`${MODULE_ID}.weatherChanged`, () => CalendarApp.refresh());
+Hooks.on(`${MODULE_ID}.downtimeChanged`, () => {
+  DowntimeApp.refresh();
+  CalendarApp.refresh();
+});
+// Downtime called: open the window for everyone taking part (and the GM).
+Hooks.on(`${MODULE_ID}.downtimeStarted`, (call) => {
+  if (game.user.isGM || call.participants.some((uuid) => game.actors.get(uuid.split(".")[1])?.isOwner)) DowntimeApp.open();
+});
+Hooks.on(`${MODULE_ID}.downtimeAllSpent`, (call) => {
+  if (game.user.isGM) allSpentAlert(call);
+});
 Hooks.on("updateWorldTime", () => CalendarApp.instance?.updateClock());
 // Players' notes live on their User.
 Hooks.on("updateUser", (user, changes) => {

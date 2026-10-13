@@ -1,0 +1,57 @@
+<div class="nh-cal nh-dt">
+  {{#if call}}
+  <header class="nh-dt-head">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Downtime.Kicker"}}{{#if call.when}} &middot; {{localize "NEONHUB.Downtime.From"}} {{call.when}}{{/if}}</span>
+    <h2 class="nh-dt-title">{{call.label}}</h2>
+    <div class="nh-dt-total"><span>{{call.total}}</span><small>{{localize "NEONHUB.Downtime.Each"}}</small></div>
+  </header>
+  {{#if isGM}}
+  <div class="nh-dt-gm {{#if call.allSpent}}is-done{{/if}}">
+    <span><i class="fa-solid {{#if call.allSpent}}fa-circle-check{{else}}fa-hourglass-half{{/if}}"></i> {{localize "NEONHUB.Downtime.SpentCount" n=call.spentCount of=call.taking}}</span>
+    <button type="button" class="nh-cal-btn" data-action="cancel"><i class="fa-solid fa-ban"></i> {{localize "NEONHUB.Downtime.Cancel"}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="complete"><i class="fa-solid fa-forward-fast"></i> {{localize "NEONHUB.Downtime.Complete"}}</button>
+  </div>
+  {{/if}}
+  <div class="nh-dt-scroll">
+    {{#each people}}
+    <section class="nh-dt-person {{#if done}}is-done{{/if}}">
+      <header>
+        <img src="{{img}}" alt="">
+        <div class="nh-dt-who">
+          <b>{{name}}</b>
+          <span>{{localize "NEONHUB.Downtime.LeftOf" left=left spent=spent}}</span>
+        </div>
+        {{#if canLog}}<button type="button" class="nh-cal-btn" data-action="log"><i class="fa-solid fa-pen"></i> {{localize "NEONHUB.Downtime.Log.Button"}}</button>{{/if}}
+      </header>
+      <div class="nh-dt-bar"><span style="width: {{pct}}%"></span></div>
+      <ol class="nh-dt-log">
+        {{#each entries}}
+        <li data-entry="{{id}}">
+          {{#if when}}<span class="nh-dt-when">{{when}}</span>{{/if}}
+          <span class="nh-dt-what">{{label}}<small>{{source}} &middot; {{by}}</small></span>
+          <b>{{time}}</b>
+          {{#if canRefund}}<button type="button" class="nh-cal-icon" data-action="refund" data-tooltip="{{localize 'NEONHUB.Downtime.Refund'}}" aria-label="{{localize 'NEONHUB.Downtime.Refund'}}"><i class="fa-solid fa-rotate-left"></i></button>{{/if}}
+        </li>
+        {{else}}
+        <li class="nh-dt-empty">{{localize "NEONHUB.Downtime.NothingYet"}}</li>
+        {{/each}}
+      </ol>
+    </section>
+    {{/each}}
+    {{#if none}}<p class="nh-dt-empty">{{localize "NEONHUB.Downtime.NotTaking"}}</p>{{/if}}
+  </div>
+  {{else}}
+  <div class="nh-cal-empty">
+    <i class="fa-solid fa-mug-hot"></i>
+    <h2>{{localize "NEONHUB.Downtime.NoneTitle"}}</h2>
+    <p>{{#if isGM}}{{localize "NEONHUB.Downtime.NoneGM"}}{{else}}{{localize "NEONHUB.Downtime.NonePlayer"}}{{/if}}</p>
+    {{#if isGM}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="call"><i class="fa-solid fa-bullhorn"></i> {{localize "NEONHUB.Downtime.Call.Title"}}</button>{{/if}}
+  </div>
+  {{#if history.length}}
+  <div class="nh-dt-history">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Downtime.History"}}</span>
+    <ul>{{#each history}}<li><span>{{label}}</span><small>{{when}}</small><b>{{total}}</b><em>{{status}}</em></li>{{/each}}</ul>
+  </div>
+  {{/if}}
+  {{/if}}
+</div>

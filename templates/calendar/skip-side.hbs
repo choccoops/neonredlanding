@@ -1,4 +1,15 @@
 <aside class="nh-skip-side">
+  {{#if auto}}
+  <header>
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Downtime.Kicker"}}</span>
+    <span class="nh-skip-side-title">{{#if autoLabel}}{{autoLabel}}{{else}}{{localize "NEONHUB.Downtime.Title"}}{{/if}}</span>
+  </header>
+  <p class="nh-hint">{{localize "NEONHUB.Downtime.Winding"}}</p>
+  <div class="nh-skip-along">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Skip.Along"}}</span>
+    <ul class="nh-skip-events"></ul>
+  </div>
+  {{else}}
   <header>
     <span class="nh-cal-kicker">// {{localize "NEONHUB.Skip.Kicker"}}</span>
     <span class="nh-skip-side-title">{{localize "NEONHUB.Skip.Votes"}}</span>
@@ -43,4 +54,5 @@
     <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="vote" {{#if running}}disabled{{/if}}><i class="fa-solid fa-hand"></i> {{#if voted}}{{localize "NEONHUB.Skip.ChangeVote"}}{{else}}{{localize "NEONHUB.Skip.Vote"}}{{/if}} <span data-dial-label>{{dial}}</span></button>
     {{/if}}
   </footer>
+  {{/if}}
 </aside>

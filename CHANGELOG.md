@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.11.0
+
+- **Downtime.** The GM calls downtime from the calendar (the mug button) for the characters taking part: a set amount in days, hours and minutes, or put to a vote like Skip time, with presets from a day to a month and the group's call. Each character gets that much time to spend, and a card with the total goes to chat.
+- **The Downtime window.** Each character's time left and spent, and their log with where each spend falls on their calendar. **Log downtime** spends it by hand; players take back their own hand-logged spends, the GM anything. Players see only their own characters; the GM sees everyone.
+- **Everyone's spent.** A full-screen alert for the GM, and a whispered card, when the last character's time runs out. **Complete downtime** posts a summary (with any unused time) and the Skip time clock winds through it on every screen on its own; the world clock and calendars move on at the end. **Call it off** ends it with no time passing. Earlier downtime is listed in the window.
+- **For other modules.** `api.downtime` (`spend`, `remaining`, `balance`, `log`, `refund`, `current`, `open`, and for the GM `start`, `complete`, `cancel`) and `downtimeStarted/Spent/Refunded/AllSpent/Completed/Cancelled` hooks, so downtime actions elsewhere can spend the time into the log. No downtime actions are built in.
+- Skip time shows days on the amount once past 24 hours ("+5d 3h"), and fires a `cpr-neon-hub.timeSkipped` hook when the clock has moved.
+
 ## 1.10.0
 
 - **Households.** A home several characters share, set up by the GM on the Lifestyle window's new **Households** tab: pick the home from the catalog (and its rent, if different), who lives there, and how rent is paid. **Split evenly** puts a share in each inhabitant's bill; **one character pays** puts it all in the payer's; **pool** lets anyone chip in from their wallet during the month until it's covered, with a chat note for each contribution.

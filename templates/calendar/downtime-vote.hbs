@@ -1,0 +1,34 @@
+<div class="nh-cal nh-dt nh-dt-vote">
+  <header class="nh-dt-head">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Downtime.Vote.Kicker"}}</span>
+    <h2 class="nh-dt-title">{{label}}</h2>
+  </header>
+  <div class="nh-dt-propose">
+    <span class="nh-cal-kicker">// {{#if isGM}}{{localize "NEONHUB.Downtime.Vote.Amount"}}{{else}}{{localize "NEONHUB.Downtime.Vote.Yours"}}{{/if}}</span>
+    <div class="nh-dt-duration">
+      <label><input type="number" name="days" min="0" max="366" value="{{days}}"> {{localize "NEONHUB.Downtime.Days"}}</label>
+      <label><input type="number" name="hours" min="0" max="23" value="{{hours}}"> {{localize "NEONHUB.Downtime.Hours"}}</label>
+      <label><input type="number" name="minutes" min="0" max="59" value="{{mins}}"> {{localize "NEONHUB.Downtime.Minutes"}}</label>
+    </div>
+    <div class="nh-dt-presets">{{#each presets}}<button type="button" data-action="preset" data-minutes="{{minutes}}">{{label}}</button>{{/each}}</div>
+  </div>
+  <ul class="nh-skip-votes">
+    {{#each users}}
+    <li style="--player: {{color}}"><i class="nh-skip-dot"></i><span class="nh-skip-voter">{{name}}</span>{{#if vote}}<b class="nh-skip-vote">{{vote}}</b>{{else}}<em>{{localize "NEONHUB.Skip.Waiting"}}</em>{{/if}}</li>
+    {{else}}
+    <li class="is-empty">{{localize "NEONHUB.Skip.NoPlayers"}}</li>
+    {{/each}}
+  </ul>
+  <div class="nh-skip-call">
+    <span>{{localize "NEONHUB.Skip.Call"}} //</span>
+    {{#if call}}<b>{{call.label}}</b>{{#if isGM}}<button type="button" class="nh-cal-btn" data-action="useCall">{{localize "NEONHUB.Skip.UseCall"}}</button>{{/if}}{{else}}<em>{{localize "NEONHUB.Skip.NoVotes"}}</em>{{/if}}
+  </div>
+  <footer class="nh-skip-foot">
+    {{#if isGM}}
+    <button type="button" class="nh-cal-btn" data-action="callOff">{{localize "NEONHUB.Skip.Cancel"}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="startIt"><i class="fa-solid fa-mug-hot"></i> {{localize "NEONHUB.Downtime.Vote.Start" amount=amount}}</button>
+    {{else}}
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="vote"><i class="fa-solid fa-hand"></i> {{#if voted}}{{localize "NEONHUB.Skip.ChangeVote"}}{{else}}{{localize "NEONHUB.Skip.Vote"}}{{/if}} {{amount}}</button>
+    {{/if}}
+  </footer>
+</div>

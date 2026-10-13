@@ -32,6 +32,7 @@
         <h2 class="nh-cal-name" data-text="{{active.name}}">{{active.name}}</h2>
       </div>
       <div class="nh-cal-tools">
+        {{#if isGM}}<button type="button" class="nh-cal-icon {{#if downtime.open}}is-live{{/if}}" data-action="downtime" data-tooltip="{{localize 'NEONHUB.Downtime.Title'}}" aria-label="{{localize 'NEONHUB.Downtime.Title'}}"><i class="fa-solid fa-mug-hot"></i></button>{{else}}{{#if downtime.open}}<button type="button" class="nh-cal-icon is-live" data-action="downtime" data-tooltip="{{localize 'NEONHUB.Downtime.Title'}}" aria-label="{{localize 'NEONHUB.Downtime.Title'}}"><i class="fa-solid fa-mug-hot"></i></button>{{/if}}{{/if}}
         <button type="button" class="nh-cal-icon" data-action="chat" data-tooltip="{{localize 'NEONHUB.Calendar.ToChat'}}" aria-label="{{localize 'NEONHUB.Calendar.ToChat'}}"><i class="fa-solid fa-comment-dots"></i></button>
         {{#if isGM}}
         <button type="button" class="nh-cal-icon" data-action="moveUp" data-tooltip="{{localize 'NEONHUB.Calendar.MoveUp'}}" aria-label="{{localize 'NEONHUB.Calendar.MoveUp'}}"><i class="fa-solid fa-arrow-up"></i></button>

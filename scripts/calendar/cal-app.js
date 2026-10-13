@@ -16,6 +16,8 @@ import { WeatherStore } from "./weather-store.js";
 import { WeatherView } from "./weather-view.js";
 import { weatherDialog } from "./weather-dialog.js";
 import { parseKey } from "./weather-data.js";
+import { Downtime } from "./downtime-store.js";
+import { DowntimeApp } from "./downtime-app.js";
 import { formatTime, isDaytime } from "./clock-time.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -78,7 +80,8 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       dock: CalendarApp.#onDock,
       weather: CalendarApp.#onWeather,
       weatherReveal: CalendarApp.#onWeatherReveal,
-      forecastPost: CalendarApp.#onForecastPost
+      forecastPost: CalendarApp.#onForecastPost,
+      downtime: CalendarApp.#onDowntime
     }
   };
 
@@ -201,6 +204,7 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
       },
       clock: Clock.visible ? { ...Clock.view(), follows: active.clock } : null,
       forecast: this.#forecastContext(active),
+      downtime: Downtime.current() ? { open: true } : { open: false },
       ...this.#grid(active, calendars),
       notes: await this.#notesContext(active),
       target: {
@@ -668,6 +672,11 @@ export class CalendarApp extends HandlebarsApplicationMixin(ApplicationV2) {
     const active = this.active;
     if (!active) return;
     await this.#run(() => WeatherStore.reveal(active.id, target.dataset.key, target.dataset.shown !== "true"));
+  }
+
+  /** The Downtime window (the GM calls downtime from there). */
+  static #onDowntime() {
+    DowntimeApp.open();
   }
 
   /** GM: post the week's forecast to chat again. */

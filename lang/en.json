@@ -1204,7 +1204,21 @@
       "PopOut": "Pop the month out into its own window",
       "Dock": "Back into the calendar",
       "MonthView": "Month",
-      "MonthOut": "Month in its own window"
+      "MonthOut": "Month in its own window",
+      "MonthShort": {
+        "1": "Jan",
+        "2": "Feb",
+        "3": "Mar",
+        "4": "Apr",
+        "5": "May",
+        "6": "Jun",
+        "7": "Jul",
+        "8": "Aug",
+        "9": "Sep",
+        "10": "Oct",
+        "11": "Nov",
+        "12": "Dec"
+      }
     },
     "Messenger": {
       "View": {
@@ -1425,6 +1439,87 @@
         "NotPool": "This household doesn't pay by pool.",
         "NothingToPay": "The rent is already covered this month.",
         "NoHome": "Pick a home for the household."
+      }
+    },
+    "Downtime": {
+      "Title": "Downtime",
+      "Kicker": "Downtime",
+      "From": "from",
+      "Each": "each",
+      "Days": "days",
+      "Hours": "hours",
+      "Minutes": "min",
+      "LeftShort": "left",
+      "LeftOf": "{left} left · {spent} spent",
+      "SpentCount": "{n} of {of} have spent their downtime",
+      "NothingYet": "Nothing spent yet.",
+      "NotTaking": "None of your characters are taking part in this downtime.",
+      "ByHand": "By hand",
+      "Refund": "Take it back",
+      "Unused": "{left} unused",
+      "AllSpent": "Downtime spent",
+      "AllSpentHint": "Everyone has used their downtime. Review the log and complete it to wind the clock on.",
+      "Review": "Review downtime",
+      "Complete": "Complete downtime",
+      "CompleteEarly": "Not everyone has spent all their downtime. Complete it anyway? The full time passes.",
+      "Cancel": "Call it off",
+      "CancelBody": "Call off this downtime? Nothing is spent and no time passes; the log is kept in the history.",
+      "Winding": "The downtime passes. The clock winds on for everyone.",
+      "NoneTitle": "No downtime",
+      "NoneGM": "Call downtime to give the crew time to spend: set it yourself or put it to a vote.",
+      "NonePlayer": "The GM hasn't called downtime.",
+      "History": "Earlier downtime",
+      "Status": {
+        "open": "Open",
+        "done": "Completed",
+        "cancelled": "Called off"
+      },
+      "Call": {
+        "Title": "Call downtime",
+        "Intro": "Everyone taking part gets this much time to spend on downtime actions. A card goes to the chat.",
+        "Label": "What's it for",
+        "LabelPlaceholder": "Between gigs",
+        "Who": "Who's taking part",
+        "How": "How much",
+        "Set": "Set it",
+        "Vote": "Put it to a vote (you confirm the amount)",
+        "Go": "Call downtime"
+      },
+      "Log": {
+        "Button": "Log downtime",
+        "Title": "Log downtime",
+        "Who": "Character",
+        "What": "What they did",
+        "WhatPlaceholder": "Fixed up the bike",
+        "Time": "How long",
+        "Spend": "Spend it"
+      },
+      "Vote": {
+        "Title": "Downtime vote",
+        "Kicker": "How much downtime",
+        "Amount": "Amount",
+        "Yours": "Your call",
+        "Start": "Start downtime: {amount}"
+      },
+      "Preset": {
+        "1d": "1 day",
+        "3d": "3 days",
+        "1w": "1 week",
+        "2w": "2 weeks",
+        "1mo": "1 month"
+      },
+      "Card": {
+        "Started": "Downtime is called. Each of you has this much time to spend on downtime actions: open Downtime from the calendar.",
+        "Done": "Downtime is over. The clock winds on."
+      },
+      "Error": {
+        "AlreadyOpen": "Downtime is already called: complete it or call it off first.",
+        "NoOne": "Pick who's taking part.",
+        "NoTime": "Give the downtime some time.",
+        "NoCall": "No downtime is called right now.",
+        "NotTaking": "{name} isn't taking part in this downtime.",
+        "NotEnough": "{name} only has {left} of downtime left.",
+        "NoEntry": "That downtime entry is gone."
       }
     }
   }

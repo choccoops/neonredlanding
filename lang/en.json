@@ -223,7 +223,8 @@
       "NoCrewWallets": "No crew member has a eurobuck wallet.",
       "ShortFunds": "Not enough eurobucks: {names}.",
       "Upload": "Couldn't save {file}. Check that you can upload files to this world's folder.",
-      "WrongSystem": "Neon Hub is built for Cyberpunk RED - CORE. This world runs {system}, so Headquarters money and Humanity won't work."
+      "WrongSystem": "Neon Hub is built for Cyberpunk RED - CORE. This world runs {system}, so Headquarters money and Humanity won't work.",
+      "NoLedger": "{name} doesn't have that ledger."
     },
     "Ledger": {
       "Improvement": "{name} for {hq}",
@@ -1520,6 +1521,345 @@
         "NotTaking": "{name} isn't taking part in this downtime.",
         "NotEnough": "{name} only has {left} of downtime left.",
         "NoEntry": "That downtime entry is gone."
+      }
+    },
+    "Journal": {
+      "Title": "Neon Journal",
+      "Brand": "// NEON JOURNAL",
+      "SheetLabel": "Neon Journal",
+      "Setting": {
+        "Takeover": "Open journals in the Neon Journal",
+        "TakeoverHint": "Journals open in Neon Hub's journal window, with gigs, the story and the downtime log beside them. Untick to use Foundry's own journal window (the Neon Journal is still on the Journal tab's button)."
+      },
+      "Section": {
+        "journals": "Journals",
+        "gigs": "Gigs",
+        "screamsheets": "Screamsheets",
+        "world": "Worldbuilding",
+        "characters": "Characters",
+        "story": "Story & Events",
+        "downtime": "Downtime Log"
+      },
+      "Folder": {
+        "gigs": "Gigs",
+        "screamsheets": "Screamsheets",
+        "world": "Worldbuilding",
+        "characters": "Character Journals",
+        "story": "Story & Events",
+        "downtime": "Downtime Log"
+      },
+      "New": {
+        "journals": "New journal",
+        "gigs": "New gig",
+        "screamsheets": "New issue",
+        "world": "New entry",
+        "characters": "Start a journal",
+        "story": "New chapter",
+        "downtime": ""
+      },
+      "Search": "Search…",
+      "Empty": "Nothing here yet.",
+      "PickOne": "Pick an entry from the list.",
+      "Pages": "{n} pages",
+      "Back": "Back",
+      "Forward": "Forward",
+      "Open": "Open in the journal",
+      "EditPage": "Edit this page",
+      "Rename": "Rename",
+      "AddPage": "Page",
+      "DeletePage": "Delete page",
+      "Delete": "Delete this entry",
+      "Show": "Show to players",
+      "Ownership": "Permissions",
+      "Classic": "Open in Foundry's journal",
+      "PlayersToggle": "Players can see this",
+      "PlayersSee": "Players can see this (click to hide it)",
+      "PlayersDont": "Only the GM can see this (click to show players)",
+      "HiddenFromPlayers": "Hidden from players",
+      "GMOnly": "GM only",
+      "Limited": "You only know this exists.",
+      "OtherPage": "This kind of page opens in Foundry's journal (the book button above).",
+      "RecordFixed": "Downtime records are kept as they were when the downtime ended.",
+      "Remove": "Remove",
+      "Save": "Save",
+      "Cancel": "Cancel",
+      "Gig": {
+        "Title": "Gig",
+        "NewName": "New gig",
+        "Edit": "Edit gig",
+        "Name": "Gig",
+        "Image": "Pick an image",
+        "Visible": "Players can see this gig",
+        "Status": "Status",
+        "Client": "Client",
+        "ClientHint": "Fixer or client",
+        "Location": "Location",
+        "Deadline": "Deadline",
+        "DeadlineHint": "e.g. Friday midnight",
+        "Danger": "Danger",
+        "DangerHint": "e.g. High",
+        "Crew": "Crew",
+        "Briefing": "Briefing",
+        "Objectives": "Objectives",
+        "NoObjectives": "No objectives yet.",
+        "Rewards": "Rewards",
+        "NoRewards": "No rewards listed.",
+        "Paid": "Paid",
+        "PaidOn": "paid out {date} by {by}",
+        "PaidOut": "Paid out",
+        "PaidCount": "{n} rewards paid out.",
+        "Post": "Post to chat",
+        "Ledger": "Gig: {name}",
+        "State": {
+          "found": "Found",
+          "active": "Active",
+          "completed": "Completed",
+          "failed": "Failed"
+        },
+        "Date": {
+          "found": "Found",
+          "active": "Taken",
+          "completed": "Completed",
+          "failed": "Failed"
+        },
+        "Filter": {
+          "open": "Open",
+          "found": "Found",
+          "active": "Active",
+          "completed": "Done",
+          "failed": "Failed",
+          "all": "All"
+        },
+        "Move": {
+          "take": "Take the gig",
+          "complete": "Completed",
+          "fail": "Failed",
+          "reopen": "Reopen"
+        }
+      },
+      "Objective": {
+        "open": "Open",
+        "done": "Done",
+        "failed": "Failed",
+        "Group": {
+          "open": "Current",
+          "done": "Completed",
+          "failed": "Failed"
+        },
+        "Add": "Objective",
+        "Placeholder": "What needs doing",
+        "Cycle": "Click: open → done → failed"
+      },
+      "Reward": {
+        "Kind": {
+          "eddies": "Eddies",
+          "item": "Item",
+          "housing": "Housing",
+          "ip": "IP",
+          "hqip": "HQ IP",
+          "text": "Other"
+        },
+        "Split": {
+          "each": "each",
+          "split": "split"
+        },
+        "EddiesEach": "{amount} each",
+        "EddiesSplit": "{amount} split between the crew",
+        "IPEach": "{amount} IP each",
+        "HQIP": "{amount} HQ IP ({hq})",
+        "Add": "Reward",
+        "DropItem": "Drop an item here",
+        "DropHint": "Drop an item or home from the sidebar or a compendium to add it.",
+        "TextHint": "A favour, a contact, a rumour…",
+        "NoHQ": "No Headquarters yet."
+      },
+      "Payout": {
+        "Title": "Pay out",
+        "Button": "Pay out",
+        "Intro": "Eddies and IP go to everyone ticked (eddies each, or split as the gig says). Items and homes go to the one you pick. Other rewards are marked as given.",
+        "Who": "Who gets paid",
+        "Go": "Pay out",
+        "Noted": "marked as given"
+      },
+      "Story": {
+        "NewChapter": "New chapter",
+        "Overview": "Overview",
+        "Sessions": "{n} sessions"
+      },
+      "Session": {
+        "Name": "Session {n}",
+        "Add": "Session",
+        "Edit": "Edit session",
+        "Title": "Title",
+        "Number": "Session no.",
+        "Date": "In-world date",
+        "Played": "Played",
+        "Crew": "Who was there",
+        "Summary": "What happened",
+        "Events": "Key events",
+        "EventHint": "Something that happened",
+        "KeyHint": "A turning point",
+        "AddEvent": "Event"
+      },
+      "Error": {
+        "NoGig": "This entry has no gig.",
+        "NoItem": "That item can't be found."
+      },
+      "Scream": {
+        "DefaultMasthead": "Night City Screamsheet",
+        "Tagline": "All the news they couldn't bury",
+        "IssueName": "{masthead} #{issue} · {date}",
+        "Issue": "Issue #{n}",
+        "Edit": "Edit screamsheet",
+        "Masthead": "Masthead",
+        "IssueNo": "Issue no.",
+        "EntryName": "Journal entry name",
+        "Stories": "Stories",
+        "Headline": "Headline",
+        "Body": "The story (a new line starts a new paragraph)",
+        "Source": "Byline, advertiser or contact",
+        "FollowUp": "Follow up",
+        "FollowUpHint": "Carry this story into the next issue as an update.",
+        "Developing": "Developing",
+        "Update": "Update",
+        "Type": {
+          "breaking": "Breaking",
+          "news": "News",
+          "developing": "Developing stories",
+          "advert": "Adverts",
+          "classified": "Classifieds"
+        },
+        "Draft": "Draft",
+        "Published": "Published",
+        "Generate": "Roll stories",
+        "Generated": "{n} stories rolled into the issue.",
+        "Tables": "Generator tables",
+        "TablesIntro": "Each kind of story rolls on a roll table: the starter tables in the Neon Hub: Screamsheet Tables compendium, or your own. Results read \"Headline | the story\"; without a bar, the first sentence of a long result is the headline. The number is how many stories of that kind each roll adds.",
+        "NoTableOption": "(none)",
+        "Starter": "Starter",
+        "NoTable": "Couldn't find the roll table for: {types}.",
+        "Publish": "Publish",
+        "Resend": "Send the alert again",
+        "OutNow": "Out now",
+        "Reminder": "On the stands",
+        "NewIssue": "New issue",
+        "Read": "Read it",
+        "EmptyIssue": "No stories yet. Roll some from the tables or add them in the editor.",
+        "SentInboxes": "Sent to {n} inboxes in Night City Messenger.",
+        "MessengerFooter": "The full issue is in the Neon Journal under Screamsheets.",
+        "Setting": {
+          "Messenger": "Screamsheets go to Night City Messenger",
+          "MessengerHint": "When a screamsheet is published, each player character gets it in their Night City Messenger inbox (needs that module)."
+        },
+        "Error": {
+          "Empty": "This issue has no stories to publish."
+        }
+      },
+      "Lore": {
+        "Type": {
+          "corporation": "Corporation",
+          "gang": "Gang",
+          "place": "Place",
+          "organization": "Organization",
+          "person": "Person"
+        },
+        "Plural": {
+          "corporation": "Corporations",
+          "gang": "Gangs",
+          "place": "Places",
+          "organization": "Organizations",
+          "person": "People"
+        },
+        "New": {
+          "corporation": "New corporation",
+          "gang": "New gang",
+          "place": "New place",
+          "organization": "New organization",
+          "person": "New person"
+        },
+        "Pick": "What kind of entry?",
+        "Edit": "Edit entry",
+        "Name": "Name",
+        "Kind": "Kind",
+        "Visible": "Players can read this",
+        "Tagline": "In a line",
+        "Source": "Source",
+        "SourceHint": "e.g. a book and page",
+        "Facts": "At a glance",
+        "FactLabel": "Label",
+        "FactValue": "What players or the GM should know",
+        "AddFact": "Fact",
+        "Body": "Write-up",
+        "Fact": {
+          "Headquarters": "Headquarters",
+          "Industry": "Industry",
+          "Leadership": "Leadership",
+          "InNightCity": "In Night City",
+          "Edgerunners": "Dealing with edgerunners",
+          "Turf": "Turf",
+          "KnownFor": "Known for",
+          "Rivals": "Allies & rivals",
+          "Hangouts": "Hangouts",
+          "Region": "Region",
+          "ControlledBy": "Controlled by",
+          "Feel": "The feel of it",
+          "NotableLocations": "Notable locations",
+          "Danger": "Danger",
+          "Kind": "Kind",
+          "Base": "Base",
+          "Purpose": "Purpose",
+          "Role": "Role",
+          "Affiliation": "Affiliation",
+          "Location": "Where to find them",
+          "Status": "Status"
+        },
+        "Outline": {
+          "Overview": "Overview",
+          "History": "History",
+          "Hooks": "Gig hooks",
+          "Who": "Who they are",
+          "Wants": "What they want",
+          "People": "Who's there",
+          "Secrets": "GM secrets"
+        },
+        "Import": "Import the Worldbook",
+        "ImportBody": "Copy the Neon Hub: Worldbook (2070s) entries into this world under Worldbuilding, filed by kind? Entries you've imported before are skipped. They start hidden from players.",
+        "Imported": "{n} worldbook entries imported.",
+        "Error": {
+          "NoPack": "The Worldbook compendium isn't available."
+        }
+      },
+      "Profile": {
+        "Name": "Profile",
+        "Kicker": "Edgerunner",
+        "Edit": "Edit profile",
+        "Handle": "Handle",
+        "Origin": "Where they're from",
+        "OriginHint": "e.g. Heywood, born and raised",
+        "Goals": "Goals",
+        "NoGoals": "No goals written down yet.",
+        "AddGoal": "Goal",
+        "GoalHint": "Something they want",
+        "Done": "Done",
+        "Contacts": "Contacts",
+        "NoContacts": "No contacts yet.",
+        "AddContact": "Contact",
+        "ContactName": "Who",
+        "ContactNote": "How you know them",
+        "Notes": "Notes",
+        "Pick": "Whose journal?",
+        "All": "Everyone without one",
+        "Made": "{n} character journals made."
+      },
+      "Diary": {
+        "Name": "Log: {date}",
+        "Untitled": "Log entry",
+        "Add": "Log entry",
+        "Edit": "Edit log entry",
+        "Location": "Where",
+        "Body": "What happened",
+        "Blank": "Nothing written yet.",
+        "Count": "{n} log entries"
       }
     }
   }

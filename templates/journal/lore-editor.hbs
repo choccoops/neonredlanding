@@ -1,0 +1,42 @@
+<div class="nh-jr-editor-body">
+  <div class="nh-jr-editor-scroll">
+    <div class="nh-jr-edit-top">
+      <button type="button" class="nh-jr-image-pick" data-action="pickImage" data-tooltip="{{localize 'NEONHUB.Journal.Gig.Image'}}" {{#if image}}style="background-image: url('{{image}}')"{{/if}}>
+        {{#unless image}}<i class="fa-solid fa-image"></i>{{/unless}}
+      </button>
+      <input type="hidden" name="image" value="{{image}}">
+      <div class="nh-jr-edit-name">
+        <label class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Lore.Name"}}</label>
+        <input type="text" name="name" value="{{name}}" maxlength="120" required>
+        {{#if isGM}}<label class="nh-check"><input type="checkbox" name="players" {{#if players}}checked{{/if}}> {{localize "NEONHUB.Journal.Lore.Visible"}}</label>{{/if}}
+      </div>
+    </div>
+    <div class="nh-jr-edit-grid">
+      <label><span>{{localize "NEONHUB.Journal.Lore.Kind"}}</span><select name="type">{{#each types}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+      <label><span>{{localize "NEONHUB.Journal.Lore.Source"}}</span><input type="text" name="source" value="{{source}}" maxlength="120" placeholder="{{localize 'NEONHUB.Journal.Lore.SourceHint'}}"></label>
+      <label class="is-wide"><span>{{localize "NEONHUB.Journal.Lore.Tagline"}}</span><input type="text" name="tagline" value="{{tagline}}" maxlength="200"></label>
+    </div>
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Lore.Facts"}}</span>
+      <ol class="nh-jr-edit-rows">
+        {{#each facts}}
+        <li data-row="{{id}}">
+          <input type="hidden" name="facts.{{i}}.id" value="{{id}}">
+          <input type="text" name="facts.{{i}}.label" value="{{label}}" maxlength="60" class="nh-jr-fact-label" placeholder="{{localize 'NEONHUB.Journal.Lore.FactLabel'}}">
+          <input type="text" name="facts.{{i}}.value" value="{{value}}" maxlength="400" placeholder="{{localize 'NEONHUB.Journal.Lore.FactValue'}}">
+          <button type="button" class="nh-cal-icon" data-action="removeRow" data-list="facts" aria-label="{{localize 'NEONHUB.Journal.Remove'}}"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        {{/each}}
+      </ol>
+      <button type="button" class="nh-cal-btn" data-action="addRow" data-list="facts"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Journal.Lore.AddFact"}}</button>
+    </section>
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Lore.Body"}}</span>
+      <div class="nh-jr-rich"></div>
+    </section>
+  </div>
+  <footer class="nh-jr-edit-foot">
+    <button type="button" class="nh-cal-btn" data-action="cancel">{{localize "NEONHUB.Journal.Cancel"}}</button>
+    <button type="submit" class="nh-cal-btn nh-cal-btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Journal.Save"}}</button>
+  </footer>
+</div>

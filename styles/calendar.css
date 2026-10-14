@@ -931,3 +931,5 @@
 @keyframes nh-dt-glitch { 0%, 100% { transform: translate(-3px, 0); } 25% { transform: translate(3px, -1px); } 50% { transform: translate(-2px, 1px); } 75% { transform: translate(2px, 0); } }
 .nh-dt-app.application { min-width: 560px; min-height: 420px; }
 .nh-dt-history { flex-shrink: 0; max-height: 40%; overflow-y: auto; }
+.nh-dt-vote .nh-skip-votes li.is-self { border-color: var(--player, var(--nc-cyan)); }
+.nh-dt-vote .nh-skip-votes li.is-self .nh-skip-voter { font-weight: 700; color: #fff; }

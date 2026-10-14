@@ -28,6 +28,13 @@ import { Downtime } from "./calendar/downtime-store.js";
 import { DowntimeApp, DowntimeVoteApp, allSpentAlert } from "./calendar/downtime-app.js";
 import { parseTime, minutesOfDay } from "./calendar/clock-time.js";
 import { sameDate } from "./calendar/cal-dates.js";
+import { NeonJournal } from "./journal/journal-app.js";
+import { JournalTakeover } from "./journal/journal-sheet.js";
+import { GigOps } from "./journal/gig-ops.js";
+import { Records } from "./journal/records.js";
+import { JournalStore } from "./journal/journal-store.js";
+import { ScreamOps } from "./journal/scream-ops.js";
+import { WorldOps } from "./journal/world-ops.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -51,6 +58,8 @@ Hooks.once("init", () => {
   WeatherStore.register();
   HouseholdStore.register();
   Downtime.register();
+  JournalTakeover.register();
+  ScreamOps.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -64,7 +73,15 @@ Hooks.once("init", () => {
     `${TEMPLATE_PATH}/calendar/month.hbs`,
     `${TEMPLATE_PATH}/calendar/month-window.hbs`,
     `${TEMPLATE_PATH}/calendar/date-card.hbs`,
-    `${TEMPLATE_PATH}/calendar/rent-card.hbs`
+    `${TEMPLATE_PATH}/calendar/rent-card.hbs`,
+    `${TEMPLATE_PATH}/journal/journal.hbs`,
+    `${TEMPLATE_PATH}/journal/gig.hbs`,
+    `${TEMPLATE_PATH}/journal/session.hbs`,
+    `${TEMPLATE_PATH}/journal/downtime-record.hbs`,
+    `${TEMPLATE_PATH}/journal/scream.hbs`,
+    `${TEMPLATE_PATH}/journal/lore.hbs`,
+    `${TEMPLATE_PATH}/journal/profile.hbs`,
+    `${TEMPLATE_PATH}/journal/diary.hbs`
   ]);
 
   game.modules.get(MODULE_ID).api = {
@@ -188,10 +205,39 @@ Hooks.once("init", () => {
     /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
     showMessenger: (view = "inbox", userIds = null) => HubSocket.emit("openMessenger", { view }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
 
+    /**
+     * The Neon Journal. open(): a JournalEntry, page or uuid, or a section ("gigs", "story",
+     * "downtime", "journals"). The rest is the GM's.
+     */
+    journal: {
+      open: (target = null) => (typeof target === "string" && !target.includes(".") ? NeonJournal.open(null, { section: target }) : NeonJournal.open(target)),
+      createGig: (name) => GigOps.create(name),
+      /** The gig on an entry: { status, client, objectives, rewards, ... } or null. */
+      gig: (entry) => {
+        const page = JournalStore.recordPage(entry, "gig");
+        return page ? JournalStore.data(page) : null;
+      },
+      moveGig: (entry, action) => GigOps.move(entry, action),
+      setObjective: (entry, id, state) => GigOps.setObjective(entry, id, state),
+      payGig: (entry, plan) => GigOps.payout(entry, plan),
+      /** GM: a new draft screamsheet issue; roll stories into it; publish it to everyone. */
+      newScreamsheet: () => ScreamOps.create(),
+      generateScreamsheet: (entry) => ScreamOps.generate(entry),
+      publishScreamsheet: (entry) => ScreamOps.publish(entry),
+      /** GM: a new worldbuilding entry ("corporation", "gang", "place", "organization", "person"). */
+      newLore: (type, name) => WorldOps.createLore(type, name),
+      /** GM: bring the 2070s Worldbook compendium's entries into the world. */
+      importWorldbook: () => WorldOps.importWorldbook(),
+      /** A character's journal (made for its player on first use). */
+      characterJournal: async (actor) => WorldOps.characterJournal(typeof actor === "string" ? await fromUuid(actor) : actor),
+      newChapter: (name) => Records.newChapter(name),
+      addSession: (entry) => Records.addSession(entry)
+    },
+
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
     hoverStatus: () => HubHover.status(),
 
-    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp }
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp, NeonJournal }
   };
 });
 
@@ -208,6 +254,8 @@ Hooks.once("ready", () => {
   HouseholdOps.init();
   Downtime.init();
   DowntimeVoteApp.registerSocket();
+  ScreamOps.init();
+  WorldOps.init();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
   if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
@@ -270,6 +318,10 @@ Hooks.on(`${MODULE_ID}.downtimeAllSpent`, (call) => {
   if (game.user.isGM) allSpentAlert(call);
 });
 Hooks.on("updateWorldTime", () => CalendarApp.instance?.updateClock());
+// The Neon Journal follows its journals.
+for (const hook of ["createJournalEntry", "updateJournalEntry", "deleteJournalEntry", "createJournalEntryPage", "updateJournalEntryPage", "deleteJournalEntryPage", "createFolder", "updateFolder", "deleteFolder"]) {
+  Hooks.on(hook, () => NeonJournal.refresh());
+}
 // Players' notes live on their User.
 Hooks.on("updateUser", (user, changes) => {
   if (foundry.utils.hasProperty(changes, `flags.${MODULE_ID}`)) CalendarApp.refresh();
@@ -364,6 +416,10 @@ function addHeaderButton(html, { cls, icon, label, onClick }) {
 Hooks.on("renderSceneDirectory", (app, html) => {
   if (!game.user.isGM) return;
   addHeaderButton(html, { cls: "neon-hub-new", icon: "fa-solid fa-table-cells-large", label: L("NEONHUB.UI.NewHub"), onClick: () => HubEditor.open() });
+});
+
+Hooks.on("renderJournalDirectory", (app, html) => {
+  addHeaderButton(html, { cls: "neon-hub-journal", icon: "fa-solid fa-book-open", label: L("NEONHUB.Journal.Title"), onClick: () => NeonJournal.open() });
 });
 
 Hooks.on("renderActorDirectory", (app, html) => {

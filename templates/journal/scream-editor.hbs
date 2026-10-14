@@ -1,0 +1,38 @@
+<div class="nh-jr-editor-body">
+  <div class="nh-jr-editor-scroll">
+    <div class="nh-jr-edit-grid is-session">
+      <label class="is-wide"><span>{{localize "NEONHUB.Journal.Scream.Masthead"}}</span><input type="text" name="masthead" value="{{masthead}}" maxlength="80"></label>
+      <label><span>{{localize "NEONHUB.Journal.Scream.IssueNo"}}</span><input type="number" name="issue" value="{{issue}}" min="0" step="1"></label>
+      <label><span>{{localize "NEONHUB.Journal.Session.Date"}}</span><input type="text" name="date" value="{{date}}" maxlength="40"></label>
+      <label><span>{{localize "NEONHUB.Journal.Scream.EntryName"}}</span><input type="text" name="name" value="{{name}}" maxlength="120" required></label>
+    </div>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Scream.Stories"}}</span>
+      <ol class="nh-jr-edit-rows nh-jr-edit-stories">
+        {{#each stories}}
+        <li data-row="{{id}}" class="is-{{type}}">
+          <input type="hidden" name="stories.{{i}}.id" value="{{id}}">
+          <div class="nh-jr-story-line">
+            <select name="stories.{{i}}.type" data-redraw>{{#each types}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+            <input type="text" name="stories.{{i}}.headline" value="{{headline}}" maxlength="200" placeholder="{{localize 'NEONHUB.Journal.Scream.Headline'}}">
+            <button type="button" class="nh-cal-icon" data-action="removeRow" data-list="stories" aria-label="{{localize 'NEONHUB.Journal.Remove'}}"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <textarea name="stories.{{i}}.body" rows="3" placeholder="{{localize 'NEONHUB.Journal.Scream.Body'}}">{{body}}</textarea>
+          <div class="nh-jr-story-line">
+            <input type="text" name="stories.{{i}}.source" value="{{source}}" maxlength="120" placeholder="{{localize 'NEONHUB.Journal.Scream.Source'}}">
+            {{#if isDeveloping}}<label class="nh-check" data-tooltip="{{localize 'NEONHUB.Journal.Scream.FollowUpHint'}}"><input type="checkbox" name="stories.{{i}}.followUp" {{#if followUp}}checked{{/if}}> {{localize "NEONHUB.Journal.Scream.FollowUp"}}</label>{{/if}}
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+      <div class="nh-jr-edit-add">
+        {{#each addTypes}}<button type="button" class="nh-cal-btn" data-action="addRow" data-list="stories" data-type="{{key}}"><i class="fa-solid fa-plus"></i> {{label}}</button>{{/each}}
+      </div>
+    </section>
+  </div>
+  <footer class="nh-jr-edit-foot">
+    <button type="button" class="nh-cal-btn" data-action="cancel">{{localize "NEONHUB.Journal.Cancel"}}</button>
+    <button type="submit" class="nh-cal-btn nh-cal-btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Journal.Save"}}</button>
+  </footer>
+</div>

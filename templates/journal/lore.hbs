@@ -1,0 +1,16 @@
+<div class="nh-lore is-{{lore.type}}">
+  <header class="nh-lore-head">
+    {{#if lore.image}}<img class="nh-lore-img" src="{{lore.image}}" alt="" data-action="popout" data-src="{{lore.image}}">{{else}}<span class="nh-lore-glyph"><i class="{{lore.icon}}"></i></span>{{/if}}
+    <div class="nh-lore-title">
+      <span class="nh-lore-type"><i class="{{lore.icon}}"></i> {{lore.typeLabel}}</span>
+      {{#if lore.tagline}}<p class="nh-lore-tagline">{{lore.tagline}}</p>{{/if}}
+    </div>
+  </header>
+  {{#if lore.facts.length}}
+  <dl class="nh-jr-facts nh-lore-facts">
+    {{#each lore.facts}}<div><dt>{{label}}</dt><dd>{{value}}</dd></div>{{/each}}
+  </dl>
+  {{/if}}
+  {{#if lore.body}}<div class="nh-jr-text journal-page-content nh-lore-body">{{{lore.body}}}</div>{{/if}}
+  {{#if lore.source}}<p class="nh-lore-source"><i class="fa-solid fa-book"></i> {{lore.source}}</p>{{/if}}
+</div>

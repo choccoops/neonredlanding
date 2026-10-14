@@ -1,0 +1,36 @@
+<div class="nh-scream">
+  <header class="nh-scream-mast">
+    <span class="nh-scream-mast-top">{{#if sheet.issue}}{{localize "NEONHUB.Journal.Scream.Issue" n=sheet.issue}}{{/if}}{{#if sheet.date}} &middot; {{sheet.date}}{{/if}}</span>
+    <h2 class="nh-scream-title" data-text="{{sheet.masthead}}">{{sheet.masthead}}</h2>
+    <span class="nh-scream-mast-bottom">{{localize "NEONHUB.Journal.Scream.Tagline"}}</span>
+    {{#if sheet.isGM}}<span class="nh-jr-status is-{{#if sheet.published}}published{{else}}draft{{/if}} nh-scream-state">{{#if sheet.published}}{{localize "NEONHUB.Journal.Scream.Published"}}{{else}}{{localize "NEONHUB.Journal.Scream.Draft"}}{{/if}}</span>{{/if}}
+  </header>
+
+  {{#if sheet.isGM}}
+  <div class="nh-jr-gm">
+    <button type="button" class="nh-cal-btn" data-action="generate"><i class="fa-solid fa-dice"></i> {{localize "NEONHUB.Journal.Scream.Generate"}}</button>
+    <button type="button" class="nh-cal-btn" data-action="tables"><i class="fa-solid fa-table-list"></i> {{localize "NEONHUB.Journal.Scream.Tables"}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="publish"><i class="fa-solid fa-tower-broadcast"></i> {{sheet.publishLabel}}</button>
+  </div>
+  {{/if}}
+
+  {{#if sheet.empty}}<p class="nh-jr-empty">{{localize "NEONHUB.Journal.Scream.EmptyIssue"}}</p>{{/if}}
+
+  {{#each sheet.groups}}
+  <section class="nh-scream-group is-{{type}}">
+    {{#unless (eq type "breaking")}}<h3 class="nh-scream-group-head"><span>{{label}}</span></h3>{{/unless}}
+    <div class="nh-scream-stories">
+      {{#each stories}}
+      <article class="nh-scream-story is-{{../type}} is-style-{{style}} {{#if continued}}is-continued{{/if}}">
+        {{#if (eq ../type "breaking")}}<span class="nh-scream-flag">{{../label}}</span>{{/if}}
+        {{#if (eq ../type "developing")}}<span class="nh-scream-flag is-developing">{{#if continued}}{{localize "NEONHUB.Journal.Scream.Update"}}{{else}}{{localize "NEONHUB.Journal.Scream.Developing"}}{{/if}}</span>{{/if}}
+        {{#if image}}<img class="nh-scream-img" src="{{image}}" alt="">{{/if}}
+        <h4>{{headline}}</h4>
+        {{#each paras}}<p>{{this}}</p>{{/each}}
+        {{#if source}}<span class="nh-scream-source">{{source}}</span>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </section>
+  {{/each}}
+</div>

@@ -1,6 +1,6 @@
-# Neon Hub: Landing Pages, Headquarters, Lifestyle & Calendar for Cyberpunk RED
+# Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar & Journal for Cyberpunk RED
 
-Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
+Five tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
@@ -17,6 +17,9 @@ Four tools for **Cyberpunk RED - CORE** on Foundry VTT:
 - **Calendar.** Group calendars, one per crew, each with its own date and rent day. Passing rent
   day starts the month for that group's lifestyle bills and Headquarters, and every day shows the
   real Moon's phase. Downtime gives the crew time to spend, for other modules' downtime actions too.
+- **Neon Journal.** Foundry's journals in Neon Hub's style, with a gig tracker (objectives,
+  rewards and pay-outs), weekly screamsheets, worldbuilding with a 2070s Worldbook, a journal for
+  each character, a story journal for sessions and events, and a log of every downtime.
 
 | Requirement | Version |
 | --- | --- |
@@ -481,6 +484,89 @@ The calendar's layout and look follow Vokashu's **Cyberpunk Calendar** module, r
 Hub; none of its code is used. The Tektur font is © 2023 The Tektur Project Authors, under the SIL
 Open Font License 1.1 (`fonts/Tektur-OFL.txt`).
 
+## Neon Journal
+
+Every journal in the world, in one window in Neon Hub's style. With *Open journals in the Neon
+Journal* on (a per-player setting, on by default), opening any journal (from the Journal tab,
+a link, or the GM's **Show to players**) opens it here; the **Neon Journal** button on the Journal
+tab opens it any time. The book button on an entry opens it in Foundry's own journal.
+
+- **Sections.** *Journals* is every other journal, by folder. *Gigs*, *Screamsheets*,
+  *Worldbuilding*, *Characters*, *Story & Events* and *Downtime Log* hold Neon Hub's own records,
+  each filed in a folder of that name. Compendium journals still open in Foundry's own window. A search box
+  filters the list, and Back and Forward step through what you've looked at.
+- **Pages.** Text, image, video and PDF pages show in the window; links and inline rolls work as
+  usual. Owners add pages and edit them in Foundry's page editor (the pencil).
+- **For the GM.** On each entry: who can see it (the eye: all players, or only the GM), **Show
+  to players**, permissions, rename and delete. The list marks entries no player can see.
+
+**Gigs.** **New gig** makes one and opens its editor:
+
+- The gig's name, an image (shown as a banner), client, location, deadline and danger, the crew
+  taking it, and a briefing in the rich-text editor.
+- **Objectives**, each open, done or failed. The gig shows them grouped (current, completed,
+  failed) with a progress bar; the GM clicks an objective's box to move it along.
+- **Rewards:** eddies (each, or split between the crew), IP each, HQ IP for a Headquarters, items
+  and homes (drop them from the sidebar or a compendium), or anything else as a line of text.
+- **Players can see this gig** decides whether players find it in their Gigs list.
+
+The GM moves a gig along with **Take the gig**, **Completed**, **Failed** or **Reopen**, each
+stamping the in-world date it happened. Once it's completed, **Pay out** asks who gets paid:
+eddies go through the wealth ledger, IP through the Improvement Points ledger, HQ IP to the
+Headquarters, items and homes to the character picked, and other rewards are marked as given. A
+card goes to the crew in chat and the rewards show as paid. **Post to chat** sends the crew a
+card with the gig's state and objectives and a link to open it (everyone, if players can see it).
+The list filters gigs by Open, Found, Active, Done, Failed or All.
+
+**Screamsheets.** A weekly paper for the crew, laid out like one: masthead, breaking news, news
+in columns, developing stories, adverts and classifieds.
+
+- **New issue** (GM) starts a draft numbered after the last one and dated today, with any
+  developing story marked *Follow up* carried over as an update.
+- **Roll stories** fills the issue from roll tables, a number of each kind. The **Neon Hub:
+  Screamsheet Tables** compendium has starter tables (breaking news, city news, developing stories,
+  adverts and classifieds, all original); **Generator tables** swaps in your own tables and sets how
+  many stories each kind adds. A result reads `Headline | the story`; without a bar, a long
+  result's first sentence is the headline.
+- Write or change any story in the editor (the pencil): its kind, headline, text and byline.
+- **Publish** lets players read the issue, posts a card with the headlines to chat, runs a
+  breaking-news ticker across the top of everyone's screen (click it to read the issue), and, with
+  **Night City Messenger**, sends each player character the headlines in their inbox (a world
+  setting turns that off). Drafts are the GM's until published; **Send the alert again** repeats
+  the card and ticker.
+
+**Worldbuilding.** Entries for corporations, gangs, places, organizations and people. **New entry**
+(GM) asks which kind and starts it from that kind's template: a line about it, facts to fill in
+(a corporation's headquarters, industry and leadership; a gang's turf, rivals and hangouts; and so
+on), and a write-up outlined with headings and a GM-only secrets block. Entries are GM-only until
+**Players can read this** is ticked. Filter the list by kind.
+
+- **The Worldbook (2070s).** The **Neon Hub: Worldbook (2070s)** compendium has 65 entries for
+  the Night City of *Cyberpunk: Edgerunners*: the megacorps, the gangs, the districts with their
+  notable spots, the NCPD, MaxTac, Netwatch and the nomad nations, and notable people from the
+  fixers to the Edgerunners crew (marked as spoilers), plus a timeline. Each is a short summary
+  written for Neon Hub from the facts in R. Talsorian's *Edgerunner's Handbook* (from the
+  *Cyberpunk: Edgerunners Mission Kit*), with the handbook page, and a gig hook or two. **Import the
+  Worldbook** copies them into the world, filed by kind and hidden from players, ready to edit.
+
+**Characters.** A journal for each player character, theirs to write in. **Start a journal** makes
+one (players for their own characters, the GM for anyone, or everyone at once); it belongs to the
+character's players and the GM can read it. It opens on a **Profile**: handle, where they're from,
+goals to tick off, contacts, and notes. **Log entry** adds a dated page for what happened, dated on
+the character's calendar.
+
+**Story & Events (GM).** **New chapter** starts a chapter of the campaign with an Overview page.
+**Session** adds a session page, numbered after the last one, dated in-world and with today's
+date, and with the player characters ticked: write what happened in the editor and list the key
+events, starring the turning points. Chapters are the GM's own until shown to players.
+
+**Downtime Log.** Each time the GM completes a downtime, its full record is filed here: the
+total, the dates it ran, and each character's log with what they spent their time on and when,
+as it stood at the end. Records are kept as they were and are GM-only until shown.
+
+Neon Journal records are ordinary text pages with their data attached, and each keeps a
+readable copy in its text, so they read fine in Foundry's own journal and without Neon Hub.
+
 ## Night City Messenger
 
 [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) by
@@ -549,6 +635,20 @@ await hub.downtime.refund(entryId);     // take a spend back
 await hub.downtime.start({ total: 3 * 1440, label: "Recovery", participants: [actor.uuid] }); // GM
 await hub.downtime.complete();          // GM: end it and wind the clock through it
 await hub.downtime.cancel();            // GM: call it off, no time passes
+hub.journal.open();                     // the Neon Journal (or an entry, page, uuid, or "gigs"/"story"/"downtime")
+const gig = await hub.journal.createGig("The Glen Courier"); // GM: a new gig entry
+hub.journal.gig(gig);                   // its record: { status, client, objectives, rewards, crew, ... }
+await hub.journal.moveGig(gig, "take"); // GM: "take", "complete", "fail" or "reopen"
+await hub.journal.setObjective(gig, objectiveId, "done"); // GM: "open", "done" or "failed"
+await hub.journal.payGig(gig, { recipients: [actor.uuid], rewards: { [rewardId]: {} } }); // GM
+const issue = await hub.journal.newScreamsheet(); // GM: a draft issue, follow-ups carried over
+await hub.journal.generateScreamsheet(issue);    // GM: roll stories into it
+await hub.journal.publishScreamsheet(issue);     // GM: publish: chat, ticker, Messenger inboxes
+await hub.journal.newLore("gang", "The Wraiths"); // GM: a worldbuilding entry from its template
+await hub.journal.importWorldbook();              // GM: the 2070s Worldbook into the world
+await hub.journal.characterJournal(actor);        // a character's journal (made on first use)
+await hub.journal.newChapter("Act One");  // GM: a Story & Events chapter
+await hub.journal.addSession(chapter);    // GM: a numbered session page in it
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
@@ -654,4 +754,8 @@ Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lif
 
 MIT. Icons in `assets/` are original to Neon Hub. The Tektur font (`fonts/`) is under the SIL Open
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
-Games. This is unofficial fan content and isn't approved or endorsed by R. Talsorian Games.
+Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
+Handbook* in the *Cyberpunk: Edgerunners Mission Kit* (R. Talsorian Games); Cyberpunk, Cyberpunk 2077
+and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
+original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian
+Games or CD PROJEKT.

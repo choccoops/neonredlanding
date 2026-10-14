@@ -1,0 +1,43 @@
+<div class="nh-jr-editor-body">
+  <div class="nh-jr-editor-scroll">
+    <div class="nh-jr-edit-grid is-session">
+      <label class="is-wide"><span>{{localize "NEONHUB.Journal.Session.Title"}}</span><input type="text" name="name" value="{{name}}" maxlength="120" required></label>
+      <label><span>{{localize "NEONHUB.Journal.Session.Number"}}</span><input type="number" name="number" value="{{number}}" min="0" step="1"></label>
+      <label><span>{{localize "NEONHUB.Journal.Session.Date"}}</span><input type="text" name="date" value="{{date}}" maxlength="40"></label>
+      <label><span>{{localize "NEONHUB.Journal.Session.Played"}}</span><input type="date" name="played" value="{{played}}"></label>
+    </div>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Session.Crew"}}</span>
+      {{#if characters.length}}
+      <div class="nh-cal-players">
+        {{#each characters}}<label class="nh-cal-player"><input type="checkbox" name="crew" value="{{uuid}}" {{#if checked}}checked{{/if}}><i></i><span>{{name}}</span></label>{{/each}}
+      </div>
+      {{else}}<p class="hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</p>{{/if}}
+    </section>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Session.Summary"}}</span>
+      <div class="nh-jr-rich"></div>
+    </section>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Session.Events"}}</span>
+      <ol class="nh-jr-edit-rows">
+        {{#each events}}
+        <li data-row="{{id}}">
+          <input type="hidden" name="events.{{i}}.id" value="{{id}}">
+          <input type="text" name="events.{{i}}.text" value="{{text}}" maxlength="300" placeholder="{{localize 'NEONHUB.Journal.Session.EventHint'}}">
+          <label class="nh-check" data-tooltip="{{localize 'NEONHUB.Journal.Session.KeyHint'}}"><input type="checkbox" name="events.{{i}}.key" {{#if key}}checked{{/if}}> <i class="fa-solid fa-star"></i></label>
+          <button type="button" class="nh-cal-icon" data-action="removeRow" data-list="events" aria-label="{{localize 'NEONHUB.Journal.Remove'}}"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        {{/each}}
+      </ol>
+      <button type="button" class="nh-cal-btn" data-action="addRow" data-list="events"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Journal.Session.AddEvent"}}</button>
+    </section>
+  </div>
+  <footer class="nh-jr-edit-foot">
+    <button type="button" class="nh-cal-btn" data-action="cancel">{{localize "NEONHUB.Journal.Cancel"}}</button>
+    <button type="submit" class="nh-cal-btn nh-cal-btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Journal.Save"}}</button>
+  </footer>
+</div>

@@ -1,0 +1,7 @@
+<div class="nh-diary">
+  <header class="nh-diary-head">
+    <h3 class="nh-jr-page-title">{{name}}</h3>
+    <span class="nh-jr-date">{{#if diary.date}}<i class="fa-solid fa-calendar-day"></i> {{diary.date}}{{/if}}{{#if diary.location}} &middot; <i class="fa-solid fa-location-dot"></i> {{diary.location}}{{/if}}</span>
+  </header>
+  {{#if diary.body}}<div class="nh-jr-text journal-page-content nh-diary-body">{{{diary.body}}}</div>{{else}}<p class="nh-jr-empty">{{localize "NEONHUB.Journal.Diary.Blank"}}</p>{{/if}}
+</div>

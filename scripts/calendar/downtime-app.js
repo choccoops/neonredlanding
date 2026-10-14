@@ -362,9 +362,11 @@ export class DowntimeVoteApp extends HandlebarsApplicationMixin(ApplicationV2) {
       hours: v.hours,
       mins: v.minutes,
       amount: formatDuration(this.minutes),
+      amountTag: `<span class="nh-dt-amount">${formatDuration(this.minutes)}</span>`,
       presets: PRESETS.map(([key, minutes]) => ({ minutes, label: L(`NEONHUB.Downtime.Preset.${key}`) })),
       users: (session?.users ?? []).map((id) => game.users.get(id)).filter((u) => u && !u.isGM).map((u) => ({
         name: u.name,
+        self: u.id === game.user.id,
         color: u.color?.css ?? u.color,
         vote: votes[u.id] ? formatDuration(votes[u.id]) : null
       })),
@@ -375,22 +377,31 @@ export class DowntimeVoteApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   _onRender(context, options) {
     super._onRender?.(context, options);
+    // Typing updates the amount in place: re-rendering here would swap the Vote/Start button out
+    // from under a click that follows straight on from the field.
     for (const input of this.element.querySelectorAll(".nh-dt-duration input")) {
-      input.addEventListener("change", () => {
-        const form = { elements: Object.fromEntries([...this.element.querySelectorAll(".nh-dt-duration input")].map((i) => [i.name, i])) };
-        this.minutes = readDuration(form) || this.minutes;
-        this.render();
-      });
+      input.addEventListener("input", () => this.#readFields());
     }
   }
 
+  /** Take the amount from the fields, and show it on the buttons. */
+  #readFields() {
+    const inputs = [...(this.element?.querySelectorAll(".nh-dt-duration input") ?? [])];
+    if (inputs.length) this.minutes = readDuration({ elements: Object.fromEntries(inputs.map((i) => [i.name, i])) }) || this.minutes;
+    for (const el of this.element?.querySelectorAll(".nh-dt-amount") ?? []) el.textContent = formatDuration(this.minutes);
+  }
+
+  /** A preset sets the amount; for a player it's their vote, cast straight away. */
   static #onPreset(event, target) {
     this.minutes = Number(target.dataset.minutes) || this.minutes;
-    this.render();
+    const session = DowntimeVoteApp.session;
+    if (!game.user.isGM && session) HubSocket.emit("dtv.vote", { id: session.id, minutes: this.minutes }, session.users);
+    else this.render();
   }
 
   static #onVote() {
     const session = DowntimeVoteApp.session;
+    this.#readFields();
     if (session) HubSocket.emit("dtv.vote", { id: session.id, minutes: this.minutes }, session.users);
   }
 
@@ -405,6 +416,7 @@ export class DowntimeVoteApp extends HandlebarsApplicationMixin(ApplicationV2) {
   static async #onStart() {
     const session = DowntimeVoteApp.session;
     if (!session || !game.user.isGM) return;
+    this.#readFields();
     try {
       await Downtime.start({ total: this.minutes, label: session.label, participants: session.participants });
       const others = session.users.filter((id) => id !== game.user.id);

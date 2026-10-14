@@ -27,10 +27,25 @@ export const CPR = {
     delta = Math.trunc(Number(delta) || 0);
     if (!delta) return;
     if (!this.hasWealth(actor)) throw new Error(game.i18n.format("NEONHUB.Error.NoWealth", { name: actor.name }));
-    const total = this.getWealth(actor) + delta;
-    const transactions = deepClone(getProperty(actor, "system.wealth.transactions") ?? []);
-    transactions.push([this._ledgerSentence("wealth", delta, total), userName ? `${reason} - ${userName}` : reason]);
-    await actor.update({ "system.wealth.value": total, "system.wealth.transactions": transactions });
+    await this.changeLedger(actor, "wealth", delta, reason, userName);
+  },
+
+  /** A character with a CPR ledger ("wealth", "reputation", "improvementPoints"). */
+  hasLedger(actor, property) {
+    return !!actor
+      && hasProperty(actor, `system.${property}.value`)
+      && Array.isArray(getProperty(actor, `system.${property}.transactions`));
+  },
+
+  /** Change a CPR ledger value and record it the way the system's own ledger does. */
+  async changeLedger(actor, property, delta, reason, userName = game.user.name) {
+    delta = Math.trunc(Number(delta) || 0);
+    if (!delta) return;
+    if (!this.hasLedger(actor, property)) throw new Error(game.i18n.format("NEONHUB.Error.NoLedger", { name: actor.name }));
+    const total = (Math.floor(Number(getProperty(actor, `system.${property}.value`)) || 0) + delta);
+    const transactions = deepClone(getProperty(actor, `system.${property}.transactions`) ?? []);
+    transactions.push([this._ledgerSentence(property, delta, total), userName ? `${reason} - ${userName}` : reason]);
+    await actor.update({ [`system.${property}.value`]: total, [`system.${property}.transactions`]: transactions });
   },
 
   _ledgerSentence(property, delta, total) {

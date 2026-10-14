@@ -6,6 +6,7 @@ import { CalendarOps } from "./cal-ops.js";
 import { Clock } from "./clock.js";
 import { SkipTimeApp } from "./skip-app.js";
 import { daysCrossed } from "./clock-time.js";
+import { Records } from "../journal/records.js";
 import {
   normalizeCall, normalizeEntry, addEntry, removeEntry, spendProblem, allSpent, summary, balance, timeline, formatDuration
 } from "./downtime-data.js";
@@ -177,6 +178,12 @@ export const Downtime = {
         rows
       });
       await ChatMessage.create({ content, speaker: { alias: L("NEONHUB.Downtime.Title") } });
+      // The full log, kept in the Neon Journal under Downtime.
+      try {
+        await Records.recordDowntime(call, (c, uuid) => this.startDate(c, uuid));
+      } catch (err) {
+        console.error(`${MODULE_ID} | couldn't file the downtime in the journal`, err);
+      }
       this._emit("Completed", done);
       this._winding = { id: SkipTimeApp.auto(call.total, { label: call.label || L("NEONHUB.Downtime.Title") }), from: game.time.worldTime, minutes: call.total };
       return done;

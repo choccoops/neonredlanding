@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.12.0
+
+The Neon Journal: Foundry's journals in Neon Hub's style, with gigs, the story and the downtime log.
+
+- **The Neon Journal.** One window for every journal, with sections for Journals (by folder), Gigs, Story & Events and the Downtime Log, a search box, Back and Forward, and page tabs. Opening a journal anywhere in Foundry opens it here (a per-player setting, on by default); the book button opens an entry in Foundry's own journal. The GM can show, hide, set permissions on, rename and delete entries from it.
+- **Gigs.** Each gig has a client, location, deadline, danger, crew, an image and a briefing, objectives that are open, done or failed, and rewards: eddies (each or split), IP, HQ IP, items, homes or a line of text. The GM takes, completes, fails or reopens it (stamping the in-world date), ticks objectives off, and **Pays out** a completed gig through the wealth and Improvement Points ledgers, the Headquarters and characters' inventories, with a chat card. **Post to chat** sends the crew its state and a link.
+- **Screamsheets.** Weekly issues laid out like a paper: breaking news, news, developing stories, adverts and classifieds. **Roll stories** fills an issue from roll tables (starter tables in the new **Neon Hub: Screamsheet Tables** compendium, or your own); developing stories can be carried into the next issue. **Publish** opens it to players, posts the headlines to chat, runs a breaking-news ticker across every screen, and sends each character the headlines in Night City Messenger.
+- **Worldbuilding.** Entries for corporations, gangs, places, organizations and people, each started from a template of facts and an outlined write-up with a GM secrets block.
+- **The Worldbook (2070s).** A new compendium of 65 entries for the Night City of *Cyberpunk: Edgerunners*, written for Neon Hub from the facts in the *Edgerunner's Handbook*, with page references and gig hooks, plus a timeline. **Import the Worldbook** brings them into the world.
+- **Character journals.** One per player character, owned by its players: a profile (handle, origin, goals, contacts, notes) and dated log entries.
+- **Story & Events.** Chapters for the GM, each with session pages: numbered, dated in-world and in the real world, who was there, what happened and the key events.
+- **Downtime Log.** Completing a downtime files its full record in the journal: the dates it ran and each character's log.
+- Neon Journal records are text pages with a readable copy in their text, so they still read in Foundry's journal and without the module.
+- Gig rewards in IP go through the CPR Improvement Points ledger, like eddies through the wealth ledger.
+
+### Downtime vote fixes (from 1.11.1, not released separately)
+
+- **Downtime vote:** typing an amount and clicking **Vote** (or the GM's **Start downtime**) straight away now always goes through. Before, leaving the field redrew the window under the click and the vote was lost. The amount on the button updates as you type.
+- **Presets vote.** A player clicking a preset (1d, 3d, 1w…) now casts that vote straight away; before, it only filled in the amount until **Vote** was clicked. The GM's presets still just set the amount.
+- Your own row in the vote is highlighted.
+
 ## 1.11.0
 
 - **Downtime.** The GM calls downtime from the calendar (the mug button) for the characters taking part: a set amount in days, hours and minutes, or put to a vote like Skip time, with presets from a day to a month and the group's call. Each character gets that much time to spend, and a card with the total goes to chat.

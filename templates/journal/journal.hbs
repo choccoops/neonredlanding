@@ -1,0 +1,133 @@
+<div class="nh-jr">
+  <nav class="nh-jr-rail">
+    <span class="nh-jr-brand">{{localize "NEONHUB.Journal.Brand"}}</span>
+    {{#each sections}}
+    <button type="button" class="nh-jr-tab {{#if active}}is-active{{/if}}" data-action="section" data-section="{{key}}">
+      <i class="{{icon}}"></i><span>{{label}}</span>{{#if count}}<b>{{count}}</b>{{/if}}
+    </button>
+    {{/each}}
+    <div class="nh-jr-history">
+      <button type="button" class="nh-cal-icon" data-action="back" {{#unless canBack}}disabled{{/unless}} data-tooltip="{{localize 'NEONHUB.Journal.Back'}}" aria-label="{{localize 'NEONHUB.Journal.Back'}}"><i class="fa-solid fa-chevron-left"></i></button>
+      <button type="button" class="nh-cal-icon" data-action="forward" {{#unless canForward}}disabled{{/unless}} data-tooltip="{{localize 'NEONHUB.Journal.Forward'}}" aria-label="{{localize 'NEONHUB.Journal.Forward'}}"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </nav>
+
+  <aside class="nh-jr-list">
+    <header class="nh-jr-list-head">
+      <div class="nh-jr-list-title">
+        <span class="nh-cal-kicker">// {{sectionLabel}}</span>
+        {{#if canCreate}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="create"><i class="fa-solid fa-plus"></i> {{createLabel}}</button>{{/if}}
+      </div>
+      <input type="search" class="nh-jr-search" placeholder="{{localize 'NEONHUB.Journal.Search'}}" value="{{search}}" autocomplete="off">
+      {{#if canImport}}<button type="button" class="nh-cal-btn nh-jr-import" data-action="importWorldbook"><i class="fa-solid fa-file-import"></i> {{localize "NEONHUB.Journal.Lore.Import"}}</button>{{/if}}
+      {{#if loreFilters}}
+      <div class="nh-jr-filters">
+        {{#each loreFilters}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="loreFilter" data-filter="{{key}}">{{label}}</button>{{/each}}
+      </div>
+      {{/if}}
+      {{#if gigFilters}}
+      <div class="nh-jr-filters">
+        {{#each gigFilters}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="filter" data-filter="{{key}}">{{label}}</button>{{/each}}
+      </div>
+      {{/if}}
+    </header>
+    <div class="nh-jr-list-scroll">
+      {{#each groups}}
+      {{#if folder}}<h4 class="nh-jr-folder"><i class="fa-solid fa-folder"></i> {{folder}}</h4>{{/if}}
+      <ul class="nh-jr-rows">
+        {{#each rows}}
+        <li class="nh-jr-row {{#if active}}is-active{{/if}} {{#if status}}is-{{status}}{{/if}}" data-entry="{{id}}" data-search="{{search}}" data-action="openEntry">
+          {{#if img}}<img class="nh-jr-row-img" src="{{img}}" alt="">{{/if}}
+          {{#if icon}}<i class="nh-jr-row-icon {{icon}}"></i>{{/if}}
+          <div class="nh-jr-row-main">
+            <b>{{name}}</b>
+            {{#if sub}}<small>{{sub}}</small>{{/if}}
+          </div>
+          <div class="nh-jr-row-side">
+            {{#if hidden}}<i class="fa-solid fa-eye-slash nh-jr-hidden" data-tooltip="{{localize 'NEONHUB.Journal.HiddenFromPlayers'}}"></i>{{/if}}
+            {{#if statusLabel}}<span class="nh-jr-status is-{{status}}">{{statusLabel}}</span>{{/if}}
+            {{#if progress}}<small class="nh-jr-count">{{progress}}</small>{{/if}}
+          </div>
+          {{#if progress}}<div class="nh-jr-mini"><span style="width: {{pct}}%"></span></div>{{/if}}
+        </li>
+        {{/each}}
+      </ul>
+      {{/each}}
+      {{#if listEmpty}}<p class="nh-jr-empty">{{localize "NEONHUB.Journal.Empty"}}</p>{{/if}}
+    </div>
+  </aside>
+
+  <main class="nh-jr-main">
+    {{#if entry}}
+    <header class="nh-jr-entry-head">
+      <div class="nh-jr-entry-title">
+        <span class="nh-cal-kicker">// {{entry.sectionLabel}}{{#if isGM}}{{#if entry.gmOnly}} &middot; <i class="fa-solid fa-eye-slash"></i> {{localize "NEONHUB.Journal.GMOnly"}}{{/if}}{{/if}}</span>
+        <h2>{{entry.name}}</h2>
+      </div>
+      <div class="nh-jr-tools">
+        {{#if entry.page.canEdit}}<button type="button" class="nh-cal-icon" data-action="edit" data-tooltip="{{localize 'NEONHUB.Journal.EditPage'}}" aria-label="{{localize 'NEONHUB.Journal.EditPage'}}"><i class="fa-solid fa-pen"></i></button>{{/if}}
+        {{#if entry.canEdit}}<button type="button" class="nh-cal-icon" data-action="rename" data-tooltip="{{localize 'NEONHUB.Journal.Rename'}}" aria-label="{{localize 'NEONHUB.Journal.Rename'}}"><i class="fa-solid fa-i-cursor"></i></button>{{/if}}
+        {{#if isGM}}
+        <button type="button" class="nh-cal-icon {{#if entry.playersSee}}is-on{{/if}}" data-action="players" data-tooltip="{{#if entry.playersSee}}{{localize 'NEONHUB.Journal.PlayersSee'}}{{else}}{{localize 'NEONHUB.Journal.PlayersDont'}}{{/if}}" aria-label="{{localize 'NEONHUB.Journal.PlayersToggle'}}"><i class="fa-solid {{#if entry.playersSee}}fa-eye{{else}}fa-eye-slash{{/if}}"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="show" data-tooltip="{{localize 'NEONHUB.Journal.Show'}}" aria-label="{{localize 'NEONHUB.Journal.Show'}}"><i class="fa-solid fa-tower-broadcast"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="ownership" data-tooltip="{{localize 'NEONHUB.Journal.Ownership'}}" aria-label="{{localize 'NEONHUB.Journal.Ownership'}}"><i class="fa-solid fa-lock"></i></button>
+        {{/if}}
+        <button type="button" class="nh-cal-icon" data-action="classic" data-tooltip="{{localize 'NEONHUB.Journal.Classic'}}" aria-label="{{localize 'NEONHUB.Journal.Classic'}}"><i class="fa-solid fa-book"></i></button>
+        {{#if isGM}}<button type="button" class="nh-cal-icon is-danger" data-action="remove" data-tooltip="{{localize 'NEONHUB.Journal.Delete'}}" aria-label="{{localize 'NEONHUB.Journal.Delete'}}"><i class="fa-solid fa-trash"></i></button>{{/if}}
+      </div>
+    </header>
+
+    {{#if entry.pages.length}}
+    <nav class="nh-jr-pages">
+      {{#each entry.pages}}
+      <button type="button" class="{{#if active}}is-active{{/if}}" data-action="openPage" data-page="{{id}}"><i class="{{icon}}"></i> {{name}}</button>
+      {{/each}}
+      {{#if entry.canEdit}}
+      {{#if entry.isCharacter}}<button type="button" class="nh-jr-add" data-action="addLog"><i class="fa-solid fa-feather"></i> {{localize "NEONHUB.Journal.Diary.Add"}}</button>{{/if}}
+      {{#if entry.isStory}}<button type="button" class="nh-jr-add" data-action="addSession"><i class="fa-solid fa-clapperboard"></i> {{localize "NEONHUB.Journal.Session.Add"}}</button>{{/if}}
+      <button type="button" class="nh-jr-add" data-action="addPage"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Journal.AddPage"}}</button>
+      {{/if}}
+    </nav>
+    {{/if}}
+
+    <div class="nh-jr-page-scroll">
+      {{#with entry.page}}
+      <article class="nh-jr-page is-{{kind}}" data-page="{{id}}">
+        {{#if isGig}}{{> "modules/cpr-neon-hub/templates/journal/gig.hbs" gig=gig isGM=@root.isGM}}{{/if}}
+        {{#if isSession}}{{> "modules/cpr-neon-hub/templates/journal/session.hbs" session=session name=name}}{{/if}}
+        {{#if isDowntime}}{{> "modules/cpr-neon-hub/templates/journal/downtime-record.hbs" record=record}}{{/if}}
+        {{#if isScream}}{{> "modules/cpr-neon-hub/templates/journal/scream.hbs" sheet=sheet}}{{/if}}
+        {{#if isLore}}{{> "modules/cpr-neon-hub/templates/journal/lore.hbs" lore=lore}}{{/if}}
+        {{#if isProfile}}{{> "modules/cpr-neon-hub/templates/journal/profile.hbs" profile=profile}}{{/if}}
+        {{#if isDiary}}{{> "modules/cpr-neon-hub/templates/journal/diary.hbs" diary=diary name=name}}{{/if}}
+        {{#if isText}}
+        {{#if showTitle}}<h3 class="nh-jr-page-title">{{name}}</h3>{{/if}}
+        <div class="nh-jr-text journal-page-content">{{{html}}}</div>
+        {{/if}}
+        {{#if isImage}}
+        <figure class="nh-jr-figure">
+          <img src="{{src}}" alt="{{name}}" data-action="popout" data-src="{{src}}">
+          {{#if caption}}<figcaption>{{caption}}</figcaption>{{/if}}
+        </figure>
+        {{/if}}
+        {{#if isVideo}}<video class="nh-jr-video" src="{{src}}" controls></video>{{/if}}
+        {{#if isPDF}}<iframe class="nh-jr-pdf" src="{{src}}" title="{{name}}"></iframe>{{/if}}
+        {{#if isOther}}<p class="nh-jr-empty">{{localize "NEONHUB.Journal.OtherPage"}}</p>{{/if}}
+        {{#if canEdit}}{{#unless isProfile}}
+        <footer class="nh-jr-page-foot">
+          <button type="button" class="nh-cal-btn is-danger" data-action="deletePage"><i class="fa-solid fa-trash"></i> {{localize "NEONHUB.Journal.DeletePage"}}</button>
+        </footer>
+        {{/unless}}{{/if}}
+      </article>
+      {{/with}}
+      {{#if entry.limited}}<p class="nh-jr-empty">{{localize "NEONHUB.Journal.Limited"}}</p>{{/if}}
+    </div>
+    {{else}}
+    <div class="nh-cal-empty nh-jr-welcome">
+      <i class="fa-solid fa-book-open"></i>
+      <h2>{{sectionLabel}}</h2>
+      <p>{{localize "NEONHUB.Journal.PickOne"}}</p>
+    </div>
+    {{/if}}
+  </main>
+</div>

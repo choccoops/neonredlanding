@@ -14,7 +14,7 @@
   </div>
   <ul class="nh-skip-votes">
     {{#each users}}
-    <li style="--player: {{color}}"><i class="nh-skip-dot"></i><span class="nh-skip-voter">{{name}}</span>{{#if vote}}<b class="nh-skip-vote">{{vote}}</b>{{else}}<em>{{localize "NEONHUB.Skip.Waiting"}}</em>{{/if}}</li>
+    <li class="{{#if self}}is-self{{/if}}" style="--player: {{color}}"><i class="nh-skip-dot"></i><span class="nh-skip-voter">{{name}}</span>{{#if vote}}<b class="nh-skip-vote">{{vote}}</b>{{else}}<em>{{localize "NEONHUB.Skip.Waiting"}}</em>{{/if}}</li>
     {{else}}
     <li class="is-empty">{{localize "NEONHUB.Skip.NoPlayers"}}</li>
     {{/each}}
@@ -26,9 +26,9 @@
   <footer class="nh-skip-foot">
     {{#if isGM}}
     <button type="button" class="nh-cal-btn" data-action="callOff">{{localize "NEONHUB.Skip.Cancel"}}</button>
-    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="startIt"><i class="fa-solid fa-mug-hot"></i> {{localize "NEONHUB.Downtime.Vote.Start" amount=amount}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="startIt"><i class="fa-solid fa-mug-hot"></i> {{{localize "NEONHUB.Downtime.Vote.Start" amount=amountTag}}}</button>
     {{else}}
-    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="vote"><i class="fa-solid fa-hand"></i> {{#if voted}}{{localize "NEONHUB.Skip.ChangeVote"}}{{else}}{{localize "NEONHUB.Skip.Vote"}}{{/if}} {{amount}}</button>
+    <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="vote"><i class="fa-solid fa-hand"></i> {{#if voted}}{{localize "NEONHUB.Skip.ChangeVote"}}{{else}}{{localize "NEONHUB.Skip.Vote"}}{{/if}} <span class="nh-dt-amount">{{amount}}</span></button>
     {{/if}}
   </footer>
 </div>

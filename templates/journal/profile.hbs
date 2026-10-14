@@ -1,0 +1,27 @@
+<div class="nh-profile">
+  <header class="nh-profile-head">
+    {{#if profile.img}}<img src="{{profile.img}}" alt="" {{#if profile.uuid}}data-action="openActor" data-uuid="{{profile.uuid}}"{{/if}}>{{/if}}
+    <div>
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Profile.Kicker"}}</span>
+      <h3 class="nh-profile-handle">{{#if profile.handle}}{{profile.handle}}{{else}}{{profile.name}}{{/if}}</h3>
+      <span class="nh-profile-meta">{{#if profile.roles}}{{profile.roles}}{{/if}}{{#if profile.origin}}{{#if profile.roles}} &middot; {{/if}}{{profile.origin}}{{/if}}</span>
+    </div>
+  </header>
+  <div class="nh-profile-grid">
+    <section class="nh-jr-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Profile.Goals"}}</span>
+      <ul class="nh-jr-objectives">
+        {{#each profile.goals}}<li class="{{#if done}}is-done{{/if}}"><span class="nh-jr-check"><i></i></span><span class="nh-jr-objective">{{text}}</span></li>
+        {{else}}<li class="nh-jr-empty">{{localize "NEONHUB.Journal.Profile.NoGoals"}}</li>{{/each}}
+      </ul>
+    </section>
+    <section class="nh-jr-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Profile.Contacts"}}</span>
+      <ul class="nh-profile-contacts">
+        {{#each profile.contacts}}<li><b>{{name}}</b>{{#if note}}<small>{{note}}</small>{{/if}}</li>
+        {{else}}<li class="nh-jr-empty">{{localize "NEONHUB.Journal.Profile.NoContacts"}}</li>{{/each}}
+      </ul>
+    </section>
+  </div>
+  {{#if profile.notes}}<section class="nh-jr-block"><span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Profile.Notes"}}</span><div class="nh-jr-text journal-page-content">{{{profile.notes}}}</div></section>{{/if}}
+</div>

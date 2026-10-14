@@ -1,0 +1,17 @@
+<div class="nh-jr-editor-body">
+  <div class="nh-jr-editor-scroll">
+    <div class="nh-jr-edit-grid is-session">
+      <label class="is-wide"><span>{{localize "NEONHUB.Journal.Session.Title"}}</span><input type="text" name="name" value="{{name}}" maxlength="120" required></label>
+      <label><span>{{localize "NEONHUB.Journal.Session.Date"}}</span><input type="text" name="date" value="{{date}}" maxlength="40"></label>
+      <label class="nh-jr-span2"><span>{{localize "NEONHUB.Journal.Diary.Location"}}</span><input type="text" name="location" value="{{location}}" maxlength="120"></label>
+    </div>
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Diary.Body"}}</span>
+      <div class="nh-jr-rich"></div>
+    </section>
+  </div>
+  <footer class="nh-jr-edit-foot">
+    <button type="button" class="nh-cal-btn" data-action="cancel">{{localize "NEONHUB.Journal.Cancel"}}</button>
+    <button type="submit" class="nh-cal-btn nh-cal-btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Journal.Save"}}</button>
+  </footer>
+</div>

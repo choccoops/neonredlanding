@@ -1,8 +1,8 @@
 {
   "id": "cpr-neon-hub",
-  "title": "Neon Hub: Landing Pages, Headquarters, Lifestyle & Calendar for Cyberpunk RED",
-  "description": "Build clickable landing-page hub scenes with Monk's Active Tile Triggers, run crew Headquarters from the No Place Like Home rules, track each character's rent, lifestyle and monthly expenses, and keep group calendars with rent days and the real Moon, for the Cyberpunk RED - CORE system.",
-  "version": "1.11.0",
+  "title": "Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar & Journal for Cyberpunk RED",
+  "description": "Build clickable landing-page hub scenes with Monk's Active Tile Triggers, run crew Headquarters from the No Place Like Home rules, track each character's rent, lifestyle and monthly expenses, and keep group calendars with rent days and the real Moon, for the Cyberpunk RED - CORE system, and run the Neon Journal: gigs with pay-outs, screamsheets, worldbuilding, character journals, the story and a downtime log.",
+  "version": "1.12.0",
   "authors": [
     {
       "name": "Neon Hub contributors"
@@ -58,7 +58,8 @@
   ],
   "styles": [
     "styles/neon-hub.css",
-    "styles/calendar.css"
+    "styles/calendar.css",
+    "styles/journal.css"
   ],
   "languages": [
     {
@@ -100,6 +101,26 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "screamsheet-tables",
+      "label": "Neon Hub: Screamsheet Tables",
+      "path": "packs/screamsheet-tables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "worldbook-2070",
+      "label": "Neon Hub: Worldbook (2070s)",
+      "path": "packs/worldbook-2070",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -110,7 +131,9 @@
       "packs": [
         "lifestyle",
         "lifestyle-2070",
-        "street-goods"
+        "street-goods",
+        "screamsheet-tables",
+        "worldbook-2070"
       ]
     }
   ],

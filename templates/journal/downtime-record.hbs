@@ -1,0 +1,25 @@
+<div class="nh-jr-downtime">
+  <header class="nh-jr-dt-head">
+    <div class="nh-dt-total"><span>{{record.totalText}}</span><small>{{localize "NEONHUB.Downtime.Each"}}</small></div>
+    {{#if record.from}}<span class="nh-jr-date"><i class="fa-solid fa-calendar-day"></i> {{record.from}}{{#if record.to}} &ndash; {{record.to}}{{/if}}</span>{{/if}}
+  </header>
+  {{#each record.people}}
+  <section class="nh-jr-block nh-jr-dt-person">
+    <header>
+      {{#if img}}<img src="{{img}}" alt="">{{/if}}
+      <div><b>{{name}}</b><small>{{localize "NEONHUB.Downtime.LeftOf" left=left spent=spent}}</small></div>
+    </header>
+    <ol class="nh-dt-log">
+      {{#each entries}}
+      <li>
+        {{#if when}}<span class="nh-dt-when">{{when}}</span>{{/if}}
+        <span class="nh-dt-what">{{label}}<small>{{source}}{{#if user}} &middot; {{user}}{{/if}}</small></span>
+        <b>{{time}}</b>
+      </li>
+      {{else}}
+      <li class="nh-dt-empty">{{localize "NEONHUB.Downtime.NothingYet"}}</li>
+      {{/each}}
+    </ol>
+  </section>
+  {{/each}}
+</div>

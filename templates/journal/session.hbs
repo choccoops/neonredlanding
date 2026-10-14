@@ -1,0 +1,23 @@
+<div class="nh-jr-session">
+  <header class="nh-jr-session-head">
+    {{#if session.number}}<span class="nh-jr-session-no">{{session.number}}</span>{{/if}}
+    <div>
+      <h3 class="nh-jr-page-title">{{name}}</h3>
+      <span class="nh-jr-date">{{#if session.date}}<i class="fa-solid fa-calendar-day"></i> {{session.date}}{{/if}}{{#if session.played}} &middot; <small>{{localize "NEONHUB.Journal.Session.Played"}}</small> {{session.played}}{{/if}}</span>
+    </div>
+  </header>
+  {{#if session.crew.length}}
+  <div class="nh-jr-crew">
+    <div>{{#each session.crew}}<button type="button" class="nh-jr-who" data-action="openActor" data-uuid="{{uuid}}"><img src="{{img}}" alt=""><span>{{name}}</span></button>{{/each}}</div>
+  </div>
+  {{/if}}
+  {{#if session.summary}}<div class="nh-jr-text journal-page-content">{{{session.summary}}}</div>{{/if}}
+  {{#if session.events.length}}
+  <section class="nh-jr-block">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Session.Events"}}</span>
+    <ol class="nh-jr-events">
+      {{#each session.events}}<li class="{{#if key}}is-key{{/if}}">{{#if key}}<i class="fa-solid fa-star"></i> {{/if}}{{text}}</li>{{/each}}
+    </ol>
+  </section>
+  {{/if}}
+</div>

@@ -1,0 +1,81 @@
+<div class="nh-jr-editor-body">
+  <div class="nh-jr-editor-scroll">
+    <div class="nh-jr-edit-top">
+      <button type="button" class="nh-jr-image-pick" data-action="pickImage" data-tooltip="{{localize 'NEONHUB.Journal.Gig.Image'}}" {{#if image}}style="background-image: url('{{image}}')"{{/if}}>
+        {{#unless image}}<i class="fa-solid fa-image"></i>{{/unless}}
+      </button>
+      <input type="hidden" name="image" value="{{image}}">
+      <div class="nh-jr-edit-name">
+        <label class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Name"}}</label>
+        <input type="text" name="name" value="{{name}}" maxlength="120" required>
+        <label class="nh-check"><input type="checkbox" name="players" {{#if players}}checked{{/if}}> {{localize "NEONHUB.Journal.Gig.Visible"}}</label>
+      </div>
+    </div>
+
+    <div class="nh-jr-edit-grid">
+      <label><span>{{localize "NEONHUB.Journal.Gig.Client"}}</span><input type="text" name="client" value="{{client}}" maxlength="120" placeholder="{{localize 'NEONHUB.Journal.Gig.ClientHint'}}"></label>
+      <label><span>{{localize "NEONHUB.Journal.Gig.Location"}}</span><input type="text" name="location" value="{{location}}" maxlength="120"></label>
+      <label><span>{{localize "NEONHUB.Journal.Gig.Deadline"}}</span><input type="text" name="deadline" value="{{deadline}}" maxlength="80" placeholder="{{localize 'NEONHUB.Journal.Gig.DeadlineHint'}}"></label>
+      <label><span>{{localize "NEONHUB.Journal.Gig.Danger"}}</span><input type="text" name="danger" value="{{danger}}" maxlength="60" placeholder="{{localize 'NEONHUB.Journal.Gig.DangerHint'}}"></label>
+    </div>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Crew"}}</span>
+      {{#if characters.length}}
+      <div class="nh-cal-players">
+        {{#each characters}}<label class="nh-cal-player"><input type="checkbox" name="crew" value="{{uuid}}" {{#if checked}}checked{{/if}}><i></i><span>{{name}}</span></label>{{/each}}
+      </div>
+      {{else}}<p class="hint">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</p>{{/if}}
+    </section>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Briefing"}}</span>
+      <div class="nh-jr-rich"></div>
+    </section>
+
+    <section class="nh-jr-edit-block">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Objectives"}}</span>
+      <ol class="nh-jr-edit-rows">
+        {{#each objectives}}
+        <li data-row="{{id}}">
+          <input type="hidden" name="objectives.{{i}}.id" value="{{id}}">
+          <input type="text" name="objectives.{{i}}.text" value="{{text}}" maxlength="300" placeholder="{{localize 'NEONHUB.Journal.Objective.Placeholder'}}">
+          <select name="objectives.{{i}}.state">{{#each states}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+          <button type="button" class="nh-cal-icon" data-action="removeRow" data-list="objectives" aria-label="{{localize 'NEONHUB.Journal.Remove'}}"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        {{/each}}
+      </ol>
+      <button type="button" class="nh-cal-btn" data-action="addRow" data-list="objectives"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Journal.Objective.Add"}}</button>
+    </section>
+
+    <section class="nh-jr-edit-block" data-drop-item="">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Rewards"}}</span>
+      <ol class="nh-jr-edit-rows nh-jr-edit-rewards">
+        {{#each rewards}}
+        <li data-row="{{id}}" class="is-{{kind}} {{#if paid}}is-paid{{/if}}" {{#if isItem}}data-drop-item="{{id}}"{{/if}}>
+          <input type="hidden" name="rewards.{{i}}.id" value="{{id}}">
+          <select name="rewards.{{i}}.kind" data-redraw>{{#each kinds}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>
+          {{#if hasAmount}}<input type="number" name="rewards.{{i}}.amount" value="{{amount}}" min="0" step="1" class="nh-jr-amount">{{/if}}
+          {{#if isEddies}}<select name="rewards.{{i}}.split">{{#each splits}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>{{/if}}
+          {{#if isHQ}}
+          {{#if hqs.length}}<select name="rewards.{{i}}.hq">{{#each hqs}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select>
+          {{else}}<span class="hint">{{localize "NEONHUB.Journal.Reward.NoHQ"}}</span>{{/if}}
+          {{/if}}
+          {{#if isItem}}<span class="nh-jr-drop {{#if uuid}}is-set{{/if}}">{{#if uuid}}<i class="fa-solid fa-box-open"></i> {{name}}{{else}}<i class="fa-solid fa-hand-pointer"></i> {{localize "NEONHUB.Journal.Reward.DropItem"}}{{/if}}</span>{{/if}}
+          {{#if isText}}<input type="text" name="rewards.{{i}}.text" value="{{text}}" maxlength="300" placeholder="{{localize 'NEONHUB.Journal.Reward.TextHint'}}">{{/if}}
+          {{#if paid}}<b class="nh-jr-paid" data-tooltip="{{paidTo}}"><i class="fa-solid fa-check"></i></b>{{/if}}
+          <button type="button" class="nh-cal-icon" data-action="removeRow" data-list="rewards" aria-label="{{localize 'NEONHUB.Journal.Remove'}}"><i class="fa-solid fa-xmark"></i></button>
+        </li>
+        {{/each}}
+      </ol>
+      <div class="nh-jr-edit-add">
+        <button type="button" class="nh-cal-btn" data-action="addRow" data-list="rewards"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Journal.Reward.Add"}}</button>
+        <span class="hint">{{localize "NEONHUB.Journal.Reward.DropHint"}}</span>
+      </div>
+    </section>
+  </div>
+  <footer class="nh-jr-edit-foot">
+    <button type="button" class="nh-cal-btn" data-action="cancel">{{localize "NEONHUB.Journal.Cancel"}}</button>
+    <button type="submit" class="nh-cal-btn nh-cal-btn-primary"><i class="fa-solid fa-floppy-disk"></i> {{localize "NEONHUB.Journal.Save"}}</button>
+  </footer>
+</div>

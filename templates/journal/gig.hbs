@@ -1,0 +1,79 @@
+<div class="nh-jr-gig is-{{gig.status}}">
+  {{#if gig.image}}
+  <div class="nh-jr-banner" style="background-image: url('{{gig.image}}')" data-action="popout" data-src="{{gig.image}}"></div>
+  {{/if}}
+
+  <div class="nh-jr-gig-state">
+    <span class="nh-jr-status is-{{gig.status}} is-big">{{gig.statusLabel}}</span>
+    {{#each gig.dateRows}}<span class="nh-jr-date"><small>{{label}}</small> {{value}}</span>{{/each}}
+    {{#if gig.progress.total}}
+    <div class="nh-jr-progress" data-tooltip="{{gig.progress.done}}/{{gig.progress.total}}">
+      <span style="width: {{gig.progress.pct}}%"></span>
+    </div>
+    {{/if}}
+  </div>
+
+  {{#if isGM}}
+  <div class="nh-jr-gm">
+    {{#each gig.moves}}<button type="button" class="nh-cal-btn is-{{key}}" data-action="move" data-move="{{key}}"><i class="{{icon}}"></i> {{label}}</button>{{/each}}
+    {{#if gig.canPay}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="payout"><i class="fa-solid fa-coins"></i> {{localize "NEONHUB.Journal.Payout.Button"}}</button>{{/if}}
+    <button type="button" class="nh-cal-btn" data-action="post"><i class="fa-solid fa-comment"></i> {{localize "NEONHUB.Journal.Gig.Post"}}</button>
+  </div>
+  {{/if}}
+
+  {{#if gig.facts.length}}
+  <dl class="nh-jr-facts">
+    {{#each gig.facts}}<div><dt><i class="{{icon}}"></i> {{label}}</dt><dd>{{value}}</dd></div>{{/each}}
+  </dl>
+  {{/if}}
+
+  {{#if gig.crew.length}}
+  <div class="nh-jr-crew">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Crew"}}</span>
+    <div>{{#each gig.crew}}<button type="button" class="nh-jr-who" data-action="openActor" data-uuid="{{uuid}}"><img src="{{img}}" alt=""><span>{{name}}</span></button>{{/each}}</div>
+  </div>
+  {{/if}}
+
+  {{#if gig.briefing}}
+  <section class="nh-jr-block">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Briefing"}}</span>
+    <div class="nh-jr-text journal-page-content">{{{gig.briefing}}}</div>
+  </section>
+  {{/if}}
+
+  <section class="nh-jr-block">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Objectives"}}</span>
+    {{#each gig.objectiveGroups}}
+    <h4 class="nh-jr-subhead is-{{state}}">{{label}}</h4>
+    <ul class="nh-jr-objectives">
+      {{#each rows}}
+      <li class="is-{{state}}" data-objective="{{id}}" data-current="{{state}}">
+        {{#if @root.isGM}}
+        <button type="button" class="nh-jr-check" data-action="objective" data-tooltip="{{localize 'NEONHUB.Journal.Objective.Cycle'}}" aria-label="{{stateLabel}}"><i></i></button>
+        {{else}}
+        <span class="nh-jr-check" aria-label="{{stateLabel}}"><i></i></span>
+        {{/if}}
+        <span class="nh-jr-objective">{{text}}</span>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p class="nh-jr-empty">{{localize "NEONHUB.Journal.Gig.NoObjectives"}}</p>
+    {{/each}}
+  </section>
+
+  <section class="nh-jr-block">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Rewards"}}{{#if gig.paidOut}} &middot; {{localize "NEONHUB.Journal.Gig.PaidOn" date=gig.paidOut.date by=gig.paidOut.by}}{{/if}}</span>
+    <ul class="nh-jr-rewards">
+      {{#each gig.rewards}}
+      <li class="is-{{kind}} {{#if paid}}is-paid{{/if}}">
+        <i class="{{icon}}"></i>
+        <span class="nh-jr-reward">{{label}}<small>{{kindLabel}}{{#if paidTo}} &middot; {{paidTo}}{{/if}}</small></span>
+        {{#if paid}}<b class="nh-jr-paid"><i class="fa-solid fa-check"></i> {{localize "NEONHUB.Journal.Gig.Paid"}}</b>{{/if}}
+      </li>
+      {{else}}
+      <li class="nh-jr-empty">{{localize "NEONHUB.Journal.Gig.NoRewards"}}</li>
+      {{/each}}
+    </ul>
+  </section>
+</div>

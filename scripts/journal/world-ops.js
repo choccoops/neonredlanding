@@ -12,7 +12,7 @@ export const WORLDBOOK_PACK = `${MODULE_ID}.worldbook-2070`;
 function outline(type) {
   const h = (k) => `<h2>${esc(L(`NEONHUB.Journal.Lore.Outline.${k}`))}</h2><p></p>`;
   const secret = `<section class="secret"><h2>${esc(L("NEONHUB.Journal.Lore.Outline.Secrets"))}</h2><p></p></section>`;
-  const parts = { person: ["Who", "Wants", "Hooks"], place: ["Overview", "People", "Hooks"] }[type] ?? ["Overview", "History", "Hooks"];
+  const parts = { person: ["Who", "Wants"], place: ["Overview", "People"] }[type] ?? ["Overview", "History"];
   return parts.map(h).join("") + secret;
 }
 

@@ -34,13 +34,6 @@
   </div>
   {{/if}}
 
-  {{#if gig.briefing}}
-  <section class="nh-jr-block">
-    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Briefing"}}</span>
-    <div class="nh-jr-text journal-page-content">{{{gig.briefing}}}</div>
-  </section>
-  {{/if}}
-
   <section class="nh-jr-block">
     <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Objectives"}}</span>
     {{#each gig.objectiveGroups}}
@@ -76,4 +69,11 @@
       {{/each}}
     </ul>
   </section>
+
+  {{#if gig.briefing}}
+  <section class="nh-jr-block">
+    <span class="nh-cal-kicker">// {{localize "NEONHUB.Journal.Gig.Briefing"}}</span>
+    <div class="nh-jr-text journal-page-content">{{{gig.briefing}}}</div>
+  </section>
+  {{/if}}
 </div>

@@ -171,7 +171,7 @@ export class NeonJournal extends HandlebarsApplicationMixin(ApplicationV2) {
     const isGM = game.user.isGM;
     switch (this.section) {
       case "journals": return JournalEntry.canUserCreate?.(game.user) ?? isGM;
-      case "characters": return WorldOps.journalless().length > 0;
+      case "characters": return isGM || WorldOps.journalless().length > 0;
       case "downtime": return false;
       default: return isGM;
     }
@@ -767,6 +767,10 @@ function loreTypeDialog() {
 /** Whose journal to start: a character (or, for the GM, everyone without one). */
 function characterDialog() {
   const list = WorldOps.journalless();
+  if (!list.length) {
+    ui.notifications.info(L("NEONHUB.Journal.Profile.AllHave"));
+    return Promise.resolve(null);
+  }
   if (list.length === 1 && !game.user.isGM) return Promise.resolve(list[0].uuid);
   const buttons = list.map((a) => ({ action: a.uuid, label: a.name, icon: "fa-solid fa-id-badge" }));
   if (game.user.isGM && list.length > 1) buttons.push({ action: "__all", label: L("NEONHUB.Journal.Profile.All"), icon: "fa-solid fa-users" });

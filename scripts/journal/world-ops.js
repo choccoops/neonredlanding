@@ -1,6 +1,5 @@
 import { MODULE_ID } from "../constants.js";
 import { HubSocket } from "../socket.js";
-import { LifestyleStore } from "../lifestyle/ls-store.js";
 import { LORE_TYPES, loreTemplate } from "./journal-data.js";
 import { JournalStore, ENTRY_FLAG, actorOf, formatDate } from "./journal-store.js";
 
@@ -124,17 +123,22 @@ export const WorldOps = {
   async characterJournals() {
     if (!game.user.isGM) throw new Error(L("NEONHUB.Error.GMOnly"));
     let n = 0;
-    for (const actor of LifestyleStore.characters()) {
-      if (this.journalOf(actor)) continue;
+    for (const actor of this.journalless()) {
       await this.characterJournal(actor);
       n++;
     }
     return n;
   },
 
-  /** Characters this user can start a journal for (theirs, or any for the GM) that haven't one. */
+  /**
+   * Characters this user can start a journal for that haven't one: their own, or for the GM every
+   * character (players' first), whether or not a player has it yet.
+   */
   journalless() {
-    return LifestyleStore.characters().filter((a) => (game.user.isGM || a.isOwner) && !this.journalOf(a));
+    const list = game.user.isGM
+      ? game.actors.filter((a) => a.type === "character").sort((a, b) => (b.hasPlayerOwner - a.hasPlayerOwner) || a.name.localeCompare(b.name))
+      : game.actors.filter((a) => a.type === "character" && a.isOwner).sort((a, b) => a.name.localeCompare(b.name));
+    return list.filter((a) => !this.journalOf(a));
   },
 
   /** A new log entry in a character's journal, dated on their calendar. */

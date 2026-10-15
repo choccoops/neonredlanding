@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.12.1
+
+- **Neon Journal editors keep what's already written.** The rich-text fields (a worldbook entry's write-up, a gig's briefing, a session's summary, a profile's notes, a log entry) opened empty instead of showing the existing text, so saving replaced it. They now open with it, and a field that hasn't finished loading when you save keeps its text.
+- **Gig rewards up front.** The gig editor now goes details, crew, objectives, rewards, then the briefing, and the gig page shows objectives and rewards before the briefing. Record editors scroll as a whole, with Save and Cancel always in view.
+- **Character journals for any character.** The GM can start a journal for any character, whether or not a player owns it yet (it used to offer only player-owned characters, so the button could vanish), and the button is always there for the GM.
+
 ## 1.12.0
 
 The Neon Journal: Foundry's journals in Neon Hub's style, with gigs, the story and the downtime log.

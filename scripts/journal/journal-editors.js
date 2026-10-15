@@ -92,9 +92,14 @@ class RecordForm extends HandlebarsApplicationMixin(ApplicationV2) {
     if (field && host) {
       const PM = proseMirror();
       if (PM?.create) {
-        const editor = PM.create({ name: field, value: this.draft[field] ?? "", toggled: false, compact: false });
-        editor.classList.add("nh-jr-prose");
-        host.replaceChildren(editor);
+        // Written out as HTML and built by the browser, as Foundry's own sheets do: the element reads
+        // its starting text when it's constructed, so an element made in code and given the text
+        // afterwards opens empty (and saving it would wipe the write-up).
+        const value = this.draft[field] ?? "";
+        host.innerHTML = PM.create({ name: field, value, toggled: false, compact: false }).outerHTML;
+        const editor = host.querySelector("prose-mirror");
+        editor?.classList.add("nh-jr-prose");
+        if (editor && value && !editor.value) editor.value = value;
       } else {
         const area = document.createElement("textarea");
         area.name = field;
@@ -119,7 +124,10 @@ class RecordForm extends HandlebarsApplicationMixin(ApplicationV2) {
     const field = this.constructor.RICH;
     if (field) {
       const rich = this.element.querySelector(`[name="${field}"]`);
-      if (rich) data[field] = rich.value ?? "";
+      // An editor that hasn't started yet has nothing new: keep what was there.
+      const idle = rich?.tagName === "PROSE-MIRROR" && !rich.classList.contains("active");
+      if (rich && !(idle && !rich.value)) data[field] = rich.value ?? "";
+      else data[field] = this.draft[field];
     }
     this.draft = this.read(data);
     return this.draft;
@@ -206,7 +214,7 @@ export class GigEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/gig-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/gig-editor.hbs` }
   };
 
   static open(entry) {
@@ -310,7 +318,7 @@ export class SessionEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/session-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/session-editor.hbs` }
   };
 
   static open(page) {
@@ -366,7 +374,7 @@ export class ScreamEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/scream-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/scream-editor.hbs` }
   };
 
   static open(page) {
@@ -438,7 +446,7 @@ export class LoreEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/lore-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/lore-editor.hbs` }
   };
 
   static open(page) {
@@ -495,7 +503,7 @@ export class ProfileEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/profile-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/profile-editor.hbs` }
   };
 
   static open(page) {
@@ -537,7 +545,7 @@ export class DiaryEditor extends RecordForm {
   };
 
   static PARTS = {
-    form: { template: `${TEMPLATE_PATH}/journal/diary-editor.hbs`, scrollable: [".nh-jr-editor-scroll"] }
+    form: { template: `${TEMPLATE_PATH}/journal/diary-editor.hbs` }
   };
 
   static open(page) {

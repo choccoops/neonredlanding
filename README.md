@@ -546,7 +546,7 @@ on), and a write-up outlined with headings and a GM-only secrets block. Entries 
   notable spots, the NCPD, MaxTac, Netwatch and the nomad nations, and notable people from the
   fixers to the Edgerunners crew (marked as spoilers), plus a timeline. Each is a short summary
   written for Neon Hub from the facts in R. Talsorian's *Edgerunner's Handbook* (from the
-  *Cyberpunk: Edgerunners Mission Kit*), with the handbook page, and a gig hook or two. **Import the
+  *Cyberpunk: Edgerunners Mission Kit*), with the handbook page. **Import the
   Worldbook** copies them into the world, filed by kind and hidden from players, ready to edit.
 
 **Characters.** A journal for each player character, theirs to write in. **Start a journal** makes

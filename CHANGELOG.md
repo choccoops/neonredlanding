@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.12.2
+
+- **The Worldbook reads as an encyclopedia.** Its entries no longer end in gig hooks, and new worldbuilding entries are no longer outlined with a Gig hooks heading. Entries already imported into a world keep theirs: delete them and **Import the Worldbook** again to bring in the new versions.
+
 ## 1.12.1
 
 - **Neon Journal editors keep what's already written.** The rich-text fields (a worldbook entry's write-up, a gig's briefing, a session's summary, a profile's notes, a log entry) opened empty instead of showing the existing text, so saving replaced it. They now open with it, and a field that hasn't finished loading when you save keeps its text.

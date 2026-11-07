@@ -12,12 +12,12 @@ export const WORLDBOOK_PACK = `${MODULE_ID}.worldbook-2070`;
 function outline(type) {
   const h = (k) => `<h2>${esc(L(`NEONHUB.Journal.Lore.Outline.${k}`))}</h2><p></p>`;
   const secret = `<section class="secret"><h2>${esc(L("NEONHUB.Journal.Lore.Outline.Secrets"))}</h2><p></p></section>`;
-  const parts = { person: ["Who", "Wants"], place: ["Overview", "People"] }[type] ?? ["Overview", "History"];
+  const parts = { person: ["Who", "Wants"], place: ["Overview", "People"], event: ["Happened", "Aftermath"] }[type] ?? ["Overview", "History"];
   return parts.map(h).join("") + secret;
 }
 
 /**
- * Worldbuilding (corporations, gangs, places, organizations, people), and each player character's
+ * Worldbuilding (corporations, gangs, places, organizations, people, events), and each player character's
  * own journal.
  */
 export const WorldOps = {

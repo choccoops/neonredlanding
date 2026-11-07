@@ -535,19 +535,23 @@ in columns, developing stories, adverts and classifieds.
   setting turns that off). Drafts are the GM's until published; **Send the alert again** repeats
   the card and ticker.
 
-**Worldbuilding.** Entries for corporations, gangs, places, organizations and people. **New entry**
+**Worldbuilding.** Entries for corporations, gangs, places, organizations, people and events. **New entry**
 (GM) asks which kind and starts it from that kind's template: a line about it, facts to fill in
-(a corporation's headquarters, industry and leadership; a gang's turf, rivals and hangouts; and so
-on), and a write-up outlined with headings and a GM-only secrets block. Entries are GM-only until
+(a corporation's headquarters, industry and leadership; a gang's turf, rivals and hangouts; an event's
+date, place and what it changed; and so on), and a write-up outlined with headings and a GM-only secrets block. Entries are GM-only until
 **Players can read this** is ticked. Filter the list by kind.
 
-- **The Worldbook (2070s).** The **Neon Hub: Worldbook (2070s)** compendium has 65 entries for
-  the Night City of *Cyberpunk: Edgerunners*: the megacorps, the gangs, the districts with their
-  notable spots, the NCPD, MaxTac, Netwatch and the nomad nations, and notable people from the
-  fixers to the Edgerunners crew (marked as spoilers), plus a timeline. Each is a short summary
-  written for Neon Hub from the facts in R. Talsorian's *Edgerunner's Handbook* (from the
-  *Cyberpunk: Edgerunners Mission Kit*), with the handbook page. **Import the
-  Worldbook** copies them into the world, filed by kind and hidden from players, ready to edit.
+- **The Worldbook (2070s).** The **Neon Hub: Worldbook (2070s)** compendium is an encyclopedia of
+  Night City just after the Arvin Accord, in 178 entries: the megacorps and Danger Gal; the Old Three,
+  the New Blood and the booster crews; all six boroughs and eighteen districts with their places,
+  data blocks (Threat Rating, SC, UC, NCART, turf) and people; the NCPD, MaxTac, NetWatch, the Council
+  and the nomad nations; the people who run the city, from Rogue and Mayor Rhyne to the Static Night
+  crew, plus the Edgerunners crew (marked as spoilers); events from the Mob Wars to the Purge, Static
+  Night and the Accord; and a timeline. Entries are written for Neon Hub from R. Talsorian's
+  *Edgerunner's Handbook* (from the *Cyberpunk: Edgerunners Mission Kit*) and the *Night City 2070*
+  setting book of *Cyberpunk: The Unification Era*, with their sources; anything a GM should keep
+  back sits in a GM secrets block. **Import the Worldbook** copies them into the world, filed by kind
+  and hidden from players, ready to edit.
 
 **Characters.** A journal for each player character, theirs to write in. **Start a journal** makes
 one (players for their own characters, the GM for anyone, or everyone at once); it belongs to the
@@ -755,7 +759,8 @@ Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lif
 MIT. Icons in `assets/` are original to Neon Hub. The Tektur font (`fonts/`) is under the SIL Open
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
-Handbook* in the *Cyberpunk: Edgerunners Mission Kit* (R. Talsorian Games); Cyberpunk, Cyberpunk 2077
+Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),
+and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*; Cyberpunk, Cyberpunk 2077
 and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
 original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian
 Games or CD PROJEKT.

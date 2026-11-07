@@ -26,7 +26,8 @@
       "lifestyle": "Open Lifestyle",
       "calendar": "Open calendar",
       "messenger": "Open Night City Messenger",
-      "cred": "Open Street Cred"
+      "cred": "Open Street Cred",
+      "fashion": "Open Style Check"
     },
     "Audience": {
       "trigger": "Just the player who clicked",
@@ -85,7 +86,8 @@
       "OpenCalendar": "Open calendar",
       "OpenMessenger": "Open Night City Messenger",
       "MessengerView": "Window",
-      "OpenCred": "Open Street Cred"
+      "OpenCred": "Open Street Cred",
+      "OpenFashion": "Open Style Check"
     },
     "Editor": {
       "Title": "Hub page",
@@ -2127,6 +2129,291 @@
         "OneOnly": "One gang or one corp at a time.",
         "Already": "Already a member of {name}.",
         "TooLow": "Standing {at} or better to join {name}."
+      }
+    },
+    "Fashion": {
+      "Title": "Style Check",
+      "Short": "Style",
+      "Kicker": "Style Check",
+      "Mixed": "Mixed",
+      "TheCity": "the city",
+      "LookTitle": "Look",
+      "ReadsAs": "Reads as",
+      "FitTitle": "Fit",
+      "Visible": "In plain sight",
+      "NoRead": "Nobody in particular",
+      "FullLook": "Full {style} look",
+      "MostlyLook": "Mostly {style} ({percent}%)",
+      "Where": "Where",
+      "ModifierTip": "Suggested modifier to social Checks with the locals (Persuasion, Bribery, Streetwise, Trading, Wardrobe & Style): house rule",
+      "ThisScene": "this scene",
+      "Empty": "nothing",
+      "Missing": "A full outfit needs: {types}.",
+      "Weapons": "Weapons: {shown} seen, {hidden} hidden",
+      "ChromeCount": "Chrome: {shown} seen, {hidden} hidden, {fashion} fashionware",
+      "ArmorCount": "Visible armor: {n}",
+      "WhyFit": "Why, in {district}",
+      "Style": {
+        "entropism": "Entropism",
+        "nomadLeathers": "Nomad Leathers",
+        "kitsch": "Kitsch",
+        "neoMilitarism": "Neo-Militarism",
+        "neoKitsch": "Neo-Kitsch",
+        "highFashion": "High Fashion",
+        "gangColors": "Gang Colors"
+      },
+      "Type": {
+        "top": "Top",
+        "bottoms": "Bottoms",
+        "jacket": "Jacket",
+        "footwear": "Footwear",
+        "jewelry": "Jewelry",
+        "mirrorshades": "Mirrorshades",
+        "glasses": "Glasses",
+        "contactLenses": "Contacts",
+        "hats": "Hat"
+      },
+      "Grade": {
+        "Title": "Grade",
+        "S": "Icon: the street stops to look",
+        "A": "Head-turner",
+        "B": "Sharp",
+        "C": "Put together",
+        "D": "Off the rack",
+        "F": "A walking disaster"
+      },
+      "Part": {
+        "coverage": "Coverage",
+        "cohesion": "Cohesion",
+        "quality": "Quality",
+        "flair": "Flair",
+        "skill": "Skill"
+      },
+      "Zone": {
+        "executive": "Executive",
+        "corporate": "Corporate",
+        "moderate": "Moderate",
+        "combat": "Combat Zone",
+        "extraterritorial": "Extraterritorial",
+        "occupied": "Occupied",
+        "outskirts": "Outskirts"
+      },
+      "Fit": {
+        "belongs": "Belongs",
+        "fitsIn": "Fits in",
+        "passes": "Passes",
+        "standsOut": "Stands out",
+        "marked": "Marked"
+      },
+      "Reason": {
+        "style": "how the locals take the clothes",
+        "fullLook": "a full {style} look they like",
+        "nothing": "wearing nothing anyone would call an outfit",
+        "ownTurf": "{faction} colors on their own turf",
+        "rivalColors": "{faction} colors on a rival's turf",
+        "otherColors": "{faction} colors where they don't run things",
+        "chromeShown": "chrome on show, like everyone else here",
+        "chromeHidden": "chrome on show where it's meant to be hidden",
+        "armsForbidden": "weapons or armor in plain sight where security forbids them",
+        "armsDiscreet": "weapons or armor in plain sight",
+        "unarmed": "nothing on your hip in a Combat Zone",
+        "cheap": "an outfit under {floor}eb where money is the dress code",
+        "money": "an outfit over {mark}eb: you look like money",
+        "polish": "the polish the towers notice",
+        "trusted": "{faction} know you here"
+      },
+      "Warning": {
+        "rivalColors": "Rival colors: {faction}'s enemies run this turf. Expect trouble on sight.",
+        "armsForbidden": "Security stops anyone carrying openly here.",
+        "money": "You look like money. Muggers, scavs and worse take note.",
+        "marked": "{faction} have you Marked ({value}): they attack you on their turf.",
+        "heat": "Your Heat ({heat}) adds to this district's Security Code ({sc})."
+      },
+      "Disguise": {
+        "Title": "Disguise",
+        "PassAs": "Pass as",
+        "convincing": "Convincing",
+        "solid": "Solid",
+        "thin": "Thin",
+        "shaky": "Shaky",
+        "hopeless": "Hopeless",
+        "Wants": "{name} wear {styles}. Chrome: {chrome}.",
+        "Rule": "House rule: COOL + Wardrobe & Style ({base}) + 1d10 + the look's modifier, against the watcher's INT + Human Perception + 1d10 (+2 if they're one of them). A tie goes to the watcher.",
+        "RollButton": "Roll the disguise",
+        "Roll": "Passing as {name}",
+        "Against": "Against {watcher}.",
+        "WatcherFormula": "the watcher's INT + Human Perception + 1d10 (+2 if they're one of them)",
+        "CantPass": "This look won't pass as {name}. Change into it first."
+      },
+      "Chrome": {
+        "show": "worn openly",
+        "hide": "kept out of sight",
+        "any": "either way",
+        "heavy": "big: frames, muscle and armor"
+      },
+      "Tab": {
+        "look": "Look",
+        "districts": "Districts",
+        "factions": "Factions & Disguise",
+        "shop": "Shopping",
+        "feed": "Street Feed",
+        "scene": "Scene"
+      },
+      "Scene": {
+        "Kicker": "Scene",
+        "District": "District",
+        "Cohesion": "The crew looks {percent}% {style}",
+        "Weakest": "Weakest link",
+        "Crew": "The crew",
+        "Others": "Everyone else",
+        "KnownAs": "Known as",
+        "ByLook": "(by their look)",
+        "NoPCs": "No player characters on this scene.",
+        "NoNPCs": "Nobody else on this scene.",
+        "NoScene": "No scene is active.",
+        "NoDistrict": "(no district)"
+      },
+      "Flash": {
+        "Colors": "{pc} wears {faction} colors, and {npc} is no friend of theirs.",
+        "Marked": "{npc} ({faction}) has {pc} Marked ({value}).",
+        "Heat": "{npc} is a cop, and {pc} runs hot (Heat {heat})."
+      },
+      "Shop": {
+        "For": "Shopping for",
+        "Budget": "Budget",
+        "Wallet": "wallet: {wallet}",
+        "Target": "Looking for {style} pieces, cheapest first, for every empty or off-style slot.",
+        "PassAs": "Passing as {name}",
+        "Replaces": "instead of {name}",
+        "Nothing": "Nothing to buy: the look is already there, or nothing fits the budget.",
+        "Total": "Total: {total}",
+        "Buy": "Buy and wear",
+        "BuyBody": "{name} pays {total}eb for {n} pieces and puts them on. What they wore in those slots goes back in the bag.",
+        "Bought": "{name} is wearing the new look.",
+        "DragHint": "Drag a piece onto a sheet to add it without paying.",
+        "TooPoor": "Not enough eurobucks for {total}eb.",
+        "Reason": "Clothes: {items}"
+      },
+      "Handle": {
+        "1": "@kabuki_kitten",
+        "2": "@jtown_neon",
+        "3": "@n54_glamwatch",
+        "4": "@chromehead77",
+        "5": "@heywood_hearts",
+        "6": "@plaza_insider",
+        "7": "@pacifica_static",
+        "8": "@nid_rustbucket",
+        "9": "@screamsheet_sally",
+        "10": "@afterlife_regular",
+        "11": "@noodle_stand_ned",
+        "12": "@ncu_sophomore",
+        "13": "@badlands_dust",
+        "14": "@dollhouse_doll",
+        "15": "@watson_watcher",
+        "16": "@citinet_anon"
+      },
+      "Feed": {
+        "Kicker": "The street feed",
+        "Post": "Post to chat",
+        "sharp": {
+          "1": "Who is {name} wearing? Because I need it.",
+          "2": "{name} just walked past and the whole block went quiet. Respect.",
+          "3": "Clocked {name} in {district} tonight. That's how you do it.",
+          "4": "Okay, {name} understood the assignment.",
+          "5": "If {name} dressed my life I'd have my life together."
+        },
+        "ok": {
+          "1": "{name}'s looking decent. Not headline decent, but decent.",
+          "2": "Solid fit on {name}. Nothing to write home about, nothing to laugh at.",
+          "3": "{name}, putting in the effort. We see you.",
+          "4": "Seen {name} around {district}. Clean, I guess."
+        },
+        "rough": {
+          "1": "Did {name} get dressed in the dark? In a dumpster?",
+          "2": "Somebody tell {name} the 2040s are over.",
+          "3": "{name}'s outfit is a crime and NCPD should look into it.",
+          "4": "Not a single piece on {name} agrees with another.",
+          "5": "I've seen scavs with more coordination than {name}."
+        },
+        "fits": {
+          "1": "{name} looks like they've lived in {district} all their life.",
+          "2": "Nobody in {district} looks twice at {name}. That's a compliment.",
+          "3": "{name} reads like a local. {district} approves.",
+          "4": "{name}'s got the {district} look down."
+        },
+        "outOfPlace": {
+          "1": "Who let {name} into {district} dressed like that?",
+          "2": "{name} sticks out in {district} like a corpo at a funeral.",
+          "3": "Tourist alert in {district}: it's {name}.",
+          "4": "{name} in {district}? Somebody's lost.",
+          "5": "Every eye in {district} is on {name}, and not in a good way."
+        },
+        "meh": {
+          "1": "{name} in {district}. Fine. Whatever.",
+          "2": "{name} passes in {district}. Barely.",
+          "3": "Not sure what {name} was going for, but {district} lets it slide."
+        },
+        "rival": {
+          "1": "{name} is wearing THOSE colors in {district}? Brave. Or stupid.",
+          "2": "Somebody warn {name}. Those colors don't belong in {district}.",
+          "3": "Taking bets on how long {name} lasts in {district} in that jacket.",
+          "4": "{name}'s colors just started a group chat in {district}, and it's angry."
+        },
+        "chrome": {
+          "1": "{name}'s got more chrome showing than a Maelstrom family reunion.",
+          "2": "Love the chrome on {name}. Hope the therapist does too.",
+          "3": "{name}, all metal and attitude.",
+          "4": "How much of {name} is still {name}? Asking for a ripperdoc."
+        },
+        "armed": {
+          "1": "{name}'s walking around {district} with the iron out. Bold.",
+          "2": "Pretty sure {name}'s holster is the accessory of the season.",
+          "3": "Somebody tell {name} the gun doesn't match the shoes.",
+          "4": "{name}, dressed to kill. Literally, by the look of it."
+        },
+        "rich": {
+          "1": "{name}'s outfit costs more than my apartment. Both of them.",
+          "2": "That's a whole year's rent on {name}'s back.",
+          "3": "{name} dripping in eddies. Muggers, take notes.",
+          "4": "I'd keep {name} out of the Combat Zone in that."
+        },
+        "look": {
+          "entropism": {
+            "1": "{name}, peak Entropism: invisible on purpose.",
+            "2": "{name}'s look says 'nothing to steal'. Smart.",
+            "3": "Couldn't pick {name} out of a crowd if I tried. That's the point, isn't it?"
+          },
+          "nomadLeathers": {
+            "1": "{name}'s got real road dust on those leathers.",
+            "2": "Family colors on {name}. The highway's in their blood.",
+            "3": "{name} smells like a long drive and gasoline. Love it."
+          },
+          "kitsch": {
+            "1": "{name}, a whole neon sign in human form.",
+            "2": "Retro, loud and proud: {name}'s Kitsch is on point.",
+            "3": "{name} looks like a 2020s club flyer came to life."
+          },
+          "neoMilitarism": {
+            "1": "{name} looks ready to run a checkpoint or a board meeting.",
+            "2": "Neo-Militarism on {name}: crisp enough to cut.",
+            "3": "{name}'s posture alone outranks me."
+          },
+          "neoKitsch": {
+            "1": "{name}, old style, new shine. Red carpet ready.",
+            "2": "Neo-Kitsch looks good on {name}. Like, really good.",
+            "3": "{name} remixing the classics and making it work."
+          },
+          "highFashion": {
+            "1": "{name} in this season's labels. Of course.",
+            "2": "Pretty sure {name}'s outfit has its own security detail.",
+            "3": "{name}, straight off the Milan feed."
+          },
+          "gangColors": {
+            "1": "{name}'s flying colors. Everybody knows whose side they're on.",
+            "2": "Crew colors on {name}, loud and clear.",
+            "3": "Nobody's confused about who {name} runs with."
+          }
+        }
       }
     }
   }

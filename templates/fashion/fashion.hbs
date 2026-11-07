@@ -1,0 +1,238 @@
+<div class="nh-cal nh-cred nh-fashion">
+  <aside class="nh-cal-side nh-cred-rail">
+    <div class="nh-cal-side-head">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Fashion.Kicker"}}</span>
+      <span class="nh-cal-side-title">{{localize "NEONHUB.Cred.Crew"}}</span>
+    </div>
+    <ol class="nh-cred-rail-list">
+      {{#each rail}}
+      <li>
+        <button type="button" class="nh-cred-pick {{#if active}}is-active{{/if}}" data-action="pick" data-uuid="{{uuid}}">
+          <img src="{{img}}" alt="">
+          <span class="nh-cred-pick-name">{{name}}</span>
+          <span class="nh-cred-pick-stats"><b class="nh-fashion-grade-chip is-{{grade}}">{{grade}}</b> {{look}}</span>
+        </button>
+      </li>
+      {{else}}
+      <li class="nh-cal-list-empty">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</li>
+      {{/each}}
+    </ol>
+  </aside>
+
+  <section class="nh-cal-main nh-cred-main">
+    {{#if is_scene}}
+    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="tab" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
+    <div class="nh-cred-scroll">
+      {{#if scene}}
+      <div class="nh-fashion-scene-head">
+        <span class="nh-cal-kicker">// {{localize "NEONHUB.Fashion.Scene.Kicker"}} &middot; {{scene.name}}</span>
+        <label>{{localize "NEONHUB.Fashion.Scene.District"}}
+          <select name="sceneDistrict">{{#each sceneDistrictOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select>
+        </label>
+      </div>
+      {{#if crew}}
+      <div class="nh-fashion-crew">
+        <span><i class="fa-solid fa-people-group"></i> {{localize "NEONHUB.Fashion.Scene.Cohesion" style=crew.style percent=crew.percent}}</span>
+        {{#if crew.weakest}}<span><i class="fa-solid fa-link-slash"></i> {{localize "NEONHUB.Fashion.Scene.Weakest"}}: {{crew.weakest}}</span>{{/if}}
+      </div>
+      {{/if}}
+      {{#if flash.length}}
+      <ul class="nh-fashion-warnings is-flash">{{#each flash}}<li><i class="fa-solid fa-fire"></i> {{this}}</li>{{/each}}</ul>
+      {{/if}}
+      <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.Scene.Crew"}}</h3>
+      <table class="nh-cred-board nh-fashion-table">
+        <thead><tr><th></th><th>{{localize "NEONHUB.Fashion.Grade.Title"}}</th><th>{{localize "NEONHUB.Fashion.LookTitle"}}</th><th>{{localize "NEONHUB.Fashion.ReadsAs"}}</th><th>{{localize "NEONHUB.Fashion.FitTitle"}}</th><th data-tooltip="{{localize 'NEONHUB.Fashion.Visible'}}"><i class="fa-solid fa-gun"></i> <i class="fa-solid fa-microchip"></i> <i class="fa-solid fa-shield-halved"></i></th></tr></thead>
+        <tbody>
+          {{#each pcs}}
+          <tr>
+            <th><img src="{{img}}" alt=""> {{name}}</th>
+            <td><b class="nh-fashion-grade-chip is-{{grade}}">{{grade}}</b></td>
+            <td>{{look}}</td>
+            <td>{{read}}</td>
+            <td class="is-{{side}}">{{#if band}}{{fit}} {{band}} ({{modifier}}){{#each warnings}}<small class="nh-fashion-warn">{{this}}</small>{{/each}}{{else}}&mdash;{{/if}}</td>
+            <td>{{weapons}} &middot; {{chrome}} &middot; {{armor}}</td>
+          </tr>
+          {{else}}
+          <tr><td colspan="6" class="nh-cal-list-empty">{{localize "NEONHUB.Fashion.Scene.NoPCs"}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.Scene.Others"}}</h3>
+      <table class="nh-cred-board nh-fashion-table">
+        <thead><tr><th></th><th>{{localize "NEONHUB.Fashion.LookTitle"}}</th><th>{{localize "NEONHUB.Fashion.ReadsAs"}}</th><th>{{localize "NEONHUB.Fashion.Scene.KnownAs"}}</th><th><i class="fa-solid fa-gun"></i> <i class="fa-solid fa-microchip"></i> <i class="fa-solid fa-shield-halved"></i></th></tr></thead>
+        <tbody>
+          {{#each npcs}}
+          <tr>
+            <th><img src="{{img}}" alt=""> {{name}}</th>
+            <td>{{look}}</td>
+            <td>{{read}}</td>
+            <td><select data-tag-faction="{{uuid}}"><option value="">{{localize "NEONHUB.Fashion.Scene.ByLook"}}</option>{{#each factionOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></td>
+            <td>{{weapons}} &middot; {{chrome}} &middot; {{armor}}</td>
+          </tr>
+          {{else}}
+          <tr><td colspan="5" class="nh-cal-list-empty">{{localize "NEONHUB.Fashion.Scene.NoNPCs"}}</td></tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{else}}
+      <p class="nh-cal-list-empty">{{localize "NEONHUB.Fashion.Scene.NoScene"}}</p>
+      {{/if}}
+    </div>
+    {{else}}
+    {{#if none}}
+    <div class="nh-cal-empty">
+      <i class="fa-solid fa-shirt"></i>
+      <h2>{{localize "NEONHUB.Cred.NoneTitle"}}</h2>
+      <p>{{localize "NEONHUB.Cred.NoneHint"}}</p>
+    </div>
+    {{else}}
+    <header class="nh-cred-head">
+      <img src="{{actor.img}}" alt="">
+      <div class="nh-cred-who">
+        <span class="nh-cal-kicker">// {{localize "NEONHUB.Fashion.Kicker"}}</span>
+        <h2 class="nh-dt-title">{{actor.name}}</h2>
+        <span class="nh-fashion-lookline">{{#if an.look}}<i class="fa-solid fa-check"></i> {{localize "NEONHUB.Fashion.FullLook" style=an.look}}{{else}}{{localize "NEONHUB.Fashion.MostlyLook" style=an.dominant percent=an.cohesion}}{{/if}} &middot; {{an.cost}}</span>
+      </div>
+      <div class="nh-fashion-grade is-{{an.grade}}" data-tooltip="{{an.gradeLabel}}">
+        <span class="nh-cal-kicker">{{localize "NEONHUB.Fashion.Grade.Title"}}</span>
+        <b>{{an.grade}}</b>
+        <small>{{an.score}}/100</small>
+      </div>
+    </header>
+
+    <div class="nh-fashion-where">
+      <label><span class="nh-cal-kicker">{{localize "NEONHUB.Fashion.Where"}}</span>
+        <select name="district">{{#each districtOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select>
+      </label>
+      {{#if fit}}
+      <div class="nh-fashion-fit is-{{fit.side}}">
+        <b>{{fit.fit}}</b>
+        <span class="nh-cred-status">{{fit.band}}</span>
+        <span class="nh-cal-tag" data-tooltip="{{localize 'NEONHUB.Fashion.ModifierTip'}}">{{fit.modifier}}</span>
+        <small>{{district.zone}} &middot; SC {{district.sc}} &middot; UC {{district.uc}}{{#if district.isScene}} &middot; {{localize "NEONHUB.Fashion.ThisScene"}}{{/if}}</small>
+      </div>
+      {{/if}}
+    </div>
+    {{#if fit.warnings.length}}<ul class="nh-fashion-warnings">{{#each fit.warnings}}<li><i class="fa-solid fa-triangle-exclamation"></i> {{this}}</li>{{/each}}</ul>{{/if}}
+
+    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="tab" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
+
+    <div class="nh-cred-scroll">
+      {{#if is_look}}
+      <div class="nh-fashion-look">
+        <ol class="nh-fashion-slots">
+          {{#each slots}}
+          <li class="{{#if piece}}is-worn{{else}}is-empty{{/if}} {{#if core}}is-core{{/if}}">
+            <span class="nh-fashion-slot">{{type}}</span>
+            {{#if piece}}
+            <a data-action="openItem" data-uuid="{{piece.uuid}}">{{piece.name}}</a>
+            <small><span class="nh-fashion-style is-{{piece.styleKey}}">{{piece.style}}</span>{{#if piece.faction}} &middot; {{piece.faction}}{{/if}} &middot; {{piece.price}}</small>
+            {{else}}<em>{{localize "NEONHUB.Fashion.Empty"}}</em>{{/if}}
+          </li>
+          {{/each}}
+        </ol>
+        <div class="nh-fashion-parts">
+          {{#each an.parts}}
+          <div class="nh-fashion-part"><span>{{label}}</span><div class="nh-cred-bar"><span class="nh-cred-bar-fill is-pos" style="left:0;width:{{pct}}%"></span></div><b>{{value}}/{{max}}</b></div>
+          {{/each}}
+          {{#if an.missing}}<p class="hint"><i class="fa-solid fa-circle-info"></i> {{localize "NEONHUB.Fashion.Missing" types=an.missing}}</p>{{/if}}
+          <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.Visible"}}</h3>
+          <ul class="nh-fashion-visible">
+            <li><i class="fa-solid fa-gun"></i> {{localize "NEONHUB.Fashion.Weapons" shown=an.weapons.visible hidden=an.weapons.hidden}}</li>
+            <li><i class="fa-solid fa-microchip"></i> {{localize "NEONHUB.Fashion.ChromeCount" shown=an.chrome.visible hidden=an.chrome.hidden fashion=an.chrome.fashionware}}</li>
+            <li><i class="fa-solid fa-shield-halved"></i> {{localize "NEONHUB.Fashion.ArmorCount" n=an.armor}}</li>
+          </ul>
+        </div>
+      </div>
+      {{#if fit.reasons.length}}
+      <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.WhyFit" district=district.name}}</h3>
+      <ul class="nh-fashion-reasons">{{#each fit.reasons}}<li class="is-{{side}}"><b>{{n}}</b> {{text}}</li>{{/each}}</ul>
+      {{/if}}
+      {{/if}}
+
+      {{#if is_districts}}
+      <ol class="nh-cred-factions">
+        {{#each fits}}
+        <li class="nh-cred-faction is-{{side}}">
+          <div class="nh-cred-faction-name"><span>{{name}}</span><small>{{borough}} &middot; {{zone}}</small></div>
+          <div class="nh-cred-bar-wrap"><div class="nh-cred-bar"><span class="nh-cred-bar-fill is-{{side}}" style="left: {{bar.left}}%; width: {{bar.width}}%"></span><i class="nh-cred-bar-mid"></i></div><b class="nh-cred-value">{{fit}}</b></div>
+          <div class="nh-cred-faction-tools"><span class="nh-cred-status">{{band}}</span> <span class="nh-cal-tag">{{modifier}}</span></div>
+          <div class="nh-cred-faction-status">
+            <p>{{#each reasons}}<span class="nh-fashion-reason is-{{side}}">{{n}} {{text}}</span>{{/each}}</p>
+            {{#each warnings}}<small class="nh-fashion-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{this}}</small>{{/each}}
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+      {{/if}}
+
+      {{#if is_factions}}
+      <div class="nh-fashion-split">
+        <div>
+          <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.ReadsAs"}}</h3>
+          <ol class="nh-fashion-reads">
+            {{#each reads}}
+            <li><span>{{name}}</span><div class="nh-cred-bar"><span class="nh-cred-bar-fill is-pos" style="left:0;width:{{score}}%"></span></div><b>{{score}}%</b><small>{{band}}</small></li>
+            {{/each}}
+          </ol>
+        </div>
+        <div class="nh-fashion-disguise">
+          <h3 class="nh-fashion-h">{{localize "NEONHUB.Fashion.Disguise.Title"}}</h3>
+          <label>{{localize "NEONHUB.Fashion.Disguise.PassAs"}} <select name="disguiseAs">{{#each factionOptions}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+          {{#if disguise}}
+          <div class="nh-fashion-disguise-box is-{{disguise.key}}">
+            <b>{{disguise.score}}%</b>
+            <span class="nh-cred-status">{{disguise.band}}</span>
+            {{#if disguise.modifier}}<span class="nh-cal-tag">{{disguise.modifier}}</span>{{/if}}
+          </div>
+          <p class="hint">{{localize "NEONHUB.Fashion.Disguise.Wants" name=disguise.name styles=disguise.wants chrome=disguise.chrome}}</p>
+          <p class="hint">{{localize "NEONHUB.Fashion.Disguise.Rule" base=disguise.base}}</p>
+          {{#if disguise.canRoll}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="disguise"><i class="fa-solid fa-masks-theater"></i> {{localize "NEONHUB.Fashion.Disguise.RollButton"}}</button>{{/if}}
+          {{/if}}
+          <button type="button" class="nh-cal-btn" data-action="openCred"><i class="fa-solid fa-ranking-star"></i> {{localize "NEONHUB.Cred.Title"}}</button>
+        </div>
+      </div>
+      {{/if}}
+
+      {{#if is_shop}}
+      <div class="nh-fashion-shop-head">
+        <label>{{localize "NEONHUB.Fashion.Shop.For"}} <select name="shopFor">{{#each shop.targets}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+        <label>{{localize "NEONHUB.Fashion.Shop.Budget"}} <input type="number" name="budget" min="0" step="10" value="{{shop.budget}}"> <small>{{localize "NEONHUB.Fashion.Shop.Wallet" wallet=shop.wallet}}</small></label>
+      </div>
+      <p class="hint">{{localize "NEONHUB.Fashion.Shop.Target" style=shop.style}}</p>
+      <ol class="nh-fashion-buy">
+        {{#each shop.buy}}
+        <li draggable="true" data-drag-uuid="{{uuid}}">
+          <img src="{{img}}" alt="">
+          <span class="nh-fashion-slot">{{typeLabel}}</span>
+          <a data-action="openItem" data-uuid="{{uuid}}">{{name}}</a>
+          {{#if faction}}<span class="nh-cal-tag">{{faction}}</span>{{/if}}
+          {{#if replaces}}<small>{{localize "NEONHUB.Fashion.Shop.Replaces" name=replaces}}</small>{{/if}}
+          <b>{{price}}</b>
+        </li>
+        {{else}}
+        <li class="nh-cal-list-empty">{{localize "NEONHUB.Fashion.Shop.Nothing"}}</li>
+        {{/each}}
+      </ol>
+      <div class="nh-fashion-shop-foot">
+        <span>{{localize "NEONHUB.Fashion.Shop.Total" total=shop.spent}}</span>
+        <span>{{localize "NEONHUB.Fashion.Grade.Title"}} {{shop.before.grade}} &rarr; <b>{{shop.after.grade}}</b></span>
+        <span>{{#if shop.isFaction}}{{localize "NEONHUB.Fashion.ReadsAs"}}{{else}}{{localize "NEONHUB.Fashion.FitTitle"}}{{/if}} {{shop.before.score}}{{shop.unit}} &rarr; <b>{{shop.after.score}}{{shop.unit}}</b></span>
+        {{#if shop.canBuy}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="buy" data-uuids="{{shop.uuids}}" data-total="{{shop.spent}}"><i class="fa-solid fa-bag-shopping"></i> {{localize "NEONHUB.Fashion.Shop.Buy"}}</button>{{/if}}
+      </div>
+      <p class="hint">{{localize "NEONHUB.Fashion.Shop.DragHint"}}</p>
+      {{/if}}
+
+      {{#if is_feed}}
+      <div class="nh-cred-tools"><button type="button" class="nh-cal-btn" data-action="postFeed"><i class="fa-solid fa-share-from-square"></i> {{localize "NEONHUB.Fashion.Feed.Post"}}</button></div>
+      <ol class="nh-fashion-feed">
+        {{#each feed}}
+        <li class="{{#if bad}}is-bad{{/if}}"><b>{{handle}}</b><p>{{text}}</p><small><i class="fa-solid fa-heart"></i> {{likes}}</small></li>
+        {{/each}}
+      </ol>
+      {{/if}}
+    </div>
+    {{/if}}
+    {{/if}}
+  </section>
+</div>

@@ -37,6 +37,9 @@ import { ScreamOps } from "./journal/scream-ops.js";
 import { WorldOps } from "./journal/world-ops.js";
 import { CredStore } from "./cred/cred-store.js";
 import { CredApp } from "./cred/cred-app.js";
+import { FashionOps } from "./fashion/fashion-ops.js";
+import { FashionApp } from "./fashion/fashion-app.js";
+import { DISTRICTS } from "./fashion/fashion-data.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -63,6 +66,7 @@ Hooks.once("init", () => {
   JournalTakeover.register();
   ScreamOps.register();
   CredStore.register();
+  FashionOps.init();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -85,7 +89,8 @@ Hooks.once("init", () => {
     `${TEMPLATE_PATH}/journal/lore.hbs`,
     `${TEMPLATE_PATH}/journal/profile.hbs`,
     `${TEMPLATE_PATH}/journal/diary.hbs`,
-    `${TEMPLATE_PATH}/cred/cred.hbs`
+    `${TEMPLATE_PATH}/cred/cred.hbs`,
+    `${TEMPLATE_PATH}/fashion/fashion.hbs`
   ]);
 
   game.modules.get(MODULE_ID).api = {
@@ -260,10 +265,28 @@ Hooks.once("init", () => {
       leave: async (actor) => CredStore.leave(typeof actor === "string" ? await fromUuid(actor) : actor)
     },
 
+    /**
+     * Style Check (Fashion Analysis): how a character's look reads in 2070s Night City.
+     * open(actor, { tab }): the window ("look", "districts", "factions", "shop", "feed"; GM: "scene");
+     * analyze(actor): { score, grade, look, dominant, counts, cohesion, cost, missing, parts, kit };
+     * fit(actor, districtId): { fit, band, modifier, reasons, warnings }; reads(actor): factions it reads as;
+     * districts(): the districts; sceneDistrict(scene) / setSceneDistrict(scene, id) (GM).
+     */
+    fashion: {
+      open: (actor = null, options = {}) => FashionApp.open(actor, options),
+      show: (actor = null, userIds = null) => HubSocket.emit("openFashion", { actor: typeof actor === "string" ? actor : actor?.uuid ?? null }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
+      analyze: async (actor) => FashionOps.analyze(typeof actor === "string" ? await fromUuid(actor) : actor),
+      fit: async (actor, districtId) => FashionOps.fit(typeof actor === "string" ? await fromUuid(actor) : actor, districtId),
+      reads: async (actor) => FashionOps.reads(typeof actor === "string" ? await fromUuid(actor) : actor),
+      districts: () => DISTRICTS.map((d) => ({ ...d })),
+      sceneDistrict: (scene = canvas?.scene) => FashionOps.sceneDistrict(scene),
+      setSceneDistrict: (scene, id) => FashionOps.setSceneDistrict(scene, id)
+    },
+
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
     hoverStatus: () => HubHover.status(),
 
-    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp, NeonJournal, CredApp }
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp, NeonJournal, CredApp, FashionApp }
   };
 });
 
@@ -277,6 +300,7 @@ Hooks.once("ready", () => {
   HubSocket.on("openCalendar", () => CalendarApp.open());
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
   HubSocket.on("openCred", ({ actor }) => CredApp.open(actor));
+  HubSocket.on("openFashion", ({ actor }) => FashionApp.open(actor));
   SkipTimeApp.registerSocket();
   HouseholdOps.init();
   Downtime.init();
@@ -302,7 +326,20 @@ Hooks.on(`${MODULE_ID}.hqChanged`, () => {
   LifestyleApp.refresh();
 });
 Hooks.on(`${MODULE_ID}.lifestyleChanged`, () => LifestyleApp.refresh());
-Hooks.on(`${MODULE_ID}.credChanged`, () => CredApp.refresh());
+Hooks.on(`${MODULE_ID}.credChanged`, () => {
+  CredApp.refresh();
+  FashionApp.refresh();
+});
+// Style Check follows what characters wear and who's on the scene.
+for (const hook of ["createItem", "updateItem", "deleteItem"]) {
+  Hooks.on(hook, (item) => {
+    if (item.parent instanceof Actor && ["clothing", "cyberware", "weapon", "armor", "skill"].includes(item.type)) FashionApp.refreshFor(item.parent);
+  });
+}
+for (const hook of ["createToken", "deleteToken", "canvasReady"]) Hooks.on(hook, () => FashionApp.refreshFor(null));
+Hooks.on("updateScene", (scene, changes) => {
+  if (foundry.utils.hasProperty(changes, `flags.${MODULE_ID}`)) FashionApp.refresh();
+});
 Hooks.on(`${MODULE_ID}.lifestyleEraChanged`, () => LifestyleApp.refresh({ catalog: true }));
 
 /* ------------------------------------------ */
@@ -388,6 +425,7 @@ Hooks.on("updateActor", (actor) => {
   LifestyleApp.refreshFor(actor);
   // Reputation lives on the character; Street Cred shows it.
   if (actor.type === "character") CredApp.refresh();
+  FashionApp.refreshFor(actor);
 });
 
 /* ------------------------------------------ */
@@ -462,6 +500,7 @@ Hooks.on("renderActorDirectory", (app, html) => {
   }
   if (game.user.isGM || CredStore.characters().length) {
     addHeaderButton(html, { cls: "neon-hub-cred", icon: "fa-solid fa-ranking-star", label: L("NEONHUB.Cred.Title"), onClick: () => CredApp.open() });
+    addHeaderButton(html, { cls: "neon-hub-fashion", icon: "fa-solid fa-shirt", label: L("NEONHUB.Fashion.Title"), onClick: () => FashionApp.open() });
   }
 });
 
@@ -476,6 +515,7 @@ const lifestyleForItem = (item) => game.user.isGM && item?.type === "gear";
 Hooks.on("getActorSheetHeaderButtons", (sheet, buttons) => {
   const actor = sheet.actor ?? sheet.document;
   if (!lifestyleForActor(actor)) return;
+  buttons.unshift({ label: "NEONHUB.Fashion.Short", class: "neon-hub-fashion", icon: "fa-solid fa-shirt", onclick: () => FashionApp.open(actor) });
   buttons.unshift({ label: "NEONHUB.Cred.Short", class: "neon-hub-cred", icon: "fa-solid fa-ranking-star", onclick: () => CredApp.open(actor) });
   buttons.unshift({ label: "NEONHUB.Lifestyle.Title", class: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", onclick: () => LifestyleApp.open(actor) });
 });
@@ -487,6 +527,7 @@ Hooks.on("getItemSheetHeaderButtons", (sheet, buttons) => {
 // Application V2 sheets (a later CPR release on Foundry v13+).
 Hooks.on("getHeaderControlsActorSheetV2", (sheet, controls) => {
   if (!lifestyleForActor(sheet.document)) return;
+  controls.unshift({ label: "NEONHUB.Fashion.Short", icon: "fa-solid fa-shirt", action: "neonHubFashion", onClick: () => FashionApp.open(sheet.document) });
   controls.unshift({ label: "NEONHUB.Cred.Short", icon: "fa-solid fa-ranking-star", action: "neonHubCred", onClick: () => CredApp.open(sheet.document) });
   controls.unshift({ label: "NEONHUB.Lifestyle.Title", icon: "fa-solid fa-wallet", action: "neonHubLifestyle", onClick: () => LifestyleApp.open(sheet.document) });
 });

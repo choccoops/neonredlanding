@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.13.0
+
+- **The Worldbook, revised to the Night City 2070 setting book.** It grows from 65 entries to 178 and now reads as the Night City of *Cyberpunk: The Unification Era*, just after the Arvin Accord.
+  - **Revised.** Existing entries now follow the book: the NCPD as the city's one badge under Commissioner Ramos, MaxTac under Contender, Ziggurat's CitiNet and its fall, NetWatch and the Linkup, Barghest in the Occupied Zone, the gangs' 2070 leaders, and the boroughs with their eighteen districts. El Coyote Cojo now belongs to Rosa Delgado and La Catrina has Padre Ignacio, replacing the Mamá Welles and Padre Ibarra entries. The timeline is the book's.
+  - **New.** All eighteen districts, each with its data block, places and people. Notable places: the Totentanz, Lizzie's Bar, the Bridgehead, the Clock Tower, the old Ziggurat tower, the Moon Garden, Bartmoss's Thumb and more, plus the NET itself. Danger Gal, the Puma Squad and the other new corporations and organizations. The Kimen-Gumi and twelve booster crews. Forty-odd people, from Lyle Thompson and the Static Night crew to every gang leader.
+  - **GM secrets.** Sealed files and Lyle Thompson's theories (who Contender really is, the two Roxannes, the Flicker) sit in each entry's GM secrets block.
+- **Events.** Worldbuilding has a sixth kind of entry, for history: when, where, who was involved and what it changed, outlined as what happened and its aftermath. The Worldbook brings twelve, from the Mob Wars to the Purge, Static Night and the Arvin Accord.
+- Entries already imported into a world are left as they are. To get the new versions, delete them and **Import the Worldbook** again; new entries come in either way.
+
 ## 1.12.2
 
 - **The Worldbook reads as an encyclopedia.** Its entries no longer end in gig hooks, and new worldbuilding entries are no longer outlined with a Gig hooks heading. Entries already imported into a world keep theirs: delete them and **Import the Worldbook** again to bring in the new versions.

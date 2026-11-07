@@ -12,13 +12,14 @@ export const OWN_SECTIONS = ["gigs", "screamsheets", "world", "characters", "sto
 export const KINDS = ["gig", "session", "downtime", "screamsheet", "lore", "profile", "diary"];
 
 /** Worldbuilding entries, and the facts each kind starts with (translation keys). */
-export const LORE_TYPES = ["corporation", "gang", "place", "organization", "person"];
+export const LORE_TYPES = ["corporation", "gang", "place", "organization", "person", "event"];
 export const LORE_FACTS = {
   corporation: ["Headquarters", "Industry", "Leadership", "InNightCity", "Edgerunners"],
   gang: ["Turf", "KnownFor", "Leadership", "Rivals", "Hangouts"],
   place: ["Region", "ControlledBy", "Feel", "NotableLocations", "Danger"],
   organization: ["Kind", "Base", "Leadership", "Purpose"],
-  person: ["Role", "Affiliation", "Location", "Status", "KnownFor"]
+  person: ["Role", "Affiliation", "Location", "Status", "KnownFor"],
+  event: ["When", "Where", "Involved", "Outcome"]
 };
 
 /** A screamsheet's stories, in the order an issue lays them out. */
@@ -266,7 +267,7 @@ export function followUps(previous) {
 
 const facts = (v) => list(v).map((f) => ({ id: str(f?.id, 32) || rowId(), label: str(f?.label, 60), value: str(f?.value, 400) })).filter((f) => f.label || f.value);
 
-/** A worldbuilding entry: a corporation, gang, place, organization or person. */
+/** A worldbuilding entry: a corporation, gang, place, organization, person or event. */
 export function normalizeLore(raw = {}) {
   const r = raw && typeof raw === "object" ? raw : {};
   return {

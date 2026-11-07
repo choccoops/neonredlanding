@@ -750,7 +750,8 @@ const LORE_ICONS = {
   gang: "fa-solid fa-skull-crossbones",
   place: "fa-solid fa-city",
   organization: "fa-solid fa-sitemap",
-  person: "fa-solid fa-user-secret"
+  person: "fa-solid fa-user-secret",
+  event: "fa-solid fa-clock-rotate-left"
 };
 
 /** GM: which kind of worldbuilding entry to start. */

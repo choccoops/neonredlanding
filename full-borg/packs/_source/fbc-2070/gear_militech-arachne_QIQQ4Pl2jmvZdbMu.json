@@ -1,0 +1,61 @@
+{
+  "_id": "QIQQ4Pl2jmvZdbMu",
+  "_key": "!items!QIQQ4Pl2jmvZdbMu",
+  "name": "Militech Arachne",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_beta.svg",
+  "folder": "59TUT2ja764czdHe",
+  "sort": 1100,
+  "system": {
+    "description": {
+      "value": "<p><em>Militech's four-armed espionage body, the heir to the Spyder. Scalar Hands let it hang off a tower wall and work a window with the other two arms. More psychosis-prone than a war borg, as Militech's own therapists will tell you off the record.</em></p><p><strong>Cost:</strong> 25,900eb (Luxury)<br><strong>Humanity Loss:</strong> 76 ([1d6/2] + 23d6)<br><strong>Frame:</strong> Beta (14): BODY 14<br><strong>Eyes:</strong> MonoVision<br><strong>Base chrome (no HL):</strong> Cyberarm ×2<br><strong>Chrome:</strong> Amplified Hearing, Artificial Shoulder Mount, Chipware Socket, Enhanced Holophone, FBC Chameleon Coating, Grapple Hand ×4, Grip Foot ×2, Image Enhance, Internal Hydraulics Upgrade (Tuned), Low Light/Infrared/UV, MicroVideo, Scalar Hands, Tactile Boost, TeleOptics</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 25900
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Militech",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "LkDdiIkbxlIOyPdf",
+        "cost": "25,900eb (Luxury)",
+        "hl": {
+          "static": 76,
+          "roll": "23d6 + floor(1d6/2)",
+          "text": "76 ([1d6/2] + 23d6)"
+        },
+        "frame": "Beta",
+        "body": 14,
+        "eyes": "MonoVision"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

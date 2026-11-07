@@ -1,0 +1,147 @@
+{
+  "_id": "Ho1T6pxStoold66a",
+  "_key": "!items!Ho1T6pxStoold66a",
+  "name": "Internal Linear Frame β (Beta) (FBC)",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_beta.svg",
+  "folder": "ZsFy5qHKaPPKFEA6",
+  "sort": 3900,
+  "system": {
+    "description": {
+      "value": "<p>The FBC's own skeleton. BODY becomes 14, changing HP and Death Save; other chrome's penalties still apply. As standard FBC chassis it costs no Humanity Loss and doesn't lower your Maximum Humanity: CPR counts any Borgware as −4, so this frame carries +4 to cancel it.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "type": "borgware",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 0,
+      "roll": "0"
+    },
+    "isFoundational": true,
+    "size": 0,
+    "price": {
+      "market": 0
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    }
+  },
+  "effects": [
+    {
+      "_id": "S2giJsAL4qDTfWBT",
+      "_key": "!items.effects!Ho1T6pxStoold66a.S2giJsAL4qDTfWBT",
+      "name": "Internal Linear Frame β (Beta) (FBC): BODY 14",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.body.value",
+          "mode": 5,
+          "value": "14",
+          "priority": 10
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "qGDGydAZN8ER8tLz",
+      "_key": "!items.effects!Ho1T6pxStoold66a.qGDGydAZN8ER8tLz",
+      "name": "Free in an FBC",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.maxHumanity",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "chassis": true
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

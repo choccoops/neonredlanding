@@ -1,0 +1,61 @@
+{
+  "_id": "tRUhQqE2swUCjhZ0",
+  "_key": "!items!tRUhQqE2swUCjhZ0",
+  "name": "Orbital Air Galileo",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "ukT3cf0isqswYee7",
+  "sort": 1900,
+  "system": {
+    "description": {
+      "value": "<p><em>The Copernicus's younger sibling, tuned in the 2050s for long-haul pilots, research ships and combat craft. It can work alone for years and outfly anyone in the solar system. Reports say a group of Galileos stole an experimental ship in 2067 and vanished. Nobody's proven it.</em></p><p><strong>Cost:</strong> 23,450eb (Luxury)<br><strong>Humanity Loss:</strong> 61 ([2d6/2 Round Up] + 17d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> MonoVision<br><strong>Base chrome (no HL):</strong> Neuroport (w/ Feedback Circuit)<br><strong>Chrome:</strong> Anti-Dazzle, Bodyweight Autoinjector, FBC EMP Coating, Hello Cutie Sparkle-Ize, Image Enhance, Internal Hydraulics Upgrade, (-1d6 Humanity Loss) Mechatronic Core, Prehensile Cyberfoot ×2, (-1d6 Humanity Loss) Radar/Sonar Implant, Radio Communicator, (-1d6 Humanity Loss) Techscanner, Toolhand ×2, Zero Gravity Thrusters ×2</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 23450
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Orbital Air",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "UWNnj3C0yQ5O8mU5",
+        "cost": "23,450eb (Luxury)",
+        "hl": {
+          "static": 61,
+          "roll": "17d6 + ceil(2d6/2)",
+          "text": "61 ([2d6/2 Round Up] + 17d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "MonoVision"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

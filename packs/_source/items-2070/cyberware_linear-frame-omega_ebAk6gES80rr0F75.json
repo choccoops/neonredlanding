@@ -47,7 +47,47 @@
     "revealed": true,
     "favorite": false
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "jpgah7K8rzFi2LPV",
+      "_key": "!items.effects!ebAk6gES80rr0F75.jpgah7K8rzFi2LPV",
+      "name": "Linear Frame Ω (Omega)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.body.value",
+          "mode": 4,
+          "value": "16",
+          "priority": 10
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "flags": {
     "cyberpunk-red-core": {
       "_migration": {

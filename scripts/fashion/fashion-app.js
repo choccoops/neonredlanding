@@ -68,7 +68,8 @@ export class FashionApp extends HandlebarsApplicationMixin(ApplicationV2) {
     position: { width: 940, height: 740 },
     actions: {
       pick: FashionApp.#onPick,
-      tab: FashionApp.#onTab,
+      // Not "tab": ApplicationV2 handles data-action="tab" itself and never calls ours.
+      view: FashionApp.#onTab,
       disguise: FashionApp.#onDisguise,
       buy: FashionApp.#onBuy,
       openItem: FashionApp.#onOpenItem,

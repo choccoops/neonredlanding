@@ -47,7 +47,47 @@
     "revealed": true,
     "favorite": false
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "7Zc2P1neSbcdeQo8",
+      "_key": "!items.effects!tVviZh4a8iOSeFCH.7Zc2P1neSbcdeQo8",
+      "name": "Implanted Linear Frame ∑ (Sigma)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.body.value",
+          "mode": 4,
+          "value": "12",
+          "priority": 10
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "flags": {
     "cyberpunk-red-core": {
       "_migration": {

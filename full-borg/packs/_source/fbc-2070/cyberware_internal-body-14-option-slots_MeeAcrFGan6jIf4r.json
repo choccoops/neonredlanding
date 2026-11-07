@@ -1,0 +1,69 @@
+{
+  "_id": "MeeAcrFGan6jIf4r",
+  "_key": "!items!MeeAcrFGan6jIf4r",
+  "name": "Internal Body (14 Option Slots)",
+  "type": "cyberware",
+  "img": "icons/svg/item-bag.svg",
+  "folder": "ZsFy5qHKaPPKFEA6",
+  "sort": 4200,
+  "system": {
+    "description": {
+      "value": "<p>The body's Internal Body option slots, doubled in an FBC. Go Metal moves what's in here into the character's own Internal Body slots.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "type": "cyberwareInternal",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 0,
+      "roll": "0"
+    },
+    "isFoundational": true,
+    "size": 0,
+    "price": {
+      "market": 0
+    },
+    "usage": "toggled",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": false,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "cyberware"
+      ],
+      "list": [],
+      "slots": 14,
+      "usedSlots": 0
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "core": "cyberwareInternal"
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

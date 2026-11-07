@@ -32,6 +32,10 @@ Seven tools for **Cyberpunk RED - CORE** on Foundry VTT:
   Cyberpunk RED items with Active Effects for their bonuses, its vehicles, ACPAs and cyberpets as
   actors ready for MMuton's vehicle sheet, and the 2070 Core Rules' range tables as DV tables.
 
+**Neon Hub: Full Borg** is a companion module in the same repository, released with Neon Hub: the
+Item Compendium's 2070 Full Body Conversions built on the sheet, and **Go Metal** to move a character
+into one. See [Full Borg](#full-borg-its-own-module).
+
 | Requirement | Version |
 | --- | --- |
 | Foundry VTT | v12 (built with v13+ APIs in mind, see below) |
@@ -41,6 +45,7 @@ Seven tools for **Cyberpunk RED - CORE** on Foundry VTT:
 | [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) | optional, for messenger buttons |
 | [SmallTime](https://github.com/unsoluble/smalltime) | optional: 1.24.0 on Foundry v12, for the world clock in the calendar |
 | [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet) | optional: 2.6, for the 2070s vehicles and ACPAs |
+| Neon Hub: Full Borg | optional, for the 2070s Full Body Conversions (its own module, same release) |
 
 ![A landing page in the Night City chrome theme](docs/hub-page.webp)
 
@@ -698,7 +703,8 @@ the Item Compendium (2070) chapter it's from:
   vehicle upgrades and ICE, bicycles and their upgrades, invented Tech Upgrades and street stock,
   and every vehicle as a vehicle item for character sheets. What's already in Neon Hub's Street
   Goods, Lifestyle (2070s) and Fashion (2070s) compendiums isn't repeated, and Full Body
-  Conversions come in their own module.
+  Conversions come in their own module ([Full Borg](#full-borg-its-own-module)). The FBC chrome
+  itself (the Biosystem, coatings, plating, hydraulics) is here too.
 - **Neon Hub: Vehicles, ACPAs & Cyberpets (2070s)**, 197 actors. Every vehicle in the 2070
   catalog, the bicycles and the iconic rides, and the six ACPA production models, set up for
   [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet):
@@ -729,7 +735,9 @@ for it, read from the item's own line ("+2 MOVE", "+2 Human Perception and Inter
   "(active)", off until you switch it on.
 - **Conditional skill bonuses** ("+2 Perception for hearing") are situational. They show up as a
   checkbox when you roll that skill.
-- **Linear Frames** set BODY to the frame's value unless yours is higher.
+- **Linear Frames** set BODY to the frame's value unless yours is higher, and **Internal Hydraulics**
+  set REF, DEX and MOVE to 4, 6 or 8 the same way. Both apply before other chrome's penalties, so
+  Dragoon Plating's −2 still comes off.
 
 Some lines are left in the text, for the GM to apply at the table:
 - bonuses that depend on a condition and aren't skills;
@@ -739,6 +747,54 @@ Some lines are left in the text, for the GM to apply at the table:
 
 Items are dragged into the world or onto sheets as usual. The vehicles' crew seats and glass can be
 changed on the vehicle sheet's setup.
+
+## Full Borg (its own module)
+
+**Neon Hub: Full Borg** (`cpr-neon-full-borg`) brings the Item Compendium's *Full Body Conversions*
+chapter to Foundry. It's a separate module in this repository's `full-borg/` folder that needs Neon Hub,
+and every Neon Hub release ships it too. Install it from its own manifest URL:
+
+`https://github.com/choccoops/neonredlanding/releases/latest/download/cpr-neon-full-borg.json`
+
+- **Full Borg: Bodies (2070s)**: the book's 25 bodies as actors, by maker. Each one is built the
+  way the book lists it:
+  - the standard chassis, free in an FBC with its option slots doubled: Cyberarm ×2, Cyberaudio Suite,
+    Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport;
+  - its eyes and base chrome, at no HL;
+  - its chrome, each piece in the arm, leg, eye, ear, Neuroport or body slots it goes in, with
+    enhancements and operating systems fitted.
+
+  Open one to read the body on a CPR sheet.
+- **Full Borg: Packages & Parts (2070s)**:
+  - a package item for each body, with its price and Humanity Loss, to sell in a Neon Market shop;
+  - the chassis parts, so a Tech can assemble a body;
+  - the Biosystem;
+  - Glucose-Rich Brain Solution, and a **Brain Starved** toggle (−2 to everything).
+
+**Go Metal (GM).** Use the **Go Metal** button on a character or mook sheet, or drop a body package on
+the sheet. Pick a body and choose how to take its Humanity Loss: roll it, take the average, or none.
+Go Metal then:
+
+1. Uninstalls the old chrome. It stays on the sheet, and the Biosystem stays installed.
+2. Installs a Biosystem if there isn't one.
+3. Creates the body's chrome, installed where the body has it, and doubles the Internal and External
+   Body slots.
+4. Rolls the package's Humanity Loss once, in the book's own dice (such as 17d6 plus half of 2d6, rounded
+   up). CPR then sets the new Maximum Humanity:
+   - the free chassis costs nothing;
+   - other chrome is −2 a piece;
+   - Borgware and the Biosystem are −4.
+5. Sets BODY from the frame, with HP and Death Save following it. Hydraulics raise REF, DEX and MOVE.
+
+**Switch bodies** takes out everything the old body put in. **Leave the body** leaves only the
+Biosystem. The API is `game.modules.get("cpr-neon-full-borg").api`, with `open`, `goMetal`,
+`leaveBody`, `isFBC`, `state` and `bodies`.
+
+The rest of the FBC Baselines stay with the table (Core Rules (2070), Chapter 09):
+- the injury and Wound State immunities;
+- immunity to drugs and poison;
+- brain food each month;
+- repairs.
 
 ## Night City Messenger
 
@@ -929,6 +985,8 @@ the clock the same way. It reads SmallTime's `small-step`, `large-step`, `time-f
   first.
 - The 2070s items' Active Effects cover flat bonuses only; conditional stat bonuses and effects on
   others stay in the item text.
+- Full Borg doesn't apply the FBC immunities (Wound State penalties, the listed Critical Injuries,
+  drugs).
 - Lifestyle billing is per character; it doesn't split an HQ's rent (pay that on the HQ screen).
 - An HQ's rent is one "due" flag: a jump past several rent days rolls each HQ month but leaves one
   rent payment due.
@@ -948,11 +1006,13 @@ Releases are built by the workflows; you only need this to work on the module. W
 npm ci
 npm run check        # scripts parse, JSON is valid, every localization key exists
 npm test             # lifestyle rules unit tests
-npm run build:packs  # compile packs/_source/*/ into Foundry compendium packs
+npm run build:packs  # compile packs/_source/*/ (and full-borg/packs/_source/*/) into Foundry compendium packs
 ```
 
 Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lifestyle` and
-`packs/street-goods` folders aren't committed.
+`packs/street-goods` folders aren't committed. The 2070s packs are generated from the book's source
+by `tools/gen/items2070.py` (Neon Hub's Item Compendium) and `tools/gen/fullborg2070.py` (Full Borg,
+which runs the item generator first so the bodies use the same items).
 
 ## License
 
@@ -962,7 +1022,8 @@ Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts 
 Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),
 and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*. The 2070s Item Compendium
 carries that line's *Item Compendium*, and its DV tables the line's *Core Rules*, in the books' own wording, with
-Active Effects written for Neon Hub (its icons point to the Cyberpunk RED system's own); Cyberpunk, Cyberpunk 2077
+Active Effects written for Neon Hub (its icons point to the Cyberpunk RED system's own), and Full Borg that book's
+Full Body Conversions; Cyberpunk, Cyberpunk 2077
 and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
 original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian
 Games or CD PROJEKT.

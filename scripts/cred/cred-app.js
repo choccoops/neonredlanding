@@ -140,7 +140,8 @@ export class CredApp extends HandlebarsApplicationMixin(ApplicationV2) {
     position: { width: 900, height: 720 },
     actions: {
       pick: CredApp.#onPick,
-      tab: CredApp.#onTab,
+      // Not "tab": ApplicationV2 handles data-action="tab" itself and never calls ours.
+      view: CredApp.#onTab,
       standing: CredApp.#onStanding,
       deed: CredApp.#onDeed,
       heat: CredApp.#onHeat,

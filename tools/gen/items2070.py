@@ -138,6 +138,17 @@ ADDITIONS = [
         ["Bodyweight Autoinjector", "Clinic", "500eb", "3 (1d6)", "1",
          "Holds one dose of a drug or Pharmaceutical under the skin. Release it without an Action once a Turn, or set it at install to fire on "
          "its own the moment you're Seriously Wounded. Refilling it takes an Action with an Airhypo.", ""])),
+    ("Cyberware", "Cyberlimbs & Options", "table", (
+        ["Cyberware", "Install", "Cost", "HL", "Slots", "Effect", "Source"],
+        ["Rocklin Augmentics Skydrivers", "Hospital", "2,500eb (V. Expensive)", "14 (4d6)", "0, gives 3",
+         "Paired cyberlegs, priced and HL'd as one item, each with 3 option slots and a fixed Jump Booster (no HL, no slot). Falls deal damage "
+         "as if they were 4m/yds shorter. Out of production since Rocklin folded; Militech bought the last stock for its Phoenix units.", ""])),
+    ("Cyberware", "Borgware", "table", (
+        ["Cyberware", "Install", "Cost", "HL", "Slots", "Effect", "Source"],
+        ["Integrated Zetatech CyberConductor", "Hospital", "5,000eb", "14 (4d6)", "0",
+         "Borgware; needs an Integrated Netstation and two or more integrated decks. Your integrated decks run as one: Programs and Hardware in "
+         "any of them count as installed in the deck you Jack In with. Once per Turn, derez one of your Programs and rez another in the same NET "
+         "Action. Overheat or Short Circuit on one deck hits them all.", ""])),
 ]
 
 
@@ -305,6 +316,12 @@ def effects_for(doc, desc, path):
         return None, []
     always, timed, situational = {}, {}, {}
     for clause in _clauses(text):
+        # "REF, DEX and MOVE become 6 unless higher" and an implanted frame's "BODY becomes 14": a floor under the stat,
+        # set before other chrome's penalties (priority 10, ahead of their ADDs at 20).
+        if type_ == "cyberware" and not re.search(r"plugged in", clause):
+            for m in re.finditer(rf"((?:{'|'.join(STAT_KEYS)})(?:\s*(?:,|and)\s*(?:{'|'.join(STAT_KEYS)}))*) becomes? (\d+)\b", clause):
+                for st in re.findall("|".join(STAT_KEYS), m.group(1)):
+                    always[f"system.stats.{STAT_KEYS[st]}.value"] = ("stat", int(m.group(2)), 4, 10)
         if re.search(r"against (?:you|them)|no HP|without a dose|addicted|\banyone\b|to hear|\bdodging\b|\bbecomes?\b|\btargets?\b", clause, re.I):
             continue
         found = [(m, [(n, m.group(1), m.group(2)) for n in TFIND.findall(m.group(3))])
@@ -349,8 +366,8 @@ def effects_for(doc, desc, path):
             continue
         eid = rid("effect", doc["_id"], label)
         changes, cats, sits = [], {}, {}
-        for i, (key, (cat, val, mode)) in enumerate(sorted(bucket.items())):
-            changes.append({"key": key, "mode": mode, "value": str(val), "priority": None})
+        for i, (key, (cat, val, mode, *prio)) in enumerate(sorted(bucket.items())):
+            changes.append({"key": key, "mode": mode, "value": str(val), "priority": prio[0] if prio else None})
             cats[str(i)] = cat
             sits[str(i)] = {"isSituational": sit and cat == "skill", "onByDefault": False}
         effects.append({"_id": eid, "_key": f"!items.effects!{doc['_id']}.{eid}", "name": label, "img": "icons/svg/aura.svg",

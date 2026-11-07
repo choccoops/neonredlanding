@@ -1,0 +1,62 @@
+{
+  "FULLBORG": {
+    "Title": "Go Metal",
+    "Short": "Go Metal",
+    "ShortMetal": "FBC",
+    "Kicker": "Full Body Conversion",
+    "Bodies": "2070 Bodies",
+    "Patient": "Patient",
+    "Meat": "Meat body: not converted",
+    "Wearing": "Wearing a {body}",
+    "Current": "The body they're in now",
+    "Worn": "They've worn this body before",
+    "NoPack": "The Full Borg bodies compendium isn't available. Check that Neon Hub: Full Borg is enabled.",
+    "Cost": "Cost",
+    "HLShort": "HL",
+    "Frame": "Frame",
+    "Eyes": "Eyes",
+    "HL": {
+      "Title": "Humanity Loss (the whole package)",
+      "roll": "Roll it",
+      "rollHint": "Roll the package's dice once: {roll}.",
+      "static": "Take the average",
+      "staticHint": "FBC Baselines let you take the average when chrome goes into an FBC: {static}.",
+      "none": "None",
+      "noneHint": "No Humanity Loss, for a body the table has already paid for."
+    },
+    "Surgery": "Surgery",
+    "HasBiosystem": "Their brain is already in a Biosystem.",
+    "AddBiosystem": "Install a Biosystem too (10,000eb, HL 14 (4d6), Borgware)",
+    "StripOld": "Uninstall the old body's chrome (it stays on the sheet, uninstalled). The Biosystem stays.",
+    "SwitchHint": "Switching bodies: all chrome in the old body comes out with it. Chrome you added to the old body stays on the sheet, uninstalled.",
+    "Rules": "Each body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Internal and External Body slots are doubled. Full Body Conversion rules: Core Rules (2070), Chapter 09.",
+    "Install": "Go Metal",
+    "Switch": "Switch bodies",
+    "Leave": "Leave the body",
+    "Confirm": "Install the {body} on {name}? Their brain goes into a Biosystem for good.",
+    "ConfirmSwitch": "Move {name} from their current body into the {body}? (DV17 Cybertech or Surgery, 4 hours, retry freely.)",
+    "ConfirmLeave": "Take {name} out of the {body}? The body's chrome comes off the sheet; the Biosystem stays. Outside a body they can only watch and talk.",
+    "Done": "{name} is now in a {body}.",
+    "AskGM": "{body} is on your sheet. Ask the GM to install it with Go Metal.",
+    "Chat": {
+      "WentMetal": "{name} goes metal: {body}",
+      "Switched": "{name} switches bodies: {body}",
+      "Left": "{name} leaves the {body}",
+      "LeftHint": "Just a Biosystem now: it can watch and talk, and it's cover with 25 HP.",
+      "Body": "Frame {frame}: BODY {body}, which sets HP and Death Save.",
+      "HLTotal": "Humanity Loss: {n}.",
+      "NoHL": "No Humanity Loss taken.",
+      "HLRoll": "Humanity Loss: {name}",
+      "Biosystem": "A Biosystem went in first.",
+      "OldChrome": "The old body's chrome was uninstalled and stays on the sheet."
+    },
+    "Warn": {
+      "Cyberpsycho": "{name}'s Humanity is at 0 or lower."
+    },
+    "Error": {
+      "GMOnly": "Only the GM can install a Full Body Conversion.",
+      "NoBody": "That body isn't in the Full Borg bodies compendium.",
+      "NoHub": "Neon Hub: Full Borg needs Neon Hub enabled for its look."
+    }
+  }
+}

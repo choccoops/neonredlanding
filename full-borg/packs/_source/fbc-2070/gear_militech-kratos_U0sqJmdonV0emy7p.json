@@ -1,0 +1,61 @@
+{
+  "_id": "U0sqJmdonV0emy7p",
+  "_key": "!items!U0sqJmdonV0emy7p",
+  "name": "Militech Kratos",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "59TUT2ja764czdHe",
+  "sort": 1300,
+  "system": {
+    "description": {
+      "value": "<p><em>Militech's classic Enforcer, retooled for streets the Enforcer couldn't handle. It's tougher and meaner, costs more in materials, and gives up any pretense of less-lethal work.</em></p><p><strong>Cost:</strong> 23,600eb (Luxury)<br><strong>Humanity Loss:</strong> 61 ([2d6/2 Round Up] + 17d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> MonoVision<br><strong>Chrome:</strong> Anti-Dazzle, Audio Recorder, Heavy Subdermal Plating (w/ Para Bellum [+1 SP, SP14 Total]), (-3(1d6) Humanity Loss) Hidden Holster, Low Light/Infrared/UV, Projectile Launch System, Popup Melee Weapon (Electric Baton), Self-ICE ×2, Subdermal Grip, Targeting Scope, Titanium Bones, Voice Stress Analyzer</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 23600
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Militech",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "giEHEwcPKWuR3qep",
+        "cost": "23,600eb (Luxury)",
+        "hl": {
+          "static": 61,
+          "roll": "17d6 + ceil(2d6/2)",
+          "text": "61 ([2d6/2 Round Up] + 17d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "MonoVision"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

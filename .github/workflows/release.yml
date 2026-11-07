@@ -1,5 +1,7 @@
-# Publishes a Foundry-installable release whenever a version tag (v1.2.3) is pushed.
+# Publishes a Foundry-installable release whenever a version tag (v1.2.3) is pushed: Neon Hub and, from the
+# full-borg/ folder, the Neon Hub: Full Borg module, both at the tag's version.
 # Foundry users install from:  https://github.com/choccoops/neonredlanding/releases/latest/download/module.json
+#                   Full Borg: https://github.com/choccoops/neonredlanding/releases/latest/download/cpr-neon-full-borg.json
 name: Release
 
 on:
@@ -30,7 +32,7 @@ jobs:
       - name: Build compendium packs
         run: npm run build:packs
 
-      - name: Stamp version and URLs into module.json
+      - name: Stamp version and URLs into both module.json files
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           REPO="https://github.com/${GITHUB_REPOSITORY}"
@@ -39,6 +41,12 @@ jobs:
              --arg download "$REPO/releases/download/$GITHUB_REF_NAME/module.zip" \
              '.version=$v | .url=$url | .manifest=$manifest | .download=$download' \
              module.json > module.tmp && mv module.tmp module.json
+          jq --arg v "$VERSION" --arg url "$REPO" \
+             --arg manifest "$REPO/releases/latest/download/cpr-neon-full-borg.json" \
+             --arg download "$REPO/releases/download/$GITHUB_REF_NAME/cpr-neon-full-borg.zip" \
+             '.version=$v | .url=$url | .manifest=$manifest | .download=$download' \
+             full-borg/module.json > full-borg/module.tmp && mv full-borg/module.tmp full-borg/module.json
+          cp full-borg/module.json cpr-neon-full-borg.json
 
       - name: Release notes from CHANGELOG.md
         run: |
@@ -46,8 +54,10 @@ jobs:
           awk -v v="## $VERSION" '$0==v{f=1;next} /^## /{if(f)exit} f' CHANGELOG.md > RELEASE_NOTES.md
           [ -s RELEASE_NOTES.md ] || echo "See CHANGELOG.md" > RELEASE_NOTES.md
 
-      - name: Build module.zip
-        run: zip -r module.zip module.json scripts templates styles fonts lang assets packs docs README.md CHANGELOG.md LICENSE -x "packs/_source/*"
+      - name: Build module.zip and cpr-neon-full-borg.zip
+        run: |
+          zip -r module.zip module.json scripts templates styles fonts lang assets packs docs README.md CHANGELOG.md LICENSE -x "packs/_source/*"
+          (cd full-borg && zip -r ../cpr-neon-full-borg.zip module.json scripts templates styles lang packs README.md CHANGELOG.md LICENSE -x "packs/_source/*")
 
       - uses: softprops/action-gh-release@v3
         with:
@@ -55,3 +65,5 @@ jobs:
           files: |
             module.json
             module.zip
+            cpr-neon-full-borg.json
+            cpr-neon-full-borg.zip

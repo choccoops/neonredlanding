@@ -1,0 +1,90 @@
+{
+  "id": "cpr-neon-full-borg",
+  "title": "Neon Hub: Full Borg (2070s Full Body Conversions) for Cyberpunk RED",
+  "description": "The 2070 Item Compendium's Full Body Conversions for the Cyberpunk RED - CORE system: every body built on the sheet with its chassis and chrome installed, a package item for each to sell in shops, and Go Metal, a GM window that moves a character into a body, switches bodies and rolls the package's Humanity Loss once. Needs Neon Hub.",
+  "version": "1.17.0",
+  "authors": [
+    {
+      "name": "Neon Hub contributors"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "cyberpunk-red-core",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.92",
+          "verified": "0.92.4"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "cpr-neon-hub",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.17.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/full-borg.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "fbc-bodies-2070",
+      "label": "Full Borg: Bodies (2070s)",
+      "path": "packs/fbc-bodies-2070",
+      "type": "Actor",
+      "system": "cyberpunk-red-core",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "fbc-2070",
+      "label": "Full Borg: Packages & Parts (2070s)",
+      "path": "packs/fbc-2070",
+      "type": "Item",
+      "system": "cyberpunk-red-core",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Neon Hub",
+      "sorting": "m",
+      "color": "#ff2a6d",
+      "packs": [
+        "fbc-bodies-2070",
+        "fbc-2070"
+      ]
+    }
+  ],
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "MIT",
+  "readme": "README.md",
+  "changelog": "CHANGELOG.md"
+}

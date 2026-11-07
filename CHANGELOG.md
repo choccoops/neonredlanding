@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.15.0
+
+- **Style Check.** Fashion analysis for 2070s Night City, from **Style Check** in the Actors sidebar, the **Style** button on a character sheet, or a new hub button action (and MATT action).
+  - **The 2070 styles**: Entropism, Nomad Leathers, Kitsch, Neo-Militarism, Neo-Kitsch, High Fashion and Gang Colors. Older clothing reads as its 2070 heir, and in the 2070s era the sheet's style names show it.
+  - **Look**: a grade from S to F out of 100 (coverage, cohesion, quality, fashionware flair, Wardrobe & Style, Personal Grooming and COOL), the full look, and the weapons, chrome and armor in plain sight.
+  - **Districts**: how the look fits each of the eighteen districts and the Badlands, from Belongs to Marked, with a suggested social modifier and every reason, including colors on rival turf, chrome and weapons where they're unwelcome, money, and Street Cred Standing and Heat.
+  - **Factions & Disguise**: which faction the look reads as, and a disguise planner with a roll.
+  - **Shopping**: a shopping list for a district or a faction within a budget, with the grade and fit before and after, and **Buy and wear** through the wealth ledger.
+  - **Street Feed**: the street's comments on the look, postable to chat.
+  - **Scene (GM)**: the scene's district, every token's look and fit, the crew's cohesion and weakest link, and flashpoints.
+- **Neon Hub: Fashion (2070s)**, a new compendium: 63 pieces, one of every style for every slot at the Item Compendium's prices, and 29 faction colors and uniforms.
+
 ## 1.14.0
 
 - **Street Cred.** A new window for who knows you, who likes you and how hot the badge runs, by the 2070s rules' *Street Cred* chapter. Open it from **Street Cred** in the Actors sidebar, the **Cred** button on a character sheet, or a new hub button action (and Monk's Active Tile Triggers action).

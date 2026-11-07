@@ -1,11 +1,11 @@
-# Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar, Journal & Street Cred for Cyberpunk RED
+# Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar, Journal, Street Cred & Style Check for Cyberpunk RED
 
-Six tools for **Cyberpunk RED - CORE** on Foundry VTT:
+Seven tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
   players to a scene, opens a journal or character sheet, opens a Neon Market shop, the crew's
-  Headquarters, Lifestyle, the calendar, Street Cred or Night City Messenger, plays sound, shows an image or
+  Headquarters, Lifestyle, the calendar, Street Cred, Style Check or Night City Messenger, plays sound, shows an image or
   runs a macro.
 - **Headquarters.** A crew HQ screen built on the *No Place Like Home* rules: HQ IP, the twelve
   Improvements and their Upgrades, the ten Morale Boost levels, rent and access, the Server Room's
@@ -23,6 +23,10 @@ Six tools for **Cyberpunk RED - CORE** on Foundry VTT:
 - **Street Cred.** Each character's Reputation, Standing with the Free City's gangs, corps and
   Nomad families, Heat with the NCPD, and relationships, as the 2070s rules run them: joining a
   gang or corp at +4, rivals, cooling off, and what each Standing gets you.
+- **Style Check.** Fashion analysis for 2070s Night City: a grade for each character's look, how it
+  fits each of the eighteen districts, which faction it reads as and how good a disguise that makes,
+  a shopping list, the street's comments, and a GM view of the whole scene, with a compendium of
+  2070 fashion and the factions' colors and uniforms.
 
 | Requirement | Version |
 | --- | --- |
@@ -617,6 +621,61 @@ settings shows them everyone's. Standing, Heat and Reputation are the GM's to ch
 their relationships* lets them keep their own people. Hidden factions and relationships are only
 ever shown to the GM.
 
+## Style Check
+
+How a character's look reads on the streets of 2070s Night City. Open it from **Style Check** at
+the top of the Actors sidebar, the **Style** button on a character sheet, or a hub button. Pick
+where they are (the scene's district by default) and the window shows how they fit there.
+
+**The 2070 styles.** The *Item Compendium*'s six styles plus Gang Colors: **Entropism**, **Nomad
+Leathers**, **Kitsch**, **Neo-Militarism**, **Neo-Kitsch**, **High Fashion** and **Gang Colors**.
+Older clothing reads as its 2070 heir (Bag Lady Chic and Bohemian as Entropism; Generic Chic,
+Leisurewear and Asia Pop as Kitsch; Urban Flash as Neo-Kitsch; Businesswear as Neo-Militarism).
+CPR only knows its ten classic styles, so a 2070 piece is saved with the nearest classic one and
+keeps its 2070 style in a Neon Hub flag: it stays a valid item with Neon Hub turned off. With the
+*Lifestyle era* set to the 2070s, the sheet's style names show their heir ("Kitsch (Asia Pop)");
+reload after changing the era.
+
+**The compendium.** *Neon Hub: Fashion (2070s)* has a piece of every style for every slot (63) at
+the *Item Compendium*'s prices, and 29 colors and uniforms that read as their faction: the Tyger
+Claws' neon jacket and Kimen-Gumi mask, the Valentinos' Santa Muerte gold, 6th Street's surplus
+patches, Maelstrom's red-optic visor, the Mox's very good boots, Barghest fatigues, Aldecaldo
+family jackets, the corps' staff suits and the NCPD's uniform among them.
+
+**Look.** What's worn in each slot and a score out of 100, from S to F: coverage (30), cohesion
+(25), the pieces' quality (20), flair from fashionware (10) and Wardrobe & Style, Personal Grooming
+and COOL (15). Top, bottoms, footwear and jewelry of one style make a **full look**. It also counts
+what's in plain sight: drawn or unconcealable weapons, cyberlimbs, cybereyes and external chrome,
+and body armor of SP 11 or more.
+
+**Districts.** All eighteen districts and the Badlands, best fit first, from +10 (*Belongs*) to −10
+(*Marked*), with a suggested modifier from +2 to −2 for social Checks with the locals and every
+reason: the styles the district likes, your colors on your own turf (or a rival's), chrome shown
+where it's hidden, weapons where security forbids them, too cheap for the towers or too rich for
+the Combat Zone, and Street Cred (Standing with whoever runs it, Heat under a high Security Code).
+
+**Factions & Disguise.** The factions a look reads as, and a disguise planner: pick one to pass as,
+see how well the look holds (Convincing +2 to Hopeless), and roll it. The disguise check is a house
+rule: COOL + Wardrobe & Style + 1d10 + the modifier against the watcher's INT + Human Perception +
+1d10, +2 if they're one of them.
+
+**Shopping.** Pick a district or a faction and a budget (the wallet by default): it lists the
+pieces to buy, the faction's own first, then the cheapest of the right style, and shows the grade
+and fit before and after. **Buy and wear** pays through the wealth ledger and puts them on; or drag
+a piece onto a sheet.
+
+**Street Feed.** What the street says about the look in that district, the same until the look
+changes. **Post to chat** shares it.
+
+**Scene (GM).** Set the scene's district, then see every token: player characters' grade, look,
+fit and warnings; everyone else's look and the faction they read as, or the faction you tag them
+with. It sums up the crew (how much they look like one crew, the weakest link) and flags
+flashpoints: rival colors in front of that faction, a character Marked by someone in the room, or
+Heat with a cop present.
+
+**About the numbers.** The district dress codes, faction looks, scores and the disguise check are
+Neon Hub's house rules built on the *Night City 2070* setting book and the *Item Compendium*.
+
 ## Night City Messenger
 
 [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) by
@@ -710,6 +769,12 @@ await hub.cred.adjust(actor, "tyger-claws", 2, { reason: "Saved a lieutenant", r
 await hub.cred.adjustHeat(actor, 1, { reason: "Caught on camera" }); // GM
 await hub.cred.adjustReputation(actor, 1, "Took down a cyberpsycho"); // GM, through the CPR ledger
 await hub.cred.join(actor, "valentinos"); // GM: at +4 Standing or better
+hub.fashion.open(actor, { tab: "districts" }); // Style Check (look, districts, factions, shop, feed; GM: scene)
+await hub.fashion.analyze(actor);       // { score, grade, look, dominant, counts, cohesion, cost, missing, parts, kit }
+await hub.fashion.fit(actor, "kabuki"); // { fit, band, modifier, reasons, warnings }
+await hub.fashion.reads(actor);         // [{ id, name, score }] strongest first
+hub.fashion.districts();                // the districts and their dress codes
+await hub.fashion.setSceneDistrict(canvas.scene, "japantown"); // GM
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
@@ -741,7 +806,7 @@ players' hover actions only when no GM is connected): its path is in the tile's
 `flags["cpr-neon-hub"].hover`, and each client swaps the tile's texture locally under the pointer. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
 hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle`,
-`cpr-neon-hub.opencalendar`, `cpr-neon-hub.opencred` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
+`cpr-neon-hub.opencalendar`, `cpr-neon-hub.opencred`, `cpr-neon-hub.openfashion` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
 through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openContacts`,
 `openNetworkManagement`, `openAdmin`).
 
@@ -753,6 +818,9 @@ through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openCo
 | Humanity | `system.derivedStats.humanity.value / .max / .transactions`, then `actor.setMaxHumanity()` |
 | Roles | `system.roleInfo.activeRole` and items of type `role` (a *Ganger* or *Exec* role's `system.rank` follows Standing) |
 | Reputation | `system.reputation.value`, `system.reputation.transactions` (a ledger) |
+| Clothing | `clothing` items: `system.type`, `system.style`, `system.equipped`, `system.price.market`; the 2070 style and faction in `flags.cpr-neon-hub.fashion` |
+| In plain sight | `cyberware` `system.type` and `system.isInstalled`; `weapon` `system.equipped` and `system.concealable`; `armor` `system.bodyLocation.sp` |
+| Style names | the `CPR.global.clothing.style.*` translations, relabelled in the 2070s era |
 | Ledger lines | `CPR.ledger.increaseSentence` / `decreaseSentence`, reason `"... - <user>"` |
 | Lifestyle items | `gear` items: `system.equipped` (`"equipped"` = active), `system.usage: "equipped"`, `system.amount`, `system.price.market` |
 | Lifestyle fields | `system.lifestyle.housing / lifeStyle / traumaTeam` `.cost` and `.description` |
@@ -766,6 +834,8 @@ forecasts are in a world setting (`cpr-neon-hub.calendarWeather`), as are the co
 off (`cpr-neon-hub.weatherOff`); like hidden notes, they reach every client. Street Cred's factions,
 Standing, Heat and relationships are in `cpr-neon-hub.streetCred`, which reaches every client too,
 so the GM's hidden factions and relationships are hidden by the window, not secret from a determined player.
+A scene's district is on the scene (`flags.cpr-neon-hub.district`) and an NPC's faction tag on its
+actor (`flags.cpr-neon-hub.faction`).
 
 **SmallTime.** Read from SmallTime 1.24.0. It keeps the time of day in Foundry's world time
 (`game.time.worldTime`, midnight at every multiple of 86,400 seconds, no offset outside PF2e) and

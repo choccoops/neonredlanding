@@ -140,7 +140,7 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         playModes: opt(["play", "stop", "pause", "next", "prev"].map((k) => [k, L(`NEONHUB.PlayMode.${k}`)]), a.playMode),
         colorValue: b.color || THEMES[d.theme].accent,
         is: Object.fromEntries(Object.keys(BUTTON_ACTIONS).map((k) => [k, a.type === k])),
-        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "cred", "messenger", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
+        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "cred", "fashion", "messenger", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
         targetName: a.target ? this.#nameOf(a.type, a.target) : null,
         dropLabel: L(`NEONHUB.Editor.DropFor.${a.type}`),
         shopClosed: a.type === "shop" && !!a.target && this.#shopClosed(a.target),

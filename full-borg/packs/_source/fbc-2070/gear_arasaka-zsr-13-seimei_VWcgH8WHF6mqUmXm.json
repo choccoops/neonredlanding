@@ -1,0 +1,61 @@
+{
+  "_id": "VWcgH8WHF6mqUmXm",
+  "_key": "!items!VWcgH8WHF6mqUmXm",
+  "name": "Arasaka ZSR-13 Seimei",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "fkwDZtfNLv5SSGNb",
+  "sort": 500,
+  "system": {
+    "description": {
+      "value": "<p><em>Named for the court diviner who bound spirits to his service. Cut off from the world's CitiNets, Arasaka's netrunners spent decades training on the company's own closed systems, and the Seimei is what came out. It lacks the Sage's raw reach, but it doesn't need four weeks of therapy, and Arasaka prefers its staff back at their desks on Monday.</em></p><p><strong>Cost:</strong> 23,250eb (Luxury)<br><strong>Humanity Loss:</strong> 71 ([1d6/2] + 20d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> Cybereye ×2<br><strong>Base chrome (no HL):</strong> Arasaka Shadow Mk.5 deck<br><strong>Chrome:</strong> C-Link Socket, Cybersuite, FBC EMP Coating, Memory Boost, RAM Manager, RAM Recoup, RAM Upgrade ×2, Scrambler/Descrambler, Self-ICE ×2</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 23250
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Arasaka",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "pychrUcg7GKs6Wnk",
+        "cost": "23,250eb (Luxury)",
+        "hl": {
+          "static": 71,
+          "roll": "20d6 + floor(1d6/2)",
+          "text": "71 ([1d6/2] + 20d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "Cybereye ×2"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

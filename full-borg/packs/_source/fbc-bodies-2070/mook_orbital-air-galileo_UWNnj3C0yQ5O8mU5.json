@@ -1,0 +1,2397 @@
+{
+  "_id": "UWNnj3C0yQ5O8mU5",
+  "_key": "!actors!UWNnj3C0yQ5O8mU5",
+  "name": "Orbital Air Galileo",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "IJ5TGc8o9Txdw36h",
+  "system": {
+    "stats": {
+      "body": {
+        "value": 12
+      }
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [
+        "EE5dzGZHCFTIbtqt",
+        "5TqbwZURrqp7sgbC",
+        "9gOnJGMdBNEyFXvq",
+        "I9LLjUGiPekLzw5C",
+        "9iBBKaHIFITPIVUY",
+        "0DwIlqRKhpmFaMQf",
+        "hBqDkwiyS0Ov0wWy",
+        "3Uz2coc02WAxx9uk",
+        "wuJz84YCIAmXffNM",
+        "0WzYTBhNB37k2Zfw",
+        "lropzv2WzfFxG47i"
+      ]
+    },
+    "information": {
+      "description": "<p><em>The Copernicus's younger sibling, tuned in the 2050s for long-haul pilots, research ships and combat craft. It can work alone for years and outfly anyone in the solar system. Reports say a group of Galileos stole an experimental ship in 2067 and vanished. Nobody's proven it.</em></p><p><strong>Cost:</strong> 23,450eb (Luxury)<br><strong>Humanity Loss:</strong> 61 ([2d6/2 Round Up] + 17d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> MonoVision<br><strong>Base chrome (no HL):</strong> Neuroport (w/ Feedback Circuit)<br><strong>Chrome:</strong> Anti-Dazzle, Bodyweight Autoinjector, FBC EMP Coating, Hello Cutie Sparkle-Ize, Image Enhance, Internal Hydraulics Upgrade, (-1d6 Humanity Loss) Mechatronic Core, Prehensile Cyberfoot ×2, (-1d6 Humanity Loss) Radar/Sonar Implant, Radio Communicator, (-1d6 Humanity Loss) Techscanner, Toolhand ×2, Zero Gravity Thrusters ×2</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "EE5dzGZHCFTIbtqt",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.EE5dzGZHCFTIbtqt",
+      "name": "Cyberarm (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "tg9l3HQykOz4Otfy",
+            "fyjodNHiN6UVDdU3"
+          ],
+          "slots": 8,
+          "usedSlots": 4
+        },
+        "description": {
+          "value": "<p>Foundation. Doesn't need pairing. Comes with a free Standard Hand.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "bxDpWOTK6Xmo1vqY",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "5TqbwZURrqp7sgbC",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.5TqbwZURrqp7sgbC",
+      "name": "Cyberarm (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "WebMTWLfKh8S3148",
+            "3nUZZmpaRELMaAjo",
+            "rX9Uo2eAhuafiIPu"
+          ],
+          "slots": 8,
+          "usedSlots": 4
+        },
+        "description": {
+          "value": "<p>Foundation. Doesn't need pairing. Comes with a free Standard Hand.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "bxDpWOTK6Xmo1vqY",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9gOnJGMdBNEyFXvq",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.9gOnJGMdBNEyFXvq",
+      "name": "Cyberleg (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "of50T4BtzrqdVN54"
+          ],
+          "slots": 6,
+          "usedSlots": 1
+        },
+        "description": {
+          "value": "<p>Foundation. Comes with a free Standard Foot. Most leg options must be paired.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "N11EA6Pj9vPG2jTy",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "I9LLjUGiPekLzw5C",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.I9LLjUGiPekLzw5C",
+      "name": "Cyberleg (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "gql6NdlDXvaB9tiE"
+          ],
+          "slots": 6,
+          "usedSlots": 1
+        },
+        "description": {
+          "value": "<p>Foundation. Comes with a free Standard Foot. Most leg options must be paired.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "N11EA6Pj9vPG2jTy",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "9iBBKaHIFITPIVUY",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.9iBBKaHIFITPIVUY",
+      "name": "Cyberaudio Suite (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberAudioSuite",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "tjQacdUoN04ZfiJO"
+          ],
+          "slots": 6,
+          "usedSlots": 1
+        },
+        "description": {
+          "value": "<p>Foundation, inside the skull. Only one per user.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "3URH9bSDISghPU7x",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ay8OuvzNDabVRvoG",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.ay8OuvzNDabVRvoG",
+      "name": "Cyberskull (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": false,
+        "size": 3,
+        "price": {
+          "market": 5000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Your head is no longer a ×2 weak point. Immune to Cracked Skull and Broken Jaw. Includes a faceplate (more 100eb).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "NyHn6ccu9euyIWfo",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "0DwIlqRKhpmFaMQf",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.0DwIlqRKhpmFaMQf",
+      "name": "Neuroport (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware",
+            "itemUpgrade"
+          ],
+          "list": [
+            "uomtUSK0glOqrtAH",
+            "kwyjOShr8TU4KUgg"
+          ],
+          "slots": 10,
+          "usedSlots": 2
+        },
+        "description": {
+          "value": "<p>Required for all non-medical cyberware. Contains: <strong>Neural Link</strong> (5 Neuralware slots, none used by the rest), <strong>Holophone</strong>, <strong>Biomonitor</strong>, <strong>Virtu</strong> (virtual experiences; full immersion when deep diving), <strong>HUD</strong> (labels, transcripts, subtitles; shown in any cybereye, replacing the Chyron), <strong>two Shard Slots</strong> (chipware sockets) and a <strong>Personal Link</strong> (pull-out interface plug). Has a basic firewall (Chapter 10 of the Core Rules).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "JtJsI1t76uDhhQCl",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "uomtUSK0glOqrtAH",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.uomtUSK0glOqrtAH",
+      "name": "Feedback Circuit",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "cyberware",
+        "size": 0,
+        "price": {
+          "market": 1000
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Personal Link. +1 to drive, pilot or fire anything you run through the link (vehicles, mounts, ACPAs), not stacking with Smart links. Diving through it, your rezzed non-Black ICE Programs get +1 ATK or DEF (choose when you Jack In).</p><p><strong>Enhances:</strong> Neural Link or Interface Plugs</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "hBqDkwiyS0Ov0wWy",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.hBqDkwiyS0Ov0wWy",
+      "name": "Internal Linear Frame Σ (Sigma) (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+      "system": {
+        "description": {
+          "value": "<p>The FBC's own skeleton. BODY becomes 12, changing HP and Death Save; other chrome's penalties still apply. As standard FBC chassis it costs no Humanity Loss and doesn't lower your Maximum Humanity: CPR counts any Borgware as −4, so this frame carries +4 to cancel it.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "type": "borgware",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 0
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        }
+      },
+      "effects": [
+        {
+          "_id": "l1qoxAAylklqIIdy",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.hBqDkwiyS0Ov0wWy.l1qoxAAylklqIIdy",
+          "name": "Internal Linear Frame Σ (Sigma) (FBC): BODY 12",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.stats.body.value",
+              "mode": 5,
+              "value": "12",
+              "priority": 10
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "stat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "_id": "Jy5bbcDskU2vu5WU",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.hBqDkwiyS0Ov0wWy.Jy5bbcDskU2vu5WU",
+          "name": "Free in an FBC",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.maxHumanity",
+              "mode": 2,
+              "value": "4",
+              "priority": null
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "combat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "chassis": true,
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "3Uz2coc02WAxx9uk",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.3Uz2coc02WAxx9uk",
+      "name": "Kiroshi MonoVision (FBC)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "59f9XWec554A0mTC",
+            "PlgcAg3pzcW2yjOl",
+            "Rvg3erw0N1V4Apc7"
+          ],
+          "slots": 6,
+          "usedSlots": 4
+        },
+        "description": {
+          "value": "<p>Borgware. A visor replacing both eyes, with 3 Cybereye option slots whose options always count as paired. If it's your only sight, Lost Eye's effect and Death Save Penalty are doubled.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><strong>Free in an FBC:</strong> standard chassis chrome costs no Humanity Loss and doesn't lower your Maximum Humanity (Core Rules (2070), Chapter 09). Its option slots are doubled.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "chassis": true,
+          "from": "OKFpNrTrijgIB1xx",
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "wuJz84YCIAmXffNM",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.wuJz84YCIAmXffNM",
+      "name": "Internal Body (14 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p>The body's Internal Body option slots, doubled in an FBC. Go Metal moves what's in here into the character's own Internal Body slots.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "type": "cyberwareInternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 0
+        },
+        "usage": "toggled",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": false,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [
+            "ay8OuvzNDabVRvoG",
+            "Q0edeFWolgznL5hE",
+            "XHb8WfWyrnU4fQq2",
+            "LelHlktv8mccaZRC"
+          ],
+          "slots": 14,
+          "usedSlots": 6
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "core": "cyberwareInternal",
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "0WzYTBhNB37k2Zfw",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.0WzYTBhNB37k2Zfw",
+      "name": "External Body (14 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p>The body's External Body option slots, doubled in an FBC. Go Metal moves what's in here into the character's own External Body slots.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "type": "cyberwareExternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 0
+        },
+        "usage": "toggled",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": false,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [
+            "P1y3xffLloSxiyPw"
+          ],
+          "slots": 14,
+          "usedSlots": 1
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "core": "cyberwareExternal",
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "lropzv2WzfFxG47i",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.lropzv2WzfFxG47i",
+      "name": "Fashionware (7 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "description": {
+          "value": "<p>The body's Fashionware option slots, doubled in an FBC. Go Metal moves what's in here into the character's own Fashionware slots.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "type": "fashionware",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 0,
+          "roll": "0"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 0
+        },
+        "usage": "toggled",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": false,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [],
+          "slots": 7,
+          "usedSlots": 0
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-full-borg": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Full Body Conversions"
+          },
+          "core": "fashionware",
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "59f9XWec554A0mTC",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.59f9XWec554A0mTC",
+      "name": "Anti-Dazzle",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 2,
+          "roll": "1d6/2"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. Immune to flashes and blinding light.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 2 (1d6/2)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Q0edeFWolgznL5hE",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.Q0edeFWolgznL5hE",
+      "name": "Bodyweight Autoinjector",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Holds one dose of a drug or Pharmaceutical under the skin. Release it without an Action once a Turn, or set it at install to fire on its own the moment you're Seriously Wounded. Refilling it takes an Action with an Airhypo.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "P1y3xffLloSxiyPw",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.P1y3xffLloSxiyPw",
+      "name": "FBC EMP Coating",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareExternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>FBC only. Each EMP effect knocks out one coating instead of your chrome. Stack for layers.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "PlgcAg3pzcW2yjOl",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.PlgcAg3pzcW2yjOl",
+      "name": "Hello Cutie Sparkle-ize",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 250
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Cybereye Option,. Built-in flashlight. <strong>Paired,</strong> as an Action, make a target within 25m/yds with working eyes or cyberoptics roll DV15 Resist Torture/Drugs or suffer Damaged Eye for 1 minute. Anti-Dazzle or similar protects them.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Rvg3erw0N1V4Apc7",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.Rvg3erw0N1V4Apc7",
+      "name": "Image Enhance",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. +2 to Perception, Lip Reading and Conceal/Reveal Object when sight is involved. Doesn't stack.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "BNK9mKlFCOOsYWmb",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.Rvg3erw0N1V4Apc7.BNK9mKlFCOOsYWmb",
+          "name": "Image Enhance (situational)",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.concealOrRevealObject",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            },
+            {
+              "key": "bonuses.lipReading",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            },
+            {
+              "key": "bonuses.perception",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "skill",
+                  "1": "skill",
+                  "2": "skill"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": true,
+                    "onByDefault": false
+                  },
+                  "1": {
+                    "isSituational": true,
+                    "onByDefault": false
+                  },
+                  "2": {
+                    "isSituational": true,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "XHb8WfWyrnU4fQq2",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.XHb8WfWyrnU4fQq2",
+      "name": "Internal Hydraulics Upgrade",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>FBC with an Internal Linear Frame. REF, DEX and MOVE become 4 unless higher.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "kPwl9gDR2ailf5V7",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.XHb8WfWyrnU4fQq2.kPwl9gDR2ailf5V7",
+          "name": "Internal Hydraulics Upgrade",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.stats.dex.value",
+              "mode": 4,
+              "value": "4",
+              "priority": 10
+            },
+            {
+              "key": "system.stats.move.value",
+              "mode": 4,
+              "value": "4",
+              "priority": 10
+            },
+            {
+              "key": "system.stats.ref.value",
+              "mode": 4,
+              "value": "4",
+              "priority": 10
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "stat",
+                  "1": "stat",
+                  "2": "stat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  },
+                  "1": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  },
+                  "2": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "kwyjOShr8TU4KUgg",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.kwyjOShr8TU4KUgg",
+      "name": "Mechatronic Core",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 2000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>In the Orbital Air Galileo:</strong> -1d6 Humanity Loss</p><p>2 slots. TECH +2 (max 8), and your Complementary help on TECH Checks gives +2.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "btrXRQZZjaggJ5VR",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.kwyjOShr8TU4KUgg.btrXRQZZjaggJ5VR",
+          "name": "Mechatronic Core",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.stats.tech.value",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "stat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "of50T4BtzrqdVN54",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.of50T4BtzrqdVN54",
+      "name": "Prehensile Cyberfoot",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Cyberleg Option. As an Action, the leg works as a cyberarm (−4 MOVE except in zero-g).</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "3nWlsRN8EGjYYgyY",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.of50T4BtzrqdVN54.3nWlsRN8EGjYYgyY",
+          "name": "Prehensile Cyberfoot (active)",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.stats.move.value",
+              "mode": 2,
+              "value": "-4",
+              "priority": null
+            }
+          ],
+          "disabled": true,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "stat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "gql6NdlDXvaB9tiE",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.gql6NdlDXvaB9tiE",
+      "name": "Prehensile Cyberfoot",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Cyberleg Option. As an Action, the leg works as a cyberarm (−4 MOVE except in zero-g).</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "3nWlsRN8EGjYYgyY",
+          "_key": "!actors.items.effects!UWNnj3C0yQ5O8mU5.gql6NdlDXvaB9tiE.3nWlsRN8EGjYYgyY",
+          "name": "Prehensile Cyberfoot (active)",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.stats.move.value",
+              "mode": 2,
+              "value": "-4",
+              "priority": null
+            }
+          ],
+          "disabled": true,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "stat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "LelHlktv8mccaZRC",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.LelHlktv8mccaZRC",
+      "name": "Radar/Sonar Implant",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>In the Orbital Air Galileo:</strong> -1d6 Humanity Loss</p><p>Scans 50m/yds, even underwater, but not behind cover. The GM beeps you with a direction for each new moving object.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "tjQacdUoN04ZfiJO",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.tjQacdUoN04ZfiJO",
+      "name": "Radio Communicator (implant)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberAudioSuite",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 2,
+          "roll": "1d6/2"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>A radio in your skull: talk to anyone on your frequency within 1 mile.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 2 (1d6/2)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "tg9l3HQykOz4Otfy",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.tg9l3HQykOz4Otfy",
+      "name": "Techscanner (arm)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>In the Orbital Air Galileo:</strong> -1d6 Humanity Loss</p><p>+2 to all Tech Skills. Doesn't stack.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "WebMTWLfKh8S3148",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.WebMTWLfKh8S3148",
+      "name": "Tool Hand",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>A Techtool in your fingers. Fits a meat arm.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "3nUZZmpaRELMaAjo",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.3nUZZmpaRELMaAjo",
+      "name": "Tool Hand",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>A Techtool in your fingers. Fits a meat arm.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "fyjodNHiN6UVDdU3",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.fyjodNHiN6UVDdU3",
+      "name": "Zero Gravity Thrusters",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. No zero-g movement penalties. Fuel 100eb per 24 hours.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "rX9Uo2eAhuafiIPu",
+      "_key": "!actors.items!UWNnj3C0yQ5O8mU5.rX9Uo2eAhuafiIPu",
+      "name": "Zero Gravity Thrusters",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. No zero-g movement penalties. Fuel 100eb per 24 hours.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "cpr-neon-full-borg": {
+          "body": "UWNnj3C0yQ5O8mU5"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Orbital Air Galileo",
+    "actorLink": false,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "fbcBody": {
+        "cost": "23,450eb (Luxury)",
+        "hl": {
+          "static": 61,
+          "roll": "17d6 + ceil(2d6/2)",
+          "text": "61 ([2d6/2 Round Up] + 17d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "MonoVision"
+      },
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "sort": 1900
+}

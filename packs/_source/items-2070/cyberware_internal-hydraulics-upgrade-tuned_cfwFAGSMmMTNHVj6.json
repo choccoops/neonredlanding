@@ -47,7 +47,69 @@
     "revealed": true,
     "favorite": false
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "k1Jcu91dID10Lk4b",
+      "_key": "!items.effects!cfwFAGSMmMTNHVj6.k1Jcu91dID10Lk4b",
+      "name": "Internal Hydraulics Upgrade, Tuned",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.dex.value",
+          "mode": 4,
+          "value": "6",
+          "priority": 10
+        },
+        {
+          "key": "system.stats.move.value",
+          "mode": 4,
+          "value": "6",
+          "priority": 10
+        },
+        {
+          "key": "system.stats.ref.value",
+          "mode": 4,
+          "value": "6",
+          "priority": 10
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat",
+              "2": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "flags": {
     "cyberpunk-red-core": {
       "_migration": {

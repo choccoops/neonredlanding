@@ -1,0 +1,87 @@
+<div class="nh-cal fbc">
+  <aside class="nh-cal-side fbc-rail">
+    <div class="nh-cal-side-head">
+      <span class="nh-cal-kicker">// {{localize "FULLBORG.Kicker"}}</span>
+      <span class="nh-cal-side-title">{{localize "FULLBORG.Bodies"}}</span>
+    </div>
+    <ol class="fbc-list">
+      {{#each makers}}
+      <li class="fbc-maker">{{name}}</li>
+      {{#each bodies}}
+      <li>
+        <button type="button" class="fbc-pick {{#if active}}is-active{{/if}}" data-action="pick" data-id="{{id}}">
+          <img src="{{img}}" alt="">
+          <span class="fbc-pick-name">{{name}}{{#if current}} <i class="fa-solid fa-circle-check" data-tooltip="{{localize 'FULLBORG.Current'}}"></i>{{else if worn}} <i class="fa-solid fa-clock-rotate-left" data-tooltip="{{localize 'FULLBORG.Worn'}}"></i>{{/if}}</span>
+          <span class="fbc-pick-stats">{{info.cost}} • BODY {{info.body}}</span>
+        </button>
+      </li>
+      {{/each}}
+      {{/each}}
+    </ol>
+  </aside>
+
+  <section class="nh-cal-main fbc-main">
+    <header class="fbc-head">
+      <img src="{{actor.img}}" alt="">
+      <div>
+        <span class="nh-cal-kicker">// {{localize "FULLBORG.Patient"}}</span>
+        <h2>{{actor.name}}</h2>
+        {{#if isFBC}}
+        <span class="fbc-state is-metal"><i class="fa-solid fa-robot"></i> {{localize "FULLBORG.Wearing" body=state.body.name}}</span>
+        {{else}}
+        <span class="fbc-state"><i class="fa-solid fa-heart-pulse"></i> {{localize "FULLBORG.Meat"}}</span>
+        {{/if}}
+      </div>
+      {{#if isFBC}}<button type="button" class="nh-cal-btn" data-action="leave" {{#if busy}}disabled{{/if}}><i class="fa-solid fa-person-walking-arrow-right"></i> {{localize "FULLBORG.Leave"}}</button>{{/if}}
+    </header>
+
+    {{#if none}}
+    <div class="nh-cal-empty"><i class="fa-solid fa-robot"></i><p>{{localize "FULLBORG.NoPack"}}</p></div>
+    {{else if body}}
+    <div class="fbc-detail">
+      <div class="fbc-body-head">
+        <img src="{{body.img}}" alt="">
+        <div>
+          <h3>{{body.name}}</h3>
+          <div class="fbc-tags">
+            <span><b>{{localize "FULLBORG.Cost"}}</b> {{info.cost}}</span>
+            <span><b>{{localize "FULLBORG.HLShort"}}</b> {{info.hl.text}}</span>
+            <span><b>{{localize "FULLBORG.Frame"}}</b> {{info.frame}} • BODY {{info.body}}</span>
+            <span><b>{{localize "FULLBORG.Eyes"}}</b> {{info.eyes}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="fbc-desc">{{{description}}}</div>
+    </div>
+
+    <div class="fbc-options">
+      <fieldset>
+        <legend>{{localize "FULLBORG.HL.Title"}}</legend>
+        {{#each hlModes}}
+        <label class="nh-check" data-tooltip="{{hint}}"><input type="radio" name="hl" value="{{id}}" data-choice="hl" {{#if checked}}checked{{/if}}> {{label}}</label>
+        {{/each}}
+      </fieldset>
+      <fieldset>
+        <legend>{{localize "FULLBORG.Surgery"}}</legend>
+        {{#if hasBiosystem}}
+        <p class="hint"><i class="fa-solid fa-brain"></i> {{localize "FULLBORG.HasBiosystem"}}</p>
+        {{else}}
+        <label class="nh-check"><input type="checkbox" data-choice="biosystem" {{#if choice.biosystem}}checked{{/if}}> {{localize "FULLBORG.AddBiosystem"}}</label>
+        {{/if}}
+        {{#if isFBC}}
+        <p class="hint"><i class="fa-solid fa-rotate"></i> {{localize "FULLBORG.SwitchHint"}}</p>
+        {{else}}
+        <label class="nh-check"><input type="checkbox" data-choice="stripOld" {{#if choice.stripOld}}checked{{/if}}> {{localize "FULLBORG.StripOld"}}</label>
+        {{/if}}
+      </fieldset>
+    </div>
+
+    <footer class="fbc-foot">
+      <p class="hint">{{localize "FULLBORG.Rules"}}</p>
+      <button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="install" {{#if installDisabled}}disabled{{/if}}>
+        <i class="fa-solid {{#if busy}}fa-spinner fa-spin{{else}}fa-robot{{/if}}"></i> {{#if isFBC}}{{localize "FULLBORG.Switch"}}{{else}}{{localize "FULLBORG.Install"}}{{/if}}
+      </button>
+    </footer>
+    {{/if}}
+  </section>
+</div>

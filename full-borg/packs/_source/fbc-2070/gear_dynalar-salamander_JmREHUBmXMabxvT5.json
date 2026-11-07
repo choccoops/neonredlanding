@@ -1,0 +1,61 @@
+{
+  "_id": "JmREHUBmXMabxvT5",
+  "_key": "!items!JmREHUBmXMabxvT5",
+  "name": "Dynalar Salamander",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "FScGDhFkOySsJhke",
+  "sort": 800,
+  "system": {
+    "description": {
+      "value": "<p><em>Dynalar kept the idea that made the old Brimstone beloved: a firefighter who can't burn. The Salamander adds ankles built for jumping out of collapsing floors. It's still the one borg nobody in Night City hates.</em></p><p><strong>Cost:</strong> 19,100eb (Very Expensive)<br><strong>Humanity Loss:</strong> 59 ([1d6/2] + 17d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> Cybereye ×2<br><strong>Chrome:</strong> Amplified Hearing, FBC Brimstone Coating, Fortified Ankles ×2, Heavy Subdermal Plating, Low Light/Infrared/UV ×2, Popup Grenade Launcher ×2 (CO2 Grenades), Radar/Sonar Implant, Radio Communicator</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 19100
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Dynalar",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "x0mjaGLjuzB2pTbH",
+        "cost": "19,100eb (Very Expensive)",
+        "hl": {
+          "static": 59,
+          "roll": "17d6 + floor(1d6/2)",
+          "text": "59 ([1d6/2] + 17d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "Cybereye ×2"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

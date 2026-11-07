@@ -1,0 +1,61 @@
+{
+  "_id": "otHeUN5v85XxpjAz",
+  "_key": "!items!otHeUN5v85XxpjAz",
+  "name": "Raven Microcybernetics Sage",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "ih8Zb5avA73JWwGH",
+  "sort": 2100,
+  "system": {
+    "description": {
+      "value": "<p><em>Distant heir to the old Wiseman and the strongest netrunning body ever built. It breaks firewalls at extreme range, at a ruinous price in money and sanity. Raven learned the hard way what happens to a Sage pilot without therapy.</em></p><p><strong>Cost:</strong> 38,250eb<br><strong>Humanity Loss:</strong> 73 ([1d6/2 Round Up] + 21d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> MonoVision<br><strong>Base chrome (no HL):</strong> (+1 Cyberdeck Slot) Cybersuite<br><strong>Chrome:</strong> Bioconductor, C-Link Socket, Cyberdeck Cyberarm Option ×2, FBC Integrated Bodyweight Coating ×3, Integrated Cyberdeck Upgrade ×4, Integrated Netstation, Integrated Zetatech CyberConductor, Memory Boost (w/ Speedy Gonzalvez), RAM Upgrade ×2, Scrambler Descrambler, Self-ICE (w/ Firewall Port [w/ Raven Black ICE]) ×2</p><p><strong>Note:</strong> Fitting one includes 4 weeks of Intensive Therapy (cost and Humanity already counted); skip it and you come out a psychotic wreck.</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 38250
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Raven Microcybernetics",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "jEl1jkKLzEaWzX8S",
+        "cost": "38,250eb",
+        "hl": {
+          "static": 73,
+          "roll": "21d6 + ceil(1d6/2)",
+          "text": "73 ([1d6/2 Round Up] + 21d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "MonoVision"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

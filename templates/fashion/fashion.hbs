@@ -21,7 +21,7 @@
 
   <section class="nh-cal-main nh-cred-main">
     {{#if is_scene}}
-    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="tab" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
+    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="view" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
     <div class="nh-cred-scroll">
       {{#if scene}}
       <div class="nh-fashion-scene-head">
@@ -115,7 +115,7 @@
     </div>
     {{#if fit.warnings.length}}<ul class="nh-fashion-warnings">{{#each fit.warnings}}<li><i class="fa-solid fa-triangle-exclamation"></i> {{this}}</li>{{/each}}</ul>{{/if}}
 
-    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="tab" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
+    <nav class="nh-cred-tabs">{{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="view" data-tab="{{id}}">{{label}}</button>{{/each}}</nav>
 
     <div class="nh-cred-scroll">
       {{#if is_look}}

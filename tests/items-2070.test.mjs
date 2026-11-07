@@ -215,7 +215,7 @@ test("vehicles and ACPAs open on MMuton's vehicle sheet with seats it understand
   const kaukaz = rides.docs.find((d) => d.name === "Kaukaz Grodno E-80");
   const gunner = kaukaz.flags[vas].positions.find((p) => p.name === "Gunner");
   assert.equal(kaukaz.items.find((i) => i.name === "Techtronika BMG-570")?.flags[vas].mountedPosition, gunner?.id, "the book's mounted BMG-570, on the gunner's seat");
-  for (const n of ["Microwaver", "Shrieker", "Techtronika BMG-570", "Bodyweight Autoinjector", "Drum Magazine", "Extended Magazine", "Belt Box", "Backpack Magazine"]) {
+  for (const n of ["Microwaver", "Shrieker", "Techtronika BMG-570", "Bodyweight Autoinjector", "Drum Magazine", "Extended Magazine", "Belt Box", "Backpack Magazine", "Rocklin Augmentics Skydrivers", "Integrated Zetatech CyberConductor"]) {
     assert.ok(items.docs.some((d) => d.name === n), `${n} is in the compendium`);
   }
   const pets = rides.docs.filter((a) => !a.flags[vas]);

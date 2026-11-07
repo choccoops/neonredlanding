@@ -1,0 +1,61 @@
+{
+  "_id": "avxoTxpR4we8gkBD",
+  "_key": "!items!avxoTxpR4we8gkBD",
+  "name": "Arasaka ZSR-09 Fuma",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_beta.svg",
+  "folder": "fkwDZtfNLv5SSGNb",
+  "sort": 300,
+  "system": {
+    "description": {
+      "value": "<p><em>Caged in Japan for forty-five years, Arasaka could only reach the world through people who didn't officially exist. The Fuma was built for them. It passes for a tired salaryman on the train, and a minute later it isn't there at all. Arasaka has never listed it in a catalog, and this entry comes from a Night Market seller who wouldn't give a name.</em></p><p><strong>Cost:</strong> 28,700eb (Luxury)<br><strong>Humanity Loss:</strong> 58 ([1d6/2] + 17d6)<br><strong>Frame:</strong> Beta (14): BODY 14<br><strong>Eyes:</strong> Cybereye ×2<br><strong>Base chrome (no HL):</strong> FBC Gemini Sculpt<br><strong>Chrome:</strong> FBC Chameleon Coating ×2, Internal Hydraulics Upgrade (Tuned), Kairos 6-M, Low Light/Infrared/UV ×2, Lynx Paws, Monowire, Optical Camo, Scrambler/Descrambler, Subdermal Pocket ×2, Synaptic Accelerator</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 28700
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Arasaka",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "5DMIJwUJLptoGZeD",
+        "cost": "28,700eb (Luxury)",
+        "hl": {
+          "static": 58,
+          "roll": "17d6 + floor(1d6/2)",
+          "text": "58 ([1d6/2] + 17d6)"
+        },
+        "frame": "Beta",
+        "body": 14,
+        "eyes": "Cybereye ×2"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_id": "lEcuIxIFWiBovmJA",
+  "_key": "!items!lEcuIxIFWiBovmJA",
+  "name": "Biotechnica Demeter",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "XlE0njRVVsM2qgCz",
+  "sort": 600,
+  "system": {
+    "description": {
+      "value": "<p><em>Biotechnica's rewilding crews work where meat doesn't last: blighted soil, toxic runoff, forests that still glow on a scanner. The Demeter climbs, tastes the chemistry in the air and doesn't need to breathe it. The company calls it a gift to the planet, and bills the crews for it.</em></p><p><strong>Cost:</strong> 14,600eb (Very Expensive)<br><strong>Humanity Loss:</strong> 44 ([1d6/2] + 13d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> Cybereye ×2<br><strong>Chrome:</strong> Chemical Analyzer, Chipware Socket, Grip Foot ×2, Low Light/Infrared/UV ×2, Olfactory Boost, Radiation Detector, Radio Communicator, Self-ICE, Titanium Bones</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 14600
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Biotechnica",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "eMyGJbdI5y7ciBCA",
+        "cost": "14,600eb (Very Expensive)",
+        "hl": {
+          "static": 44,
+          "roll": "13d6 + floor(1d6/2)",
+          "text": "44 ([1d6/2] + 13d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "Cybereye ×2"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

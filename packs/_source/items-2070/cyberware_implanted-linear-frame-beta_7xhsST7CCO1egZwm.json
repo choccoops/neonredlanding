@@ -47,7 +47,47 @@
     "revealed": true,
     "favorite": false
   },
-  "effects": [],
+  "effects": [
+    {
+      "_id": "wjmm1kTq3s3f8oGW",
+      "_key": "!items.effects!7xhsST7CCO1egZwm.wjmm1kTq3s3f8oGW",
+      "name": "Implanted Linear Frame ß (Beta)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.body.value",
+          "mode": 4,
+          "value": "14",
+          "priority": 10
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "flags": {
     "cyberpunk-red-core": {
       "_migration": {

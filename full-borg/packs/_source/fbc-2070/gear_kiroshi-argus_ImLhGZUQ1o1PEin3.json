@@ -1,0 +1,61 @@
+{
+  "_id": "ImLhGZUQ1o1PEin3",
+  "_key": "!items!ImLhGZUQ1o1PEin3",
+  "name": "Kiroshi Argus",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/implanted_linearframe_sigma.svg",
+  "folder": "vCkVqr9Z4ukWjABd",
+  "sort": 1000,
+  "system": {
+    "description": {
+      "value": "<p><em>Kiroshi built a body to show off its optics and found a market: media crews, scouts and surveillance contractors. The Argus sees behind itself and records everything. The company's pitch is that a witness who never blinks is worth any price.</em></p><p><strong>Cost:</strong> 14,200eb (Very Expensive)<br><strong>Humanity Loss:</strong> 38 ([1d6/2] + 11d6)<br><strong>Frame:</strong> Sigma (12): BODY 12<br><strong>Eyes:</strong> Cybereye ×2<br><strong>Chrome:</strong> Amplified Hearing, Audio Recorder, Image Enhance ×2, Low Light/Infrared/UV, MicroVideo, Opti-Zoom, Rear Optical Mount, Scrambler/Descrambler, TeleOptics, Visual Cortex Support</p><p>Every body includes the standard chassis (Cyberarm ×2, Cyberaudio Suite, Cyberleg ×2, Cyberskull, an Internal Linear Frame and a Neuroport) at no HL, plus its eyes and base chrome. Going metal needs a Biosystem (bought separately) and a Hospital.</p><p>Drop it on a character (as GM) to install it with <strong>Go Metal</strong>.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 14200
+    },
+    "equipped": "owned",
+    "usage": "toggled",
+    "brand": "Kiroshi",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "amount": 1
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      },
+      "fbcPackage": {
+        "actor": "s6N7Uq9li0KlepLx",
+        "cost": "14,200eb (Very Expensive)",
+        "hl": {
+          "static": 38,
+          "roll": "11d6 + floor(1d6/2)",
+          "text": "38 ([1d6/2] + 11d6)"
+        },
+        "frame": "Sigma",
+        "body": 12,
+        "eyes": "Cybereye ×2"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

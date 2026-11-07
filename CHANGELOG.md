@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.17.0
+
+- **Neon Hub: Full Borg**, a new companion module in the same repository and release. It brings the Item Compendium's 25 Full Body Conversions, each built on the sheet with its free chassis and chrome installed. A package item for each body can be sold in shops. **Go Metal** (GM) moves a character into a body: it uninstalls the old chrome, adds a Biosystem, doubles the Internal and External Body slots and rolls the package's Humanity Loss once. It can also switch bodies or leave one. Install it from `releases/latest/download/cpr-neon-full-borg.json`.
+- **Two new catalog entries** in the book's style: the **Rocklin Augmentics Skydrivers** (paired cyberlegs with built-in Jump Boosters, which the Phoenix Security Unit stands on) and the **Integrated Zetatech CyberConductor** (the Sage's Borgware that runs its integrated decks as one). When the Item Compendium prints its own versions, the generator uses those instead.
+- **Internal Hydraulics and implanted Linear Frames work on the sheet.** Their "REF, DEX and MOVE become 6 unless higher" and "BODY becomes 14" are Active Effects now. They apply before other chrome's penalties, so Dragoon Plating's −2 still counts.
+- **Fixed: the Street Cred and Style Check tabs.** Their tab buttons used a name Foundry v12 keeps for itself, so clicking a tab did nothing. They switch tabs now, and the pre-release check stops that name coming back.
+
 ## 1.16.0
 
 - **The 2070s Item Compendium.** The *Cyberpunk: The Unification Era* Item Compendium in Foundry, built from the book's own tables and text, with each item's chapter in its footer.

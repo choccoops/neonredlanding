@@ -1,0 +1,89 @@
+{
+  "_id": "DLGhulaDEwIWDPkh",
+  "_key": "!items!DLGhulaDEwIWDPkh",
+  "name": "Brain Starved",
+  "type": "gear",
+  "img": "icons/svg/degen.svg",
+  "folder": "NpZOHu9K1U4ni8ch",
+  "sort": 4700,
+  "system": {
+    "description": {
+      "value": "<p>A Biosystem that missed its monthly Glucose-Rich Brain Solution: −2 to everything until it's fed. A second missed month kills.</p><p><small>Item Compendium (2070) • Full Body Conversions</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "price": {
+      "market": 0
+    },
+    "equipped": "equipped",
+    "usage": "toggled",
+    "brand": "",
+    "amount": 1,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false
+  },
+  "effects": [
+    {
+      "_id": "lhpsjGxJFAiATdIp",
+      "_key": "!items.effects!DLGhulaDEwIWDPkh.lhpsjGxJFAiATdIp",
+      "name": "Brain Starved",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.allActions",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "misc"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-full-borg": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Full Body Conversions"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

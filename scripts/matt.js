@@ -23,6 +23,7 @@ export const MATT = {
   ACTION_HQ: `${MODULE_ID}.openhq`,
   ACTION_LIFESTYLE: `${MODULE_ID}.openlifestyle`,
   ACTION_CALENDAR: `${MODULE_ID}.opencalendar`,
+  ACTION_CRED: `${MODULE_ID}.opencred`,
   ACTION_MESSENGER: `${MODULE_ID}.openmessenger`,
 
   makeId() {
@@ -146,6 +147,9 @@ export const MATT = {
       case "calendar":
         push(this.ACTION_CALENDAR, { showto: audience });
         break;
+      case "cred":
+        push(this.ACTION_CRED, { showto: audience });
+        break;
       case "messenger":
         push(this.ACTION_MESSENGER, { view: a.view, showto: audience });
         break;
@@ -189,7 +193,7 @@ export const MATT = {
   /* ---------------------------------------- */
 
   /**
-   * Register "Open Neon Market shop", "Open Headquarters", "Open Lifestyle", "Open calendar" and
+   * Register "Open Neon Market shop", "Open Headquarters", "Open Lifestyle", "Open calendar", "Open Street Cred" and
    * "Open Night City Messenger" in MATT's action list.
    * MATT runs actions on the active GM's client, so each action works out who should
    * see the window and asks those clients to open it.
@@ -316,6 +320,20 @@ export const MATT = {
       fn: async (args = {}) => {
         const users = app.getForPlayers(args.action.data.showto || "trigger", args);
         if (users.length) HubSocket.emit("openCalendar", {}, users);
+      },
+      content: async (trigger, action) => {
+        return `<span class="action-style">${i18n(trigger.name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
+      }
+    });
+
+    // Each client opens Street Cred on its own character (the GM on the whole crew).
+    app.registerTileAction(MODULE_ID, "opencred", {
+      name: "NEONHUB.Matt.OpenCred",
+      ctrls: [showtoCtrl],
+      values: { showto },
+      fn: async (args = {}) => {
+        const users = app.getForPlayers(args.action.data.showto || "trigger", args);
+        if (users.length) HubSocket.emit("openCred", { actor: null }, users);
       },
       content: async (trigger, action) => {
         return `<span class="action-style">${i18n(trigger.name)}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;

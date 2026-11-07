@@ -1,0 +1,60 @@
+{
+  "_id": "oXGhR4iiH4ZsJkhR",
+  "_key": "!items!oXGhR4iiH4ZsJkhR",
+  "name": "Armor-Piercing Ammunition (Very Heavy Pistol)",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+  "folder": "4bVCa1Ea8VQyABKL",
+  "sort": 3450,
+  "system": {
+    "variety": "vHeavyPistol",
+    "type": "armorPiercing",
+    "amount": 10,
+    "price": {
+      "market": 100
+    },
+    "ablationValue": 2,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 0,
+        "mode": "none",
+        "value": 0
+      },
+      "damage": {
+        "minimum": "",
+        "mode": "none",
+        "value": ""
+      }
+    },
+    "description": {
+      "value": "<p>All types except shells. Ablates armor by 2 instead of 1. AP is the basic grade for grenades and rockets (100eb each).</p><p><strong>Cost:</strong> 100eb (Premium) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

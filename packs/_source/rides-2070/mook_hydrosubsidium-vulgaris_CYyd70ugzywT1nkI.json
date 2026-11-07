@@ -1,0 +1,117 @@
+{
+  "_id": "CYyd70ugzywT1nkI",
+  "_key": "!actors!CYyd70ugzywT1nkI",
+  "name": "Hydrosubsidium Vulgaris",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg",
+  "folder": "imUmfQ0AgGutzDbr",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Speedboat.</em> Upgrades: Bulletproof Glass, CrystalCoat, CrystalDome, Sealed Environment, Security Upgrade (Complex).</p><p><strong>Cost:</strong> 42,000eb<br><strong>Nomad:</strong> 7<br><strong>SDP:</strong> 50<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 60 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Hydrosubsidium Vulgaris",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "lbvkcuBohmaAe2sc",
+          "name": "Helm",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Sea Vehicle, Sea Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "x0TAoh4xw7AfLVw2",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "1rI4G24fdEpBSwmk",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 2,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "sea",
+        "seats": 4,
+        "nomad": "7",
+        "cost": "42,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

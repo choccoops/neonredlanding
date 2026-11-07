@@ -1,0 +1,101 @@
+{
+  "_id": "imOBowc5Kcx8ilJg",
+  "_key": "!actors!imOBowc5Kcx8ilJg",
+  "name": "Yaiba Kusanagi \"Sliver\"",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "information": {
+      "description": "<p>Roadbike: Communications Center, Bulletproof Glass, Security Upgrade. <em>Formerly the Zonda Sliver.</em></p><p><strong>Cost:</strong> 27,000eb<br><strong>Nomad:</strong> 4<br><strong>SDP:</strong> 35<br><strong>SP:</strong> 0<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Yaiba Kusanagi \"Sliver\"",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "TU9W07NrUTeLzO7P",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "Uu5cnCmMU2HgC152",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "4",
+        "cost": "27,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

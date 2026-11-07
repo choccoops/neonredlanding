@@ -1,0 +1,90 @@
+{
+  "_id": "Dv3a0Ow5aU11Wiva",
+  "_key": "!items!Dv3a0Ow5aU11Wiva",
+  "name": "Mimic Library",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "y7Q5Jgv5asKlgtvM",
+  "sort": 10740,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 500
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>Store three voices you've heard for a minute or more. Its +2 to Acting applies to passing as them.</p><p><strong>Enhances:</strong> AudioVox</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "6VWm1lFIKVSwOfC8",
+      "_key": "!items.effects!Dv3a0Ow5aU11Wiva.6VWm1lFIKVSwOfC8",
+      "name": "Mimic Library (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_id": "LXni3pcure4thdzl",
+  "_key": "!items!LXni3pcure4thdzl",
+  "name": "Urbantech Auto-Slugger",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 510,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 15,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Autofire uses 5 rounds instead of 10. Every round counts as Explosive ammo, −2 and no Aimed Shots included. Autofire it without a cyberarm or BODY 11+ and you suffer Crushed Fingers.</p><p><strong>Class:</strong> Heavy SMG • POWER<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Suppressive Fire<br><strong>Built-in:</strong> Sling, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

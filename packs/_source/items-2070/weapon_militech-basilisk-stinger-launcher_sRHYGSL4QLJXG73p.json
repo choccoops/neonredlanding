@@ -1,0 +1,81 @@
+{
+  "_id": "sRHYGSL4QLJXG73p",
+  "_key": "!items!sRHYGSL4QLJXG73p",
+  "name": "Militech Basilisk-Stinger Launcher",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg",
+  "folder": "0lqApCloUvqreMIy",
+  "sort": 1470,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "rocketLauncher",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "8d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 1,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rocket"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Missile Launcher",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 3000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Improved Smart damage to vehicles rerolls 1s until they don't land on 1. Comes with one Improved Smart Rocket.</p><p><strong>Class:</strong> EQ Rocket Launcher • SMART<br><strong>Range table:</strong> Missile Launcher<br><strong>Damage:</strong> 8d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Long Tube, Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

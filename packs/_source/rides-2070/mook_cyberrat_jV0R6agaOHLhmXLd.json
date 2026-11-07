@@ -1,0 +1,83 @@
+{
+  "_id": "jV0R6agaOHLhmXLd",
+  "_key": "!actors!jV0R6agaOHLhmXLd",
+  "name": "Cyberrat™",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg",
+  "folder": "b1eLsXRZO9iZLC9U",
+  "system": {
+    "stats": {
+      "int": {
+        "value": 3
+      },
+      "ref": {
+        "value": 6
+      },
+      "dex": {
+        "value": 8
+      },
+      "tech": {
+        "value": 3
+      },
+      "cool": {
+        "value": 2
+      },
+      "will": {
+        "value": 4
+      },
+      "move": {
+        "value": 9
+      },
+      "body": {
+        "value": 3
+      },
+      "emp": {
+        "value": 2
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 10,
+        "max": 10
+      }
+    },
+    "information": {
+      "description": "<p><em>Cyberpet®</em></p><p><strong>Cost:</strong> 1,000eb (Very Expensive)<br><strong>Lifestyle:</strong> Generic Prepak<br><strong>Cyberware slots:</strong> 2<br><strong>Threat:</strong> Mook<br><strong>Death Save:</strong> 5<br><strong>Seriously Wounded:</strong> 5<br><strong>Attacks:</strong> Venom Fangs/Claws (C# 12) ROF2 1d6 • Brawling (C# 5) ROF2 1d6<br><strong>Armor:</strong> Skinweave SP7 (head and body)<br><strong>Skills:</strong> Athletics 10 • Brawling 5 • Concentration 8 • Endurance 6 • Evasion 12 • Human Perception 8 • Melee Weapon 12 • Perception 10 • Stealth 15 • Wilderness Survival 10</p><p><small>Item Compendium (2070) • Cyberpets</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cyberrat™",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "pet2070": {
+        "cost": "1,000eb (Very Expensive)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

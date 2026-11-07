@@ -1,0 +1,81 @@
+{
+  "_id": "2mhdNPiaZr3OViSM",
+  "_key": "!items!2mhdNPiaZr3OViSM",
+  "name": "Eagletech Neo-Hunter Wheelbow",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "KO5skweYhCjsV27C",
+  "sort": 1230,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 1,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Bow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 4000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>A drum holds up to 4 arrows, mixed types allowed; pick one each shot. With 2+ arrows in the drum it's ROF2, firing only from the drum. Empty, it's ROF1 with a capacity of 1 until you fit a new drum (2 Reload Actions).</p><p><strong>Class:</strong> Excellent Quality Bow • POWER<br><strong>Range table:</strong> Bow<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Power Rebuild, Reinforced String, Smartgun Link</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

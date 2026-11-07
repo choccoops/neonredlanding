@@ -1,0 +1,154 @@
+{
+  "_id": "dHMeuFe1KTtumb1p",
+  "_key": "!actors!dHMeuFe1KTtumb1p",
+  "name": "Kaukaz 271 Aras",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p>Compact Groundcar: Armored Chassis, Bulletproof Glass, Seating Upgrade. <em>Formerly the Militech Gorgon Security Van.</em></p><p><strong>Cost:</strong> 37,000eb<br><strong>Nomad:</strong> 4<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 6<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "f9Nz4UHZxDDXVSqy",
+      "name": "Kaukaz 271 Aras Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!dHMeuFe1KTtumb1p.f9Nz4UHZxDDXVSqy"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Kaukaz 271 Aras",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "1Lk32zeRDNNLBMrh",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "kZzVihQBT2ajfr3p",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "u6zwQpeCpbmOCkEs",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 4,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 6,
+        "nomad": "4",
+        "cost": "37,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

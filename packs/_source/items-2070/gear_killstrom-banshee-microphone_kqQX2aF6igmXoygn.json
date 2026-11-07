@@ -1,0 +1,89 @@
+{
+  "_id": "kqQX2aF6igmXoygn",
+  "_key": "!items!kqQX2aF6igmXoygn",
+  "name": "KillStrom Banshee Microphone",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "CuUUO9e0xilMgzY5",
+  "sort": 13480,
+  "system": {
+    "price": {
+      "market": 1000
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>+2 Play Instrument (Singing), once. 48 hours per hour of charge.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "2E0vznY1MLT9Pf62",
+      "_key": "!items.effects!kqQX2aF6igmXoygn.2E0vznY1MLT9Pf62",
+      "name": "KillStrom Banshee Microphone (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.playInstrument",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "_id": "4zW4HCAXiaYybDC9",
+  "_key": "!items!4zW4HCAXiaYybDC9",
+  "name": "Neo-Kabuto",
+  "type": "armor",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "uYvhK8Ml6mKi9iFR",
+  "sort": 6950,
+  "system": {
+    "price": {
+      "market": 5000
+    },
+    "penalty": 0,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "isShield": false,
+    "shieldHitPoints": {
+      "value": 0,
+      "max": 0
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isBodyLocation": false,
+    "isHeadLocation": true,
+    "bodyLocation": {
+      "sp": 0,
+      "ablation": 0
+    },
+    "headLocation": {
+      "sp": 12,
+      "ablation": 0
+    },
+    "description": {
+      "value": "<p>Head SP12, no armor penalty. Built-in Smart Glasses (an extra slot) with Anti-Dazzle and Low Light/Infrared/UV. With Melee Weapon 7+ or Combat Awareness 2+: +1 to Melee Weapon attacks (+2 on Aimed Shots). Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "fRlSRO6hDjUPwnsr",
+      "_key": "!items.effects!4zW4HCAXiaYybDC9.fRlSRO6hDjUPwnsr",
+      "name": "Neo-Kabuto (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.meleeWeapon",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Armor & Shields"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

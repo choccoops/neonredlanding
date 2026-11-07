@@ -1,0 +1,81 @@
+{
+  "_id": "F9sPwkqaw9WbliCb",
+  "_key": "!items!F9sPwkqaw9WbliCb",
+  "name": "Militech M-44 Orion",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "KO5skweYhCjsV27C",
+  "sort": 1350,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Longbow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Cocks itself from its four-arrow magazine; a new magazine is a Reload Action.</p><p><em>Militech's recon crossbow, for the shot that has to land without telling anyone where it came from.</em></p><p><strong>Class:</strong> EQ Crossbow • SMART<br><strong>Range table:</strong> Longbow<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Smart Rebuild, Sniping Scope</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

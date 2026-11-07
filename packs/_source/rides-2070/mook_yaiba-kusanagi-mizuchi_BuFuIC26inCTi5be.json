@@ -1,0 +1,122 @@
+{
+  "_id": "BuFuIC26inCTi5be",
+  "_key": "!actors!BuFuIC26inCTi5be",
+  "name": "Yaiba Kusanagi ‘Mizuchi’",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 70
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "information": {
+      "description": "<p><em>Superbike.</em> Upgrades: TUp (+1 SP) Armored Chassis, Communications Center, Improved Engine, NOS, Reinforced Tires, Security Upgrade (Advanced), TUp (Oversized Weapon) Smuggling Upgrade (w/ Kendachi M-55 Powersword in Hidden Holster), Stealth Plating. No NewDash: no architecture, no Personal Link driving (and no quickhacking it), −2 to Drive Land Vehicle. Stealth plating: invisible to scanners and radar, −2 to spot in the dark.</p><p><strong>Cost:</strong> 121,000eb<br><strong>Nomad:</strong> 10<br><strong>SDP:</strong> 35<br><strong>SP:</strong> 14<br><strong>MOVE:</strong> 70<br><strong>Speed:</strong> 350 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "XM8DKcgiqYmog5i2",
+      "name": "Yaiba Kusanagi ‘Mizuchi’ Armor (SP14)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 14,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 14,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!BuFuIC26inCTi5be.XM8DKcgiqYmog5i2"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Yaiba Kusanagi ‘Mizuchi’",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "PJS8AA2spkuxKKDx",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "10",
+        "cost": "121,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

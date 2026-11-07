@@ -1,0 +1,67 @@
+{
+  "_id": "X9tVfG0w8ov3OBTe",
+  "_key": "!items!X9tVfG0w8ov3OBTe",
+  "name": "RAM Reallocator",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "ck5IQhmypDhNEFQL",
+  "sort": 17810,
+  "system": {
+    "type": "cyberwareInternal",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 14,
+      "roll": "4d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 1000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Needs a RAM Manager. It triggers after any failed Interface Check and gives +2. <strong>Category • Fabrication:</strong> Very Expensive • DV24 / 1,000eb, 2 Weeks</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

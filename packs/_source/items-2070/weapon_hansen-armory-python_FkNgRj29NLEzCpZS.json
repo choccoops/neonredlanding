@@ -1,0 +1,81 @@
+{
+  "_id": "FkNgRj29NLEzCpZS",
+  "_key": "!items!FkNgRj29NLEzCpZS",
+  "name": "Hansen Armory Python",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_excellent.svg",
+  "folder": "pMcrqSOTZsA7wrVB",
+  "sort": 3330,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1200
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Assault Rifle with Carbine Barrel, Constant Recoil System (Machine Gun 3) and Foregrip, 30 rounds. 4d6 on Single Shot. Excellent Quality two-handed. Ablates 1 extra SP.</p><p><strong>Based on:</strong> Nokota D5 Copperhead</p><p><strong>Cost:</strong> 1,200eb</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "_id": "8lb74VfMAXHNv5iK",
+  "_key": "!items!8lb74VfMAXHNv5iK",
+  "name": "Night Corp City Database",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "9NuoswtrnhWf20DR",
+  "sort": 13390,
+  "system": {
+    "price": {
+      "market": 100
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": true,
+    "description": {
+      "value": "<p>Each city is bought separately: +1 to Local Expert Checks there. It's the old Ziggurat City Database, restaurants and all, which Night Corp keeps up to date. <strong>CitiNet.</strong></p><p><strong>Publisher:</strong> Night Corp<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "1JXDxijjU3zN3PAE",
+      "_key": "!items.effects!8lb74VfMAXHNv5iK.1JXDxijjU3zN3PAE",
+      "name": "Night Corp City Database (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.localExpert",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

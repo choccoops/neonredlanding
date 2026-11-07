@@ -1,0 +1,82 @@
+{
+  "_id": "yUhgE86RTQIdBjBw",
+  "_key": "!items!yUhgE86RTQIdBjBw",
+  "name": "Bloody Maria",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "eCgyZXCdk9xWM2hF",
+  "sort": 2160,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 8,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Hyper Expansive ammo only. Shells that cause a Critical Injury roll twice and you choose. If it dismembered someone last Round, 5s count as 6s for Critical Injuries. Held two-handed, reload by giving up your Move Action.</p><p><strong>Class:</strong> Iconic Shotgun • POWER<br><strong>Range table:</strong> Long Barrel Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell (4d6)<br><strong>Built-in:</strong> Power Rebuild, Shotgun Choke, Shotgun Rechamber, Vivisector<br><strong>Fabrication:</strong> DV24 - 2,500eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

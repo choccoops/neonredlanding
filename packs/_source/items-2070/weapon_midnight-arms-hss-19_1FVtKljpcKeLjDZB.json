@@ -1,0 +1,121 @@
+{
+  "_id": "1FVtKljpcKeLjDZB",
+  "_key": "!items!1FVtKljpcKeLjDZB",
+  "name": "Midnight Arms HSS-19",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+  "folder": "NEzpeSziile1ptet",
+  "sort": 190,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "vHeavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 8,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "vHeavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 3200
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Worn openly, +2 Wardrobe &amp; Style (doesn't stack with other Superchrome bonuses). −2 to Perception to hear it fire. An Aimed Shot can use the Carbine range table. +1 to hit on its first Single Shot of a fight.</p><p><strong>Class:</strong> EQ Very Heavy Pistol • SMART<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Improved Silencer, Parallax, Pistol Long Barrel, Zenith, Smart Rebuild<br><strong>Mods:</strong> Fashionista (w/ Superchrome® Covering)</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "hd9fNFV2joPQDXBL",
+      "_key": "!items.effects!1FVtKljpcKeLjDZB.hd9fNFV2joPQDXBL",
+      "name": "Midnight Arms HSS-19 (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

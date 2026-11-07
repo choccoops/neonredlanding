@@ -1,0 +1,81 @@
+{
+  "_id": "3kOh4RBa0hirTGWz",
+  "_key": "!items!3kOh4RBa0hirTGWz",
+  "name": "Constant-Shootin Guns Tyranny",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "aEJG7Q7O3gXklM0I",
+  "sort": 3210,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 14,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Exotic Poor Quality Heavy Pistol with Long Barrel and Power Rebuild, 14 rounds, not concealable. Aimed Shots deal +1d6 (4d6).</p><p><strong>Based on:</strong> Constitutional Arms Liberty</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "_id": "LLouZCNolVTgWq7c",
+  "_key": "!items!LLouZCNolVTgWq7c",
+  "name": "Zetatech ‘Reflex-Plus’ OS",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "qJNFaBoRgHWYNLUv",
+  "sort": 11080,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 750
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>The Sandevistan activates as half of a ROF2 Action but lasts 5 Rounds. While it runs, +1 REF too (can pass 8; not with Synthcoke). 1-hour cooldown, or reactivate early for 2 Humanity Loss, then 4, then 6.</p><p><strong>Runs:</strong> Sandevistan</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "2zQMaGNgl7C9k8uU",
+      "_key": "!items.effects!LLouZCNolVTgWq7c.2zQMaGNgl7C9k8uU",
+      "name": "Zetatech ‘Reflex-Plus’ OS",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.ref.value",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_id": "D8YYBaWTU8eq5aZJ",
+  "_key": "!items!D8YYBaWTU8eq5aZJ",
+  "name": "Hansen Armory M-77 Private",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "pMcrqSOTZsA7wrVB",
+  "sort": 3280,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 9,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Heavy Pistol with Long Barrel, Tech Rebuild and Zenith, 12 rounds. A charge lasts until the end of the Turn you fire; charged, it stays ROF2 and fires 3-round bursts. Ablates 1 extra SP (2 charged).</p><p><strong>Based on:</strong> Militech M-76E Omaha</p><p><strong>Cost:</strong> 1,500eb</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

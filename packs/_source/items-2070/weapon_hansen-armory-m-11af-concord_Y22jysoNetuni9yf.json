@@ -1,0 +1,81 @@
+{
+  "_id": "Y22jysoNetuni9yf",
+  "_key": "!items!Y22jysoNetuni9yf",
+  "name": "Hansen Armory M-11AF Concord",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "pMcrqSOTZsA7wrVB",
+  "sort": 3270,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 21,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 3,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 2000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Heavy Pistol with Auto-Compensator, Pistol Autosear and Power Rebuild, 21 rounds. Ablates 1 extra SP.</p><p><strong>Based on:</strong> Militech M-10AF Lexington</p><p><strong>Cost:</strong> 2,000eb</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

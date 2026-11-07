@@ -1,0 +1,154 @@
+{
+  "_id": "bSvyOygj4D95BOiH",
+  "_key": "!actors!bSvyOygj4D95BOiH",
+  "name": "Thorton Merrimac MSL3",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: Armored Chassis, Heavy Chassis, Reinforced Tires, Smuggling Upgrade [x2].</p><p><strong>Cost:</strong> 39,000eb<br><strong>Nomad:</strong> 6<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 5<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "Qmuh5vAavRZXnsck",
+      "name": "Thorton Merrimac MSL3 Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!bSvyOygj4D95BOiH.Qmuh5vAavRZXnsck"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Thorton Merrimac MSL3",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "QWqZyrGtgykHxPRF",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "Xv7Bi2TCCzs8EDpZ",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "SGKEREkU2KB2GYSR",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 3,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 5,
+        "nomad": "6",
+        "cost": "39,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

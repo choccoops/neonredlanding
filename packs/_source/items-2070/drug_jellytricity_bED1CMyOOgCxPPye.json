@@ -1,0 +1,89 @@
+{
+  "_id": "bED1CMyOOgCxPPye",
+  "_key": "!items!bED1CMyOOgCxPPye",
+  "name": "Jellytricity",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 14150,
+  "system": {
+    "price": {
+      "market": 50
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p><strong>Primary (4 hours):</strong> DEX +1 (max 8); hyperactive and impulsive. With Synthcoke also running, BODY and WILL −2 (min 1; HP and Death Save unchanged). <strong>Secondary (DV17):</strong> addicted; without a dose, DEX −2 (min 1), sluggish, and craving anything gelatinous.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "SQRP05HHg3e0KVyA",
+      "_key": "!items.effects!bED1CMyOOgCxPPye.SQRP05HHg3e0KVyA",
+      "name": "Jellytricity",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.dex.value",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

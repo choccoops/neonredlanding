@@ -1,0 +1,60 @@
+{
+  "_id": "VX3cPrKcc3q93J92",
+  "_key": "!items!VX3cPrKcc3q93J92",
+  "name": "ModBall Construction Kit",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+  "folder": "4bVCa1Ea8VQyABKL",
+  "sort": 4410,
+  "system": {
+    "variety": "paintball",
+    "type": "basic",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 0,
+        "mode": "none",
+        "value": 0
+      },
+      "damage": {
+        "minimum": "",
+        "mode": "none",
+        "value": ""
+      }
+    },
+    "description": {
+      "value": "<p>Lets a non-Tech craft ModBalls as a Tech with Fabrication Expertise 2, 1 hour per ball, at the listed cost and DV. Techs use the normal Fabrication rules and don't need the kit.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

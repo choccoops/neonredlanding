@@ -1,0 +1,154 @@
+{
+  "_id": "8yU7ZyhAg7zg2R6V",
+  "_key": "!actors!8yU7ZyhAg7zg2R6V",
+  "name": "Zetatech Aero-Enforcer",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 45
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>AV-4 Multipurpose Aerodyne.</em> Upgrades: Armored Chassis, Bulletproof Glass [x2], Communications Center, Improved Engine, Security Upgrade (Simple). Also: Rapid Thrusters. +1 to Maneuvers.</p><p><strong>Cost:</strong> 72,000eb<br><strong>Nomad:</strong> 8 (NCPD)<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 5<br><strong>MOVE:</strong> 45<br><strong>Speed:</strong> 250 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "gAGX1Er7o656p7U9",
+      "name": "Zetatech Aero-Enforcer Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!8yU7ZyhAg7zg2R6V.gAGX1Er7o656p7U9"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Zetatech Aero-Enforcer",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "UMVtF3cFc2waCkv9",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "hAVY1GUfptReJ2jQ",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "yu3cSyryXJkpPXmM",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 3,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 5,
+        "nomad": "8 (NCPD)",
+        "cost": "72,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

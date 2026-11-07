@@ -1,0 +1,60 @@
+{
+  "_id": "4BBEjFSSSQV3SiUT",
+  "_key": "!items!4BBEjFSSSQV3SiUT",
+  "name": "Splashie ModBall",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+  "folder": "4bVCa1Ea8VQyABKL",
+  "sort": 4400,
+  "system": {
+    "variety": "paintball",
+    "type": "basic",
+    "amount": 1,
+    "price": {
+      "market": 5
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 0,
+        "mode": "none",
+        "value": 0
+      },
+      "damage": {
+        "minimum": "",
+        "mode": "none",
+        "value": ""
+      }
+    },
+    "description": {
+      "value": "<p>ModBall Gun only. No damage. The paint is flammable: if a target hit meets an ignition source, they're set on fire and take 2 straight to HP at the end of each Turn until they spend an Action to put it out. Doesn't stack. 5 minutes of washing removes it. Fabricate: 4eb, DV9.</p><p><strong>Cost:</strong> 5eb (Dirt Cheap) each</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

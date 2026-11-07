@@ -1,0 +1,252 @@
+{
+  "_id": "LdEf7R19V69Dy6uQ",
+  "_key": "!actors!LdEf7R19V69Dy6uQ",
+  "name": "Kaukaz Grodno E-80",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p>Compact Groundcar armored pickup: Heavy Chassis, Armored Chassis, Vehicle Heavy Weapon Mount with a Techtronika BMG-570 and 500 rifle rounds. Hauls 8 t. <em>Formerly the Kaukaz Volkhov.</em></p><p><strong>Cost:</strong> 41,000eb<br><strong>Nomad:</strong> 7<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "WBfBhmHWR8ZO4SMe",
+      "name": "Kaukaz Grodno E-80 Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!LdEf7R19V69Dy6uQ.WBfBhmHWR8ZO4SMe"
+    },
+    {
+      "_id": "YVDW4qeTn452X3Tr",
+      "_key": "!actors.items!LdEf7R19V69Dy6uQ.YVDW4qeTn452X3Tr",
+      "name": "Techtronika BMG-570",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+      "system": {
+        "weaponSkill": "Heavy Weapons",
+        "weaponType": "assaultRifle",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "5d6",
+        "rof": 1,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 500,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "rifle"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 4,
+          "suppressiveFire": true
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Assault Rifle",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 1000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Belt-fed from a 500-round box: single shots use Heavy Weapons, Autofire and Suppressive Fire use Autofire. BODY 11+ unless mounted. Deploying the bipod is an Action, and it stays mounted until you move. Fits a Vehicle Heavy Weapon Mount. The Silver finish changes nothing but the price of a repaint.</p><p><em>Standard on Kaukaz armored pickups. Water-cooled barrel, 500-round box.</em></p><p><strong>Class:</strong> Exotic Assault Rifle (belt-fed) • POWER<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Assault Rifle 4), Suppressive Fire<br><strong>Built-in:</strong> Bipod</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "q2i6RsffMiOfi63q"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Kaukaz Grodno E-80",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "lBLxGMk9mSrpVzDb",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "q2i6RsffMiOfi63q",
+          "name": "Gunner",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Heavy Weapons, Autofire, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "Gpc5zghvEhLRZAl6",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "xxfQP2OeLXrYvSic",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 4,
+        "nomad": "7",
+        "cost": "41,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

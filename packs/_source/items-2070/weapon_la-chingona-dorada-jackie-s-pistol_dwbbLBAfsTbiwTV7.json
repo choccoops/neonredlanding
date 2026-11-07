@@ -1,0 +1,121 @@
+{
+  "_id": "dwbbLBAfsTbiwTV7",
+  "_key": "!items!dwbbLBAfsTbiwTV7",
+  "name": "La Chingona Dorada (Jackie’s Pistol)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 1930,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 10,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Every round also counts as Incendiary. Aimed Shots deal +1d6 (4d6), or +2d6 (5d6) if an Aimed Shot from it dealt damage last Round. Head Critical Injuries deal +5 Bonus Damage. Carrying the pair, reload both with one Action. Worn openly, +2 Wardrobe &amp; Style (doesn't stack with other Superchrome bonuses).</p><p><strong>Class:</strong> Iconic EQ Heavy Pistol • POWER<br><strong>Range table:</strong> Pistol<br><strong>Damage:</strong> 3d6<br><strong>Built-in:</strong> Quick Release, Power Rebuild, Ricochet Compensator<br><strong>Mods:</strong> Fashionista (w/ Superchrome Coating)<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "4wZtTrx9ahPn1avm",
+      "_key": "!items.effects!dwbbLBAfsTbiwTV7.4wZtTrx9ahPn1avm",
+      "name": "La Chingona Dorada (Jackie’s Pistol) (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

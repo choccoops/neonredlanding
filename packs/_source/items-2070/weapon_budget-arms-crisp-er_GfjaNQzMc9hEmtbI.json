@@ -1,0 +1,82 @@
+{
+  "_id": "GfjaNQzMc9hEmtbI",
+  "_key": "!items!GfjaNQzMc9hEmtbI",
+  "name": "Budget Arms Crisp-ER",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg",
+  "folder": "1UzZgJuww0HAwjS2",
+  "sort": 1520,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No Aimed Shots. Burns fuel canisters (50eb each) that hit like Armor-Piercing slugs, can't cause Critical Injuries, and set anything they damage Deadly On Fire (6 a Turn). On a natural 1 it doesn't jam: it spits flame and sets you Mildly On Fire (2 a Turn).</p><p><strong>Class:</strong> PQ Exotic Heavy Weapon • POWER<br><strong>Range table:</strong> Long Barrel Shotgun<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

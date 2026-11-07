@@ -1,0 +1,81 @@
+{
+  "_id": "9wewMqGco84Jo3zs",
+  "_key": "!items!9wewMqGco84Jo3zs",
+  "name": "Medium Pistol (Excellent)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "UHvS085LrfdyxCjD",
+  "sort": 2740,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "medPistol",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "2d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 12,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 100
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p><strong>Generic weapon</strong> (excellent quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

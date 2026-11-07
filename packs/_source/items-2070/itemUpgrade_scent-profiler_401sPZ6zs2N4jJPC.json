@@ -1,0 +1,90 @@
+{
+  "_id": "401sPZ6zs2N4jJPC",
+  "_key": "!items!401sPZ6zs2N4jJPC",
+  "name": "Scent Profiler",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "y7Q5Jgv5asKlgtvM",
+  "sort": 10700,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 250
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>+2 Perception by smell, and you can name a drug, poison or explosive you can smell.</p><p><strong>Enhances:</strong> Nasal Filters</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "mlzq2e86y5BO8y0F",
+      "_key": "!items.effects!401sPZ6zs2N4jJPC.mlzq2e86y5BO8y0F",
+      "name": "Scent Profiler (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.perception",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

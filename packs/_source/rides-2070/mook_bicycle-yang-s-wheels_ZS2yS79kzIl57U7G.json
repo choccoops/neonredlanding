@@ -1,0 +1,85 @@
+{
+  "_id": "ZS2yS79kzIl57U7G",
+  "_key": "!actors!ZS2yS79kzIl57U7G",
+  "name": "Bicycle (Yang's Wheels)",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/bicycle.svg",
+  "folder": "CPYhcA5nOvALKOlm",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 8
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 15,
+        "max": 15
+      }
+    },
+    "information": {
+      "description": "<p>Speed by the rider's BODY (3 or less / 4–7 / 8+). Ridden with Athletics, repaired with Basic Tech. Manual only, not networked. BODY 11+ needs a Reinforced Frame. Not through Moto.</p><p><strong>Cost:</strong> 100eb<br><strong>SDP:</strong> 15<br><strong>Seats:</strong> 1<br><strong>MOVE:</strong> 8 / 10 / 15<br><strong>Speed:</strong> 12 / 20 / 30 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Bicycle (Yang's Wheels)",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/spinning_your_wheels/bicycle.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "XlQ2bOpj1ghHSnLo",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "",
+        "cost": "100eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

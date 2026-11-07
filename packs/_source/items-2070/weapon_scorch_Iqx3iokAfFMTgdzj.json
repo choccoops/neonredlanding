@@ -1,0 +1,81 @@
+{
+  "_id": "Iqx3iokAfFMTgdzj",
+  "_key": "!items!Iqx3iokAfFMTgdzj",
+  "name": "Scorch",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 2040,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "medPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 21,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Incendiary only, at the price of Basic (this gun only), and it sets targets Strongly On Fire instead of Mildly. Single Shot fires a 3-round burst (or empties the magazine). Charged: ROF1 and 5d6, dropping the two lowest.</p><p><strong>Class:</strong> Iconic Medium Pistol • TECH<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 2d6<br><strong>Built-in:</strong> Tech Rebuild<br><strong>Fabrication:</strong> DV24 - 2,500eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

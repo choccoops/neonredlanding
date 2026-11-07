@@ -1,0 +1,100 @@
+{
+  "_id": "whL83vyMolhxdZue",
+  "_key": "!items!whL83vyMolhxdZue",
+  "name": "AssKick",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 14090,
+  "system": {
+    "price": {
+      "market": 100
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p><strong>Primary (4 hours):</strong> the first damage you take each Round, after armor, is 1 less (2 if it came with a Critical Injury); COOL and TECH −2 (min 1); no fear, and you act like it. <strong>Secondary (DV17):</strong> addicted; without a dose, −2 to Athletics, Concentration, Endurance, Perception, Stealth and Tactics.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "tlqUn7aj9CxIR23J",
+      "_key": "!items.effects!whL83vyMolhxdZue.tlqUn7aj9CxIR23J",
+      "name": "AssKick",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
+        },
+        {
+          "key": "system.stats.tech.value",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

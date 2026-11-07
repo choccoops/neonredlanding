@@ -1,0 +1,67 @@
+{
+  "_id": "OcfqVOr85rj3cUdS",
+  "_key": "!items!OcfqVOr85rj3cUdS",
+  "name": "Blood Pump",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "twzud8hnJPpUXu1M",
+  "sort": 8470,
+  "system": {
+    "type": "cyberwareInternal",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 7,
+      "roll": "2d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 1000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>A Bodyweight Autoinjector loaded with Speedheal that refills itself after 48 hours of rest. Anyone can install one; it reports your vitals to your Neuroport.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

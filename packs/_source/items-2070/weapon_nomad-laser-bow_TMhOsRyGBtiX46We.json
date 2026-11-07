@@ -1,0 +1,121 @@
+{
+  "_id": "TMhOsRyGBtiX46We",
+  "_key": "!items!TMhOsRyGBtiX46We",
+  "name": "Nomad Laser-Bow",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "KO5skweYhCjsV27C",
+  "sort": 1270,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Shortbow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 400
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Switch its laser on or off as an Action: on and two-handed, it's Excellent Quality but −2 to your Stealth (−4 against infrared or nightvision). +1 to hit on its first Single Shot of a fight.</p><p><strong>Class:</strong> Bow • POWER<br><strong>Range table:</strong> Shortbow<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Laser Sight, Zenith, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "cIASCwRkXL6ZevLj",
+      "_key": "!items.effects!TMhOsRyGBtiX46We.cIASCwRkXL6ZevLj",
+      "name": "Nomad Laser-Bow (active)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.stealth",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

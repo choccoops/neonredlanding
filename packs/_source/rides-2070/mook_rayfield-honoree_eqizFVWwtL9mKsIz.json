@@ -1,0 +1,117 @@
+{
+  "_id": "eqizFVWwtL9mKsIz",
+  "_key": "!actors!eqizFVWwtL9mKsIz",
+  "name": "Rayfield Honoree",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 50
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 100,
+        "max": 100
+      }
+    },
+    "information": {
+      "description": "<p><em>AV-4 Multipurpose Aerodyne.</em> Upgrades: Autopilot Terminal, Bulletproof Glass, TUp (Turbocharged) Improved Engine, Sealed Environment, Security Upgrade (Complex). Autopilot at Skill Base 10 (basic directions, no Maneuvers). No Heavy Chassis or Seating Upgrade.</p><p><strong>Cost:</strong> 60,000eb<br><strong>Nomad:</strong> 8<br><strong>SDP:</strong> 100<br><strong>Seats:</strong> 6<br><strong>MOVE:</strong> 50<br><strong>Speed:</strong> 250 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rayfield Honoree",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "DfvnwD4sO47aind0",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "OazGoWbwDCJkkOiv",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "JervzfqCYCHja0Ye",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 4,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 6,
+        "nomad": "8",
+        "cost": "60,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

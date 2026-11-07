@@ -1,0 +1,81 @@
+{
+  "_id": "ajuTz8qFOWUUJBkO",
+  "_key": "!items!ajuTz8qFOWUUJBkO",
+  "name": "Borzaya",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "k21lyDC6QN1JwuYv",
+  "sort": 17500,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Anti-materiel Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Sniper Rifle with Bipod, Power Rebuild, Long Barrel and Rechamber, 4 rounds. Working the bolt takes an Action. Sets what it damages Strongly On Fire. BODY 10+ (or 8+ and Prone) unless mounted.</p><p><strong>Based on:</strong> Grad</p><p><strong>Category • Fabrication:</strong> Luxury • DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

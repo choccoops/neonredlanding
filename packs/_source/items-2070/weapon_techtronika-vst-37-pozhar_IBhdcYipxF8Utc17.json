@@ -1,0 +1,82 @@
+{
+  "_id": "IBhdcYipxF8Utc17",
+  "_key": "!items!IBhdcYipxF8Utc17",
+  "name": "Techtronika VST-37 Pozhar",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "jsCvgLNNVcXTawNk",
+  "sort": 660,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 12,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Short Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Without BODY 8+ or a cyberarm, firing it gives you Torn Muscle; on Autofire without BODY 10+ or a cyberarm, a Broken Arm.</p><p><strong>Class:</strong> Shotgun • POWER<br><strong>Range table:</strong> Short Barrel Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Shotgun Shell<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "_id": "zd90tSvzOiIiS6h7",
+  "_key": "!actors!zd90tSvzOiIiS6h7",
+  "name": "ARCH Nazaré ‘Itsumade’",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "information": {
+      "description": "<p><em>Roadbike.</em> Upgrades: CrystalCoat, Enhanced Interface Plug Integration, TUp (Turbocharged) Improved Engine, NOS [x4], Reinforced Tires, Security Upgrade (Complex). Also: Racing Tires. Racing tires: +1 to Maneuvers on pavement.</p><p><strong>Cost:</strong> 35,000eb Super Luxury)<br><strong>Nomad:</strong> 7 (Tyger Claw)<br><strong>SDP:</strong> 35<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "ARCH Nazaré ‘Itsumade’",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "TgiTCHfIbeTt1DPm",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "7 (Tyger Claw)",
+        "cost": "35,000eb Super Luxury)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "_id": "TjTFvICEiAYNBTjM",
+  "_key": "!items!TjTFvICEiAYNBTjM",
+  "name": "Techscanner",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "V8UaRWkrzELNmKxC",
+  "sort": 13110,
+  "system": {
+    "price": {
+      "market": 1000
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>+2 to Basic Tech, Cybertech, Land/Sea/Air Vehicle Tech, Electronics/Security Tech and Weaponstech. Doesn't stack.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "ULwvFJ55qk0hbyRD",
+      "_key": "!items.effects!TjTFvICEiAYNBTjM.ULwvFJ55qk0hbyRD",
+      "name": "Techscanner",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.airVehicleTech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.basicTech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.cybertech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.electronicsAndSecurityTech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.landVehicleTech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.seaVehicleTech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.weaponstech",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill",
+              "6": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "6": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

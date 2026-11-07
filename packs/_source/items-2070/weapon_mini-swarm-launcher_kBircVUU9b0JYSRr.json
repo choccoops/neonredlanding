@@ -1,0 +1,81 @@
+{
+  "_id": "kBircVUU9b0JYSRr",
+  "_key": "!items!kBircVUU9b0JYSRr",
+  "name": "MINI-SWARM LAUNCHER",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg",
+  "folder": "MrbQ7UgCp8rFm7PB",
+  "sort": 1710,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "rocketLauncher",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "9d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 8,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rocket"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Rocket Launcher",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Every shot fires 2 rockets. Reloading takes 3 Actions. BODY 17+ unless mounted. A Nomad can take one when they first install a Vehicle Heavy Weapon Mount.</p><p><strong>Class:</strong> Rocket Launcher • SMART<br><strong>Range table:</strong> Rocket Launcher<br><strong>Damage:</strong> 9d6<br><strong>Built-in:</strong> Smart Rebuild</p><p><small>Item Compendium (2070) • Vehicles &amp; Upgrades</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Vehicles & Upgrades"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_id": "cNHoePfCdHJ5eKPi",
+  "_key": "!items!cNHoePfCdHJ5eKPi",
+  "name": "Militech Mk. 29 LMG",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "9I863Kd7E0sSCYFX",
+  "sort": 1020,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 80,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Assault Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1400
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Two Reload Actions to reload. Requires BODY 10+ unless mounted or Prone. A Nomad may take it with their first Vehicle Heavy Weapon Mount.</p><p><em>The squad automatic that sits under the Mk. 31 in every Militech armory.</em></p><p><strong>Class:</strong> Machine Gun • POWER<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Gun 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

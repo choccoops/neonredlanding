@@ -1,0 +1,118 @@
+{
+  "_id": "qyNc5q0LLYatGO4G",
+  "_key": "!items!qyNc5q0LLYatGO4G",
+  "name": "Voice Stress Analyzer",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "IfNCQ7uNCfOhW6bA",
+  "sort": 8430,
+  "system": {
+    "type": "cyberAudioSuite",
+    "installLocation": "mall",
+    "humanityLoss": {
+      "static": 3,
+      "roll": "1d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 100
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>+2 Human Perception and Interrogation. Action: for 1 minute the GM rolls those Checks secretly and beeps on a detected lie. False positives happen.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "S13SluV5XHlbwL08",
+      "_key": "!items.effects!qyNc5q0LLYatGO4G.S13SluV5XHlbwL08",
+      "name": "Voice Stress Analyzer",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.interrogation",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

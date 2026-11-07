@@ -1,0 +1,117 @@
+{
+  "_id": "e7o7aDJLf213nbPf",
+  "_key": "!actors!e7o7aDJLf213nbPf",
+  "name": "Chevillon Centurion 1000 (Single-Axle)",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 25
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: Combat Plow, Heavy Chassis, Improved Engine. Without Housing Capacity or Seating Upgrades, the flatbed carries up to 5 tons.</p><p><strong>Cost:</strong> 36,500eb<br><strong>Nomad:</strong> 5<br><strong>SDP:</strong> 70<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 25<br><strong>Speed:</strong> 125 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Chevillon Centurion 1000 (Single-Axle)",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "RHVNnHZucxzRSWqb",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "woFWILh7S2aSoAlZ",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "vjjsOIPxGOrWlOpn",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 2,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 4,
+        "nomad": "5",
+        "cost": "36,500eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

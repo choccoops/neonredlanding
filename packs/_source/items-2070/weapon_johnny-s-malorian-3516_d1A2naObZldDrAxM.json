@@ -1,0 +1,121 @@
+{
+  "_id": "d1A2naObZldDrAxM",
+  "_key": "!items!d1A2naObZldDrAxM",
+  "name": "Johnny’s Malorian 3516",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 1910,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "vHeavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 10,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "vHeavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads Non-Basic ammo despite being Iconic; every round also counts as Armor-Piercing. A natural 1 on the attack never implodes. Worn openly, +2 Wardrobe &amp; Style (+4 somewhere only true Cyberpunks love).</p><p><strong>Class:</strong> Iconic EQ Very Heavy Pistol • POWER<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell (6d6, expends entire magazine, sets damaged targets Seriously on Fire, uses the Handgun Skill)<br><strong>Built-in:</strong> Biometric Lock, TUp (Can see simple target outlines through and fire through up to one layer of Thin Cover) Power Rebuild, Smartgun Link (w/ Advanced Smartlink)<br><strong>Fabrication:</strong> DV29 - 15,000eb - 3 Months</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "Lks09PouKlrxzcBs",
+      "_key": "!items.effects!d1A2naObZldDrAxM.Lks09PouKlrxzcBs",
+      "name": "Johnny’s Malorian 3516 (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_id": "Aw8l36V8qpQXLV1y",
+  "_key": "!items!Aw8l36V8qpQXLV1y",
+  "name": "Arasaka TKI-20 Shingen",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 360,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Single Shot fires a 3-round burst; with fewer than 3 left, it empties the magazine for 3d6. Autofire uses 6 rounds instead of 10.</p><p><strong>Class:</strong> EQ Heavy SMG • SMART<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Efficient Autosear, Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

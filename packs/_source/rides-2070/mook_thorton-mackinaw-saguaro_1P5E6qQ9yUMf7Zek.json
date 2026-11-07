@@ -1,0 +1,154 @@
+{
+  "_id": "1P5E6qQ9yUMf7Zek",
+  "_key": "!actors!1P5E6qQ9yUMf7Zek",
+  "name": "Thorton Mackinaw “Saguaro”",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "fRqK01L53BK8wVuy",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>Iconic Compact Groundcar.</em> Upgrades: Armored Chassis, Bulletproof Glass, Bulwark Armor, Combat Plow, Communications Center, Crash Control System, Heavy Chassis, TUp (When used, also boosts Combat Speed by 10 MOVE for the Round it is activated on) NOS, Reinforced Tires, Smuggling Upgrade. Also: Diagnostic Monitor, Trailer Hitch, TUp (Improved) Offroad Tires. Offroad tires: +2 to Maneuvers off-road. Its NOS also adds 10 MOVE the Round you hit it. A Tech at Maker 5+ upgrades it and its upgrades as Expensive (DV21, 1 week) instead of Very Expensive.</p><p><strong>Cost:</strong> Super Luxury • DV29 - 25,000eb - 5 Months<br><strong>Nomad:</strong> 8<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 15<br><strong>Seats:</strong> 3<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "3BVf8FjxwaaLKYbf",
+      "name": "Thorton Mackinaw “Saguaro” Armor (SP15)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!1P5E6qQ9yUMf7Zek.3BVf8FjxwaaLKYbf"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Thorton Mackinaw “Saguaro”",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "HUcBEOP281ncTTtN",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "jUcgTPHEArGgj9IB",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "mBhw9cLFWtuoFxHx",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 3,
+        "nomad": "8",
+        "cost": "Super Luxury • DV29 - 25,000eb - 5 Months"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

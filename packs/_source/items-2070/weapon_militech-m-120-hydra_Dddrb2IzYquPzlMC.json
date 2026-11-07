@@ -1,0 +1,82 @@
+{
+  "_id": "Dddrb2IzYquPzlMC",
+  "_key": "!items!Dddrb2IzYquPzlMC",
+  "name": "Militech M-120 Hydra",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "jsCvgLNNVcXTawNk",
+  "sort": 600,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 8,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>When its shells cause a Critical Injury, roll twice on the table and choose.</p><p><strong>Class:</strong> EQ Shotgun • POWER<br><strong>Range table:</strong> Long Barrel Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Shotgun Shell (4d6)<br><strong>Built-in:</strong> Magrail Kit (w/Auto-Compensator and Vivisector), Power Rebuild, Shotgun Automatic Control Group, Shotgun Choke, Shotgun Rechamber, Sling, Smartgun Link</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

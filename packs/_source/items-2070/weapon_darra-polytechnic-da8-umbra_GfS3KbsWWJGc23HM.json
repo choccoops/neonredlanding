@@ -1,0 +1,81 @@
+{
+  "_id": "GfS3KbsWWJGc23HM",
+  "_key": "!items!GfS3KbsWWJGc23HM",
+  "name": "Darra Polytechnic DA8 Umbra",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle_poor.svg",
+  "folder": "G5lCxYzwmyaggFeU",
+  "sort": 720,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 40,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 150
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>2 attachment slots, no capacity attachments, Basic Ammunition only. A jam takes 2 Actions to clear.</p><p><strong>Class:</strong> Poor Quality Assault Rifle • POWER<br><strong>Range table:</strong> Carbine<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

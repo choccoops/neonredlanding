@@ -1,0 +1,85 @@
+{
+  "_id": "pmBfvIIijqmsQXJc",
+  "_key": "!actors!pmBfvIIijqmsQXJc",
+  "name": "Yaiba ASM-R250 Muramasa",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 60
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "information": {
+      "description": "<p><em>Superbike.</em> Upgrades: Armored Chassis, Enhanced Interface Plug Integration, NOS [x2], Security Upgrade (Advanced), Smuggling Upgrade. Plugged in, a Maneuver takes only your Action, not your Move Action too. Bought from Yaiba, pick its styling (Kitsch, Neo-Kitsch or Neo-Militarism): wear 2+ matching pieces near or on it for +2 Wardrobe &amp; Style. Bought any other way, the GM picks the style.</p><p><strong>Cost:</strong> 124,000eb<br><strong>Nomad:</strong> 9<br><strong>SDP:</strong> 35<br><strong>MOVE:</strong> 60<br><strong>Speed:</strong> 300 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Yaiba ASM-R250 Muramasa",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "i2LY1L9ZmKkfZTwU",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "9",
+        "cost": "124,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

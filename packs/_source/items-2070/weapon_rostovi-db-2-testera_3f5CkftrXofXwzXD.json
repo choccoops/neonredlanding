@@ -1,0 +1,82 @@
+{
+  "_id": "3f5CkftrXofXwzXD",
+  "_key": "!items!3f5CkftrXofXwzXD",
+  "name": "Rostović DB-2 Testera",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "jsCvgLNNVcXTawNk",
+  "sort": 620,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 2,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Short Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No capacity attachments, Shotgun Shells only. Fire both barrels at once for +2d6 (5d6).</p><p><strong>Class:</strong> EQ Shotgun • POWER<br><strong>Range table:</strong> Short Barrel Shotgun<br><strong>Damage:</strong> 3d6/5d6<br><strong>Alt. fire:</strong> Shotgun Shell<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

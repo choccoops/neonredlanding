@@ -1,0 +1,117 @@
+{
+  "_id": "Um5m2e0rHVSCtS0L",
+  "_key": "!actors!Um5m2e0rHVSCtS0L",
+  "name": "Rayfield Excalibur",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 60
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 60,
+        "max": 60
+      }
+    },
+    "information": {
+      "description": "<p><em>AV-4 Multipurpose Aerodyne.</em> Upgrades: Autopilot Terminal, Bulletproof Glass, CrystalDome, Seating Upgrade, Security Upgrade (Complex). Autopilot at Skill Base 10 (basic directions, no Maneuvers). Arriving in it: +4 Wardrobe &amp; Style to get into luxury places.</p><p><strong>Cost:</strong> 122,000eb<br><strong>Nomad:</strong> 9<br><strong>SDP:</strong> 60<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 60<br><strong>Speed:</strong> 300 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rayfield Excalibur",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "er1HkpiJNn55kqBp",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "FWXIbDZvkrbLkUFv",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "B1lmoF2IjhB9jvju",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 2,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 4,
+        "nomad": "9",
+        "cost": "122,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "_id": "DOW5ODAT1Za6dqD5",
+  "_key": "!items!DOW5ODAT1Za6dqD5",
+  "name": "Lynx Paws",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "9kQh4EzqIkr9LhlV",
+  "sort": 9240,
+  "system": {
+    "type": "cyberLeg",
+    "installLocation": "clinic",
+    "humanityLoss": {
+      "static": 3,
+      "roll": "1d6"
+    },
+    "isFoundational": false,
+    "size": 2,
+    "price": {
+      "market": 1000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Paired cyberlegs, 2 slots each. +2 to Stealth for moving quietly, +4 if you've used no more than half your MOVE and didn't Run that Turn.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "YyckRhJWc8oF0e78",
+      "_key": "!items.effects!DOW5ODAT1Za6dqD5.YyckRhJWc8oF0e78",
+      "name": "Lynx Paws (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.stealth",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

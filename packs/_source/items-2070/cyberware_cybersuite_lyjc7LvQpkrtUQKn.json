@@ -1,0 +1,67 @@
+{
+  "_id": "lyjc7LvQpkrtUQKn",
+  "_key": "!items!lyjc7LvQpkrtUQKn",
+  "name": "Cybersuite",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "XPKlWgeAS8zfq54z",
+  "sort": 7750,
+  "system": {
+    "type": "neuralWare",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 7,
+      "roll": "2d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 500
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>HOUSE RULE. Neuralware foundation; takes 1 Neural Link slot. Requires Neuroport. Replaces the Neuroport Cyberdeck Port. Installs one Cyberdeck inside your Neuroport, Hardware slots and all. Range 20m to architectures, 50m to Neuroports and vehicles. Swapping the deck is a Clinic job (1 hour). Branded models with built-in quickhacks: see Netrunning Gear.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

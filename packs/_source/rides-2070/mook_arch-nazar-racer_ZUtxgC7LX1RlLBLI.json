@@ -1,0 +1,138 @@
+{
+  "_id": "ZUtxgC7LX1RlLBLI",
+  "_key": "!actors!ZUtxgC7LX1RlLBLI",
+  "name": "ARCH Nazaré ‘Racer’",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 40,
+        "max": 40
+      }
+    },
+    "information": {
+      "description": "<p><em>Roadbike.</em> Upgrades: Armored Chassis, Communications Center, Console Cyberdeck Port, Enhanced Interface Plug Integration, TUp (Turbocharged) Improved Engine, Security Upgrade (Complex). −2 to every Drive Land Vehicle Check with it.</p><p><strong>Cost:</strong> 52,000eb<br><strong>Nomad:</strong> 7<br><strong>SDP:</strong> 40<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "no5ImcuOB8Pv0Dha",
+      "name": "ARCH Nazaré ‘Racer’ Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!ZUtxgC7LX1RlLBLI.no5ImcuOB8Pv0Dha"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "ARCH Nazaré ‘Racer’",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "eZ11aXooQzCOJOnp",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "DB7G6nnLoxkm7oub",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "7",
+        "cost": "52,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

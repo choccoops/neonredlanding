@@ -1,0 +1,81 @@
+{
+  "_id": "m3gG04ItfksGTQQN",
+  "_key": "!items!m3gG04ItfksGTQQN",
+  "name": "Kang Tao B-68 Youmei",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "G5lCxYzwmyaggFeU",
+  "sort": 730,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 35,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Assault Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 3000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>With no magazine in, fold or unfold it as an Action. Folded, it's Concealable but can't fire; after unfolding, a Reload Action loads it. No Folding Structure.</p><p><strong>Class:</strong> EQ Assault Rifle • SMART<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Assault Rifle 4), Suppressive Fire<br><strong>Built-in:</strong> Extended Magazine, Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

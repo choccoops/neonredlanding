@@ -1,0 +1,81 @@
+{
+  "_id": "1SwLYu2WcGhVQMoh",
+  "_key": "!items!1SwLYu2WcGhVQMoh",
+  "name": "Techtronika SVT-64 Kondensator",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle_poor.svg",
+  "folder": "PIaTBJZv7fwMatTh",
+  "sort": 1140,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 5,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Sniper Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its rounds carry damage through cover like an Explosive. BODY 13+ (or 11+ and Prone) unless mounted. On a natural 1, it doesn't jam; a shooter who isn't an FBC and has no Cyberskull takes the effects (not the Bonus Damage) of Concussion and Damaged Ear until the end of their next Turn.</p><p><strong>Class:</strong> PQ Sniper Rifle • TECH<br><strong>Range table:</strong> Sniper Rifle<br><strong>Damage:</strong> 6d6<br><strong>Built-in:</strong> Bipod, Sniper Rifle Rechamber, Sniping Scope, Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

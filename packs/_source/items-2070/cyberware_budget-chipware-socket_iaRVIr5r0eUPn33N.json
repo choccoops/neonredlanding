@@ -1,0 +1,67 @@
+{
+  "_id": "iaRVIr5r0eUPn33N",
+  "_key": "!items!iaRVIr5r0eUPn33N",
+  "name": "Budget Chipware Socket",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "XPKlWgeAS8zfq54z",
+  "sort": 7700,
+  "system": {
+    "type": "neuralWare",
+    "installLocation": "clinic",
+    "humanityLoss": {
+      "static": 7,
+      "roll": "2d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 100
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Neuralware option. One chip socket. Any hit to your head ejects the chip 30m behind you (on a d10 roll of 1 it's destroyed).</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

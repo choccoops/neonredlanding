@@ -1,0 +1,100 @@
+{
+  "_id": "hd5Bw9n8hScj4YuA",
+  "_key": "!items!hd5Bw9n8hScj4YuA",
+  "name": "Ol' Donkey",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 14170,
+  "system": {
+    "price": {
+      "market": 100
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p><strong>Primary (4 hours):</strong> MOVE and REF −1 (min 1); BODY +3 to a max of 11 (no HP or Death Save change); at BODY 12+, +3 to BODY-based Skills; no −2 for being grappled on Brawling, Martial Arts and Melee Weapon; loud and overconfident. <strong>Secondary (DV17):</strong> addicted; without a dose, BODY −3 (min 1; no HP or Death Save change).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "7gXhgMgW2SAQuRWN",
+      "_key": "!items.effects!hd5Bw9n8hScj4YuA.7gXhgMgW2SAQuRWN",
+      "name": "Ol' Donkey",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.stats.move.value",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        },
+        {
+          "key": "system.stats.ref.value",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "stat",
+              "1": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

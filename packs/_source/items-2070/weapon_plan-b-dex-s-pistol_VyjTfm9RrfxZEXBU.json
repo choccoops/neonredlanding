@@ -1,0 +1,81 @@
+{
+  "_id": "VyjTfm9RrfxZEXBU",
+  "_key": "!items!VyjTfm9RrfxZEXBU",
+  "name": "Plan B (Dex’s Pistol)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 1990,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 20,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own gold-coated rounds (5eb each), which work like Expansive ammo and add +5 Bonus Damage to Critical Injuries. Aimed Shots deal +1d6 (4d6). Every shot auto-orders a replacement for 5eb from an orbital factory (if your account has it), delivered home within a day. That's the only way to buy them.</p><p><strong>Class:</strong> Iconic EQ Heavy Pistol • POWER<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 3d6<br><strong>Built-in:</strong> Power Rebuild, Pistol Long Barrel<br><strong>Fabrication:</strong> DV24 - 1,000eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

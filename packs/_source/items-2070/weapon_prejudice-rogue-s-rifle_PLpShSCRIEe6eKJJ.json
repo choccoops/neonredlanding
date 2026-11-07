@@ -1,0 +1,81 @@
+{
+  "_id": "PLpShSCRIEe6eKJJ",
+  "_key": "!items!PLpShSCRIEe6eKJJ",
+  "name": "Prejudice (Rogue’s Rifle)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "IDjPVkRb66VyqeY7",
+  "sort": 2280,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 18,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Battle Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads Non-Basic ammo despite being Iconic. Single Shot fires a 3-round burst; won't fire with fewer than 3. Ablates 1 extra SP. Aimed Shots deal +1d6 (6d6). Its first damage roll each fight counts 5s as 6s. Seriously or Mortally Wounded, it overclocks: +1 to hit and damage 1s are rerolled until they don't. The Round it runs dry, roll 1d6 under your current LUCK: on a success, 9 rounds magically turn up.</p><p><strong>Class:</strong> Iconic EQ Assault Rifle • POWER<br><strong>Range table:</strong> Battle Rifle<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Biometric Lock, Power Rebuild, TUp (Does not require Subdermal Grip or Interface Plugs) Smartgun Link<br><strong>Fabrication:</strong> DV29 - 10,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

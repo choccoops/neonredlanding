@@ -1,0 +1,81 @@
+{
+  "_id": "USQoNNAh2wzsqa0N",
+  "_key": "!items!USQoNNAh2wzsqa0N",
+  "name": "Arasaka TKK-50 Hideyoshi",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 370,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 50,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1200
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Single Shot fires a 2-round burst; with fewer than 2 left, it empties the magazine for 2d6.</p><p><strong>Class:</strong> Excellent Quality Heavy SMG • SMART<br><strong>Range table:</strong> Carbine<br><strong>Damage:</strong> 3d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Extended Magazine, Foregrip, Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

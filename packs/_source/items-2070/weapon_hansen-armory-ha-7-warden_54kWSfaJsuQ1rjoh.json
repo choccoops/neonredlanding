@@ -1,0 +1,81 @@
+{
+  "_id": "54kWSfaJsuQ1rjoh",
+  "_key": "!items!54kWSfaJsuQ1rjoh",
+  "name": "Hansen Armory HA-7 Warden",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 440,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 40,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 3,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 600
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>If it Autofired last Round, this Autofire may reroll one of its 2d6 damage dice (keep the new roll).</p><p><strong>Class:</strong> SMG • SMART<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 2d6<br><strong>Alt. fire:</strong> Autofire (SMG 3), Suppressive Fire<br><strong>Built-in:</strong> Smart Rebuild, SMG Snub Barrel</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

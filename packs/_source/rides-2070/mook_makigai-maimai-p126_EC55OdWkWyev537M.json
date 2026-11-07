@@ -1,0 +1,101 @@
+{
+  "_id": "EC55OdWkWyev537M",
+  "_key": "!actors!EC55OdWkWyev537M",
+  "name": "Makigai Maimai P126",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 15
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 30,
+        "max": 30
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> No Heavy Chassis or Seating Upgrade. Only 1 seat if anyone aboard has BODY 12+.</p><p><strong>Cost:</strong> 10,000eb (V. Expensive)<br><strong>Nomad:</strong> 1<br><strong>SDP:</strong> 30<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 15<br><strong>Speed:</strong> 60 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Makigai Maimai P126",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "qeuDIA2t86LjB7ID",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "Z7xam8BO7NuNH9ch",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "1",
+        "cost": "10,000eb (V. Expensive)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

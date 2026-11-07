@@ -1,0 +1,81 @@
+{
+  "_id": "pSyYEfPEqqmuwSsH",
+  "_key": "!items!pSyYEfPEqqmuwSsH",
+  "name": "Rhinemetall EMG-70 Railgun",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "G5lCxYzwmyaggFeU",
+  "sort": 900,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Assault Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No Autofire or Aimed Shots. Ignores armor below SP11. Two Reload Actions to reload. Requires BODY 11+ unless mounted. A Nomad can take one when they first install a Vehicle Heavy Weapon Mount.</p><p><em>The old EMG line, rebuilt around a capacitor that charges while you wait.</em></p><p><strong>Class:</strong> Exotic Assault Rifle • TECH<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

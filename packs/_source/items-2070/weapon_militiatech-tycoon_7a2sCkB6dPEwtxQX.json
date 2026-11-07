@@ -1,0 +1,81 @@
+{
+  "_id": "7a2sCkB6dPEwtxQX",
+  "_key": "!items!7a2sCkB6dPEwtxQX",
+  "name": "Militiatech Tycoon",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "aEJG7Q7O3gXklM0I",
+  "sort": 3240,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "medPistol",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 21,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 375
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Exotic Poor Quality Medium Pistol with Long Barrel and Tech Rebuild, 21 rounds. Every shot is a 3-round burst. Charged: ROF1 and +1d6 (4d6). +2 to conceal under clothing.</p><p><strong>Based on:</strong> Militech Ticon</p><p><strong>Cost:</strong> 375eb</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

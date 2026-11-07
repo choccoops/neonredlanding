@@ -1,0 +1,81 @@
+{
+  "_id": "nR3Ra3e8vTva68vK",
+  "_key": "!items!nR3Ra3e8vTva68vK",
+  "name": "Constitutional Arms M2052 Liberator",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "PIaTBJZv7fwMatTh",
+  "sort": 1060,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "8d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Anti-materiel Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own Armor-Piercing rounds (100eb each), which also count as Burrowing. Its rounds carry damage through cover like an Explosive. Firing it without being knocked Prone and suffering Broken Ribs needs BODY 13+, BODY 11+ while Prone, or a mount. It can't be silenced by any means.</p><p><strong>Class:</strong> Sniper Rifle • POWER<br><strong>Range table:</strong> Anti-materiel Rifle<br><strong>Damage:</strong> 8d6<br><strong>Built-in:</strong> Bipod, Sniper Rifle Rechamber, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

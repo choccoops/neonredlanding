@@ -1,0 +1,82 @@
+{
+  "_id": "IVWfftpJgnL1Logm",
+  "_key": "!items!IVWfftpJgnL1Logm",
+  "name": "Order",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "eCgyZXCdk9xWM2hF",
+  "sort": 2200,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 2,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads Non-Basic ammo despite being Iconic. No capacity attachments. Fires both loaded rounds at once. It can't fire in the Round you charge it; charged, it deals +1d6 (6d6 slug, 5d6 shell) and adds EMP ammo's effect.</p><p><strong>Class:</strong> Iconic Shotgun • TECH<br><strong>Range table:</strong> Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell (4d6)<br><strong>Built-in:</strong> Shotgun Rechamber, Tech Rebuild<br><strong>Fabrication:</strong> DV29 - 2,500eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

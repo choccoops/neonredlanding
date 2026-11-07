@@ -1,0 +1,170 @@
+{
+  "_id": "Aoo7glM790YOXhkc",
+  "_key": "!actors!Aoo7glM790YOXhkc",
+  "name": "Villefort Cortes ‘Delamain Cab’",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: Armored Chassis, TUp (Enhanced) Autopilot Terminal, Bulletproof Glass [x2], Combat Plow, TUp (Self-Driving Vehicle) Communications Center, Heavy Chassis, Reinforced Tires, Sealed Environment, Onboard Rocket Pod. Drives itself at Skill Base 14; no Maneuvers except an Emergency Stop, unless the fare buys more. <strong>Basic</strong> 50eb a district (100eb minimum): avoids nothing. <strong>Super</strong> 100eb a district (500eb minimum): dodges police and traffic when it can, never fights. <strong>Excelsior</strong> 500eb a district (1,000eb minimum): uses every weapon and system it has to protect you, police and corp security included.</p><p><strong>Cost:</strong> 64,500eb<br><strong>Nomad:</strong> 8 (Delamain)<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "IrTZodBI9yrKCGhG",
+      "name": "Villefort Cortes ‘Delamain Cab’ Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!Aoo7glM790YOXhkc.IrTZodBI9yrKCGhG"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Villefort Cortes ‘Delamain Cab’",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "XwZLEEIgFSNEztIL",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "iVUk44r6qsIfIwS0",
+          "name": "Gunner",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Heavy Weapons, Autofire, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "Qwp3RJT3Km4cKBoz",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "LltfXgHb56byWkBO",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 4,
+        "nomad": "8 (Delamain)",
+        "cost": "64,500eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

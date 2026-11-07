@@ -1,0 +1,138 @@
+{
+  "_id": "gqyISYbuz831Z9G3",
+  "_key": "!actors!gqyISYbuz831Z9G3",
+  "name": "Quadra Type-66 “Bulitt” (Dino’s Car)",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "fRqK01L53BK8wVuy",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 50
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Iconic High Perf. Groundcar.</em> Upgrades: Bulletproof Glass, CrystalCoat, Improved Engine, Light Armored Chassis, NOS. Also: Climate Control. Climate control. +2 to Interrogation or Persuasion for information from City Center or Heywood locals when you use the car to make the point. A Fixer haggling beside it with someone who thinks it's theirs counts as Operator +1.</p><p><strong>Cost:</strong> Super Luxury • DV29 - 25,000eb - 5 Months<br><strong>Nomad:</strong> 6<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 10<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 50<br><strong>Speed:</strong> 250 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "ZOX41p77rLbFwKyr",
+      "name": "Quadra Type-66 “Bulitt” (Dino’s Car) Armor (SP10)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 10,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 10,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!gqyISYbuz831Z9G3.ZOX41p77rLbFwKyr"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Quadra Type-66 “Bulitt” (Dino’s Car)",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "ycUFBEkzgxMfaQmm",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "NOqz2ok7YFRQNkz3",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "6",
+        "cost": "Super Luxury • DV29 - 25,000eb - 5 Months"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

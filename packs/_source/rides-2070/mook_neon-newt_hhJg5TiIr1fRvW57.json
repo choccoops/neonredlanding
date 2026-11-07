@@ -1,0 +1,83 @@
+{
+  "_id": "hhJg5TiIr1fRvW57",
+  "_key": "!actors!hhJg5TiIr1fRvW57",
+  "name": "Neon Newt™",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg",
+  "folder": "b1eLsXRZO9iZLC9U",
+  "system": {
+    "stats": {
+      "int": {
+        "value": 1
+      },
+      "ref": {
+        "value": 4
+      },
+      "dex": {
+        "value": 5
+      },
+      "tech": {
+        "value": 2
+      },
+      "cool": {
+        "value": 3
+      },
+      "will": {
+        "value": 2
+      },
+      "move": {
+        "value": 5
+      },
+      "body": {
+        "value": 2
+      },
+      "emp": {
+        "value": 2
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 20,
+        "max": 20
+      }
+    },
+    "information": {
+      "description": "<p><em>Cyberpet®</em></p><p><strong>Cost:</strong> 2,000eb (Very Expensive)<br><strong>Lifestyle:</strong> Good Prepak<br><strong>Cyberware slots:</strong> 1<br><strong>Threat:</strong> Hardened Mook<br><strong>Death Save:</strong> 3<br><strong>Seriously Wounded:</strong> 10<br><strong>Attacks:</strong> Flamebreath (C# 8) ROF2 1d6 • Acid Secretion (C# 5) ROF2 —<br><strong>Skills:</strong> Athletics 5 • Brawling 5 • Contortionist 12 • Evasion 12 • Human Perception 4 • Heavy Weapons 8 • Melee Weapon 7 • Perception 12 • Stealth 10 • Wilderness Survival 10</p><p><small>Item Compendium (2070) • Cyberpets</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Neon Newt™",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "pet2070": {
+        "cost": "2,000eb (Very Expensive)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

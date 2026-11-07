@@ -1,0 +1,81 @@
+{
+  "_id": "EJq5gUdUepSZ07Ea",
+  "_key": "!items!EJq5gUdUepSZ07Ea",
+  "name": "Chaos (Royce’s Pistol)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 1800,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "0",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Single Shot fires a 2-round burst (or empties the magazine). Every reload, reroll its stats: capacity 1d20 (min 2; a 20 means 26), damage 1d8 d6s, ablation 1d4 SP. It starts at 20 rounds, 3d6 and 1 SP. Reload it too often (GM) and it's Damaged. Its Critical Injuries roll 1d12 on the table (a 1 is no injury, Bonus Damage still applies), and Bonus Damage is 1d10. It loads Non-Basic ammo, but each day that ammo costs 1d100 × 5eb. No Pistol Autosear.</p><p><strong>Class:</strong> Iconic EQ Heavy Pistol • TECH<br><strong>Range table:</strong> Pistol<br><strong>Damage:</strong> ?d6<br><strong>Built-in:</strong> Tech Rebuild<br><strong>Fabrication:</strong> DV24 - 1,000eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

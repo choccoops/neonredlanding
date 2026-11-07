@@ -40,6 +40,7 @@ import { CredApp } from "./cred/cred-app.js";
 import { FashionOps } from "./fashion/fashion-ops.js";
 import { FashionApp } from "./fashion/fashion-app.js";
 import { DISTRICTS } from "./fashion/fashion-data.js";
+import { Items2070 } from "./items/items-2070.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -67,6 +68,7 @@ Hooks.once("init", () => {
   ScreamOps.register();
   CredStore.register();
   FashionOps.init();
+  Items2070.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -283,6 +285,16 @@ Hooks.once("init", () => {
       setSceneDistrict: (scene, id) => FashionOps.setSceneDistrict(scene, id)
     },
 
+    /**
+     * The 2070s Item Compendium: compendiums "cpr-neon-hub.items-2070", "cpr-neon-hub.rides-2070" (vehicles,
+     * ACPAs and cyberpets for MMuton's vehicle sheet) and "cpr-neon-hub.dv-tables-2070" (the SoF 2045 range tables).
+     * useDvTables(true|false): GM, point CPR's DV tables at the 2070 range tables or back at its own.
+     */
+    items: {
+      useDvTables: (on = true) => Items2070.useDvTables(on),
+      usingDvTables: () => Items2070.usingDvTables
+    },
+
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
     hoverStatus: () => HubHover.status(),
 
@@ -308,6 +320,7 @@ Hooks.once("ready", () => {
   ScreamOps.init();
   WorldOps.init();
   CredStore.init();
+  Items2070.offer().catch((err) => console.warn(`${MODULE_ID} | DV table offer failed`, err));
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
   if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));

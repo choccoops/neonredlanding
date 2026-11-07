@@ -1,0 +1,154 @@
+{
+  "_id": "osFQigS34rBlQ8bH",
+  "_key": "!actors!osFQigS34rBlQ8bH",
+  "name": "Rayfield Wygar",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>High Performance Groundcar.</em> Upgrades: TUp (+1 SP) Armored Chassis (w/ Stalwart Shell), Bulletproof Glass [x2], Bulwark Armor, CrystalCoat, Reinforced Tires, Sealed Environment, TUp (Hardwired Locks [DV23 Electronics/Security Tech Check to bypass]) Security Upgrade (Advanced). Ablation to its SP is 1 less (min 0). Autopilot at Skill Base 14. No Seating Upgrade.</p><p><strong>Cost:</strong> 76,000eb<br><strong>Nomad:</strong> 9<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 15<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "lw4yTPRBE7vYdc1f",
+      "name": "Rayfield Wygar Armor (SP15)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!osFQigS34rBlQ8bH.lw4yTPRBE7vYdc1f"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rayfield Wygar",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "rW65nPz95irA182o",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "xJHeLYzSgodZtxoD",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "Bpkvu4Sldbv2TWAx",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 2,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 4,
+        "nomad": "9",
+        "cost": "76,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

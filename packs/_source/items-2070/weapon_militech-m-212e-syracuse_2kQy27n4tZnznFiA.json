@@ -1,0 +1,81 @@
+{
+  "_id": "2kQy27n4tZnznFiA",
+  "_key": "!items!2kQy27n4tZnznFiA",
+  "name": "Militech M-212E Syracuse",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg",
+  "folder": "0lqApCloUvqreMIy",
+  "sort": 1510,
+  "system": {
+    "weaponSkill": "Pilot Air Vehicle",
+    "weaponType": "rocketLauncher",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "8d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 1,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rocket"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Rocket Launcher",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Uses <strong>Pilot Air Vehicle</strong>, not Heavy Weapons. Fires only Improved Smart Rockets. Comes with one.</p><p><em>A briefcase launcher that flies itself once you've picked the target.</em></p><p><strong>Class:</strong> EQ Exotic Rocket Launcher • SMART<br><strong>Range table:</strong> Rocket Launcher<br><strong>Damage:</strong> 8d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

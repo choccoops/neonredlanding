@@ -1,0 +1,89 @@
+{
+  "_id": "hjJj6UAUleBCB6hk",
+  "_key": "!items!hjJj6UAUleBCB6hk",
+  "name": "ColorWheel",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "9NuoswtrnhWf20DR",
+  "sort": 13330,
+  "system": {
+    "price": {
+      "market": 20
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": true,
+    "description": {
+      "value": "<p><strong>New.</strong> A crowd-sourced map of who claims which block, and whose colors not to wear there. +1 to Streetwise Checks to stay out of gang trouble. Always a week out of date. <strong>CitiNet.</strong></p><p><strong>Publisher:</strong> Street<br><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "rj8hluPJvPKTmB8L",
+      "_key": "!items.effects!hjJj6UAUleBCB6hk.rj8hluPJvPKTmB8L",
+      "name": "ColorWheel (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.streetwise",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

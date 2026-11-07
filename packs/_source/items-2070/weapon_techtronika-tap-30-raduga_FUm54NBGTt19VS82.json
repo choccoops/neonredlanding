@@ -1,0 +1,81 @@
+{
+  "_id": "FUm54NBGTt19VS82",
+  "_key": "!items!FUm54NBGTt19VS82",
+  "name": "Techtronika TAP-30 Raduga",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 500,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 20,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 5,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Can't be silenced. BODY 10+ unless mounted.</p><p><strong>Class:</strong> EQ Heavy SMG • POWER<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 5), Suppressive Fire<br><strong>Built-in:</strong> SMG Cyclic Internals [Machine Pistol 4], SMG Short Barrel, Power Rebuild<br><strong>Mods:</strong> Upsized Power</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "_id": "NGbgRXLXSFt4bNVs",
+  "_key": "!items!NGbgRXLXSFt4bNVs",
+  "name": "Fashionista",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "9NuoswtrnhWf20DR",
+  "sort": 13260,
+  "system": {
+    "price": {
+      "market": 0
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": true,
+    "description": {
+      "value": "<p>Comes on every Neuroport. Tracks this month's dress trend: wear it and get +2 Wardrobe &amp; Style for the month.</p><p><strong>Publisher:</strong> Neuroport standard<br><strong>Cost:</strong> Free</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "ANc8pRTKPXPWFqhr",
+      "_key": "!items.effects!NGbgRXLXSFt4bNVs.ANc8pRTKPXPWFqhr",
+      "name": "Fashionista",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

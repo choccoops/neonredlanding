@@ -1,0 +1,117 @@
+{
+  "_id": "HeGGT8SvD56pkSyT",
+  "_key": "!actors!HeGGT8SvD56pkSyT",
+  "name": "Quadra Sport R-7 “Sterling” (Mr. Hands’ Car)",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "fRqK01L53BK8wVuy",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Iconic High Performance Groundcar.</em> Upgrades: Bulletproof Glass, NOS, Sealed Environment, Smuggling Upgrade [x2], Stealth Plating. Also: Climate Control. Climate control. Stealth plating: invisible to scanners and radar, −2 to spot in the dark. +2 to Interrogation or Persuasion for information from Dogtown or Pacifica locals when you use the car to make the point. A Fixer haggling beside it with someone who thinks it's theirs counts as Operator +1.</p><p><strong>Cost:</strong> Super Luxury • DV29 - 25,000eb - 5 Months<br><strong>Nomad:</strong> 7<br><strong>SDP:</strong> 50<br><strong>Seats:</strong> 4<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Quadra Sport R-7 “Sterling” (Mr. Hands’ Car)",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "J3oej1LWjzhC0CiJ",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "udXwfHKoOJcA8nm7",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "fjo7MyrXnwzOOzbw",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 2,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 4,
+        "nomad": "7",
+        "cost": "Super Luxury • DV29 - 25,000eb - 5 Months"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

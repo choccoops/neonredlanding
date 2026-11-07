@@ -1,0 +1,117 @@
+{
+  "_id": "24sDNqm5MAziiEOh",
+  "_key": "!actors!24sDNqm5MAziiEOh",
+  "name": "Hydrosubsidium Dumbo",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg",
+  "folder": "imUmfQ0AgGutzDbr",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 10
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 60,
+        "max": 60
+      }
+    },
+    "information": {
+      "description": "<p><em>Cabin Cruiser.</em> Upgrades: Autopilot Terminal, Bulletproof Glass, TUp (Self-Driving Vehicle) Communications Center, Complex Room Upgrade, CrystalDome, Luxury Room Upgrade, Radar/Sonar System, Sealed Environment, Security Upgrade (Simple). Also: Climate Control. Climate control. Autopilot at Skill Base 14. Rooms: a dive station (an underside wave pool for slipping into the water) and a luxury passenger room.</p><p><strong>Cost:</strong> 92,000eb<br><strong>Nomad:</strong> 9<br><strong>SDP:</strong> 60<br><strong>Seats:</strong> 8<br><strong>MOVE:</strong> 10<br><strong>Speed:</strong> 15 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Hydrosubsidium Dumbo",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "hwo3tNZd4Uq0F6OC",
+          "name": "Helm",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Pilot Sea Vehicle, Sea Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "GPTBzjF9GEVGr8mh",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "JvsvxX2AiVMAFJVR",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 6,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "sea",
+        "seats": 8,
+        "nomad": "9",
+        "cost": "92,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

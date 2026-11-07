@@ -1,0 +1,81 @@
+{
+  "_id": "ZT6JI4GdkaId0tN7",
+  "_key": "!items!ZT6JI4GdkaId0tN7",
+  "name": "Tsunami Arms Nekomata",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "PIaTBJZv7fwMatTh",
+  "sort": 1160,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Sniper Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its Tech scope sees outlines through one layer of Thin or Thick cover. Charged, it fires through one layer of Thin or Thick cover and ablates 1 extra SP.</p><p><strong>Class:</strong> EQ Sniper Rifle • TECH<br><strong>Range table:</strong> Sniper Rifle<br><strong>Damage:</strong> 6d6<br><strong>Built-in:</strong> Sniper Rifle Rechamber, Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

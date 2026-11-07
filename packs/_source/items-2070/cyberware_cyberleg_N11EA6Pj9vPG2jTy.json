@@ -1,0 +1,67 @@
+{
+  "_id": "N11EA6Pj9vPG2jTy",
+  "_key": "!items!N11EA6Pj9vPG2jTy",
+  "name": "Cyberleg",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "9kQh4EzqIkr9LhlV",
+  "sort": 9090,
+  "system": {
+    "type": "cyberLeg",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 3,
+      "roll": "1d6"
+    },
+    "isFoundational": true,
+    "size": 0,
+    "price": {
+      "market": 100
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Foundation. Comes with a free Standard Foot. Most leg options must be paired.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

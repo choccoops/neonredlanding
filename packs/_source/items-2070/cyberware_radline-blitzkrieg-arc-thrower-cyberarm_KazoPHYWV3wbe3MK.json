@@ -1,0 +1,92 @@
+{
+  "_id": "KazoPHYWV3wbe3MK",
+  "_key": "!items!KazoPHYWV3wbe3MK",
+  "name": "Radline Blitzkrieg Arc-Thrower Cyberarm",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "9kQh4EzqIkr9LhlV",
+  "sort": 1680,
+  "system": {
+    "type": "cyberArm",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 7,
+      "roll": "2d6"
+    },
+    "isFoundational": true,
+    "size": 0,
+    "price": {
+      "market": 1000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": true,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [],
+      "slots": 4,
+      "usedSlots": 0
+    },
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 32,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "DV Shotgun",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Foundation. A handless cyberarm (HL 14, Hospital) with 0 option slots. Fires only as a Shotgun Shell, for 4d6, from a 32-charge BatteryBrick (100eb, recharges in an hour). No crits, no ablation; a target that would drop below 1 HP is Unconscious at 1. Swapping the battery is an Action, no hand needed.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

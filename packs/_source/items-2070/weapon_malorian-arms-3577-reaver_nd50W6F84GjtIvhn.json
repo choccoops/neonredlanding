@@ -1,0 +1,81 @@
+{
+  "_id": "nd50W6F84GjtIvhn",
+  "_key": "!items!nd50W6F84GjtIvhn",
+  "name": "Malorian Arms 3577 Reaver",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+  "folder": "NEzpeSziile1ptet",
+  "sort": 150,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "vHeavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 10,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "vHeavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No capacity attachments, no Pistol Autosear. Spend an extra round on a shot to ablate 1 more SP. Aimed Shots deal +1d6 (5d6). 5s count as 6s for Critical Injuries. Biometric lock: it only fires for a keyed user. Without BODY 11+ or a cyberarm, firing it gives you a Broken Arm.</p><p><strong>Class:</strong> EQ Very Heavy Pistol • POWER<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

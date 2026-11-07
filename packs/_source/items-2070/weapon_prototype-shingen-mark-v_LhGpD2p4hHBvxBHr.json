@@ -1,0 +1,81 @@
+{
+  "_id": "LhGpD2p4hHBvxBHr",
+  "_key": "!items!LhGpD2p4hHBvxBHr",
+  "name": "Prototype Shingen Mark V",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "DuhUhdQXcfPbQstN",
+  "sort": 2120,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own prototype rounds (100eb per 10), which count as Armor-Piercing, Improved Smart and Incendiary. Single Shot fires a 3-round burst; with fewer than 3 left it empties the magazine for 2d6. Aimed Shots and Autofire at ROF2. A natural 1 never implodes. Autofire uses 6 rounds instead of 10.</p><p><strong>Class:</strong> Iconic EQ Heavy SMG • SMART<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 3d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Efficient Autosear, Smart Rebuild (w/ Advanced Smartlink)<br><strong>Fabrication:</strong> DV29 - 10,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

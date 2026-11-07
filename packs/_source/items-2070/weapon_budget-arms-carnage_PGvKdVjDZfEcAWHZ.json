@@ -1,0 +1,82 @@
+{
+  "_id": "PGvKdVjDZfEcAWHZ",
+  "_key": "!items!PGvKdVjDZfEcAWHZ",
+  "name": "Budget Arms Carnage",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg",
+  "folder": "jsCvgLNNVcXTawNk",
+  "sort": 550,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Fire it without BODY 10+ or paired cyberarms and you suffer Torn Muscle (if you don't have it already). No Silencers, and no capacity attachments except an Extended Magazine.</p><p><strong>Class:</strong> PQ Shotgun • POWER<br><strong>Range table:</strong> Shotgun<br><strong>Damage:</strong> 6d6, Drop Lowest<br><strong>Alt. fire:</strong> Shotgun Shell (4d6)<br><strong>Built-in:</strong> Power Rebuild. Shotgun Rechamber</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

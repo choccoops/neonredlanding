@@ -1,0 +1,67 @@
+{
+  "_id": "ctmPr86gx8Zqg7hK",
+  "_key": "!items!ctmPr86gx8Zqg7hK",
+  "name": "Internal Hydraulics Upgrade",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "twzud8hnJPpUXu1M",
+  "sort": 8620,
+  "system": {
+    "type": "cyberwareInternal",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 3,
+      "roll": "1d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 1000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>FBC with an Internal Linear Frame. REF, DEX and MOVE become 4 unless higher.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

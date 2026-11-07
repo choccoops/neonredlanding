@@ -1,0 +1,81 @@
+{
+  "_id": "YndEFEJeGOezKyzZ",
+  "_key": "!items!YndEFEJeGOezKyzZ",
+  "name": "Moron Labe",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "IDjPVkRb66VyqeY7",
+  "sort": 2270,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Assault Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Hyper Expansive ammo only, at the price of Basic (this gun only). −2 to every attack. On its Autofire damage, a single 6 is a Critical Injury. Leg and Held Item Aimed Shots deal +1d6 (6d6); head Aimed Shots deal −1d6 (4d6).</p><p><strong>Class:</strong> Iconic Assault Rifle • POWER<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Assault Rifle 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

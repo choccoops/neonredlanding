@@ -1,0 +1,81 @@
+{
+  "_id": "tJ6KyNcsLvJQD1Op",
+  "_key": "!items!tJ6KyNcsLvJQD1Op",
+  "name": "Carmen",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "IDjPVkRb66VyqeY7",
+  "sort": 2230,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 40,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Armor-Piercing only, at the price of Basic (this gun only). Moved 8m+ on foot this Turn: +1 to hit until your Turn ends. Moved 16m+: +3 to hit in total and +1d6 on Single Shot (5d6).</p><p><strong>Class:</strong> Iconic Assault Rifle • POWER<br><strong>Range table:</strong> Carbine<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild<br><strong>Fabrication:</strong> DV24 - 1,000eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

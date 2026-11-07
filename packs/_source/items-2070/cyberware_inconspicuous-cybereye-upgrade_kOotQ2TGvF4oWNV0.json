@@ -1,0 +1,67 @@
+{
+  "_id": "kOotQ2TGvF4oWNV0",
+  "_key": "!items!kOotQ2TGvF4oWNV0",
+  "name": "Inconspicuous Cybereye Upgrade",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "7pTkf2ikCKrMdQ2d",
+  "sort": 8170,
+  "system": {
+    "type": "cyberEye",
+    "installLocation": "mall",
+    "humanityLoss": {
+      "static": 2,
+      "roll": "1d6/2"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 100
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Replaces the Chyron (every 2070 cybereye shows your Neuroport HUD already). Paired Cybereyes only. Nobody can tell from your eyes that you're using your HUD or Holophone: spotting it takes Perception against your Acting.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 2 (1d6/2)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

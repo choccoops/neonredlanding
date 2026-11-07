@@ -1,0 +1,83 @@
+{
+  "_id": "NEya8XQ21fvrEKuf",
+  "_key": "!actors!NEya8XQ21fvrEKuf",
+  "name": "Cyberbear™",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg",
+  "folder": "b1eLsXRZO9iZLC9U",
+  "system": {
+    "stats": {
+      "int": {
+        "value": 3
+      },
+      "ref": {
+        "value": 8
+      },
+      "dex": {
+        "value": 8
+      },
+      "tech": {
+        "value": 6
+      },
+      "cool": {
+        "value": 5
+      },
+      "will": {
+        "value": 8
+      },
+      "move": {
+        "value": 6
+      },
+      "body": {
+        "value": 10
+      },
+      "emp": {
+        "value": 5
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 55,
+        "max": 55
+      }
+    },
+    "information": {
+      "description": "<p><em>Cyberpet+®</em></p><p><strong>Cost:</strong> 20,000eb (Super Luxury)<br><strong>Lifestyle:</strong> Fresh Food ×2<br><strong>Cyberware slots:</strong> 3<br><strong>Threat:</strong> Mini-Boss<br><strong>Death Save:</strong> 10<br><strong>Seriously Wounded:</strong> 28<br><strong>Attacks:</strong> Bear Claw (C# 16) ROF2 3d6 • Combat Jaw (C# 16) ROF2 3d6<br><strong>Armor:</strong> TUp Subdermal Armor SP13 (head and body)<br><strong>Skills:</strong> Athletics 14 • Brawling 16 • Concentration 10 • Evasion 10 • Human Perception 7 • Martial Arts (Cyberbear) 10 • Melee Weapon 16 • Perception 11 • Persuasion 7 • Resist Torture/Drugs 15 • Stealth 10 • Wilderness Survival 14</p><p><small>Item Compendium (2070) • Cyberpets</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cyberbear™",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "pet2070": {
+        "cost": "20,000eb (Super Luxury)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

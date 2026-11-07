@@ -1,0 +1,113 @@
+{
+  "_id": "daSITvMkGeq4x5JO",
+  "_key": "!items!daSITvMkGeq4x5JO",
+  "name": "Aviation Tactical Optics Platform",
+  "type": "armor",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "uYvhK8Ml6mKi9iFR",
+  "sort": 6790,
+  "system": {
+    "price": {
+      "market": 3000
+    },
+    "penalty": 0,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "isShield": false,
+    "shieldHitPoints": {
+      "value": 0,
+      "max": 0
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isBodyLocation": false,
+    "isHeadLocation": true,
+    "bodyLocation": {
+      "sp": 0,
+      "ablation": 0
+    },
+    "headLocation": {
+      "sp": 12,
+      "ablation": 0
+    },
+    "description": {
+      "value": "<p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses (an extra slot) with Anti-Dazzle, Image Enhance and TeleOptics. The visor drops for free; down, your face is hidden and the glasses' options work. Visor down, with Pilot Air Vehicle 7+ or Moto 2+: +2 to Pilot Air Vehicle.</p><p><strong>Cost:</strong> 3,000eb (Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "8tmmEcMlWGtrYtHv",
+      "_key": "!items.effects!daSITvMkGeq4x5JO.8tmmEcMlWGtrYtHv",
+      "name": "Aviation Tactical Optics Platform (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.pilotAirVehicle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Armor & Shields"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

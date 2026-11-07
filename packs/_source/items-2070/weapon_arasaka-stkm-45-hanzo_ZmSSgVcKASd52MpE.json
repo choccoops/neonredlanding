@@ -1,0 +1,81 @@
+{
+  "_id": "ZmSSgVcKASd52MpE",
+  "_key": "!items!ZmSSgVcKASd52MpE",
+  "name": "Arasaka STKM-45 Hanzo",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG_excellent.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 340,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 50,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 3500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Single Shot fires a 2-round burst. −2 to Perception to hear it fire.</p><p><strong>Class:</strong> Excellent Quality SMG • POWER<br><strong>Range table:</strong> Carbine<br><strong>Damage:</strong> 4d6, Drop 2 Lowest<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Drum Magazine, Improved Silencer, Power Rebuild, Short Scope</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

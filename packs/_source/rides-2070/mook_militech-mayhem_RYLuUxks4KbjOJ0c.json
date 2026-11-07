@@ -1,0 +1,170 @@
+{
+  "_id": "RYLuUxks4KbjOJ0c",
+  "_key": "!actors!RYLuUxks4KbjOJ0c",
+  "name": "Militech Mayhem",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 50
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 80,
+        "max": 80
+      }
+    },
+    "information": {
+      "description": "<p><em>Helicopter.</em> Upgrades: Armored Chassis, Bulletproof Glass [x2], Heavy Chassis, TUp (Turbocharged) Improved Engine, NOS [x2], Onboard Rocket Pod (w/ Autoloader), Reinforced Hull, Seating Upgrade [x4], Security Upgrade (Advanced), TUp (Does not appear on Thermal/UV imaging cameras) Stealth Plating, Vehicle Heavy Weapon Mount (w/ Militech Mk.31 HMG [w/ Upsized Power (6d6 Single Shot, Autofire {Machine Gun 6})). Also: Climate Control. Climate control for everyone inside. Stealth plating: invisible to scanners and radar, −2 to spot in the dark.</p><p><strong>Cost:</strong> 100,000eb<br><strong>Nomad:</strong> 10<br><strong>SDP:</strong> 80<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 12<br><strong>MOVE:</strong> 50<br><strong>Speed:</strong> 250 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "Fy1HKXM1vhn73yqK",
+      "name": "Militech Mayhem Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!RYLuUxks4KbjOJ0c.Fy1HKXM1vhn73yqK"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Militech Mayhem",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "BYnEV4bHoKveERt1",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "sNZahC8wx2eAK8iJ",
+          "name": "Gunner",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Heavy Weapons, Autofire, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "NlZQ0eOn417yUCVm",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "xmOsbrfE3oycBzxI",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 9,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 12,
+        "nomad": "10",
+        "cost": "100,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

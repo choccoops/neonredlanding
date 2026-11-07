@@ -1,0 +1,187 @@
+<div class="nh-cal nh-cred">
+  <aside class="nh-cal-side nh-cred-rail">
+    <div class="nh-cal-side-head">
+      <span class="nh-cal-kicker">// {{localize "NEONHUB.Cred.Kicker"}}</span>
+      <span class="nh-cal-side-title">{{localize "NEONHUB.Cred.Crew"}}</span>
+    </div>
+    <ol class="nh-cred-rail-list">
+      {{#each rail}}
+      <li>
+        <button type="button" class="nh-cred-pick {{#if active}}is-active{{/if}}" data-action="pick" data-uuid="{{uuid}}">
+          <img src="{{img}}" alt="">
+          <span class="nh-cred-pick-name">{{name}}</span>
+          <span class="nh-cred-pick-stats">
+            <span data-tooltip="{{localize 'NEONHUB.Cred.Rep.Title'}}"><i class="fa-solid fa-star"></i> {{rep}}</span>
+            <span class="{{#if hot}}is-hot{{/if}}" data-tooltip="{{localize 'NEONHUB.Cred.Heat.Title'}}"><i class="fa-solid fa-handcuffs"></i> {{heat}}</span>
+          </span>
+        </button>
+      </li>
+      {{else}}
+      <li class="nh-cal-list-empty">{{localize "NEONHUB.Lifestyle.NoCharacters"}}</li>
+      {{/each}}
+    </ol>
+  </aside>
+
+  <section class="nh-cal-main nh-cred-main">
+    {{#if none}}
+    <div class="nh-cal-empty">
+      <i class="fa-solid fa-ranking-star"></i>
+      <h2>{{localize "NEONHUB.Cred.NoneTitle"}}</h2>
+      <p>{{localize "NEONHUB.Cred.NoneHint"}}</p>
+    </div>
+    {{else}}
+    <header class="nh-cred-head">
+      <img src="{{actor.img}}" alt="">
+      <div class="nh-cred-who">
+        <span class="nh-cal-kicker">// {{localize "NEONHUB.Cred.Kicker"}}</span>
+        <h2 class="nh-dt-title">{{actor.name}}</h2>
+        {{#if member}}<span class="nh-cred-member"><i class="fa-solid fa-id-badge"></i> {{member.text}}{{#if isGM}} <button type="button" class="nh-cal-icon is-danger" data-action="leave" data-tooltip="{{localize 'NEONHUB.Cred.Leave'}}" aria-label="{{localize 'NEONHUB.Cred.Leave'}}"><i class="fa-solid fa-user-slash"></i></button>{{/if}}</span>{{/if}}
+      </div>
+      <div class="nh-cred-rep" data-tooltip="{{rep.level}}">
+        <span class="nh-cal-kicker">{{localize "NEONHUB.Cred.Rep.Title"}}</span>
+        <div class="nh-cred-rep-row">
+          {{#if isGM}}<button type="button" class="nh-cal-icon" data-action="rep" data-step="-1" aria-label="{{localize 'NEONHUB.Cred.Down'}}"><i class="fa-solid fa-minus"></i></button>{{/if}}
+          <b>{{rep.value}}</b>
+          {{#if isGM}}<button type="button" class="nh-cal-icon" data-action="rep" data-step="1" aria-label="{{localize 'NEONHUB.Cred.Up'}}"><i class="fa-solid fa-plus"></i></button>{{/if}}
+        </div>
+        <div class="nh-cred-rep-rolls">
+          <button type="button" class="nh-cal-btn" data-action="recognize" data-tooltip="{{localize 'NEONHUB.Cred.Rep.RecognizeHint'}}"><i class="fa-solid fa-eye"></i> {{localize "NEONHUB.Cred.Rep.Recognize"}}</button>
+          <button type="button" class="nh-cal-btn" data-action="facedown" data-tooltip="{{localize 'NEONHUB.Cred.Rep.FacedownTip'}}"><i class="fa-solid fa-face-angry"></i> {{localize "NEONHUB.Cred.Rep.Facedown"}}</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="nh-cred-heat {{#if heat.hot}}is-hot{{/if}}">
+      <div class="nh-cred-heat-label">
+        <span class="nh-cal-kicker">{{localize "NEONHUB.Cred.Heat.Title"}}</span>
+        <b>{{heat.value}}</b>
+        <span class="nh-cred-status">{{heat.label}}</span>
+      </div>
+      <div class="nh-cred-bar-wrap">
+        {{#if isGM}}<button type="button" class="nh-cal-icon" data-action="heat" data-step="-1" data-tooltip="{{localize 'NEONHUB.Cred.Heat.Cooler'}}" aria-label="{{localize 'NEONHUB.Cred.Heat.Cooler'}}"><i class="fa-solid fa-minus"></i></button>{{/if}}
+        <div class="nh-cred-bar is-heat" {{#if isGM}}data-action="setBar"{{/if}}><span class="nh-cred-bar-fill is-{{#if heat.hot}}neg{{else}}pos{{/if}}" style="left: {{heat.bar.left}}%; width: {{heat.bar.width}}%"></span><i class="nh-cred-bar-mid"></i></div>
+        {{#if isGM}}<button type="button" class="nh-cal-icon" data-action="heat" data-step="1" data-tooltip="{{localize 'NEONHUB.Cred.Heat.Hotter'}}" aria-label="{{localize 'NEONHUB.Cred.Heat.Hotter'}}"><i class="fa-solid fa-plus"></i></button>
+        <button type="button" class="nh-cal-icon" data-action="heatDeed" data-tooltip="{{localize 'NEONHUB.Cred.Deed.Title'}}" aria-label="{{localize 'NEONHUB.Cred.Deed.Title'}}"><i class="fa-solid fa-scale-balanced"></i></button>{{/if}}
+      </div>
+      <p class="nh-cred-does">{{heat.does}}</p>
+    </div>
+
+    <nav class="nh-cred-tabs">
+      {{#each tabs}}<button type="button" class="{{#if active}}is-active{{/if}}" data-action="tab" data-tab="{{id}}">{{label}}</button>{{/each}}
+    </nav>
+
+    <div class="nh-cred-scroll">
+      {{#if isBoard}}
+      <table class="nh-cred-board">
+        <thead><tr><th></th>{{#each board.people}}<th><img src="{{img}}" alt="" data-tooltip="{{name}}"><span>{{name}}</span></th>{{/each}}</tr></thead>
+        <tbody>
+          {{#each board.rows}}
+          <tr class="{{#if heat}}is-heat{{/if}}"><th>{{name}}</th>{{#each cells}}<td class="is-{{side}} {{#if member}}is-member{{/if}}">{{value}}</td>{{/each}}</tr>
+          {{/each}}
+        </tbody>
+      </table>
+      {{/if}}
+
+      {{#if isFactions}}
+      {{#if isGM}}
+      <div class="nh-cred-tools">
+        <button type="button" class="nh-cal-btn" data-action="newFaction"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Cred.Faction.New"}}</button>
+        <button type="button" class="nh-cal-btn" data-action="resetFactions"><i class="fa-solid fa-rotate"></i> {{localize "NEONHUB.Cred.Faction.Reset"}}</button>
+      </div>
+      {{/if}}
+      <ol class="nh-cred-factions">
+        {{#each factions}}
+        <li class="nh-cred-faction is-{{side}} {{#if isMember}}is-member{{/if}} {{#if hidden}}is-hidden{{/if}}" data-faction="{{id}}">
+          <div class="nh-cred-faction-name">
+            <i class="{{kindIcon}}" data-tooltip="{{kindLabel}}"></i>
+            {{#if entry}}<a data-action="entry" data-uuid="{{entry}}">{{name}}</a>{{else}}<span>{{name}}</span>{{/if}}
+            {{#if hidden}}<i class="fa-solid fa-eye-slash" data-tooltip="{{localize 'NEONHUB.Cred.Faction.HiddenTip'}}"></i>{{/if}}
+            {{#if isMember}}<span class="nh-cal-tag">{{localize "NEONHUB.Cred.Member"}}</span>{{/if}}
+            {{#if cooling}}<button type="button" class="nh-cal-chip is-due" data-action="cool" data-tooltip="{{localize 'NEONHUB.Cred.CoolTip'}}"><i class="fa-solid fa-snowflake"></i> {{localize "NEONHUB.Cred.Cool"}}</button>{{/if}}
+            <small>{{turf}}</small>
+          </div>
+          <div class="nh-cred-bar-wrap">
+            {{#if ../isGM}}<button type="button" class="nh-cal-icon" data-action="standing" data-step="-1" aria-label="{{localize 'NEONHUB.Cred.Down'}}"><i class="fa-solid fa-minus"></i></button>{{/if}}
+            <div class="nh-cred-bar" {{#if ../isGM}}data-action="setBar"{{/if}}><span class="nh-cred-bar-fill is-{{bar.side}}" style="left: {{bar.left}}%; width: {{bar.width}}%"></span><i class="nh-cred-bar-mid"></i></div>
+            {{#if ../isGM}}<button type="button" class="nh-cal-icon" data-action="standing" data-step="1" aria-label="{{localize 'NEONHUB.Cred.Up'}}"><i class="fa-solid fa-plus"></i></button>{{/if}}
+            <b class="nh-cred-value">{{value}}</b>
+          </div>
+          <div class="nh-cred-faction-status">
+            <span class="nh-cred-status">{{status}}</span>
+            {{#if discount}}<span class="nh-cal-tag" data-tooltip="{{localize 'NEONHUB.Cred.DiscountTip'}}">&minus;{{discount}}%</span>{{/if}}
+            <p>{{gets}}{{#if stores}} <em>{{stores}}</em>{{/if}}</p>
+            {{#if rivals}}<small><i class="fa-solid fa-burst"></i> {{localize "NEONHUB.Cred.Rivals"}}: {{rivals}}</small>{{/if}}
+            {{#if contact}}<small><i class="fa-solid fa-handshake"></i> {{localize "NEONHUB.Cred.LastContact"}}: {{contact}}</small>{{/if}}
+          </div>
+          {{#if ../isGM}}
+          <div class="nh-cred-faction-tools">
+            {{#if canJoin}}<button type="button" class="nh-cal-btn nh-cal-btn-primary" data-action="join"><i class="fa-solid fa-user-plus"></i> {{localize "NEONHUB.Cred.JoinShort"}}</button>{{/if}}
+            <button type="button" class="nh-cal-icon" data-action="deed" data-tooltip="{{localize 'NEONHUB.Cred.Deed.Title'}}" aria-label="{{localize 'NEONHUB.Cred.Deed.Title'}}"><i class="fa-solid fa-scale-balanced"></i></button>
+            <button type="button" class="nh-cal-icon" data-action="touch" data-tooltip="{{localize 'NEONHUB.Cred.TouchTip'}}" aria-label="{{localize 'NEONHUB.Cred.TouchTip'}}"><i class="fa-solid fa-handshake"></i></button>
+            <button type="button" class="nh-cal-icon" data-action="editFaction" data-tooltip="{{localize 'NEONHUB.Cred.Faction.Edit'}}" aria-label="{{localize 'NEONHUB.Cred.Faction.Edit'}}"><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="nh-cal-icon is-danger" data-action="removeFaction" data-tooltip="{{localize 'NEONHUB.Cred.Faction.Remove'}}" aria-label="{{localize 'NEONHUB.Cred.Faction.Remove'}}"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          {{/if}}
+        </li>
+        {{else}}
+        <li class="nh-cal-list-empty">{{localize "NEONHUB.Cred.NoFactions"}}</li>
+        {{/each}}
+      </ol>
+      {{/if}}
+
+      {{#if isBonds}}
+      <div class="nh-cred-bonds">
+        {{#if canEditBonds}}
+        <div class="nh-cred-tools">
+          <button type="button" class="nh-cal-btn" data-action="newBond"><i class="fa-solid fa-plus"></i> {{localize "NEONHUB.Cred.Bond.New"}}</button>
+          <span class="hint">{{localize "NEONHUB.Cred.Bond.DropHint"}}</span>
+        </div>
+        {{/if}}
+        <ol class="nh-cred-bond-list">
+          {{#each bonds}}
+          <li class="nh-cred-bond is-{{side}} {{#if hidden}}is-hidden{{/if}}" data-bond="{{id}}">
+            <img src="{{img}}" alt="" {{#if target}}data-action="openTarget" data-uuid="{{target}}"{{/if}}>
+            <div class="nh-cred-bond-body">
+              <div class="nh-cred-bond-head">
+                <b>{{name}}</b>
+                {{#if romance}}<i class="fa-solid fa-heart nh-cred-romance" data-tooltip="{{localize 'NEONHUB.Cred.Bond.Romance'}}"></i>{{/if}}
+                {{#if mutual}}<i class="fa-solid fa-arrows-left-right" data-tooltip="{{localize 'NEONHUB.Cred.Bond.MutualTip'}}"></i>{{/if}}
+                {{#if hidden}}<i class="fa-solid fa-eye-slash" data-tooltip="{{localize 'NEONHUB.Cred.Bond.HiddenTip'}}"></i>{{/if}}
+                <span class="nh-cred-status">{{status}}</span>
+                <b class="nh-cred-value">{{value}}</b>
+              </div>
+              <div class="nh-cred-bar-wrap">
+                {{#if ../canEditBonds}}<button type="button" class="nh-cal-icon" data-action="bondStep" data-step="-1" aria-label="{{localize 'NEONHUB.Cred.Down'}}"><i class="fa-solid fa-minus"></i></button>{{/if}}
+                <div class="nh-cred-bar" {{#if ../isGM}}data-action="setBar"{{/if}}><span class="nh-cred-bar-fill is-{{bar.side}}" style="left: {{bar.left}}%; width: {{bar.width}}%"></span><i class="nh-cred-bar-mid"></i></div>
+                {{#if ../canEditBonds}}<button type="button" class="nh-cal-icon" data-action="bondStep" data-step="1" aria-label="{{localize 'NEONHUB.Cred.Up'}}"><i class="fa-solid fa-plus"></i></button>{{/if}}
+              </div>
+              {{#if tags.length}}<div class="nh-cred-tags">{{#each tags}}<span class="nh-cal-tag">{{this}}</span>{{/each}}</div>{{/if}}
+              {{#if notes}}<p class="nh-cred-notes">{{notes}}</p>{{/if}}
+            </div>
+            {{#if ../canEditBonds}}
+            <div class="nh-cred-bond-tools">
+              <button type="button" class="nh-cal-icon" data-action="editBond" data-tooltip="{{localize 'NEONHUB.Cred.Bond.Edit'}}" aria-label="{{localize 'NEONHUB.Cred.Bond.Edit'}}"><i class="fa-solid fa-pen"></i></button>
+              <button type="button" class="nh-cal-icon is-danger" data-action="removeBond" data-tooltip="{{localize 'NEONHUB.Cred.Bond.Remove'}}" aria-label="{{localize 'NEONHUB.Cred.Bond.Remove'}}"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            {{/if}}
+          </li>
+          {{else}}
+          <li class="nh-cal-list-empty">{{localize "NEONHUB.Cred.Bond.None"}}</li>
+          {{/each}}
+        </ol>
+      </div>
+      {{/if}}
+
+      {{#if isLog}}
+      <ol class="nh-cred-log">
+        {{#each log}}
+        <li><i class="{{icon}}"></i><span>{{what}}{{#if reason}}<small>{{reason}}</small>{{/if}}</span><em>{{when}} &middot; {{by}}</em></li>
+        {{else}}
+        <li class="nh-cal-list-empty">{{localize "NEONHUB.Cred.Log.None"}}</li>
+        {{/each}}
+      </ol>
+      {{/if}}
+    </div>
+    {{/if}}
+  </section>
+</div>

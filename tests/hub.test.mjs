@@ -20,9 +20,9 @@ test("messenger buttons open a known window, inbox by default", () => {
   assert.ok(MESSENGER_VIEWS.admin.gm && !MESSENGER_VIEWS.inbox.gm);
 });
 
-test("messenger, calendar and lifestyle buttons need no target", () => {
+test("messenger, calendar, lifestyle and Street Cred buttons need no target", () => {
   const hub = normalizeHub(defaultHub({
-    buttons: ["messenger", "calendar", "lifestyle"].map((type) => defaultButton({ label: type, action: { type } }))
+    buttons: ["messenger", "calendar", "lifestyle", "cred"].map((type) => defaultButton({ label: type, action: { type } }))
   }));
   assert.deepEqual(validateHub(hub), {});
 });

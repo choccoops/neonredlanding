@@ -1,11 +1,11 @@
-# Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar & Journal for Cyberpunk RED
+# Neon Hub: Landing Pages, Headquarters, Lifestyle, Calendar, Journal & Street Cred for Cyberpunk RED
 
-Five tools for **Cyberpunk RED - CORE** on Foundry VTT:
+Six tools for **Cyberpunk RED - CORE** on Foundry VTT:
 
 - **Hub pages.** Build a clickable landing-page scene in a visual editor. Each button is a
   [Monk's Active Tile Triggers](https://github.com/ironmonk88/monks-active-tiles) tile that takes
   players to a scene, opens a journal or character sheet, opens a Neon Market shop, the crew's
-  Headquarters, Lifestyle, the calendar or Night City Messenger, plays sound, shows an image or
+  Headquarters, Lifestyle, the calendar, Street Cred or Night City Messenger, plays sound, shows an image or
   runs a macro.
 - **Headquarters.** A crew HQ screen built on the *No Place Like Home* rules: HQ IP, the twelve
   Improvements and their Upgrades, the ten Morale Boost levels, rent and access, the Server Room's
@@ -20,6 +20,9 @@ Five tools for **Cyberpunk RED - CORE** on Foundry VTT:
 - **Neon Journal.** Foundry's journals in Neon Hub's style, with a gig tracker (objectives,
   rewards and pay-outs), weekly screamsheets, worldbuilding with a 2070s Worldbook, a journal for
   each character, a story journal for sessions and events, and a log of every downtime.
+- **Street Cred.** Each character's Reputation, Standing with the Free City's gangs, corps and
+  Nomad families, Heat with the NCPD, and relationships, as the 2070s rules run them: joining a
+  gang or corp at +4, rivals, cooling off, and what each Standing gets you.
 
 | Requirement | Version |
 | --- | --- |
@@ -571,6 +574,49 @@ as it stood at the end. Records are kept as they were and are GM-only until show
 Neon Journal records are ordinary text pages with their data attached, and each keeps a
 readable copy in its text, so they read fine in Foundry's own journal and without Neon Hub.
 
+## Street Cred
+
+Who knows you, who likes you and how hot the badge runs, by the *Street Cred* chapter of the
+2070s rules. Open it from **Street Cred** at the top of the Actors sidebar, the **Cred** button on
+a character sheet, or a hub button. The crew is down the left; each character has their
+Reputation, Heat, and tabs for **Factions**, **Relationships** and a **Log** of every change. The
+GM also gets a **Board**: every character against every faction at a glance.
+
+**Reputation (0–10)** is the character's own CPR Reputation, so it's the same number the sheet and
+its ledger show. The GM raises or lowers it with a reason that goes into the ledger. Anyone can
+roll **Recognize** (someone new rolls 1d10: under the Reputation, they've heard of you) or a
+**Facedown** (COOL + Reputation + 1d10) to chat.
+
+**Standing (−10 to +10)** is kept per character and per faction, starting at 0. Each band says
+what it gets you and what the faction's stores sell you, with the discount. The GM moves it with
+**−** and **+**, by clicking along the bar, or with a **deed** (±1, ±2 or ±3, a reason, and
+*enemies of my enemy*: tick the rivals that drop by 1). A character who moves into a new band gets
+a whispered card (turn that off in the settings, or per deed); the GM always gets one.
+- **Joining up.** At +4 a gang will jump them in and a corp will hire them: **Join** makes them a
+  Ganger or an Exec, one gang or one corp at a time. If the character has a *Ganger* or *Exec* role
+  item, its Rank follows their Standing. Below +4 they're patched out (or fired), with a card.
+- **Cooling off.** Standing of +6 or better with no contact for three months (by the crew's
+  calendar) shows **Cooling**: click it to take the 1. The handshake marks contact made today.
+- **Factions.** It starts with the Players' Board: the Old Three and the New Blood gangs, the
+  Scavengers (never above 0), the Aldecaldos and Wraiths, the Afterlife, the corps, MaxTac and
+  Lazarus, each with its turf and rivals. The GM can add factions (booster crews, a Nomad family, a
+  fixer's network), edit them, cap them, hide them from the players, or bring the Board back. A
+  faction with a Worldbook entry of the same name (or the one named on it) links to it.
+
+**Heat (−10 to +10)** is the NCPD's Standing, backwards: positive Heat is notorious, negative Heat is
+goodwill. The bar and the card say what the badge does at each level.
+
+**Relationships** are a character's people: an NPC actor, a Worldbook person, another character, or
+just a name. Drop an actor or a journal entry onto the tab, or click **New relationship**. Each has
+how they feel (−10 to +10, from Arch-Nemesis to Ride or Die), tags, notes and a romance heart. A
+relationship with another player character can be **mutual**, kept the same on both sides. The GM
+can **hide** one (the fixer who's quietly selling them out).
+
+**Who sees what.** Players see their own characters; *players see the whole crew* in the module
+settings shows them everyone's. Standing, Heat and Reputation are the GM's to change; *players edit
+their relationships* lets them keep their own people. Hidden factions and relationships are only
+ever shown to the GM.
+
 ## Night City Messenger
 
 [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) by
@@ -653,6 +699,17 @@ await hub.journal.importWorldbook();              // GM: the 2070s Worldbook int
 await hub.journal.characterJournal(actor);        // a character's journal (made on first use)
 await hub.journal.newChapter("Act One");  // GM: a Story & Events chapter
 await hub.journal.addSession(chapter);    // GM: a numbered session page in it
+hub.cred.open(actor);                   // Street Cred (on a character, or your own)
+hub.cred.show();                        // GM: open it on every connected player's screen
+hub.cred.factions();                    // [{ id, name, kind, turf, rivals, cap, joinable, hidden }]
+hub.cred.standing(actor, "tyger-claws"); // −10..+10
+hub.cred.heat(actor);                   // −10..+10
+hub.cred.member(actor);                 // the faction id they belong to, or null
+hub.cred.relationships(actor);          // [{ id, target, name, value, tags, notes, romance, mutual }]
+await hub.cred.adjust(actor, "tyger-claws", 2, { reason: "Saved a lieutenant", rivals: ["mox"] }); // GM
+await hub.cred.adjustHeat(actor, 1, { reason: "Caught on camera" }); // GM
+await hub.cred.adjustReputation(actor, 1, "Took down a cyberpsycho"); // GM, through the CPR ledger
+await hub.cred.join(actor, "valentinos"); // GM: at +4 Standing or better
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
@@ -684,7 +741,7 @@ players' hover actions only when no GM is connected): its path is in the tile's
 `flags["cpr-neon-hub"].hover`, and each client swaps the tile's texture locally under the pointer. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
 hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle`,
-`cpr-neon-hub.opencalendar` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
+`cpr-neon-hub.opencalendar`, `cpr-neon-hub.opencred` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
 through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openContacts`,
 `openNetworkManagement`, `openAdmin`).
 
@@ -694,7 +751,8 @@ through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openCo
 | --- | --- |
 | Wallet | `system.wealth.value`, `system.wealth.transactions` |
 | Humanity | `system.derivedStats.humanity.value / .max / .transactions`, then `actor.setMaxHumanity()` |
-| Roles | `system.roleInfo.activeRole` and items of type `role` |
+| Roles | `system.roleInfo.activeRole` and items of type `role` (a *Ganger* or *Exec* role's `system.rank` follows Standing) |
+| Reputation | `system.reputation.value`, `system.reputation.transactions` (a ledger) |
 | Ledger lines | `CPR.ledger.increaseSentence` / `decreaseSentence`, reason `"... - <user>"` |
 | Lifestyle items | `gear` items: `system.equipped` (`"equipped"` = active), `system.usage: "equipped"`, `system.amount`, `system.price.market` |
 | Lifestyle fields | `system.lifestyle.housing / lifeStyle / traumaTeam` `.cost` and `.description` |
@@ -705,7 +763,9 @@ Headquarters are stored in a world setting (`cpr-neon-hub.headquarters`), calend
 player's notes in their user's `flags.cpr-neon-hub.calendarNotes`. Hub layouts are stored on
 their scene (`flags.cpr-neon-hub.hub`), so exporting a scene keeps its layout. Planned weather and
 forecasts are in a world setting (`cpr-neon-hub.calendarWeather`), as are the conditions turned
-off (`cpr-neon-hub.weatherOff`); like hidden notes, they reach every client.
+off (`cpr-neon-hub.weatherOff`); like hidden notes, they reach every client. Street Cred's factions,
+Standing, Heat and relationships are in `cpr-neon-hub.streetCred`, which reaches every client too,
+so the GM's hidden factions and relationships are hidden by the window, not secret from a determined player.
 
 **SmallTime.** Read from SmallTime 1.24.0. It keeps the time of day in Foundry's world time
 (`game.time.worldTime`, midnight at every multiple of 86,400 seconds, no offset outside PF2e) and

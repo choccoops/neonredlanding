@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.14.0
+
+- **Street Cred.** A new window for who knows you, who likes you and how hot the badge runs, by the 2070s rules' *Street Cred* chapter. Open it from **Street Cred** in the Actors sidebar, the **Cred** button on a character sheet, or a new hub button action (and Monk's Active Tile Triggers action).
+  - **Reputation** is the character's own CPR Reputation. The GM raises or lowers it through its ledger, and anyone can roll **Recognize** or a **Facedown** to chat.
+  - **Standing** from −10 to +10 with every faction, starting with the Players' Board: the gangs, the Scavengers, the Aldecaldos and Wraiths, the Afterlife, the corps, MaxTac and Lazarus. Each band says what it gets you and what their stores sell you at what discount. The GM moves it with −/+, along the bar, or with a deed (±1/±2/±3 with a reason, and rivals that drop by 1). New bands are whispered to the character's owners.
+  - **Joining up.** At +4 a gang jumps them in or a corp hires them, one at a time; a *Ganger* or *Exec* role item's Rank follows Standing, and below +4 they're patched out. **Cooling off** flags Standing of +6 or better after three months without contact.
+  - **Heat** with the NCPD, the other way round: what the badge does at each level.
+  - **Relationships** with NPCs, Worldbook people or other characters (drop them onto the tab): how they feel from Arch-Nemesis to Ride or Die, tags, notes, romance, mutual with another character, and hidden ones for the GM.
+  - The GM's **Board** shows every character against every faction. Settings: players see the whole crew, players edit their relationships, tell players about changes.
+
 ## 1.13.0
 
 - **The Worldbook, revised to the Night City 2070 setting book.** It grows from 65 entries to 178 and now reads as the Night City of *Cyberpunk: The Unification Era*, just after the Arvin Accord.

@@ -96,6 +96,7 @@ export const BUTTON_ACTIONS = {
   hq: { icon: "fa-solid fa-house-signal", label: "NEONHUB.Action.hq" },
   lifestyle: { icon: "fa-solid fa-wallet", label: "NEONHUB.Action.lifestyle" },
   calendar: { icon: "fa-solid fa-calendar-days", label: "NEONHUB.Action.calendar" },
+  cred: { icon: "fa-solid fa-ranking-star", label: "NEONHUB.Action.cred" },
   messenger: { icon: "fa-solid fa-mobile-screen-button", label: "NEONHUB.Action.messenger" },
   sound: { icon: "fa-solid fa-volume-high", label: "NEONHUB.Action.sound" },
   playlist: { icon: "fa-solid fa-music", label: "NEONHUB.Action.playlist" },

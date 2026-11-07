@@ -25,7 +25,8 @@
       "ownCharacter": "Their own character",
       "lifestyle": "Open Lifestyle",
       "calendar": "Open calendar",
-      "messenger": "Open Night City Messenger"
+      "messenger": "Open Night City Messenger",
+      "cred": "Open Street Cred"
     },
     "Audience": {
       "trigger": "Just the player who clicked",
@@ -83,7 +84,8 @@
       "OpenLifestyle": "Open Lifestyle",
       "OpenCalendar": "Open calendar",
       "OpenMessenger": "Open Night City Messenger",
-      "MessengerView": "Window"
+      "MessengerView": "Window",
+      "OpenCred": "Open Street Cred"
     },
     "Editor": {
       "Title": "Hub page",
@@ -1869,6 +1871,262 @@
         "Body": "What happened",
         "Blank": "Nothing written yet.",
         "Count": "{n} log entries"
+      }
+    },
+    "Cred": {
+      "Title": "Street Cred",
+      "Short": "Cred",
+      "Kicker": "Street Cred",
+      "Crew": "Crew",
+      "NoneTitle": "Nobody yet",
+      "NoneHint": "Street Cred tracks player characters. Give a character a player owner and they'll show up here.",
+      "Up": "Up 1",
+      "Down": "Down 1",
+      "Member": "Member",
+      "Rivals": "Rivals",
+      "LastContact": "Last contact",
+      "Cool": "Cooling",
+      "CoolTip": "Three months out of touch at +6 or better: Standing cools by 1. Click to apply it.",
+      "CoolReason": "Out of touch for three months",
+      "TouchTip": "In touch today: the three months start again",
+      "DiscountTip": "Store discount at this Standing (members' price; non-members pay double after it)",
+      "EnemyReason": "Enemies of my enemy ({name})",
+      "NoFactions": "No factions. Add one, or bring back the Players' Board.",
+      "JoinShort": "Join",
+      "Leave": "Leave the faction",
+      "LeaveBody": "{name} leaves (or is thrown out of) their gang or corp. Their Standing stays where it is.",
+      "Tab": {
+        "factions": "Factions",
+        "bonds": "Relationships",
+        "log": "Log",
+        "board": "Board"
+      },
+      "Kind": {
+        "gang": "Gang",
+        "corp": "Corporation",
+        "nomad": "Nomad family",
+        "other": "Other power"
+      },
+      "MemberOf": {
+        "gang": "Ganger, {name} (Rank {rank})",
+        "corp": "Exec, {name} (Rank {rank})",
+        "nomad": "{name}",
+        "other": "{name}"
+      },
+      "Join": {
+        "gang": "Jump in",
+        "corp": "Hire on",
+        "nomad": "Join",
+        "other": "Join"
+      },
+      "JoinBody": {
+        "gang": "{faction} jumps {name} in. They become a Ganger, with their Standing as their Rank. One gang or one corp at a time.",
+        "corp": "{faction} hires {name}. They become an Exec, with their Standing as their Rank. One gang or one corp at a time.",
+        "nomad": "{name} joins {faction}.",
+        "other": "{name} joins {faction}."
+      },
+      "Settings": {
+        "Crew": "Street Cred: players see the whole crew",
+        "CrewHint": "Players see every player character's Standing, Heat and relationships, not only their own (GM-hidden ones stay hidden).",
+        "Bonds": "Street Cred: players edit their relationships",
+        "BondsHint": "Players can add, change and remove their own characters' relationships. Standing, Heat and Reputation stay with the GM.",
+        "Announce": "Street Cred: tell players about changes",
+        "AnnounceHint": "Whisper a card to a character's owners when their Standing or Heat moves into a new band. The GM always gets one."
+      },
+      "Rep": {
+        "Title": "Reputation",
+        "Recognize": "Recognize",
+        "RecognizeHint": "Someone new rolls 1d10: under your Reputation, they've heard of you.",
+        "Known": "They've heard of {name}.",
+        "Unknown": "Never heard of {name}.",
+        "Facedown": "Facedown",
+        "FacedownTip": "COOL + Reputation + 1d10 against the other side's. The loser backs down or takes −2 against the winner.",
+        "FacedownHint": "COOL {cool} + Reputation {rep} + 1d10. Tie: nothing happens. The loser backs down, or takes −2 to every Check against the winner until they beat them once.",
+        "UpHint": "A new deed beats the current Reputation. It's recorded in the character's Reputation ledger.",
+        "DownHint": "Something uncool replaces it: cowardice, desertion, betraying an ally. It's recorded in the Reputation ledger.",
+        "0": "Nobody's heard of you yet.",
+        "1": "Anyone who was there knows.",
+        "2": "Your immediate friends have heard.",
+        "3": "Co-workers and casual acquaintances know.",
+        "4": "The stories are all over the local area.",
+        "5": "People outside your area know your name.",
+        "6": "People outside your area know you on sight.",
+        "7": "A news story or two has run about you.",
+        "8": "You regularly make the headlines and screamsheets.",
+        "9": "You're always on the screamsheets and N54.",
+        "10": "You're known worldwide."
+      },
+      "Standing": {
+        "legend": "Legend",
+        "made": "Made",
+        "inner": "Inner Circle",
+        "trusted": "Trusted",
+        "friendly": "Friendly",
+        "known": "Known",
+        "nobody": "Nobody",
+        "noticed": "Noticed",
+        "unwelcome": "Unwelcome",
+        "marked": "Marked",
+        "hunted": "Hunted",
+        "kos": "Kill on Sight"
+      },
+      "StandingGets": {
+        "legend": "Leadership treats you as an equal. Once per campaign, the whole faction goes to war for you.",
+        "made": "The boss takes your calls. You sit in on decisions.",
+        "inner": "You meet the leadership. If you aren't a member, their backup answers once per session (as Ganger Backup Rank 4).",
+        "trusted": "Jobs from the inside, with safe passage and shelter on their turf. You may join: jumped in or hired.",
+        "friendly": "No shakedowns. They warn you about trouble.",
+        "known": "They know your face and won't start anything.",
+        "nobody": "Treated like any other civilian on their turf.",
+        "noticed": "Dirty looks. Prices +20% at their places.",
+        "unwelcome": "Refused service. Shaken down on their turf. Their stores are closed to you.",
+        "marked": "Attacked if caught on their turf. Their fixers warn other fixers.",
+        "hunted": "They send hitters: one encounter per session, anywhere in the city.",
+        "kos": "A contract is out on you citywide. Their allies honor it."
+      },
+      "StandingStores": {
+        "legend": "Everything they have, at −30%. Every safehouse, every secret.",
+        "made": "Super Luxury signature gear at −25%. You know where the bodies and the money are.",
+        "inner": "Luxury signature and restricted gear at −20%. Rumors about them come to you.",
+        "trusted": "Their stores sell up to Very Expensive at −10%. You know who runs what.",
+        "friendly": "Their fixers and stores deal with you up to Expensive, at market.",
+        "known": "Street goods (up to Premium) at market."
+      },
+      "Heat": {
+        "Title": "Heat",
+        "Short": "Heat (NCPD)",
+        "Hotter": "Hotter (+1)",
+        "Cooler": "Cooler (−1)",
+        "enemy": "Public Enemy",
+        "mostWanted": "Most Wanted",
+        "wanted": "Wanted",
+        "interest": "Person of Interest",
+        "flagged": "Flagged",
+        "citizen": "Citizen",
+        "clean": "Clean",
+        "friend": "Friend of the Badge",
+        "asset": "Asset",
+        "partner": "Partner",
+        "untouchable": "Untouchable"
+      },
+      "HeatDoes": {
+        "enemy": "Shoot-on-sight order. Every Security Code in the city counts as 2 higher against you.",
+        "mostWanted": "Bounty posted (500eb × Reputation). Responses are always Hardened. MaxTac comes if you show cyberpsychosis.",
+        "wanted": "Active warrant. Patrols engage on sight. Fixers charge you 10% more in bribes.",
+        "interest": "Brought in for questioning when found. Your ID pings when scanned.",
+        "flagged": "Stop-and-frisk when a patrol sees you in a district with SC 5+.",
+        "citizen": "Business as usual, for better or worse.",
+        "clean": "Your name comes back with nothing interesting.",
+        "friend": "Warnings instead of citations. Stops end with a nod.",
+        "asset": "Petty crimes ignored if no cop was hurt. Call NCPD backup once per session (4 beat cops, arriving as Ganger Backup does).",
+        "partner": "Once a month, one moderate crime goes away. Tip-offs about raids and investigations that touch you.",
+        "untouchable": "Once a month, one major crime disappears. Patrols wave you through."
+      },
+      "Deed": {
+        "Title": "A deed",
+        "Way": "Which way",
+        "Up": "Up (in their favor)",
+        "Down": "Down (against them)",
+        "Size": "How big",
+        "Size1": "±1: a job, a favor, an insult, a dead soldier",
+        "Size2": "±2: something big (saving a lieutenant, burning a warehouse)",
+        "Size3": "±3: something legendary (killing their boss, saving their turf)",
+        "Reason": "What happened",
+        "ReasonPlaceholder": "Pulled a Claws lieutenant out of a Mox ambush",
+        "Rivals": "Enemies of my enemy",
+        "RivalsHint": "Each rival ticked drops by 1.",
+        "Tell": "Tell the player when it changes their band",
+        "Apply": "Apply"
+      },
+      "Bond": {
+        "New": "New relationship",
+        "Edit": "Edit relationship",
+        "Remove": "Remove relationship",
+        "RemoveBody": "Remove the relationship with {name}?",
+        "Name": "Who",
+        "Value": "How they feel (−10 to +10)",
+        "Tags": "Tags",
+        "TagsPlaceholder": "fixer, Afterlife, owes us",
+        "Notes": "Notes",
+        "Romance": "Romance",
+        "Mutual": "Mutual: mirror it on their side",
+        "MutualTip": "Mutual: the same on both sides",
+        "Hidden": "Hidden from the players",
+        "HiddenTip": "Only the GM sees this",
+        "DropHint": "Drop an actor or a journal entry here to start a relationship with them.",
+        "Already": "There's already a relationship with {name}.",
+        "None": "No relationships yet.",
+        "Band": {
+          "rideOrDie": "Ride or Die",
+          "family": "Family",
+          "ally": "Ally",
+          "friend": "Friend",
+          "acquaintance": "Acquaintance",
+          "neutral": "Neutral",
+          "irritant": "Irritant",
+          "rival": "Rival",
+          "adversary": "Adversary",
+          "nemesis": "Nemesis",
+          "archNemesis": "Arch-Nemesis"
+        }
+      },
+      "Faction": {
+        "New": "New faction",
+        "Edit": "Edit faction",
+        "Remove": "Remove faction",
+        "RemoveBody": "Remove {name}? Every character's Standing with them goes too.",
+        "Reset": "Players' Board",
+        "ResetBody": "Bring back the Players' Board's factions? Factions you added are removed; Standing with the ones that stay is kept.",
+        "Name": "Name",
+        "Kind": "Kind",
+        "Turf": "Turf",
+        "Entry": "Worldbook entry",
+        "EntryPlaceholder": "When it isn't named the same",
+        "Cap": "Highest Standing",
+        "Joinable": "Can be joined at +4 (gangs and corps)",
+        "Hidden": "Hidden from the players",
+        "HiddenTip": "Only the GM sees this faction",
+        "Rivals": "Rivals"
+      },
+      "Card": {
+        "CanJoin": {
+          "gang": "{name} would jump them in.",
+          "corp": "{name} would hire them.",
+          "nomad": "",
+          "other": ""
+        },
+        "In": {
+          "gang": "Jumped in: {name}",
+          "corp": "Hired: {name}",
+          "nomad": "Joined: {name}",
+          "other": "Joined: {name}"
+        },
+        "InBody": {
+          "gang": "{name} is a Ganger now, Rank {rank}. Their Rank follows their Standing.",
+          "corp": "{name} is an Exec now, Rank {rank}. Their Rank follows their Standing.",
+          "nomad": "{name} rides with them now.",
+          "other": "{name} is one of them now."
+        },
+        "Out": {
+          "gang": "Patched out: {name}",
+          "corp": "Fired: {name}",
+          "nomad": "Out: {name}",
+          "other": "Out: {name}"
+        },
+        "OutBody": "{name}'s Standing with {faction} fell to {value}, below +4. They lose the Role and everything it gave them."
+      },
+      "Log": {
+        "Join": "Joined {name}",
+        "Leave": "Left {name}",
+        "None": "Nothing's changed yet."
+      },
+      "Error": {
+        "NoFaction": "No such faction.",
+        "NoName": "Give it a name.",
+        "NotJoinable": "{name} doesn't take members.",
+        "OneOnly": "One gang or one corp at a time.",
+        "Already": "Already a member of {name}.",
+        "TooLow": "Standing {at} or better to join {name}."
       }
     }
   }

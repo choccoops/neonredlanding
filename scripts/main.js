@@ -35,6 +35,8 @@ import { Records } from "./journal/records.js";
 import { JournalStore } from "./journal/journal-store.js";
 import { ScreamOps } from "./journal/scream-ops.js";
 import { WorldOps } from "./journal/world-ops.js";
+import { CredStore } from "./cred/cred-store.js";
+import { CredApp } from "./cred/cred-app.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -60,6 +62,7 @@ Hooks.once("init", () => {
   Downtime.register();
   JournalTakeover.register();
   ScreamOps.register();
+  CredStore.register();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -81,7 +84,8 @@ Hooks.once("init", () => {
     `${TEMPLATE_PATH}/journal/scream.hbs`,
     `${TEMPLATE_PATH}/journal/lore.hbs`,
     `${TEMPLATE_PATH}/journal/profile.hbs`,
-    `${TEMPLATE_PATH}/journal/diary.hbs`
+    `${TEMPLATE_PATH}/journal/diary.hbs`,
+    `${TEMPLATE_PATH}/cred/cred.hbs`
   ]);
 
   game.modules.get(MODULE_ID).api = {
@@ -234,10 +238,32 @@ Hooks.once("init", () => {
       addSession: (entry) => Records.addSession(entry)
     },
 
+    /**
+     * Street Cred (Core Rules ch.14): Reputation, faction Standing (−10..+10), NCPD Heat and relationships.
+     * open(actor): the window; standing(actor, factionId), heat(actor), member(actor): read; factions(): the list;
+     * adjust(actor, factionId, delta, { reason, set, rivals, tell }), adjustHeat(actor, delta, { reason, set, tell }),
+     * adjustReputation(actor, delta, reason), join(actor, factionId), leave(actor): the GM's.
+     * Hook on every client: cpr-neon-hub.credChanged.
+     */
+    cred: {
+      open: (actor = null) => CredApp.open(actor),
+      show: (actor = null, userIds = null) => HubSocket.emit("openCred", { actor: typeof actor === "string" ? actor : actor?.uuid ?? null }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
+      factions: () => CredStore.factions(),
+      standing: (actor, factionId) => CredStore.standing(actor, factionId),
+      heat: (actor) => CredStore.heat(actor),
+      member: (actor) => CredStore.person(actor).member,
+      relationships: (actor) => CredStore.person(actor).bonds.filter((b) => game.user.isGM || !b.hidden),
+      adjust: (actor, factionId, delta, options) => CredStore.adjust(actor, factionId, delta, options),
+      adjustHeat: (actor, delta, options) => CredStore.adjustHeat(actor, delta, options),
+      adjustReputation: async (actor, delta, reason) => CredStore.adjustReputation(typeof actor === "string" ? await fromUuid(actor) : actor, delta, reason),
+      join: async (actor, factionId) => CredStore.join(typeof actor === "string" ? await fromUuid(actor) : actor, factionId),
+      leave: async (actor) => CredStore.leave(typeof actor === "string" ? await fromUuid(actor) : actor)
+    },
+
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
     hoverStatus: () => HubHover.status(),
 
-    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp, NeonJournal }
+    apps: { HubEditor, HQApp, LifestyleApp, LifestyleItemConfig, CalendarApp, SkipTimeApp, NeonJournal, CredApp }
   };
 });
 
@@ -250,12 +276,14 @@ Hooks.once("ready", () => {
   HubSocket.on("openLifestyle", () => LifestyleApp.open());
   HubSocket.on("openCalendar", () => CalendarApp.open());
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
+  HubSocket.on("openCred", ({ actor }) => CredApp.open(actor));
   SkipTimeApp.registerSocket();
   HouseholdOps.init();
   Downtime.init();
   DowntimeVoteApp.registerSocket();
   ScreamOps.init();
   WorldOps.init();
+  CredStore.init();
   calendarSnapshot = CalendarStore.all();
   if (game.user.isGM) LifestyleOps.adoptCalendars().catch((err) => console.warn(`${MODULE_ID} | lifestyle calendar adoption failed`, err));
   if (game.user.isGM) WeatherStore.maintain().catch((err) => console.warn(`${MODULE_ID} | weather upkeep failed`, err));
@@ -274,6 +302,7 @@ Hooks.on(`${MODULE_ID}.hqChanged`, () => {
   LifestyleApp.refresh();
 });
 Hooks.on(`${MODULE_ID}.lifestyleChanged`, () => LifestyleApp.refresh());
+Hooks.on(`${MODULE_ID}.credChanged`, () => CredApp.refresh());
 Hooks.on(`${MODULE_ID}.lifestyleEraChanged`, () => LifestyleApp.refresh({ catalog: true }));
 
 /* ------------------------------------------ */
@@ -357,6 +386,8 @@ Hooks.on("renderSceneControls", (app, html) => {
 Hooks.on("updateActor", (actor) => {
   for (const app of HQApp.instances.values()) if (app.hq?.crew.includes(actor.uuid)) app.render();
   LifestyleApp.refreshFor(actor);
+  // Reputation lives on the character; Street Cred shows it.
+  if (actor.type === "character") CredApp.refresh();
 });
 
 /* ------------------------------------------ */
@@ -429,6 +460,9 @@ Hooks.on("renderActorDirectory", (app, html) => {
   if (game.user.isGM || LifestyleStore.viewable().length) {
     addHeaderButton(html, { cls: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", label: L("NEONHUB.Lifestyle.Title"), onClick: () => LifestyleApp.open() });
   }
+  if (game.user.isGM || CredStore.characters().length) {
+    addHeaderButton(html, { cls: "neon-hub-cred", icon: "fa-solid fa-ranking-star", label: L("NEONHUB.Cred.Title"), onClick: () => CredApp.open() });
+  }
 });
 
 /* ------------------------------------------ */
@@ -442,6 +476,7 @@ const lifestyleForItem = (item) => game.user.isGM && item?.type === "gear";
 Hooks.on("getActorSheetHeaderButtons", (sheet, buttons) => {
   const actor = sheet.actor ?? sheet.document;
   if (!lifestyleForActor(actor)) return;
+  buttons.unshift({ label: "NEONHUB.Cred.Short", class: "neon-hub-cred", icon: "fa-solid fa-ranking-star", onclick: () => CredApp.open(actor) });
   buttons.unshift({ label: "NEONHUB.Lifestyle.Title", class: "neon-hub-lifestyle", icon: "fa-solid fa-wallet", onclick: () => LifestyleApp.open(actor) });
 });
 Hooks.on("getItemSheetHeaderButtons", (sheet, buttons) => {
@@ -452,6 +487,7 @@ Hooks.on("getItemSheetHeaderButtons", (sheet, buttons) => {
 // Application V2 sheets (a later CPR release on Foundry v13+).
 Hooks.on("getHeaderControlsActorSheetV2", (sheet, controls) => {
   if (!lifestyleForActor(sheet.document)) return;
+  controls.unshift({ label: "NEONHUB.Cred.Short", icon: "fa-solid fa-ranking-star", action: "neonHubCred", onClick: () => CredApp.open(sheet.document) });
   controls.unshift({ label: "NEONHUB.Lifestyle.Title", icon: "fa-solid fa-wallet", action: "neonHubLifestyle", onClick: () => LifestyleApp.open(sheet.document) });
 });
 Hooks.on("getHeaderControlsItemSheetV2", (sheet, controls) => {

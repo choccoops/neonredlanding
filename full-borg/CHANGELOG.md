@@ -2,6 +2,14 @@
 
 Neon Hub: Full Borg is released with Neon Hub, at the same version.
 
+## 1.17.1
+
+- **The Skydrivers and the CyberConductor now follow the Item Compendium.** The book now prints both, and Neon Hub uses its rows instead of its own entries:
+  - the **Rocklin Augmentics Skydrivers** cost 1,000eb, like the Wyzard Romanova Cyberlegs;
+  - the **Integrated Zetatech CyberConductor**'s program swap is once per Round, since a Program activates only once per Round.
+
+  The Phoenix Security Unit and the Sage bodies carry the new text too.
+
 ## 1.17.0
 
 - **First release.** The 2070 Item Compendium's Full Body Conversions:

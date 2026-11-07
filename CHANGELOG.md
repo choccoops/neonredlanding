@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.17.1
+
+- **The Skydrivers and the CyberConductor now follow the Item Compendium.** The book now prints both, and Neon Hub uses its rows instead of its own entries:
+  - the **Rocklin Augmentics Skydrivers** cost 1,000eb, like the Wyzard Romanova Cyberlegs;
+  - the **Integrated Zetatech CyberConductor**'s program swap is once per Round, since a Program activates only once per Round.
+
+  The Phoenix Security Unit and the Sage bodies carry the new text too.
+
 ## 1.17.0
 
 - **Neon Hub: Full Borg**, a new companion module in the same repository and release. It brings the Item Compendium's 25 Full Body Conversions, each built on the sheet with its free chassis and chrome installed. A package item for each body can be sold in shops. **Go Metal** (GM) moves a character into a body: it uninstalls the old chrome, adds a Biosystem, doubles the Internal and External Body slots and rolls the package's Humanity Loss once. It can also switch bodies or leave one. Install it from `releases/latest/download/cpr-neon-full-borg.json`.

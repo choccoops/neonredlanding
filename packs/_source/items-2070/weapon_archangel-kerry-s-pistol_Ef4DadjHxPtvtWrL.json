@@ -1,0 +1,121 @@
+{
+  "_id": "Ef4DadjHxPtvtWrL",
+  "_key": "!items!Ef4DadjHxPtvtWrL",
+  "name": "Archangel (Kerry’s Pistol)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+  "folder": "omH0UH8JclEl4th8",
+  "sort": 1780,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "vHeavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 6,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "vHeavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No capacity attachments. Autofire uses 3 rounds instead of 10. With one hand free, reload by giving up your Move Action. A random Critical Injury also hits the victim with EMP ammo's effect. Damage dice that land on 1 are rerolled until they don't. Worn openly, +2 Wardrobe &amp; Style.</p><p><strong>Class:</strong> Iconic EQ Very Heavy Pistol • POWER<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "PBz2eeAxJFhV3ZU6",
+      "_key": "!items.effects!Ef4DadjHxPtvtWrL.PBz2eeAxJFhV3ZU6",
+      "name": "Archangel (Kerry’s Pistol)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

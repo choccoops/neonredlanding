@@ -1,0 +1,81 @@
+{
+  "_id": "XRGYgMqnyvTasEJY",
+  "_key": "!items!XRGYgMqnyvTasEJY",
+  "name": "Militech M-30 Artemis",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "KO5skweYhCjsV27C",
+  "sort": 1260,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 1,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Longbow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 7500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Charged, it sees outlines through and fires through one layer of Thin or Thick cover. Aimed Shots deal +1d6 (6d6).</p><p><strong>Class:</strong> Excellent Quality Crossbow • TECH<br><strong>Range table:</strong> Longbow<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Long Limbs, Magrail Kit (w/ C-Thru, Headtoll), Smart Scope [w/ Opti-Zoom &amp; Stalker Optics], Reinforced String, Sling, TUp (Optimized Rebuild [-1 Slot]) Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

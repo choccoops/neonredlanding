@@ -1,0 +1,81 @@
+{
+  "_id": "aYeFQIibY1NhFLsu",
+  "_key": "!items!aYeFQIibY1NhFLsu",
+  "name": "Militech EX-76 EarthBreaker",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+  "folder": "BOyDf6LaghuZfnzI",
+  "sort": 1700,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "grenadeLauncher",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "8d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 32,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "grenade"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Grenade Launcher",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 0
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its magazine takes any number of ammo types at once; pick one each shot.</p><p><strong>Class:</strong> EQ Rocket Launcher • SMART<br><strong>Range table:</strong> Grenade Launcher / Missile Launcher<br><strong>Damage:</strong> 8d6<br><strong>Built-in:</strong> Smart Rebuild, TUp (Swap barrels as half of a ROF 2 Action) Telescopic Barrel (w/ Short Tube &amp; Long Tube)</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

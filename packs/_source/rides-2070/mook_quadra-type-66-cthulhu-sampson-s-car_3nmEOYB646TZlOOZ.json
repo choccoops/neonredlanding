@@ -1,0 +1,138 @@
+{
+  "_id": "3nmEOYB646TZlOOZ",
+  "_key": "!actors!3nmEOYB646TZlOOZ",
+  "name": "Quadra Type-66 “Cthulhu” (Sampson’s Car)",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "fRqK01L53BK8wVuy",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 60
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Iconic High Performance Groundcar.</em> Upgrades: Bulletproof Glass, Crash Control System, TUp (Turbocharged) Improved Engine, TUp (+1 SP) Light Armored Chassis, TUp (Does not require an Action to activate) NOS [x2], Reinforced Tires, Security Upgrade (Simple). Also: TUp (Improved) Racing Tires. Racing tires: +2 to Maneuvers on pavement. Basic driving needs Drive Land Vehicle Skill Base 16; otherwise spend an Action each Turn you drive on DV15 Drive Land Vehicle to keep control.</p><p><strong>Cost:</strong> Super Luxury • DV29 - 30,000eb - 6 Months<br><strong>Nomad:</strong> 7<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 11<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 60<br><strong>Speed:</strong> 300 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "Plu3dfoe42X1EMdP",
+      "name": "Quadra Type-66 “Cthulhu” (Sampson’s Car) Armor (SP11)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!3nmEOYB646TZlOOZ.Plu3dfoe42X1EMdP"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Quadra Type-66 “Cthulhu” (Sampson’s Car)",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "S3auu354mY7KgCOG",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "uYhSdZa628y0Bi5A",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 15,
+          "glassHp": 15,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "7",
+        "cost": "Super Luxury • DV29 - 30,000eb - 6 Months"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

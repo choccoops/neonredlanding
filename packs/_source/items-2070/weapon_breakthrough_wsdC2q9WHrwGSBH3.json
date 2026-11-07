@@ -1,0 +1,81 @@
+{
+  "_id": "wsdC2q9WHrwGSBH3",
+  "_key": "!items!wsdC2q9WHrwGSBH3",
+  "name": "Breakthrough",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "IZDSmNcXKpnU9WmN",
+  "sort": 2320,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 4,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Sniper Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own tungsten rounds (50eb each, this gun only), which ablate 2 extra SP. Its Tech scope sees outlines through one layer of Thin or Thick cover, and it fires through Thin and Thick cover charged or not, halving SP only when charged. Charged: Aimed Shots deal +1d6 (7d6) and it fires through any number of walls (a small building), though its scope only sees through two layers of Thin or one of Thick. Shots through cover can still be Power ricochets off surfaces beyond it.</p><p><strong>Class:</strong> Iconic EQ Sniper Rifle • TECH<br><strong>Range table:</strong> Sniper Rifle<br><strong>Damage:</strong> 6d6<br><strong>Built-in:</strong> Sniper Rifle Rechamber, Sniping Scope, Tech Rebuild<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,1052 @@
+{
+  "_id": "CRYYM5RJ5e347avD",
+  "_key": "!actors!CRYYM5RJ5e347avD",
+  "name": "Orbital Air Neo Spider",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "ZvXrSxbJyiqWhIfU",
+  "system": {
+    "stats": {
+      "body": {
+        "value": 12
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 25,
+        "max": 25
+      }
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [
+        "VueApsBysTURW6Am",
+        "SPXvgPq7P0G8vaYA",
+        "2UzKo5HV3LX6XxFj",
+        "VM81K0uQ6uMCj9eY"
+      ]
+    },
+    "information": {
+      "description": "<p><em>The highrider revolts cost Orbital Air its dominance, but nobody builds better armor for vacuum. The Neo Spider is a cost-cut version of older models, sold mostly to highrider stations and to anyone else with deep enough pockets. Orbital Air denies the rumors of cloaking and netrunning variants.</em></p><p><strong>Cost:</strong> 44,124eb (Luxury)<br><strong>Frame / Shell:</strong> Sigma / TUp (+1 MOVE) Hybrid Metalgear®<br><strong>Stats:</strong> 25 HP • 16 SP • BODY 12<br><strong>Onboard weapons:</strong> Malorian Arms 3570 Hailstorm w/ Short Barrel ×2, Militech M-156E Laramie w/ Long Tube ×2, Kendachi M-35 Mono-Wakizashi<br><strong>Onboard cyberware:</strong> Low Light/Infrared/UV, Radio Communicator, Targeting Scope, Zero Gravity Thrusters</p><p>One pilot. The suit's stats modify the pilot's; see the Item Compendium, Power Armor.</p><p><small>Item Compendium (2070) • Power Armor</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "Uwt7pBdvjMkotD8b",
+      "name": "Orbital Air Neo Spider Armor (SP16)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 16,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 16,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!CRYYM5RJ5e347avD.Uwt7pBdvjMkotD8b"
+    },
+    {
+      "_id": "ChzsvK3x1HhRTd7j",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.ChzsvK3x1HhRTd7j",
+      "name": "Malorian Arms 3570 Hailstorm",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+      "system": {
+        "weaponSkill": "Handgun",
+        "weaponType": "heavySmg",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "3d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 25,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "heavyPistol"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 4,
+          "suppressiveFire": true
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Subcompact SMG",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 5000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "sISZupmlBj6D5tiW"
+          ],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Fires only its own caseless Armor-Piercing flechettes (priced as AP), which ablate armor by 4 instead of 1.</p><p><em>Malorian's flechette SMG, redrawn for the Neuroport and still ahead of the armor.</em></p><p><strong>Class:</strong> EQ Exotic Heavy SMG • SMART<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 3d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "0KEgoZTHcpTrMuud"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "sISZupmlBj6D5tiW",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.sISZupmlBj6D5tiW",
+      "name": "Range Table Modification (Short Barrel)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "h0tkJh4OM8ZmwdLr",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.h0tkJh4OM8ZmwdLr",
+      "name": "Malorian Arms 3570 Hailstorm",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+      "system": {
+        "weaponSkill": "Handgun",
+        "weaponType": "heavySmg",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "3d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 25,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "heavyPistol"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 4,
+          "suppressiveFire": true
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Subcompact SMG",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 5000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "j55yHvyqGgU2cIx8"
+          ],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Fires only its own caseless Armor-Piercing flechettes (priced as AP), which ablate armor by 4 instead of 1.</p><p><em>Malorian's flechette SMG, redrawn for the Neuroport and still ahead of the armor.</em></p><p><strong>Class:</strong> EQ Exotic Heavy SMG • SMART<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 3d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "0KEgoZTHcpTrMuud"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "j55yHvyqGgU2cIx8",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.j55yHvyqGgU2cIx8",
+      "name": "Range Table Modification (Short Barrel)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "lmk9sP3eBXNObNQ7",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.lmk9sP3eBXNObNQ7",
+      "name": "Militech M-156E Laramie",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+      "system": {
+        "weaponSkill": "Heavy Weapons",
+        "weaponType": "grenadeLauncher",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 2,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 4,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Missile Launcher",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 5000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "DFr6E8eIeXd73FhZ"
+          ],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Fires all Grenade ammunition. Two Reload Actions to reload. Requires BODY 11+ unless mounted. A Nomad can take one when they first install a Vehicle Heavy Weapon Mount.</p><p><em>A revolving launcher for squads who want the room empty before they enter it.</em></p><p><strong>Class:</strong> Exotic Grenade Launcher • POWER<br><strong>Range table:</strong> Grenade Launcher<br><strong>Damage:</strong> 6d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "0KEgoZTHcpTrMuud"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "DFr6E8eIeXd73FhZ",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.DFr6E8eIeXd73FhZ",
+      "name": "Range Table Modification (Long Tube)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "VHnnUKgUyCON0LEf",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.VHnnUKgUyCON0LEf",
+      "name": "Militech M-156E Laramie",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+      "system": {
+        "weaponSkill": "Heavy Weapons",
+        "weaponType": "grenadeLauncher",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 2,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 4,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Missile Launcher",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 5000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "XgvVlUi2SJVDJ72N"
+          ],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Fires all Grenade ammunition. Two Reload Actions to reload. Requires BODY 11+ unless mounted. A Nomad can take one when they first install a Vehicle Heavy Weapon Mount.</p><p><em>A revolving launcher for squads who want the room empty before they enter it.</em></p><p><strong>Class:</strong> Exotic Grenade Launcher • POWER<br><strong>Range table:</strong> Grenade Launcher<br><strong>Damage:</strong> 6d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "0KEgoZTHcpTrMuud"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "XgvVlUi2SJVDJ72N",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.XgvVlUi2SJVDJ72N",
+      "name": "Range Table Modification (Long Tube)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "muzoxzv3Hm1IoLtP",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.muzoxzv3Hm1IoLtP",
+      "name": "Kendachi M-35 Mono-Wakizashi",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "system": {
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 1000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>With the biometric key: ignores armor under SP7. It hisses like a mantis.</p><p><em>The sensible monoblade: fits indoors, in a car, in a crowd.</em></p><p><strong>Class:</strong> One-handed Exotic Heavy Melee<br><strong>Damage:</strong> 3d6</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "0KEgoZTHcpTrMuud"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "VueApsBysTURW6Am",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.VueApsBysTURW6Am",
+      "name": "Low Light / Infrared / UV",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. Darkness, smoke and fog penalties drop to 0. Tells warm bodies from cold metal; can't see through cover.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "SPXvgPq7P0G8vaYA",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.SPXvgPq7P0G8vaYA",
+      "name": "Radio Communicator (implant)",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberAudioSuite",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 2,
+          "roll": "1d6/2"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>A radio in your skull: talk to anyone on your frequency within 1 mile.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 2 (1d6/2)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "2UzKo5HV3LX6XxFj",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.2UzKo5HV3LX6XxFj",
+      "name": "Targeting Scope",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>+1 to Aimed Shots. Doesn't stack.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "3KZoiKK1g9w8Ber2",
+          "_key": "!actors.items.effects!CRYYM5RJ5e347avD.2UzKo5HV3LX6XxFj.3KZoiKK1g9w8Ber2",
+          "name": "Targeting Scope",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.aimedShot",
+              "mode": 2,
+              "value": "1",
+              "priority": null
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "combat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "VM81K0uQ6uMCj9eY",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.VM81K0uQ6uMCj9eY",
+      "name": "Zero Gravity Thrusters",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. No zero-g movement penalties. Fuel 100eb per 24 hours.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Orbital Air Neo Spider",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "0KEgoZTHcpTrMuud",
+          "name": "Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion, Athletics, Brawling, Melee Weapon, Heavy Weapons",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "acpa2070": {
+        "cost": "44,124eb (Luxury)",
+        "frame": "Sigma / TUp (+1 MOVE) Hybrid Metalgear®"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

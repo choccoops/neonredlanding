@@ -1,0 +1,144 @@
+{
+  "_id": "RSjKGz3qwqOrVSeC",
+  "_key": "!items!RSjKGz3qwqOrVSeC",
+  "name": "Jitterbug",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 14070,
+  "system": {
+    "price": {
+      "market": 1000
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>Mixed drug (Core Rules, Chapter 08). Exotic. 1h: +4 Melee, Evasion, Dance; −1 COOL, Stealth, Ranged; can't stand still. DV17: Move or Action each Turn unless dosed.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "wzkpyNSJEbF1ycra",
+      "_key": "!items.effects!RSjKGz3qwqOrVSeC.wzkpyNSJEbF1ycra",
+      "name": "Jitterbug",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        },
+        {
+          "key": "bonuses.evasion",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        },
+        {
+          "key": "bonuses.melee",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        },
+        {
+          "key": "bonuses.ranged",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.stealth",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        },
+        {
+          "key": "system.stats.cool.value",
+          "mode": 2,
+          "value": "-1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "combat",
+              "3": "combat",
+              "4": "skill",
+              "5": "stat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

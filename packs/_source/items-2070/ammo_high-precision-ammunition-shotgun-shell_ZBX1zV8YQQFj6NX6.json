@@ -1,0 +1,60 @@
+{
+  "_id": "ZBX1zV8YQQFj6NX6",
+  "_key": "!items!ZBX1zV8YQQFj6NX6",
+  "name": "High Precision Ammunition (Shotgun Shell)",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+  "folder": "4bVCa1Ea8VQyABKL",
+  "sort": 3910,
+  "system": {
+    "variety": "shotgunShell",
+    "type": "basic",
+    "amount": 10,
+    "price": {
+      "market": 40
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 0,
+        "mode": "none",
+        "value": 0
+      },
+      "damage": {
+        "minimum": "",
+        "mode": "none",
+        "value": ""
+      }
+    },
+    "description": {
+      "value": "<p>Arrows, Bullets, Slugs, Shells. Needs weapon Skill Level 7+ or Combat Awareness 1+. Qualified users get +1 to Single Shot attacks and +2 to Aimed Shots.</p><p><strong>Cost:</strong> 40eb (Costly) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

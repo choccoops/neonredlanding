@@ -1,0 +1,81 @@
+{
+  "_id": "Xrr437ZTLtzkK7Uw",
+  "_key": "!items!Xrr437ZTLtzkK7Uw",
+  "name": "Darra Polytechnic Wasp",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "KO5skweYhCjsV27C",
+  "sort": 1300,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "3d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 5,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Shortbow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its five-arrow cassette cocks itself, so it fires one-handed from a full load. A new cassette is a Reload Action. One arrow type per cassette.</p><p><em>Darra's answer to the holdout pistol, sold to people who'd rather not be heard using one.</em></p><p><strong>Class:</strong> One-Handed Crossbow • SMART<br><strong>Range table:</strong> Shortbow<br><strong>Damage:</strong> 3d6<br><strong>Built-in:</strong> Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

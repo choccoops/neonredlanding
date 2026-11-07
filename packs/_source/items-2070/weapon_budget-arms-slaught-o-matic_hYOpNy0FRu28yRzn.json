@@ -1,0 +1,81 @@
+{
+  "_id": "hYOpNy0FRu28yRzn",
+  "_key": "!items!hYOpNy0FRu28yRzn",
+  "name": "Budget Arms Slaught-O-Matic",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG_poor.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 410,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 36,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 3,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Subcompact SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Comes loaded with 36 Basic rounds. Removing or replacing them destroys it beyond repair.</p><p><strong>Class:</strong> Poor Quality SMG • POWER<br><strong>Range table:</strong> Subcompact SMG<br><strong>Damage:</strong> 2d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 3), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

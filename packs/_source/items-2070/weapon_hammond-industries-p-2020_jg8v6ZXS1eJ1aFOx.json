@@ -1,0 +1,81 @@
+{
+  "_id": "jg8v6ZXS1eJ1aFOx",
+  "_key": "!items!jg8v6ZXS1eJ1aFOx",
+  "name": "Hammond Industries P-2020",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "NEzpeSziile1ptet",
+  "sort": 110,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "medPistol",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "2d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 12,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1100
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Aimed Shots deal +1d6 (3d6). On a Single Shot you can fire 2 rounds at −2 to hit for +2 damage before armor. No Solenoid Mechanism.</p><p><strong>Class:</strong> Excellent Quality Medium Pistol • POWER<br><strong>Range table:</strong> Pistol<br><strong>Damage:</strong> 2d6<br><strong>Built-in:</strong> Binary Trigger, Smartgun Link, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

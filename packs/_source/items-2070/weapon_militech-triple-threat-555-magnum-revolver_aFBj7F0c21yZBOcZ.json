@@ -1,0 +1,81 @@
+{
+  "_id": "aFBj7F0c21yZBOcZ",
+  "_key": "!items!aFBj7F0c21yZBOcZ",
+  "name": "Militech \"Triple Threat\" .555 Magnum Revolver",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+  "folder": "NEzpeSziile1ptet",
+  "sort": 200,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "vHeavyPistol",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 6,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "vHeavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Pistol",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 7500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>No capacity attachments. Three 6-round cylinders, each with its own ammo type (reloaded separately); pick one each shot. Autofire fires 2 from each (6), applying each ammo's effect. BODY 10+ or a cyberarm unless mounted.</p><p><strong>Class:</strong> EQ Very Heavy Pistol • POWER<br><strong>Range table:</strong> Long Barrel Pistol<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (Machine Pistol 4), Suppressive Fire<br><strong>Built-in:</strong> Infrared Nightvision Scope, Pistol Autosear, Pistol Long Barrel, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

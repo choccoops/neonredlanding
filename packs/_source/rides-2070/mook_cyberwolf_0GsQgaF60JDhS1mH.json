@@ -1,0 +1,83 @@
+{
+  "_id": "0GsQgaF60JDhS1mH",
+  "_key": "!actors!0GsQgaF60JDhS1mH",
+  "name": "Cyberwolf™",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg",
+  "folder": "b1eLsXRZO9iZLC9U",
+  "system": {
+    "stats": {
+      "int": {
+        "value": 3
+      },
+      "ref": {
+        "value": 7
+      },
+      "dex": {
+        "value": 8
+      },
+      "tech": {
+        "value": 2
+      },
+      "cool": {
+        "value": 2
+      },
+      "will": {
+        "value": 4
+      },
+      "move": {
+        "value": 7
+      },
+      "body": {
+        "value": 5
+      },
+      "emp": {
+        "value": 2
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 40,
+        "max": 40
+      }
+    },
+    "information": {
+      "description": "<p><em>Cyberpet+®</em></p><p><strong>Cost:</strong> 4,000eb (Luxury)<br><strong>Lifestyle:</strong> Good Prepak<br><strong>Cyberware slots:</strong> 3<br><strong>Threat:</strong> Hardened Lieutenant<br><strong>Death Save:</strong> 5<br><strong>Seriously Wounded:</strong> 20<br><strong>Attacks:</strong> TUp (grapple damage) Combat Jaw (C# 12) ROF1 4d6 • Claws (C# 12) ROF2 2d6<br><strong>Armor:</strong> Light Armorjack SP11 (body; included)<br><strong>Skills:</strong> Athletics 13 • Brawling 14 • Concentration 6 • Endurance 8 • Evasion 13 • Human Perception 8 • Melee Weapon 12 • Perception 10 • Stealth 10 • Tactics 14 • Tracking 16 • Wilderness Survival 12</p><p><small>Item Compendium (2070) • Cyberpets</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Cyberwolf™",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_CPR_Mystery_Man.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "pet2070": {
+        "cost": "4,000eb (Luxury)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

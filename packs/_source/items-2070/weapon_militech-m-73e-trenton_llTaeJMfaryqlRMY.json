@@ -1,0 +1,81 @@
+{
+  "_id": "llTaeJMfaryqlRMY",
+  "_key": "!items!llTaeJMfaryqlRMY",
+  "name": "Militech M-73e Trenton",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg",
+  "folder": "s9qHs06ofebvtfW6",
+  "sort": 470,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 24,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 3,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Autofire damage: roll 3d6 and keep the two lowest, then multiply. Short on rounds for Autofire (SMG 3), it empties the magazine as Autofire (SMG 2).</p><p><strong>Class:</strong> SMG • TECH<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 2d6<br><strong>Alt. fire:</strong> Autofire (SMG 3), Suppressive Fire<br><strong>Built-in:</strong> Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

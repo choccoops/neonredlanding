@@ -1,0 +1,90 @@
+{
+  "_id": "4CrV90DU3PUwJw6d",
+  "_key": "!items!4CrV90DU3PUwJw6d",
+  "name": "Militech ‘Falcon’ OS",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "qJNFaBoRgHWYNLUv",
+  "sort": 11070,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 5000
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>The Sandevistan counts as Borgware for your Maximum Humanity; without an FBC or Cyberspine, 1d6 Humanity Loss per activation. It activates for free: +4 Initiative for 3 Rounds, and you can dodge bullets whatever your REF. At the start of each of your Turns while it runs, take +2 MOVE for the Turn or +4 on one Evasion Check before your next Turn. 1-hour cooldown, or reactivate early for 3 Humanity Loss, then 6, then 9.</p><p><strong>Runs:</strong> Sandevistan</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "aJc0gO3s6DnM8lcY",
+      "_key": "!items.effects!4CrV90DU3PUwJw6d.aJc0gO3s6DnM8lcY",
+      "name": "Militech ‘Falcon’ OS (active)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.initiative",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

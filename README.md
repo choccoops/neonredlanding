@@ -27,6 +27,10 @@ Seven tools for **Cyberpunk RED - CORE** on Foundry VTT:
   fits each of the eighteen districts, which faction it reads as and how good a disguise that makes,
   a shopping list, the street's comments, and a GM view of the whole scene, with a compendium of
   2070 fashion and the factions' colors and uniforms.
+- **The 2070s Item Compendium.** Every weapon, ammo, attachment, armor, piece of cyberware, deck,
+  program, drug and piece of gear in the *Cyberpunk: The Unification Era* Item Compendium as
+  Cyberpunk RED items with Active Effects for their bonuses, its vehicles, ACPAs and cyberpets as
+  actors ready for MMuton's vehicle sheet, and the 2070 Core Rules' range tables as DV tables.
 
 | Requirement | Version |
 | --- | --- |
@@ -36,6 +40,7 @@ Seven tools for **Cyberpunk RED - CORE** on Foundry VTT:
 | Neon Market | optional, for shop buttons |
 | [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) | optional, for messenger buttons |
 | [SmallTime](https://github.com/unsoluble/smalltime) | optional: 1.24.0 on Foundry v12, for the world clock in the calendar |
+| [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet) | optional: 2.6, for the 2070s vehicles and ACPAs |
 
 ![A landing page in the Night City chrome theme](docs/hub-page.webp)
 
@@ -676,6 +681,65 @@ Heat with a cop present.
 **About the numbers.** The district dress codes, faction looks, scores and the disguise check are
 Neon Hub's house rules built on the *Night City 2070* setting book and the *Item Compendium*.
 
+## The 2070s Item Compendium
+
+Three compendiums carry the *Cyberpunk: The Unification Era* Item Compendium into Foundry, built
+from the book's own tables and text (its stats, its 2070 names and prices). Each item's footer names
+the Item Compendium (2070) chapter it's from:
+
+- **Neon Hub: Item Compendium (2070s)**, about 1,800 Cyberpunk RED items in the book's chapters:
+  weapons (the 2070s catalog by class, generic weapons in three qualities, variants and iconics),
+  ammunition (one item per ammo kind, priced per 10 or each), explosives and grenades, attachments,
+  rebuilds and mods (weapon upgrades with their slots), armor (body and head SP and penalties),
+  armor upgrades, shields, ACPA frames and shells, cyberware by system (install, Humanity Loss,
+  foundations with their option slots, options with the slots they take), cyberware enhancements and
+  operating systems, exotic packages, deep dive rigs, cyberdecks, cybersuites, hardware, quickhacks
+  and vehicle quickhacks, programs, Black ICE, gear, holophone apps, drones, drugs, security systems,
+  vehicle upgrades and ICE, bicycles and their upgrades, invented Tech Upgrades and street stock,
+  and every vehicle as a vehicle item for character sheets. What's already in Neon Hub's Street
+  Goods, Lifestyle (2070s) and Fashion (2070s) compendiums isn't repeated, and Full Body
+  Conversions come in their own module.
+- **Neon Hub: Vehicles, ACPAs & Cyberpets (2070s)**, 197 actors. Every vehicle in the 2070
+  catalog, the bicycles and the iconic rides, and the six ACPA production models, set up for
+  [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet):
+  SDP as HP, the vehicle's SP as an armor plate, MOVE, and crew seats from its seat count (a driver,
+  cockpit or helm that moves the token, a gunner when it has onboard weapons, a passenger and the
+  rest in the back), with bulletproof glass at 15 HP (30 for two installs). ACPAs have one pilot
+  seat, with their onboard weapons mounted to it (each gun's attachments fitted, and a barrel or
+  tube moving it to its new range table) and their cyberware installed. The eight cyberpets
+  are mooks with their stats, HP and the rest in their notes. Without the vehicle sheet they open on
+  CPR's mook sheet.
+- **Neon Hub: DV Tables (2070s)**, the 2070 Standard range tables from the 2070 Core Rules (Chapter 07):
+  Snubnose, Pistol and Long Barrel Pistol, Subcompact SMG and SMG, the three shotguns, Carbine,
+  Assault, Battle, Marksman, Scout, Sniper and Anti-materiel Rifles, Shortbow, Bow and Longbow,
+  Grenade, Rocket and Missile Launchers, and the Machine Pistol, SMG, Assault Rifle and Machine Gun
+  Autofire tables. CPR's own table names are kept too (Bows & Crossbows, Long-Barrel Pistol,
+  Shotgun (Slug), Thrown Weapon), so the system's weapons still find theirs. The first time the GM
+  loads the world, Neon Hub offers to make them CPR's DV tables; switch any time in CPR's
+  compendium settings or with `api.items.useDvTables(true|false)`.
+
+**Active Effects.** Where the book gives a flat bonus or penalty, the item has a CPR Active Effect
+for it, read from the item's own line ("+2 MOVE", "+2 Human Perception and Interrogation",
+"COOL and TECH −2"). About 80 items have them, and they switch on the way CPR expects:
+
+- **Cyberware** works while installed. **Gear, armor and weapons** work while equipped.
+- **Drugs** work once you take a dose. **Booster programs** work while rezzed.
+- **Upgrades** start switched off: turn them on in the item's Effects tab once they're fitted.
+- **Bonuses you activate** (Speedware, a weapon's laser, timed boosts) are a separate effect named
+  "(active)", off until you switch it on.
+- **Conditional skill bonuses** ("+2 Perception for hearing") are situational. They show up as a
+  checkbox when you roll that skill.
+- **Linear Frames** set BODY to the frame's value unless yours is higher.
+
+Some lines are left in the text, for the GM to apply at the table:
+- bonuses that depend on a condition and aren't skills;
+- anything that works on someone else (quickhacks, Black ICE, a perfume's effect on others);
+- armor penalties, which CPR applies itself;
+- a weapon's bonuses to its own attacks.
+
+Items are dragged into the world or onto sheets as usual. The vehicles' crew seats and glass can be
+changed on the vehicle sheet's setup.
+
 ## Night City Messenger
 
 [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) by
@@ -775,6 +839,8 @@ await hub.fashion.fit(actor, "kabuki"); // { fit, band, modifier, reasons, warni
 await hub.fashion.reads(actor);         // [{ id, name, score }] strongest first
 hub.fashion.districts();                // the districts and their dress codes
 await hub.fashion.setSceneDistrict(canvas.scene, "japantown"); // GM
+await hub.items.useDvTables(true);     // GM: Cyberpunk RED's DV tables from the 2070s range tables (false: back to CPR's)
+hub.items.usingDvTables();              // true when they are
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```
@@ -821,6 +887,8 @@ through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openCo
 | Clothing | `clothing` items: `system.type`, `system.style`, `system.equipped`, `system.price.market`; the 2070 style and faction in `flags.cpr-neon-hub.fashion` |
 | In plain sight | `cyberware` `system.type` and `system.isInstalled`; `weapon` `system.equipped` and `system.concealable`; `armor` `system.bodyLocation.sp` |
 | Style names | the `CPR.global.clothing.style.*` translations, relabelled in the 2070s era |
+| DV tables | CPR's `dvRollTableCompendium` setting; tables are RollTables of text results (DV) over distance ranges, found by name |
+| Vehicle sheet | MMuton's `flags.mmutons-cyberpunk-red-vas.positions` (seats), `mountedPosition` and `installed` item flags, and `flags.core.sheetClass` `mmutons-cyberpunk-red-vas.VehicleSheet` |
 | Ledger lines | `CPR.ledger.increaseSentence` / `decreaseSentence`, reason `"... - <user>"` |
 | Lifestyle items | `gear` items: `system.equipped` (`"equipped"` = active), `system.usage: "equipped"`, `system.amount`, `system.price.market` |
 | Lifestyle fields | `system.lifestyle.housing / lifeStyle / traumaTeam` `.cost` and `.description` |
@@ -859,6 +927,8 @@ the clock the same way. It reads SmallTime's `small-step`, `large-step`, `time-f
 
 - Tested with unit tests and rendered previews, not yet in a live Foundry world. Try it on a copy
   first.
+- The 2070s items' Active Effects cover flat bonuses only; conditional stat bonuses and effects on
+  others stay in the item text.
 - Lifestyle billing is per character; it doesn't split an HQ's rent (pay that on the HQ screen).
 - An HQ's rent is one "due" flag: a jump past several rent days rolls each HQ month but leaves one
   rent payment due.
@@ -890,7 +960,9 @@ MIT. Icons in `assets/` are original to Neon Hub. The Tektur font (`fonts/`) is 
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
 Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),
-and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*; Cyberpunk, Cyberpunk 2077
+and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*. The 2070s Item Compendium
+carries that line's *Item Compendium*, and its DV tables the line's *Core Rules*, in the books' own wording, with
+Active Effects written for Neon Hub (its icons point to the Cyberpunk RED system's own); Cyberpunk, Cyberpunk 2077
 and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
 original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian
 Games or CD PROJEKT.

@@ -1,0 +1,101 @@
+{
+  "_id": "MZDWG2Q9gpQnIUAg",
+  "_key": "!items!MZDWG2Q9gpQnIUAg",
+  "name": "Neuyou Chemskin",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "y7Q5Jgv5asKlgtvM",
+  "sort": 10340,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 300
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>Chemskin. +1 to Conversation and Personal Grooming.</p><p><strong>Enhances:</strong> Chemskin</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "aK4m2ju0fFLxG7Ue",
+      "_key": "!items.effects!MZDWG2Q9gpQnIUAg.aK4m2ju0fFLxG7Ue",
+      "name": "Neuyou Chemskin",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.personalGrooming",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

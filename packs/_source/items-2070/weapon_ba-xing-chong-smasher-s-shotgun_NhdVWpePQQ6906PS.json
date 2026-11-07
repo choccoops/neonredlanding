@@ -1,0 +1,82 @@
+{
+  "_id": "NhdVWpePQQ6906PS",
+  "_key": "!items!NhdVWpePQQ6906PS",
+  "name": "Ba Xing Chong (Smasher’s Shotgun)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+  "folder": "eCgyZXCdk9xWM2hF",
+  "sort": 2150,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 2,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 16,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Long Barrel Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own Improved Smart rounds (100eb per 16), which also count as Armor-Piercing, Incendiary and Explosive (−2, no Aimed Shots), and carry damage past destroyed cover. Each attack fires 8 (won't fire with fewer), as slug or shell, your choice. Its Critical Injuries roll four times (rerolling repeats) and you choose. Seriously or Mortally Wounded, you can reload by giving up your Move Action. Without BODY 14+, −2 REF, DEX and MOVE while you hold it. +3 Reputation with anyone who knows whose gun it is.</p><p><strong>Class:</strong> Iconic EQ Shotgun • SMART<br><strong>Range table:</strong> Long Barrel Shotgun<br><strong>Damage:</strong> 6d6<br><strong>Alt. fire:</strong> Shotgun Shell (5d6)<br><strong>Built-in:</strong> Shotgun Choke, Smart Rebuild<br><strong>Fabrication:</strong> Leave the slaughterhouse alive. (Cannot be Fabricated, must be gifted or scavenged from Adam Smasher)</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

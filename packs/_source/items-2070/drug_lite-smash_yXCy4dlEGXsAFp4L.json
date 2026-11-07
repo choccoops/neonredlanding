@@ -1,0 +1,144 @@
+{
+  "_id": "yXCy4dlEGXsAFp4L",
+  "_key": "!items!yXCy4dlEGXsAFp4L",
+  "name": "Lite-Smash",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 13970,
+  "system": {
+    "price": {
+      "market": 20
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>Mixed drug (Core Rules, Chapter 08). Simple. 2h: +1 Dance, Contortionist, Conversation, Human Perception, Persuasion, Acting. DV11: as Smash.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "CnOwQA30o6epVoSO",
+      "_key": "!items.effects!yXCy4dlEGXsAFp4L.CnOwQA30o6epVoSO",
+      "name": "Lite-Smash",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.acting",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.contortionist",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.conversation",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.dance",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.humanPerception",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.persuasion",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill",
+              "2": "skill",
+              "3": "skill",
+              "4": "skill",
+              "5": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "2": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "3": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "4": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "5": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

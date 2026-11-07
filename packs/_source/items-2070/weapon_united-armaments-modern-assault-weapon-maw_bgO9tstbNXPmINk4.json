@@ -1,0 +1,81 @@
+{
+  "_id": "bgO9tstbNXPmINk4",
+  "_key": "!items!bgO9tstbNXPmINk4",
+  "name": "United Armaments Modern Assault Weapon (MAW)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg",
+  "folder": "JxRTtE2RflRTHgrM",
+  "sort": 1410,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 2,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 14,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 2,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its grenades burst in a 6×6m area. As an Action, mount or remove any one-handed ranged weapon in its frame; switch between launcher and mounted gun for free whenever you fire. Each keeps its own attachments, mods and reloads. BODY 11+ or a mount.</p><p><strong>Class:</strong> EQ Grenade Launcher • SMART<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 6d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Belt Box, Smart Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

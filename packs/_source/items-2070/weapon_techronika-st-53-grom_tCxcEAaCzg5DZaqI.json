@@ -1,0 +1,82 @@
+{
+  "_id": "tCxcEAaCzg5DZaqI",
+  "_key": "!items!tCxcEAaCzg5DZaqI",
+  "name": "Techronika ST-53 Grom",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg",
+  "folder": "jsCvgLNNVcXTawNk",
+  "sort": 650,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "shotgun",
+    "isRanged": true,
+    "quality": "poor",
+    "attackmod": 0,
+    "damage": "0",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 3,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "shotgunShell",
+      "shotgunSlug"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Shotgun",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 1500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Shotgun Shells only, no capacity attachments. Its Tech Rebuild charges without a Move Action. Without BODY 11+ or paired cyberarms, firing it gives you a Broken Arm. Never one-handed.</p><p><strong>Class:</strong> Poor Quality Shotgun • TECH<br><strong>Alt. fire:</strong> Shotgun Shell (4d6)<br><strong>Built-in:</strong> Shotgun Rechamber, Sling, Tech Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

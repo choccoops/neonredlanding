@@ -1,0 +1,81 @@
+{
+  "_id": "DWX3PQGiHc4FjJXE",
+  "_key": "!items!DWX3PQGiHc4FjJXE",
+  "name": "MIL-40L 20MM RECOILLESS AUTOCANNON",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+  "folder": "MrbQ7UgCp8rFm7PB",
+  "sort": 1720,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "grenadeLauncher",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "7d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 40,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "grenade"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Rocket Launcher",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 20000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Vehicle mount only. Its Power Rebuild can't ricochet. Loads Non-Basic grenades despite being Exotic, up to five types at once (pick each shot). Reloading takes 4 Actions. Comes loaded: 20 Armor-Piercing, 4 EMP, 4 Incendiary, 8 Smoke, 4 Teargas.</p><p><strong>Class:</strong> Exotic EQ Grenade Launcher • POWER<br><strong>Range table:</strong> Rocket Launcher<br><strong>Damage:</strong> 7d6<br><strong>Built-in:</strong> Power Rebuild, Smartgun Link</p><p><small>Item Compendium (2070) • Vehicles &amp; Upgrades</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Vehicles & Upgrades"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

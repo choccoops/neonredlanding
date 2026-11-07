@@ -1,0 +1,85 @@
+{
+  "_id": "HqX9f2ObDvgskLWC",
+  "_key": "!actors!HqX9f2ObDvgskLWC",
+  "name": "Brennan Apollo \"Cicada\"",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 10
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 16,
+        "max": 16
+      }
+    },
+    "information": {
+      "description": "<p>Roadbike, 1 seat. No Seating Upgrade. With an AV Engine Upgrade it flies, but no faster. Can't be Tech Upgraded for speed. <em>Formerly the Zonda R400 Trail.</em></p><p><strong>Cost:</strong> 850eb (Expensive)<br><strong>Nomad:</strong> 1<br><strong>SDP:</strong> 16<br><strong>SP:</strong> 0<br><strong>Seats:</strong> 1<br><strong>MOVE:</strong> 10<br><strong>Speed:</strong> 30 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Brennan Apollo \"Cicada\"",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/motorbike.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "2KoLRBY5qHkbXM54",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "1",
+        "cost": "850eb (Expensive)"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

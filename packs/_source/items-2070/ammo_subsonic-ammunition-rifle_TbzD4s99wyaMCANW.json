@@ -1,0 +1,60 @@
+{
+  "_id": "TbzD4s99wyaMCANW",
+  "_key": "!items!TbzD4s99wyaMCANW",
+  "name": "Subsonic Ammunition (Rifle)",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+  "folder": "4bVCa1Ea8VQyABKL",
+  "sort": 4650,
+  "system": {
+    "variety": "rifle",
+    "type": "basic",
+    "amount": 10,
+    "price": {
+      "market": 40
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 0,
+        "mode": "none",
+        "value": 0
+      },
+      "damage": {
+        "minimum": "",
+        "mode": "none",
+        "value": ""
+      }
+    },
+    "description": {
+      "value": "<p>Bullets and Slugs. −2 to Perception to hear a Single Shot.</p><p><strong>Cost:</strong> 40eb (Costly) for 10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

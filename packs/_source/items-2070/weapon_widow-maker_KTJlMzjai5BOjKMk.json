@@ -1,0 +1,81 @@
+{
+  "_id": "KTJlMzjai5BOjKMk",
+  "_key": "!items!KTJlMzjai5BOjKMk",
+  "name": "Widow Maker",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "IZDSmNcXKpnU9WmN",
+  "sort": 2360,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 10,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Marksman Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads only its own Improved Poison rounds (250eb per 10): 4d6 Single Shot damage plus Poison ammo's usual effect. Single Shot fires a 2-round burst; won't fire with fewer than 2. Aimed Shots deal +1d6; a charged Tech Rebuild adds another +1d6 to the non-poison damage (up to 6d6).</p><p><strong>Class:</strong> Iconic Sniper Rifle • TECH<br><strong>Range table:</strong> Marksman Rifle<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Tech Rebuild<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

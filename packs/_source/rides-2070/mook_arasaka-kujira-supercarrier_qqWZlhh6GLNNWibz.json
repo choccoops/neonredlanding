@@ -1,0 +1,85 @@
+{
+  "_id": "qqWZlhh6GLNNWibz",
+  "_key": "!actors!qqWZlhh6GLNNWibz",
+  "name": "Arasaka Kujira Supercarrier",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg",
+  "folder": "imUmfQ0AgGutzDbr",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 15
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 500,
+        "max": 500
+      }
+    },
+    "information": {
+      "description": "<p><em>Yacht.</em> Upgrades: Ambulance Conversion [x3], TUp (MetalGear Coating [+3 SP. -5 MOVE]) Armored Chassis (w/ Stalwart Shell), TUp (+1 SP) Bulwark Armor, Communications Center, Complex Room Upgrade [x300], Hangar [x48], Heavy Chassis, TUp (Turbocharged) Improved Engine [+10 MOVE, +50 MPH/81 KPH], Luxury Room Upgrade [x10], TUp (Scans in air and underwater simultaneously, at a range of up to 2 miles away) Radar/Sonar System, Reinforced Hull, Security Upgrade (Advanced), Titanic Hull, Vehicle Heavy Weapon Mount (Remote Weapon System &amp; Militech VMAT Multi-Launcher) [x2], Vehicle Heavy Weapon Mount (w/ Remote Weapon System &amp; Twin Autocannon) [x2]. Ablation to its SP is 1 less (min 0); what more do you want? 310 rooms, from crew bunks and barracks to flight-deck control, hospital wards, sea-vehicle wells and three Saburo family suites.</p><p><strong>Cost:</strong> 17,227,000eb<br><strong>Nomad:</strong> 10 (Arasaka)<br><strong>SDP:</strong> 500<br><strong>Seats:</strong> 1,820<br><strong>MOVE:</strong> 15<br><strong>Speed:</strong> 40 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Arasaka Kujira Supercarrier",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "dbmr5pfAIOOUr8y7",
+          "name": "Helm",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Pilot Sea Vehicle, Sea Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "sea",
+        "seats": 1,
+        "nomad": "10 (Arasaka)",
+        "cost": "17,227,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

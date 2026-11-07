@@ -1,0 +1,81 @@
+{
+  "_id": "BOEwPd6dJn85BfX9",
+  "_key": "!items!BOEwPd6dJn85BfX9",
+  "name": "Midnight Arms Erebus (Cynosure Version)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+  "folder": "DuhUhdQXcfPbQstN",
+  "sort": 2090,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "heavySmg",
+    "isRanged": true,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 50,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "heavyPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 4,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 10000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Ablates 1 extra SP. Autofire damage: roll 3d6, drop the lowest, then multiply. Anyone with a Neuroport it damages must beat DV19 Concentration or take <strong>Blackwall Gateway</strong>: 6d6 straight to HP (no ablation), 1d6 Humanity Loss, −1d6 MOVE for 3 Rounds, Short Circuit's effect, and Brain Injury's effect (no Bonus Damage) if those dice show two 6s. Seriously Wounded: 8d6, −2d6 MOVE and Prone. Mortally Wounded: an immediate Death Save at +10 penalty.</p><p><strong>Class:</strong> Iconic Excellent Quality Heavy SMG • POWER<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Autofire (SMG 4), Suppressive Fire<br><strong>Built-in:</strong> Extended Magazine, Power Rebuild, Silencer, Smartgun Link<br><strong>Fabrication:</strong> DV29 - 30,000eb - 6 Months</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

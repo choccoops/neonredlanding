@@ -1,0 +1,90 @@
+{
+  "_id": "CNzZxZt9Vb6FC61Y",
+  "_key": "!items!CNzZxZt9Vb6FC61Y",
+  "name": "War Paint",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "m01P9rmt2XattIUP",
+  "sort": 7160,
+  "system": {
+    "type": "armor",
+    "size": 1,
+    "price": {
+      "market": 100
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>A decorative paint covering the armor. If applied to both the Head and Body armor, gives a +2 to Wardrobe &amp; Style and a +1 to Facedown.</p><p><strong>Where:</strong> Both<br><strong>Fits:</strong> Light, Medium, Heavy, Flak, Metalgear, ACPA</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "ZVApuzjyitBL50lt",
+      "_key": "!items.effects!CNzZxZt9Vb6FC61Y.ZVApuzjyitBL50lt",
+      "name": "War Paint (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Armor & Shields"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

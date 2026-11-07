@@ -1,0 +1,81 @@
+{
+  "_id": "dNlot9y50XqvCbo5",
+  "_key": "!items!dNlot9y50XqvCbo5",
+  "name": "Militech M16 Adonis",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+  "folder": "G5lCxYzwmyaggFeU",
+  "sort": 760,
+  "system": {
+    "weaponSkill": "Shoulder Arms",
+    "weaponType": "assaultRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "4d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Carbine",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 500
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 1,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Basic Ammunition only; won't fire with fewer than 3 left. Pick a burst every shot. <strong>Burst 3</strong> (3 rounds): counts as Armor-Piercing. <strong>Burst 6</strong> (6 rounds): adds Explosive (with its −2 and no Aimed Shots). <strong>Burst 9</strong> (9 rounds): adds +1d6 (5d6). Each burst keeps the effects of the smaller ones. No Burst Mod Internals.</p><p><strong>Class:</strong> Assault Rifle • POWER<br><strong>Range table:</strong> Carbine<br><strong>Damage:</strong> 4d6<br><strong>Built-in:</strong> Extended Magazine, Short Scope, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "_id": "v61HsoEPOWoorhbt",
+  "_key": "!items!v61HsoEPOWoorhbt",
+  "name": "Needlepoint (Sister Halcyon's Bow)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Bow.svg",
+  "folder": "QbD7uMg7fpfDQtPg",
+  "sort": 2380,
+  "system": {
+    "weaponSkill": "Archery",
+    "weaponType": "bow",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "5d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 1,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "arrow"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Longbow",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p><strong>Through and Through:</strong> a charged arrow that drops its target below 1 HP keeps going. Roll its damage again against the next target in a straight line behind them, within <strong>10 m/yds</strong>, once per shot. <strong>Quiet Draw:</strong> charging it makes no sound and no glow, so it never moves the Awareness Ladder or gives you away while you're hidden. Loads Non-Basic arrows.</p><p><em>Sister Halcyon took the jobs nobody else would touch and finished them in one shot, sometimes two. The Sister's last job needed three.</em></p><p><strong>Class:</strong> Iconic EQ Bow • TECH<br><strong>Range table:</strong> Longbow<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Tech Rebuild<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

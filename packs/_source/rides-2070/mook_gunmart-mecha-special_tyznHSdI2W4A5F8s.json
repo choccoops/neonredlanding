@@ -1,0 +1,579 @@
+{
+  "_id": "tyznHSdI2W4A5F8s",
+  "_key": "!actors!tyznHSdI2W4A5F8s",
+  "name": "GunMart Mecha Special",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "ZvXrSxbJyiqWhIfU",
+  "system": {
+    "stats": {
+      "body": {
+        "value": 12
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 24,
+        "max": 24
+      }
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [
+        "6S3zwiOYsAD5k11x",
+        "CwrWhHcDY0b1zARI"
+      ]
+    },
+    "information": {
+      "description": "<p><em>GunMart calls it power armor for large home defense. Its real buyer is a punk with spare cash and a dream of fighting corp suits. The armor is thin and the guns are unreliable, but it's cheap for what it is. A lawsuit from an upset parent means it's now special order only.</em></p><p><strong>Cost:</strong> 10,550eb (Luxury)<br><strong>Frame / Shell:</strong> Sigma / Salvaged<br><strong>Stats:</strong> 24 HP • 15 SP • BODY 12 • −1 DEX<br><strong>Onboard weapons:</strong> GunMart HomeSafe w/ Drum Magazine, Grapple Gun Underbarrel &amp; Shotgun Automatic Control Group, GunMart Porta-Morta Plus<br><strong>Onboard cyberware:</strong> Enhanced Holophone, Bodyweight Autoinjector</p><p>One pilot. The suit's stats modify the pilot's; see the Item Compendium, Power Armor.</p><p><small>Item Compendium (2070) • Power Armor</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "9cWakIeOt6751uf2",
+      "name": "GunMart Mecha Special Armor (SP15)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.9cWakIeOt6751uf2"
+    },
+    {
+      "_id": "dafp6GiE1oIvxkYK",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.dafp6GiE1oIvxkYK",
+      "name": "GunMart HomeSafe",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg",
+      "system": {
+        "weaponSkill": "Shoulder Arms",
+        "weaponType": "shotgun",
+        "isRanged": true,
+        "quality": "poor",
+        "attackmod": 0,
+        "damage": "5d6",
+        "rof": 1,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 4,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "shotgunShell",
+          "shotgunSlug"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Shotgun",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 100
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "goZah1eNFVQtgnfa",
+            "GiocyXcTXsUriAkq",
+            "R6uCiLjCmAW9nhHD"
+          ],
+          "slots": 3,
+          "usedSlots": 3
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p><em>GunMart has sold this same shotgun under four names. Every one of them promised peace of mind.</em></p><p><strong>Class:</strong> PQ Shotgun • POWER<br><strong>Range table:</strong> Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "XkNdO6LSDMYHKUCm"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "goZah1eNFVQtgnfa",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.goZah1eNFVQtgnfa",
+      "name": "Drum Magazine",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>A capacity attachment: it adds rounds to the weapon's base capacity, by weapon type: Pistol (all) +18, SMG (all) +20, Crossbow +11, Shotgun +12, Assault Rifle +25, Machine Gun +40, Sniper Rifle +8, Grenade Launcher +4, Rocket Launcher +2.</p><p>One capacity attachment per weapon. Crossbows can take one too; a loaded crossbow magazine holds one arrow type (you can still hand-load another with a free hand).</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "GiocyXcTXsUriAkq",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.GiocyXcTXsUriAkq",
+      "name": "Grapple Gun Underbarrel",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 2,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Non-Exotic crossbows and Shoulder Arms weapons. The weapon doubles as a Grapple Gun, but can't make attacks while being used as one.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "R6uCiLjCmAW9nhHD",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.R6uCiLjCmAW9nhHD",
+      "name": "Shotgun Automatic Control Group",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Any weapon that fires slugs or shells. Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. With slugs it gains Autofire (Machine Pistol 3), or (Machine Pistol 4) if Excellent or already automatic; each burst uses 4 slugs. With shells, a Shotgun Shell attack can spend 4 shells to use the Autofire Skill, and dodging it is at −3.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "gYPUBXJ3s7YFiZDa",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.gYPUBXJ3s7YFiZDa",
+      "name": "GunMart Porta-Morta Plus",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher_poor.svg",
+      "system": {
+        "weaponSkill": "Heavy Weapons",
+        "weaponType": "grenadeLauncher",
+        "isRanged": true,
+        "quality": "poor",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 1,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 6,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Grenade Launcher",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 600
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 2,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p><em>Nobody with a procurement budget wanted it, so GunMart sold it to hobbyists. The Plus is the same gun with a new sticker.</em></p><p><strong>Class:</strong> PQ Grenade Launcher • POWER<br><strong>Range table:</strong> Grenade Launcher<br><strong>Damage:</strong> 6d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Drum Magazine, Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "XkNdO6LSDMYHKUCm"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "6S3zwiOYsAD5k11x",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.6S3zwiOYsAD5k11x",
+      "name": "Enhanced Holophone",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberAudioSuite",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Formerly the Internal Agent. An implanted upgrade to your Neuroport's Holophone: hands-free, eyes-free control. With a Cyberaudio Suite, your calls are <strong>silent</strong>: no moving your mouth.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "CwrWhHcDY0b1zARI",
+      "_key": "!actors.items!tyznHSdI2W4A5F8s.CwrWhHcDY0b1zARI",
+      "name": "Bodyweight Autoinjector",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Holds one dose of a drug or Pharmaceutical under the skin. Release it without an Action once a Turn, or set it at install to fire on its own the moment you're Seriously Wounded. Refilling it takes an Action with an Airhypo.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "GunMart Mecha Special",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "XkNdO6LSDMYHKUCm",
+          "name": "Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion, Athletics, Brawling, Melee Weapon, Heavy Weapons",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "acpa2070": {
+        "cost": "10,550eb (Luxury)",
+        "frame": "Sigma / Salvaged"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

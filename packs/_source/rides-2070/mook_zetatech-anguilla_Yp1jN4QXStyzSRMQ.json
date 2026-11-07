@@ -1,0 +1,154 @@
+{
+  "_id": "Yp1jN4QXStyzSRMQ",
+  "_key": "!actors!Yp1jN4QXStyzSRMQ",
+  "name": "Zetatech Anguilla",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg",
+  "folder": "imUmfQ0AgGutzDbr",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 15
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 80,
+        "max": 80
+      }
+    },
+    "information": {
+      "description": "<p><em>Cabin Cruiser.</em> Upgrades: Armored Chassis, Autopilot Terminal, Bulletproof Glass [x2], Combat Plow, Complex Vehicle Upgrade [x2], CrystalCoat, CrystalDome, Heavy Chassis, Improved Engine, Luxury Room Upgrade [x2], NOS, Reinforced Hull, Sealed Environment. Also: Climate Control. Climate control. Autopilot at Skill Base 10. No Submersible upgrade. Rooms: a bar, a lounge and two luxury passenger rooms.</p><p><strong>Cost:</strong> 245,000eb<br><strong>Nomad:</strong> 10<br><strong>SDP:</strong> 80<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 16<br><strong>MOVE:</strong> 15<br><strong>Speed:</strong> 40 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "y104FQDI0sFwJxOH",
+      "name": "Zetatech Anguilla Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!Yp1jN4QXStyzSRMQ.y104FQDI0sFwJxOH"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Zetatech Anguilla",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/ship.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "7dGoVUjd7vjTKL1Z",
+          "name": "Helm",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Sea Vehicle, Sea Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "FrR2L5T7vHMR60Wt",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "YndveaSaS5iKAEEe",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 14,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "sea",
+        "seats": 16,
+        "nomad": "10",
+        "cost": "245,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

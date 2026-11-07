@@ -1,0 +1,170 @@
+{
+  "_id": "bzC0TCeyDiYhp0Gd",
+  "_key": "!actors!bzC0TCeyDiYhp0Gd",
+  "name": "Dayton Sky Queen",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/blimp.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 500,
+        "max": 500
+      }
+    },
+    "information": {
+      "description": "<p>Aerozep, 50 rooms (26 luxury, 14 complex): Selfsealing Gasbag, Armored Chassis, Bulletproof Glass ×2, Communications Center, Hangar ×2, Heavy Chassis, Onboard Rocket Pod ×4, Sealed Environment, Titanic Hull, Vehicle Heavy Weapon Mount ×2 (EMG-70). Can serve as a faction HQ.</p><p><strong>Cost:</strong> 4,961,000eb<br><strong>Nomad:</strong> 10<br><strong>SDP:</strong> 500<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 216<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "ncbZPOCEMPLkuvue",
+      "name": "Dayton Sky Queen Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!bzC0TCeyDiYhp0Gd.ncbZPOCEMPLkuvue"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Dayton Sky Queen",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/blimp.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "NePmIaZGCpiHPVUx",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "Agmty1LEtcYc5O5G",
+          "name": "Gunner",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Heavy Weapons, Autofire, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "epkdH9NFVXtIPXXK",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "b79iO33oBPPETcOB",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 213,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 216,
+        "nomad": "10",
+        "cost": "4,961,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

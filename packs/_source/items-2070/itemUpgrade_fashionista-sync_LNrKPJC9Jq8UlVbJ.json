@@ -1,0 +1,90 @@
+{
+  "_id": "LNrKPJC9Jq8UlVbJ",
+  "_key": "!items!LNrKPJC9Jq8UlVbJ",
+  "name": "Fashionista Sync",
+  "type": "itemUpgrade",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+  "folder": "y7Q5Jgv5asKlgtvM",
+  "sort": 10470,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 100
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>Links the piece to your Fashionista app: change its look from your HUD for free. +1 to Wardrobe &amp; Style while it's showing (once, however many you have).</p><p><strong>Enhances:</strong> Any Fashionware</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "scVePOSLud1yWzYP",
+      "_key": "!items.effects!LNrKPJC9Jq8UlVbJ.scVePOSLud1yWzYP",
+      "name": "Fashionista Sync (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.wardrobeAndStyle",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Cyberware"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

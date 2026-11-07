@@ -1,0 +1,117 @@
+{
+  "_id": "lHMOWPsPPmLLKQ6a",
+  "_key": "!actors!lHMOWPsPPmLLKQ6a",
+  "name": "Zetatech Surveyor",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 120,
+        "max": 120
+      }
+    },
+    "information": {
+      "description": "<p><em>AV-4 Multipurpose Aerodyne.</em> Upgrades: Heavy Chassis, Seating Upgrade [x7], Sealed Environment, Vehicle Heavy Weapon Mount (w/ Remote Weapon System &amp; Militech Basilisk-Stinger Launcher [w/ Belt Box]).</p><p><strong>Cost:</strong> 68,750eb<br><strong>Nomad:</strong> 8<br><strong>SDP:</strong> 120<br><strong>Seats:</strong> 20<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Zetatech Surveyor",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/airplane.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "7XmGP1JqGXkrgQXN",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "WnpL4EBwCH8ZTpCJ",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "AaDc9xTRr6dm1uSZ",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 18,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 20,
+        "nomad": "8",
+        "cost": "68,750eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

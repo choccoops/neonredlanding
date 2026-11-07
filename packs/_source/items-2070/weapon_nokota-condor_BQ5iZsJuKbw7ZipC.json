@@ -1,0 +1,81 @@
+{
+  "_id": "BQ5iZsJuKbw7ZipC",
+  "_key": "!items!BQ5iZsJuKbw7ZipC",
+  "name": "Nokota Condor",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "0lqApCloUvqreMIy",
+  "sort": 1480,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "7d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 2,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Sniper Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 2300
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Its explosives burst in a 6×6m area. Its Silencer hides the launch, not the blast.</p><p><strong>Class:</strong> EQ Rocket Launcher • SMART<br><strong>Range table:</strong> Sniper Rifle<br><strong>Damage:</strong> 7d6<br><strong>Alt. fire:</strong> Explosive<br><strong>Built-in:</strong> Extended Magazine, Silencer, Sniping Scope, Smart Rebuild<br><strong>Mods:</strong> Payload Conversion Kit</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

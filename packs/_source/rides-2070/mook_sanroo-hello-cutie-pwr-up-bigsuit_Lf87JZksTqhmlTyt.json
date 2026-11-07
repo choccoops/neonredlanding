@@ -1,0 +1,975 @@
+{
+  "_id": "Lf87JZksTqhmlTyt",
+  "_key": "!actors!Lf87JZksTqhmlTyt",
+  "name": "Sanroo Hello Cutie Pwr-Up BigSuit",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "ZvXrSxbJyiqWhIfU",
+  "system": {
+    "stats": {
+      "body": {
+        "value": 16
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [
+        "sXYrVk0PNtJdrdNv",
+        "Vhc3KaScMo941hj5",
+        "TgXLPOSSpaTMqukt",
+        "ZdaAbLobUPCxLFo3"
+      ]
+    },
+    "information": {
+      "description": "<p><em>One of the fastest ACPAs the public can buy, and the only one that cares about you. Its Companion Chip reads out tactics, offers encouragement and manages your playlist, and it sulks if you neglect it, which does nothing for performance. Sanroo's pitch is for everyone who ever wanted a robot best friend to wrap them up and carry them away.</em></p><p><strong>Cost:</strong> 39,474eb (Super Luxury)<br><strong>Frame / Shell:</strong> Omega / Hybrid Metalgear®<br><strong>Stats:</strong> 35 HP • 16 SP • BODY 16 • +3 MOVE • −1 DEX<br><strong>Onboard weapons:</strong> Captain Cuddlefish Giga Snag-Em, Hello Cutie Pwr-Up Happy Dancer w/ Drum Magazine, SMG Cyclic Internals (Machine Pistol 4) &amp; SMG Short Barrel, Hello Cutie 2TruLuv w/ Sniper Rifle Rechamber &amp; Scout Barrel, Hello Cutie Pwr-Up Thundercat<br><strong>Onboard cyberware:</strong> TUp (+1d6 Damage, 2d6 total) Hello Cutie Mono-Paw, Hello Cutie Sparkle-ize, Kerenzikov, Reflex Co-Processor</p><p>One pilot. The suit's stats modify the pilot's; see the Item Compendium, Power Armor.</p><p><small>Item Compendium (2070) • Power Armor</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "sPsAjzA8hHRRDwyd",
+      "name": "Sanroo Hello Cutie Pwr-Up BigSuit Armor (SP16)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 16,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 16,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.sPsAjzA8hHRRDwyd"
+    },
+    {
+      "_id": "TSykAsUdNihEhSl5",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.TSykAsUdNihEhSl5",
+      "name": "Captain Cuddlefish Giga Snag-Em",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg",
+      "system": {
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "lightMelee",
+        "isRanged": false,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "1d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 200
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Melee attacks reach <strong>10m/yds</strong>. A <strong>Held Item</strong> Aimed Shot takes −6 instead of −8, needs no damage to work, and lands the item in your hands. Can't be installed in cyberware. Extra outfits: 20eb or 50eb.</p><p><em>A plush anime hero, still in reruns, who fires a sticky steel chain when squeezed.</em></p><p><strong>Class:</strong> Exotic Light Melee<br><strong>Damage:</strong> 1d6</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "I9uuQwliyhQqZLMQ"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "r4WyEjJOjAPq5NpH",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.r4WyEjJOjAPq5NpH",
+      "name": "Hello Cutie Pwr-Up Happy Dancer",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Weapon.svg",
+      "system": {
+        "weaponSkill": "Handgun",
+        "weaponType": "heavySmg",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "3d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 40,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "heavyPistol"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 3,
+          "suppressiveFire": true
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Subcompact SMG",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 500
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "11xHqXf3u9FQ2i8M",
+            "Ml1QT6VF6uASH1At",
+            "1qkz1XuliV6vNkzs"
+          ],
+          "slots": 3,
+          "usedSlots": 1
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Pings with every round it fires, like a video game paying out coins. The sound has no effect in play.</p><p><em>Hello Cutie fans swear the pings are good for you. A ricochet pings twice.</em></p><p><strong>Class:</strong> EQ Heavy SMG • POWER<br><strong>Range table:</strong> SMG<br><strong>Damage:</strong> 3d6<br><strong>Alt. fire:</strong> Autofire (SMG 3), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "I9uuQwliyhQqZLMQ"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "11xHqXf3u9FQ2i8M",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.11xHqXf3u9FQ2i8M",
+      "name": "Drum Magazine",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>A capacity attachment: it adds rounds to the weapon's base capacity, by weapon type: Pistol (all) +18, SMG (all) +20, Crossbow +11, Shotgun +12, Assault Rifle +25, Machine Gun +40, Sniper Rifle +8, Grenade Launcher +4, Rocket Launcher +2.</p><p>One capacity attachment per weapon. Crossbows can take one too; a loaded crossbow magazine holds one arrow type (you can still hand-load another with a free hand).</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Ml1QT6VF6uASH1At",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.Ml1QT6VF6uASH1At",
+      "name": "SMG Cyclic Internals",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Any weapon with Autofire (SMG 3). Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. Replaces Autofire (SMG 3) with Autofire (SMG 4) or (Machine Pistol 4).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "1qkz1XuliV6vNkzs",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.1qkz1XuliV6vNkzs",
+      "name": "Range Table Modification (SMG Short Barrel)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "WxhV1Dc5CAPbfU5k",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.WxhV1Dc5CAPbfU5k",
+      "name": "Hello Cutie 2TruLuv",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+      "system": {
+        "weaponSkill": "Shoulder Arms",
+        "weaponType": "sniperRifle",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "5d6",
+        "rof": 1,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 4,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "rifle"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "DV Scout Rifle",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 1000
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "ooDZKp1ZuT8XFudc",
+            "KjNIIQGbubtFUbLC"
+          ],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Exotic, but still loads Non-Basic Ammunition. A sealed Companion Chip plays a scripted girlfriend who talks to you through a bone speaker in the cheek rest; taking the chip out destroys it and the rifle for good. <strong>Bonding:</strong> once you score 10 kills with it, it counts as <strong>Excellent Quality</strong> in your hands. Upset it (damage it, neglect it, leave it unfired, feed it Junk Ammunition, fire another Sniper Rifle) and it may drop that bonus until you make amends.</p><p><em>A magenta collector's rifle with hearts on the grip. The legal team insists the voice at your ear is not a VI.</em></p><p><strong>Class:</strong> Exotic Sniper Rifle • SMART<br><strong>Range table:</strong> Sniper Rifle<br><strong>Damage:</strong> 5d6<br><strong>Built-in:</strong> Infrared Nightvision Scope, Smart Rebuild, Sniping Scope</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "I9uuQwliyhQqZLMQ"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ooDZKp1ZuT8XFudc",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.ooDZKp1ZuT8XFudc",
+      "name": "Sniper Rifle Rechamber",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 300
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Sniper Rifles only. Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech and it is permanent. Damage +1d6, to a maximum of 6d6.</p><p><strong>Cost:</strong> 300eb (Expensive)</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "KjNIIQGbubtFUbLC",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.KjNIIQGbubtFUbLC",
+      "name": "Range Table Modification (Scout Barrel)",
+      "type": "itemUpgrade",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "system": {
+        "type": "weapon",
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false,
+        "equipped": "owned"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Attachments & Mods"
+          }
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "lofHLASOrepWGRTS",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.lofHLASOrepWGRTS",
+      "name": "Hello Cutie Pwr-Up Thundercat",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "system": {
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "medMelee",
+        "isRanged": false,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "2d6",
+        "rof": 2,
+        "handsReq": 2,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 750
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Two-handed Stun Baton: damage that would drop a target below 1 HP leaves them Unconscious at 1 HP, and it can't cause Critical Injuries or ablate armor. A target hit makes DV15 Resist Torture/Drugs or suffers <strong>Damaged Ear</strong> (no Bonus Damage). So do you on every hit, unless you wear ear protection.</p><p><em>A stun bat whose speaker replays a famous home run at glass-breaking volume.</em></p><p><strong>Class:</strong> EQ Stun Baton<br><strong>Damage:</strong> 2d6</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Weapons"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "mountedPosition": "I9uuQwliyhQqZLMQ"
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "sXYrVk0PNtJdrdNv",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.sXYrVk0PNtJdrdNv",
+      "name": "Hello Cutie Mono-Paw",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Cyberarm Option. Retractable monomolecular cat claws: Excellent Quality Medium Melee, 1d6, concealed without a Check. Ignores armor entirely if it's below SP11. While they're out, that hand can't hold anything.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "Vhc3KaScMo941hj5",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.Vhc3KaScMo941hj5",
+      "name": "Hello Cutie Sparkle-ize",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "cyberEye",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 250
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Cybereye Option,. Built-in flashlight. <strong>Paired,</strong> as an Action, make a target within 25m/yds with working eyes or cyberoptics roll DV15 Resist Torture/Drugs or suffer Damaged Eye for 1 minute. Anti-Dazzle or similar protects them.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "TgXLPOSSpaTMqukt",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.TgXLPOSSpaTMqukt",
+      "name": "Kerenzikov",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Replaces the old Reflex Co-Processor and eases the load on your Neuroport. You can dodge ranged attacks whatever your REF, and get +2 to notice Ambushes.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "ZdaAbLobUPCxLFo3",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.ZdaAbLobUPCxLFo3",
+      "name": "Reflex Co-Processor",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Neuralware option: dodge bullets regardless of REF.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        },
+        "mmutons-cyberpunk-red-vas": {
+          "installed": true
+        }
+      },
+      "ownership": {
+        "default": 0
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Sanroo Hello Cutie Pwr-Up BigSuit",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "I9uuQwliyhQqZLMQ",
+          "name": "Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion, Athletics, Brawling, Melee Weapon, Heavy Weapons",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "acpa2070": {
+        "cost": "39,474eb (Super Luxury)",
+        "frame": "Omega / Hybrid Metalgear®"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

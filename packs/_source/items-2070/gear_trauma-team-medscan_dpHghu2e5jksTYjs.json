@@ -1,0 +1,100 @@
+{
+  "_id": "dpHghu2e5jksTYjs",
+  "_key": "!items!dpHghu2e5jksTYjs",
+  "name": "Trauma Team MedScan",
+  "type": "gear",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+  "folder": "9NuoswtrnhWf20DR",
+  "sort": 13430,
+  "system": {
+    "price": {
+      "market": 20
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": true,
+    "description": {
+      "value": "<p>Show a Remote Specialist the injury. 100eb: up to 1 hour of guidance, +1 to First Aid or Paramedic to Stabilize or Quick Fix. 500eb: guidance for a single 4-hour treatment, install, bodysculpt or surgery, +1 to Medical Tech or Surgery. Free for Trauma Team Executive members, until it's misused. <strong>CitiNet.</strong></p><p><strong>Publisher:</strong> Trauma Team<br><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "hDSfPWlMzdgEffXU",
+      "_key": "!items.effects!dpHghu2e5jksTYjs.hDSfPWlMzdgEffXU",
+      "name": "Trauma Team MedScan (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.firstAid",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "bonuses.paramedic",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Gear & Goods"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

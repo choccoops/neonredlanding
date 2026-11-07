@@ -1,0 +1,113 @@
+{
+  "_id": "VGqdtOw0kVnWGMdQ",
+  "_key": "!items!VGqdtOw0kVnWGMdQ",
+  "name": "Arasaka \"Kagami\" Neo-Kabuto",
+  "type": "armor",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "folder": "BPu4MdEbQqEzzD49",
+  "sort": 17650,
+  "system": {
+    "price": {
+      "market": 10000
+    },
+    "penalty": 0,
+    "equipped": "owned",
+    "usage": "equipped",
+    "brand": "",
+    "isShield": false,
+    "shieldHitPoints": {
+      "value": 0,
+      "max": 0
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "isBodyLocation": false,
+    "isHeadLocation": true,
+    "bodyLocation": {
+      "sp": 0,
+      "ablation": 0
+    },
+    "headLocation": {
+      "sp": 13,
+      "ablation": 0
+    },
+    "description": {
+      "value": "<p>Head SP13, no armor penalty; ablation against it is 1 less (min 0). Built-in Smart Glasses (an extra slot) with Anti-Dazzle, Image Enhance and Targeting Scope. With Melee Weapon 7+ and Evasion 7+, or Combat Awareness 6+: +1 to Melee Weapon (+2 on Aimed Shots) and Evasion. Improved Smart shots at you take −2. After 10 minutes without losing SP, it's back to SP13.</p><p><strong>Cost:</strong> Super Luxury</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "wAyyxetWHbyF9u7c",
+      "_key": "!items.effects!VGqdtOw0kVnWGMdQ.wAyyxetWHbyF9u7c",
+      "name": "Arasaka \"Kagami\" Neo-Kabuto (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.meleeWeapon",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

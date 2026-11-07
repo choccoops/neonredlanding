@@ -1,0 +1,67 @@
+{
+  "_id": "3lGMyGTylxdUSB6n",
+  "_key": "!items!3lGMyGTylxdUSB6n",
+  "name": "Zetatech Byteforce",
+  "type": "cyberware",
+  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberware.svg",
+  "folder": "I3g2aVNKe2zPUMLX",
+  "sort": 11400,
+  "system": {
+    "type": "neuralWare",
+    "installLocation": "hospital",
+    "humanityLoss": {
+      "static": 7,
+      "roll": "2d6"
+    },
+    "isFoundational": false,
+    "size": 1,
+    "price": {
+      "market": 5000
+    },
+    "usage": "installed",
+    "brand": "",
+    "core": false,
+    "isWeapon": false,
+    "isElectronic": true,
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "providesHardening": false,
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p>Reroll the lowest damage die on its built-in quickhacks (keep the new roll). Any quickhack you run that beats its DV by 2 or less fries: 1d6 to your HP. <strong>Built-in quickhacks:</strong> Short Circuit, Overheat. Takes 1 Neural Link slot; needs a Neuroport.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Netrunning"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

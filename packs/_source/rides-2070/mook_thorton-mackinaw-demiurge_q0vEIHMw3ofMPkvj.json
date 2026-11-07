@@ -1,0 +1,101 @@
+{
+  "_id": "q0vEIHMw3ofMPkvj",
+  "_key": "!actors!q0vEIHMw3ofMPkvj",
+  "name": "Thorton Mackinaw “Demiurge”",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "fRqK01L53BK8wVuy",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 35
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>Iconic Compact Groundcar.</em> Upgrades: Combat Plow, Crash Control System, TUp (Flashbulb Beacon) Heavy Chassis, TUp (Ultra Turbocharged) Improved Engine, NOS, Reinforced Tires, Smuggling Upgrade. Also: TUp (Oversized) Offroad Tires. Oversized offroad tires: +3 to Maneuvers off-road. Dodging its ram takes −2, and a dodger can only end up on its roof with paired Jump Boosters.</p><p><strong>Cost:</strong> Super Luxury • DV29 - 30,000eb - 6 Months<br><strong>Nomad:</strong> 8<br><strong>SDP:</strong> 70<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 35<br><strong>Speed:</strong> 175 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Thorton Mackinaw “Demiurge”",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "Ojth4zmRDcVXNtyS",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "c82viVky6jK8evLb",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "8",
+        "cost": "Super Luxury • DV29 - 30,000eb - 6 Months"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

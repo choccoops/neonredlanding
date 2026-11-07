@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.16.0
+
+- **The 2070s Item Compendium.** The *Cyberpunk: The Unification Era* Item Compendium in Foundry, built from the book's own tables and text, with each item's chapter in its footer.
+  - **Neon Hub: Item Compendium (2070s)**: about 1,800 items in the book's chapters. Weapons by class (generic, variants and iconics included), ammunition per ammo kind, explosives, attachments, rebuilds and mods, armor with SP and penalties, armor upgrades and shields, ACPA parts, cyberware by system with install, Humanity Loss and option slots, enhancements and operating systems, exotic packages, decks, cybersuites, hardware, quickhacks, programs and Black ICE, gear, apps, drones, drugs, security systems, vehicle upgrades, invented Tech Upgrades, and every vehicle as an item for character sheets.
+  - **Neon Hub: Vehicles, ACPAs & Cyberpets (2070s)**: 197 actors for MMuton's CPR Vehicle Actor Sheet. Vehicles have SDP, SP, MOVE and crew seats from their seat count (driver, gunner, passengers), with bulletproof glass; ACPAs have a pilot seat with their onboard weapons mounted (attachments fitted, barrels on their new range tables) and their cyberware installed; and the eight cyberpets.
+  - **Active Effects** for about 80 items' flat bonuses, read from the book's own lines. Cyberware works while installed, gear while equipped, drugs once dosed and booster programs while rezzed. Upgrades and activated chrome start switched off, and conditional skill bonuses are situational toggles on the roll.
+  - **Neon Hub: DV Tables (2070s)**: the 2070 Core Rules' range tables (Chapter 07), plus CPR's own table names. Neon Hub offers the GM, once, to make them Cyberpunk RED's DV tables (`api.items.useDvTables`).
+  - Items already in Street Goods, Lifestyle (2070s) and Fashion (2070s) aren't repeated. Full Body Conversions come in their own module.
+
 ## 1.15.0
 
 - **Style Check.** Fashion analysis for 2070s Night City, from **Style Check** in the Actors sidebar, the **Style** button on a character sheet, or a new hub button action (and MATT action).

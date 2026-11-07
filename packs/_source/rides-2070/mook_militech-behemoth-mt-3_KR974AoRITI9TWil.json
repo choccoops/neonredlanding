@@ -1,0 +1,122 @@
+{
+  "_id": "KR974AoRITI9TWil",
+  "_key": "!actors!KR974AoRITI9TWil",
+  "name": "Militech Behemoth MT-3",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 80,
+        "max": 80
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: TUp (MetalGear Coating [+3 SP]) Armored Chassis, Autopilot Terminal, Bulletproof Glass [x2], Bulwark Armor, Communications Center, CrystalDome, Heavy Chassis, Improved Engine, Sealed Environment, Smuggling Upgrade [x4], TUp (Automated) Vehicle Heavy Weapon Mount (w/ Remote Weapon System &amp; Militech Mk. 31 HMG). Stock, the back carries 5 tons and 10 more riders who can't operate anything. Its weapon mount is a self-firing turret (like an Automated Turret) that shoots any threat; the driver or front passenger raises or lowers it as an Action (lowered, hidden and off), and a front passenger can fire it by hand.</p><p><strong>Cost:</strong> 101,000eb<br><strong>Nomad:</strong> 10<br><strong>SDP:</strong> 80<br><strong>SP:</strong> 18<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 125 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "u2ludNtdThP0Db9Y",
+      "name": "Militech Behemoth MT-3 Armor (SP18)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 18,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 18,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!KR974AoRITI9TWil.u2ludNtdThP0Db9Y"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Militech Behemoth MT-3",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "kKUSoQn9BodNOGmc",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 1,
+        "nomad": "10",
+        "cost": "101,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

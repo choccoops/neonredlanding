@@ -1,0 +1,139 @@
+{
+  "_id": "NjT5txuzsiTMlpGc",
+  "_key": "!items!NjT5txuzsiTMlpGc",
+  "name": "Military-Grade Lactic Acid Recyclers",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+  "folder": "lAViFBuYphMizjoG",
+  "sort": 17990,
+  "system": {
+    "price": {
+      "market": 1000
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p><strong>Primary (1 month; more doses do nothing):</strong> +4 Endurance and Athletics; +2 Resist Torture/Drugs (not against this drug); MOVE penalties halved (round up); a Run goes 2m further. <strong>Secondary (DV21):</strong> addicted; without a dose, −4 Endurance and Athletics and DEX and MOVE −2 (min 2); always feeling out of breath.</p><p><strong>Cost:</strong> Very Expensive • DV24 - 1,000eb - 2 Weeks</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "tiSk3wDzPGW7um7V",
+      "_key": "!items.effects!NjT5txuzsiTMlpGc.tiSk3wDzPGW7um7V",
+      "name": "Military-Grade Lactic Acid Recyclers",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.athletics",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        },
+        {
+          "key": "bonuses.endurance",
+          "mode": 2,
+          "value": "4",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill",
+              "1": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "_id": "S6iqABMT7GpevwvL",
+      "_key": "!items.effects!NjT5txuzsiTMlpGc.S6iqABMT7GpevwvL",
+      "name": "Military-Grade Lactic Acid Recyclers (situational)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.resistTortureOrDrugs",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "skill"
+            },
+            "situational": {
+              "0": {
+                "isSituational": true,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

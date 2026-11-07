@@ -1,0 +1,81 @@
+{
+  "_id": "xenYhkFxtZUHsnp8",
+  "_key": "!items!xenYhkFxtZUHsnp8",
+  "name": "Overwatch (Panam’s Rifle)",
+  "type": "weapon",
+  "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SniperRifle.svg",
+  "folder": "IZDSmNcXKpnU9WmN",
+  "sort": 2330,
+  "system": {
+    "weaponSkill": "Heavy Weapons",
+    "weaponType": "sniperRifle",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "6d6",
+    "rof": 1,
+    "handsReq": 2,
+    "magazine": {
+      "value": 0,
+      "max": 5,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "rifle"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "dvTable": "DV Anti-materiel Rifle",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 5000
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p>Loads Non-Basic ammo despite being Iconic. Halve every attack penalty you take with it (round up). Working the bolt takes an Action. Held two-handed, reload by giving up your Move Action. BODY 10+ (or 8+ Prone) unless mounted.</p><p><strong>Class:</strong> Iconic EQ Sniper Rifle • POWER<br><strong>Range table:</strong> Anti-materiel Rifle<br><strong>Damage:</strong> 6d6<br><strong>Built-in:</strong> Bipod, Infrared Nightvision Scope, Power Rebuild, Silencer, Sniper Rifle Rechamber, Sniping Scope<br><strong>Fabrication:</strong> DV29 - 5,000eb - 1 Month</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

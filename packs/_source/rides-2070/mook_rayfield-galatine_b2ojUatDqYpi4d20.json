@@ -1,0 +1,154 @@
+{
+  "_id": "b2ojUatDqYpi4d20",
+  "_key": "!actors!b2ojUatDqYpi4d20",
+  "name": "Rayfield Galatine",
+  "type": "mook",
+  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 25
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: TUp (+1 SP) Armored Chassis (w/ Stalwart Shell), Autopilot Terminal, Bulletproof Glass [x2], TUp (+1 SP) Bulwark Armor [x2], TUp (Self-Driving Vehicle) Communications Center, CrystalDome, Improved Engine, NOS, Radar/Sonar System, Reinforced Tires, Sealed Environment, TUp (Hardwired Locks [DV23 Electronics/Security Tech Check to bypass]) Security Upgrade (Advanced). Also: Climate Control. Climate control. Ablation to its SP is 1 less (min 0). Autopilot at Skill Base 14. No Heavy Chassis or Seating Upgrade. Comes with a DrinkMaster 3000, two Jeeves garment bags and a Streetcase.</p><p><strong>Cost:</strong> 94,000eb<br><strong>Nomad:</strong> 9<br><strong>SDP:</strong> 50<br><strong>SP:</strong> 20<br><strong>Seats:</strong> 6<br><strong>MOVE:</strong> 25<br><strong>Speed:</strong> 125 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "iyxp6ju2gFRGb9TR",
+      "name": "Rayfield Galatine Armor (SP20)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 20,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 20,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!b2ojUatDqYpi4d20.iyxp6ju2gFRGb9TR"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Rayfield Galatine",
+    "actorLink": true,
+    "texture": {
+      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/super_car.svg"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "kNDgEZx4ZjR9BpWm",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "j5wxIsIN72oVBjir",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "xi1Fg245217XvEEW",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 4,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 6,
+        "nomad": "9",
+        "cost": "94,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a shield style. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M136 64h240a24 24 0 0 1 24 24v232c0 70-60 112-144 136-84-24-144-66-144-136V88a24 24 0 0 1 24-24z"/><path fill="#1b1f21" d="M172 116h168v44H172z"/><circle cx="164" cy="214" r="12" fill="#1b1f21"/><circle cx="348" cy="214" r="12" fill="#1b1f21"/><circle cx="164" cy="318" r="12" fill="#1b1f21"/><circle cx="348" cy="318" r="12" fill="#1b1f21"/><circle cx="256" cy="400" r="12" fill="#1b1f21"/>
+</g>
+</svg>

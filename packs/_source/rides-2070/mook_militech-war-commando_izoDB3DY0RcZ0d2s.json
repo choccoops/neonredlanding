@@ -167,7 +167,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.w4bqvKn6jqF4Ayfc",
       "name": "Smartgun Link",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/upgrades/smartgun_link.svg",
       "system": {
         "type": "weapon",
         "size": 2,
@@ -215,7 +215,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.miVhiSFGQdzPJDrt",
       "name": "Drum Magazine",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/upgrades/generic_drum_magazine.svg",
       "system": {
         "type": "weapon",
         "size": 1,
@@ -263,7 +263,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.b4KYNOdbDIIHpdOl",
       "name": "Sniper Rifle Rechamber",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
         "type": "weapon",
         "size": 0,
@@ -311,7 +311,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.FUs5l1yIWxdn0zNq",
       "name": "Range Table Modification (Scout Barrel)",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
         "type": "weapon",
         "size": 0,
@@ -359,13 +359,13 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.QGF9ZLByTBiWcP48",
       "name": "Militech M-212E Syracuse",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/RocketLauncher.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/RocketLauncher_standard_smart.svg",
       "system": {
         "weaponSkill": "Pilot Air Vehicle",
         "weaponType": "rocketLauncher",
         "isRanged": true,
         "quality": "standard",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "8d6",
         "rof": 1,
         "handsReq": 2,
@@ -428,7 +428,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "smart"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "dDvyI4lr6vbcXvPM"
@@ -443,7 +444,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.ZFzij92KlGozFHjG",
       "name": "Range Table Modification (Long Tube)",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
         "type": "weapon",
         "size": 0,
@@ -491,7 +492,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.TYrjk6XBA94JaqgW",
       "name": "Militech Mk. 29 LMG",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
       "system": {
         "weaponSkill": "Heavy Weapons",
         "weaponType": "assaultRifle",
@@ -561,7 +562,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "power"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "dDvyI4lr6vbcXvPM"
@@ -576,7 +578,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.NzDSPOMEGMmsz2r4",
       "name": "Smartgun Link",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/upgrades/smartgun_link.svg",
       "system": {
         "type": "weapon",
         "size": 2,
@@ -624,7 +626,7 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.7UPfLebjk9WLC8H4",
       "name": "Grenade Launcher Underbarrel",
       "type": "itemUpgrade",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Item_Upgrade.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/upgrades/grenade_launcher_underbarrel.svg",
       "system": {
         "type": "weapon",
         "size": 2,
@@ -672,13 +674,13 @@
       "_key": "!actors.items!izoDB3DY0RcZ0d2s.NpVlQZm0PiY2roec",
       "name": "Militech M-265 Amalthea",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_smart.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "standard",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -739,7 +741,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "smart"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "dDvyI4lr6vbcXvPM"

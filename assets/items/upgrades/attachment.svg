@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a weapon attachment. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M72 318h368v44H72z"/><path fill-rule="evenodd" d="M150 190h196a24 24 0 0 1 24 24v76a12 12 0 0 1-12 12H138a12 12 0 0 1-12-12v-76a24 24 0 0 1 24-24zM216 222a30 30 0 1 0 0.1 0z"/><path d="M176 302h40v20h-40zM288 302h40v20h-40z"/><rect x="86" y="372" width="28" height="22" rx="4"/><rect x="134" y="372" width="28" height="22" rx="4"/><rect x="182" y="372" width="28" height="22" rx="4"/><rect x="230" y="372" width="28" height="22" rx="4"/><rect x="278" y="372" width="28" height="22" rx="4"/><rect x="326" y="372" width="28" height="22" rx="4"/><rect x="374" y="372" width="28" height="22" rx="4"/><rect x="422" y="372" width="28" height="22" rx="4"/>
+</g>
+</svg>

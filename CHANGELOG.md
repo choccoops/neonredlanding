@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.18.0
+
+- **Fixed: broken icons on 423 items.** Every upgrade in the Item Compendium (the Melee Rebuilds, attachments, weapon mods, cyberware enhancements, operating systems, hardware, vehicle and armor upgrades, shields), and the same upgrades in the vehicles and Full Borg bodies, pointed at an icon the Cyberpunk RED system doesn't have. They show icons now:
+  - the system's own where it has one for that upgrade (scopes, Smartgun Links, magazines, bayonets, underbarrels, KRASH Barrier, Backup Drive...);
+  - otherwise a new icon for its kind, drawn in the system's upgrade style: Mono-edge Blading and Propulsion Impact, weapon attachments and mods, cyberware enhancements and operating systems, netrunning hardware, vehicle ICE, vehicle, bicycle and armor upgrades, armor enhancements, shield styles, Iconic weapon mods.
+- **Generic Power, Smart and Tech guns.** Each generic ranged weapon comes in all three 2070s types, at Poor, Standard and Excellent Quality, in *Generic Weapons › Power / Smart / Tech Weapons* (Tech doesn't fit Grenade or Rocket Launchers). The type is built in, free, and its rules are in the description.
+- **Weapon icons show their type, and Iconics their star.** In the system's own pixel-art icons, a white badge bottom-left marks a Power (bolt), Smart (reticle) or Tech (double chevron) gun, and a star top-right marks an Iconic. The quality badge stays bottom-right.
+- **Fixed: some weapons showed the plain default icon.** Medium Pistols, Heavy Pistols and Heavy SMGs (Iconics among them) asked for the system's icons with the wrong letter case. Excellent bows now use the system's Excellent bow icon too.
+- **Smart weapons get their +1.** Every Smart gun (catalog, variant, Iconic or generic) has +1 to ranged Attacks on the weapon. Each typed gun also carries its type in the flag `cpr-neon-hub.weaponType2070`.
+
 ## 1.17.1
 
 - **The Skydrivers and the CyberConductor now follow the Item Compendium.** The book now prints both, and Neon Hub uses its rows instead of its own entries:

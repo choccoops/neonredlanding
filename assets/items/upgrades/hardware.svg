@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: netrunning hardware. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<rect x="156" y="62" width="24" height="56" rx="8"/>
+<rect x="156" y="394" width="24" height="56" rx="8"/>
+<rect x="62" y="156" width="56" height="24" rx="8"/>
+<rect x="394" y="156" width="56" height="24" rx="8"/>
+<rect x="212" y="62" width="24" height="56" rx="8"/>
+<rect x="212" y="394" width="24" height="56" rx="8"/>
+<rect x="62" y="212" width="56" height="24" rx="8"/>
+<rect x="394" y="212" width="56" height="24" rx="8"/>
+<rect x="268" y="62" width="24" height="56" rx="8"/>
+<rect x="268" y="394" width="24" height="56" rx="8"/>
+<rect x="62" y="268" width="56" height="24" rx="8"/>
+<rect x="394" y="268" width="56" height="24" rx="8"/>
+<rect x="324" y="62" width="24" height="56" rx="8"/>
+<rect x="324" y="394" width="24" height="56" rx="8"/>
+<rect x="62" y="324" width="56" height="24" rx="8"/>
+<rect x="394" y="324" width="56" height="24" rx="8"/>
+<path fill-rule="evenodd" d="M136 120h240a16 16 0 0 1 16 16v240a16 16 0 0 1-16 16H136a16 16 0 0 1-16-16V136a16 16 0 0 1 16-16zM158 158v196h196V158z"/>
+<path d="M222 186h20v34h28v-34h20v34h12v42a46 46 0 0 1-30 43v41h-32v-41a46 46 0 0 1-30-43v-42h12z"/>
+</g>
+</svg>

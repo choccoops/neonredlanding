@@ -12,6 +12,8 @@ ROOT, BOOK = sys.argv[1], sys.argv[2]
 sys.path[:0] = [os.path.join(BOOK, "data"), os.path.join(BOOK, "notes")]
 import range_tables as RT
 import src_house as HOUSE, src_exotics as EXO, src_pets as PETS, src_sof as SOF
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import icons2070 as ICONS
 
 MOD = "cpr-neon-hub"
 SYS = "systems/cyberpunk-red-core/icons/compendium"
@@ -232,6 +234,9 @@ def item(type_, name, system, desc, path, src="", tag="", img=None, flags=None, 
     system.setdefault("source", {"book": SOURCE, "page": 0})
     system.setdefault("revealed", True)
     system.setdefault("favorite", False)
+    if type_ == "itemUpgrade" and not img:
+        kind, rel = ICONS.upgrade_icon(name, path, SYSDIR)
+        img = f"{SYS}/{rel}" if rel else f"{ASSETS}/upgrades/{kind}.svg"
     doc = {"_id": iid, "_key": f"!items!{iid}", "name": name, "type": type_, "img": img or IMG.get(type_, f"{SYS}/default/Default_Gear.svg"),
            "folder": folder("items-2070", path, COLORS.get(path[0])), "sort": len(ITEMS) * 10,
            "system": system, "effects": effects or [], "flags": {**MIGRATION, MOD: {"source2070": {"book": SOURCE, "chapter": path[0]}, **(flags or {})}},
@@ -381,7 +386,7 @@ def effects_for(doc, desc, path):
 IMG = {"weapon": f"{SYS}/default/Default_Weapon.svg", "ammo": f"{SYS}/default/Default_Ammo.svg", "armor": f"{SYS}/default/Default_Armor.svg",
        "cyberware": f"{SYS}/default/Default_Cyberware.svg", "cyberdeck": f"{SYS}/default/Default_Cyberdeck.svg",
        "program": f"{SYS}/default/Default_Program.svg", "drug": f"{SYS}/drugs/stim.svg", "gear": f"{SYS}/default/Default_Gear.svg",
-       "itemUpgrade": f"{SYS}/default/Default_Item_Upgrade.svg", "vehicle": f"{SYS}/vehicles/super_car.svg"}
+       "itemUpgrade": f"modules/{MOD}/assets/items/upgrades/upgrade.svg", "vehicle": f"{SYS}/vehicles/super_car.svg"}
 COLORS = {"Weapons": "#ff2a6d", "Ammo & Explosives": "#ff8a1f", "Attachments & Mods": "#f3e600", "Armor & Shields": "#8fb0cc",
           "Power Armor": "#7f9cb5", "Cyberware": "#05d9e8", "Netrunning": "#39ff88", "Gear & Goods": "#d8dbec",
           "Drugs": "#ff4fd8", "Vehicles & Upgrades": "#e8813a", "Invented Tech": "#c792ff", "Iconics": "#ffd400"}
@@ -398,6 +403,9 @@ def fixup_defaults():
 
 
 SYSDIR = os.environ.get("CPR_SYSTEM", "")
+ASSETS = f"modules/{MOD}/assets/items"
+# weapon icons drawn from the system's, with badges (written to assets/items/weapons at the end)
+DERIVED = {}
 
 # ------------------------------------------------------------------ weapons
 WTYPE = [("very heavy melee", "vHeavyMelee"), ("heavy melee", "heavyMelee"), ("medium melee", "medMelee"), ("light melee", "lightMelee"),
@@ -409,7 +417,7 @@ WTYPE = [("very heavy melee", "vHeavyMelee"), ("heavy melee", "heavyMelee"), ("m
 AMMO_FOR = {"medPistol": ["medPistol"], "heavyPistol": ["heavyPistol"], "vHeavyPistol": ["vHeavyPistol"], "smg": ["medPistol"],
             "heavySmg": ["heavyPistol"], "shotgun": ["shotgunShell", "shotgunSlug"], "assaultRifle": ["rifle"], "sniperRifle": ["rifle"],
             "bow": ["arrow"], "grenadeLauncher": ["grenade"], "rocketLauncher": ["rocket"]}
-WIMG = {"medPistol": "MediumPistol", "heavyPistol": "HeavyPistol", "vHeavyPistol": "veryHeavyPistol", "smg": "SMG", "heavySmg": "HeavySMG",
+WIMG = {"medPistol": "mediumPistol", "heavyPistol": "heavyPistol", "vHeavyPistol": "veryHeavyPistol", "smg": "SMG", "heavySmg": "heavySMG",
         "shotgun": "Shotgun", "assaultRifle": "AssaultRifle", "sniperRifle": "SniperRifle", "bow": "Bow", "grenadeLauncher": "GrenadeLauncher",
         "rocketLauncher": "RocketLauncher", "lightMelee": "CombatKnife", "medMelee": "BaseballBat", "heavyMelee": "Sword",
         "vHeavyMelee": "Chainsaw", "thrownWeapon": "thrown_weapon", "martialArts": "unarmed"}
@@ -418,16 +426,38 @@ RANGE_ALIAS = {"Long-Barrel Pistol": "Long Barrel Pistol", "Anti-Materiel Rifle"
                "Crossbow": "Bow", "Machine Gun": "Assault Rifle", "Shortbow": "Shortbow", "Longbow": "Longbow"}
 
 
-def wimg(wtype, quality="standard"):
+def wimg(wtype, quality="standard", rebuild=None, iconic=False):
+    """The system's icon for the weapon type and quality; with a 2070s type or as an Iconic, Neon Hub's copy with its badges."""
     base = WIMG.get(wtype)
     if not base:
         return IMG["weapon"]
-    path = f"weapons/{base}{'' if quality == 'standard' else '_' + quality}.svg"
-    if SYSDIR and not os.path.exists(os.path.join(SYSDIR, "icons/compendium", path)):
-        path = f"weapons/{base}.svg"
-        if not os.path.exists(os.path.join(SYSDIR, "icons/compendium", path)):
-            return IMG["weapon"]
-    return f"{SYS}/{path}"
+    if (rebuild or iconic) and SYSDIR:
+        fname = f"{base}_{quality}" + (f"_{rebuild}" if rebuild else "") + ("_iconic" if iconic else "") + ".svg"
+        if fname not in DERIVED:
+            svg = ICONS.derive_weapon(SYSDIR, base, quality, rebuild, iconic)
+            if svg:
+                DERIVED[fname] = svg
+        if fname in DERIVED:
+            return f"{ASSETS}/weapons/{fname}"
+    if SYSDIR:
+        name, _ = ICONS.system_weapon_file(SYSDIR, base, quality)
+        if not name:
+            name, _ = ICONS.system_weapon_file(SYSDIR, base, "standard")
+        return f"{SYS}/weapons/{name}.svg" if name else IMG["weapon"]
+    return f"{SYS}/weapons/{base}{'' if quality == 'standard' else '_' + quality}.svg"
+
+
+TYPES_2070 = ("power", "smart", "tech")
+
+
+def rebuild_of(*texts):
+    """A gun's 2070s type, from its card ("Tech Rebuild" built in, or a "• TECH" class): power, smart, tech or None."""
+    for t in texts:
+        t = strip(t or "")
+        m = re.search(r"\b(Power|Smart|Tech) Rebuild\b", t) or re.search(r"•\s*(POWER|SMART|TECH)\b", t)
+        if m:
+            return m.group(1).lower()
+    return None
 
 
 def weapon_type(cls, skill, rng):
@@ -462,7 +492,7 @@ def quality_of(text):
     return "excellent" if "excellent" in t else "poor" if "poor quality" in t or re.search(r"\bpq\b", t) else "standard"
 
 
-def weapon_system(w, cls, cost):
+def weapon_system(w, cls, cost, rebuild=None):
     skill = strip(w.get("skill")) or "Melee Weapon"
     ranged = skill not in MELEE_SKILLS
     wtype = weapon_type(cls, skill, w.get("range", ""))
@@ -471,7 +501,9 @@ def weapon_system(w, cls, cost):
     af = re.search(r"Autofire \([^)]*?(\d+)\)", modes)
     dmg = re.search(r"\d+d\d+", strip(w.get("damage")))
     return wtype, q, {
-        "weaponSkill": skill, "weaponType": wtype, "isRanged": ranged, "quality": q, "attackmod": 1 if q == "excellent" else 0,
+        "weaponSkill": skill, "weaponType": wtype, "isRanged": ranged, "quality": q,
+        # Excellent Quality +1; a Smart weapon +1 to ranged Attacks with it
+        "attackmod": (1 if q == "excellent" else 0) + (1 if rebuild == "smart" and ranged else 0),
         "damage": dmg.group() if dmg else "0", "rof": max(1, num(w.get("rof"), 1)), "handsReq": max(1, num(w.get("hands"), 1)),
         "magazine": {"value": 0, "max": num(w.get("capacity")) if ranged else 0, "ammoData": None},
         "ammoVariety": AMMO_FOR.get(wtype, []) if ranged else [], "usesType": "magazine",
@@ -492,14 +524,21 @@ def weapon_desc(w, cls):
 
 
 CARDS = {}
+# Made last, so adding them doesn't move every other item's sort
+LATER = []
+# What each 2070s type does, in the book's words (its Power, Smart & Tech Weapons table)
+TYPE_RULES = {}
 
 
 def add_card(ev, path):
     w = ev["card"]
     cls = strip(w.get("class", "")).split("//")[0].strip()
     src = strip(w.get("class", "")).split("//")[1].strip() if "//" in w.get("class", "") else ev["tag"]
-    wtype, q, system = weapon_system(w, cls, w.get("cost"))
-    doc = item("weapon", w["name"], system, weapon_desc(w, cls), path, src, img=wimg(wtype, q))
+    rb = rebuild_of(w.get("attachments"), w.get("class"))
+    wtype, q, system = weapon_system(w, cls, w.get("cost"), rb)
+    rb = rb if system["isRanged"] else None
+    doc = item("weapon", w["name"], system, weapon_desc(w, cls), path, src, img=wimg(wtype, q, rb, path[0] == "Iconics"),
+               flags={"weaponType2070": rb} if rb else None)
     if doc:
         CARDS[plain(w["name"]).lower()] = (w, cls)
     return doc
@@ -516,9 +555,11 @@ def add_variant(row, header, path, tag):
     q = quality_of(listing)
     cls2 = re.sub(r"(Excellent|Poor) Quality ", "", cls)
     cls2 = (f"{q.title()} Quality " if q != "standard" else "") + cls2
-    wtype, q, system = weapon_system(w, cls2, cost)
+    rb = rebuild_of(listing, w.get("attachments"), w.get("class"))
+    wtype, q, system = weapon_system(w, cls2, cost, rb)
+    rb = rb if system["isRanged"] else None
     desc = para(inline(listing), f"<strong>Based on:</strong> {inline(base)}", f"<strong>{inline(header[2])}:</strong> {inline(cost)}")
-    return item("weapon", name, system, desc, path, tag=tag, img=wimg(wtype, q))
+    return item("weapon", name, system, desc, path, tag=tag, img=wimg(wtype, q, rb, path[0] == "Iconics"), flags={"weaponType2070": rb} if rb else None)
 
 
 def add_generic(ev, path):
@@ -541,6 +582,19 @@ def add_generic(ev, path):
             item("weapon", nm, system, para(ex, f"<strong>Generic weapon</strong> ({q} quality)."), path, tag=ev["tag"], img=wimg(wtype, qq))
             if q == "standard":
                 CARDS.setdefault(name.lower(), (w, cls))
+            if melee:
+                continue
+            # A generic gun is Power, Smart or Tech, picked when it's bought, free (Tech doesn't fit Grenade and Rocket Launchers).
+            for t in TYPES_2070:
+                if t == "tech" and wtype in ("grenadeLauncher", "rocketLauncher"):
+                    continue
+                wtype, qq, system = weapon_system(w, f"{cls} • {t.upper()}", c, t)
+                tn = t.title()
+                rule = TYPE_RULES.get(t, "")
+                LATER.append(lambda name=name, q=q, tn=tn, rule=rule, ex=ex, system=system, wtype=wtype, qq=qq, t=t: item("weapon", f"{name} ({tn})" if q == "standard" else f"{name} ({q.title()}, {tn})", system,
+                     para(ex, f"<strong>Generic {tn} weapon</strong> ({q} quality): the type is built in, at no extra cost, and takes no slots.",
+                          f"<strong>{tn}:</strong> {rule}" if rule else ""),
+                     path + (f"{tn} Weapons",), tag=ev["tag"], img=wimg(wtype, qq, t), flags={"weaponType2070": t}))
 
 
 # ------------------------------------------------------------------ ammo
@@ -602,7 +656,7 @@ def gear_sys(cost, **kw):
 def upgrade(name, utype, cost, slots, desc, path, src="", tag=""):
     system = {"type": utype, "size": max(0, num(slots)) if re.search(r"\d", str(slots or "")) else 0, "price": {"market": price(cost)},
               "installLocation": "mall", "brand": "", "concealable": {"concealable": False, "isConcealed": False}, "isElectronic": False}
-    return item("itemUpgrade", name, system, desc, path, src, tag, img=f"{SYS}/default/Default_Item_Upgrade.svg")
+    return item("itemUpgrade", name, system, desc, path, src, tag)
 
 
 def rowdict(header, row):
@@ -1337,6 +1391,10 @@ def main():
     fixup_defaults() if SYSDIR else None
     load_elsewhere()
     events = read_markup()
+    for ev in events:
+        if ev["kind"] == "table" and ev["header"][:3] == ["Type", "Fits", "What it does"]:
+            for r in ev["rows"]:
+                TYPE_RULES[plain(r[0]).lower()] = inline(r[2])
     # Cards first, so variants and ACPAs can find their base weapons.
     for ev in events:
         if ev["kind"] == "card":
@@ -1356,6 +1414,8 @@ def main():
     for p in PETS.PETS:
         add_pet(p, ("Cyberpets",))
     dv_tables()
+    for make in LATER:
+        make()
 
 
 def write(pack, docs, folders):
@@ -1384,6 +1444,15 @@ if __name__ == "__main__":
     write("items-2070", list(ITEMS.values()), [f for k, f in FOLDERS.items() if k[0] == "items-2070" and f["_id"] in keep])
     write("rides-2070", list(ACTORS.values()), [f for k, f in FOLDERS.items() if k[0] == "rides-2070" and f["_id"] in keep])
     write("dv-tables-2070", TABLES, [])
+    if SYSDIR:
+        ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
+        wdir = os.path.join(ROOT, "assets/items/weapons")
+        if os.path.isdir(wdir):
+            shutil.rmtree(wdir)
+        os.makedirs(wdir)
+        for fname, svg in sorted(DERIVED.items()):
+            open(os.path.join(wdir, fname), "w", encoding="utf-8").write(svg)
+        open(os.path.join(wdir, "LICENSE.md"), "w", encoding="utf-8").write(ICONS.WEAPON_LICENSE)
     import collections
     print("items:", len(ITEMS), dict(collections.Counter(d["type"] for d in ITEMS.values())))
     open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "effects_report.txt"), "w").write("\n".join(sorted(EFFECT_NOTES)))

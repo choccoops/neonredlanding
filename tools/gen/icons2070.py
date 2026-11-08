@@ -460,3 +460,207 @@ def write_vehicle_icons(out):
         svg = flat(key, body, note)
         open(os.path.join(out, f"{key}.svg"), "w", encoding="utf-8").write(svg)
         open(os.path.join(out, f"{key}_iconic.svg"), "w", encoding="utf-8").write(svg.replace("</svg>", STAR + "\n</svg>"))
+
+
+# ------------------------------------------------------------------ cyberware: the system's head / torso / hand shapes
+HEAD = '<path d="M196 476v-74q-82-22-82-120 0-134 140-152 128-2 148 118l32 52q6 14-10 16l-22 2v44q0 30-30 30h-40v84z"/>'
+TORSO = '<circle cx="256" cy="110" r="66"/><path d="M118 476V302q0-104 92-112h92q92 8 92 112v174z"/>'
+
+CYBER_ICONS = {
+    # neuralware: a chip wired into the head
+    "neuralware": ("neuralware", HEAD +
+                   f'<g fill="{BG}"><path d="M214 200h72v72h-72z"/><path d="M180 222h34v10h-34zM180 244h34v10h-34zM286 222h34v10h-34zM286 244h34v10h-34zM230 166h10v34h-10zM260 166h10v34h-10zM230 272h10v34h-10zM260 272h10v34h-10z"/></g>'
+                   f'<path d="M232 218h36v36h-36z"/>'),
+    # fashionware: sparkles on the head
+    "fashionware": ("fashionware", HEAD +
+                    f'<g fill="{BG}"><path d="M246 168l12 36 36 12-36 12-12 36-12-36-36-12 36-12z"/><path d="M318 268l7 20 20 7-20 7-7 20-7-20-20-7 20-7z"/><path d="M184 266l6 16 16 6-16 6-6 16-6-16-16-6 16-6z"/></g>'),
+    # internal body: a heart with a pulse, in the torso
+    "internal": ("internal body cyberware", TORSO +
+                 f'<path fill="{BG}" d="M256 420l-76-74a46 46 0 0 1 76-50 46 46 0 0 1 76 50z"/>'
+                 f'<path fill="none" stroke="{RED}" stroke-width="12" stroke-linejoin="round" d="M186 340h30l14-24 22 48 16-30 12 14h36"/>'),
+    # external body: plates over the torso
+    "external": ("external body cyberware", TORSO +
+                 f'<g fill="none" stroke="{BG}" stroke-width="12" stroke-linejoin="round">'
+                 '<path d="M212 254l44-24 44 24v48l-44 24-44-24z"/><path d="M168 336l44-24 44 24v48l-44 24-44-24z"/><path d="M256 336l44-24 44 24v48l-44 24-44-24z"/></g>'),
+    # borgware: heavy chrome, a gear in the chest
+    "borgware": ("borgware", TORSO + gear(256, 330, 62, 8, 20, 24).replace("<path", f'<path fill="{BG}"')
+                 + f'<g fill="{BG}"><circle cx="150" cy="232" r="10"/><circle cx="362" cy="232" r="10"/><circle cx="150" cy="440" r="10"/><circle cx="362" cy="440" r="10"/></g>'),
+    # a cyberfinger: a hand with one finger tooled
+    "cyberfinger": ("a cyberfinger",
+                    '<path d="M132 300h236v116q0 60-60 60H192q-60 0-60-60z"/>'
+                    '<rect x="138" y="196" width="44" height="130" rx="22"/><rect x="190" y="150" width="44" height="170" rx="22"/>'
+                    '<rect x="242" y="140" width="44" height="180" rx="22"/><path d="M294 300V90q0-22 22-22t22 22v210z"/>'
+                    '<path d="M368 340l52-62q16-18 34-6t4 34l-66 96z"/>'
+                    f'<path fill="{BG}" d="M294 118h44v12h-44zM294 150h44v12h-44zM294 182h44v12h-44z"/>'
+                    '<path d="M308 70h16v-24h-16z"/><path d="M316 20l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/>'),
+}
+
+
+def cyber_icon(name, ctype, path, sysdir=""):
+    """(our icon's key or None, the system's icon or None) for a piece of cyberware: the system's by name, else its kind's."""
+    low = norm(name)
+    leaf = path[-1] if path else ""
+    for pat, rel in CYBER_ALIASES:
+        if re.search(pat, low):
+            return None, rel
+    best = None
+    for k in system_icons(sysdir, "cyberware"):
+        toks = k.split("_")
+        if f" {' '.join(toks)} " in f" {low} " or f" {''.join(toks)} " in f" {low} " or all(f" {t} " in f" {low} " for t in toks):
+            if not best or len(k) > len(best):
+                best = k
+    if best:
+        return None, f"cyberware/{best}.svg"
+    if leaf == "Dynalar Cyberfingers" or "cyberfinger" in low:
+        return "cyberfinger", None
+    fallback = {"cyberArm": "cyberware/cyberarm.svg", "cyberLeg": "cyberware/cyberleg.svg", "cyberEye": "cyberware/cybereye.svg",
+                "cyberAudioSuite": "cyberware/cyberaudio_suite.svg"}
+    if ctype in fallback:
+        return None, fallback[ctype]
+    return {"neuralWare": "neuralware", "fashionware": "fashionware", "cyberwareInternal": "internal", "cyberwareExternal": "external",
+            "borgware": "borgware"}.get(ctype, "internal"), None
+
+
+def norm(s):
+    return re.sub(r"[^a-z0-9]+", " ", str(s).lower().replace("&", "and").replace("'", "").replace("’", "")).strip()
+
+
+# names the system draws under another name
+CYBER_ALIASES = [
+    (r"\blow light infrared uv\b", "cyberware/lowlight_ir_uv.svg"),
+    (r"\bhardened shielding\b", "cyberware/hardend_shielding.svg"),
+    (r"\brealskinn?\b", "cyberware/realskin_covering.svg"),
+    (r"\bsuperchrome\b", "cyberware/superchrome_covering.svg"),
+    (r"\blinear frame (∑|σ|sigma)|\bsigma\b", "cyberware/implanted_linearframe_sigma.svg"),
+    (r"\blinear frame (ß|β|beta)|\bbeta\b", "cyberware/implanted_linearframe_beta.svg"),
+    (r"\blinear frame\b", "default/default-implanted-linearframe.svg"),
+    (r"\bmantis blades?\b|\bchainripp\b|\bmonowire\b", "cyberware/popup_melee_weapon.svg"),
+    (r"\bpopup (shotgun|net launcher)\b|\bprojectile launch system\b", "cyberware/popup_ranged_weapon.svg"),
+    (r"\bhealth monitor\b", "cyberware/biomonitor.svg"),
+    (r"\bholophone\b", "cyberware/radio_communicator.svg"),
+    (r"\b(translation|poser) chip\b", "cyberware/skill_chip.svg"),
+    (r"\bc link socket\b", "cyberware/chipware_socket.svg"),
+    (r"\bneuroport\b", "cyberware/interface_plugs.svg"),
+    (r"\bcybersuite\b", "cyberware/cyberdeck.svg"),
+    (r"\b(monovision|bug eye|cybereyes|optics)\b", "cyberware/cybereye.svg"),
+    (r"\boptical camo\b|\bchameleon\b|\bmasking ink\b", "cyberware/color_shift.svg"),
+    (r"\b(dragoon|subdermal|nano) plating\b|\bfbc .*coating\b", "cyberware/subdermal_armor.svg"),
+    (r"\bcyberhands?\b", "cyberware/standard_hand.svg"),
+]
+
+_SYSTEM_ICONS = {}
+
+
+def system_icons(sysdir, folder):
+    if not sysdir:
+        return []
+    if folder not in _SYSTEM_ICONS:
+        d = os.path.join(sysdir, "icons/compendium", folder)
+        _SYSTEM_ICONS[folder] = sorted(f[:-4] for f in os.listdir(d) if f.endswith(".svg")) if os.path.isdir(d) else []
+    return _SYSTEM_ICONS[folder]
+
+
+def write_cyber_icons(out):
+    """Our cyberware icons, and a starred copy of each for Iconic cyberware."""
+    os.makedirs(out, exist_ok=True)
+    for key, (note, body) in CYBER_ICONS.items():
+        svg = flat(key, body, note)
+        open(os.path.join(out, f"{key}.svg"), "w", encoding="utf-8").write(svg)
+        open(os.path.join(out, f"{key}_iconic.svg"), "w", encoding="utf-8").write(svg.replace("</svg>", STAR + "\n</svg>"))
+
+
+# ------------------------------------------------------------------ marks laid over the system's own vector icons
+def overlay(svg, fragment):
+    """Lay a 512x512 fragment over a system vector icon, whatever its viewBox."""
+    m = re.search(r'<svg\b[^>]*?viewBox="([-\d.\s]+)"', svg, re.S)
+    x, y, w, h = (float(v) for v in m.group(1).split()) if m else (0, 0, 512, 512)
+    end = svg.rstrip().rindex("</svg>")
+    return (svg[:end] + f'<svg x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" viewBox="0 0 512 512">{fragment}</svg>\n</svg>\n')
+
+
+def starred_system(sysdir, rel):
+    """A system icon with the Iconic star, and a note of where it came from."""
+    src = open(os.path.join(sysdir, "icons/compendium", rel), encoding="utf-8").read()
+    head = f"<!-- Derived from the Cyberpunk RED - CORE system icon {rel} (GPL-3.0); the Iconic star added by Neon Hub. -->\n"
+    out = overlay(src, STAR)
+    i = out.index(">", out.index("<svg")) + 1
+    return out[:i] + "\n" + head + out[i:]
+
+
+# A Full Body Conversion's role, as a white emblem on a dark disc, top-right of its frame's icon
+EMBLEMS = {
+    "talk": '<path d="M396 52h80q14 0 14 14v44q0 14-14 14h-46l-24 20v-20h-10q-14 0-14-14V66q0-14 14-14z"/>',
+    "blade": '<path d="M472 44l14 14-70 70-20 4 4-20z"/><path d="M398 118l-22 22 10 10 22-22z"/>',
+    "mask": '<path d="M386 74q50-20 104 0v26q-10 34-52 34t-52-34z"/><path fill="#1b1f21" d="M398 88h30v12h-30zM448 88h30v12h-30z"/>',
+    "shield": '<path d="M436 42l50 18v34q0 34-50 52-50-18-50-52V60z"/>',
+    "circuit": '<path d="M414 70h44v44h-44z"/><path d="M400 80h14v8h-14zM400 96h14v8h-14zM458 80h14v8h-14zM458 96h14v8h-14zM424 56h8v14h-8zM440 56h8v14h-8zM424 114h8v14h-8zM440 114h8v14h-8z"/>',
+    "leaf": '<path d="M396 132q-4-80 92-90 4 92-80 92l40-46z"/>',
+    "crown": '<path d="M390 120l-6-62 28 26 24-40 24 40 28-26-6 62z"/>',
+    "flame": '<path d="M436 40q30 30 30 64a30 30 0 0 1-60 0q0-18 14-30 0 18 12 22 4-26 4-56z"/>',
+    "radiation": '<circle cx="436" cy="92" r="10"/><path d="M436 82l-20-34a40 40 0 0 1 40 0zM446 98l40 0a40 40 0 0 1-20 34zM426 98l-20 34a40 40 0 0 1-20-34z"/>',
+    "wave": '<path fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" d="M390 74q12-12 24 0t24 0 24 0 24 0M390 104q12-12 24 0t24 0 24 0 24 0"/>',
+    "eye": '<path d="M386 92q50-56 100 0-50 56-100 0z"/><circle cx="436" cy="92" r="16" fill="#1b1f21"/>',
+    "bomb": '<circle cx="430" cy="102" r="32"/><path d="M448 70l14-14 8 8-14 14z"/><path d="M470 46l6 6M480 56l6 2M476 40l2-6" stroke="#ffffff" stroke-width="6"/>',
+    "bolt": '<path d="M446 38l-48 62h32l-12 46 52-66h-34z"/>',
+    "wrench": '<path d="M468 46a32 32 0 0 0-40 42l-38 38 14 14 38-38a32 32 0 0 0 42-40l-20 20-16-4-4-16z"/>',
+    "anchor": '<circle cx="436" cy="52" r="10" fill="none" stroke="#ffffff" stroke-width="8"/><path d="M432 62h8v74h-8zM414 78h44v8h-44z"/><path fill="none" stroke="#ffffff" stroke-width="8" d="M396 108q4 30 40 30t40-30"/>',
+    "rocket": '<path d="M436 36q28 24 28 64v20h-56v-20q0-40 28-64z"/><path d="M408 104l-18 26h18zM464 104l18 26h-18z"/><circle cx="436" cy="80" r="10" fill="#1b1f21"/>',
+    "person": '<circle cx="436" cy="62" r="18"/><path d="M402 136q0-50 34-50t34 50z"/>',
+    "note": '<path d="M422 50l50-10v62a14 14 0 1 1-8-12V62l-34 7v47a14 14 0 1 1-8-12z"/>',
+    "cross": '<path d="M424 46h24v34h34v24h-34v34h-24v-34h-34V80h34z"/>',
+    "spark": '<path d="M436 42l12 38 38 12-38 12-12 38-12-38-38-12 38-12z"/>',
+    # fashion styles
+    "heart": '<path d="M436 136l-40-40a26 26 0 0 1 40-34 26 26 0 0 1 40 34z"/>',
+    "gem": '<path d="M408 60h56l22 26-50 54-50-54z"/><path fill="#1b1f21" d="M420 72h32l-16 14z"/>',
+    "wheel": '<circle cx="436" cy="92" r="40" fill="none" stroke="#ffffff" stroke-width="12"/><circle cx="436" cy="92" r="10"/><path d="M432 56h8v72h-8zM400 88h72v8h-72z"/>',
+    "chevrons": '<path d="M398 64l38 22 38-22v18l-38 22-38-22zM398 96l38 22 38-22v18l-38 22-38-22z"/>',
+    "skull": '<path d="M436 46q40 0 40 40 0 20-12 30v18h-56v-18q-12-10-12-30 0-40 40-40z"/><circle cx="420" cy="90" r="10" fill="#1b1f21"/><circle cx="452" cy="90" r="10" fill="#1b1f21"/><path fill="#1b1f21" d="M430 122h4v12h-4zM438 122h4v12h-4z"/>',
+    "stitch": '<path d="M404 60h64v64h-64z"/><path fill="none" stroke="#1b1f21" stroke-width="7" stroke-linecap="round" d="M414 72l12 12M426 72l-12 12M446 100l12 12M458 100l-12 12M414 100l12 12M426 100l-12 12"/>',
+    "flag": '<path d="M404 42h10v96h-10z"/><path d="M414 48h66l-14 22 14 22h-66z"/>',
+}
+BODY_ROLES = {
+    "Arasaka ZSR-05 Murasaki": "talk", "Arasaka ZSR-07 Kawakami": "blade", "Arasaka ZSR-09 Fuma": "mask", "Arasaka ZSR-11 Benkei": "shield",
+    "Arasaka ZSR-13 Seimei": "circuit", "Biotechnica Demeter": "leaf", "Continental Brands Laureate": "crown", "Dynalar Salamander": "flame",
+    "Dynalar Thalassa": "wave", "Kiroshi Argus": "eye", "Militech Arachne": "mask", "Militech Hoplite War Platform": "shield",
+    "Militech Kratos": "shield", "Militech Nemesis": "blade", "Militech Phoenix Security Unit": "bomb", "Moore Technologies Avalanche": "bolt",
+    "Moore Technologies Gehenna": "radiation", "NovelTech Atlas": "wrench", "Orbital Air Galileo": "rocket", "Raven Microcybernetics Gemini IV": "person",
+    "Raven Microcybernetics Sage": "circuit", "Sanroo Hello Cutie Pwr-Up Idol": "note", "Techtronika Burlak": "anchor", "Trauma Team Osler": "cross",
+    "Zetatech Newman": "spark",
+}
+
+
+def emblemed(sysdir, rel, emblem):
+    """A system icon with a white emblem on a dark disc, top-right, and a note of where it came from."""
+    src = open(os.path.join(sysdir, "icons/compendium", rel), encoding="utf-8").read()
+    mark = f'<circle cx="436" cy="92" r="70" fill="#1b1f21"/><circle cx="436" cy="92" r="70" fill="none" stroke="#ffffff" stroke-width="6"/><g fill="#ffffff">{EMBLEMS[emblem]}</g>'
+    out = overlay(src, mark)
+    i = out.index(">", out.index("<svg")) + 1
+    return out[:i] + f"\n<!-- Derived from the Cyberpunk RED - CORE system icon {rel} (GPL-3.0); the {emblem} emblem added by Neon Hub. -->\n" + out[i:]
+
+
+def body_icon(sysdir, frame_rel, name):
+    """A body's icon: its frame's system icon with its role's emblem (or None, for a body without one)."""
+    role = BODY_ROLES.get(name)
+    return emblemed(sysdir, frame_rel, role) if role and sysdir else None
+
+
+# Neon Hub's 2070s fashion styles, each with its emblem
+STYLE_EMBLEMS = {"Kitsch": "heart", "Neo-Kitsch": "gem", "High Fashion": "crown", "Nomad Leathers": "wheel", "Neo-Militarism": "chevrons",
+                 "Gang Colors": "skull", "Entropism": "stitch", "Colors & Uniforms": "flag"}
+# the system's clothing icon for each kind of clothing
+CLOTHING_ICONS = {"jacket": "generic_jacket", "top": "generic_top", "bottoms": "generic_bottoms", "footwear": "generic_footwear",
+                  "jewelry": "generic_jewelry", "glasses": "generic_glasses", "mirrorshades": "generic_mirrorshades",
+                  "contactLenses": "generic_contact_lenses", "hats": "generic_hat"}
+
+
+DERIVED_LICENSE = """# Derived icons (GPL-3.0)
+
+These icons are the Cyberpunk RED - CORE system's own icons (from
+https://gitlab.com/cyberpunk-red-team/fvtt-cyberpunk-red-core) with marks added by Neon Hub: the
+Iconic star on Iconic cyberware, a role emblem on each Full Body Conversion's frame icon, and a
+style emblem on each 2070s fashion item's clothing icon. As
+derivatives of the system's art they are under its license, the GNU General Public License v3.0,
+not Neon Hub's MIT license. Each file names its source icon. They are generated by
+`tools/gen/items2070.py`, `tools/gen/fullborg2070.py` and `tools/gen/fashion_icons.py` (see
+`tools/gen/icons2070.py`).
+"""

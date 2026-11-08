@@ -188,7 +188,23 @@ def core_box(ctype, label, slots):
                                         "installedItems": {"allowed": True, "allowedTypes": ["itemUpgrade", "cyberware"], "list": [], "slots": slots,
                                                            "usedSlots": 0}},
                     G.para(f"The body's {label} option slots, doubled in an FBC. Go Metal moves what's in here into the character's own "
-                           f"{label} slots."), ("Chassis",), "icons/svg/item-bag.svg", {"core": ctype})
+                           f"{label} slots."), ("Chassis",), f"{G.ASSETS}/cyberware/{CORE_ICON[ctype]}.svg", {"core": ctype})
+
+
+# the option-slot boxes take Neon Hub's icon for their kind of cyberware
+CORE_ICON = {"cyberwareInternal": "internal", "cyberwareExternal": "external", "fashionware": "fashionware"}
+# each body's icon: its frame's, with its role's emblem (assets/items/derived/body_*.svg)
+BODY_ICONS = {}
+
+
+def body_img(name, kind):
+    frame = FRAMES[kind][2].replace(f"{SYS}/", "")
+    svg = G.ICONS.body_icon(G.SYSDIR, frame, name)
+    if not svg:
+        return FRAMES[kind][2]
+    fname = "body_" + re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_") + ".svg"
+    BODY_ICONS[fname] = svg
+    return f"{G.ASSETS}/derived/{fname}"
 
 
 # ------------------------------------------------------------------ one body
@@ -412,7 +428,7 @@ def main():
         body = Body(b)
         kind, n = body.build()
         static, formula = hl_of(b["hl"])
-        img = FRAMES[kind][2]
+        img = body_img(b["name"], kind)
         desc = body_desc(b, kind, n, static, formula, body)
         info = {"cost": b["cost"], "hl": {"static": static, "roll": formula, "text": b["hl"]}, "frame": kind, "body": n, "eyes": b["eyes"]}
         for e in body.items:
@@ -459,6 +475,8 @@ def main():
         d.setdefault("sort", 0)
     write("fbc-bodies-2070", actors)
     write("fbc-2070", packages + parts + [bio] + care)
+    if G.SYSDIR:
+        G.write_derived("body_", BODY_ICONS)
     print(f"bodies: {len(actors)}, items: {len(packages) + len(parts) + 1 + len(care)}")
     for n in NOTES:
         print("NOTE", n)

@@ -3,7 +3,7 @@
   "_key": "!actors!1WWUewHZogRzFQsZ",
   "name": "Arasaka Standard-C",
   "type": "mook",
-  "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+  "img": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg",
   "folder": "ZvXrSxbJyiqWhIfU",
   "system": {
     "stats": {
@@ -79,7 +79,7 @@
       "_key": "!actors.items!1WWUewHZogRzFQsZ.AOYdrEM6rGGkSK1t",
       "name": "Arasaka RAS-16 Ieyasu",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
@@ -147,7 +147,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "power"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "ohnm6FPhRwnCpeWY"
@@ -242,13 +243,13 @@
       "_key": "!actors.items!1WWUewHZogRzFQsZ.7pem1NaAsJOvqsle",
       "name": "Pursuit Security Crybaby",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/GrenadeLauncher_standard_smart.svg",
       "system": {
         "weaponSkill": "Heavy Weapons",
         "weaponType": "grenadeLauncher",
         "isRanged": true,
         "quality": "standard",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "0",
         "rof": 1,
         "handsReq": 2,
@@ -309,7 +310,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "smart"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "ohnm6FPhRwnCpeWY"
@@ -324,7 +326,7 @@
       "_key": "!actors.items!1WWUewHZogRzFQsZ.8GaPWpsllvNtrKMH",
       "name": "Techtronika BMG-570",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/AssaultRifle.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
       "system": {
         "weaponSkill": "Heavy Weapons",
         "weaponType": "assaultRifle",
@@ -391,7 +393,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "power"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "ohnm6FPhRwnCpeWY"
@@ -406,13 +409,13 @@
       "_key": "!actors.items!1WWUewHZogRzFQsZ.RTVMnbF3QN1eg9Mp",
       "name": "Tsunami Arms Kasha",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/GrenadeLauncher.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/GrenadeLauncher_standard_smart.svg",
       "system": {
         "weaponSkill": "Heavy Weapons",
         "weaponType": "grenadeLauncher",
         "isRanged": true,
         "quality": "standard",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "6d6",
         "rof": 1,
         "handsReq": 2,
@@ -473,7 +476,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "weaponType2070": "smart"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "ohnm6FPhRwnCpeWY"
@@ -869,7 +873,7 @@
     "name": "Arasaka Standard-C",
     "actorLink": true,
     "texture": {
-      "src": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg"
+      "src": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg"
     },
     "width": 1,
     "height": 1,

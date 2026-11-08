@@ -692,8 +692,9 @@ Three compendiums carry the *Cyberpunk: The Unification Era* Item Compendium int
 from the book's own tables and text (its stats, its 2070 names and prices). Each item's footer names
 the Item Compendium (2070) chapter it's from:
 
-- **Neon Hub: Item Compendium (2070s)**, about 1,800 Cyberpunk RED items in the book's chapters:
-  weapons (the 2070s catalog by class, generic weapons in three qualities, variants and iconics),
+- **Neon Hub: Item Compendium (2070s)**, about 1,900 Cyberpunk RED items in the book's chapters:
+  weapons (the 2070s catalog by class, generic weapons in three qualities and, for guns, as Power,
+  Smart and Tech, variants and iconics),
   ammunition (one item per ammo kind, priced per 10 or each), explosives and grenades, attachments,
   rebuilds and mods (weapon upgrades with their slots), armor (body and head SP and penalties),
   armor upgrades, shields, ACPA frames and shells, cyberware by system (install, Humanity Loss,
@@ -1016,13 +1017,13 @@ which runs the item generator first so the bodies use the same items).
 
 ## License
 
-MIT. Icons in `assets/` are original to Neon Hub. The Tektur font (`fonts/`) is under the SIL Open
+MIT. Icons in `assets/` are original to Neon Hub, except `assets/items/weapons/`: those are the Cyberpunk RED - CORE system's weapon icons (art by Flintwyrm) with Neon Hub's badges added, and stay under the system's GPL-3.0 (see the `LICENSE.md` there). The Tektur font (`fonts/`) is under the SIL Open
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
 Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),
 and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*. The 2070s Item Compendium
 carries that line's *Item Compendium*, and its DV tables the line's *Core Rules*, in the books' own wording, with
-Active Effects written for Neon Hub (its icons point to the Cyberpunk RED system's own), and Full Borg that book's
+Active Effects written for Neon Hub (its icons are the Cyberpunk RED system's own, badged ones of them, and Neon Hub's own for upgrades the system has none for), and Full Borg that book's
 Full Body Conversions; Cyberpunk, Cyberpunk 2077
 and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
 original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian

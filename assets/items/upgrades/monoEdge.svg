@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: Mono-edge Blading, a melee rebuild. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<g transform="rotate(-45 256 256)"><path d="M188 196h236l60 34-60 4H188z"/><path d="M194 250h232l56-6-56 34H194z"/><path d="M156 168h32v140h-32z"/><path d="M70 220h86v48H70z"/><circle cx="62" cy="244" r="28"/></g><path d="M400 300l14 40 40 14-40 14-14 40-14-40-40-14 40-14z"/>
+</g>
+</svg>

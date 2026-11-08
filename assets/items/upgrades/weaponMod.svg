@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a weapon mod. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M64 150h336v34h48v44h-48v22H226l-22 36h-46l-30 120H64l40-160H64z"/><path fill-rule="evenodd" d="M409.7 346.3L431.6 359.8L428.6 375.2L403.2 379.3L396.8 388.8L402.8 413.8L389.7 422.6L368.8 407.5L357.7 409.7L344.2 431.6L328.8 428.6L324.7 403.2L315.2 396.8L290.2 402.8L281.4 389.7L296.5 368.8L294.3 357.7L272.4 344.2L275.4 328.8L300.8 324.7L307.2 315.2L301.2 290.2L314.3 281.4L335.2 296.5L346.3 294.3L359.8 272.4L375.2 275.4L379.3 300.8L388.8 307.2L413.8 301.2L422.6 314.3L407.5 335.2zM330 352a22 22 0 1 0 44 0a22 22 0 1 0 -44 0z"/>
+</g>
+</svg>

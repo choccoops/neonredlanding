@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: an item upgrade. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path fill-rule="evenodd" d="M385.4 243.3L427.2 272.9L420.6 305.9L370.6 317.3L356.5 338.5L365.1 389.0L337.1 407.7L293.7 380.4L268.7 385.4L239.1 427.2L206.1 420.6L194.7 370.6L173.5 356.5L123.0 365.1L104.3 337.1L131.6 293.7L126.6 268.7L84.8 239.1L91.4 206.1L141.4 194.7L155.5 173.5L146.9 123.0L174.9 104.3L218.3 131.6L243.3 126.6L272.9 84.8L305.9 91.4L317.3 141.4L338.5 155.5L389.0 146.9L407.7 174.9L380.4 218.3z"/><path fill="#1b1f21" d="M232 176h48v56h56v48h-56v56h-48v-56h-56v-48h56z"/>
+</g>
+</svg>

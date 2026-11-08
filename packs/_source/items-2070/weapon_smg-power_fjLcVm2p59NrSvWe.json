@@ -1,0 +1,82 @@
+{
+  "_id": "fjLcVm2p59NrSvWe",
+  "_key": "!items!fjLcVm2p59NrSvWe",
+  "name": "SMG (Power)",
+  "type": "weapon",
+  "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_standard_power.svg",
+  "folder": "HGRcgkYeEJqMV8V7",
+  "sort": 18650,
+  "system": {
+    "weaponSkill": "Handgun",
+    "weaponType": "smg",
+    "isRanged": true,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 1,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 30,
+      "ammoData": null
+    },
+    "ammoVariety": [
+      "medPistol"
+    ],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": true
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "DV SMG",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 100
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "itemUpgrade",
+        "ammo"
+      ],
+      "list": [],
+      "slots": 3,
+      "usedSlots": 0
+    },
+    "unarmedAutomaticCalculation": true,
+    "description": {
+      "value": "<p><strong>Generic Power weapon</strong> (standard quality): the type is built in, at no extra cost, and takes no slots.</p><p><strong>Power:</strong> <strong>Critical Injuries:</strong> when it causes one, that injury's Bonus Damage goes up by <strong>5</strong>. <strong>Ricochet:</strong> take <strong>−4</strong> to bounce a shot off cover and hit a target you know about, even behind cover or out of sight, as long as there's a clear path from the bounce point. An Aimed Shot ricochet takes only the Aimed Shot's −8, not the −4 as well. Range is still measured from you to the target. <strong>Shotgun Shells:</strong> pick a surface within 6m/yds as the new origin of the spread, which then covers 6m/yds in a new direction. It can't go through that surface. More in <em>Ricochets in Play</em> (Core Rules, Chapter 07).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Weapons"
+      },
+      "weaponType2070": "power"
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

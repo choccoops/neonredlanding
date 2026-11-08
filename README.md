@@ -697,6 +697,7 @@ the Item Compendium (2070) chapter it's from:
 - **Neon Hub: Item Compendium (2070s)**, about 1,900 Cyberpunk RED items in the book's chapters:
   weapons (the 2070s catalog by class, generic weapons in three qualities and, for guns, as Power,
   Smart and Tech, variants and iconics),
+  the Martial Arts Forms (each a Skill and a weapon to attack with),
   ammunition (one item per ammo kind, priced per 10 or each), explosives and grenades, attachments,
   rebuilds and mods (weapon upgrades with their slots), armor (body and head SP and penalties),
   armor upgrades, shields, ACPA frames and shells, cyberware by system (install, Humanity Loss,
@@ -1050,7 +1051,8 @@ Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lif
 `packs/street-goods` folders aren't committed. The 2070s packs are generated from the book's source
 by `tools/gen/items2070.py` (Neon Hub's Item Compendium) and `tools/gen/fullborg2070.py` (Full Borg,
 which runs the item generator first so the bodies use the same items). The Fashion (2070s) pack is edited by hand;
-`tools/gen/fashion_icons.py` sets its icons from each piece's kind and style.
+`tools/gen/fashion_icons.py` sets its icons from each piece's kind and style. The Street Goods pack is edited by hand too;
+`tools/gen/goods_icons.py` draws its icons.
 
 ## License
 

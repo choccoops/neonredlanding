@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14141f"/><stop offset="1" stop-color="#07070b"/></linearGradient>
-<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#05d9e8" fill-opacity="0.05"/></pattern>
-<filter id="glow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<path d="M3 3 H109 L125 19 V125 H19 L3 109 Z" fill="url(#bg)"/><path d="M3 3 H109 L125 19 V125 H19 L3 109 Z" fill="url(#scan)"/>
-<path d="M4 4 H108.5 L124 19.5 V124 H19.5 L4 108.5 Z" fill="none" stroke="#8f9bff" stroke-opacity="0.55" stroke-width="2"/>
-<path d="M99 3 H109 L125 19 V29 Z" fill="#8f9bff"/>
-<g fill="none" stroke="#8f9bff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"><path d="M30 30 H98 L64 70 Z"/><path d="M64 70 V102 M44 104 H84"/><path d="M80 30 L94 14" stroke-width="3"/><circle cx="96" cy="12" r="5" fill="#8f9bff"/><circle cx="54" cy="44" r="4" fill="#8f9bff"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: living the good life. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M110 120h292l-146 160z"/><path d="M244 270h24v160h-24zM160 430h192v26H160z"/><circle cx="360" cy="110" r="34"/><path fill="#1b1f21" d="M160 140h192l-18 20H178z"/>
+</g>
 </svg>

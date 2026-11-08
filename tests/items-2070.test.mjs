@@ -13,7 +13,7 @@ const tables = load("dv-tables-2070");
 
 // Cyberpunk RED - CORE 0.92.4's lists (module/system/config.js).
 const CPR = {
-  types: ["ammo", "armor", "clothing", "cyberdeck", "cyberware", "drug", "gear", "itemUpgrade", "program", "vehicle", "weapon"],
+  types: ["ammo", "armor", "clothing", "cyberdeck", "cyberware", "drug", "gear", "itemUpgrade", "program", "skill", "vehicle", "weapon"],
   weaponTypes: ["assaultRifle", "bow", "grenadeLauncher", "heavyMelee", "heavyPistol", "heavySmg", "lightMelee", "martialArts", "medMelee", "medPistol",
     "rocketLauncher", "shotgun", "smg", "sniperRifle", "thrownWeapon", "unarmed", "vHeavyMelee", "vHeavyPistol"],
   ammoVarieties: ["arrow", "battery", "grenade", "heavyPistol", "medPistol", "paintball", "rifle", "rocket", "shotgunShell", "shotgunSlug", "vHeavyPistol"],
@@ -37,7 +37,8 @@ test("every item uses Cyberpunk RED 0.92.4's own types and lists", () => {
     const s = d.system;
     const where = `${d.type} ${d.name}`;
     assert.ok(CPR.types.includes(d.type), where);
-    assert.equal(typeof s.price?.market, "number", where);
+    // skills have no price in Cyberpunk RED
+    if (d.type !== "skill") assert.equal(typeof s.price?.market, "number", where);
     assert.ok(s.description?.value?.length > 20, `${where}: has text`);
     if (d.type === "weapon") {
       assert.ok(CPR.weaponTypes.includes(s.weaponType), `${where}: ${s.weaponType}`);
@@ -220,4 +221,20 @@ test("vehicles and ACPAs open on MMuton's vehicle sheet with seats it understand
   }
   const pets = rides.docs.filter((a) => !a.flags[vas]);
   assert.equal(pets.length, 8, "the eight cyberpets");
+});
+
+test("the Martial Arts Forms: a Skill and a weapon each, as Cyberpunk RED's own Martial Arts", () => {
+  const skills = items.docs.filter((d) => d.type === "skill");
+  assert.equal(skills.length, 34);
+  for (const sk of skills) {
+    assert.match(sk.name, /^Martial Arts \(.+\)$/);
+    assert.deepEqual([sk.system.stat, sk.system.category, sk.system.difficulty, sk.system.skillType], ["dex", "fightingSkills", "difficult", "martialArt"]);
+    assert.ok(sk.system.description.value.includes("Special Moves"), sk.name);
+    const w = items.docs.find((d) => d.type === "weapon" && d.name === sk.name);
+    assert.ok(w, `${sk.name}: weapon`);
+    assert.deepEqual([w.system.weaponType, w.system.weaponSkill, w.system.rof, w.system.unarmedAutomaticCalculation, w.system.ignoreArmorPercent],
+      ["martialArts", sk.name, 2, true, 50]);
+    assert.equal(w.img, sk.img);
+    assert.equal(w.effects.length, 0, `${w.name}: no effects read from its text`);
+  }
 });

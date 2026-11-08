@@ -617,7 +617,25 @@ EMBLEMS = {
     "skull": '<path d="M436 46q40 0 40 40 0 20-12 30v18h-56v-18q-12-10-12-30 0-40 40-40z"/><circle cx="420" cy="90" r="10" fill="#1b1f21"/><circle cx="452" cy="90" r="10" fill="#1b1f21"/><path fill="#1b1f21" d="M430 122h4v12h-4zM438 122h4v12h-4z"/>',
     "stitch": '<path d="M404 60h64v64h-64z"/><path fill="none" stroke="#1b1f21" stroke-width="7" stroke-linecap="round" d="M414 72l12 12M426 72l-12 12M446 100l12 12M458 100l-12 12M414 100l12 12M426 100l-12 12"/>',
     "flag": '<path d="M404 42h10v96h-10z"/><path d="M414 48h66l-14 22 14 22h-66z"/>',
+    # martial arts families
+    "fist": '<path d="M404 72q0-14 14-14h44q14 0 14 14v40q0 24-24 24h-28q-20 0-20-20z"/><path fill="#1b1f21" d="M418 74h6v22h-6zM434 74h6v22h-6zM450 74h6v22h-6zM404 96h48v6h-48z"/>',
+    "grapple": '<path fill="none" stroke="#ffffff" stroke-width="12" d="M402 92a34 34 0 0 1 58-24M470 92a34 34 0 0 1-58 24"/><path d="M462 50v26h-26zM410 134v-26h26z"/>',
+    "staff": '<path d="M404 128l64-64 10 10-64 64z"/><path d="M398 134l12 12-8 8-12-12zM468 54l12 12 8-8-12-12z"/>',
+    "bow": '<path fill="none" stroke="#ffffff" stroke-width="10" d="M414 44q44 48 0 96"/><path d="M412 44h6v96h-6z"/><path d="M412 89h68v6h-68z"/><path d="M480 92l-14-10v20z"/>',
+    "gun": '<path d="M396 70h86v22h-44l-8 14h-14l-8 30h-20l10-44h-2z"/><path fill="#1b1f21" d="M440 98h10v10h-10z"/>',
+    "chrome": '<circle cx="436" cy="92" r="30"/><path d="M430 50h12v84h-12zM394 86h84v12h-84z"/><circle cx="436" cy="92" r="12" fill="#1b1f21"/>',
 }
+
+# The 2070s Martial Arts Forms, by family, each family with its emblem on the system's Martial Arts icon
+MA_FAMILY = {
+    "fist": ["Karate", "Taekwondo", "Boxing", "Muay Thai", "Krav Maga", "Kung Fu", "Choy Li Fut", "Silat", "Sov-System", "Game-fu"],
+    "grapple": ["Aikido", "Judo", "Jujutsu", "Wrestling", "Sumo", "Thamoc", "Thrash Sambo"],
+    "blade": ["Kendo", "Kenjutsu", "Fencing", "Niten Ichi Ryu", "Arnis"],
+    "staff": ["Bojutsu"], "bow": ["Kyudo"], "gun": ["Gun Fu"], "mask": ["Ninjitsu"],
+    "chrome": ["PanzerFaust", "Multiarm Melee", "Militech Commando", "Arasaka-te"],
+    "wave": ["Capoeira", "Drunken Fist", "Tai Chi"], "flame": ["Rampage"],
+}
+MA_EMBLEM = {form: fam for fam, forms in MA_FAMILY.items() for form in forms}
 BODY_ROLES = {
     "Arasaka ZSR-05 Murasaki": "talk", "Arasaka ZSR-07 Kawakami": "blade", "Arasaka ZSR-09 Fuma": "mask", "Arasaka ZSR-11 Benkei": "shield",
     "Arasaka ZSR-13 Seimei": "circuit", "Biotechnica Demeter": "leaf", "Continental Brands Laureate": "crown", "Dynalar Salamander": "flame",
@@ -664,3 +682,54 @@ not Neon Hub's MIT license. Each file names its source icon. They are generated 
 `tools/gen/items2070.py`, `tools/gen/fullborg2070.py` and `tools/gen/fashion_icons.py` (see
 `tools/gen/icons2070.py`).
 """
+
+
+# ------------------------------------------------------------------ street goods (assets/goods), flat red like the system's gear
+BOTTLE = f'<path d="M226 60h60v40l-6 14q46 30 46 82v226q0 26-26 26H212q-26 0-26-26V196q0-52 46-82l-6-14z"/><path fill="{BG}" d="M206 250h100v110H206z"/><path d="M226 276h60v12h-60zM226 310h40v12h-40z"/>'
+CARROT = f'<path d="M136 440q-12 0-6-14l150-196 72 66-196 140q-10 6-20 4z"/><path d="M312 214l40-80q8 22-6 52 30-24 58-16-12 30-44 40 34-6 52 16-30 16-62 4z"/><path fill="{BG}" d="M222 318l22 18-8 8-22-18zM190 360l20 16-8 8-20-16z"/>'
+FRUITS = (f'<circle cx="196" cy="306" r="100"/><circle cx="336" cy="318" r="92"/><circle cx="336" cy="318" r="104" fill="none" stroke="{BG}" stroke-width="14"/>'
+          f'<path d="M196 206q4-50 44-74l10 14q-36 22-38 60z"/><path d="M232 150q46-20 76 6-44 20-76-6z"/>')
+SMALL_STAR = '<path fill="#ffffff" d="M440 34l13 30 32 3-24 21 7 32-28-17-28 17 7-32-24-21 32-3z"/>'
+
+GOODS_ICONS = {
+    "bottle": ("a bottle", BOTTLE),
+    "bottle-fine": ("a fine bottle", BOTTLE, True),
+    "can": ("canned goods", f'<path d="M150 120q0-28 106-28t106 28v272q0 28-106 28t-106-28z"/><path fill="none" stroke="{BG}" stroke-width="12" d="M150 136q0 26 106 26t106-26M150 380q0 26 106 26t106-26"/><path fill="{BG}" d="M150 220h212v100H150z"/><path d="M190 250h132v40H190z"/>'),
+    "carrot": ("root vegetables", CARROT),
+    "veggies-exotic": ("exotic vegetables", CARROT, True),
+    "fruits": ("fresh fruits", FRUITS),
+    "fruits-exotic": ("exotic fruits", FRUITS, True),
+    "chicken": ("a live chicken", '<path d="M200 140q0-50 44-50 26 0 40 22l34 6-24 22q8 30-8 56 80-10 132 30 18 70-30 130-50 54-150 50-110-6-130-100-16-70 62-110z"/><path d="M228 72l14-30 14 26 16-22 6 30z"/><path d="M200 412h16v54h-16zM280 412h16v54h-16zM184 466h48v12h-48zM264 466h48v12h-48z"/>' + f'<circle cx="250" cy="134" r="10" fill="{BG}"/>'),
+    "fish": ("a live fish", f'<path d="M60 256q110-130 270-60l90-70q-14 64 0 260l-90-70q-160 70-270-60z"/><circle cx="150" cy="236" r="16" fill="{BG}"/><path fill="none" stroke="{BG}" stroke-width="12" d="M220 196q30 60 0 120"/>'),
+    "pig": ("a live pig", f'<path d="M110 250q0-110 150-110 76 0 116 40l30-30 6 50q26 26 26 60l30 6v40l-36 10q-20 40-66 56v58h-44v-46h-90v46h-44v-62q-78-30-78-118z"/><circle cx="380" cy="226" r="12" fill="{BG}"/><path d="M80 236q-30 0-30-26 18 20 40 6z"/>'),
+    "frozen": ("frozen goods", f'<path d="M180 70h152v240q0 22-22 22H202q-22 0-22-22z"/><path d="M244 332h24v120q0 12-12 12t-12-12z"/><path fill="{BG}" d="M214 100h16v170h-16zM282 100h16v170h-16z"/>'),
+    "prepak": ("a bag of Prepak", f'<path d="M256 64l180 90v204l-180 90-180-90V154z"/><path fill="none" stroke="{BG}" stroke-width="14" stroke-linejoin="round" d="M76 154l180 90 180-90M256 244v204"/><path fill="{BG}" d="M150 110l180 90 26-12-180-90z"/>'),
+    "sack": ("a sack of grain", f'<path d="M190 110h132l-26 46q120 60 120 200 0 90-100 90H196q-100 0-100-90 0-140 120-200z"/><path d="M182 84h148v30H182z"/><path fill="none" stroke="{BG}" stroke-width="14" stroke-linecap="round" d="M196 300q60 30 120 0M206 360q50 24 100 0"/>'),
+    "snack-bag": ("packaged goods", f'<path d="M150 70l20 20 20-20 20 20 20-20 20 20 20-20 20 20 20-20 20 20 20-20v372l-20-20-20 20-20-20-20 20-20-20-20 20-20-20-20 20-20-20-20 20z"/><circle cx="256" cy="256" r="58" fill="{BG}"/><circle cx="256" cy="256" r="32"/>'),
+    "coffee": ("coffee", f'<path d="M100 196h260v120q0 100-100 100h-60q-100 0-100-100z"/><path fill="none" stroke="#e64539" stroke-width="30" d="M360 236h20q46 0 46 46t-46 46h-30"/><path d="M80 436h320v24H80z"/>'
+               '<path fill="none" stroke="#e64539" stroke-width="18" stroke-linecap="round" d="M180 150q-20-30 0-60M240 150q-20-30 0-60M300 150q-20-30 0-60"/>'),
+    "grill": ("a barbecue grill", f'<path d="M96 196h320q0 120-160 120T96 196z"/><path d="M80 180h352v24H80z"/>'
+              f'<path d="M190 300l-50 160h28l46-150zM322 300l50 160h-28l-46-150z"/><path d="M244 316h24v144h-24z"/>'
+              '<path fill="none" stroke="#e64539" stroke-width="18" stroke-linecap="round" d="M190 140q-20-30 0-60M256 140q-20-30 0-60M322 140q-20-30 0-60"/>'),
+    "oven": ("a smart oven", f'<path d="M76 110h360q20 0 20 20v252q0 20-20 20H76q-20 0-20-20V130q0-20 20-20z"/><path fill="{BG}" d="M100 150h240v212H100z"/><path d="M130 320q0-80 90-80t90 80z"/><path fill="{BG}" d="M362 162h56v24h-56zM362 210h56v24h-56zM362 258h56v24h-56z"/>'),
+    "shower": ("a shower head", f'<path d="M110 460V150q0-80 80-80h70q60 0 60 60v40h-36v-40q0-24-24-24h-70q-44 0-44 44v310z"/><path d="M240 170h160l-24 60H264z"/>'
+               '<path d="M268 270h18v50h-18zM312 270h18v70h-18zM356 270h18v50h-18zM290 350h18v40h-18zM334 360h18v50h-18z"/>'),
+    "soundproofing": ("soundproofing", f'<path d="M88 88h336v336H88z"/><path fill="none" stroke="{BG}" stroke-width="14" stroke-linejoin="round" d="M120 130l40 40-40 40 40 40-40 40 40 40-40 40M200 130l40 40-40 40 40 40-40 40 40 40-40 40M280 130l40 40-40 40 40 40-40 40 40 40-40 40M360 130l40 40-40 40 40 40-40 40 40 40-40 40"/>'),
+    "good-life": ("living the good life", f'<path d="M110 120h292l-146 160z"/><path d="M244 270h24v160h-24zM160 430h192v26H160z"/><circle cx="360" cy="110" r="34"/><path fill="{BG}" d="M160 140h192l-18 20H178z"/>'),
+    "rough-night": ("a rough night", f'<path d="M330 120a160 160 0 1 0 100 280 150 150 0 0 1-100-280z"/>'
+                    f'<path fill="none" stroke="{RED}" stroke-width="18" stroke-linejoin="round" d="M110 110h64l-64 70h64M210 70h44l-44 48h44"/>'),
+    "drug": ("a drug", f'<path d="M150 140h212v300q0 22-22 22H172q-22 0-22-22z"/><path d="M134 80h244v60H134z"/><path fill="{BG}" d="M236 250h40v50h50v40h-50v50h-40v-50h-50v-40h50z"/>'),
+    "local-expert": ("a Local Expert skill", f'<path d="M60 460V300h60v-60h50v-80h60v300zM290 460V220h56v-40h60v280z"/><path d="M40 460h432v20H40z"/>'
+                     f'<path fill="{BG}" d="M256 40a96 96 0 0 1 96 96c0 70-96 170-96 170s-96-100-96-170a96 96 0 0 1 96-96z"/>'
+                     f'<path d="M256 62a74 74 0 0 1 74 74c0 56-74 138-74 138s-74-82-74-138a74 74 0 0 1 74-74z"/><circle cx="256" cy="136" r="28" fill="{BG}"/>'),
+}
+
+
+def write_goods_icons(out):
+    """The street goods' icons; the finer and exotic ones carry a white star."""
+    os.makedirs(out, exist_ok=True)
+    for key, (note, body, *star) in GOODS_ICONS.items():
+        svg = flat(key, body, note)
+        if star:
+            svg = svg.replace("</svg>", SMALL_STAR + "\n</svg>")
+        open(os.path.join(out, f"{key}.svg"), "w", encoding="utf-8").write(svg)

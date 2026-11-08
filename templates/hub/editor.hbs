@@ -122,6 +122,16 @@
     {{#if sel.messengerMissing}}<p class="nh-hint nh-warn">{{localize "NEONHUB.Editor.MessengerMissing"}}</p>{{/if}}
     {{/if}}
 
+    {{#if sel.is.companion}}
+    <label>{{localize "NEONHUB.Editor.CompanionWindow"}}
+      <select data-path="buttons.{{sel.index}}.action.window">
+        {{#each sel.companionGroups}}<optgroup label="{{name}}">{{#each options}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</optgroup>{{/each}}
+      </select>
+    </label>
+    <p class="nh-hint">{{localize "NEONHUB.Editor.CompanionHint"}}</p>
+    {{#if sel.companionMissing}}<p class="nh-hint nh-warn">{{sel.companionMissing}}</p>{{/if}}
+    {{/if}}
+
     {{#if sel.is.scene}}
     <label>{{localize "NEONHUB.Editor.SceneMode"}}
       <select data-path="buttons.{{sel.index}}.action.sceneMode">{{#each sel.sceneModes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select>

@@ -1,4 +1,4 @@
-import { THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, DEFAULT_THEME, MESSENGER_VIEWS } from "../constants.js";
+import { THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, DEFAULT_THEME, MESSENGER_VIEWS, COMPANION_WINDOWS, NIGHT_CITY_MAP } from "../constants.js";
 
 /**
  * Hub pages: the layout model and the layout engine.
@@ -71,6 +71,7 @@ export function normalizeButton(raw = {}) {
   a.caption = String(a.caption ?? "");
   a.runAs = a.runAs === "gm" ? "gm" : "player";
   a.view = MESSENGER_VIEWS[a.view] ? a.view : "inbox";
+  a.window = COMPANION_WINDOWS[a.window] ? a.window : NIGHT_CITY_MAP;
   b.action = a;
   return b;
 }

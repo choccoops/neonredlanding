@@ -1,5 +1,6 @@
-import { MODULE_ID, MARKET_ID, TEMPLATE_PATH, THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, MESSENGER_VIEWS } from "../constants.js";
+import { MODULE_ID, MARKET_ID, TEMPLATE_PATH, THEMES, PAGE_SIZES, BUTTON_SIZES, BUTTON_ACTIONS, AUDIENCES, MESSENGER_VIEWS, COMPANION_WINDOWS, NIGHT_CITY_MAP } from "../constants.js";
 import { Messenger } from "../messenger.js";
+import { Companions } from "../companions.js";
 import { Compat } from "../compat.js";
 import { MATT } from "../matt.js";
 import { HQStore } from "../hq/hq-data.js";
@@ -96,7 +97,11 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       title: L("NEONHUB.Editor.DefaultName"),
       subtitle: L("NEONHUB.Editor.DefaultSubtitle"),
       buttons: [
-        defaultButton({ label: L("NEONHUB.Starter.Map"), subtitle: L("NEONHUB.Starter.MapSub"), icon: "fa-solid fa-map-location-dot", action: { type: "scene" } }),
+        // The Night City Map when Neon Combat Manager is here, otherwise a scene to pick.
+        defaultButton({
+          label: L("NEONHUB.Starter.Map"), subtitle: L("NEONHUB.Starter.MapSub"), icon: "fa-solid fa-map-location-dot",
+          action: Companions.available(NIGHT_CITY_MAP) ? { type: "companion", window: NIGHT_CITY_MAP } : { type: "scene" }
+        }),
         defaultButton({ label: L("NEONHUB.Starter.Sheet"), subtitle: L("NEONHUB.Starter.SheetSub"), icon: "fa-solid fa-id-card", action: { type: "actor", ownCharacter: true } }),
         defaultButton({ label: L("NEONHUB.Starter.HQ"), subtitle: L("NEONHUB.Starter.HQSub"), icon: "fa-solid fa-house-signal", action: { type: "hq" } }),
         defaultButton({ label: L("NEONHUB.Starter.Lifestyle"), subtitle: L("NEONHUB.Starter.LifestyleSub"), icon: "fa-solid fa-wallet", action: { type: "lifestyle" } }),
@@ -140,13 +145,18 @@ export class HubEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         playModes: opt(["play", "stop", "pause", "next", "prev"].map((k) => [k, L(`NEONHUB.PlayMode.${k}`)]), a.playMode),
         colorValue: b.color || THEMES[d.theme].accent,
         is: Object.fromEntries(Object.keys(BUTTON_ACTIONS).map((k) => [k, a.type === k])),
-        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "cred", "fashion", "messenger", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
+        usesAudience: ["journal", "actor", "shop", "hq", "lifestyle", "calendar", "cred", "fashion", "messenger", "companion", "sound", "image"].includes(a.type) && !(a.type === "actor" && a.ownCharacter),
         targetName: a.target ? this.#nameOf(a.type, a.target) : null,
         dropLabel: L(`NEONHUB.Editor.DropFor.${a.type}`),
         shopClosed: a.type === "shop" && !!a.target && this.#shopClosed(a.target),
         targetOptions: this.#targetOptions(a.type, a.target),
         marketMissing: a.type === "shop" && !game.modules.get(MARKET_ID)?.active,
         messengerMissing: a.type === "messenger" && !Messenger.installed,
+        companionGroups: Companions.groups().map((g) => ({
+          name: g.active ? g.name : `${g.name} (${L("NEONHUB.Companion.NotActive")})`,
+          options: g.windows.map((w) => ({ key: w.key, label: w.gm ? `${w.label} (${L("NEONHUB.Messenger.GMOnly")})` : w.label, selected: w.key === a.window }))
+        })),
+        companionMissing: a.type === "companion" && !Companions.available(a.window) ? L("NEONHUB.Editor.CompanionMissing", { module: Companions.moduleName(COMPANION_WINDOWS[a.window]?.module) }) : null,
         messengerViews: opt(Object.entries(MESSENGER_VIEWS).map(([k, v]) => [k, L(`NEONHUB.Messenger.View.${k}`) + (v.gm ? ` (${L("NEONHUB.Messenger.GMOnly")})` : "")]), a.view)
       };
     }

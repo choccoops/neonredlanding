@@ -13,7 +13,8 @@ const LAUNCHERS = {
   compose: (nc) => nc.composeMessage?.(),
   contacts: (nc) => nc.openContacts?.(),
   networks: (nc) => nc.openNetworkManagement?.(),
-  admin: (nc) => nc.openAdmin?.()
+  admin: (nc) => nc.openAdmin?.(),
+  gmContacts: (nc) => nc.openGMContacts?.()
 };
 
 export const Messenger = {

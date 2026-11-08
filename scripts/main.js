@@ -17,6 +17,7 @@ import { CalendarOps } from "./calendar/cal-ops.js";
 import { CalendarApp } from "./calendar/cal-app.js";
 import { NotesStore } from "./calendar/cal-notes.js";
 import { Messenger } from "./messenger.js";
+import { Companions } from "./companions.js";
 import { HubHover } from "./hub/hover.js";
 import { Clock } from "./calendar/clock.js";
 import { SkipTimeApp } from "./calendar/skip-app.js";
@@ -108,6 +109,8 @@ Hooks.once("init", () => {
     isHub: (scene) => HubBuilder.isHub(scene),
     /** Open a Headquarters on this client. */
     openHQ: (id) => HQApp.open(id),
+    /** Open the Headquarters this user can see: straight in when there's one, else a choice (GMs can start a new one). */
+    chooseHQ: () => chooseHQ(),
     /** GM: open a Headquarters on players' screens (all, or the listed user ids). */
     showHQ: (id, userIds = null) => HubSocket.emit("openHQ", { id }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
     listHQs: () => HQStore.visibleTo(),
@@ -211,7 +214,18 @@ Hooks.once("init", () => {
     /** GM: open the Skip time window on everyone's screen; players vote, the GM winds the clock on. */
     skipTime: () => SkipTimeApp.start(),
 
-    /** Open a Night City Messenger window here (inbox, compose, contacts; GM: networks, admin). Needs that module. */
+    /**
+     * The other Neon modules' windows (Neon Combat Manager, Neon At Home), as their macros open them:
+     * open("cpr-neon-combat-manager/map") here, show(key, userIds) on players' screens (GM), list() every key.
+     */
+    companions: {
+      list: () => Companions.groups(),
+      available: (key) => Companions.available(key),
+      open: (key) => Companions.open(key),
+      show: (key, userIds = null) => HubSocket.emit("openCompanion", { window: key }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id))
+    },
+
+    /** Open a Night City Messenger window here (inbox, compose, contacts; GM: networks, admin, GM contacts). Needs that module. */
     openMessenger: (view = "inbox") => Messenger.open(view),
     /** GM: open a messenger window on every connected player's screen (or the listed user ids). */
     showMessenger: (view = "inbox", userIds = null) => HubSocket.emit("openMessenger", { view }, userIds ?? game.users.filter((u) => u.active).map((u) => u.id)),
@@ -311,6 +325,7 @@ Hooks.once("ready", () => {
   HubSocket.on("openLifestyle", () => LifestyleApp.open());
   HubSocket.on("openCalendar", () => CalendarApp.open());
   HubSocket.on("openMessenger", ({ view }) => Messenger.open(view));
+  HubSocket.on("openCompanion", ({ window }) => Companions.open(window));
   HubSocket.on("openCred", ({ actor }) => CredApp.open(actor));
   HubSocket.on("openFashion", ({ actor }) => FashionApp.open(actor));
   SkipTimeApp.registerSocket();

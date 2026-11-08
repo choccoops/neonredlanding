@@ -99,6 +99,7 @@ export const BUTTON_ACTIONS = {
   cred: { icon: "fa-solid fa-ranking-star", label: "NEONHUB.Action.cred" },
   fashion: { icon: "fa-solid fa-shirt", label: "NEONHUB.Action.fashion" },
   messenger: { icon: "fa-solid fa-mobile-screen-button", label: "NEONHUB.Action.messenger" },
+  companion: { icon: "fa-solid fa-puzzle-piece", label: "NEONHUB.Action.companion" },
   sound: { icon: "fa-solid fa-volume-high", label: "NEONHUB.Action.sound" },
   playlist: { icon: "fa-solid fa-music", label: "NEONHUB.Action.playlist" },
   image: { icon: "fa-solid fa-image", label: "NEONHUB.Action.image" },
@@ -115,8 +116,42 @@ export const MESSENGER_VIEWS = {
   compose: { icon: "fa-solid fa-pen-to-square", gm: false },
   contacts: { icon: "fa-solid fa-address-book", gm: false },
   networks: { icon: "fa-solid fa-network-wired", gm: true },
-  admin: { icon: "fa-solid fa-terminal", gm: true }
+  admin: { icon: "fa-solid fa-terminal", gm: true },
+  gmContacts: { icon: "fa-solid fa-address-card", gm: true }
 };
+
+/** The other Neon modules whose windows a hub button can open (each ships a Macros compendium with one macro per window). */
+export const COMBAT_ID = "cpr-neon-combat-manager";
+export const HOME_ID = "cpr-neon-at-home";
+export const COMPANION_MODULES = {
+  [COMBAT_ID]: "NEONHUB.Companion.Module.combat",
+  [HOME_ID]: "NEONHUB.Companion.Module.home"
+};
+
+/**
+ * Companion windows, keyed "<module id>/<window>": the same windows their macros open, through the same API calls
+ * (see companions.js). `gm` windows are the GM's; `actor` ones open for the selected token's character or your own.
+ */
+export const COMPANION_WINDOWS = {
+  [`${COMBAT_ID}/map`]: { module: COMBAT_ID, icon: "fa-solid fa-map-location-dot" },
+  [`${COMBAT_ID}/holocall`]: { module: COMBAT_ID, icon: "fa-solid fa-phone", actor: true },
+  [`${COMBAT_ID}/biomon`]: { module: COMBAT_ID, icon: "fa-solid fa-heart-pulse" },
+  [`${COMBAT_ID}/stakes`]: { module: COMBAT_ID, icon: "fa-solid fa-dice-d6", actor: true },
+  [`${COMBAT_ID}/lab`]: { module: COMBAT_ID, icon: "fa-solid fa-flask", gm: true },
+  [`${HOME_ID}/home`]: { module: HOME_ID, icon: "fa-solid fa-house-chimney", actor: true },
+  [`${HOME_ID}/loadout`]: { module: HOME_ID, icon: "fa-solid fa-person-rifle", actor: true },
+  [`${HOME_ID}/deck`]: { module: HOME_ID, icon: "fa-solid fa-microchip", actor: true },
+  [`${HOME_ID}/bay`]: { module: HOME_ID, icon: "fa-solid fa-car-side", actor: true },
+  [`${HOME_ID}/bench`]: { module: HOME_ID, icon: "fa-solid fa-screwdriver-wrench", actor: true },
+  [`${HOME_ID}/maintenance`]: { module: HOME_ID, icon: "fa-solid fa-gears", actor: true },
+  [`${HOME_ID}/downtime`]: { module: HOME_ID, icon: "fa-solid fa-mug-hot", actor: true },
+  [`${HOME_ID}/biomonitor`]: { module: HOME_ID, icon: "fa-solid fa-brain", actor: true },
+  [`${HOME_ID}/deepDive`]: { module: HOME_ID, icon: "fa-solid fa-network-wired", actor: true },
+  [`${HOME_ID}/perkTree`]: { module: HOME_ID, icon: "fa-solid fa-sitemap", actor: true },
+  [`${HOME_ID}/spendIp`]: { module: HOME_ID, icon: "fa-solid fa-arrow-trend-up", actor: true }
+};
+/** The Night City Map: the starter page's "Night City" button opens it when Neon Combat Manager is active. */
+export const NIGHT_CITY_MAP = `${COMBAT_ID}/map`;
 
 /** Who an action is shown to. Keys match MATT's own "for" lists. */
 export const AUDIENCES = {

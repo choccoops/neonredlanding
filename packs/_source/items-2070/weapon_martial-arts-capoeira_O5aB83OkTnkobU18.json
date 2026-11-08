@@ -1,0 +1,81 @@
+{
+  "_id": "O5aB83OkTnkobU18",
+  "_key": "!items!O5aB83OkTnkobU18",
+  "name": "Martial Arts (Capoeira)",
+  "type": "weapon",
+  "img": "modules/cpr-neon-hub/assets/items/derived/martial_wave.svg",
+  "folder": "pEfUBlDzOumjUnQW",
+  "sort": 19330,
+  "system": {
+    "weaponSkill": "Martial Arts (Capoeira)",
+    "weaponType": "martialArts",
+    "isRanged": false,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "1d6",
+    "rof": 2,
+    "handsReq": 1,
+    "canIgnoreArmor": true,
+    "ignoreArmorPercent": 50,
+    "ignoreBelowSP": 0,
+    "unarmedAutomaticCalculation": true,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "equipped": "owned",
+    "usage": "equipped",
+    "price": {
+      "market": 0
+    },
+    "brand": "",
+    "installedItems": {
+      "allowed": false,
+      "allowedTypes": [
+        "itemUpgrade"
+      ],
+      "list": [],
+      "slots": 0,
+      "usedSlots": 0
+    },
+    "description": {
+      "value": "<p><strong>Capoeira Attacks</strong> with the Martial Arts (Capoeira) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Martial Arts"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

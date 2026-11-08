@@ -239,11 +239,15 @@ def item(type_, name, system, desc, path, src="", tag="", img=None, flags=None, 
     if type_ == "itemUpgrade" and not img:
         kind, rel = ICONS.upgrade_icon(name, path, SYSDIR)
         img = f"{SYS}/{rel}" if rel else f"{ASSETS}/upgrades/{kind}.svg"
+    if effects == [{"_none": True}]:
+        effects, skip_fx = [], True
+    else:
+        skip_fx = False
     doc = {"_id": iid, "_key": f"!items!{iid}", "name": name, "type": type_, "img": img or IMG.get(type_, f"{SYS}/default/Default_Gear.svg"),
            "folder": folder("items-2070", path, COLORS.get(path[0])), "sort": len(ITEMS) * 10,
            "system": system, "effects": effects or [], "flags": {**MIGRATION, MOD: {"source2070": {"book": SOURCE, "chapter": path[0]}, **(flags or {})}},
            "ownership": {"default": 0}}
-    if not effects:
+    if not effects and not skip_fx:
         usage, doc["effects"] = effects_for(doc, desc, path)
         if usage:
             system["usage"] = usage
@@ -391,7 +395,7 @@ IMG = {"weapon": f"{SYS}/default/Default_Weapon.svg", "ammo": f"{SYS}/default/De
        "itemUpgrade": f"modules/{MOD}/assets/items/upgrades/upgrade.svg", "vehicle": f"{SYS}/vehicles/super_car.svg"}
 COLORS = {"Weapons": "#ff2a6d", "Ammo & Explosives": "#ff8a1f", "Attachments & Mods": "#f3e600", "Armor & Shields": "#8fb0cc",
           "Power Armor": "#7f9cb5", "Cyberware": "#05d9e8", "Netrunning": "#39ff88", "Gear & Goods": "#d8dbec",
-          "Drugs": "#ff4fd8", "Vehicles & Upgrades": "#e8813a", "Invented Tech": "#c792ff", "Iconics": "#ffd400"}
+          "Drugs": "#ff4fd8", "Vehicles & Upgrades": "#e8813a", "Invented Tech": "#c792ff", "Iconics": "#ffd400", "Martial Arts": "#ff4b4b"}
 
 
 def fixup_defaults():
@@ -464,6 +468,56 @@ def cyber_img(name, ctype, path):
             return f"{ASSETS}/derived/{fname}"
         return f"{SYS}/{rel}"
     return f"{ASSETS}/cyberware/{key}{'_iconic' if iconic else ''}.svg"
+
+
+def add_martial_arts():
+    """Each Martial Arts Form of the Core Rules (Chapter 07) as a Skill to train and a weapon to attack with."""
+    core = open(os.path.join(BOOK, "content", "07_combat.txt"), encoding="utf-8").read()
+    sec = core[core.index("# Martial Arts\n"):]
+    sec = sec[:sec.index("\n# ", 5)]
+    intro = next(l for l in sec.split("\n") if l.startswith("Martial Arts (×2)"))
+    rules = [l[2:] for l in sec.split("\n") if l.startswith("- **")]
+    tag = re.search(r"@tag (.+)", sec).group(1).strip()
+    forms, cur = [], None
+    for l in open(os.path.join(BOOK, "notes", "martial_forms.txt"), encoding="utf-8"):
+        cells = [c.strip() for c in l.strip().strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+        if cells[0]:
+            m = re.match(r"\*\*(.+?)\*\*\s*(?:\*\((\w+)\)\*)?", cells[0])
+            cur = {"name": m.group(1).strip(), "kind": m.group(2) or "", "moves": []}
+            forms.append(cur)
+        cur["moves"].append((cells[1], cells[2]))
+    damage = "Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+."
+    for f in forms:
+        name = f"Martial Arts ({f['name']})"
+        img = martial_img(f["name"])
+        src = {"core": "CORE p.178", "house": "HOUSE RULE"}.get(f["kind"], "DLC: Cyberfists of Fury")
+        moves = "".join(f"<li><strong>{inline(mv)}:</strong> {inline(txt)}</li>" for mv, txt in f["moves"])
+        desc = (f"<p>{inline(intro)}</p><p><strong>Special Moves</strong></p><ul>{moves}</ul>"
+                + "".join(f"<p>{inline(r)}</p>" for r in rules))
+        item("skill", name, {"level": 0, "stat": "dex", "category": "fightingSkills", "difficulty": "difficult", "skillType": "martialArt",
+                             "core": False, "basic": False}, desc, ("Martial Arts", "Forms (Skills)"), tag=src, img=img)
+        weapon = {"weaponSkill": name, "weaponType": "martialArts", "isRanged": False, "quality": "standard", "attackmod": 0, "damage": "1d6",
+                  "rof": 2, "handsReq": 1, "canIgnoreArmor": True, "ignoreArmorPercent": 50, "ignoreBelowSP": 0, "unarmedAutomaticCalculation": True,
+                  "magazine": {"value": 0, "max": 0, "ammoData": None}, "ammoVariety": [], "usesType": "magazine",
+                  "fireModes": {"autoFire": 0, "suppressiveFire": False}, "concealable": {"concealable": True, "isConcealed": False},
+                  "dvTable": "", "critFailEffect": "jammed", "equipped": "owned", "usage": "equipped", "price": {"market": 0}, "brand": "",
+                  "installedItems": {"allowed": False, "allowedTypes": ["itemUpgrade"], "list": [], "slots": 0, "usedSlots": 0}}
+        item("weapon", name, weapon,
+             para(f"<strong>{inline(f['name'])} Attacks</strong> with the Martial Arts ({inline(f['name'])}) Skill: ROF2, ignoring half the target's SP (round up), "
+                  f"for {damage} Its Special Moves are on the Skill."),
+             ("Martial Arts", "Attacks (Weapons)"), tag=src, img=img, effects=[{"_none": True}])
+    return tag
+
+
+def martial_img(form):
+    fam = ICONS.MA_EMBLEM.get(form, "fist")
+    if not SYSDIR:
+        return f"{SYS}/weapons/martial_arts.svg"
+    fname = f"martial_{fam}.svg"
+    DERIVED_SYS.setdefault(fname, ICONS.emblemed(SYSDIR, "weapons/martial_arts.svg", fam))
+    return f"{ASSETS}/derived/{fname}"
 
 
 def write_derived(prefix, files):
@@ -1437,6 +1491,7 @@ def main():
     dv_tables()
     for make in LATER:
         make()
+    add_martial_arts()
 
 
 def write(pack, docs, folders):
@@ -1469,7 +1524,8 @@ if __name__ == "__main__":
         ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
         ICONS.write_vehicle_icons(os.path.join(ROOT, "assets/items/vehicles"))
         ICONS.write_cyber_icons(os.path.join(ROOT, "assets/items/cyberware"))
-        write_derived("cyber_", DERIVED_SYS)
+        write_derived("cyber_", {k: v for k, v in DERIVED_SYS.items() if k.startswith("cyber_")})
+        write_derived("martial_", {k: v for k, v in DERIVED_SYS.items() if k.startswith("martial_")})
         wdir = os.path.join(ROOT, "assets/items/weapons")
         if os.path.isdir(wdir):
             shutil.rmtree(wdir)

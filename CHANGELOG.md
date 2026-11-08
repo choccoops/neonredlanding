@@ -2,6 +2,14 @@
 
 ## 1.20.0
 
+- **Martial Arts Forms.** The Core Rules' 34 Martial Arts Forms (Chapter 07: the core four, the *Cyberfists of Fury* Forms and the house Forms) are in the Item Compendium under *Martial Arts*, each two ways:
+  - **a Skill** (*Forms (Skills)*): Martial Arts (×2), DEX, a Fighting Skill and a Martial Art to Cyberpunk RED, with both its Special Moves and the shared rules (Special Move rolls, Recovery) in its description;
+  - **a weapon** (*Attacks (Weapons)*) to attack with it on the sheet: ROF2, ignores half armor, and Brawling damage by BODY, worked out by Cyberpunk RED as for its own Martial Arts.
+  - Their icon is the system's Martial Arts icon with an emblem for the Form's family: strikes, grapples and throws, blades, the staff, the bow, the gun, stealth, chrome, flow and rage.
+- **Street Goods in the system's style.** The goods icons (food and drink, home goods, the Good Life and Rough Night) are redrawn as flat red icons like the rest of the compendiums; the exotic and finer goods keep their star. The Local Expert Skills get an icon of their own (a pin over the skyline) instead of the plain skill icon. Goods already in a world update with them.
+
+## 1.20.0
+
 - **Hub buttons open the other Neon modules' windows.** Neon Combat Manager and Neon At Home ship a macro for each of their windows. A new button action, **Open a Neon module window**, opens the same windows on the clicking player's screen, with the same calls those macros make:
   - Neon Combat Manager: the **Night City Map**, Holocall, Biomon Link, Plot Die and the Condition Lab (GM);
   - Neon At Home: Home, Loadout, Cyberdeck, Vehicle Bay, Weaponbench, Maintenance, Downtime, Biomonitor, Deep Dive, Perk Tree and Spend IP.

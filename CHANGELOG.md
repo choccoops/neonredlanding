@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.20.0
+## 1.21.0
 
 - **Martial Arts Forms.** The Core Rules' 34 Martial Arts Forms (Chapter 07: the core four, the *Cyberfists of Fury* Forms and the house Forms) are in the Item Compendium under *Martial Arts*, each two ways:
   - **a Skill** (*Forms (Skills)*): Martial Arts (×2), DEX, a Fighting Skill and a Martial Art to Cyberpunk RED, with both its Special Moves and the shared rules (Special Move rolls, Recovery) in its description;

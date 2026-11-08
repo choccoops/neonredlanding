@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.20.0
+
+- **Hub buttons open the other Neon modules' windows.** Neon Combat Manager and Neon At Home ship a macro for each of their windows. A new button action, **Open a Neon module window**, opens the same windows on the clicking player's screen, with the same calls those macros make:
+  - Neon Combat Manager: the **Night City Map**, Holocall, Biomon Link, Plot Die and the Condition Lab (GM);
+  - Neon At Home: Home, Loadout, Cyberdeck, Vehicle Bay, Weaponbench, Maintenance, Downtime, Biomonitor, Deep Dive, Perk Tree and Spend IP.
+
+  Character windows open for the selected token's character, or the player's own. The action is in Monk's Active Tile Triggers' own action list too, for any tile, and in the API (`api.companions`).
+- **The starter page's Night City button opens the Night City Map** when Neon Combat Manager is active (otherwise it's still a scene button). To point an existing page at the map, set its button to *Open a Neon module window: Night City Map* and Rebuild.
+- **A Macros compendium.** *Neon Hub: Macros* has one macro per Neon Hub window, for the hotbar or Neon Combat Manager's Action HUD: Lifestyle, Calendar, Street Cred, Style Check, Headquarters, Neon Journal and Downtime, plus Skip Time and New Hub Page for the GM. Lifestyle, Street Cred and Style Check open for the selected token's character, or your own. The API's new `chooseHQ()` opens your HQ, or asks which one when there are several.
+- **Night City Messenger: GM contacts.** Messenger buttons can open its GM contacts window too.
+
 ## 1.19.0
 
 - **An icon for every piece of cyberware.** The Item Compendium's 292 pieces all used the system's plain cyberware icon. Now:

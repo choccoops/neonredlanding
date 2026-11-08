@@ -1,4 +1,5 @@
-import { MODULE_ID, MATT_ID, MARKET_ID, MESSENGER_VIEWS } from "./constants.js";
+import { MODULE_ID, MATT_ID, MARKET_ID, MESSENGER_VIEWS, COMPANION_WINDOWS, NIGHT_CITY_MAP } from "./constants.js";
+import { Companions } from "./companions.js";
 import { HubSocket } from "./socket.js";
 import { HQStore } from "./hq/hq-data.js";
 
@@ -26,6 +27,7 @@ export const MATT = {
   ACTION_CRED: `${MODULE_ID}.opencred`,
   ACTION_FASHION: `${MODULE_ID}.openfashion`,
   ACTION_MESSENGER: `${MODULE_ID}.openmessenger`,
+  ACTION_COMPANION: `${MODULE_ID}.opencompanion`,
 
   makeId() {
     return foundry.utils.randomID(16);
@@ -157,6 +159,9 @@ export const MATT = {
       case "messenger":
         push(this.ACTION_MESSENGER, { view: a.view, showto: audience });
         break;
+      case "companion":
+        push(this.ACTION_COMPANION, { window: a.window, showto: audience });
+        break;
       case "sound":
         if (!a.file) break;
         push("playsound", {
@@ -198,7 +203,8 @@ export const MATT = {
 
   /**
    * Register "Open Neon Market shop", "Open Headquarters", "Open Lifestyle", "Open calendar", "Open Street Cred", "Open Style Check" and
-   * "Open Night City Messenger" in MATT's action list.
+   * "Open Night City Messenger" in MATT's action list, and "Open a Neon module window" for the windows Neon Combat
+   * Manager and Neon At Home ship macros for (the Night City Map, Holocall, Home, Perk Tree...).
    * MATT runs actions on the active GM's client, so each action works out who should
    * see the window and asks those clients to open it.
    */
@@ -314,6 +320,33 @@ export const MATT = {
       content: async (trigger, action) => {
         const view = i18n(`NEONHUB.Messenger.View.${MESSENGER_VIEWS[action.data?.view] ? action.data.view : "inbox"}`);
         return `<span class="action-style">${i18n(trigger.name)}</span> <span class="entity-style">${view}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
+      }
+    });
+
+    // Each client opens the window itself, through that module's API (see companions.js).
+    app.registerTileAction(MODULE_ID, "opencompanion", {
+      name: "NEONHUB.Matt.OpenCompanion",
+      ctrls: [
+        {
+          id: "window",
+          name: "NEONHUB.Matt.CompanionWindow",
+          type: "list",
+          list: () => Object.fromEntries(Object.keys(COMPANION_WINDOWS).map((k) => [k, `${Companions.moduleName(COMPANION_WINDOWS[k].module)}: ${Companions.label(k)}`])),
+          defvalue: NIGHT_CITY_MAP
+        },
+        showtoCtrl
+      ],
+      values: { showto },
+      fn: async (args = {}) => {
+        const { action } = args;
+        const key = COMPANION_WINDOWS[action.data.window] ? action.data.window : NIGHT_CITY_MAP;
+        const users = app.getForPlayers(action.data.showto || "trigger", args);
+        if (users.length) HubSocket.emit("openCompanion", { window: key }, users);
+      },
+      content: async (trigger, action) => {
+        const key = COMPANION_WINDOWS[action.data?.window] ? action.data.window : NIGHT_CITY_MAP;
+        const name = Handlebars.escapeExpression(`${Companions.moduleName(COMPANION_WINDOWS[key].module)}: ${Companions.label(key)}`);
+        return `<span class="action-style">${i18n(trigger.name)}</span> <span class="entity-style">${name}</span> for <span class="value-style">&lt;${forName(action.data?.showto || "trigger")}&gt;</span>`;
       }
     });
 

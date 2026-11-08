@@ -1,0 +1,20 @@
+{
+  "_id": "11PxIxY2QVhABzfB",
+  "_key": "!macros!11PxIxY2QVhABzfB",
+  "name": "Neon Hub: Style Check",
+  "type": "script",
+  "scope": "global",
+  "img": "modules/cpr-neon-hub/assets/macros/fashion.svg",
+  "command": "// Neon Hub: open Style Check for the selected token's character (or your own).\n// Works from the hotbar, Neon Combat Manager's Action HUD, a Neon Hub page button or an active tile.\nconst hub = game.modules.get(\"cpr-neon-hub\")?.api;\nif (!hub) return ui.notifications.warn(\"Neon Hub isn't active in this world.\");\nconst who = (typeof actor !== \"undefined\" && actor) || (typeof character !== \"undefined\" && character) || null;\nreturn hub.fashion.open(who);\n",
+  "folder": null,
+  "sort": 400,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cpr-neon-hub": {
+      "macro": "fashion",
+      "gm": false
+    }
+  }
+}

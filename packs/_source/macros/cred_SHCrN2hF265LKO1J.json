@@ -1,0 +1,20 @@
+{
+  "_id": "SHCrN2hF265LKO1J",
+  "_key": "!macros!SHCrN2hF265LKO1J",
+  "name": "Neon Hub: Street Cred",
+  "type": "script",
+  "scope": "global",
+  "img": "modules/cpr-neon-hub/assets/macros/cred.svg",
+  "command": "// Neon Hub: open Street Cred (Reputation, Standing and Heat) for the selected token's character (or your own).\n// Works from the hotbar, Neon Combat Manager's Action HUD, a Neon Hub page button or an active tile.\nconst hub = game.modules.get(\"cpr-neon-hub\")?.api;\nif (!hub) return ui.notifications.warn(\"Neon Hub isn't active in this world.\");\nconst who = (typeof actor !== \"undefined\" && actor) || (typeof character !== \"undefined\" && character) || null;\nreturn hub.cred.open(who);\n",
+  "folder": null,
+  "sort": 300,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cpr-neon-hub": {
+      "macro": "cred",
+      "gm": false
+    }
+  }
+}

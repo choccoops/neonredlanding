@@ -2,6 +2,10 @@
 
 Neon Hub: Full Borg is released with Neon Hub, at the same version.
 
+## 1.20.0
+
+- Released with Neon Hub 1.20.0. No changes to Full Borg.
+
 ## 1.17.1
 
 - **The Skydrivers and the CyberConductor now follow the Item Compendium.** The book now prints both, and Neon Hub uses its rows instead of its own entries:

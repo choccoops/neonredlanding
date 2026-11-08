@@ -43,6 +43,7 @@ into one. See [Full Borg](#full-borg-its-own-module).
 | Monk's Active Tile Triggers | 12.02 or later (required) |
 | Neon Market | optional, for shop buttons |
 | [Night City Messenger](https://github.com/christinophrappuccino/night-city-messenger) | optional, for messenger buttons |
+| Neon Combat Manager, Neon At Home | optional, for buttons that open their windows (the Night City Map, Holocall, Home, Perk Tree...) |
 | [SmallTime](https://github.com/unsoluble/smalltime) | optional: 1.24.0 on Foundry v12, for the world clock in the calendar |
 | [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet) | optional: 2.6, for the 2070s vehicles and ACPAs |
 | Neon Hub: Full Borg | optional, for the 2070s Full Body Conversions (its own module, same release) |
@@ -86,7 +87,8 @@ Enable **Neon Hub** and **Monk's Active Tile Triggers** in your world.
    | Open a Headquarters | Opens the crew HQ screen | Neon Hub's own MATT action |
    | Open Lifestyle | Opens each clicking player's own Lifestyle window (the GM gets the month overview) | Neon Hub's own MATT action |
    | Open calendar | Opens the calendar window for whoever it's shown to | Neon Hub's own MATT action |
-   | Open Night City Messenger | Opens the clicker's Agent inbox, a new message or contacts; GM: Network Management or the Admin Panel | Neon Hub's own MATT action |
+   | Open Night City Messenger | Opens the clicker's Agent inbox, a new message or contacts; GM: Network Management, the Admin Panel or GM contacts | Neon Hub's own MATT action |
+   | Open a Neon module window | Opens one of Neon Combat Manager's or Neon At Home's windows for the clicker: the Night City Map, Holocall, Home, Perk Tree and the rest ([below](#other-neon-modules-windows)) | Neon Hub's own MATT action |
    | Play a sound | For the clicker or everyone | MATT `playsound` |
    | Control a playlist | Play, stop, pause, next, previous | MATT `playlist` |
    | Show an image | Image popout with a caption | MATT `showimage` |
@@ -814,9 +816,36 @@ the player who clicks (or whoever the button shows to):
 | Contacts | everyone |
 | Network Management | GM (players get their inbox) |
 | Admin Panel | GM (players get their inbox) |
+| GM contacts | GM (players get their inbox) |
 
 The new starter hub page includes a **Messenger** button. Without Night City Messenger the button
 does nothing but say so, and the hub editor warns about it.
+
+## Other Neon modules' windows
+
+Neon Combat Manager and Neon At Home each ship a **Macros** compendium, with one macro per window,
+for the hotbar and Neon Combat Manager's Action HUD. A hub button set to **Open a Neon module
+window** opens the same windows. It makes the same API call as the macro, on the clicking player's
+screen, so nothing needs to be imported into the world. Character windows open for the player's
+selected token's character, or their own.
+
+| Module | Windows |
+| --- | --- |
+| Neon Combat Manager | **Night City Map**, Holocall, Biomon Link, Plot Die, Condition Lab (GM) |
+| Neon At Home | Home, Loadout, Cyberdeck, Vehicle Bay, Weaponbench, Maintenance, Downtime, Biomonitor, Deep Dive, Perk Tree, Spend IP |
+
+- **Monk's Active Tile Triggers.** The same action is in MATT's own action list as *Open a Neon
+  module window* (`cpr-neon-hub.opencompanion`), for any tile, with MATT's usual "show to" choice.
+- **The starter page.** Its **Night City** button opens the Night City Map when Neon Combat Manager is
+  active. Without it, the button is a scene button to pick a map for. To point an existing page at
+  the map, set the button to **Open a Neon module window: Night City Map** and **Rebuild**.
+- Without the module, the button says so when clicked, and the hub editor warns about it.
+
+**Neon Hub's own macros.** The **Neon Hub: Macros** compendium does the same for Neon Hub's windows,
+for the hotbar or Neon Combat Manager's Action HUD (drop one on it):
+- Lifestyle, Street Cred and Style Check, for the selected token's character or your own;
+- Calendar, Headquarters (straight in, or a choice when there are several), Neon Journal and Downtime;
+- for the GM, Skip Time and New Hub Page.
 
 ## Macros and API
 
@@ -828,6 +857,9 @@ await hub.rebuildHub(scene);   // GM: rebuild from the saved layout
 hub.listHQs();                 // Headquarters this user can see
 hub.openHQ(id);                // open one on this client
 hub.showHQ(id);                // GM: open it on every connected player's screen
+hub.chooseHQ();                // open the HQ this user can see, or pick one
+hub.companions.open("cpr-neon-combat-manager/map"); // a Neon module's window here (list() names them all)
+hub.companions.show("cpr-neon-at-home/perkTree");   // GM: on every connected player's screen
 await hub.awardHQIP(id, 20, "Arasaka extraction"); // GM
 
 hub.openLifestyle();           // your own character's Lifestyle window (or pass an Actor/uuid)
@@ -929,9 +961,13 @@ players' hover actions only when no GM is connected): its path is in the tile's
 `flags["cpr-neon-hub"].hover`, and each client swaps the tile's texture locally under the pointer. Entity fields are stored the way MATT's own editor stores
 them (`{ id: <uuid>, name }`). The custom actions are registered through MATT's `setupTileActions`
 hook as `cpr-neon-hub.openshop`, `cpr-neon-hub.openhq`, `cpr-neon-hub.openlifestyle`,
-`cpr-neon-hub.opencalendar`, `cpr-neon-hub.opencred`, `cpr-neon-hub.openfashion` and `cpr-neon-hub.openmessenger`. Night City Messenger windows open
+`cpr-neon-hub.opencalendar`, `cpr-neon-hub.opencred`, `cpr-neon-hub.openfashion`, `cpr-neon-hub.openmessenger` and
+`cpr-neon-hub.opencompanion`. Night City Messenger windows open
 through its own `game.nightcity` launchers (`openNCM`, `composeMessage`, `openContacts`,
-`openNetworkManagement`, `openAdmin`).
+`openNetworkManagement`, `openAdmin`, `openGMContacts`). The other Neon modules' windows open
+through their APIs, with the calls their own macros make: Neon Combat Manager's `hub.open()`, `holocall.open(actor)`,
+`biomon.open()`, `stakes.open(actor)` and `conditions.openLab()`, and Neon At Home's `open(actor, tab)`,
+`biomonitor`, `deepDive`, `perkTree` and `spendIp`.
 
 **Cyberpunk RED - CORE 0.92.4.**
 

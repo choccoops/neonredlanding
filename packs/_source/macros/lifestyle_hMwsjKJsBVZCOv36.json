@@ -1,0 +1,20 @@
+{
+  "_id": "hMwsjKJsBVZCOv36",
+  "_key": "!macros!hMwsjKJsBVZCOv36",
+  "name": "Neon Hub: Lifestyle",
+  "type": "script",
+  "scope": "global",
+  "img": "modules/cpr-neon-hub/assets/macros/lifestyle.svg",
+  "command": "// Neon Hub: open Lifestyle (rent, bills and the month) for the selected token's character (or your own).\n// Works from the hotbar, Neon Combat Manager's Action HUD, a Neon Hub page button or an active tile.\nconst hub = game.modules.get(\"cpr-neon-hub\")?.api;\nif (!hub) return ui.notifications.warn(\"Neon Hub isn't active in this world.\");\nconst who = (typeof actor !== \"undefined\" && actor) || (typeof character !== \"undefined\" && character) || null;\nreturn hub.openLifestyle(who);\n",
+  "folder": null,
+  "sort": 100,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "cpr-neon-hub": {
+      "macro": "lifestyle",
+      "gm": false
+    }
+  }
+}

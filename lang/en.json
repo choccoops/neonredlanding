@@ -27,7 +27,8 @@
       "calendar": "Open calendar",
       "messenger": "Open Night City Messenger",
       "cred": "Open Street Cred",
-      "fashion": "Open Style Check"
+      "fashion": "Open Style Check",
+      "companion": "Open a Neon module window"
     },
     "Audience": {
       "trigger": "Just the player who clicked",
@@ -87,7 +88,9 @@
       "OpenMessenger": "Open Night City Messenger",
       "MessengerView": "Window",
       "OpenCred": "Open Street Cred",
-      "OpenFashion": "Open Style Check"
+      "OpenFashion": "Open Style Check",
+      "OpenCompanion": "Open a Neon module window",
+      "CompanionWindow": "Window"
     },
     "Editor": {
       "Title": "Hub page",
@@ -209,7 +212,10 @@
       "NotAShop": "{name} isn't a Neon Market shop. Set one up from the actor's Neon Market settings, or change the action to Open a character sheet.",
       "DropFailed": "Couldn't use the dropped document: {error}",
       "ShopActors": "Actors",
-      "ShopTokens": "Tokens on {scene}"
+      "ShopTokens": "Tokens on {scene}",
+      "CompanionWindow": "Window",
+      "CompanionHint": "The same windows these modules' macros open, for the clicking player's selected character or their own.",
+      "CompanionMissing": "{module} isn't active in this world, so this button does nothing yet."
     },
     "Error": {
       "NoMatt": "Neon Hub needs Monk's Active Tile Triggers. Install and enable it to build hub pages.",
@@ -1231,7 +1237,8 @@
         "compose": "New message",
         "contacts": "Contacts",
         "networks": "Network Management",
-        "admin": "Admin Panel"
+        "admin": "Admin Panel",
+        "gmContacts": "GM contacts"
       },
       "GMOnly": "GM only",
       "Missing": "Night City Messenger isn't installed or enabled in this world.",
@@ -2423,6 +2430,34 @@
       "DvOn": "Cyberpunk RED now uses the 2070s range tables.",
       "DvOff": "Cyberpunk RED is back on its own DV tables.",
       "NoDvSetting": "This version of Cyberpunk RED has no DV table compendium setting."
+    },
+    "Companion": {
+      "Module": {
+        "combat": "Neon Combat Manager",
+        "home": "Neon At Home"
+      },
+      "Window": {
+        "map": "Night City Map",
+        "holocall": "Holocall",
+        "biomon": "Biomon Link",
+        "stakes": "Plot Die",
+        "lab": "Condition Lab",
+        "home": "Home",
+        "loadout": "Loadout",
+        "deck": "Cyberdeck",
+        "bay": "Vehicle Bay",
+        "bench": "Weaponbench",
+        "maintenance": "Maintenance",
+        "downtime": "Downtime",
+        "biomonitor": "Biomonitor",
+        "deepDive": "Deep Dive",
+        "perkTree": "Perk Tree",
+        "spendIp": "Spend IP"
+      },
+      "NotActive": "not active",
+      "Missing": "{module} isn't active in this world.",
+      "GMOnly": "{window} is for the GM.",
+      "Failed": "Couldn't open {window}. See the console (F12)."
     }
   }
 }

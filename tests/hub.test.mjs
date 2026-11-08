@@ -16,7 +16,7 @@ test("messenger buttons open a known window, inbox by default", () => {
   assert.equal(normalizeButton({ action: { type: "messenger" } }).action.view, "inbox");
   assert.equal(normalizeButton({ action: { type: "messenger", view: "admin" } }).action.view, "admin");
   assert.equal(normalizeButton({ action: { type: "messenger", view: "hack" } }).action.view, "inbox");
-  assert.deepEqual(Object.keys(MESSENGER_VIEWS), ["inbox", "compose", "contacts", "networks", "admin"]);
+  assert.deepEqual(Object.keys(MESSENGER_VIEWS), ["inbox", "compose", "contacts", "networks", "admin", "gmContacts"]);
   assert.ok(MESSENGER_VIEWS.admin.gm && !MESSENGER_VIEWS.inbox.gm);
 });
 

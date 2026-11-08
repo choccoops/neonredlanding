@@ -1013,7 +1013,8 @@ npm run build:packs  # compile packs/_source/*/ (and full-borg/packs/_source/*/)
 Compendium items are edited as JSON in `packs/_source/`; the compiled `packs/lifestyle` and
 `packs/street-goods` folders aren't committed. The 2070s packs are generated from the book's source
 by `tools/gen/items2070.py` (Neon Hub's Item Compendium) and `tools/gen/fullborg2070.py` (Full Borg,
-which runs the item generator first so the bodies use the same items).
+which runs the item generator first so the bodies use the same items). The Fashion (2070s) pack is edited by hand;
+`tools/gen/fashion_icons.py` sets its icons from each piece's kind and style.
 
 ## License
 

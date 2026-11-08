@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a roadbike. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<circle cx="118" cy="352" r="62" fill="none" stroke="#e64539" stroke-width="20"/><circle cx="118" cy="352" r="12"/><circle cx="394" cy="352" r="62" fill="none" stroke="#e64539" stroke-width="20"/><circle cx="394" cy="352" r="12"/><path d="M150 306l46-62q10-12 26-12h92l48-36h26l-22 64-44 46H232z"/><path d="M386 196l16-52h34v16h-22l-12 40z"/><path d="M380 210l14 142" stroke="#e64539" stroke-width="22"/><path d="M150 306L118 352" stroke="#e64539" stroke-width="22"/><path d="M84 234h108v24H96z"/>
+</g>
+</svg>

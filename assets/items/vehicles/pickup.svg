@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a pickup truck. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M56 334v-68h170v-58q0-14 14-14h74q12 0 18 10l40 62h62q20 0 24 20v48q0 12-12 12H68q-12 0-12-12z"/><path fill="#1b1f21" d="M254 212h52l30 50h-82z"/><path fill="#1b1f21" d="M70 280h140v10H70z"/><circle cx="142" cy="346" r="50" fill="#1b1f21"/><circle cx="142" cy="346" r="40"/><circle cx="142" cy="346" r="13" fill="#1b1f21"/><circle cx="384" cy="346" r="50" fill="#1b1f21"/><circle cx="384" cy="346" r="40"/><circle cx="384" cy="346" r="13" fill="#1b1f21"/>
+</g>
+</svg>

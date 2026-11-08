@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a cyberpet. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<ellipse cx="256" cy="330" rx="104" ry="92"/><ellipse cx="150" cy="200" rx="40" ry="52"/><ellipse cx="226" cy="150" rx="40" ry="54"/><ellipse cx="306" cy="150" rx="40" ry="54"/><ellipse cx="380" cy="200" rx="40" ry="52"/><path fill="none" stroke="#1b1f21" stroke-width="14" stroke-linecap="round" d="M196 336h44l20-30h52"/><circle cx="196" cy="336" r="14" fill="#1b1f21"/><circle cx="316" cy="306" r="14" fill="#1b1f21"/>
+</g>
+</svg>

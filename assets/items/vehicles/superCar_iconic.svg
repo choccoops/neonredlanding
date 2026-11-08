@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a super groundcar. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M28 324q0-16 16-22l150-32 74-34q14-6 30-6h40q14 0 26 8l74 46 48 12q14 4 14 20v8q0 12-12 12H40q-12 0-12-12z"/><path d="M28 270h70v12H60v18H48v-18H28z"/><path fill="#1b1f21" d="M284 246h42l58 34H222z"/><path fill="#1b1f21" d="M180 300h120v8H180z"/><circle cx="136" cy="336" r="46" fill="#1b1f21"/><circle cx="136" cy="336" r="36"/><circle cx="136" cy="336" r="12" fill="#1b1f21"/><circle cx="396" cy="336" r="46" fill="#1b1f21"/><circle cx="396" cy="336" r="36"/><circle cx="396" cy="336" r="12" fill="#1b1f21"/>
+</g>
+<path fill="#ffffff" d="M440 34l13 30 32 3-24 21 7 32-28-17-28 17 7-32-24-21 32-3z"/>
+</svg>

@@ -584,10 +584,10 @@ def add_generic(ev, path):
                 CARDS.setdefault(name.lower(), (w, cls))
             if melee:
                 continue
-            # A generic gun is Power, Smart or Tech, picked when it's bought, free (Tech doesn't fit Grenade and Rocket Launchers).
+            # A generic gun is Power, Smart or Tech, picked when it's bought, free. Heavy Weapons take no Rebuild (HOUSE RULE).
+            if wtype in ("grenadeLauncher", "rocketLauncher"):
+                continue
             for t in TYPES_2070:
-                if t == "tech" and wtype in ("grenadeLauncher", "rocketLauncher"):
-                    continue
                 wtype, qq, system = weapon_system(w, f"{cls} • {t.upper()}", c, t)
                 tn = t.title()
                 rule = TYPE_RULES.get(t, "")
@@ -814,17 +814,6 @@ def vehicle_kind(group, notes):
     return "land"
 
 
-def vehicle_img(kind, notes):
-    t = notes.lower()
-    if kind == "air":
-        return f"{SYS}/vehicles/{'blimp' if 'zep' in t else 'helicopter' if 'gyro' in t or 'heli' in t else 'airplane'}.svg"
-    if kind == "sea":
-        return f"{SYS}/vehicles/{'speed_boat' if re.search(r'speedboat|jetski|boat', t) else 'ship'}.svg"
-    if re.search(r"\bbike\b|roadbike|superbike|motorcycle|trike|scooter", t):
-        return f"{SYS}/vehicles/motorbike.svg"
-    return f"{SYS}/vehicles/super_car.svg"
-
-
 def seat(pid, name, n, skills, weapons=False, control=False, glass=0):
     return {"id": pid, "name": name, "builtIn": False, "maxOccupants": max(1, n), "canControlWeapons": weapons, "bulletproofGlass": bool(glass),
             "glassHpMax": glass, "glassHp": glass, "skills": skills, "statMods": "", "matchVehicleMove": False, "matchOccupantMove": False,
@@ -890,7 +879,8 @@ def add_vehicle(row, header, group, path, tag):
     sdp, sp, seats, move = num(d.get("SDP")), num(d.get("SP")), max(1, num(d.get("Seats"), 1)), num(d.get("MOVE"))
     kind = vehicle_kind(group, notes)
     bike = bool(re.search(r"\bbike|motorcycle|trike|scooter|bicycle", f"{name} {notes}", re.I)) and kind == "land"
-    img = f"{SYS}/spinning_your_wheels/bicycle.svg" if "Bicycle" in name else vehicle_img(kind, notes)
+    key, rel = ICONS.vehicle_icon(name, notes, kind)
+    img = f"{SYS}/{rel}" if rel else f"{ASSETS}/vehicles/{key}{'_iconic' if path[0] == 'Iconic Vehicles' else ''}.svg"
     desc = para(inline(notes), fields_html({"Cost": d.get("Cost"), "Nomad": d.get("Nomad"), "SDP": d.get("SDP"), "SP": d.get("SP"), "Seats": d.get("Seats"),
                                             "MOVE": d.get("MOVE"), "Speed": d.get("Speed")}))
     vi = item("vehicle", name, {"sdp": sdp, "seats": seats, "speedCombat": move, "speedNarrative": strip(d.get("Speed")), "price": {"market": price(d.get("Cost"))},
@@ -1026,7 +1016,7 @@ def add_acpa(m, flavor, path):
     desc = para(f"<em>{inline(flavor)}</em>", fields_html({"Cost": cost, "Frame / Shell": frame, "Stats": stats, "Onboard weapons": weapons,
                                                           "Onboard cyberware": cyberware}),
                 "One pilot. The suit's stats modify the pilot's; see the Item Compendium, Power Armor.")
-    actor(name, f"{SYS}/default/Default_Armor.svg",
+    actor(name, f"{ASSETS}/vehicles/acpa.svg",
           {"stats": {"body": {"value": int(body.group(1)) if body else 0}}, "derivedStats": {"hp": {"value": hp, "max": hp}},
            "installedItems": {"allowed": True, "allowedTypes": ["cyberware"], "list": chrome},
            "information": {"description": desc + source_html("Power Armor"), "alias": "", "history": "", "notes": ""}},
@@ -1044,7 +1034,7 @@ def add_pet(p, path):
                                                                "Death Save": p.get("ds"), "Seriously Wounded": p.get("sw"), "Attacks": p.get("weapons"),
                                                                "Armor": p.get("armor"), "Skills": p.get("skills"), "Cyberware": p.get("cyber"), "Notes": p.get("notes")}))
                               + source_html("Cyberpets"), "alias": "", "history": "", "notes": ""}}
-    actor(p["name"], f"{SYS}/default/Default_CPR_Mystery_Man.svg", system, [], path, {MOD: {"pet2070": {"cost": p["cost"]}}})
+    actor(p["name"], f"{ASSETS}/vehicles/cyberpet.svg", system, [], path, {MOD: {"pet2070": {"cost": p["cost"]}}})
 
 
 # ------------------------------------------------------------------ DV tables
@@ -1446,6 +1436,7 @@ if __name__ == "__main__":
     write("dv-tables-2070", TABLES, [])
     if SYSDIR:
         ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
+        ICONS.write_vehicle_icons(os.path.join(ROOT, "assets/items/vehicles"))
         wdir = os.path.join(ROOT, "assets/items/weapons")
         if os.path.isdir(wdir):
             shutil.rmtree(wdir)

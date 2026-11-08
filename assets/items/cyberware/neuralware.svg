@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: neuralware. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M196 476v-74q-82-22-82-120 0-134 140-152 128-2 148 118l32 52q6 14-10 16l-22 2v44q0 30-30 30h-40v84z"/><g fill="#1b1f21"><path d="M214 200h72v72h-72z"/><path d="M180 222h34v10h-34zM180 244h34v10h-34zM286 222h34v10h-34zM286 244h34v10h-34zM230 166h10v34h-10zM260 166h10v34h-10zM230 272h10v34h-10zM260 272h10v34h-10z"/></g><path d="M232 218h36v36h-36z"/>
+</g>
+</svg>

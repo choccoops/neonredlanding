@@ -1017,7 +1017,7 @@ which runs the item generator first so the bodies use the same items).
 
 ## License
 
-MIT. Icons in `assets/` are original to Neon Hub, except `assets/items/weapons/`: those are the Cyberpunk RED - CORE system's weapon icons (art by Flintwyrm) with Neon Hub's badges added, and stay under the system's GPL-3.0 (see the `LICENSE.md` there). The Tektur font (`fonts/`) is under the SIL Open
+MIT. Icons in `assets/` are original to Neon Hub, except `assets/items/weapons/` and `assets/items/derived/`: those are the Cyberpunk RED - CORE system's own icons (the weapons' art by Flintwyrm) with Neon Hub's badges, stars and emblems added, and stay under the system's GPL-3.0 (see the `LICENSE.md` in each). The Tektur font (`fonts/`) is under the SIL Open
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
 Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),

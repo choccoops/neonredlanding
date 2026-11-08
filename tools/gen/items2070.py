@@ -234,6 +234,8 @@ def item(type_, name, system, desc, path, src="", tag="", img=None, flags=None, 
     system.setdefault("source", {"book": SOURCE, "page": 0})
     system.setdefault("revealed", True)
     system.setdefault("favorite", False)
+    if type_ == "cyberware" and not img:
+        img = cyber_img(name, system.get("type"), path)
     if type_ == "itemUpgrade" and not img:
         kind, rel = ICONS.upgrade_icon(name, path, SYSDIR)
         img = f"{SYS}/{rel}" if rel else f"{ASSETS}/upgrades/{kind}.svg"
@@ -445,6 +447,35 @@ def wimg(wtype, quality="standard", rebuild=None, iconic=False):
             name, _ = ICONS.system_weapon_file(SYSDIR, base, "standard")
         return f"{SYS}/weapons/{name}.svg" if name else IMG["weapon"]
     return f"{SYS}/weapons/{base}{'' if quality == 'standard' else '_' + quality}.svg"
+
+
+# system icons with the Iconic star (written to assets/items/derived)
+DERIVED_SYS = {}
+
+
+def cyber_img(name, ctype, path):
+    """The system's icon for the piece (by name, else its kind's), or Neon Hub's for its kind; starred on an Iconic."""
+    key, rel = ICONS.cyber_icon(name, ctype, path, SYSDIR)
+    iconic = path[0] == "Iconics"
+    if rel:
+        if iconic and SYSDIR:
+            fname = "cyber_" + re.sub(r"[^a-z0-9]+", "_", rel.lower().rsplit(".", 1)[0]).strip("_") + "_iconic.svg"
+            DERIVED_SYS.setdefault(fname, ICONS.starred_system(SYSDIR, rel))
+            return f"{ASSETS}/derived/{fname}"
+        return f"{SYS}/{rel}"
+    return f"{ASSETS}/cyberware/{key}{'_iconic' if iconic else ''}.svg"
+
+
+def write_derived(prefix, files):
+    """Write one generator's derived icons (cyber_*, body_*), clearing its stale ones, with the license note."""
+    d = os.path.join(ROOT, "assets/items/derived")
+    os.makedirs(d, exist_ok=True)
+    for f in os.listdir(d):
+        if f.startswith(prefix):
+            os.remove(os.path.join(d, f))
+    for fname, svg in sorted(files.items()):
+        open(os.path.join(d, fname), "w", encoding="utf-8").write(svg)
+    open(os.path.join(d, "LICENSE.md"), "w", encoding="utf-8").write(ICONS.DERIVED_LICENSE)
 
 
 TYPES_2070 = ("power", "smart", "tech")
@@ -1437,6 +1468,8 @@ if __name__ == "__main__":
     if SYSDIR:
         ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
         ICONS.write_vehicle_icons(os.path.join(ROOT, "assets/items/vehicles"))
+        ICONS.write_cyber_icons(os.path.join(ROOT, "assets/items/cyberware"))
+        write_derived("cyber_", DERIVED_SYS)
         wdir = os.path.join(ROOT, "assets/items/weapons")
         if os.path.isdir(wdir):
             shutil.rmtree(wdir)

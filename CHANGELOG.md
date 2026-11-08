@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.19.0
+
+- **An icon for every piece of cyberware.** The Item Compendium's 292 pieces all used the system's plain cyberware icon. Now:
+  - 175 take the system's own icons. Where the system draws the piece, it's matched by name, from the Cybereye and Sandevistan to Gills, the Linear Frames and the Popup weapons, including pieces it draws under another name (Realskinn, Superchrome Skin, Low Light / Infrared / UV, Mantis Blades, Optical Camo and the like). Other limb, eye and audio options take its Cyberarm, Cyberleg, Cybereye or Cyberaudio Suite icon, and cyberhands its Standard Hand.
+  - Everything else takes a new icon for its kind, in the system's cyberware style: neuralware (a chip in the head), fashionware, internal body (a heart with a pulse), external body (plates), borgware (a gear in the chest) and the Dynalar cyberfingers.
+  - Iconic cyberware carries the white Iconic star.
+- **Full Borg: each body has an icon of its own.** All 25 used one of three frame icons. Each keeps its frame (Σ, β or built in) and adds a white emblem for its role: the Murasaki's speech bubble, the Kawakami's blade, the Thalassa's waves, the Osler's cross, the Galileo's rocket and so on. The chrome in the bodies uses the new cyberware icons, and the bodies' option-slot boxes their kind's icon instead of a plain bag.
+
 ## 1.18.0
 
 - **Fixed: broken icons on 423 items.** Every upgrade in the Item Compendium (the Melee Rebuilds, attachments, weapon mods, cyberware enhancements, operating systems, hardware, vehicle and armor upgrades, shields), and the same upgrades in the vehicles and Full Borg bodies, pointed at an icon the Cyberpunk RED system doesn't have. They show icons now:

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!-- Neon Hub: a cyberfinger. Drawn in the style of the Cyberpunk RED system's upgrade icons. -->
+<defs><filter id="nh-shade" x="-0.17" y="-0.17" width="1.33" height="1.33" style="color-interpolation-filters:sRGB"><feFlood flood-color="rgb(58,63,94)" result="flood"/><feComposite in="flood" in2="SourceGraphic" operator="out" result="c1"/><feGaussianBlur in="c1" stdDeviation="15" result="blur"/><feComposite in="blur" in2="SourceGraphic" operator="atop"/></filter></defs>
+<rect width="512" height="512" fill="#1b1f21"/>
+<g fill="#e64539" stroke="none" filter="url(#nh-shade)">
+<path d="M132 300h236v116q0 60-60 60H192q-60 0-60-60z"/><rect x="138" y="196" width="44" height="130" rx="22"/><rect x="190" y="150" width="44" height="170" rx="22"/><rect x="242" y="140" width="44" height="180" rx="22"/><path d="M294 300V90q0-22 22-22t22 22v210z"/><path d="M368 340l52-62q16-18 34-6t4 34l-66 96z"/><path fill="#1b1f21" d="M294 118h44v12h-44zM294 150h44v12h-44zM294 182h44v12h-44z"/><path d="M308 70h16v-24h-16z"/><path d="M316 20l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/>
+</g>
+</svg>

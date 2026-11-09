@@ -120,7 +120,7 @@
             "ammo"
           ],
           "list": [
-            "sISZupmlBj6D5tiW"
+            "NXVTgNFUXGdyBj7o"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -148,7 +148,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "smart"
+          "weaponType2070": "smart",
+          "dvTableBase": "DV SMG"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "0KEgoZTHcpTrMuud"
@@ -159,9 +160,9 @@
       }
     },
     {
-      "_id": "sISZupmlBj6D5tiW",
-      "_key": "!actors.items!CRYYM5RJ5e347avD.sISZupmlBj6D5tiW",
-      "name": "Range Table Modification (Short Barrel)",
+      "_id": "NXVTgNFUXGdyBj7o",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.NXVTgNFUXGdyBj7o",
+      "name": "Short Barrel (SMG)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -178,7 +179,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for SMGs and Heavy SMGs: the weapon fires on the Subcompact SMG range table (DV Subcompact SMG) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the SMG or Subcompact SMG table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -199,6 +200,19 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Subcompact SMG",
+            "family": "smg",
+            "option": "Short Barrel",
+            "tables": [
+              "DV SMG",
+              "DV Subcompact SMG"
+            ],
+            "weaponTypes": [
+              "heavySmg",
+              "smg"
+            ]
           }
         }
       },
@@ -253,7 +267,7 @@
             "ammo"
           ],
           "list": [
-            "j55yHvyqGgU2cIx8"
+            "rlkhG1sJcM7crvwe"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -281,7 +295,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "smart"
+          "weaponType2070": "smart",
+          "dvTableBase": "DV SMG"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "0KEgoZTHcpTrMuud"
@@ -292,9 +307,9 @@
       }
     },
     {
-      "_id": "j55yHvyqGgU2cIx8",
-      "_key": "!actors.items!CRYYM5RJ5e347avD.j55yHvyqGgU2cIx8",
-      "name": "Range Table Modification (Short Barrel)",
+      "_id": "rlkhG1sJcM7crvwe",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.rlkhG1sJcM7crvwe",
+      "name": "Short Barrel (SMG)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -311,7 +326,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for SMGs and Heavy SMGs: the weapon fires on the Subcompact SMG range table (DV Subcompact SMG) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the SMG or Subcompact SMG table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -332,6 +347,19 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Subcompact SMG",
+            "family": "smg",
+            "option": "Short Barrel",
+            "tables": [
+              "DV SMG",
+              "DV Subcompact SMG"
+            ],
+            "weaponTypes": [
+              "heavySmg",
+              "smg"
+            ]
           }
         }
       },
@@ -386,7 +414,7 @@
             "ammo"
           ],
           "list": [
-            "DFr6E8eIeXd73FhZ"
+            "FQjSoIua3QfC9oY7"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -414,7 +442,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "power"
+          "weaponType2070": "power",
+          "dvTableBase": "DV Grenade Launcher"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "0KEgoZTHcpTrMuud"
@@ -425,9 +454,9 @@
       }
     },
     {
-      "_id": "DFr6E8eIeXd73FhZ",
-      "_key": "!actors.items!CRYYM5RJ5e347avD.DFr6E8eIeXd73FhZ",
-      "name": "Range Table Modification (Long Tube)",
+      "_id": "FQjSoIua3QfC9oY7",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.FQjSoIua3QfC9oY7",
+      "name": "Long Tube (Launcher)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -444,7 +473,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for Launchers: the weapon fires on the Missile Launcher range table (DV Missile Launcher) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Grenade Launcher, Rocket Launcher or Missile Launcher table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -465,6 +494,20 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Missile Launcher",
+            "family": "launcher",
+            "option": "Long Tube",
+            "tables": [
+              "DV Grenade Launcher",
+              "DV Rocket Launcher",
+              "DV Missile Launcher"
+            ],
+            "weaponTypes": [
+              "grenadeLauncher",
+              "rocketLauncher"
+            ]
           }
         }
       },
@@ -519,7 +562,7 @@
             "ammo"
           ],
           "list": [
-            "XgvVlUi2SJVDJ72N"
+            "GX4auhMm1p0PqX4V"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -547,7 +590,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "power"
+          "weaponType2070": "power",
+          "dvTableBase": "DV Grenade Launcher"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "0KEgoZTHcpTrMuud"
@@ -558,9 +602,9 @@
       }
     },
     {
-      "_id": "XgvVlUi2SJVDJ72N",
-      "_key": "!actors.items!CRYYM5RJ5e347avD.XgvVlUi2SJVDJ72N",
-      "name": "Range Table Modification (Long Tube)",
+      "_id": "GX4auhMm1p0PqX4V",
+      "_key": "!actors.items!CRYYM5RJ5e347avD.GX4auhMm1p0PqX4V",
+      "name": "Long Tube (Launcher)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -577,7 +621,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for Launchers: the weapon fires on the Missile Launcher range table (DV Missile Launcher) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Grenade Launcher, Rocket Launcher or Missile Launcher table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -598,6 +642,20 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Missile Launcher",
+            "family": "launcher",
+            "option": "Long Tube",
+            "tables": [
+              "DV Grenade Launcher",
+              "DV Rocket Launcher",
+              "DV Missile Launcher"
+            ],
+            "weaponTypes": [
+              "grenadeLauncher",
+              "rocketLauncher"
+            ]
           }
         }
       },

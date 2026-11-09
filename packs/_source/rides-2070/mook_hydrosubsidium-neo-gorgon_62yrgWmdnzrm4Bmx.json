@@ -284,7 +284,7 @@
             "ammo"
           ],
           "list": [
-            "eepVutPk5y2ruKiv"
+            "N62PRP2rJG2CM4qw"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -311,7 +311,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "dvTableBase": "DV Pistol"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "LDTaxYltpWFrIHRe"
@@ -322,9 +323,9 @@
       }
     },
     {
-      "_id": "eepVutPk5y2ruKiv",
-      "_key": "!actors.items!62yrgWmdnzrm4Bmx.eepVutPk5y2ruKiv",
-      "name": "Range Table Modification (Long Barrel)",
+      "_id": "N62PRP2rJG2CM4qw",
+      "_key": "!actors.items!62yrgWmdnzrm4Bmx.N62PRP2rJG2CM4qw",
+      "name": "Long Barrel (Pistol)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -341,7 +342,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for Pistols: the weapon fires on the Long Barrel Pistol range table (DV Long Barrel Pistol) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Pistol, Snubnose Pistol or Long Barrel Pistol table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -362,6 +363,22 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Long Barrel Pistol",
+            "family": "pistol",
+            "option": "Long Barrel",
+            "tables": [
+              "DV Pistol",
+              "DV Snubnose Pistol",
+              "DV Long Barrel Pistol",
+              "DV Long-Barrel Pistol"
+            ],
+            "weaponTypes": [
+              "heavyPistol",
+              "medPistol",
+              "vHeavyPistol"
+            ]
           }
         }
       },
@@ -416,7 +433,7 @@
             "ammo"
           ],
           "list": [
-            "3yIKDu80ajp9j3WS"
+            "bJAt723yAmClgERQ"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -443,7 +460,8 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
-          }
+          },
+          "dvTableBase": "DV Pistol"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "LDTaxYltpWFrIHRe"
@@ -454,9 +472,9 @@
       }
     },
     {
-      "_id": "3yIKDu80ajp9j3WS",
-      "_key": "!actors.items!62yrgWmdnzrm4Bmx.3yIKDu80ajp9j3WS",
-      "name": "Range Table Modification (Long Barrel)",
+      "_id": "bJAt723yAmClgERQ",
+      "_key": "!actors.items!62yrgWmdnzrm4Bmx.bJAt723yAmClgERQ",
+      "name": "Long Barrel (Pistol)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -473,7 +491,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for Pistols: the weapon fires on the Long Barrel Pistol range table (DV Long Barrel Pistol) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Pistol, Snubnose Pistol or Long Barrel Pistol table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -494,6 +512,22 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Long Barrel Pistol",
+            "family": "pistol",
+            "option": "Long Barrel",
+            "tables": [
+              "DV Pistol",
+              "DV Snubnose Pistol",
+              "DV Long Barrel Pistol",
+              "DV Long-Barrel Pistol"
+            ],
+            "weaponTypes": [
+              "heavyPistol",
+              "medPistol",
+              "vHeavyPistol"
+            ]
           }
         }
       },

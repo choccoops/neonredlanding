@@ -42,7 +42,7 @@ import { FashionOps } from "./fashion/fashion-ops.js";
 import { FashionApp } from "./fashion/fashion-app.js";
 import { DISTRICTS } from "./fashion/fashion-data.js";
 import { Items2070 } from "./items/items-2070.js";
-import { RangeMods } from "./items/range-mods.js";
+import { WeaponMods } from "./items/weapon-mods.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -71,7 +71,7 @@ Hooks.once("init", () => {
   CredStore.register();
   FashionOps.init();
   Items2070.register();
-  RangeMods.init();
+  WeaponMods.init();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -305,12 +305,14 @@ Hooks.once("init", () => {
      * The 2070s Item Compendium: compendiums "cpr-neon-hub.items-2070", "cpr-neon-hub.rides-2070" (vehicles,
      * ACPAs and cyberpets for MMuton's vehicle sheet) and "cpr-neon-hub.dv-tables-2070" (the SoF 2045 range tables).
      * useDvTables(true|false): GM, point CPR's DV tables at the 2070 range tables or back at its own.
-     * rangeMods.check(weapon, upgrade): why a Range Table Modification can't go in that weapon (a message), or null.
+     * rangeMods.check(weapon, upgrade): why a Range Table Modification or Autofire attachment can't go in that weapon
+     * (a message), or null. weaponMods.check is the same call.
      */
     items: {
       useDvTables: (on = true) => Items2070.useDvTables(on),
       usingDvTables: () => Items2070.usingDvTables,
-      rangeMods: { check: (weapon, upgrade) => RangeMods.check(weapon, upgrade) }
+      rangeMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) },
+      weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) }
     },
 
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */

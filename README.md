@@ -763,6 +763,28 @@ named after their option, like the ACPAs' "Range Table Modification (Scout Barre
 1.23.0, still work, and taking one out puts the gun back on its family's own table.
 `api.items.rangeMods.check(weapon, upgrade)` says why an upgrade can't go in (or null).
 
+**Autofire attachments.** The book's Autofire attachments change the gun too, in its own Autofire
+rating and Suppressive Fire (what CPR's sheet, its damage roll and the Action HUD read) and in a
+flag naming its Autofire table (`flags.cpr-neon-hub.autofireTable`, which Neon Combat Manager's DV
+display and Does it hit? read first). Taking one out, or deleting it, puts the gun's own back.
+
+- **Pistol Autosear** (any pistol that isn't slug-, shell- or arrow-only, Exotics on a pistol
+  table too): Autofire (Machine Pistol 3) and Suppressive Fire, or Machine Pistol 4 on an Excellent
+  pistol or one that already had Autofire.
+- **SMG Cyclic Internals**, now two items, *(SMG 4)* and *(Machine Pistol 4)*, for a gun with
+  Autofire (SMG 3). The book's entry keeps its id as the SMG 4 one.
+- **Shotgun Automatic Control Group** (a gun that fires slugs or shells): Autofire (Machine Pistol
+  3), or 4 if Excellent or already automatic. Its 4-slug bursts and the shell attack are its text.
+- **Constant Recoil System** (assault-rifle Autofire): Machine Gun 3, or 4 on an Excellent gun.
+- **Upsized Power**: +1 to the rating the gun ends up with, if it has Autofire.
+- **Binary Trigger** and the **Electrothermal Enhancement (ETE)**: no Autofire or Suppressive
+  Fire while they're in (the rating goes to 0, so CPR's sheet stops offering them).
+
+One of the first four at a time, one Upsized Power, and none the gun has built in already (a
+card's *Built-in* line). CPR's own Autofire switch still picks its table by the range table's name,
+so a Cyclic (Machine Pistol 4) SMG or a Constant Recoil rifle measures on the SMG or Assault Rifle
+Autofire table there; Neon Combat Manager uses the right one.
+
 **Active Effects.** Where the book gives a flat bonus or penalty, the item has a CPR Active Effect
 for it, read from the item's own line ("+2 MOVE", "+2 Human Perception and Interrogation",
 "COOL and TECH −2"). About 80 items have them, and they switch on the way CPR expects:
@@ -993,7 +1015,7 @@ hub.fashion.districts();                // the districts and their dress codes
 await hub.fashion.setSceneDistrict(canvas.scene, "japantown"); // GM
 await hub.items.useDvTables(true);     // GM: Cyberpunk RED's DV tables from the 2070s range tables (false: back to CPR's)
 hub.items.usingDvTables();              // true when they are
-hub.items.rangeMods.check(weapon, upgrade); // why a Range Table Modification can't go in that weapon, or null
+hub.items.rangeMods.check(weapon, upgrade); // why a Range Table Modification or Autofire attachment can't go in, or null
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```

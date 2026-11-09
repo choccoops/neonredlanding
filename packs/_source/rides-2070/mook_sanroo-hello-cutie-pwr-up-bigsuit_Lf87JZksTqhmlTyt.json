@@ -178,7 +178,7 @@
         ],
         "usesType": "magazine",
         "fireModes": {
-          "autoFire": 3,
+          "autoFire": 4,
           "suppressiveFire": true
         },
         "concealable": {
@@ -201,7 +201,7 @@
           ],
           "list": [
             "11xHqXf3u9FQ2i8M",
-            "Ml1QT6VF6uASH1At",
+            "M9m4CYbn3Gy8cZJA",
             "MMuDDKnYYXJMBwcS"
           ],
           "slots": 3,
@@ -231,6 +231,12 @@
             "chapter": "Weapons"
           },
           "weaponType2070": "power",
+          "autofireBase": {
+            "autoFire": 3,
+            "suppressiveFire": true,
+            "table": null
+          },
+          "autofireTable": "DV Pistol (Autofire, Machine Pistol)",
           "dvTableBase": "DV SMG"
         },
         "mmutons-cyberpunk-red-vas": {
@@ -290,9 +296,9 @@
       }
     },
     {
-      "_id": "Ml1QT6VF6uASH1At",
-      "_key": "!actors.items!Lf87JZksTqhmlTyt.Ml1QT6VF6uASH1At",
-      "name": "SMG Cyclic Internals",
+      "_id": "M9m4CYbn3Gy8cZJA",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.M9m4CYbn3Gy8cZJA",
+      "name": "SMG Cyclic Internals (Machine Pistol 4)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -309,7 +315,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Any weapon with Autofire (SMG 3). Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. Replaces Autofire (SMG 3) with Autofire (SMG 4) or (Machine Pistol 4).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p><strong>This option:</strong> Autofire (Machine Pistol 4).</p><p>Any weapon with Autofire (SMG 3). Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. Replaces Autofire (SMG 3) with Autofire (SMG 4) or (Machine Pistol 4).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -330,6 +336,11 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "autofireMod": {
+            "fits": "smg3",
+            "table": "DV Pistol (Autofire, Machine Pistol)",
+            "rating": 4
           }
         }
       },

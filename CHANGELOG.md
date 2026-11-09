@@ -25,6 +25,17 @@
   Assault Rifle. Before, Autofire on these measured on the single-shot table or on none. They show in
   CPR's DV table list next to their table but aren't for giving a weapon. Neon Combat Manager still
   uses the Autofire table a gun's card names.
+- **Autofire attachments change the gun.** Pistol Autosear, SMG Cyclic Internals, the Shotgun
+  Automatic Control Group, the Constant Recoil System, Upsized Power, the Binary Trigger and the ETE set the gun's Autofire rating
+  and Suppressive Fire when they go in, and the Autofire table it fires on (a flag Neon Combat
+  Manager 1.23.1 reads), and put the gun's own back when they come out or are deleted. A Pistol
+  Autosear gives a pistol Autofire (Machine Pistol 3) and Suppressive Fire; a Constant Recoil System
+  puts an assault rifle on Machine Gun 3; a Binary Trigger or an ETE takes Autofire and Suppressive
+  Fire away. One that doesn't fit, a second one, or one the gun has built in is refused with a
+  warning, and the Weaponbench asks first.
+- **SMG Cyclic Internals is two items**, *(SMG 4)* and *(Machine Pistol 4)*; the book's entry keeps
+  its id as the SMG 4 one. The BigSuit's Happy Dancer carries the Machine Pistol 4 one, as the book
+  says, and the GunMart HomeSafe its control group's Machine Pistol 3.
 
 ## 1.22.3
 

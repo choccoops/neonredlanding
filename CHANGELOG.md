@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.22.2
+
+- **Fixed: the Dayton M405 AdZep's token is 5×5**, like the other airships (it was 2×2).
+
 ## 1.22.1
 
 - **Fixed: bows and arrows load the way Cyberpunk RED's do.** A bow holds one arrow, nocked as part of the Attack action (no Reload Action): load a stack of arrows and reload after each shot.

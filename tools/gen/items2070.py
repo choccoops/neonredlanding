@@ -590,7 +590,8 @@ def weapon_system(w, cls, cost, rebuild=None):
         # Excellent Quality +1; a Smart weapon +1 to ranged Attacks with it
         "attackmod": (1 if q == "excellent" else 0) + (1 if rebuild == "smart" and ranged else 0),
         "damage": dmg.group() if dmg else "0", "rof": max(1, num(w.get("rof"), 1)), "handsReq": max(1, num(w.get("hands"), 1)),
-        "magazine": {"value": 0, "max": num(w.get("capacity")) if ranged else 0, "ammoData": None},
+        "magazine": {"value": 0, "max": (max(1, num(w.get("capacity"))) if wtype == "bow" else num(w.get("capacity"))) if ranged else 0,
+                     "ammoData": None},
         "ammoVariety": AMMO_FOR.get(wtype, []) if ranged else [], "usesType": "magazine",
         "fireModes": {"autoFire": int(af.group(1)) if af else 0, "suppressiveFire": "Suppressive" in modes},
         "concealable": {"concealable": strip(w.get("conceal")).lower().startswith("yes"), "isConcealed": False},
@@ -708,6 +709,8 @@ def ammo_varieties(name, effect):
     for word, vs in VARIETY_WORDS:
         if re.search(rf"\b{word}s?\b", first):
             out += [x for x in vs if x not in out]
+    if re.search(r"for arrows, see", first):  # arrows have their own entry
+        out = [x for x in out if x != "arrow"]
     return out
 
 
@@ -726,6 +729,9 @@ def add_ammo(row, path, tag):
         if v in ("grenade", "rocket") and grenade_price:
             p = int(grenade_price.group(1).replace(",", ""))
         nm = name if len(vs) == 1 else f"{name} ({VLABEL[v]})"
+        if " / " in name:  # one row for an arrow and a round ("Serrated Arrow / Hollow Point Ammunition"): each its own name
+            arrow, rnd = sorted(name.split(" / "), key=lambda x: "Arrow" not in x)
+            nm = arrow if v == "arrow" else f"{rnd} ({VLABEL[v]})"
         system = {"variety": v, "type": atype, "amount": amount, "price": {"market": p}, "ablationValue": 2 if atype == "armorPiercing" else 1,
                   "concealable": {"concealable": True, "isConcealed": False},
                   "overrides": {"autofire": {"minimum": 0, "mode": "none", "value": 0}, "damage": {"minimum": "", "mode": "none", "value": ""}}}
@@ -1509,6 +1515,7 @@ def main():
         make()
     add_martial_arts()
     grenades()
+    arrows()
 
 
 # ------------------------------------------------------------------ grenades
@@ -1551,6 +1558,45 @@ def grenades():
          GRENADE_PATH, img=f"{SYS}/weapons/thrown_weapon.svg", effects=[{"_none": True}])
 
 
+# ------------------------------------------------------------------ arrows
+# Cyberpunk RED's bows hold one arrow, nocked as part of the Attack action (no Reload Action): the arrows are a
+# stack of 10 (priced per 10, like bullets) loaded into the bow one at a time. So the arrows take the system's
+# names ("Arrow (Poison)"), its damage overrides and ablation, and its own icons for the kinds it has.
+ARROW_NAME = [(r"^(.+) Ammunition \(Arrow\)$", r"\1"), (r"^Arrowhypo Ammunition$", "Hypo"), (r"^(.+) \(Arrow\)$", r"\1"),
+              (r"^(.+) Arrows?$", r"\1")]
+ARROW_DAMAGE = {"Poison": "2d6", "Biotoxin": "3d6", "Sleep": "0", "Hypo": "0"}  # set, as the system's; the rest use the bow's
+ARROW_NO_ABLATION = {"Biotoxin", "Poison", "Rubber", "Hypo"}
+SYSTEM_ARROWS = {"Basic": "bow_basic", "Armor-Piercing": "bow_armorpiercing", "Biotoxin": "bow_biotoxin", "Expansive": "bow_expansive",
+                 "Incendiary": "bow_incendiary", "Poison": "bow_poison", "Rubber": "bow_rubber", "Sleep": "bow_sleep", "Improved Smart": "bow_smart"}
+ARROW_PATH = ("Ammo & Explosives", "Arrows")
+BOW_NOTE = "<p><strong>Archery:</strong> one arrow at a time, nocked as part of the Attack action (no Reload Action). Load a stack of arrows and reload after each shot.</p>"
+
+
+def arrows():
+    where = folder("items-2070", ARROW_PATH, COLORS.get(ARROW_PATH[0]))
+    for key, doc in [(k, d) for k, d in ITEMS.items() if d["type"] == "ammo" and d["system"]["variety"] == "arrow"]:
+        kind = next((re.sub(p, r, doc["name"]) for p, r in ARROW_NAME if re.match(p, doc["name"])), doc["name"])
+        if kind not in SYSTEM_ARROWS and kind not in ICONS.ARROW_GLYPHS:
+            raise SystemExit(f"arrow {doc['name']!r}: give it an icon (SYSTEM_ARROWS or icons2070.ARROW_GLYPHS)")
+        doc["name"] = f"Arrow ({kind})"  # the id stays the book name's
+        ITEMS[("ammo", doc["name"].lower())] = ITEMS.pop(key)
+        doc["img"] = f"{SYS}/ammo/{SYSTEM_ARROWS[kind]}.png" if kind in SYSTEM_ARROWS else f"{ASSETS}/arrows/{ICONS.arrow_slug(kind)}.svg"
+        doc["folder"] = where
+        s = doc["system"]
+        if s["amount"] == 1:  # priced as one; arrows come (and are priced) by the 10
+            s["description"]["value"] = s["description"]["value"].replace("</p><p><small>", " (price per 10)</p><p><small>", 1) \
+                if "(price per 10)" not in s["description"]["value"] else s["description"]["value"]
+        s["amount"] = 10
+        s["ablationValue"] = 0 if kind in ARROW_NO_ABLATION else 2 if kind == "Armor-Piercing" else 1
+        damage = {"minimum": "1d6", "mode": "set", "value": ARROW_DAMAGE[kind]} if kind in ARROW_DAMAGE else \
+            {"minimum": "1d6", "mode": "none", "value": "3d6"}
+        s["overrides"] = {"autofire": {"minimum": 3, "mode": "none", "value": -1}, "damage": damage}
+    for doc in ITEMS.values():
+        s = doc["system"]
+        if doc["type"] == "weapon" and s.get("weaponType") == "bow" and s["magazine"]["max"] == 1 and BOW_NOTE not in s["description"]["value"]:
+            s["description"]["value"] = BOW_NOTE + s["description"]["value"]
+
+
 def write(pack, docs, folders):
     d = os.path.join(ROOT, "packs/_source", pack)
     if os.path.isdir(d):
@@ -1578,6 +1624,7 @@ if __name__ == "__main__":
     write("rides-2070", list(ACTORS.values()), [f for k, f in FOLDERS.items() if k[0] == "rides-2070" and f["_id"] in keep])
     write("dv-tables-2070", TABLES, [])
     ICONS.write_grenade_icons(os.path.join(ROOT, "assets/items/grenades"))
+    ICONS.write_arrow_icons(os.path.join(ROOT, "assets/items/arrows"))
     if SYSDIR:
         ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
         ICONS.write_vehicle_icons(os.path.join(ROOT, "assets/items/vehicles"))

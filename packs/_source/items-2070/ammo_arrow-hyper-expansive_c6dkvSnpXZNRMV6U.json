@@ -1,0 +1,60 @@
+{
+  "_id": "c6dkvSnpXZNRMV6U",
+  "_key": "!items!c6dkvSnpXZNRMV6U",
+  "name": "Arrow (Hyper Expansive)",
+  "type": "ammo",
+  "img": "modules/cpr-neon-hub/assets/items/arrows/hyper-expansive.svg",
+  "folder": "QGIjpA7AyhOoeN9z",
+  "sort": 4020,
+  "system": {
+    "variety": "arrow",
+    "type": "expansive",
+    "amount": 10,
+    "price": {
+      "market": 100
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "none",
+        "value": "3d6"
+      }
+    },
+    "description": {
+      "value": "<p>Arrows, Bullets, Slugs, Shells. When it causes a Critical Injury, the victim rolls again until they get one they aren't already suffering, and takes that too (no Bonus Damage).</p><p><strong>Cost:</strong> 100eb (Expensive) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -818,3 +818,46 @@ def write_grenade_icons(out):
     os.makedirs(out, exist_ok=True)
     for kind in GRENADE_GLYPHS:
         open(os.path.join(out, f"{grenade_slug(kind)}.svg"), "w", encoding="utf-8").write(grenade_icon(kind))
+
+
+# ------------------------------------------------------------------ arrows: a broadhead with a hazard diamond
+# As the system's own arrow ammo icons are drawn (a silver broadhead, the yellow hazard diamond over its lower
+# right with the arrow's kind in black). The system's icons are used for the kinds it has; these are for the rest.
+STEEL = ('<linearGradient id="nh-steel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f5f6"/>'
+         '<stop offset="0.55" stop-color="#a9adb2"/><stop offset="1" stop-color="#dfe1e3"/></linearGradient>')
+BROADHEAD = (
+    '<g stroke="#2b2d31" stroke-width="14" stroke-linejoin="round" fill="url(#nh-steel)">'
+    '<path d="M70 404l130-130 38 38-130 130q-30 10-38-38z"/>'  # shaft
+    '<path d="M84 388l-34 4-12 34 26-12zM100 372l20 20M122 350l20 20"/>'  # nock and grip
+    '<path d="M192 268l44-44 52 52-44 44z"/>'  # ferrule
+    '<path fill-rule="evenodd" d="M478 34L140 132l90 64 86 86 64 90zM416 96L234 164l114 114z"/>'  # the hollow broadhead
+    '</g>')
+
+ARROW_GLYPHS = {
+    "Burrowing": ("a drill", f'<path d="M-30 -40h60L0 54z"/><path fill="none" stroke="{HAZARD}" stroke-width="7" d="M-24 -22l44 10M-18 -4l32 8M-11 14l20 6"/>'),
+    "Combo Casings": ("linked casings", f'<path fill="none" stroke="{INK}" stroke-width="12" d="M-14 -34h-14a20 20 0 0 0 0 40h14M14 -6h14a20 20 0 0 1 0 40H14"/><path d="M-20 -20h40v12h-40zM-20 12h40v12h-40z"/>'),
+    "Explosive": ("a blast", _star(10, 54, 26)),
+    "Harpoon": ("a barbed harpoon head", '<path d="M-6 54V-20h-18L0 -54l24 34H6v74z"/><path d="M-6 6l-26 -20v18l26 18zM6 6l26 -20v18L6 22z"/>'),
+    "High Precision": GRENADE_GLYPHS["Improved Smart"],
+    "Hyper Expansive": ("a burst of petals", "".join(f'<ellipse rx="13" ry="40" transform="rotate({a})"/>' for a in (0, 45, 90, 135)) + f'<circle r="11" fill="{HAZARD}"/>'),
+    "Hypo": ("a syringe", '<g transform="rotate(45)"><path d="M-12 -40h24v62h-24z"/><path d="M-24 -48h48v10h-48zM-3 22h6v30h-6zM-6 -60h12v12h-12z"/></g>'),
+    "Serrated": ("a serrated edge", '<path d="M-52 30l14-28 12 14 12-28 12 22 12-30 12 24 12-26 6 52z"/>'),
+    "Warbow": ("an overpressure gauge", f'<path fill="none" stroke="{INK}" stroke-width="10" d="M-44 26a44 44 0 0 1 88 0"/><path d="M24 -12a44 44 0 0 1 20 38h-14a30 30 0 0 0-14-26z"/><path d="M-4 30L30 -26l6 4L4 34z"/><circle cy="30" r="10"/>'),
+}
+
+
+def arrow_slug(kind):
+    return re.sub(r"[^a-z0-9]+", "-", kind.lower()).strip("-")
+
+
+def arrow_icon(kind):
+    note, glyph = ARROW_GLYPHS[kind]
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">\n'
+            f'<!-- Neon Hub: a {kind} arrow ({note}). Drawn in the style of the Cyberpunk RED system\'s arrow ammo icons. -->\n'
+            f'<defs>{STEEL}</defs>\n{BROADHEAD}\n{DIAMOND}\n<g transform="translate(368 368) scale(1.2)" fill="{INK}">{glyph}</g>\n</svg>\n')
+
+
+def write_arrow_icons(out):
+    os.makedirs(out, exist_ok=True)
+    for kind in ARROW_GLYPHS:
+        open(os.path.join(out, f"{arrow_slug(kind)}.svg"), "w", encoding="utf-8").write(arrow_icon(kind))

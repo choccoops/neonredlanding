@@ -1,0 +1,60 @@
+{
+  "_id": "NRP57yYuE5jPa6Mp",
+  "_key": "!items!NRP57yYuE5jPa6Mp",
+  "name": "Arrow (Burrowing)",
+  "type": "ammo",
+  "img": "modules/cpr-neon-hub/assets/items/arrows/burrowing.svg",
+  "folder": "QGIjpA7AyhOoeN9z",
+  "sort": 3790,
+  "system": {
+    "variety": "arrow",
+    "type": "basic",
+    "amount": 10,
+    "price": {
+      "market": 100
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "none",
+        "value": "3d6"
+      }
+    },
+    "description": {
+      "value": "<p>Arrows, Bullets, Slugs. Critical Injuries it causes can't be Quick Fixed unless the Quick Fix removes the Injury permanently. DVs to Quick Fix or Treat them are +2.</p><p><strong>Cost:</strong> 100eb (Premium) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

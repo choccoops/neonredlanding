@@ -301,6 +301,18 @@ class Mook:
             if a.get(loc, {}).get("notes"):
                 self.notes.append(f"{loc.title()} armor: {a[loc]['notes']}")
 
+    def fit_ammo(self, it):
+        """Ammo that none of the mook's guns can load (no caliber given, or Corgo's differs) comes in the one they fire."""
+        guns = [v for i in self.items if i["type"] == "weapon" for v in i["system"].get("ammoVariety", [])]
+        if not guns or it["system"]["variety"] in guns:
+            return it
+        base = re.sub(r"\s*\([^)]*\)$", "", it["name"])
+        for v in guns:
+            fit = G.ITEMS.get(("ammo", f"{base} ({G.VLABEL[v]})".lower()))
+            if fit:
+                return fit
+        return it
+
     def thrower(self):
         """Cyberpunk RED throws grenades from a Thrown Weapon: a mook with grenades has one, loaded and ready."""
         nades = [i for i in self.items if i["type"] == "ammo" and i["system"].get("variety") == "grenade"]
@@ -335,6 +347,8 @@ class Mook:
         if not it:
             self.missing.append(raw)
             return
+        if it["type"] == "ammo":
+            it = self.fit_ammo(it)
         for _ in range(1 if it["type"] in ("ammo", "drug") else n):
             e = self.embed(it)
             if e["type"] in ("ammo", "drug"):

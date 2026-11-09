@@ -223,6 +223,39 @@ test("vehicles and ACPAs open on MMuton's vehicle sheet with seats it understand
   assert.equal(pets.length, 8, "the eight cyberpets");
 });
 
+test("bows load one arrow at a time, as Cyberpunk RED's do; arrows are the system's", () => {
+  const folderOf = (d) => items.folders.find((f) => f._id === d.folder)?.name;
+  const bows = items.docs.filter((d) => d.type === "weapon" && d.system.weaponType === "bow");
+  const magazineBows = ["Darra Polytechnic Wasp", "Everest Ventureware WIP Crossbow", "Hush (Nightjar's Crossbow)", "Kang Tao Xiezi",
+    "Midnight Arms Twin Fang", "Militech M-44 Orion", "Tsunami Arms Hachi"];
+  for (const b of bows) {
+    assert.deepEqual(b.system.ammoVariety, ["arrow"], b.name);
+    if (magazineBows.includes(b.name)) assert.ok(b.system.magazine.max > 1, `${b.name}: its own magazine`);
+    else {
+      assert.equal(b.system.magazine.max, 1, `${b.name}: one arrow`);
+      assert.match(b.system.description.value, /nocked as part of the Attack action/, b.name);
+    }
+  }
+  const arrows = items.docs.filter((d) => d.type === "ammo" && d.system.variety === "arrow");
+  for (const core of ["Basic", "Armor-Piercing", "Biotoxin", "Expansive", "Incendiary", "Poison", "Rubber", "Sleep"]) {
+    const a = arrows.find((d) => d.name === `Arrow (${core})`);
+    assert.ok(a, `Arrow (${core})`);
+    assert.match(a.img, /^systems\/cyberpunk-red-core\/icons\/compendium\/ammo\/bow_.+\.png$/, `${a.name}: the system's icon`);
+  }
+  for (const a of arrows) {
+    assert.match(a.name, /^Arrow \(.+\)$/);
+    assert.equal(a.system.amount, 10, `${a.name}: a stack of 10`);
+    assert.equal(folderOf(a), "Arrows", a.name);
+    if (a.img.startsWith("modules/")) assert.ok(existsSync(path.join(root, a.img.replace("modules/cpr-neon-hub/", ""))), a.img);
+  }
+  assert.ok(!items.docs.some((d) => / \/ /.test(d.name) && d.type === "ammo"), "no arrow / bullet hybrids");
+  assert.ok(!arrows.some((d) => /Improved Smart Ammunition/.test(d.name)), "arrows use Improved Smart Arrows");
+  const dmg = (n) => arrows.find((d) => d.name === `Arrow (${n})`).system.overrides.damage;
+  assert.deepEqual([dmg("Poison").mode, dmg("Poison").value], ["set", "2d6"]);
+  assert.deepEqual([dmg("Sleep").mode, dmg("Sleep").value], ["set", "0"]);
+  assert.equal(dmg("Basic").mode, "none");
+});
+
 test("grenades throw the way Cyberpunk RED throws them: grenade ammo loaded into a Thrown Weapon", () => {
   const folderOf = (d) => items.folders.find((f) => f._id === d.folder)?.name;
   const thrown = items.docs.find((d) => d.name === "Thrown Weapon");

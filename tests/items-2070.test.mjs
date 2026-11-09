@@ -17,7 +17,7 @@ const CPR = {
   weaponTypes: ["assaultRifle", "bow", "grenadeLauncher", "heavyMelee", "heavyPistol", "heavySmg", "lightMelee", "martialArts", "medMelee", "medPistol",
     "rocketLauncher", "shotgun", "smg", "sniperRifle", "thrownWeapon", "unarmed", "vHeavyMelee", "vHeavyPistol"],
   ammoVarieties: ["arrow", "battery", "grenade", "heavyPistol", "medPistol", "paintball", "rifle", "rocket", "shotgunShell", "shotgunSlug", "vHeavyPistol"],
-  ammoTypes: ["basic", "acid", "armorPiercing", "biotoxin", "emp", "expansive", "flashbang", "incendiary", "poison", "rubber", "sleep", "smart", "smoke", "teargas"],
+  ammoTypes: ["basic", "acid", "armorPiercing", "biotoxin", "emp", "expansive", "flashbang", "incendiary", "poison", "rubber", "sleep", "smart", "smoke", "teargas", "special"],
   cyberwareTypes: ["cyberAudioSuite", "cyberEye", "cyberArm", "cyberLeg", "neuralWare", "cyberwareInternal", "cyberwareExternal", "fashionware", "borgware"],
   installs: ["mall", "clinic", "hospital", "notApplicable"],
   upgradeTypes: ["weapon", "vehicle", "cyberware", "cyberdeck", "armor", "clothing", "gear"],
@@ -254,6 +254,15 @@ test("bows load one arrow at a time, as Cyberpunk RED's do; arrows are the syste
   assert.deepEqual([dmg("Poison").mode, dmg("Poison").value], ["set", "2d6"]);
   assert.deepEqual([dmg("Sleep").mode, dmg("Sleep").value], ["set", "0"]);
   assert.equal(dmg("Basic").mode, "none");
+});
+
+test("only Basic ammo is typed basic; kinds the system has no type for are special", () => {
+  for (const d of items.docs.filter((x) => x.type === "ammo")) {
+    if (d.system.type === "basic") assert.match(d.name, /\bBasic\b/i, `${d.name} isn't Basic ammo`);
+  }
+  const explosive = items.docs.find((d) => d.name === "Arrow (Explosive)");
+  assert.equal(explosive.system.type, "special");
+  assert.equal(items.docs.find((d) => d.name === "Arrow (Basic)").system.type, "basic");
 });
 
 test("grenades throw the way Cyberpunk RED throws them: grenade ammo loaded into a Thrown Weapon", () => {

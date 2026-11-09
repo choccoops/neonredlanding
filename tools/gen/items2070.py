@@ -1516,6 +1516,7 @@ def main():
     add_martial_arts()
     grenades()
     arrows()
+    special_ammo()
 
 
 # ------------------------------------------------------------------ grenades
@@ -1595,6 +1596,14 @@ def arrows():
         s = doc["system"]
         if doc["type"] == "weapon" and s.get("weaponType") == "bow" and s["magazine"]["max"] == 1 and BOW_NOTE not in s["description"]["value"]:
             s["description"]["value"] = BOW_NOTE + s["description"]["value"]
+
+
+def special_ammo():
+    """Ammo of a kind Cyberpunk RED has no type for (Explosive, Burrowing, Laser...) is its "special", as the system's own
+    odd ammo is; "basic" put a wrong (Basic) on it in the Load Ammo dialog, which shows the type the name doesn't."""
+    for doc in ITEMS.values():
+        if doc["type"] == "ammo" and doc["system"]["type"] == "basic" and not re.search(r"\bbasic\b", doc["name"], re.I):
+            doc["system"]["type"] = "special"
 
 
 def write(pack, docs, folders):

@@ -300,6 +300,7 @@ test("every ride has its own art; vehicles and ACPAs a top-down token, cyberpets
     }
   }
   assert.equal(rides.docs.find((a) => a.name === "Arasaka Kujira Supercarrier")?.prototypeToken.width, 5);
+  assert.equal(rides.docs.find((a) => a.name === "Dayton M405 AdZep")?.prototypeToken.width, 5, "airships are 5x5");
 });
 
 test("the Martial Arts Forms: a Skill and a weapon each, as Cyberpunk RED's own Martial Arts", () => {

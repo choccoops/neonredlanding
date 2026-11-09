@@ -727,8 +727,12 @@ the Item Compendium (2070) chapter it's from:
   Snubnose, Pistol and Long Barrel Pistol, Subcompact SMG and SMG, the three shotguns, Carbine,
   Assault, Battle, Marksman, Scout, Sniper and Anti-materiel Rifles, Shortbow, Bow and Longbow,
   Grenade, Rocket and Missile Launchers, and the Machine Pistol, SMG, Assault Rifle and Machine Gun
-  Autofire tables. CPR's own table names are kept too (Bows & Crossbows, Long-Barrel Pistol,
-  Shotgun (Slug), Thrown Weapon), so the system's weapons still find theirs. The first time the GM
+  Autofire tables. Every other table an autofire gun sits on has a "*table* (Autofire)" copy too
+  (DV Carbine (Autofire) and the rest), the name CPR's Autofire switch looks for: pistols and
+  shotguns copy Machine Pistol, the Subcompact SMG copies SMG, and the Carbine, Battle and Marksman
+  Rifle copy Assault Rifle. They show in CPR's DV table list but aren't for giving a weapon. CPR's
+  own table names are kept too (Bows & Crossbows, Long-Barrel Pistol, Shotgun (Slug), Thrown
+  Weapon), so the system's weapons still find theirs. The first time the GM
   loads the world, Neon Hub offers to make them CPR's DV tables; switch any time in CPR's
   compendium settings or with `api.items.useDvTables(true|false)`.
 
@@ -749,8 +753,9 @@ Manager's DV, Does it hit? and AA look all read that table, so they follow. The 
 
 What doesn't fit is refused with a warning, and the rest of the install goes through. The new
 tables are the 2070 ones, so use Neon Hub's DV Tables (2070s) as CPR's DV tables. CPR's own
-Autofire switch looks for "*table* (Autofire)", which the swapped tables (Subcompact SMG, Carbine,
-Battle and Marksman Rifle) don't have; Neon Combat Manager uses the gun's own Autofire table.
+Autofire switch finds the new table's "*table* (Autofire)" copy there, the family's Autofire table
+(a Carbine Barrel keeps an assault rifle on Assault Rifle); Neon Combat Manager uses the Autofire
+table the gun's card names.
 
 The book's single *Range Table Modification* entry is still there under its old id, for worlds
 that link it, but it changes nothing: installing it says to pick the option instead. Older copies

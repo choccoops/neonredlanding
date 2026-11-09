@@ -150,6 +150,33 @@ test("ranged weapons fire on a table the DV pack has", () => {
   }
 });
 
+test("every table an autofire gun sits on has the Autofire table CPR looks for", () => {
+  // CPR 0.92.4's _setDvTable (cpr-loadable.js) switches to exactly "<table> (Autofire)".
+  const byName = new Map(tables.map((t) => [t.name, t]));
+  const dvs = (name) => byName.get(name).results.map((r) => [r.range, r.text]);
+  const autofire = items.docs.filter((d) => d.type === "weapon" && d.system.isRanged && d.system.fireModes?.autoFire > 0);
+  assert.ok(autofire.length > 90, `${autofire.length} autofire guns`);
+  for (const w of autofire) assert.ok(byName.has(`${w.system.dvTable} (Autofire)`), `${w.name}: ${w.system.dvTable} (Autofire)`);
+  // A Range Table Modification moves a gun within its family, so its family's tables all need one.
+  const mods = items.docs.filter((d) => d.flags?.["cpr-neon-hub"]?.rangeMod?.family);
+  for (const m of mods.filter((d) => ["pistol", "smg", "shotgun", "rifle"].includes(d.flags["cpr-neon-hub"].rangeMod.family))) {
+    assert.ok(byName.has(`${m.flags["cpr-neon-hub"].rangeMod.table} (Autofire)`), `${m.name}: its table has an Autofire table`);
+  }
+  // Each copies its family's Autofire table: a Carbine Barrel keeps an assault rifle on Assault Rifle.
+  const family = { "Machine Pistol": "DV Pistol (Autofire, Machine Pistol)", SMG: "DV SMG (Autofire)", "Assault Rifle": "DV Assault Rifle (Autofire)" };
+  const copies = {
+    "Machine Pistol": ["Snubnose Pistol", "Pistol", "Long Barrel Pistol", "Short Barrel Shotgun", "Shotgun", "Long Barrel Shotgun"],
+    SMG: ["Subcompact SMG"],
+    "Assault Rifle": ["Carbine", "Battle Rifle", "Marksman Rifle"]
+  };
+  for (const [auto, bases] of Object.entries(copies)) {
+    for (const base of bases) assert.deepEqual(dvs(`DV ${base} (Autofire)`), dvs(family[auto]), `DV ${base} (Autofire) is ${family[auto]}`);
+  }
+  assert.deepEqual(dvs("DV Carbine (Autofire)").map(([, dv]) => dv), ["22", "20", "17", "20", "25"], "the book's Assault Rifle Autofire DVs");
+  // The sheet's toggle takes the first name holding the table's name and "Autofire": the same DVs either way.
+  assert.deepEqual(dvs("DV Pistol (Autofire)"), dvs("DV Pistol (Autofire, Machine Pistol)"));
+});
+
 test("ids are unique, folders exist and nest at most three deep", () => {
   const all = [...items.docs, ...items.folders, ...rides.docs, ...rides.folders, ...tables];
   assert.equal(new Set(all.map((d) => d._id)).size, all.length);

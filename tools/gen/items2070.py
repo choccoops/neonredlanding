@@ -1228,7 +1228,18 @@ def dv_tables():
              ("DV Shotgun (Slug)", bands, RT.SINGLE["Shotgun"], "Single shot (the Shotgun table)"),
              ("DV Thrown Weapon", bands, [16, 15, 15, None, None, None, None, None], "Thrown (Core Rules, Chapter 07: DV16 to 6m, DV15 to 25m)"),
              ("DV Generic", bands, [""] * len(bands), "Blank: set the DVs at the table")]
-    for name, bs, dvs, kind in defs:
+    # Cyberpunk RED's own Autofire looks for "<table> (Autofire)", so every table an autofire gun sits on gets one. A
+    # gun's card names its Autofire table (Neon Combat Manager reads that); these copy the one its family fires, the
+    # family it takes Range Table Modifications for: pistols and shotguns Machine Pistol, SMGs SMG, rifles Assault
+    # Rifle, so a Carbine Barrel keeps an assault rifle on the Assault Rifle table.
+    for base, auto in (("Snubnose Pistol", "Machine Pistol"), ("Pistol", "Machine Pistol"), ("Long Barrel Pistol", "Machine Pistol"),
+                       ("Subcompact SMG", "SMGs"), ("Short Barrel Shotgun", "Machine Pistol"), ("Shotgun", "Machine Pistol"),
+                       ("Long Barrel Shotgun", "Machine Pistol"), ("Carbine", "Assault Rifle"), ("Battle Rifle", "Assault Rifle"),
+                       ("Marksman Rifle", "Assault Rifle")):
+        defs.append((f"DV {base} (Autofire)", abands, RT.AUTOFIRE[auto], f"Autofire for weapons on the {base} table, the same as {auto_names[auto]}",
+                     "<p>Not a table to give a weapon: Cyberpunk RED's Autofire switch looks for this name. A gun whose card names another "
+                     "Autofire table fires on that one in Neon Combat Manager.</p>"))
+    for name, bs, dvs, kind, *note in defs:
         tid = rid("table", name)
         results = []
         for (lo, hi), dv in zip(bs, dvs):
@@ -1238,7 +1249,7 @@ def dv_tables():
             results.append({"_id": res_id, "_key": f"!tables.results!{tid}.{res_id}", "type": "text", "text": str(dv), "range": [lo, hi],
                             "weight": 1, "drawn": False, "img": "icons/svg/d20-black.svg", "documentCollection": "", "documentId": None, "flags": {}})
         TABLES.append({"_id": tid, "_key": f"!tables!{tid}", "name": name, "img": f"{SYS}/default/Default_DV_Table.svg" if SYSDIR and os.path.exists(os.path.join(SYSDIR, "icons/compendium/default/Default_DV_Table.svg")) else "icons/svg/d20-grey.svg",
-                       "description": f"<p>{kind}, by distance in m/yds. The 2070 Standard range tables (Core Rules (2070), Chapter 07).</p>",
+                       "description": f"<p>{kind}, by distance in m/yds. The 2070 Standard range tables (Core Rules (2070), Chapter 07).</p>" + "".join(note),
                        "formula": "", "replacement": True, "displayRoll": False, "results": results, "folder": None, "sort": len(TABLES) * 100,
                        "ownership": {"default": 0}, "flags": {}})
 

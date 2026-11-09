@@ -17,6 +17,14 @@
   Older copies named after their option (the ACPAs' "Range Table Modification (Scout Barrel)") work
   by name. The ACPAs' guns carry the option's own upgrade now.
 - `api.items.rangeMods.check(weapon, upgrade)`, which Neon At Home's Weaponbench (1.13.1) asks first.
+- **Autofire works on the new tables.** Cyberpunk RED's Autofire switch looks for "*table*
+  (Autofire)", and DV Tables (2070s) now has one for every table an autofire gun sits on: Snubnose,
+  Pistol and Long Barrel Pistol, Subcompact SMG, the three shotguns, and Carbine, Battle and
+  Marksman Rifle. Each copies its family's Autofire table: pistols and shotguns Machine Pistol, the
+  Subcompact SMG SMG, and the rifles Assault Rifle, so a Carbine Barrel keeps an assault rifle on
+  Assault Rifle. Before, Autofire on these measured on the single-shot table or on none. They show in
+  CPR's DV table list next to their table but aren't for giving a weapon. Neon Combat Manager still
+  uses the Autofire table a gun's card names.
 
 ## 1.22.3
 

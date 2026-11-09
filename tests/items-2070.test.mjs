@@ -404,3 +404,33 @@ test("ACPA guns carry their barrel as the option's own upgrade, with the table t
   }
   assert.ok(n >= 4, `${n} ACPA guns with a barrel`);
 });
+
+test("Autofire attachments say what they do, in step with the runtime's copy, and the ACPAs' guns carry it", async () => {
+  const { BY_NAME, AF } = await import("../scripts/items/autofire-mods.js");
+  const flagged = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireMod);
+  assert.deepEqual(flagged.map((d) => d.name).sort(), Object.keys(BY_NAME).sort());
+  for (const d of flagged) assert.deepEqual(d.flags["cpr-neon-hub"].autofireMod, BY_NAME[d.name], d.name);
+  const names = new Set(tables.map((t) => t.name));
+  for (const f of Object.values(BY_NAME)) if (f.table) assert.ok(names.has(f.table), `${f.table} is a DV table`);
+  const smg4 = items.docs.find((d) => d._id === "OTDq5FkucYwZSLfT");
+  assert.equal(smg4.name, "SMG Cyclic Internals (SMG 4)", "the book's entry keeps its id, as the SMG 4 option");
+  assert.ok(items.docs.some((d) => d.name === "SMG Cyclic Internals (Machine Pistol 4)"));
+  const gun = (acpa, name) => rides.docs.find((d) => d.name === acpa).items.find((i) => i.name === name);
+  const dancer = gun("Sanroo Hello Cutie Pwr-Up BigSuit", "Hello Cutie Pwr-Up Happy Dancer");
+  assert.equal(dancer.system.fireModes.autoFire, 4, "the book's cyclic internals (Machine Pistol 4)");
+  assert.equal(dancer.flags["cpr-neon-hub"].autofireTable, AF.mp);
+  assert.deepEqual(dancer.flags["cpr-neon-hub"].autofireBase, { autoFire: 3, suppressiveFire: true, table: null });
+  const homesafe = gun("GunMart Mecha Special", "GunMart HomeSafe");
+  assert.equal(homesafe.system.fireModes.autoFire, 3, "a Poor shotgun with the control group: Machine Pistol 3");
+  assert.equal(homesafe.flags["cpr-neon-hub"].autofireTable, AF.mp);
+});
+
+test("burst attachments and the 20-round guns say what their bursts spend", async () => {
+  const { BURST_BY_NAME } = await import("../scripts/items/burst-rounds.js");
+  const flagged = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.burstMod);
+  assert.deepEqual(flagged.map((d) => d.name).sort(), Object.keys(BURST_BY_NAME).sort());
+  for (const d of flagged) assert.deepEqual(d.flags["cpr-neon-hub"].burstMod, BURST_BY_NAME[d.name], d.name);
+  const twenty = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireRounds).map((d) => d.name).sort();
+  assert.deepEqual(twenty, ["Militech EX-75 IronWind", "Militech Mk. 31 HMG", "Militiatech N32 Huge-Man-Gun"]);
+  assert.ok(items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireRounds).every((d) => d.flags["cpr-neon-hub"].autofireRounds === 20));
+});

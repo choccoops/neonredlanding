@@ -1039,8 +1039,9 @@ RTM_FAMILY = {"pistol": ("Pistols", ["DV Pistol", "DV Snubnose Pistol", "DV Long
               "launcher": ("Launchers", ["DV Grenade Launcher", "DV Rocket Launcher", "DV Missile Launcher"], [])}
 RTM_LABEL = {"pistol": "Pistol", "smg": "SMG", "shotgun": "Shotgun", "rifle": "Assault Rifle", "sniper": "Sniper Rifle", "bow": "Bow", "launcher": "Launcher"}
 RTM_PATH = ("Attachments & Mods", "Range Table Modifications")
-# One upgrade per option, keyed (family, option). Kept out of ITEMS until the end, so they don't move every later item's sort.
-RTM_ITEMS = {}
+# Upgrades made from one book row (a Range Table Modification per option, keyed (family, option), and the second SMG Cyclic
+# Internals). Kept out of ITEMS until the end, so they don't move every later item's sort.
+HELD = {}
 
 
 def range_mod(name, weapon):
@@ -1052,7 +1053,7 @@ def range_mod(name, weapon):
 def range_mod_item(name, weapon):
     """The Range Table Modification upgrade for this attachment on this weapon, or None."""
     n = re.sub(r"^(?:SMG|Sniper Rifle|Sniper|Shotgun|Pistol|Rocket|Grenade|Assault Rifle|Bow)\s+", "", plain(name)).lower()
-    return RTM_ITEMS.get((FAMILY.get(weapon["system"]["weaponType"], ""), n))
+    return HELD.get((FAMILY.get(weapon["system"]["weaponType"], ""), n))
 
 
 def range_mods():
@@ -1089,20 +1090,129 @@ def range_mods():
             doc["sort"] = base_sort + i
             doc["flags"][MOD]["rangeMod"] = {"table": f"DV {table}", "family": fam, "option": label, "tables": tables + system_names,
                                          "weaponTypes": types}
-            RTM_ITEMS[(fam, opt)] = doc
+            HELD[(fam, opt)] = doc
+
+
+# The book's Autofire attachments, as what they do to a gun (Neon Hub applies it when one's installed, and the ACPAs'
+# guns carry it): the Autofire table and rating they set, when a better rating applies, and what they fit; one that adds
+# to the rating; and ones that take Autofire and Suppressive Fire away.
+AF_MP, AF_SMG, AF_AR, AF_MG = "DV Pistol (Autofire, Machine Pistol)", "DV SMG (Autofire)", "DV Assault Rifle (Autofire)", "DV Machine Gun (Autofire)"
+AUTOFIRE_MODS = {
+    "Pistol Autosear": {"fits": "pistol", "table": AF_MP, "rating": 3, "boosted": 4, "boostIf": ["excellent", "automatic"], "suppressive": True},
+    "SMG Cyclic Internals (SMG 4)": {"fits": "smg3", "table": AF_SMG, "rating": 4},
+    "SMG Cyclic Internals (Machine Pistol 4)": {"fits": "smg3", "table": AF_MP, "rating": 4},
+    "Shotgun Automatic Control Group": {"fits": "shells", "table": AF_MP, "rating": 3, "boosted": 4, "boostIf": ["excellent", "automatic"]},
+    "Constant Recoil System": {"fits": "assaultRifle", "table": AF_MG, "rating": 3, "boosted": 4, "boostIf": ["excellent"]},
+    "Upsized Power": {"delta": 1},
+    "Binary Trigger": {"none": True},
+    "Electrothermal Enhancement (ETE)": {"none": True},
+}
+AF_CARD = {"machine pistol": AF_MP, "smg": AF_SMG, "assault rifle": AF_AR, "machine gun": AF_MG}
+# What the attachments do to the rounds an Autofire or Suppressive Fire attack spends (Cyberpunk RED spends 10): the
+# control group's 4-slug bursts and 4-shell attacks (dodged at -3), the Gatling Barrel's double, the Efficient
+# Autosear's 6 for 10, the Superior Autosear's halving of 20+ and the Burst Governor's 5 fewer.
+BURST_MODS = {
+    "Shotgun Automatic Control Group": {"slugs": 4, "shells": 4, "shellDodge": -3},
+    "Gatling Barrel": {"double": True},
+    "Efficient Autosear": {"tenTo": 6},
+    "Superior Autosear": {"twentyPlus": True},
+    "Burst Governor": {"less": 5, "min": 5},
+}
+
+
+def burst_governor():
+    """The Burst Governor, from the book's Street Stock (a street Tech's Tech Upgrade, Hot): as an upgrade to install in
+    the gun, since it changes what its bursts spend. Held back like the Range Table Modifications."""
+    raw = open(os.path.join(BOOK, "out", "compendium_markup.txt"), encoding="utf-8").read()
+    row = re.search(r"^\| Hot \| Burst Governor \| ([^|]+) \| ([^|]+) \|", raw, re.M)
+    if not row:
+        NOTES.append("Burst Governor: the Street Stock row wasn't found")
+        return
+    path = ("Invented Tech", "Street Stock")
+    doc = upgrade("Burst Governor", "weapon", "1,000eb", 0,
+                  para(inline(row.group(2)), "A Tech Upgrade a street Tech stocks (Street Stock, Hot): it uses up the weapon's one Tech Upgrade.",
+                       fields_html({"Fits": row.group(1), "Cost": "1,000eb"})), path)
+    ITEMS.pop(("itemUpgrade", "burst governor"))
+    HELD[("street", "burst governor")] = doc
+
+
+def autofire_mods():
+    """Flag the Autofire attachments with what they do. SMG Cyclic Internals is two options (SMG 4 or Machine Pistol 4):
+    the book's entry becomes the SMG 4 one, under its own id, and the Machine Pistol 4 one is new."""
+    cyclic = ITEMS.pop(("itemUpgrade", "smg cyclic internals"), None)
+    if cyclic:
+        cyclic["name"] = "SMG Cyclic Internals (SMG 4)"
+        ITEMS[("itemUpgrade", cyclic["name"].lower())] = cyclic
+        mp = upgrade("SMG Cyclic Internals (Machine Pistol 4)", "weapon", "100eb", 0, cyclic["system"]["description"]["value"].rsplit("<p><small>", 1)[0],
+                     ("Attachments & Mods", "Attachments"))
+        ITEMS.pop(("itemUpgrade", mp["name"].lower()))
+        mp["sort"], mp["img"], mp["folder"] = cyclic["sort"] + 1, cyclic["img"], cyclic["folder"]
+        HELD[("autofire", "cyclic mp")] = mp
+        for doc, rating in ((cyclic, "SMG 4"), (mp, "Machine Pistol 4")):
+            doc["system"]["description"]["value"] = para(f"<strong>This option:</strong> Autofire ({rating}).") + doc["system"]["description"]["value"]
+    for name, flag in AUTOFIRE_MODS.items():
+        doc = held("itemUpgrade", name)
+        if not doc:
+            NOTES.append(f"Autofire attachment not in the catalog: {name}")
+            continue
+        doc["flags"][MOD]["autofireMod"] = dict(flag)
+    for name, flag in BURST_MODS.items():
+        doc = held("itemUpgrade", name)
+        if not doc:
+            NOTES.append(f"Burst attachment not in the catalog: {name}")
+            continue
+        doc["flags"][MOD]["burstMod"] = dict(flag)
+
+
+def autofire_table(gun):
+    """The Autofire table a gun fires on: Neon Hub's flag, the one its card names, else its type's."""
+    if gun["flags"].get(MOD, {}).get("autofireTable"):
+        return gun["flags"][MOD]["autofireTable"]
+    m = re.search(r"Autofire\s*\(\s*([A-Za-z ]+?)\s*\d", re.sub(r"<[^>]+>", " ", gun["system"]["description"]["value"]))
+    if m and m.group(1).lower().strip() in AF_CARD:
+        return AF_CARD[m.group(1).lower().strip()]
+    t = gun["system"]["weaponType"]
+    return {"smg": AF_SMG, "heavySmg": AF_SMG, "medPistol": AF_MP, "heavyPistol": AF_MP, "vHeavyPistol": AF_MP}.get(t) or \
+        ((AF_MG if "Machine Gun" in gun["system"]["dvTable"] else AF_AR) if t == "assaultRifle" else None)
+
+
+def fit_autofire(gun, up):
+    """An Autofire attachment fitted to an ACPA's gun, as Neon Hub applies it: the rating, Suppressive Fire and table, with
+    the gun's own kept for when it comes out."""
+    flag = up["flags"].get(MOD, {}).get("autofireMod")
+    if not flag or "table" not in flag:
+        return
+    fm = gun["system"]["fireModes"]
+    gun["flags"].setdefault(MOD, {})["autofireBase"] = {"autoFire": fm["autoFire"], "suppressiveFire": fm["suppressiveFire"], "table": None}
+    boost = ("excellent" in flag.get("boostIf", []) and gun["system"]["quality"] == "excellent") or ("automatic" in flag.get("boostIf", []) and fm["autoFire"] > 0)
+    fm["autoFire"] = flag.get("boosted", flag["rating"]) if boost else flag["rating"]
+    fm["suppressiveFire"] = fm["suppressiveFire"] or flag.get("suppressive", False)
+    gun["flags"][MOD]["autofireTable"] = flag["table"]
 
 
 def range_mods_done():
-    """Put the modifications in the pack, and mark the weapons the book bars them from."""
-    for doc in RTM_ITEMS.values():
+    """Put the held-back upgrades in the pack, and mark the weapons the book bars Range Table Modifications from."""
+    for doc in HELD.values():
         ITEMS[("itemUpgrade", doc["name"].lower())] = doc
     for doc in ITEMS.values():
         if doc["type"] == "weapon" and "No Range Table Modification" in doc["system"]["description"]["value"]:
             doc["flags"][MOD]["noRangeMod"] = True
+        # "Autofire and Suppressive Fire only, 20 rounds each": what its bursts spend (Cyberpunk RED's are 10).
+        burst = re.search(r"Autofire[^.<]*only[^.<]*?(\d+) rounds each", doc["system"]["description"]["value"]) if doc["type"] == "weapon" else None
+        if burst:
+            doc["flags"][MOD]["autofireRounds"] = int(burst.group(1))
+
+
+def held(type_, name):
+    """An item by its exact name, in ITEMS or still held back."""
+    return ITEMS.get((type_, name.lower())) or next((d for d in HELD.values() if d["type"] == type_ and d["name"].lower() == name.lower()), None)
 
 
 def find_item(name, types=("weapon", "cyberware")):
     n = plain(re.sub(r"^TUp \([^)]*\)\s*", "", name))
+    for t in types:  # an exact name first ("SMG Cyclic Internals (Machine Pistol 4)" is its own item)
+        if held(t, n):
+            return held(t, n)
     n = re.sub(r"\s*\((?:Machine Pistol|SMG|Assault Rifle) \d\)$", "", n)
     n = ALIASES.get(n.lower(), ALIASES.get(re.sub(r"\s*\((?:Silver|Gold)\)$", "", n).lower(), n))
     n = re.sub(r"\s+w/.*$", "", n)
@@ -1150,6 +1260,7 @@ def add_acpa(m, flavor, path):
         gun["system"]["installedItems"]["usedSlots"] += e["system"].get("size", 0)
         # Onboard fits are the suit maker's: the gun takes them whatever its catalog slots say.
         gun["system"]["installedItems"]["slots"] = max(gun["system"]["installedItems"]["slots"], gun["system"]["installedItems"]["usedSlots"])
+        fit_autofire(gun, up)
         if table:
             # As Neon Hub does when one's installed: the gun's own table is kept, for when it comes out.
             gun["flags"].setdefault(MOD, {})["dvTableBase"] = gun["system"]["dvTable"]
@@ -1583,6 +1694,8 @@ def main():
              ("Cyberware", "Exotic Packages"), tag="DLC: Exotics of 2045 • HOUSE RULE (2070 editions)")
     capacity_attachments()
     range_mods()
+    burst_governor()
+    autofire_mods()
     flavor = dict(HOUSE.ACPA_FLAVOR)
     for m in sorted(HOUSE.CORGO_ACPAS, key=lambda m: m[0].lower()):
         add_acpa(m, flavor.get(m[0], ""), ("ACPAs",))

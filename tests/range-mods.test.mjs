@@ -11,7 +11,8 @@ globalThis.game = {
   i18n: { localize: (k) => k, format: (k, d) => `${k} ${JSON.stringify(d)}` },
   items: { get: () => null }
 };
-const { RangeMods, plan, writeInto, rangeModOf, misfit } = await import("../scripts/items/range-mods.js");
+const { plan, rangeModOf, misfit } = await import("../scripts/items/range-mods.js");
+const { WeaponMods: RangeMods, writeInto } = await import("../scripts/items/weapon-mods.js");
 RangeMods.init();
 
 const MOD = "cpr-neon-hub";

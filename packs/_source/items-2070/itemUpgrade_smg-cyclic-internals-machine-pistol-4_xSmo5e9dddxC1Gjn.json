@@ -1,11 +1,11 @@
 {
-  "_id": "OTDq5FkucYwZSLfT",
-  "_key": "!items!OTDq5FkucYwZSLfT",
-  "name": "SMG Cyclic Internals",
+  "_id": "xSmo5e9dddxC1Gjn",
+  "_key": "!items!xSmo5e9dddxC1Gjn",
+  "name": "SMG Cyclic Internals (Machine Pistol 4)",
   "type": "itemUpgrade",
   "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
   "folder": "ijqRt5VXM8ZSM8uM",
-  "sort": 4810,
+  "sort": 4811,
   "system": {
     "type": "weapon",
     "size": 0,
@@ -20,7 +20,7 @@
     },
     "isElectronic": false,
     "description": {
-      "value": "<p>Any weapon with Autofire (SMG 3). Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. Replaces Autofire (SMG 3) with Autofire (SMG 4) or (Machine Pistol 4).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+      "value": "<p><strong>This option:</strong> Autofire (Machine Pistol 4).</p><p>Any weapon with Autofire (SMG 3). Slotless and fits Exotic Weapons. Installing it is DV17 Weaponstech. Replaces Autofire (SMG 3) with Autofire (SMG 4) or (Machine Pistol 4).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
     },
     "source": {
       "book": "Item Compendium (2070)",
@@ -40,6 +40,11 @@
       "source2070": {
         "book": "Item Compendium (2070)",
         "chapter": "Attachments & Mods"
+      },
+      "autofireMod": {
+        "fits": "smg3",
+        "table": "DV Pistol (Autofire, Machine Pistol)",
+        "rating": 4
       }
     }
   },

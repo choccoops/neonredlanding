@@ -1,0 +1,53 @@
+{
+  "_id": "Qx91PO0uc0H6IfX1",
+  "_key": "!items!Qx91PO0uc0H6IfX1",
+  "name": "Burst Governor",
+  "type": "itemUpgrade",
+  "img": "modules/cpr-neon-hub/assets/items/upgrades/upgrade.svg",
+  "folder": "0BShE7qMjcdgD6tR",
+  "sort": 18340,
+  "system": {
+    "type": "weapon",
+    "size": 0,
+    "price": {
+      "market": 1000
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>A smart feed meters each burst. Autofire and Suppressive Fire with this weapon use 5 fewer rounds (minimum 5).</p><p>A Tech Upgrade a street Tech stocks (Street Stock, Hot): it uses up the weapon's one Tech Upgrade.</p><p><strong>Fits:</strong> Ranged weapon<br><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Invented Tech</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Invented Tech"
+      },
+      "burstMod": {
+        "less": 5,
+        "min": 5
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

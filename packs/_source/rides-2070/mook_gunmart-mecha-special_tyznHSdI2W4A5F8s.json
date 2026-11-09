@@ -97,7 +97,7 @@
         ],
         "usesType": "magazine",
         "fireModes": {
-          "autoFire": 0,
+          "autoFire": 3,
           "suppressiveFire": false
         },
         "concealable": {
@@ -149,7 +149,13 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "power"
+          "weaponType2070": "power",
+          "autofireBase": {
+            "autoFire": 0,
+            "suppressiveFire": false,
+            "table": null
+          },
+          "autofireTable": "DV Pistol (Autofire, Machine Pistol)"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "XkNdO6LSDMYHKUCm"
@@ -296,6 +302,21 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "autofireMod": {
+            "fits": "shells",
+            "table": "DV Pistol (Autofire, Machine Pistol)",
+            "rating": 3,
+            "boosted": 4,
+            "boostIf": [
+              "excellent",
+              "automatic"
+            ]
+          },
+          "burstMod": {
+            "slugs": 4,
+            "shells": 4,
+            "shellDodge": -3
           }
         }
       },

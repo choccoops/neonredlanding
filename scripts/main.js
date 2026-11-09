@@ -43,6 +43,7 @@ import { FashionApp } from "./fashion/fashion-app.js";
 import { DISTRICTS } from "./fashion/fashion-data.js";
 import { Items2070 } from "./items/items-2070.js";
 import { WeaponMods } from "./items/weapon-mods.js";
+import { BurstRounds, burstRounds, shellAutofire } from "./items/burst-rounds.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
 const esc = (s) => Handlebars.escapeExpression(String(s ?? ""));
@@ -72,6 +73,8 @@ Hooks.once("init", () => {
   FashionOps.init();
   Items2070.register();
   WeaponMods.init();
+  // Before the world's items are prepared, so every weapon gets it.
+  BurstRounds.patch();
   HubHover.init();
 
   Compat.loadTemplates([
@@ -306,13 +309,15 @@ Hooks.once("init", () => {
      * ACPAs and cyberpets for MMuton's vehicle sheet) and "cpr-neon-hub.dv-tables-2070" (the SoF 2045 range tables).
      * useDvTables(true|false): GM, point CPR's DV tables at the 2070 range tables or back at its own.
      * rangeMods.check(weapon, upgrade): why a Range Table Modification or Autofire attachment can't go in that weapon
-     * (a message), or null. weaponMods.check is the same call.
+     * (a message), or null. weaponMods.check is the same call. weaponMods.burstRounds(weapon, mode, upgrades, ammoVariety):
+     * the rounds its Autofire or Suppressive Fire spends; weaponMods.shellAutofire(upgrades, ammoVariety): the control
+     * group's shell rule ({ shells, shellDodge }) or null.
      */
     items: {
       useDvTables: (on = true) => Items2070.useDvTables(on),
       usingDvTables: () => Items2070.usingDvTables,
       rangeMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) },
-      weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) }
+      weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade), burstRounds, shellAutofire }
     },
 
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */

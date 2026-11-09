@@ -780,7 +780,26 @@ display and Does it hit? read first). Taking one out, or deleting it, puts the g
 - **Binary Trigger** and the **Electrothermal Enhancement (ETE)**: no Autofire or Suppressive
   Fire while they're in (the rating goes to 0, so CPR's sheet stops offering them).
 
-One of the first four at a time, one Upsized Power, and none the gun has built in already (a
+**Rounds per burst.** Cyberpunk RED spends 10 rounds on every Autofire and Suppressive Fire attack.
+Neon Hub changes that count for a gun whose attachments or card say otherwise, and CPR's ammo
+check and the rounds it takes out of the magazine both use the new count:
+
+- **Shotgun Automatic Control Group:** an Autofire burst of slugs spends 4. With shells, picking
+  Autofire makes the book's shell attack: the Autofire Skill, 4 shells, and dodging it at −3. Neon
+  Combat Manager rolls the shells' damage (not Autofire's 2d6 times a multiplier) and puts the −3
+  on the Evade of everyone in the spread; without it, roll the shells' damage yourself.
+- **Gatling Barrel:** double, for Autofire and Suppressive Fire.
+- **Efficient Autosear:** an Autofire that spends 10 spends 6 (not on machine guns).
+- **Superior Autosear:** an Autofire that spends 20 spends 10; more than 20 is halved.
+- **Burst Governor:** 5 fewer for both, to no fewer than 5. It's a street Tech's Tech Upgrade
+  (Street Stock, Hot, 1,000eb), now an upgrade in *Invented Tech › Street Stock* you install in the
+  gun. It uses up the gun's one Tech Upgrade.
+- **The Militech EX-75 IronWind, Mk. 31 HMG and Militiatech N32 Huge-Man-Gun** spend the 20 rounds
+  their cards say.
+
+In that order: the gun's own count, the slugs, the Gatling Barrel, the autosears, the governor.
+
+One of the first four Autofire attachments at a time, one Upsized Power, and none the gun has built in already (a
 card's *Built-in* line). CPR's own Autofire switch still picks its table by the range table's name,
 so a Cyclic (Machine Pistol 4) SMG or a Constant Recoil rifle measures on the SMG or Assault Rifle
 Autofire table there; Neon Combat Manager uses the right one.
@@ -1016,6 +1035,7 @@ await hub.fashion.setSceneDistrict(canvas.scene, "japantown"); // GM
 await hub.items.useDvTables(true);     // GM: Cyberpunk RED's DV tables from the 2070s range tables (false: back to CPR's)
 hub.items.usingDvTables();              // true when they are
 hub.items.rangeMods.check(weapon, upgrade); // why a Range Table Modification or Autofire attachment can't go in, or null
+hub.items.weaponMods.burstRounds(weapon, "autofire", upgrades, "shotgunSlug"); // the rounds a burst spends
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```

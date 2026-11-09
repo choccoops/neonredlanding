@@ -33,6 +33,16 @@
   puts an assault rifle on Machine Gun 3; a Binary Trigger or an ETE takes Autofire and Suppressive
   Fire away. One that doesn't fit, a second one, or one the gun has built in is refused with a
   warning, and the Weaponbench asks first.
+- **Rounds per burst follow the attachments.** Cyberpunk RED spends 10 on every Autofire and
+  Suppressive Fire attack; now the Shotgun Automatic Control Group's slug bursts spend 4, the Gatling
+  Barrel doubles, the Efficient Autosear makes 10 into 6, the Superior Autosear halves 20 or more,
+  and the Burst Governor takes 5 off (to 5). CPR's ammo check and the rounds it takes out use the new
+  count. The IronWind, the Mk. 31 HMG and the Huge-Man-Gun spend their cards' 20.
+- **The control group's shell attack.** With shells loaded, its Autofire is the book's shell attack:
+  the Autofire Skill for 4 shells, dodged at −3 (Neon Combat Manager 1.23.1 rolls the shells' damage
+  and puts the −3 on the Evade).
+- **New: Burst Governor**, the Street Stock Tech Upgrade, as an upgrade to install in the gun
+  (*Invented Tech › Street Stock*, 1,000eb).
 - **SMG Cyclic Internals is two items**, *(SMG 4)* and *(Machine Pistol 4)*; the book's entry keeps
   its id as the SMG 4 one. The BigSuit's Happy Dancer carries the Machine Pistol 4 one, as the book
   says, and the GunMart HomeSafe its control group's Machine Pistol 3.

@@ -1108,6 +1108,32 @@ AUTOFIRE_MODS = {
     "Electrothermal Enhancement (ETE)": {"none": True},
 }
 AF_CARD = {"machine pistol": AF_MP, "smg": AF_SMG, "assault rifle": AF_AR, "machine gun": AF_MG}
+# What the attachments do to the rounds an Autofire or Suppressive Fire attack spends (Cyberpunk RED spends 10): the
+# control group's 4-slug bursts and 4-shell attacks (dodged at -3), the Gatling Barrel's double, the Efficient
+# Autosear's 6 for 10, the Superior Autosear's halving of 20+ and the Burst Governor's 5 fewer.
+BURST_MODS = {
+    "Shotgun Automatic Control Group": {"slugs": 4, "shells": 4, "shellDodge": -3},
+    "Gatling Barrel": {"double": True},
+    "Efficient Autosear": {"tenTo": 6},
+    "Superior Autosear": {"twentyPlus": True},
+    "Burst Governor": {"less": 5, "min": 5},
+}
+
+
+def burst_governor():
+    """The Burst Governor, from the book's Street Stock (a street Tech's Tech Upgrade, Hot): as an upgrade to install in
+    the gun, since it changes what its bursts spend. Held back like the Range Table Modifications."""
+    raw = open(os.path.join(BOOK, "out", "compendium_markup.txt"), encoding="utf-8").read()
+    row = re.search(r"^\| Hot \| Burst Governor \| ([^|]+) \| ([^|]+) \|", raw, re.M)
+    if not row:
+        NOTES.append("Burst Governor: the Street Stock row wasn't found")
+        return
+    path = ("Invented Tech", "Street Stock")
+    doc = upgrade("Burst Governor", "weapon", "1,000eb", 0,
+                  para(inline(row.group(2)), "A Tech Upgrade a street Tech stocks (Street Stock, Hot): it uses up the weapon's one Tech Upgrade.",
+                       fields_html({"Fits": row.group(1), "Cost": "1,000eb"})), path)
+    ITEMS.pop(("itemUpgrade", "burst governor"))
+    HELD[("street", "burst governor")] = doc
 
 
 def autofire_mods():
@@ -1130,6 +1156,12 @@ def autofire_mods():
             NOTES.append(f"Autofire attachment not in the catalog: {name}")
             continue
         doc["flags"][MOD]["autofireMod"] = dict(flag)
+    for name, flag in BURST_MODS.items():
+        doc = held("itemUpgrade", name)
+        if not doc:
+            NOTES.append(f"Burst attachment not in the catalog: {name}")
+            continue
+        doc["flags"][MOD]["burstMod"] = dict(flag)
 
 
 def autofire_table(gun):
@@ -1165,6 +1197,10 @@ def range_mods_done():
     for doc in ITEMS.values():
         if doc["type"] == "weapon" and "No Range Table Modification" in doc["system"]["description"]["value"]:
             doc["flags"][MOD]["noRangeMod"] = True
+        # "Autofire and Suppressive Fire only, 20 rounds each": what its bursts spend (Cyberpunk RED's are 10).
+        burst = re.search(r"Autofire[^.<]*only[^.<]*?(\d+) rounds each", doc["system"]["description"]["value"]) if doc["type"] == "weapon" else None
+        if burst:
+            doc["flags"][MOD]["autofireRounds"] = int(burst.group(1))
 
 
 def held(type_, name):
@@ -1658,6 +1694,7 @@ def main():
              ("Cyberware", "Exotic Packages"), tag="DLC: Exotics of 2045 • HOUSE RULE (2070 editions)")
     capacity_attachments()
     range_mods()
+    burst_governor()
     autofire_mods()
     flavor = dict(HOUSE.ACPA_FLAVOR)
     for m in sorted(HOUSE.CORGO_ACPAS, key=lambda m: m[0].lower()):

@@ -424,3 +424,13 @@ test("Autofire attachments say what they do, in step with the runtime's copy, an
   assert.equal(homesafe.system.fireModes.autoFire, 3, "a Poor shotgun with the control group: Machine Pistol 3");
   assert.equal(homesafe.flags["cpr-neon-hub"].autofireTable, AF.mp);
 });
+
+test("burst attachments and the 20-round guns say what their bursts spend", async () => {
+  const { BURST_BY_NAME } = await import("../scripts/items/burst-rounds.js");
+  const flagged = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.burstMod);
+  assert.deepEqual(flagged.map((d) => d.name).sort(), Object.keys(BURST_BY_NAME).sort());
+  for (const d of flagged) assert.deepEqual(d.flags["cpr-neon-hub"].burstMod, BURST_BY_NAME[d.name], d.name);
+  const twenty = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireRounds).map((d) => d.name).sort();
+  assert.deepEqual(twenty, ["Militech EX-75 IronWind", "Militech Mk. 31 HMG", "Militiatech N32 Huge-Man-Gun"]);
+  assert.ok(items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireRounds).every((d) => d.flags["cpr-neon-hub"].autofireRounds === 20));
+});

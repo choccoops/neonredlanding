@@ -15,7 +15,7 @@ How a stat block becomes an actor:
 A compendium actor gets none of what CPRActor.create gives a new one, so each carries the 63 core Skills and the three
 core cyberware containers itself.
 """
-import functools, glob, json, os, re, sys
+import functools, html, glob, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import items2070 as G  # reads <root> <book> from sys.argv itself
@@ -430,12 +430,80 @@ class Mook:
                 "ownership": {"default": 0}}
 
 
+TOKENS = f"modules/{G.MOD}/assets/art/tokens"
+
+
+class Drone(Mook):
+    """An Item Compendium drone as a mook. Its compendium entry gives MOVE, HP, SP and CN; data/drones.json the rest.
+    CN (Combat Number) is the base of its attacks, Evasion and Perception, the way COM# is a mook's."""
+
+    def __init__(self, d):
+        self.d = d
+        self.doc = G.ITEMS[("gear", d["name"].lower())]
+        text = html.unescape(re.sub(r"<[^>]+>", " ", self.doc["system"]["description"]["value"]))
+        st = {k: int(m.group(1)) for k in ("move", "hp", "sp", "cn") if (m := re.search(rf"\b{k.upper()}:\s*(\d+)", text))}
+        st.update(d.get("stats", {}))
+        self.st, cn = st, st.get("cn")
+        slug = re.sub(r"[^a-z0-9]+", "-", d["name"].lower()).strip("-")
+        b = {"slug": slug, "name": d["name"], "faction": "Drones", "layout": "full", "hp": st.get("hp", 0), "rep": 0, "roles": "", "level": "Drone",
+             "facedown": 0, "com": cn, "stats": {"move": st.get("move", 0), "body": d.get("body", 0)},
+             "skills": [{"name": n, "base": cn, "with": ""} for n in ("Evasion", "Perception")] if cn else [], "weapons": [], "gear": [], "cyber": [],
+             "armor": {}, "chooseWeapon": False}
+        super().__init__(b, {})
+
+    def build(self):
+        b, d = self.b, self.d
+        system = {"stats": self.stats(), "derivedStats": {"hp": {"value": b["hp"], "max": b["hp"]}}, "reputation": {"value": 0},
+                  "roleInfo": {"activeRole": ""}}
+        self.skills()
+        for c in CORE_CYBER:
+            self.embed(item_from_yaml(c))
+        for w in d["weapons"]:
+            self.weapon({"name": w["name"], "rof": w.get("rof", 0), "dmg": w.get("dmg", ""), "notes": w.get("notes")})
+        if d.get("brawl", True) and d.get("body"):
+            e = self.embed(item_from_yaml(UNARMED))  # robot hands: Brawling damage by their BODY
+            e["name"] = "Brawling"
+            e["system"]["equipped"] = "equipped"
+        if self.st.get("sp"):
+            e = self.embed(G.armor_plate(d["name"], self.st["sp"]))
+            e["system"]["equipped"] = "equipped"
+        for g in d.get("gear", []):
+            self.embed(G.ITEMS[("gear", g.lower())])
+        system["installedItems"] = {"allowed": True, "allowedTypes": ["cyberware"], "list": []}
+        cn = self.st.get("cn")
+        head = ["<strong>Threat:</strong> Drone", f"<strong>CN:</strong> {cn}" if cn else "<strong>CN:</strong> none (it doesn't fight)"]
+        notes = ["CN (Combat Number) is the base of its attacks, Evasion and Perception." if cn else ""]
+        if d.get("choose"):
+            n = d["choose"]
+            notes.append(f"Mounts {'one' if n == 1 else n} of the listed {'weapon' if n == 1 else 'weapons'} (GM's choice"
+                         f"{', repeats allowed' if n > 1 else ''}); all are on the sheet.")
+        if d.get("note"):
+            notes.append(d["note"])
+        if self.missing:
+            notes.append("Also carries (no catalog item): " + "; ".join(self.missing))
+        system["information"] = {"description": self.doc["system"]["description"]["value"]
+                                 + "<p><small>Art: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
+                                 "alias": "", "history": "", "notes": "<p>" + " • ".join(head) + "</p>" + "".join(f"<p>{esc(n)}</p>" for n in notes if n)}
+        img = f"{ART}/{b['slug']}.webp"
+        if not os.path.exists(os.path.join(ROOT, "assets/art/mooks", f"{b['slug']}.webp")):
+            NOTES.append(f"{b['name']}: no art")
+            img = f"{G.SYS}/default/Default_Mook.svg"
+        token = {"texture": {"src": img}, "ring": {"enabled": True, "colors": {"ring": "#05d9e8", "background": "#07070b"}}}
+        if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{b['slug']}.webp")):
+            token = {"texture": {"src": f"{TOKENS}/{b['slug']}.webp"}, "ring": {"enabled": False}}
+        return {"_id": self.aid, "_key": f"!actors!{self.aid}", "name": b["name"], "type": "mook", "img": img, "folder": folder("Drones"),
+                "system": system, "items": self.items, "effects": [],
+                "prototypeToken": {"name": b["name"], "actorLink": False, "width": d["size"], "height": d["size"], "disposition": -1,
+                                   "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **token},
+                "flags": {**G.MIGRATION, G.MOD: {"drone2070": {"slug": b["slug"], "cn": cn}}}, "ownership": {"default": 0}}
+
+
 MELEE_BY_DAMAGE = {"1d6": "Light Melee Weapon", "2d6": "Medium Melee Weapon", "3d6": "Heavy Melee Weapon", "4d6": "Very Heavy Melee Weapon"}
 WEAPON_CLASSES = [(r"Constitutional Arms HAR", "Heavy SMG"), (r"Very Heavy Melee|VH Melee", "Very Heavy Melee Weapon"), (r"Heavy Melee", "Heavy Melee Weapon"),
                   (r"Medium Melee", "Medium Melee Weapon"), (r"Light Melee", "Light Melee Weapon"),
                   (r"Very Heavy Pistol", "Very Heavy Pistol"), (r"Heavy Pistol", "Heavy Pistol"), (r"Medium Pistol", "Medium Pistol"),
                   (r"Heavy SMG", "Heavy SMG"), (r"\bSMG", "SMG"), (r"Assault Rifle", "Assault Rifle"), (r"Sniper Rifle", "Sniper Rifle"),
-                  (r"Shotgun", "Shotgun"), (r"Grenade Launcher", "Grenade Launcher"), (r"Machete|Baton|Knife", "Medium Melee Weapon")]
+                  (r"Shotgun", "Shotgun"), (r"Grenade Launcher", "Grenade Launcher"), (r"Rocket Launcher", "Rocket Launcher"), (r"Machine Gun", "Militech Mk. 29 LMG"), (r"Machete|Baton|Knife", "Medium Melee Weapon")]
 
 
 def main():
@@ -456,6 +524,8 @@ def main():
     TEXT = json.load(open(os.path.join(HERE, "data/mook_text.json"), encoding="utf-8"))
     blocks = json.load(open(os.path.join(HERE, "data/mooks.json"), encoding="utf-8"))
     actors = [Mook(b, TEXT["mooks"][b["slug"]]).build() for b in blocks]
+    drones = json.load(open(os.path.join(HERE, "data/drones.json"), encoding="utf-8"))["drones"]
+    actors += [Drone(d).build() for d in drones]
     for i, a in enumerate(actors):
         a["sort"] = i * 100
     d = os.path.join(ROOT, "packs/_source", PACK)

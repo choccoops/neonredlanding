@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.22.0
+
+- **Mook Pack.** A new compendium, *Neon Hub: Mook Pack (Corgo's 77)*, with enemies ready to drop on a scene:
+  - **128 mooks** from *Corgo's 77 Collection: Mooks* by Corgopolis (under R. Talsorian Games' Homebrew Content Policy), in 20 faction folders, as CPR mook actors: STATs, Skills, armor, weapons and gear from the Item Compendium, chrome installed, and notes for the rest;
+  - **29 drones** from the Item Compendium (robots, walkers, air drones and turrets) as mooks, with CN as the base of their attacks, Evasion and Perception, and their weapons on the sheet;
+  - every one has a painted portrait; the mooks show it in a token ring, the drones get a top-down token sized to the drone.
+- **Art for every vehicle, ACPA and cyberpet.** All 197 ride actors have painted art on their sheet. Vehicles and ACPAs get a top-down token for the map, cut out on a clear background and sized by the ride (1 to 5 squares); cyberpets show their art in a token ring.
+- **Grenades throw the way Cyberpunk RED throws them.** The Item Compendium now has the **Thrown Weapon** (Athletics with DEX, the DV Thrown Weapon table, one grenade loaded at a time): equip it, load a grenade like a gun, and throw.
+  - The grenades sit with it in *Ammo & Explosives › Grenades*, named the system's way (*Grenade (Flashbang)*, *Grenade (Armor-Piercing)*), and keep their ids.
+  - **Fixed:** the grenades now carry the system's damage settings. A thrown Flashbang, Smoke, Sleep, EMP or Teargas grenade no longer deals 6d6; Poison deals 2d6 and Biotoxin 3d6, as in Cyberpunk RED.
+  - The Homing and Sticky Adapter Kits are gear (they modify a grenade; they aren't one to load).
+  - **New grenade icons** in the style of the system's own: a red grenade with a hazard diamond showing its kind, one for each of the 20 kinds.
+  - Mooks that carry grenades have a Thrown Weapon loaded with one.
+
 ## 1.21.0
 
 - **Martial Arts Forms.** The Core Rules' 34 Martial Arts Forms (Chapter 07: the core four, the *Cyberfists of Fury* Forms and the house Forms) are in the Item Compendium under *Martial Arts*, each two ways:

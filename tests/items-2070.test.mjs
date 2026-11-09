@@ -250,13 +250,23 @@ test("grenades throw the way Cyberpunk RED throws them: grenade ammo loaded into
   assert.ok(!nades.some((d) => /Adapter Kit/.test(d.name)), "the adapter kits aren't grenades to load");
 });
 
-test("every vehicle, ACPA and cyberpet has its own art, on the sheet and the ringed token", () => {
+test("every ride has its own art; vehicles and ACPAs a top-down token, cyberpets a ringed one", () => {
+  const exists = (src) => existsSync(path.join(root, src.replace("modules/cpr-neon-hub/", "")));
   for (const a of rides.docs) {
     assert.match(a.img, /^modules\/cpr-neon-hub\/assets\/art\/rides\/.+\.webp$/, a.name);
-    assert.ok(existsSync(path.join(root, a.img.replace("modules/cpr-neon-hub/", ""))), `${a.img} exists`);
-    assert.equal(a.prototypeToken.texture.src, a.img);
-    assert.equal(a.prototypeToken.ring?.enabled, true, `${a.name} has a token ring`);
+    assert.ok(exists(a.img), `${a.img} exists`);
+    const t = a.prototypeToken;
+    if (a.flags["mmutons-cyberpunk-red-vas"]) {
+      assert.match(t.texture.src, /\/assets\/art\/tokens\/.+\.webp$/, `${a.name}: top-down token`);
+      assert.ok(exists(t.texture.src), `${t.texture.src} exists`);
+      assert.equal(t.ring.enabled, false);
+      assert.ok([1, 2, 3, 5].includes(t.width) && t.width === t.height, `${a.name}: ${t.width}x${t.height}`);
+    } else {
+      assert.equal(t.texture.src, a.img);
+      assert.equal(t.ring?.enabled, true, `${a.name} has a token ring`);
+    }
   }
+  assert.equal(rides.docs.find((a) => a.name === "Arasaka Kujira Supercarrier")?.prototypeToken.width, 5);
 });
 
 test("the Martial Arts Forms: a Skill and a weapon each, as Cyberpunk RED's own Martial Arts", () => {

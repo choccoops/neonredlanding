@@ -698,7 +698,8 @@ the Item Compendium (2070) chapter it's from:
   weapons (the 2070s catalog by class, generic weapons in three qualities and, for guns, as Power,
   Smart and Tech, variants and iconics),
   the Martial Arts Forms (each a Skill and a weapon to attack with),
-  ammunition (one item per ammo kind, priced per 10 or each), explosives and grenades, attachments,
+  ammunition (one item per ammo kind, priced per 10 or each), explosives, grenades and the Thrown
+  Weapon to throw them with, attachments,
   rebuilds and mods (weapon upgrades with their slots), armor (body and head SP and penalties),
   armor upgrades, shields, ACPA frames and shells, cyberware by system (install, Humanity Loss,
   foundations with their option slots, options with the slots they take), cyberware enhancements and
@@ -718,7 +719,10 @@ the Item Compendium (2070) chapter it's from:
   seat, with their onboard weapons mounted to it (each gun's attachments fitted, and a barrel or
   tube moving it to its new range table) and their cyberware installed. The eight cyberpets
   are mooks with their stats, HP and the rest in their notes. Without the vehicle sheet they open on
-  CPR's mook sheet.
+  CPR's mook sheet. Every actor has its own painted art on the sheet. The vehicles and ACPAs take a
+  top-down token for the map, cut out on a clear background and sized by the ride (bikes and ACPAs
+  one square, cars two, trucks, aircraft and boats three, ships and airships five); the cyberpets
+  show their art in a token ring.
 - **Neon Hub: DV Tables (2070s)**, the 2070 Standard range tables from the 2070 Core Rules (Chapter 07):
   Snubnose, Pistol and Long Barrel Pistol, Subcompact SMG and SMG, the three shotguns, Carbine,
   Assault, Battle, Marksman, Scout, Sniper and Anti-materiel Rifles, Shortbow, Bow and Longbow,
@@ -751,6 +755,33 @@ Some lines are left in the text, for the GM to apply at the table:
 
 Items are dragged into the world or onto sheets as usual. The vehicles' crew seats and glass can be
 changed on the vehicle sheet's setup.
+
+**Grenades.** As in Cyberpunk RED, a grenade is ammunition you throw with a **Thrown Weapon**
+(Athletics with DEX, the DV Thrown Weapon table, one grenade loaded at a time): equip the Thrown
+Weapon, load a grenade as you would a gun, and attack; the throw uses the grenade up. The grenades
+are in *Ammo & Explosives › Grenades* with the Thrown Weapon, named the system's way
+(*Grenade (Flashbang)*), with the system's damage settings (a Flashbang, Smoke or Sleep grenade does no
+damage; Armor-Piercing and Incendiary throw for the Thrown Weapon's 6d6) and an icon of their own:
+a red grenade with a hazard diamond showing its kind.
+
+## Mook Pack
+
+**Neon Hub: Mook Pack (Corgo's 77)** has ready-to-drop enemies as CPR mook actors, in a folder per
+faction:
+
+- **Corgo's 77 mooks**, 128 stat blocks from *Corgo's 77 Collection: Mooks* by Corgopolis
+  (unofficial content under R. Talsorian Games' Homebrew Content Policy), across 20 factions from
+  Maelstrom and the Tyger Claws to NCPD, MAX-TAC and Arasaka. Each has its STATs, Skills (COM# as the
+  base of its unlisted attack Skills), armor, weapons from the Item Compendium (or a stand-in of the
+  right class), gear and chrome installed, and notes for anything the catalog doesn't carry. Mooks
+  with grenades carry a loaded Thrown Weapon. Descriptions are Neon Hub's own.
+- **Drones**, the Item Compendium's 29 drones and defenses (robots, walkers, air drones and turrets):
+  MOVE, HP, SP and CN from their entries, CN as the base of their attacks, Evasion and Perception,
+  their weapons on the sheet (where a drone mounts a choice of guns, all of them, with a note), and
+  a top-down token sized to the drone.
+
+Every mook has a painted portrait; the Corgo mooks' tokens show it in a token ring. Tokens are
+unlinked, so each one dropped is its own copy.
 
 ## Full Borg (its own module)
 
@@ -1056,14 +1087,14 @@ which runs the item generator first so the bodies use the same items). The Fashi
 
 ## License
 
-MIT. Icons in `assets/` are original to Neon Hub, except `assets/items/weapons/` and `assets/items/derived/`: those are the Cyberpunk RED - CORE system's own icons (the weapons' art by Flintwyrm) with Neon Hub's badges, stars and emblems added, and stay under the system's GPL-3.0 (see the `LICENSE.md` in each). The Tektur font (`fonts/`) is under the SIL Open
+MIT. The painted art and tokens in `assets/art/` were generated for Neon Hub: they're fan art of the Cyberpunk 2077 setting, free to use in your games and not for sale (see `assets/art/LICENSE.md`). Other icons in `assets/` are original to Neon Hub, except `assets/items/weapons/` and `assets/items/derived/`: those are the Cyberpunk RED - CORE system's own icons (the weapons' art by Flintwyrm) with Neon Hub's badges, stars and emblems added, and stay under the system's GPL-3.0 (see the `LICENSE.md` in each). The Tektur font (`fonts/`) is under the SIL Open
 Font License 1.1. Cyberpunk RED is a trademark of R. Talsorian Games; *No Place Like Home* is © R. Talsorian
 Games. The Worldbook (2070s) summarizes, in Neon Hub's own words, setting facts from the *Edgerunner's
 Handbook* in the *Cyberpunk: Edgerunners Mission Kit* and the *Danger Gal Dossier* (R. Talsorian Games),
 and from the homebrew *Night City 2070* setting book of *Cyberpunk: The Unification Era*. The 2070s Item Compendium
 carries that line's *Item Compendium*, and its DV tables the line's *Core Rules*, in the books' own wording, with
 Active Effects written for Neon Hub (its icons are the Cyberpunk RED system's own, badged ones of them, and Neon Hub's own for upgrades the system has none for), and Full Borg that book's
-Full Body Conversions; Cyberpunk, Cyberpunk 2077
+Full Body Conversions. The Mook Pack's stat blocks are Corgopolis's *Corgo's 77 Collection: Mooks*, used under R. Talsorian Games' Homebrew Content Policy. Cyberpunk, Cyberpunk 2077
 and Cyberpunk: Edgerunners are trademarks of CD PROJEKT S.A. The screamsheet starter tables are
 original to Neon Hub. This is unofficial fan content and isn't approved or endorsed by R. Talsorian
 Games or CD PROJEKT.

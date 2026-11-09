@@ -926,16 +926,23 @@ def seats_for(vid, kind, seats, notes, bike):
 
 
 RIDE_ART = f"modules/{MOD}/assets/art/rides"
+TOKEN_ART = f"modules/{MOD}/assets/art/tokens"
+TOKEN_SIZES = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/token_sizes.json"), encoding="utf-8"))
 
 
 def actor(name, img, system, items, path, flags, token=None):
     aid = rid("actor", name.lower())
     # generated art (assets/art/rides/<slug>.webp) replaces the type icon, on the sheet and the token
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower().replace("’", "").replace("‘", "")).strip("-")
-    ring = {}
+    ring, texture = {}, None
     if os.path.exists(os.path.join(ROOT, "assets/art/rides", f"{slug}.webp")):
         img = f"{RIDE_ART}/{slug}.webp"
         ring = {"ring": {"enabled": True, "colors": {"ring": "#05d9e8", "background": "#07070b"}}}
+    # a top-down token (assets/art/tokens/<slug>.webp, cut out on a clear background) takes the map instead, at its size in squares
+    if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{slug}.webp")):
+        texture = f"{TOKEN_ART}/{slug}.webp"
+        size = TOKEN_SIZES.get(slug, 1)
+        ring = {"width": size, "height": size, "ring": {"enabled": False}}
     embedded = []
     for it in items:
         e = json.loads(json.dumps(it))
@@ -948,8 +955,8 @@ def actor(name, img, system, items, path, flags, token=None):
         embedded.append(e)
     doc = {"_id": aid, "_key": f"!actors!{aid}", "name": name, "type": "mook", "img": img, "folder": folder("rides-2070", path),
            "system": system, "items": embedded, "effects": [],
-           "prototypeToken": {"name": name, "actorLink": True, "texture": {"src": img}, "width": 1, "height": 1, "disposition": 0,
-                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **ring, **(token or {})},
+           "prototypeToken": {"name": name, "actorLink": True, "texture": {"src": texture or img}, "width": 1, "height": 1, "disposition": 0,
+                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **(token or {}), **ring},
            "flags": {**MIGRATION, **flags}, "ownership": {"default": 0}}
     ACTORS[aid] = doc
     return doc

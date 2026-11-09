@@ -6,15 +6,19 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const dir = path.join(root, "packs/_source/mooks-2070");
 const docs = readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(path.join(dir, f), "utf8")));
-const mooks = docs.filter((d) => d.type === "mook");
+const all = docs.filter((d) => d.type === "mook");
+const mooks = all.filter((d) => d.flags["cpr-neon-hub"]?.mook2070);
+const drones = all.filter((d) => d.flags["cpr-neon-hub"]?.drone2070);
 const folders = docs.filter((d) => d._key?.startsWith("!folders!"));
 const file = (src) => path.join(root, src.replace("modules/cpr-neon-hub/", ""));
 
-test("the Mook Pack has Corgo's 128 mooks in 20 factions", () => {
+test("the Mook Pack has Corgo's 128 mooks in 20 factions, and the 29 drones", () => {
   assert.equal(mooks.length, 128);
-  assert.equal(folders.length, 20);
-  for (const m of mooks) assert.ok(folders.some((f) => f._id === m.folder), `${m.name} is in a faction folder`);
-  assert.equal(new Set(mooks.map((m) => m.name)).size, mooks.length, "names are unique");
+  assert.equal(drones.length, 29);
+  assert.equal(all.length, mooks.length + drones.length);
+  assert.equal(folders.length, 21);
+  for (const m of all) assert.ok(folders.some((f) => f._id === m.folder), `${m.name} is in a folder`);
+  assert.equal(new Set(all.map((m) => m.name)).size, all.length, "names are unique");
 });
 
 test("every mook has its own portrait as art and token", () => {
@@ -27,13 +31,13 @@ test("every mook has its own portrait as art and token", () => {
 });
 
 test("mooks carry the core Skills, the core cyberware containers and their attacks", () => {
-  for (const m of mooks) {
+  for (const m of all) {
     const skills = m.items.filter((i) => i.type === "skill");
     assert.ok(skills.length >= 63, `${m.name}: ${skills.length} skills`);
     for (const c of ["Internal (7 Option Slots)", "External (7 Option Slots)", "Fashionware (7 Option Slots)"]) {
       assert.ok(m.items.some((i) => i.name === c), `${m.name} has ${c}`);
     }
-    assert.ok(m.items.some((i) => i.type === "weapon" || i.system.isWeapon), `${m.name} has an attack`);
+    if (!m.flags["cpr-neon-hub"].drone2070) assert.ok(m.items.some((i) => i.type === "weapon" || i.system.isWeapon), `${m.name} has an attack`);
     assert.ok(m.system.derivedStats.hp.max > 0);
     const ids = new Set(m.items.map((i) => i._id));
     assert.equal(ids.size, m.items.length, `${m.name}: embedded ids are unique`);
@@ -73,5 +77,25 @@ test("descriptions are Neon Hub's own and credit Corgo", () => {
   for (const m of mooks) {
     assert.match(m.system.information.description, /Corgopolis/);
     assert.match(m.system.information.description, /Homebrew Content Policy/);
+  }
+});
+
+test("drones: their compendium stats, CN as the base of their attacks, art and a top-down token", () => {
+  const find = (n) => drones.find((d) => d.name === n);
+  const griffin = find("Militech Griffin");
+  const level = (d, n) => d.items.find((i) => i.type === "skill" && i.name === n).system.level;
+  assert.equal(griffin.system.derivedStats.hp.max, 20);
+  assert.equal(griffin.system.stats.move.value, 6);
+  assert.equal(level(griffin, "Handgun"), 14, "CN 14");
+  assert.equal(level(griffin, "Evasion"), 14);
+  assert.ok(griffin.items.some((i) => i.type === "armor" && i.system.bodyLocation.sp === 7), "SP 7 plate");
+  assert.ok(griffin.items.some((i) => i.type === "weapon" && i.name === "Heavy SMG"));
+  assert.equal(find("KTech Doberman 500").system.derivedStats.hp.max, 25, "stats from the entry's prose");
+  assert.equal(find("Militech Chimera").prototypeToken.width, 5);
+  for (const d of drones) {
+    assert.match(d.img, /assets\/art\/mooks\/.+\.webp$/, d.name);
+    assert.ok(existsSync(file(d.img)), `${d.img} exists`);
+    assert.match(d.prototypeToken.texture.src, /assets\/art\/tokens\/.+\.webp$/, d.name);
+    assert.ok(existsSync(file(d.prototypeToken.texture.src)), `${d.name} token exists`);
   }
 });

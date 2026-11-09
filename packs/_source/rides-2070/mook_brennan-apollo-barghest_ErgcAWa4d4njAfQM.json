@@ -3,7 +3,7 @@
   "_key": "!actors!ErgcAWa4d4njAfQM",
   "name": "Brennan Apollo Barghest",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/brennan-apollo-barghest.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Brennan Apollo Barghest",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/brennan-apollo-barghest.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

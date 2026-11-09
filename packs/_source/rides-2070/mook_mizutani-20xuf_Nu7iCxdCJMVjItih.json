@@ -3,7 +3,7 @@
   "_key": "!actors!Nu7iCxdCJMVjItih",
   "name": "Mizutani 20XUF",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/mizutani-20xuf.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,15 +30,18 @@
     "name": "Mizutani 20XUF",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/mizutani-20xuf.webp"
     },
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 2,
     "disposition": 0,
     "displayName": 20,
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!6NzWPobimviffnK3",
   "name": "Hydrosubsidium Vulgaris \"Triaina\" Patrol",
   "type": "mook",
-  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/hydrosubsidium-vulgaris-triaina-patrol.webp",
   "folder": "imUmfQ0AgGutzDbr",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Hydrosubsidium Vulgaris \"Triaina\" Patrol",
     "actorLink": true,
     "texture": {
-      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/hydrosubsidium-vulgaris-triaina-patrol.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

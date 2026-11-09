@@ -3,7 +3,7 @@
   "_key": "!actors!MWQTv4yfVSlVmbFR",
   "name": "Arasaka/Hydrosubsidium Viper",
   "type": "mook",
-  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/arasaka-hydrosubsidium-viper.webp",
   "folder": "imUmfQ0AgGutzDbr",
   "system": {
     "stats": {
@@ -30,15 +30,18 @@
     "name": "Arasaka/Hydrosubsidium Viper",
     "actorLink": true,
     "texture": {
-      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/speed_boat.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/arasaka-hydrosubsidium-viper.webp"
     },
-    "width": 2,
-    "height": 2,
+    "width": 5,
+    "height": 5,
     "disposition": 0,
     "displayName": 20,
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

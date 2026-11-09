@@ -3,7 +3,7 @@
   "_key": "!actors!RYLuUxks4KbjOJ0c",
   "name": "Militech Mayhem",
   "type": "mook",
-  "img": "systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/militech-mayhem.webp",
   "folder": "m9502MsBefPanNon",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Militech Mayhem",
     "actorLink": true,
     "texture": {
-      "src": "systems/cyberpunk-red-core/icons/compendium/vehicles/helicopter.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/militech-mayhem.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

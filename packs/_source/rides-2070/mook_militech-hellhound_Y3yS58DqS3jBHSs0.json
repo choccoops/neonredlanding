@@ -3,7 +3,7 @@
   "_key": "!actors!Y3yS58DqS3jBHSs0",
   "name": "Militech Hellhound",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/apc.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/militech-hellhound.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Militech Hellhound",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/apc.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/militech-hellhound.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

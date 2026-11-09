@@ -3,7 +3,7 @@
   "_key": "!actors!CRYYM5RJ5e347avD",
   "name": "Orbital Air Neo Spider",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/orbital-air-neo-spider.webp",
   "folder": "ZvXrSxbJyiqWhIfU",
   "system": {
     "stats": {
@@ -1003,7 +1003,7 @@
     "name": "Orbital Air Neo Spider",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/orbital-air-neo-spider.webp"
     },
     "width": 1,
     "height": 1,
@@ -1012,6 +1012,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

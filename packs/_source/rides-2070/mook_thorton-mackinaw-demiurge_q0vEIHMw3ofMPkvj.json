@@ -3,7 +3,7 @@
   "_key": "!actors!q0vEIHMw3ofMPkvj",
   "name": "Thorton Mackinaw “Demiurge”",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/pickup_iconic.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/thorton-mackinaw-demiurge.webp",
   "folder": "fRqK01L53BK8wVuy",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Thorton Mackinaw “Demiurge”",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/pickup_iconic.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/thorton-mackinaw-demiurge.webp"
     },
     "width": 2,
     "height": 2,
@@ -39,6 +39,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

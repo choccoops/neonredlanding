@@ -3,7 +3,7 @@
   "_key": "!actors!yyY8CMoQPMFOv5oX",
   "name": "Quadra Sport R-7 580",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/quadra-sport-r-7-580.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,15 +30,18 @@
     "name": "Quadra Sport R-7 580",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/quadra-sport-r-7-580.webp"
     },
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 2,
     "disposition": 0,
     "displayName": 20,
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!FjE4nO2Yvlb8AlLT",
   "name": "Hydrosubsidium Bimac",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/jetski.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/hydrosubsidium-bimac.webp",
   "folder": "imUmfQ0AgGutzDbr",
   "system": {
     "stats": {
@@ -30,15 +30,18 @@
     "name": "Hydrosubsidium Bimac",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/jetski.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/hydrosubsidium-bimac.webp"
     },
-    "width": 2,
-    "height": 2,
+    "width": 5,
+    "height": 5,
     "disposition": 0,
     "displayName": 20,
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

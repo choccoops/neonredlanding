@@ -3,7 +3,7 @@
   "_key": "!actors!3NNKyVfPvmnOVzzi",
   "name": "Herrera Outlaw Weiler",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/herrera-outlaw-weiler.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -67,15 +67,18 @@
     "name": "Herrera Outlaw Weiler",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/herrera-outlaw-weiler.webp"
     },
-    "width": 1,
-    "height": 1,
+    "width": 2,
+    "height": 2,
     "disposition": 0,
     "displayName": 20,
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

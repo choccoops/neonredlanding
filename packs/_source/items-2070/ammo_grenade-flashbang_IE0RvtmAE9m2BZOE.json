@@ -1,0 +1,60 @@
+{
+  "_id": "IE0RvtmAE9m2BZOE",
+  "_key": "!items!IE0RvtmAE9m2BZOE",
+  "name": "Grenade (Flashbang)",
+  "type": "ammo",
+  "img": "modules/cpr-neon-hub/assets/items/grenades/flashbang.svg",
+  "folder": "LDE5M9tq6Ik4nbYo",
+  "sort": 3590,
+  "system": {
+    "variety": "grenade",
+    "type": "flashbang",
+    "amount": 1,
+    "price": {
+      "market": 100
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "set",
+        "value": "0"
+      }
+    },
+    "description": {
+      "value": "<p>Grenades. No damage; anyone hit rolls DV15 Resist Torture/Drugs or suffers Damaged Eye and Damaged Ear for 1 minute (no Bonus Damage).</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

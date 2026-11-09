@@ -3,7 +3,7 @@
   "_key": "!actors!vciqGSvz4x8r0Oeh",
   "name": "Yang's Wheels Rickshaw",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/yang-s-wheels-rickshaw.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Yang's Wheels Rickshaw",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/yang-s-wheels-rickshaw.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

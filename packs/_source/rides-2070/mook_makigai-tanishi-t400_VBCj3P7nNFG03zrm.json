@@ -3,7 +3,7 @@
   "_key": "!actors!VBCj3P7nNFG03zrm",
   "name": "Makigai Tanishi T400",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/makigai-tanishi-t400.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Makigai Tanishi T400",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/makigai-tanishi-t400.webp"
     },
     "width": 2,
     "height": 2,
@@ -39,6 +39,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

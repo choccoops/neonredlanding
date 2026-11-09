@@ -715,7 +715,7 @@ def add_ammo(row, path, tag):
     name, cost, effect = plain(row[0]), row[1], row[2]
     src = row[3] if len(row) > 3 else ""
     vs = ammo_varieties(name, effect)
-    if not vs:
+    if not vs or "adapter kit" in name.lower():  # a kit works on a grenade; it isn't one to load
         return item("gear", name, gear_sys(cost), para(inline(effect), f"<strong>Cost:</strong> {inline(cost)}"), path, src, tag)
     atype = next((v for k, v in ATYPE if k in name.lower()), "basic")
     per_ten = "/10" in cost or "for 10" in cost
@@ -925,8 +925,24 @@ def seats_for(vid, kind, seats, notes, bike):
     return out
 
 
+RIDE_ART = f"modules/{MOD}/assets/art/rides"
+TOKEN_ART = f"modules/{MOD}/assets/art/tokens"
+TOKEN_SIZES = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/token_sizes.json"), encoding="utf-8"))
+
+
 def actor(name, img, system, items, path, flags, token=None):
     aid = rid("actor", name.lower())
+    # generated art (assets/art/rides/<slug>.webp) replaces the type icon, on the sheet and the token
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower().replace("’", "").replace("‘", "")).strip("-")
+    ring, texture = {}, None
+    if os.path.exists(os.path.join(ROOT, "assets/art/rides", f"{slug}.webp")):
+        img = f"{RIDE_ART}/{slug}.webp"
+        ring = {"ring": {"enabled": True, "colors": {"ring": "#05d9e8", "background": "#07070b"}}}
+    # a top-down token (assets/art/tokens/<slug>.webp, cut out on a clear background) takes the map instead, at its size in squares
+    if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{slug}.webp")):
+        texture = f"{TOKEN_ART}/{slug}.webp"
+        size = TOKEN_SIZES.get(slug, 1)
+        ring = {"width": size, "height": size, "ring": {"enabled": False}}
     embedded = []
     for it in items:
         e = json.loads(json.dumps(it))
@@ -939,8 +955,8 @@ def actor(name, img, system, items, path, flags, token=None):
         embedded.append(e)
     doc = {"_id": aid, "_key": f"!actors!{aid}", "name": name, "type": "mook", "img": img, "folder": folder("rides-2070", path),
            "system": system, "items": embedded, "effects": [],
-           "prototypeToken": {"name": name, "actorLink": True, "texture": {"src": img}, "width": 1, "height": 1, "disposition": 0,
-                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **(token or {})},
+           "prototypeToken": {"name": name, "actorLink": True, "texture": {"src": texture or img}, "width": 1, "height": 1, "disposition": 0,
+                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **(token or {}), **ring},
            "flags": {**MIGRATION, **flags}, "ownership": {"default": 0}}
     ACTORS[aid] = doc
     return doc
@@ -1219,9 +1235,9 @@ def route(ev):
                 p = price(d["Cost"])
                 item("ammo", d["Item"], {"variety": "grenade", "type": next((v for k, v in ATYPE if k in d["Item"].lower()), "basic"), "amount": 1,
                                          "price": {"market": p}, "ablationValue": 1, "concealable": {"concealable": True, "isConcealed": False}},
-                     para(inline(d["Effect"])), ("Ammo & Explosives", "Explosives & Grenades"), d.get("Source", ""), tag)
+                     para(inline(d["Effect"])), ("Ammo & Explosives", "Grenades"), d.get("Source", ""), tag)
             else:
-                item("gear", d["Item"], gear_sys(d["Cost"]), para(inline(d["Effect"])), ("Ammo & Explosives", "Explosives & Grenades"), d.get("Source", ""), tag)
+                item("gear", d["Item"], gear_sys(d["Cost"]), para(inline(d["Effect"])), ("Ammo & Explosives", "Explosives"), d.get("Source", ""), tag)
         return
     if h0 == "Armor":
         for r in rows:
@@ -1492,6 +1508,47 @@ def main():
     for make in LATER:
         make()
     add_martial_arts()
+    grenades()
+
+
+# ------------------------------------------------------------------ grenades
+# Cyberpunk RED throws a grenade the way a gun fires a round: grenade ammo loaded into an equipped Thrown
+# Weapon (Athletics with DEX, the DV Thrown Weapon table, one at a time), and the throw uses it up. So the
+# grenades take the system's names ("Grenade (Flashbang)") and its damage overrides, and the Thrown Weapon
+# sits in their folder.
+GRENADE_NAME = [(r"^(.+) Ammunition \(Grenade\)$", r"\1"), (r"^(.+) Ammunition$", r"\1"), (r"^(.+) Grenade$", r"\1")]
+GRENADE_THROWN = {"Armor-Piercing", "Incendiary", "Improved Smart", "Shuriken Tornado", "Wall-Piercing"}  # the Thrown Weapon's 6d6
+GRENADE_DAMAGE = {"Poison": "2d6", "Biotoxin": "3d6", "KTech Security": "5d6"}
+GRENADE_NONE = {"EMP", "Flashbang", "Sleep", "Smoke", "Teargas", "Airburst", "Arachnid", "CO2", "Hello Cutie Chromatic Rave", "Laser", "Recon", "Sonic"}
+GRENADE_PATH = ("Ammo & Explosives", "Grenades")
+
+
+def grenades():
+    where = folder("items-2070", GRENADE_PATH, COLORS.get(GRENADE_PATH[0]))
+    for key, doc in [(k, d) for k, d in ITEMS.items() if d["type"] == "ammo" and d["system"]["variety"] == "grenade"]:
+        kind = next((re.sub(p, r, doc["name"]) for p, r in GRENADE_NAME if re.match(p, doc["name"])), doc["name"])
+        if kind not in GRENADE_THROWN | set(GRENADE_DAMAGE) | GRENADE_NONE:
+            raise SystemExit(f"grenade {doc['name']!r}: say how much damage it does (GRENADE_THROWN, GRENADE_DAMAGE or GRENADE_NONE)")
+        doc["name"] = f"Grenade ({kind})"  # the id stays the book name's, so worlds that took it keep their links
+        ITEMS[("ammo", doc["name"].lower())] = ITEMS.pop(key)
+        doc["img"] = f"{ASSETS}/grenades/{ICONS.grenade_slug(kind)}.svg"
+        doc["folder"] = where
+        damage = {"minimum": "1d6", "mode": "none", "value": "6d6"} if kind in GRENADE_THROWN else \
+            {"minimum": "1d6", "mode": "set", "value": GRENADE_DAMAGE.get(kind, "0")}
+        doc["system"]["overrides"] = {"autofire": {"minimum": 3, "mode": "none", "value": -1}, "damage": damage}
+    system = {"weaponSkill": "Athletics", "weaponType": "thrownWeapon", "isRanged": True, "quality": "standard", "attackmod": 0,
+              "damage": "6d6", "rof": 1, "handsReq": 1, "magazine": {"value": 0, "max": 1, "ammoData": None}, "ammoVariety": ["grenade"],
+              "usesType": "magazine", "fireModes": {"autoFire": 0, "suppressiveFire": False}, "canIgnoreArmor": False, "ignoreArmorPercent": 0,
+              "ignoreBelowSP": 0, "concealable": {"concealable": True, "isConcealed": False}, "dvTable": "DV Thrown Weapon",
+              "critFailEffect": "jammed", "equipped": "owned", "usage": "equipped", "price": {"market": 0}, "brand": "",
+              "installedItems": {"allowed": True, "allowedTypes": ["itemUpgrade", "ammo"], "list": [], "slots": 3, "usedSlots": 0},
+              "unarmedAutomaticCalculation": True}
+    item("weapon", "Thrown Weapon", system,
+         para("Throwing a grenade, or anything else you can lob. A Ranged Attack with Athletics (DEX) at up to 25m/yds on the DV Thrown "
+              "Weapon table; anyone who can Dodge bullets can Dodge it.",
+              "<strong>Grenades:</strong> equip it and load a grenade, the way you load a gun; the throw uses the grenade up. "
+              "The grenade decides the damage: 6d6 unless it says otherwise."),
+         GRENADE_PATH, img=f"{SYS}/weapons/thrown_weapon.svg", effects=[{"_none": True}])
 
 
 def write(pack, docs, folders):
@@ -1520,6 +1577,7 @@ if __name__ == "__main__":
     write("items-2070", list(ITEMS.values()), [f for k, f in FOLDERS.items() if k[0] == "items-2070" and f["_id"] in keep])
     write("rides-2070", list(ACTORS.values()), [f for k, f in FOLDERS.items() if k[0] == "rides-2070" and f["_id"] in keep])
     write("dv-tables-2070", TABLES, [])
+    ICONS.write_grenade_icons(os.path.join(ROOT, "assets/items/grenades"))
     if SYSDIR:
         ICONS.write_upgrade_icons(os.path.join(ROOT, "assets/items/upgrades"))
         ICONS.write_vehicle_icons(os.path.join(ROOT, "assets/items/vehicles"))

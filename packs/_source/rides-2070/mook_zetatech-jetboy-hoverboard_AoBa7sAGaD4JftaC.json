@@ -3,7 +3,7 @@
   "_key": "!actors!AoBa7sAGaD4JftaC",
   "name": "Zetatech JetBoy Hoverboard",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/hoverboard.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/zetatech-jetboy-hoverboard.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Zetatech JetBoy Hoverboard",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/hoverboard.svg"
+      "src": "modules/cpr-neon-hub/assets/art/tokens/zetatech-jetboy-hoverboard.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
     }
   },
   "flags": {

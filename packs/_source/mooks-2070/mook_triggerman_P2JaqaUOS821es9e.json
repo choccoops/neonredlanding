@@ -69,7 +69,7 @@
       "description": "<p>A merc who'll take any job but specializes in kill-or-capture work and gunplay.</p><p><em>Mercs:</em> Freelance edgerunners, from first-gig blazers to near-legends.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p><p>Also carries (no catalog item): GM's Choice of 100eb or less Grenade x1</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p><p>Grenade: GM's Choice of 100eb or less Grenade x1 (load it in the Thrown Weapon)</p>"
     }
   },
   "items": [
@@ -2817,6 +2817,85 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "yW9QLEBkwEccmIuf",
+      "_key": "!actors.items!P2JaqaUOS821es9e.yW9QLEBkwEccmIuf",
+      "name": "Thrown Weapon",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
+      "system": {
+        "weaponSkill": "Athletics",
+        "weaponType": "thrownWeapon",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 1,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "canIgnoreArmor": false,
+        "ignoreArmorPercent": 0,
+        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "DV Thrown Weapon",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Throwing a grenade, or anything else you can lob. A Ranged Attack with Athletics (DEX) at up to 25m/yds on the DV Thrown Weapon table; anyone who can Dodge bullets can Dodge it.</p><p><strong>Grenades:</strong> equip it and load a grenade, the way you load a gun; the throw uses the grenade up. The grenade decides the damage: 6d6 unless it says otherwise.</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
           }
         }
       }

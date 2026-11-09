@@ -1,0 +1,60 @@
+{
+  "_id": "yWVgjaa45WXiRcJt",
+  "_key": "!items!yWVgjaa45WXiRcJt",
+  "name": "Grenade (Wall-Piercing)",
+  "type": "ammo",
+  "img": "modules/cpr-neon-hub/assets/items/grenades/wall-piercing.svg",
+  "folder": "LDE5M9tq6Ik4nbYo",
+  "sort": 6250,
+  "system": {
+    "variety": "grenade",
+    "type": "basic",
+    "amount": 1,
+    "price": {
+      "market": 250
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>Only detonates on cover. Through one layer of Thin cover, it drills in and bursts as a 6d6 explosive in a 6×6m cone beyond, like a Shotgun Shell. Thick cover counts as Thin of the same material and takes the blast alone; damage past its HP doesn't carry through. No Homing or Sticky kits.</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "none",
+        "value": "6d6"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

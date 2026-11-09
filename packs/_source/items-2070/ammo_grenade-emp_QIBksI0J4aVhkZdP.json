@@ -1,0 +1,60 @@
+{
+  "_id": "QIBksI0J4aVhkZdP",
+  "_key": "!items!QIBksI0J4aVhkZdP",
+  "name": "Grenade (EMP)",
+  "type": "ammo",
+  "img": "modules/cpr-neon-hub/assets/items/grenades/emp.svg",
+  "folder": "LDE5M9tq6Ik4nbYo",
+  "sort": 3520,
+  "system": {
+    "variety": "grenade",
+    "type": "emp",
+    "amount": 1,
+    "price": {
+      "market": 500
+    },
+    "ablationValue": 1,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "set",
+        "value": "0"
+      }
+    },
+    "description": {
+      "value": "<p>Grenades. No damage; anyone hit rolls DV15 Cybertech or the GM switches off 2 pieces of their cyberware or electronics for 1 minute. Disabled cyberlimbs hang limp.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

@@ -733,3 +733,88 @@ def write_goods_icons(out):
         if star:
             svg = svg.replace("</svg>", SMALL_STAR + "\n</svg>")
         open(os.path.join(out, f"{key}.svg"), "w", encoding="utf-8").write(svg)
+
+
+# ------------------------------------------------------------------ grenades: a red canister with a hazard diamond
+# As the system's own grenade ammo icons are drawn: a red grenade on its side, a yellow hazard diamond
+# over its lower right, and the grenade's kind in black inside the diamond. Drawn here, not copied.
+INK, HAZARD = "#111214", "#f6c400"
+CANISTER = (
+    '<g transform="translate(226 262) rotate(38) scale(0.86)" stroke="#1b1f21" stroke-width="12" stroke-linejoin="round">'
+    '<path fill="#2a2e33" d="M-84 136h168v62q0 18-18 18H-66q-18 0-18-18z"/>'  # base cap
+    '<rect x="-100" y="-150" width="200" height="300" rx="34" fill="#d3282b"/>'  # body
+    '<path fill="#8f1416" stroke="none" d="M44 -138h22q28 0 28 28v220q0 28-28 28H44z"/>'  # shade
+    '<path fill="#ffffff" fill-opacity="0.55" stroke="none" d="M-74 -116h20v150h-20zM-44 -116h12v90h-12z"/>'  # shine
+    '<path fill="none" stroke="#8f1416" stroke-width="10" d="M-96 -60h192M-96 40h192"/>'  # seams
+    '<path fill="#2a2e33" d="M-80 -214h160v68H-80z"/>'  # top cap
+    '<path fill="none" stroke="#5b6170" stroke-width="8" d="M-48 -206v52M-16 -206v52M16 -206v52M48 -206v52"/>'
+    '<path fill="#2a2e33" d="M-30 -250h60v40h-60z"/>'  # fuse
+    '<path fill="#3a3f5e" d="M24 -246l92 30v170l-26 10v-160l-66-24z"/>'  # spoon
+    '<circle cx="-62" cy="-250" r="30" fill="none" stroke="#3a3f5e" stroke-width="12"/>'  # pin ring
+    '</g>')
+DIAMOND = (f'<path fill="{HAZARD}" stroke="#1b1f21" stroke-width="14" stroke-linejoin="round" d="M368 236l132 132-132 132-132-132z"/>'
+           f'<path fill="none" stroke="{INK}" stroke-width="5" stroke-linejoin="round" d="M368 262l106 106-106 106-106-106z"/>')
+
+
+def _star(n, ro, ri, rot=-90):
+    import math
+    pts = []
+    for i in range(n * 2):
+        r = ro if i % 2 == 0 else ri
+        a = math.radians(rot + i * 180 / n)
+        pts.append(f"{r * math.cos(a):.1f} {r * math.sin(a):.1f}")
+    return f'<path d="M{"L".join(pts)}z"/>'
+
+
+def _biohazard():
+    import math
+    rings = "".join(f'<circle cx="{24 * math.cos(math.radians(a)):.1f}" cy="{24 * math.sin(math.radians(a)):.1f}" r="22" fill="none" stroke="{INK}" stroke-width="9"/>'
+                    for a in (-90, 30, 150))
+    return rings + f'<circle r="10" fill="{HAZARD}" stroke="{INK}" stroke-width="7"/>'
+
+
+# Each kind's symbol, in black, drawn about the diamond's centre in a box about 110 across.
+GRENADE_GLYPHS = {
+    "Armor-Piercing": ("an arrow through a plate", '<path d="M-8 -48h16v96H-8z"/><path d="M-54 -6h82v-18l30 24-30 24v-18h-82z"/>'),
+    "Biotoxin": ("a biohazard sign", _biohazard()),
+    "EMP": ("a lightning bolt", '<path d="M10 -54L-34 6h28l-14 48 46-62H-2z"/>'),
+    "Flashbang": ("a flash", _star(8, 50, 20)),
+    "Incendiary": ("a flame", '<path d="M0 -54c10 26 40 40 40 74a40 40 0 0 1-80 0c0-20 10-30 18-40 2 14 8 20 16 22-6-22 0-40 6-56z"/>'),
+    "Poison": ("a skull and crossbones",
+               f'<path fill="none" stroke="{INK}" stroke-width="10" stroke-linecap="round" d="M-44 14l88 36M-44 50l88-36"/>'
+               f'<circle cy="-16" r="32"/><path d="M-18 4h36v22h-36z"/><circle cx="-12" cy="-18" r="9" fill="{HAZARD}"/><circle cx="12" cy="-18" r="9" fill="{HAZARD}"/>'),
+    "Sleep": ("Zzz", f'<path fill="none" stroke="{INK}" stroke-width="10" stroke-linejoin="round" d="M-46 -6h34l-34 40h34M0 -40h26l-26 30h26M30 -58h18l-18 20h18"/>'),
+    "Smoke": ("drifting smoke", f'<path fill="none" stroke="{INK}" stroke-width="10" stroke-linecap="round" d="M-30 44c-24-24 24-36 0-60s20-30 0-44M0 44c-24-24 24-36 0-60s20-30 0-44M30 44c-24-24 24-36 0-60s20-30 0-44"/>'),
+    "Teargas": ("a crying eye", f'<path d="M-52 -8q52-50 104 0-52 50-104 0z"/><circle cy="-8" r="16" fill="{HAZARD}"/><circle cy="-8" r="8"/><path d="M16 22q12 18 12 26a12 12 0 0 1-24 0q0-8 12-26z"/>'),
+    "Airburst": ("a capsule bursting", f'<g transform="rotate(-40)"><path d="M-36 -14h72a14 14 0 0 1 0 28h-72a14 14 0 0 1 0-28z"/><path fill="{HAZARD}" d="M0 -8h32a8 8 0 0 1 0 16H0z"/></g>'
+                 f'<path fill="none" stroke="{INK}" stroke-width="8" stroke-linecap="round" d="M-48 -48l-10-10M48 48l10 10M48 -40l12-6M-48 40l-12 6"/>'),
+    "Arachnid": ("a spider", f'<path fill="none" stroke="{INK}" stroke-width="7" stroke-linecap="round" d="M-8 -8l-30-24-10 18M-8 0l-36-6-12 22M-8 6l-32 14-6 26M-6 12l-20 28-2 16M8 -8l30-24 10 18M8 0l36-6 12 22M8 6l32 14 6 26M6 12l20 28 2 16"/>'
+                 '<ellipse cy="-2" rx="14" ry="18"/><circle cy="-26" r="10"/>'),
+    "KTech Security": ("a shield", f'<path d="M0 -54l44 16v30q0 44-44 64-44-20-44-64v-30z"/><path fill="none" stroke="{HAZARD}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="M-20 2l14 14 28-30"/>'),
+    "Shuriken Tornado": ("a throwing star", _star(4, 54, 14, -45) + f'<circle r="9" fill="{HAZARD}"/>'),
+    "Sonic": ("sound waves", f'<path d="M-50 -14h20l26-24v76l-26-24h-20z"/><path fill="none" stroke="{INK}" stroke-width="8" stroke-linecap="round" d="M10 -16q12 16 0 32M24 -30q24 30 0 60M38 -44q36 44 0 88"/>'),
+    "Hello Cutie Chromatic Rave": ("music notes", '<path d="M-26 -40l56-14v66a14 12 0 1 1-10-12v-34l-36 9v50a14 12 0 1 1-10-12z"/>'),
+    "Recon": ("a radar sweep", f'<circle r="48" fill="none" stroke="{INK}" stroke-width="8"/><circle r="22" fill="none" stroke="{INK}" stroke-width="6"/><path d="M0 0V-48a48 48 0 0 1 42 25z"/><circle cx="22" cy="18" r="7"/>'),
+    "CO2": ("a snowflake", f'<path fill="none" stroke="{INK}" stroke-width="9" stroke-linecap="round" d="M0 -52v104M-45 -26l90 52M-45 26l90-52M-12 -44l12 12 12-12M-12 44l12-12 12 12"/>'),
+    "Wall-Piercing": ("a blast spreading through a wall", '<path d="M-54 -50h22v30h-22zM-28 -50h10v30h-10zM-54 -16h10v32h-10zM-40 -16h22v32h-22zM-54 20h22v30h-22zM-28 20h10v30h-10z"/>'
+                      f'<path fill="none" stroke="{INK}" stroke-width="9" stroke-linecap="round" d="M-6 0l52-40M-6 0h56M-6 0l52 40"/>'),
+    "Laser": ("a hovering drone's beams", f'<ellipse cy="-34" rx="38" ry="14"/><path fill="none" stroke="{INK}" stroke-width="7" stroke-linecap="round" d="M-16 -22l-30 72M0 -20v70M16 -22l30 72"/>'),
+    "Improved Smart": ("a target reticle", f'<circle r="40" fill="none" stroke="{INK}" stroke-width="9"/><path d="M-5 -56h10v34h-10zM-5 22h10v34h-10zM-56 -5h34v10h-34zM22 -5h34v10H22z"/><circle r="9"/>'),
+}
+
+
+def grenade_slug(kind):
+    return re.sub(r"[^a-z0-9]+", "-", kind.lower()).strip("-")
+
+
+def grenade_icon(kind):
+    note, glyph = GRENADE_GLYPHS[kind]
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">\n'
+            f'<!-- Neon Hub: a {kind} grenade ({note}). Drawn in the style of the Cyberpunk RED system\'s grenade ammo icons. -->\n'
+            f'{CANISTER}\n{DIAMOND}\n<g transform="translate(368 368) scale(1.08)" fill="{INK}">{glyph}</g>\n</svg>\n')
+
+
+def write_grenade_icons(out):
+    os.makedirs(out, exist_ok=True)
+    for kind in GRENADE_GLYPHS:
+        open(os.path.join(out, f"{grenade_slug(kind)}.svg"), "w", encoding="utf-8").write(grenade_icon(kind))

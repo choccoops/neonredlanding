@@ -2676,13 +2676,13 @@
     {
       "_id": "8HxxYa6UqPsbsPkY",
       "_key": "!actors.items!t74Fc3MAwDXBSGvm.8HxxYa6UqPsbsPkY",
-      "name": "Flashbang Ammunition",
+      "name": "Grenade (Flashbang)",
       "type": "ammo",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+      "img": "modules/cpr-neon-hub/assets/items/grenades/flashbang.svg",
       "system": {
         "variety": "grenade",
         "type": "flashbang",
-        "amount": 1,
+        "amount": 0,
         "price": {
           "market": 100
         },
@@ -2693,14 +2693,14 @@
         },
         "overrides": {
           "autofire": {
-            "minimum": 0,
+            "minimum": 3,
             "mode": "none",
-            "value": 0
+            "value": -1
           },
           "damage": {
-            "minimum": "",
-            "mode": "none",
-            "value": ""
+            "minimum": "1d6",
+            "mode": "set",
+            "value": "0"
           }
         },
         "description": {
@@ -2950,6 +2950,87 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "jwszI0mQs8cUkBGm",
+      "_key": "!actors.items!t74Fc3MAwDXBSGvm.jwszI0mQs8cUkBGm",
+      "name": "Thrown Weapon",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
+      "system": {
+        "weaponSkill": "Athletics",
+        "weaponType": "thrownWeapon",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 1,
+          "max": 1,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "canIgnoreArmor": false,
+        "ignoreArmorPercent": 0,
+        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "DV Thrown Weapon",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "8HxxYa6UqPsbsPkY"
+          ],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Throwing a grenade, or anything else you can lob. A Ranged Attack with Athletics (DEX) at up to 25m/yds on the DV Thrown Weapon table; anyone who can Dodge bullets can Dodge it.</p><p><strong>Grenades:</strong> equip it and load a grenade, the way you load a gun; the throw uses the grenade up. The grenade decides the damage: 6d6 unless it says otherwise.</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
           }
         }
       }

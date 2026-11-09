@@ -65,7 +65,7 @@ NAMES = {"malorian overture": "Malorian Arms Overture", "militech ajax": "Milite
          "grip feet": "Grip Foot", "interface plug": "Interface Plugs", "medical grade cyberarm": "Medical-Grade Cyberarm",
          "kiroshi t.o.p.": "Kiroshi Tactical Optics Platform", "kiroshi a.t.o.p.": "Kiroshi Tactical Optics Platform", "max-helm": "Gibson Battlegear Max-Helm",
          "max-vest": "Gibson Battlegear Max-Vest (body)", "nightstalker ballistic mask": "'Nightstalker' Ballistic Mask",
-         "smoke grenade": "Smoke Ammunition", "flashbang": "Flashbang Ammunition", "emp grenade": "EMP Ammunition", "improved emp grenade": "Improved EMP Ammunition",
+         "smoke grenade": "Grenade (Smoke)", "flashbang": "Grenade (Flashbang)", "emp grenade": "Grenade (EMP)", "improved emp grenade": "Improved EMP Ammunition",
          "external 'wolfpack' linear frame": "Wolfpack Linear Frame", "internal linear frame sigma": "Implanted Linear Frame ∑ (Sigma)",
          "implanted linear frame sigma": "Implanted Linear Frame ∑ (Sigma)", "businesswear fashion": "Businesswear", "fleshweave": "Sycust FleshWeave",
          "heavy subdermal": "Heavy Subdermal Plating", "sycust fleshweave": "Sycust FleshWeave"}
@@ -89,6 +89,10 @@ def find(name, types):
             cal = "Grenade"
         cal = CALIBER.get(cal.lower(), cal)
         tries += [f"{kind} Ammunition ({cal})" if cal else f"{kind} Ammunition", f"{kind} Ammunition"]
+        if cal == "Grenade":
+            tries.insert(1, f"Grenade ({kind})")
+    if "ammo" in types and any(x.startswith("Grenade (") for x in tries):
+        types = ("ammo",) + tuple(t for t in types if t != "ammo")  # "Grenade" alone would fuzzy-match the Popup Grenade Launcher
     for t in types:
         for x in tries:
             it = FBM.lookup(x, (t,))
@@ -107,6 +111,7 @@ class Mook:
         self.b, self.text = b, text
         self.aid = G.rid("mook", b["slug"])
         self.items, self.installed, self.notes, self.missing = [], [], [], []
+        self.gm_grenade = False
 
     # -------------------------------------------------------------- items
     def embed(self, doc):
@@ -296,9 +301,26 @@ class Mook:
             if a.get(loc, {}).get("notes"):
                 self.notes.append(f"{loc.title()} armor: {a[loc]['notes']}")
 
+    def thrower(self):
+        """Cyberpunk RED throws grenades from a Thrown Weapon: a mook with grenades has one, loaded and ready."""
+        nades = [i for i in self.items if i["type"] == "ammo" and i["system"].get("variety") == "grenade"]
+        if not nades and not self.gm_grenade:
+            return
+        w = self.embed(G.ITEMS[("weapon", "thrown weapon")])
+        w["system"]["equipped"] = "equipped"
+        if not nades:  # the GM picks the grenade, then loads it
+            return
+        self.install(w, nades[0])
+        w["system"]["magazine"]["value"] = 1
+        nades[0]["system"]["amount"] -= 1
+
     # -------------------------------------------------------------- gear & chrome
     def piece(self, text):
         raw = text
+        if re.search(r"GM['’]s", text) and re.search(r"\bGrenade\b", text):
+            self.gm_grenade = True
+            self.notes.append(f"Grenade: {text} (load it in the Thrown Weapon)")
+            return
         text = re.sub(r"^TUp \([^)]*\)\s*|^TUp\s+", "", text)
         count = re.search(r"\s+x(\d+)$", text)
         n = int(count.group(1)) if count else 1
@@ -367,6 +389,7 @@ class Mook:
         for g in b["gear"] + b["cyber"]:
             self.piece(g)
         self.place_chrome()
+        self.thrower()
         system["installedItems"] = {"allowed": True, "allowedTypes": ["cyberware"], "list": self.installed}
         if b["chooseWeapon"]:
             self.notes.insert(0, "Carries one of the listed weapons (GM's choice); both are on the sheet.")

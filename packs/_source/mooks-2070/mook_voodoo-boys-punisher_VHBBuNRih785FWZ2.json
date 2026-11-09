@@ -2883,26 +2883,37 @@
       }
     },
     {
-      "_id": "Jz4LkU1kN0jJO0Qz",
-      "_key": "!actors.items!VHBBuNRih785FWZ2.Jz4LkU1kN0jJO0Qz",
-      "name": "Improved EMP Ammunition",
-      "type": "gear",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+      "_id": "bBNSd4z8etoEMR22",
+      "_key": "!actors.items!VHBBuNRih785FWZ2.bBNSd4z8etoEMR22",
+      "name": "Grenade (EMP)",
+      "type": "ammo",
+      "img": "modules/cpr-neon-hub/assets/items/grenades/emp.svg",
       "system": {
+        "variety": "grenade",
+        "type": "emp",
+        "amount": 0,
         "price": {
-          "market": 100
+          "market": 500
         },
-        "amount": 1,
-        "equipped": "owned",
-        "usage": "carried",
-        "brand": "",
+        "ablationValue": 1,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
-        "isElectronic": false,
+        "overrides": {
+          "autofire": {
+            "minimum": 3,
+            "mode": "none",
+            "value": -1
+          },
+          "damage": {
+            "minimum": "1d6",
+            "mode": "set",
+            "value": "0"
+          }
+        },
         "description": {
-          "value": "<p>EMP ammo that still deals damage, but doesn't ablate or cause Critical Injuries. Against anything with SP, −1d6 damage (2d6 minimum), except drones and FBCs.</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+          "value": "<p>Grenades. No damage; anyone hit rolls DV15 Cybertech or the GM switches off 2 pieces of their cyberware or electronics for 1 minute. Disabled cyberlimbs hang limp.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -3383,6 +3394,87 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "KE4bxJolqo6nj5nF",
+      "_key": "!actors.items!VHBBuNRih785FWZ2.KE4bxJolqo6nj5nF",
+      "name": "Thrown Weapon",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
+      "system": {
+        "weaponSkill": "Athletics",
+        "weaponType": "thrownWeapon",
+        "isRanged": true,
+        "quality": "standard",
+        "attackmod": 0,
+        "damage": "6d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 1,
+          "max": 1,
+          "ammoData": null
+        },
+        "ammoVariety": [
+          "grenade"
+        ],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "canIgnoreArmor": false,
+        "ignoreArmorPercent": 0,
+        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "DV Thrown Weapon",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "ammo"
+          ],
+          "list": [
+            "bBNSd4z8etoEMR22"
+          ],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "unarmedAutomaticCalculation": true,
+        "description": {
+          "value": "<p>Throwing a grenade, or anything else you can lob. A Ranged Attack with Athletics (DEX) at up to 25m/yds on the DV Thrown Weapon table; anyone who can Dodge bullets can Dodge it.</p><p><strong>Grenades:</strong> equip it and load a grenade, the way you load a gun; the throw uses the grenade up. The grenade decides the damage: 6d6 unless it says otherwise.</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
           }
         }
       }

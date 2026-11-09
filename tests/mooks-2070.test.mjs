@@ -42,6 +42,20 @@ test("mooks carry the core Skills, the core cyberware containers and their attac
   }
 });
 
+test("a mook with grenades has a Thrown Weapon, loaded with one", () => {
+  let n = 0;
+  for (const m of mooks) {
+    const nades = m.items.filter((i) => i.type === "ammo" && i.system.variety === "grenade");
+    if (!nades.length) continue;
+    n++;
+    const thrown = m.items.find((i) => i.name === "Thrown Weapon");
+    assert.ok(thrown, `${m.name} can throw its grenades`);
+    assert.equal(thrown.system.magazine.value, 1, m.name);
+    assert.ok(nades.some((g) => thrown.system.installedItems.list.includes(g._id)), `${m.name}: a grenade is loaded`);
+  }
+  assert.ok(n > 40, `${n} mooks carry grenades`);
+});
+
 test("a mook's Skill totals match its stat block", () => {
   const goon = mooks.find((m) => m.name === "Maelstrom Goon");
   const stat = (k) => goon.system.stats[k].value;

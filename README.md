@@ -732,6 +732,32 @@ the Item Compendium (2070) chapter it's from:
   loads the world, Neon Hub offers to make them CPR's DV tables; switch any time in CPR's
   compendium settings or with `api.items.useDvTables(true|false)`.
 
+**Range Table Modifications.** The book's barrels, chokes, limbs and tubes are one upgrade each, in
+*Attachments & Mods › Range Table Modifications*: Snub Barrel and Long Barrel (Pistol), Short
+Barrel (SMG), Short Barrel and Choke (Shotgun), Carbine, Battle and Marksman Barrel (Assault
+Rifle), Scout Barrel and Long Barrel (Sniper Rifle), Short Limbs and Long Limbs (Bow), and Short,
+Standard and Long Tube (Launcher). Install one in a weapon (the sheet, CPR's Install, or Neon At
+Home's Weaponbench) and Neon Hub sets the weapon's own range table to the new one, keeping the old
+table to put back when it comes out or is deleted: a Snub Barrel moves a pistol from DV Pistol to
+DV Snubnose Pistol. CPR's attack and its Autofire switch, Diwako's DV display and Neon Combat
+Manager's DV, Does it hit? and AA look all read that table, so they follow. The rules:
+
+- **It has to fit.** A weapon on one of the family's tables takes it whatever its type, so Exotic
+  Weapons can; a weapon with no table goes by its type. A Snub Barrel won't go in a sniper rifle.
+- **One at a time.** Take the old one out before another goes in (in one go is fine).
+- **Not with a Conversion Kit**, and not in the Magnum Opus Howitzer (the book bars it).
+
+What doesn't fit is refused with a warning, and the rest of the install goes through. The new
+tables are the 2070 ones, so use Neon Hub's DV Tables (2070s) as CPR's DV tables. CPR's own
+Autofire switch looks for "*table* (Autofire)", which the swapped tables (Subcompact SMG, Carbine,
+Battle and Marksman Rifle) don't have; Neon Combat Manager uses the gun's own Autofire table.
+
+The book's single *Range Table Modification* entry is still there under its old id, for worlds
+that link it, but it changes nothing: installing it says to pick the option instead. Older copies
+named after their option, like the ACPAs' "Range Table Modification (Scout Barrel)" from before
+1.23.0, still work, and taking one out puts the gun back on its family's own table.
+`api.items.rangeMods.check(weapon, upgrade)` says why an upgrade can't go in (or null).
+
 **Active Effects.** Where the book gives a flat bonus or penalty, the item has a CPR Active Effect
 for it, read from the item's own line ("+2 MOVE", "+2 Human Perception and Interrogation",
 "COOL and TECH −2"). About 80 items have them, and they switch on the way CPR expects:
@@ -962,6 +988,7 @@ hub.fashion.districts();                // the districts and their dress codes
 await hub.fashion.setSceneDistrict(canvas.scene, "japantown"); // GM
 await hub.items.useDvTables(true);     // GM: Cyberpunk RED's DV tables from the 2070s range tables (false: back to CPR's)
 hub.items.usingDvTables();              // true when they are
+hub.items.rangeMods.check(weapon, upgrade); // why a Range Table Modification can't go in that weapon, or null
 hub.notes("Afterlife Crew", { year: 2045, month: 11, day: 29 }); // notes this user can read
 await hub.addNote("Afterlife Crew", { year: 2045, month: 11, day: 29 }, { title: "Meet Rogue", text: "Afterlife, midnight", shared: true });
 ```

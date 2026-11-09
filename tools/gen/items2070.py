@@ -1028,12 +1028,77 @@ RTM = {"pistol": {"snub barrel": "Snubnose Pistol", "long barrel": "Long Barrel 
        "launcher": {"short tube": "Grenade Launcher", "standard tube": "Rocket Launcher", "long tube": "Missile Launcher"}}
 FAMILY = {"medPistol": "pistol", "heavyPistol": "pistol", "vHeavyPistol": "pistol", "smg": "smg", "heavySmg": "smg", "shotgun": "shotgun",
           "assaultRifle": "rifle", "sniperRifle": "sniper", "bow": "bow", "grenadeLauncher": "launcher", "rocketLauncher": "launcher"}
+# What a family's modification fits: a weapon on one of these tables (the 2070 ones, then the system's own names for
+# them), whatever its type, so Exotic Weapons qualify; a weapon with no table of its own goes by its type.
+RTM_FAMILY = {"pistol": ("Pistols", ["DV Pistol", "DV Snubnose Pistol", "DV Long Barrel Pistol"], ["DV Long-Barrel Pistol"]),
+              "smg": ("SMGs and Heavy SMGs", ["DV SMG", "DV Subcompact SMG"], []),
+              "shotgun": ("Shotguns", ["DV Shotgun", "DV Short Barrel Shotgun", "DV Long Barrel Shotgun"], ["DV Shotgun (Slug)"]),
+              "rifle": ("Assault Rifles", ["DV Assault Rifle", "DV Carbine", "DV Battle Rifle", "DV Marksman Rifle"], []),
+              "sniper": ("Sniper Rifles", ["DV Sniper Rifle", "DV Scout Rifle", "DV Anti-materiel Rifle"], []),
+              "bow": ("Bows and Crossbows", ["DV Bow", "DV Shortbow", "DV Longbow"], ["DV Bows & Crossbows"]),
+              "launcher": ("Launchers", ["DV Grenade Launcher", "DV Rocket Launcher", "DV Missile Launcher"], [])}
+RTM_LABEL = {"pistol": "Pistol", "smg": "SMG", "shotgun": "Shotgun", "rifle": "Assault Rifle", "sniper": "Sniper Rifle", "bow": "Bow", "launcher": "Launcher"}
+RTM_PATH = ("Attachments & Mods", "Range Table Modifications")
+# One upgrade per option, keyed (family, option). Kept out of ITEMS until the end, so they don't move every later item's sort.
+RTM_ITEMS = {}
 
 
 def range_mod(name, weapon):
     """The table a barrel/tube/limbs attachment puts this weapon on, or None if it isn't one."""
     n = re.sub(r"^(?:SMG|Sniper Rifle|Sniper|Shotgun|Pistol|Rocket|Grenade|Assault Rifle|Bow)\s+", "", plain(name)).lower()
     return RTM.get(FAMILY.get(weapon["system"]["weaponType"], ""), {}).get(n)
+
+
+def range_mod_item(name, weapon):
+    """The Range Table Modification upgrade for this attachment on this weapon, or None."""
+    n = re.sub(r"^(?:SMG|Sniper Rifle|Sniper|Shotgun|Pistol|Rocket|Grenade|Assault Rifle|Bow)\s+", "", plain(name)).lower()
+    return RTM_ITEMS.get((FAMILY.get(weapon["system"]["weaponType"], ""), n))
+
+
+def range_mods():
+    """The book's one Range Table Modification row, as an upgrade per barrel, choke, limbs or tube. Each carries what it
+    does in flags (the table it puts the weapon on, and the tables and weapon types it fits), which Neon Hub applies
+    when it's installed. The book's row stays, under its own id, as an old entry that changes nothing."""
+    generic = ITEMS.get(("itemUpgrade", "range table modification"))
+    if not generic:
+        NOTES.append("Range Table Modification: the book's row wasn't found")
+        return
+    base_sort = generic["sort"]
+    generic["folder"] = folder("items-2070", RTM_PATH, COLORS.get(RTM_PATH[0]))
+    generic["flags"][MOD]["rangeMod"] = {"legacy": True}
+    generic["system"]["description"]["value"] = para(
+        "<strong>The book's summary entry.</strong> It changes nothing by itself: install the barrel, choke, limbs or tube for your "
+        "weapon from this folder instead, and Neon Hub moves the weapon to its new range table.") + generic["system"]["description"]["value"]
+    i = 0
+    for fam, options in RTM.items():
+        who, tables, system_names = RTM_FAMILY[fam]
+        types = sorted(t for t, f in FAMILY.items() if f == fam)
+        for opt, table in options.items():
+            label = string.capwords(opt)
+            name = f"{label} ({RTM_LABEL[fam]})"
+            desc = para(f"A Range Table Modification for {who}: the weapon fires on the {table} range table (DV {table}) instead of its own, "
+                        "and nothing else about it changes.",
+                        "Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at "
+                        "a time: take the old one out before another goes in. None while a Conversion Kit is in.",
+                        f"<strong>Fits:</strong> weapons on the {html.escape(', '.join(t[3:] for t in tables[:-1]))} or {html.escape(tables[-1][3:])} "
+                        "table<br><strong>Cost:</strong> 100eb")
+            doc = upgrade(name, "weapon", "100eb", 0, desc, RTM_PATH)
+            doc["img"] = generic["img"]
+            ITEMS.pop(("itemUpgrade", name.lower()))
+            i += 1
+            doc["sort"] = base_sort + i
+            doc["flags"][MOD]["rangeMod"] = {"table": f"DV {table}", "family": fam, "option": label, "tables": tables + system_names,
+                                         "weaponTypes": types}
+            RTM_ITEMS[(fam, opt)] = doc
+
+
+def range_mods_done():
+    """Put the modifications in the pack, and mark the weapons the book bars them from."""
+    for doc in RTM_ITEMS.values():
+        ITEMS[("itemUpgrade", doc["name"].lower())] = doc
+    for doc in ITEMS.values():
+        if doc["type"] == "weapon" and "No Range Table Modification" in doc["system"]["description"]["value"]:
+            doc["flags"][MOD]["noRangeMod"] = True
 
 
 def find_item(name, types=("weapon", "cyberware")):
@@ -1076,7 +1141,7 @@ def add_acpa(m, flavor, path):
     def fit(gun, part):
         """Fit an attachment into a gun: CPR's installed list and slots, and a barrel's new range table."""
         table = range_mod(part, gun)
-        up = ITEMS.get(("itemUpgrade", "range table modification")) if table else find_item(part, ("itemUpgrade",))
+        up = range_mod_item(part, gun) if table else find_item(part, ("itemUpgrade",))
         if not up:
             return False
         e = embed(up)
@@ -1086,8 +1151,9 @@ def add_acpa(m, flavor, path):
         # Onboard fits are the suit maker's: the gun takes them whatever its catalog slots say.
         gun["system"]["installedItems"]["slots"] = max(gun["system"]["installedItems"]["slots"], gun["system"]["installedItems"]["usedSlots"])
         if table:
+            # As Neon Hub does when one's installed: the gun's own table is kept, for when it comes out.
+            gun["flags"].setdefault(MOD, {})["dvTableBase"] = gun["system"]["dvTable"]
             gun["system"]["dvTable"] = f"DV {table}"
-            e["name"] = f"{e['name']} ({plain(part)})"
         return True
 
     gun = None
@@ -1505,6 +1571,7 @@ def main():
                                                "Install the pieces it includes as cyberware; the package price covers them all."),
              ("Cyberware", "Exotic Packages"), tag="DLC: Exotics of 2045 • HOUSE RULE (2070 editions)")
     capacity_attachments()
+    range_mods()
     flavor = dict(HOUSE.ACPA_FLAVOR)
     for m in sorted(HOUSE.CORGO_ACPAS, key=lambda m: m[0].lower()):
         add_acpa(m, flavor.get(m[0], ""), ("ACPAs",))
@@ -1517,6 +1584,7 @@ def main():
     grenades()
     arrows()
     special_ammo()
+    range_mods_done()
 
 
 # ------------------------------------------------------------------ grenades

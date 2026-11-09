@@ -202,7 +202,7 @@
           "list": [
             "11xHqXf3u9FQ2i8M",
             "Ml1QT6VF6uASH1At",
-            "1qkz1XuliV6vNkzs"
+            "MMuDDKnYYXJMBwcS"
           ],
           "slots": 3,
           "usedSlots": 1
@@ -230,7 +230,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "power"
+          "weaponType2070": "power",
+          "dvTableBase": "DV SMG"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "I9uuQwliyhQqZLMQ"
@@ -337,9 +338,9 @@
       }
     },
     {
-      "_id": "1qkz1XuliV6vNkzs",
-      "_key": "!actors.items!Lf87JZksTqhmlTyt.1qkz1XuliV6vNkzs",
-      "name": "Range Table Modification (SMG Short Barrel)",
+      "_id": "MMuDDKnYYXJMBwcS",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.MMuDDKnYYXJMBwcS",
+      "name": "Short Barrel (SMG)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -356,7 +357,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for SMGs and Heavy SMGs: the weapon fires on the Subcompact SMG range table (DV Subcompact SMG) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the SMG or Subcompact SMG table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -377,6 +378,19 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Subcompact SMG",
+            "family": "smg",
+            "option": "Short Barrel",
+            "tables": [
+              "DV SMG",
+              "DV Subcompact SMG"
+            ],
+            "weaponTypes": [
+              "heavySmg",
+              "smg"
+            ]
           }
         }
       },
@@ -432,7 +446,7 @@
           ],
           "list": [
             "ooDZKp1ZuT8XFudc",
-            "KjNIIQGbubtFUbLC"
+            "qgtZtz2DiR6hDir0"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -460,7 +474,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "smart"
+          "weaponType2070": "smart",
+          "dvTableBase": "DV Sniper Rifle"
         },
         "mmutons-cyberpunk-red-vas": {
           "mountedPosition": "I9uuQwliyhQqZLMQ"
@@ -519,9 +534,9 @@
       }
     },
     {
-      "_id": "KjNIIQGbubtFUbLC",
-      "_key": "!actors.items!Lf87JZksTqhmlTyt.KjNIIQGbubtFUbLC",
-      "name": "Range Table Modification (Scout Barrel)",
+      "_id": "qgtZtz2DiR6hDir0",
+      "_key": "!actors.items!Lf87JZksTqhmlTyt.qgtZtz2DiR6hDir0",
+      "name": "Scout Barrel (Sniper Rifle)",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
       "system": {
@@ -538,7 +553,7 @@
         },
         "isElectronic": false,
         "description": {
-          "value": "<p>Takes no Attachment Slot and fits Exotic Weapons. Install one at a time. It changes the Range Table the weapon fires on and nothing else. Pistols: Snub Barrel → Snubnose Pistol, Long Barrel → Long Barrel Pistol. SMGs/Heavy SMGs: Short Barrel → Subcompact SMG. Shotguns: Short Barrel → Short Barrel Shotgun, Choke → Long Barrel Shotgun. Assault Rifles: Carbine / Battle / Marksman Barrel → that table. Sniper Rifles: Scout Barrel → Scout Rifle, Long Barrel → Anti-materiel Rifle. Bows/Crossbows: Short Limbs → Shortbow, Long Limbs → Longbow. Launchers: Short Tube → Grenade Launcher, Standard Tube → Rocket Launcher, Long Tube → Missile Launcher.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+          "value": "<p>A Range Table Modification for Sniper Rifles: the weapon fires on the Scout Rifle range table (DV Scout Rifle) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Sniper Rifle, Scout Rifle or Anti-materiel Rifle table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -559,6 +574,19 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Attachments & Mods"
+          },
+          "rangeMod": {
+            "table": "DV Scout Rifle",
+            "family": "sniper",
+            "option": "Scout Barrel",
+            "tables": [
+              "DV Sniper Rifle",
+              "DV Scout Rifle",
+              "DV Anti-materiel Rifle"
+            ],
+            "weaponTypes": [
+              "sniperRifle"
+            ]
           }
         }
       },

@@ -2431,6 +2431,15 @@
       "DvOff": "Cyberpunk RED is back on its own DV tables.",
       "NoDvSetting": "This version of Cyberpunk RED has no DV table compendium setting."
     },
+    "RangeMods": {
+      "NotRanged": "{mod} is a Range Table Modification: it only goes in a ranged weapon.",
+      "Barred": "{weapon} can't take a Range Table Modification, so {mod} stays out.",
+      "Wrong": "{mod} doesn't fit {weapon}: it's for another kind of weapon ({weapon} fires on {table}).",
+      "OneAtATime": "{weapon} already has {other}. One Range Table Modification at a time: take it out before {mod} goes in.",
+      "Conversion": "{weapon} has {other} in, and a Conversion Kit takes no Range Table Modification. {mod} stays out.",
+      "KitWithMod": "{weapon} has {other} in. Take it out before {mod} goes in: a Conversion Kit takes no Range Table Modification.",
+      "Legacy": "{mod} is the book's summary entry and changes nothing on {weapon}. Install the barrel, choke, limbs or tube for it from Neon Hub's Range Table Modifications folder instead."
+    },
     "Companion": {
       "Module": {
         "combat": "Neon Combat Manager",

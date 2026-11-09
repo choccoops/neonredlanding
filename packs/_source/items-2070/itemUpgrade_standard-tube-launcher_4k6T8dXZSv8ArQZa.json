@@ -1,0 +1,63 @@
+{
+  "_id": "4k6T8dXZSv8ArQZa",
+  "_key": "!items!4k6T8dXZSv8ArQZa",
+  "name": "Standard Tube (Launcher)",
+  "type": "itemUpgrade",
+  "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
+  "folder": "IoMwA20uu5edlTZw",
+  "sort": 4764,
+  "system": {
+    "type": "weapon",
+    "size": 0,
+    "price": {
+      "market": 100
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>A Range Table Modification for Launchers: the weapon fires on the Rocket Launcher range table (DV Rocket Launcher) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Grenade Launcher, Rocket Launcher or Missile Launcher table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Attachments & Mods"
+      },
+      "rangeMod": {
+        "table": "DV Rocket Launcher",
+        "family": "launcher",
+        "option": "Standard Tube",
+        "tables": [
+          "DV Grenade Launcher",
+          "DV Rocket Launcher",
+          "DV Missile Launcher"
+        ],
+        "weaponTypes": [
+          "grenadeLauncher",
+          "rocketLauncher"
+        ]
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

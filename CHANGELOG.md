@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.23.0
+
+- **Range Table Modifications change the table.** The book's one *Range Table Modification* entry is
+  now fifteen upgrades, one per option, in *Attachments & Mods › Range Table Modifications*: Snub
+  Barrel and Long Barrel (Pistol), Short Barrel (SMG), Short Barrel and Choke (Shotgun), Carbine,
+  Battle and Marksman Barrel (Assault Rifle), Scout Barrel and Long Barrel (Sniper Rifle), Short and
+  Long Limbs (Bow), and Short, Standard and Long Tube (Launcher). Installing one sets the weapon's
+  own range table (a Snub Barrel puts a pistol on DV Snubnose Pistol), and taking it out, or
+  deleting it, puts the old table back. CPR's attack, Diwako's DV display and Neon Combat Manager
+  follow, since they all read that table.
+- **They have to fit, one at a time.** One for another kind of weapon, a second one, one with a
+  Conversion Kit in, or one in the Magnum Opus Howitzer is refused with a warning. Exotic Weapons
+  take the ones for the table they fire on.
+- The book's single entry keeps its id and changes nothing; installing it says to pick the option.
+  Older copies named after their option (the ACPAs' "Range Table Modification (Scout Barrel)") work
+  by name. The ACPAs' guns carry the option's own upgrade now.
+- `api.items.rangeMods.check(weapon, upgrade)`, which Neon At Home's Weaponbench (1.13.1) asks first.
+
 ## 1.22.3
 
 - **Fixed: a wrong (Basic) on 2070s ammo in the Load Ammo dialog.** Ammo of a kind Cyberpunk RED has no type for (Explosive, Burrowing, Serrated, Harpoon and Hypo arrows, the Laser, Sonic and Recon grenades, HVAP and Combo Casings rounds, the ModBalls and the rest) was typed Basic, and the dialog adds the type to the name: *Arrow (Explosive) (Basic)*. They're the system's *Special* now, as its own odd ammo is (*Grenade (Arachnid)*). The type only labels the ammo; damage and ablation don't change.

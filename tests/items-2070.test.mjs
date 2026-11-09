@@ -327,3 +327,53 @@ test("the Martial Arts Forms: a Skill and a weapon each, as Cyberpunk RED's own 
     assert.equal(w.effects.length, 0, `${w.name}: no effects read from its text`);
   }
 });
+
+test("Range Table Modifications: one upgrade per option, on a table the DV pack has", async () => {
+  const { FAMILIES, rangeModOf } = await import("../scripts/items/range-mods.js");
+  const names = new Set(tables.map((t) => t.name));
+  const mods = items.docs.filter((d) => d.flags["cpr-neon-hub"]?.rangeMod?.table);
+  assert.equal(mods.length, 15, "every barrel, choke, limbs and tube in the book");
+  const folder = items.folders.find((f) => f.name === "Range Table Modifications");
+  for (const m of mods) {
+    const f = m.flags["cpr-neon-hub"].rangeMod;
+    assert.ok(names.has(f.table), `${m.name}: ${f.table} is a DV table`);
+    assert.equal(m.type, "itemUpgrade");
+    assert.equal(m.system.type, "weapon");
+    assert.equal(m.system.size, 0, `${m.name}: slotless`);
+    assert.equal(m.system.price.market, 100);
+    assert.equal(m.folder, folder._id);
+    assert.equal(m.system.source.book, "Item Compendium (2070)");
+    assert.ok(f.tables.includes(f.table), `${m.name}: it fits a weapon already on its own table`);
+    assert.ok(f.tables.filter((t) => !t.includes("-") && !t.includes("(") && !t.includes("&")).every((t) => names.has(t)), `${m.name}: fits real tables`);
+    assert.ok(m.name.toLowerCase().startsWith(f.option.toLowerCase()), `${m.name} is named for its option`);
+    // The runtime's copy (for older copies named "Range Table Modification (…)") says the same.
+    const fam = FAMILIES[f.family];
+    assert.equal(fam.options[f.option.toLowerCase()], f.table, `${m.name}: FAMILIES agrees`);
+    assert.deepEqual([...fam.tables].sort(), [...f.tables].sort(), `${f.family}: same tables`);
+    assert.deepEqual([...fam.types].sort(), [...f.weaponTypes].sort(), `${f.family}: same types`);
+    assert.deepEqual(rangeModOf(m)?.table, f.table);
+  }
+  assert.equal(Object.values(FAMILIES).reduce((n, f) => n + Object.keys(f.options).length, 0), 15);
+  const legacy = items.docs.find((d) => d._id === "41W3vK7wPWLASt1y");
+  assert.equal(legacy.name, "Range Table Modification", "the book's entry keeps its id and name, for worlds that link it");
+  assert.deepEqual(legacy.flags["cpr-neon-hub"].rangeMod, { legacy: true });
+  assert.deepEqual(rangeModOf(legacy), { legacy: true, name: legacy.name });
+  assert.equal(items.docs.find((d) => d.name === "Magnum Opus Howitzer").flags["cpr-neon-hub"].noRangeMod, true, "the book bars it");
+});
+
+test("ACPA guns carry their barrel as the option's own upgrade, with the table they came off", () => {
+  let n = 0;
+  for (const a of rides.docs.filter((d) => d.flags["cpr-neon-hub"]?.acpa2070)) {
+    const byId = new Map(a.items.map((i) => [i._id, i]));
+    for (const g of a.items.filter((i) => i.type === "weapon")) {
+      const mods = g.system.installedItems.list.map((id) => byId.get(id)).filter((u) => u?.flags["cpr-neon-hub"]?.rangeMod);
+      assert.ok(mods.length <= 1, `${a.name}: ${g.name} one at a time`);
+      assert.ok(!g.system.installedItems.list.map((id) => byId.get(id)).some((u) => /^Range Table Modification/.test(u.name)), `${a.name}: no old generic entry`);
+      if (!mods.length) continue;
+      n++;
+      assert.equal(g.system.dvTable, mods[0].flags["cpr-neon-hub"].rangeMod.table, `${a.name}: ${g.name} on its barrel's table`);
+      assert.ok(mods[0].flags["cpr-neon-hub"].rangeMod.tables.includes(g.flags["cpr-neon-hub"].dvTableBase), `${a.name}: ${g.name} saved the table it fits on`);
+    }
+  }
+  assert.ok(n >= 4, `${n} ACPA guns with a barrel`);
+});

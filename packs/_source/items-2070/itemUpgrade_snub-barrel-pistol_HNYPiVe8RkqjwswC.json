@@ -1,0 +1,65 @@
+{
+  "_id": "HNYPiVe8RkqjwswC",
+  "_key": "!items!HNYPiVe8RkqjwswC",
+  "name": "Snub Barrel (Pistol)",
+  "type": "itemUpgrade",
+  "img": "modules/cpr-neon-hub/assets/items/upgrades/attachment.svg",
+  "folder": "IoMwA20uu5edlTZw",
+  "sort": 4751,
+  "system": {
+    "type": "weapon",
+    "size": 0,
+    "price": {
+      "market": 100
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>A Range Table Modification for Pistols: the weapon fires on the Snubnose Pistol range table (DV Snubnose Pistol) instead of its own, and nothing else about it changes.</p><p>Takes no Attachment Slot and fits Exotic Weapons that use one of these tables. One Range Table Modification at a time: take the old one out before another goes in. None while a Conversion Kit is in.</p><p><strong>Fits:</strong> weapons on the Pistol, Snubnose Pistol or Long Barrel Pistol table<br><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Attachments &amp; Mods</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Attachments & Mods"
+      },
+      "rangeMod": {
+        "table": "DV Snubnose Pistol",
+        "family": "pistol",
+        "option": "Snub Barrel",
+        "tables": [
+          "DV Pistol",
+          "DV Snubnose Pistol",
+          "DV Long Barrel Pistol",
+          "DV Long-Barrel Pistol"
+        ],
+        "weaponTypes": [
+          "heavyPistol",
+          "medPistol",
+          "vHeavyPistol"
+        ]
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

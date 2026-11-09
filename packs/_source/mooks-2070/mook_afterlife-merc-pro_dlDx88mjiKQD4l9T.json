@@ -1,0 +1,3209 @@
+{
+  "_id": "dlDx88mjiKQD4l9T",
+  "_key": "!actors!dlDx88mjiKQD4l9T",
+  "name": "Afterlife Merc (Pro)",
+  "type": "mook",
+  "img": "modules/cpr-neon-hub/assets/art/mooks/mercs-afterlife-merc-pro.webp",
+  "folder": "NZgYnv1ozGk798Sv",
+  "system": {
+    "stats": {
+      "int": {
+        "value": 0
+      },
+      "ref": {
+        "value": 8
+      },
+      "dex": {
+        "value": 0
+      },
+      "tech": {
+        "value": 0
+      },
+      "cool": {
+        "value": 6
+      },
+      "will": {
+        "value": 0
+      },
+      "move": {
+        "value": 6
+      },
+      "body": {
+        "value": 7
+      },
+      "luck": {
+        "value": 0,
+        "max": 0
+      },
+      "emp": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 40,
+        "max": 40
+      }
+    },
+    "reputation": {
+      "value": 4
+    },
+    "roleInfo": {
+      "activeRole": "Solo"
+    },
+    "installedItems": {
+      "allowed": true,
+      "allowedTypes": [
+        "cyberware"
+      ],
+      "list": [
+        "WDT3QYumJuq0Vopa",
+        "mX3ErxBMRKxm3R7z",
+        "q7yGsYhMQZuJvTPM",
+        "oqdABijhXzE2ZCmV",
+        "kTBT72hn8XC6N9Lz",
+        "pR333Fp39hN85GWj",
+        "DRuvkaP5GLliMmPe"
+      ]
+    },
+    "information": {
+      "description": "<p>The bar's real pros, running high-paying jobs for quiet clients with a near-perfect record. Close to legend status.</p><p><em>Mercs:</em> Freelance edgerunners, from first-gig blazers to near-legends.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": "<p><strong>Threat:</strong> Elite Mini-Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 10 • <strong>COM#:</strong> 15 • <strong>Role:</strong> Solo: Combat Awareness 5</p><p>Local Expert (GM's Choice) 8 (the GM picks which)</p><p>Martial Arts (GM's Choice) 13 (the GM picks which)</p><p>Weapon: GM's Choice (Cost Limit: 5,000eb) [Typically an Excellent Quality Weapon] (ROF 1, ?)</p><p>Melee SP (head/body): 6/6</p>"
+    }
+  },
+  "items": [
+    {
+      "name": "Accounting",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 133
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "1KUBwNO8XUXV6WTS",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.1KUBwNO8XUXV6WTS"
+    },
+    {
+      "name": "Acting",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "performanceSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "cmsfZVxMuKcnJbI9",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.cmsfZVxMuKcnJbI9"
+    },
+    {
+      "name": "Air Vehicle Tech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 140
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "f3cK8rIixEVG7MAB",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.f3cK8rIixEVG7MAB"
+    },
+    {
+      "name": "Animal Handling",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 133
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "1JV0A21s3yuY5b2A",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.1JV0A21s3yuY5b2A"
+    },
+    {
+      "name": "Archery",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "rangedweaponSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 7,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "r0ISNX2M496XzE4F",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.r0ISNX2M496XzE4F"
+    },
+    {
+      "name": "Athletics",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 12,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "EzUo90r6RVNp2B9E",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.EzUo90r6RVNp2B9E"
+    },
+    {
+      "name": "Autofire",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "rangedweaponSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 7,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 138
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "3ZOHREz9jqSwhYSF",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.3ZOHREz9jqSwhYSF"
+    },
+    {
+      "name": "Basic Tech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 140
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "nDbTAeLzfzVbYRTo",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.nDbTAeLzfzVbYRTo"
+    },
+    {
+      "name": "Brawling",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "fightingSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 12,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 136
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "XDopfhdPyZSNnNEA",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.XDopfhdPyZSNnNEA"
+    },
+    {
+      "name": "Bribery",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 138
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "YKw0v4b78raPfwJu",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.YKw0v4b78raPfwJu"
+    },
+    {
+      "name": "Bureaucracy",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 133
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "1SQs3vDN4IOdurce",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.1SQs3vDN4IOdurce"
+    },
+    {
+      "name": "Business",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 134
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "OiySLbhGw8mZXOc0",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.OiySLbhGw8mZXOc0"
+    },
+    {
+      "name": "Composition",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 134
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "qJ3QysjE9gGuZTN9",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.qJ3QysjE9gGuZTN9"
+    },
+    {
+      "name": "Conceal/Reveal Object",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "awarenessSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "f1iQSdjXESr1Hfq0",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.f1iQSdjXESr1Hfq0"
+    },
+    {
+      "name": "Concentration",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "awarenessSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 11,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "will"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "g4CgyKHTnGwkZYCO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.g4CgyKHTnGwkZYCO"
+    },
+    {
+      "name": "Contortionist",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "BzhxX0y67e9uYQYs",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.BzhxX0y67e9uYQYs"
+    },
+    {
+      "name": "Conversation",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 138
+        },
+        "stat": "emp"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "NxXGIFjHhutHFSn2",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.NxXGIFjHhutHFSn2"
+    },
+    {
+      "name": "Criminology",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 134
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "bPR8Mkiz3cWBLHu2",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.bPR8Mkiz3cWBLHu2"
+    },
+    {
+      "name": "Cryptography",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 134
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "XRMCYnY2Rr5m26W7",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.XRMCYnY2Rr5m26W7"
+    },
+    {
+      "name": "Cybertech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 140
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "V4XsVFToNI0BQJeN",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.V4XsVFToNI0BQJeN"
+    },
+    {
+      "name": "Dance",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "Upd4hjOOhVzttDk8",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.Upd4hjOOhVzttDk8"
+    },
+    {
+      "name": "Deduction",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 134
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "FHlmTdLWgZBKT1XO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.FHlmTdLWgZBKT1XO"
+    },
+    {
+      "name": "Demolitions",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 140
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "dN1woNgcGMRiqtmH",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.dN1woNgcGMRiqtmH"
+    },
+    {
+      "name": "Drive Land Vehicle",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "controlSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "HijiaCd5q3Hst8Jk",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.HijiaCd5q3Hst8Jk"
+    },
+    {
+      "name": "Education",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 6,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 135
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "GumNiUDHN9RRScn1",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.GumNiUDHN9RRScn1"
+    },
+    {
+      "name": "Electronics/Security Tech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "dXC1jaNcRki8jCfc",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.dXC1jaNcRki8jCfc"
+    },
+    {
+      "name": "Endurance",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "will"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "FmfmgQW6CIPF9QjL",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.FmfmgQW6CIPF9QjL"
+    },
+    {
+      "name": "Evasion",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "fightingSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 14,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "1OP0ucAYWHZyQezO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.1OP0ucAYWHZyQezO"
+    },
+    {
+      "name": "First Aid",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 8,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "g0l66KNaTgKygjPa",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.g0l66KNaTgKygjPa"
+    },
+    {
+      "name": "Forgery",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "7mMdz5L8YcWvIE2r",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.7mMdz5L8YcWvIE2r"
+    },
+    {
+      "name": "Gamble",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 135
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "LnSqES7Qn4ylIf8a",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.LnSqES7Qn4ylIf8a"
+    },
+    {
+      "name": "Handgun",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "rangedweaponSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 7,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "VWukS0DWvcO11NZg",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.VWukS0DWvcO11NZg"
+    },
+    {
+      "name": "Heavy Weapons",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "rangedweaponSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 7,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "AbC7xKKEQD0ndZE2",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.AbC7xKKEQD0ndZE2"
+    },
+    {
+      "name": "Human Perception",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "emp"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "xbSuVZQfPnwpBK8Q",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.xbSuVZQfPnwpBK8Q"
+    },
+    {
+      "name": "Interrogation",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "P69dRZjQScSv09oN",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.P69dRZjQScSv09oN"
+    },
+    {
+      "name": "Land Vehicle Tech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "LXFkiFeCnwoOqGWa",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.LXFkiFeCnwoOqGWa"
+    },
+    {
+      "name": "Language (Streetslang)",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "language",
+        "source": {
+          "book": "Core",
+          "page": 135
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "cTfVn0XQ5vcDn7qe",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.cTfVn0XQ5vcDn7qe"
+    },
+    {
+      "name": "Library Search",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 135
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "5hJ4DD8yEfBCJikO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.5hJ4DD8yEfBCJikO"
+    },
+    {
+      "name": "Lip Reading",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "awarenessSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "W1oiSFY5JnkYgZn9",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.W1oiSFY5JnkYgZn9"
+    },
+    {
+      "name": "Local Expert (Your Home)",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "educationSkills",
+        "core": false,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 135
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "g3D1SPPP8Ghbqc8A",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.g3D1SPPP8Ghbqc8A"
+    },
+    {
+      "name": "Melee Weapon",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "fightingSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 15,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 137
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "5LJOZnmXXbMCjAJO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.5LJOZnmXXbMCjAJO"
+    },
+    {
+      "name": "Paint/Draw/Sculpt",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "5ZupGpzMiCvpcGIO",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.5ZupGpzMiCvpcGIO"
+    },
+    {
+      "name": "Paramedic",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "v3dHgE5XM4Hm2P1z",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.v3dHgE5XM4Hm2P1z"
+    },
+    {
+      "name": "Perception",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "awarenessSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 10,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "ioPrPac51Ubr79nB",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.ioPrPac51Ubr79nB"
+    },
+    {
+      "name": "Personal Grooming",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "dsO2IS9xQrmLoB0G",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.dsO2IS9xQrmLoB0G"
+    },
+    {
+      "name": "Persuasion",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 4,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "oyBqbET6hCwc39lb",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.oyBqbET6hCwc39lb"
+    },
+    {
+      "name": "Photography/Film",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 141
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "BBARddMce5zdNxly",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.BBARddMce5zdNxly"
+    },
+    {
+      "name": "Pick Lock",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 142
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "80qYvW5IewYiJvMq",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.80qYvW5IewYiJvMq"
+    },
+    {
+      "name": "Pick Pocket",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 142
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "8xh7YYkMIQW1sor5",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.8xh7YYkMIQW1sor5"
+    },
+    {
+      "name": "Pilot Air Vehicle",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "controlSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "difficult",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "xzwcdXTSKczX9tOZ",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.xzwcdXTSKczX9tOZ"
+    },
+    {
+      "name": "Pilot Sea Vehicle",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "controlSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "Ug0aSfM0RtEB1M5W",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.Ug0aSfM0RtEB1M5W"
+    },
+    {
+      "name": "Resist Torture/Drugs",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 10,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "will"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "uQKffFmxDfiYdIo5",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.uQKffFmxDfiYdIo5"
+    },
+    {
+      "name": "Riding",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "controlSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 133
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "vV6tpDPLJRFW040l",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.vV6tpDPLJRFW040l"
+    },
+    {
+      "name": "Sea Vehicle Tech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 142
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "7xXYxVbBSwlOVj9U",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.7xXYxVbBSwlOVj9U"
+    },
+    {
+      "name": "Shoulder Arms",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "rangedweaponSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 7,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 138
+        },
+        "stat": "ref"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "KneVDKaxuzi3UCMV",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.KneVDKaxuzi3UCMV"
+    },
+    {
+      "name": "Stealth",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": true,
+        "category": "bodySkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 12,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 132
+        },
+        "stat": "dex"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "oYQjbPuPg5B9jFCF",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.oYQjbPuPg5B9jFCF"
+    },
+    {
+      "name": "Streetwise",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 4,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "zjKEX3tPPkjMqoVt",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.zjKEX3tPPkjMqoVt"
+    },
+    {
+      "name": "Tactics",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 9,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 136
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "atCcghds3dnmDHOm",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.atCcghds3dnmDHOm"
+    },
+    {
+      "name": "Tracking",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "awarenessSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 131
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "NNElgn5RoigEhy69",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.NNElgn5RoigEhy69"
+    },
+    {
+      "name": "Trading",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "taqKgYxYTnu33OZ8",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.taqKgYxYTnu33OZ8"
+    },
+    {
+      "name": "Wardrobe & Style",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "socialSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 139
+        },
+        "stat": "cool"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "yIGlqxVVGq4vOVxm",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.yIGlqxVVGq4vOVxm"
+    },
+    {
+      "name": "Weaponstech",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "techniqueSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 142
+        },
+        "stat": "tech"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "Nn2XakR5p7AG0lDo",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.Nn2XakR5p7AG0lDo"
+    },
+    {
+      "name": "Wilderness Survival",
+      "type": "skill",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "basic": false,
+        "category": "educationSkills",
+        "core": true,
+        "description": {
+          "value": ""
+        },
+        "difficulty": "typical",
+        "favorite": false,
+        "level": 0,
+        "skillType": "generic",
+        "source": {
+          "book": "Core",
+          "page": 136
+        },
+        "stat": "int"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "bPZQjBhFqxOG0Gq4",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.bPZQjBhFqxOG0Gq4"
+    },
+    {
+      "name": "External (7 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": true,
+        "damage": "1d6",
+        "description": {
+          "value": ""
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "hospital",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [
+            "PSOdhqEMJsGmlW93"
+          ],
+          "slots": 7,
+          "usedSlots": 1
+        },
+        "isElectronic": false,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 1,
+        "source": {
+          "book": "Core",
+          "page": 364
+        },
+        "type": "cyberwareExternal",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "",
+        "weaponType": ""
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "kTBT72hn8XC6N9Lz",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.kTBT72hn8XC6N9Lz"
+    },
+    {
+      "name": "Fashionware (7 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": true,
+        "damage": "1d6",
+        "description": {
+          "value": ""
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "mall",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [],
+          "slots": 7,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 1,
+        "source": {
+          "book": "Core",
+          "page": 358
+        },
+        "type": "fashionware",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "",
+        "weaponType": ""
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "pR333Fp39hN85GWj",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.pR333Fp39hN85GWj"
+    },
+    {
+      "name": "Internal (7 Option Slots)",
+      "type": "cyberware",
+      "img": "icons/svg/item-bag.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": true,
+        "damage": "1d6",
+        "description": {
+          "value": ""
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "hospital",
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [
+            "tAidjcpEB6LjVFj2"
+          ],
+          "slots": 7,
+          "usedSlots": 1
+        },
+        "isElectronic": false,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 1,
+        "source": {
+          "book": "Core",
+          "page": 362
+        },
+        "type": "cyberwareInternal",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "",
+        "weaponType": ""
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "DRuvkaP5GLliMmPe",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.DRuvkaP5GLliMmPe"
+    },
+    {
+      "name": "Martial Arts",
+      "type": "weapon",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "critFailEffect": "jammed",
+        "damage": "3d6",
+        "description": {
+          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        },
+        "dvTable": "",
+        "equipped": "equipped",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "handsReq": 1,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "isRanged": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "quality": "standard",
+        "revealed": true,
+        "rof": 2,
+        "source": {
+          "book": "Core",
+          "page": 176
+        },
+        "unarmedAutomaticCalculation": false,
+        "usage": "equipped",
+        "usesType": "magazine",
+        "weaponSkill": "Brawling",
+        "weaponType": "martialArts"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_id": "hNqyAA0urLzSea9p",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.hNqyAA0urLzSea9p"
+    },
+    {
+      "name": "Subdermal Armor",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "description": {
+          "value": "<p><strong>Afterlife Pro Merc:</strong> TUp Subdermal Armor</p>"
+        },
+        "price": {
+          "market": 0
+        },
+        "penalty": 0,
+        "usage": "equipped",
+        "isHeadLocation": true,
+        "isBodyLocation": true,
+        "headLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "bodyLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "equipped": "equipped"
+      },
+      "_id": "4UgSn6ILNF6IVvO7",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.4UgSn6ILNF6IVvO7",
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      }
+    },
+    {
+      "_id": "WDT3QYumJuq0Vopa",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.WDT3QYumJuq0Vopa",
+      "name": "Cyberleg",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "lqPVj5QDCjWQvNGL"
+          ],
+          "slots": 3,
+          "usedSlots": 2
+        },
+        "description": {
+          "value": "<p>Foundation. Comes with a free Standard Foot. Most leg options must be paired.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "lqPVj5QDCjWQvNGL",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.lqPVj5QDCjWQvNGL",
+      "name": "Jump Booster",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. Each m/yd of a running jump costs 1 instead of 2.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "mX3ErxBMRKxm3R7z",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.mX3ErxBMRKxm3R7z",
+      "name": "Cyberleg",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
+      "system": {
+        "type": "cyberLeg",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "egbXVjk1qLTtOvrh"
+          ],
+          "slots": 3,
+          "usedSlots": 2
+        },
+        "description": {
+          "value": "<p>Foundation. Comes with a free Standard Foot. Most leg options must be paired.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "egbXVjk1qLTtOvrh",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.egbXVjk1qLTtOvrh",
+      "name": "Jump Booster",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Paired. Each m/yd of a running jump costs 1 instead of 2.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "q7yGsYhMQZuJvTPM",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.q7yGsYhMQZuJvTPM",
+      "name": "Popup Grenade Launcher",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_grenade_launcher.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>One-handed launcher, 1 grenade, Smartgun Link only. Concealed; drawing and stowing are free.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "tAidjcpEB6LjVFj2",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.tAidjcpEB6LjVFj2",
+      "name": "Nasal Filters",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/nasal_filters.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 2,
+          "roll": "1d6/2"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Immune to inhaled toxins. Switching them off is free.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 2 (1d6/2)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "oqdABijhXzE2ZCmV",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.oqdABijhXzE2ZCmV",
+      "name": "Neuroport",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware"
+          ],
+          "list": [
+            "h0R16EgWPPQ2smDJ",
+            "zpxE3siN6vacI8c7",
+            "nvAVypQwtPbgiwf9"
+          ],
+          "slots": 5,
+          "usedSlots": 3
+        },
+        "description": {
+          "value": "<p>Required for all non-medical cyberware. Contains: <strong>Neural Link</strong> (5 Neuralware slots, none used by the rest), <strong>Holophone</strong>, <strong>Biomonitor</strong>, <strong>Virtu</strong> (virtual experiences; full immersion when deep diving), <strong>HUD</strong> (labels, transcripts, subtitles; shown in any cybereye, replacing the Chyron), <strong>two Shard Slots</strong> (chipware sockets) and a <strong>Personal Link</strong> (pull-out interface plug). Has a basic firewall (Chapter 10 of the Core Rules).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "h0R16EgWPPQ2smDJ",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.h0R16EgWPPQ2smDJ",
+      "name": "Kerenzikov",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Replaces the old Reflex Co-Processor and eases the load on your Neuroport. You can dodge ranged attacks whatever your REF, and get +2 to notice Ambushes.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "zpxE3siN6vacI8c7",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.zpxE3siN6vacI8c7",
+      "name": "Pain Editor",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "notApplicable",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Chipware. Ignore the Seriously Wounded Wound State.</p><p><strong>Install:</strong> Notapplicable • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "nvAVypQwtPbgiwf9",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.nvAVypQwtPbgiwf9",
+      "name": "Sandevistan",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Speedware (only one per user). Activate as an Action: +3 Initiative for 1 minute (raise your current Initiative by 3 if you're already in a fight; it drops back when it ends). 1-hour cooldown.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!dlDx88mjiKQD4l9T.nvAVypQwtPbgiwf9.lfOiTCwDPtUI1a6w",
+          "name": "Sandevistan (active)",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.initiative",
+              "mode": 2,
+              "value": "3",
+              "priority": null
+            }
+          ],
+          "disabled": true,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "combat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "PSOdhqEMJsGmlW93",
+      "_key": "!actors.items!dlDx88mjiKQD4l9T.PSOdhqEMJsGmlW93",
+      "name": "Subdermal Armor",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
+      "system": {
+        "type": "cyberwareExternal",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Body and head SP11. Same stacking and self-repair rules as Skin Weave.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Afterlife Merc (Pro)",
+    "actorLink": false,
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/mooks/mercs-afterlife-merc-pro.webp"
+    },
+    "width": 1,
+    "height": 1,
+    "disposition": -1,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#ff2a6d",
+        "background": "#07070b"
+      }
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "mook2070": {
+        "slug": "mercs-afterlife-merc-pro",
+        "faction": "Mercs",
+        "threat": "Elite Mini-Boss"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  },
+  "sort": 6400
+}

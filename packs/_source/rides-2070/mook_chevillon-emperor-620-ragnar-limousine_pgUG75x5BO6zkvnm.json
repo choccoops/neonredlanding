@@ -3,7 +3,7 @@
   "_key": "!actors!pgUG75x5BO6zkvnm",
   "name": "Chevillon Emperor 620 Ragnar Limousine",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/compactCar.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/chevillon-emperor-620-ragnar-limousine.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Chevillon Emperor 620 Ragnar Limousine",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/compactCar.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/chevillon-emperor-620-ragnar-limousine.webp"
     },
     "width": 1,
     "height": 1,
@@ -76,6 +76,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

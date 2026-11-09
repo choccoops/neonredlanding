@@ -3,7 +3,7 @@
   "_key": "!actors!psE1BryRJqWs7GO3",
   "name": "Trauma Team Atlus",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/aerodyne.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/trauma-team-atlus.webp",
   "folder": "m9502MsBefPanNon",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Trauma Team Atlus",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/aerodyne.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/trauma-team-atlus.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!YXbaAO1bAAh7DJmw",
   "name": "Chevillon Centurion 1000 (Dual-Axle)",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/chevillon-centurion-1000-dual-axle.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Chevillon Centurion 1000 (Dual-Axle)",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/chevillon-centurion-1000-dual-axle.webp"
     },
     "width": 2,
     "height": 2,
@@ -39,6 +39,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!DOEl25QtrUycfI3U",
   "name": "Brennan Apollo \"Frankenbike\"",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/brennan-apollo-frankenbike.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Brennan Apollo \"Frankenbike\"",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/brennan-apollo-frankenbike.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

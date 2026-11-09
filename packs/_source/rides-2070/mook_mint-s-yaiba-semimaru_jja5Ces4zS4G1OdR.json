@@ -3,7 +3,7 @@
   "_key": "!actors!jja5Ces4zS4G1OdR",
   "name": "Mint’s Yaiba Semimaru",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/superCar_iconic.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/mints-yaiba-semimaru.webp",
   "folder": "fRqK01L53BK8wVuy",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Mint’s Yaiba Semimaru",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/superCar_iconic.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/mints-yaiba-semimaru.webp"
     },
     "width": 1,
     "height": 1,
@@ -76,6 +76,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!pmBfvIIijqmsQXJc",
   "name": "Yaiba ASM-R250 Muramasa",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/superbike.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/yaiba-asm-r250-muramasa.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Yaiba ASM-R250 Muramasa",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/superbike.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/yaiba-asm-r250-muramasa.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

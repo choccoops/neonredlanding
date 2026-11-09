@@ -3,7 +3,7 @@
   "_key": "!actors!guCuNaxAAgRA5IJ4",
   "name": "Chevillon Legatus 450 Aquila",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/compactCar_iconic.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/chevillon-legatus-450-aquila.webp",
   "folder": "fRqK01L53BK8wVuy",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Chevillon Legatus 450 Aquila",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/compactCar_iconic.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/chevillon-legatus-450-aquila.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

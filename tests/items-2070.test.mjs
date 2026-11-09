@@ -223,6 +223,15 @@ test("vehicles and ACPAs open on MMuton's vehicle sheet with seats it understand
   assert.equal(pets.length, 8, "the eight cyberpets");
 });
 
+test("every vehicle, ACPA and cyberpet has its own art, on the sheet and the ringed token", () => {
+  for (const a of rides.docs) {
+    assert.match(a.img, /^modules\/cpr-neon-hub\/assets\/art\/rides\/.+\.webp$/, a.name);
+    assert.ok(existsSync(path.join(root, a.img.replace("modules/cpr-neon-hub/", ""))), `${a.img} exists`);
+    assert.equal(a.prototypeToken.texture.src, a.img);
+    assert.equal(a.prototypeToken.ring?.enabled, true, `${a.name} has a token ring`);
+  }
+});
+
 test("the Martial Arts Forms: a Skill and a weapon each, as Cyberpunk RED's own Martial Arts", () => {
   const skills = items.docs.filter((d) => d.type === "skill");
   assert.equal(skills.length, 34);

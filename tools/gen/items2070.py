@@ -925,8 +925,17 @@ def seats_for(vid, kind, seats, notes, bike):
     return out
 
 
+RIDE_ART = f"modules/{MOD}/assets/art/rides"
+
+
 def actor(name, img, system, items, path, flags, token=None):
     aid = rid("actor", name.lower())
+    # generated art (assets/art/rides/<slug>.webp) replaces the type icon, on the sheet and the token
+    slug = re.sub(r"[^a-z0-9]+", "-", name.lower().replace("’", "").replace("‘", "")).strip("-")
+    ring = {}
+    if os.path.exists(os.path.join(ROOT, "assets/art/rides", f"{slug}.webp")):
+        img = f"{RIDE_ART}/{slug}.webp"
+        ring = {"ring": {"enabled": True, "colors": {"ring": "#05d9e8", "background": "#07070b"}}}
     embedded = []
     for it in items:
         e = json.loads(json.dumps(it))
@@ -940,7 +949,7 @@ def actor(name, img, system, items, path, flags, token=None):
     doc = {"_id": aid, "_key": f"!actors!{aid}", "name": name, "type": "mook", "img": img, "folder": folder("rides-2070", path),
            "system": system, "items": embedded, "effects": [],
            "prototypeToken": {"name": name, "actorLink": True, "texture": {"src": img}, "width": 1, "height": 1, "disposition": 0,
-                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **(token or {})},
+                              "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **ring, **(token or {})},
            "flags": {**MIGRATION, **flags}, "ownership": {"default": 0}}
     ACTORS[aid] = doc
     return doc

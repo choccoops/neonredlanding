@@ -3,7 +3,7 @@
   "_key": "!actors!3anQvs6icgOZ3mF7",
   "name": "Rayfield Excalibur \"Destination\"",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/aerodyne.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/rayfield-excalibur-destination.webp",
   "folder": "m9502MsBefPanNon",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Rayfield Excalibur \"Destination\"",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/aerodyne.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/rayfield-excalibur-destination.webp"
     },
     "width": 2,
     "height": 2,
@@ -39,6 +39,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

@@ -3,7 +3,7 @@
   "_key": "!actors!hrFwbTRkerXRWElb",
   "name": "Thorton Colby CST40",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/thorton-colby-cst40.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -30,7 +30,7 @@
     "name": "Thorton Colby CST40",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/pickup.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/thorton-colby-cst40.webp"
     },
     "width": 1,
     "height": 1,
@@ -39,6 +39,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

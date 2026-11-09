@@ -3,7 +3,7 @@
   "_key": "!actors!Lf87JZksTqhmlTyt",
   "name": "Sanroo Hello Cutie Pwr-Up BigSuit",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/sanroo-hello-cutie-pwr-up-bigsuit.webp",
   "folder": "ZvXrSxbJyiqWhIfU",
   "system": {
     "stats": {
@@ -924,7 +924,7 @@
     "name": "Sanroo Hello Cutie Pwr-Up BigSuit",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/acpa.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/sanroo-hello-cutie-pwr-up-bigsuit.webp"
     },
     "width": 1,
     "height": 1,
@@ -933,6 +933,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

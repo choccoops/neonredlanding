@@ -3,7 +3,7 @@
   "_key": "!actors!b4gUNISY2Lxt8u9t",
   "name": "Quadra Type-66 “Mistral” (Rogue’s Car)",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar_iconic.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/quadra-type-66-mistral-rogues-car.webp",
   "folder": "fRqK01L53BK8wVuy",
   "system": {
     "stats": {
@@ -67,7 +67,7 @@
     "name": "Quadra Type-66 “Mistral” (Rogue’s Car)",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/sportsCar_iconic.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/quadra-type-66-mistral-rogues-car.webp"
     },
     "width": 2,
     "height": 2,
@@ -76,6 +76,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

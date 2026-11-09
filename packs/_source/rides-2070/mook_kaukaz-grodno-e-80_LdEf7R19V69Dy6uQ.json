@@ -3,7 +3,7 @@
   "_key": "!actors!LdEf7R19V69Dy6uQ",
   "name": "Kaukaz Grodno E-80",
   "type": "mook",
-  "img": "modules/cpr-neon-hub/assets/items/vehicles/apc.svg",
+  "img": "modules/cpr-neon-hub/assets/art/rides/kaukaz-grodno-e-80.webp",
   "folder": "4ssnKq3Dbwqrm9Z8",
   "system": {
     "stats": {
@@ -150,7 +150,7 @@
     "name": "Kaukaz Grodno E-80",
     "actorLink": true,
     "texture": {
-      "src": "modules/cpr-neon-hub/assets/items/vehicles/apc.svg"
+      "src": "modules/cpr-neon-hub/assets/art/rides/kaukaz-grodno-e-80.webp"
     },
     "width": 2,
     "height": 2,
@@ -159,6 +159,13 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": "#05d9e8",
+        "background": "#07070b"
+      }
     }
   },
   "flags": {

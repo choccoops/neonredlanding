@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.22.3
+
+- **Fixed: a wrong (Basic) on 2070s ammo in the Load Ammo dialog.** Ammo of a kind Cyberpunk RED has no type for (Explosive, Burrowing, Serrated, Harpoon and Hypo arrows, the Laser, Sonic and Recon grenades, HVAP and Combo Casings rounds, the ModBalls and the rest) was typed Basic, and the dialog adds the type to the name: *Arrow (Explosive) (Basic)*. They're the system's *Special* now, as its own odd ammo is (*Grenade (Arachnid)*). The type only labels the ammo; damage and ablation don't change.
+
 ## 1.22.2
 
 - **Fixed: the Dayton M405 AdZep's token is 5×5**, like the other airships (it was 2×2).

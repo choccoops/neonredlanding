@@ -1,0 +1,60 @@
+{
+  "_id": "qBwjAEKnSKpFAHm3",
+  "_key": "!items!qBwjAEKnSKpFAHm3",
+  "name": "Arrow (Rubber)",
+  "type": "ammo",
+  "img": "systems/cyberpunk-red-core/icons/compendium/ammo/bow_rubber.png",
+  "folder": "QGIjpA7AyhOoeN9z",
+  "sort": 3690,
+  "system": {
+    "variety": "arrow",
+    "type": "rubber",
+    "amount": 10,
+    "price": {
+      "market": 10
+    },
+    "ablationValue": 0,
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "overrides": {
+      "autofire": {
+        "minimum": 3,
+        "mode": "none",
+        "value": -1
+      },
+      "damage": {
+        "minimum": "1d6",
+        "mode": "none",
+        "value": "3d6"
+      }
+    },
+    "description": {
+      "value": "<p>Arrows, bullets, slugs. Can't cause Critical Injuries or ablate armor. A target above 1 HP that would drop below 0 is left at 1 HP.</p><p><strong>Cost:</strong> 10eb (Cheap) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Ammo & Explosives"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

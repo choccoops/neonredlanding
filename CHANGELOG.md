@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.22.1
+
+- **Fixed: bows and arrows load the way Cyberpunk RED's do.** A bow holds one arrow, nocked as part of the Attack action (no Reload Action): load a stack of arrows and reload after each shot.
+  - The generic **Bows / Crossbows** and the Nomad Laser-Bow held no arrows at all; every bow now holds one, with the Archery rule in its description. The crossbows whose entries give them a cassette, cylinder or magazine (Wasp, Hachi, Orion, WIP Crossbow, Hush, Xiezi, Twin Fang) keep it, with its Reload Action.
+  - Arrows are named the system's way (*Arrow (Poison)*) in *Ammo & Explosives › Arrows*, come in stacks of 10 priced per 10 like the system's, and carry its damage settings and ablation (Poison 2d6, Biotoxin 3d6, Sleep and the Hypo arrow no damage; Poison, Biotoxin and Rubber don't ablate).
+  - No more arrow / bullet hybrids: *Serrated Arrow / Hollow Point Ammunition* is now *Arrow (Serrated)* and *Hollow Point Ammunition (Heavy Pistol)* and the rest; likewise *Arrow (Warbow)* and *Overpressure Ammunition*. The stray *Improved Smart Ammunition (Arrow)* is gone (the book points arrows to Improved Smart Arrows).
+  - **Arrow icons:** the system's own for the kinds it has (Basic, Armor-Piercing, Biotoxin, Expansive, Incendiary, Poison, Rubber, Sleep, Smart), and new ones in its style for the rest.
+- **Mook ammo fits their guns.** Ammo a mook's guns couldn't load (no caliber given, or Corgo's caliber differs from the catalog gun) comes in the caliber they fire.
+
 ## 1.22.0
 
 - **Mook Pack.** A new compendium, *Neon Hub: Mook Pack (Corgo's 77)*, with enemies ready to drop on a scene:

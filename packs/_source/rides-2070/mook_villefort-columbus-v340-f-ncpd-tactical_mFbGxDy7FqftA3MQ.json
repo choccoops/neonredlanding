@@ -1,0 +1,157 @@
+{
+  "_id": "mFbGxDy7FqftA3MQ",
+  "_key": "!actors!mFbGxDy7FqftA3MQ",
+  "name": "Villefort Columbus V340-F NCPD \"Tactical\"",
+  "type": "mook",
+  "img": "modules/cpr-neon-hub/assets/art/rides/villefort-columbus-v340-f-ncpd-tactical.webp",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p>Compact Groundcar: Armored Chassis, Bulletproof Glass [x2], Combat Plow, Communications Center, Heavy Chassis, Reinforced Tires, Seating Upgrade [x3]. The NCPD's tactical van: a driver, a shotgun seat and a squad of six on benches in the back.</p><p><strong>Cost:</strong> 52,000eb<br><strong>Nomad:</strong> 7 (NCPD)<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 8<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "7cInyqUakYz093RW",
+      "name": "Villefort Columbus V340-F NCPD \"Tactical\" Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!mFbGxDy7FqftA3MQ.7cInyqUakYz093RW"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Villefort Columbus V340-F NCPD \"Tactical\"",
+    "actorLink": true,
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/villefort-columbus-v340-f-ncpd-tactical.webp"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "bzoeSB0vGhkjJNdR",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "1zc9OvBjyMqepvve",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "9MPB7fBhVYHuOngb",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 6,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 8,
+        "nomad": "7 (NCPD)",
+        "cost": "52,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

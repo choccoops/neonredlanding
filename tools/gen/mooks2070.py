@@ -425,8 +425,9 @@ class Mook:
         notes += "".join(f"<p>{esc(n)}</p>" for n in self.notes)
         blurb = TEXT["factions"][b["faction"]]["blurb"]
         desc = (f"<p>{esc(t['desc'])}</p><p><em>{esc(faction)}:</em> {esc(blurb)}</p>"
-                f"<p><small>Stat block from {esc(SOURCE)} by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content "
-                f"Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>")
+                + ("<p><small>Stat block by Neon Hub. Portrait:" if b.get("own") else
+                   f"<p><small>Stat block from {esc(SOURCE)} by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait:") +
+                f" Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>")
         system["information"] = {"description": desc, "alias": "", "history": "", "notes": notes}
         img = f"{ART}/{b['slug']}.webp"
         if not os.path.exists(os.path.join(ROOT, "assets/art/mooks", f"{b['slug']}.webp")):
@@ -435,12 +436,15 @@ class Mook:
         # named from the block's heading (Corgo's row labels repeat in two places); bosses by their own name
         prefix = PREFIX.get(faction, faction)
         name = b["name"] if b["layout"] == "full" else f"{prefix} {b['title']}".strip()
+        # a named mook with a top-down token (assets/art/tokens) uses it; everyone else shows the portrait in a ring
+        token = {"texture": {"src": img}, "ring": {"enabled": True, "colors": {"ring": "#ff2a6d", "background": "#07070b"}}}
+        if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{b['slug']}.webp")):
+            token = {"texture": {"src": f"modules/{G.MOD}/assets/art/tokens/{b['slug']}.webp"}, "ring": {"enabled": False}}
         return {"_id": self.aid, "_key": f"!actors!{self.aid}", "name": name, "type": "mook", "img": img, "folder": folder(faction),
                 "system": system, "items": self.items, "effects": [],
-                "prototypeToken": {"name": name, "actorLink": False, "texture": {"src": img}, "width": 1, "height": 1, "disposition": -1,
-                                   "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"},
-                                   "ring": {"enabled": True, "colors": {"ring": "#ff2a6d", "background": "#07070b"}}},
-                "flags": {**G.MIGRATION, G.MOD: {"mook2070": {"slug": b["slug"], "faction": faction, "threat": b["level"]}}},
+                "prototypeToken": {"name": name, "actorLink": False, "width": 1, "height": 1, "disposition": -1,
+                                   "displayName": 20, "displayBars": 20, "bar1": {"attribute": "derivedStats.hp"}, **token},
+                "flags": {**G.MIGRATION, G.MOD: {"mook2070": {"slug": b["slug"], "faction": faction, "threat": b["level"], **({"own": True} if b.get("own") else {})}}},
                 "ownership": {"default": 0}}
 
 
@@ -537,6 +541,7 @@ def main():
         c["system"]["installedItems"].update({"slots": 7, "allowedTypes": ["itemUpgrade", "cyberware"]})
     TEXT = json.load(open(os.path.join(HERE, "data/mook_text.json"), encoding="utf-8"))
     blocks = json.load(open(os.path.join(HERE, "data/mooks.json"), encoding="utf-8"))
+    blocks += json.load(open(os.path.join(HERE, "data/mooks_own.json"), encoding="utf-8"))["mooks"]  # Neon Hub's own blocks
     actors = [Mook(b, TEXT["mooks"][b["slug"]]).build() for b in blocks]
     drones = json.load(open(os.path.join(HERE, "data/drones.json"), encoding="utf-8"))["drones"]
     actors += [Drone(d).build() for d in drones]

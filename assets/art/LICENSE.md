@@ -9,3 +9,4 @@ Use them freely in your own games. Don't sell them, and don't use them to sugges
 
 The mooks' stat blocks are from *Corgo's 77 Collection: Mooks* by Corgopolis (patreon.com/Corgopolis), unofficial
 content under R. Talsorian Games' Homebrew Content Policy; their descriptions are Neon Hub's own wording.
+The REO Meatwagon and Combat Cab mooks (Sasquatch among them) are Neon Hub's own stat blocks.

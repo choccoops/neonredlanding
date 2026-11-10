@@ -1,0 +1,157 @@
+{
+  "_id": "pyHAO9t7xfxnjfGh",
+  "_key": "!actors!pyHAO9t7xfxnjfGh",
+  "name": "Chevillon Thrax 388 Jefferson \"Combat Cab\"",
+  "type": "mook",
+  "img": "modules/cpr-neon-hub/assets/art/rides/chevillon-thrax-388-jefferson-combat-cab.webp",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 20
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p><em>Compact Groundcar.</em> Upgrades: Armored Chassis, Bulletproof Glass [x2], Combat Plow, Communications Center, Heavy Chassis, Reinforced Tires. The battledrivers' cab: it takes a fare anywhere in the city, the Combat Zone included.</p><p><strong>Cost:</strong> 46,500eb<br><strong>Nomad:</strong> 7 (Combat Cab)<br><strong>SDP:</strong> 70<br><strong>SP:</strong> 13<br><strong>Seats:</strong> 5<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "rA2LPIISuwVaKBg0",
+      "name": "Chevillon Thrax 388 Jefferson \"Combat Cab\" Armor (SP13)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!pyHAO9t7xfxnjfGh.rA2LPIISuwVaKBg0"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Chevillon Thrax 388 Jefferson \"Combat Cab\"",
+    "actorLink": true,
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/chevillon-thrax-388-jefferson-combat-cab.webp"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "WdZFUqHchyq2TGP8",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "PmOdfLcPdxQmIkZF",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "kuyrbCQCaA4HNXGe",
+          "name": "Back Seat",
+          "builtIn": false,
+          "maxOccupants": 3,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 5,
+        "nomad": "7 (Combat Cab)",
+        "cost": "46,500eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

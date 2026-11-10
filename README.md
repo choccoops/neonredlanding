@@ -710,7 +710,7 @@ the Item Compendium (2070) chapter it's from:
   Goods, Lifestyle (2070s) and Fashion (2070s) compendiums isn't repeated, and Full Body
   Conversions come in their own module ([Full Borg](#full-borg-its-own-module)). The FBC chrome
   itself (the Biosystem, coatings, plating, hydraulics) is here too.
-- **Neon Hub: Vehicles, ACPAs & Cyberpets (2070s)**, 197 actors. Every vehicle in the 2070
+- **Neon Hub: Vehicles, ACPAs & Cyberpets (2070s)**, 204 actors. Every vehicle in the 2070
   catalog, the bicycles and the iconic rides, and the six ACPA production models, set up for
   [MMuton's CPR Vehicle Actor Sheet](https://github.com/MMuton/MMutons-Cyberpunk-Vehicle-Actor-Sheet):
   SDP as HP, the vehicle's SP as an armor plate, MOVE, and crew seats from its seat count (a driver,
@@ -851,9 +851,15 @@ faction:
   MOVE, HP, SP and CN from their entries, CN as the base of their attacks, Evasion and Perception,
   their weapons on the sheet (where a drone mounts a choice of guns, all of them, with a note), and
   a top-down token sized to the drone.
+- **Neon Hub's own**, 8 stat blocks built to the ranges of Corgo's (their sheets say "Stat block by
+  Neon Hub"): **REO Meatwagon**'s 2070s ground crews (Paramedic, Driver, Senior Medtech, Hired Gun)
+  and **Combat Cab** (Battledriver, Shotgun Rider, Veteran Battledriver, and the boss Sasquatch, who
+  drives the Iconic *Quadra Turbo-R “Bigfoot”*).
 
-Every mook has a painted portrait; the Corgo mooks' tokens show it in a token ring. Tokens are
-unlinked, so each one dropped is its own copy.
+Every mook has a painted portrait in its faction's Cyberpunk 2077 look, on a transparent
+background; its token shows it in a token ring. The named ones (Kurt Hansen, Melissa Rory, Sandayu
+Oda, Sasquatch) stand on the map as top-down tokens instead. Tokens are unlinked, so each one
+dropped is its own copy.
 
 ## Full Borg (its own module)
 

@@ -1,0 +1,104 @@
+{
+  "_id": "QX1mvGvQRYCpw0sq",
+  "_key": "!actors!QX1mvGvQRYCpw0sq",
+  "name": "Chevillon Centurion 1000 \"REO Meatwagon\"",
+  "type": "mook",
+  "img": "modules/cpr-neon-hub/assets/art/rides/chevillon-centurion-1000-reo-meatwagon.webp",
+  "folder": "4ssnKq3Dbwqrm9Z8",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 25
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 70,
+        "max": 70
+      }
+    },
+    "information": {
+      "description": "<p>Compact Groundcar: Ambulance Conversion, Combat Plow, Heavy Chassis, Improved Engine. A decades-old box ambulance on a truck frame, the kind REO still runs on its city contract in the 2070s. Its bay has beds for 4 patients and seats for 2 medics, with a cryopump, a medscanner and a Medtech Bag aboard. No armor, and the glass is only glass.</p><p><strong>Cost:</strong> 41,500eb<br><strong>Nomad:</strong> 6 (REO)<br><strong>SDP:</strong> 70<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 25<br><strong>Speed:</strong> 125 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Chevillon Centurion 1000 \"REO Meatwagon\"",
+    "actorLink": true,
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/chevillon-centurion-1000-reo-meatwagon.webp"
+    },
+    "width": 2,
+    "height": 2,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "e4lbn8Y53EKgw4UQ",
+          "name": "Driver's Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Drive Land Vehicle, Land Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "5KlbuafIwo53XutC",
+          "name": "Passenger Seat",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": false,
+          "bulletproofGlass": false,
+          "glassHpMax": 0,
+          "glassHp": 0,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "land",
+        "seats": 2,
+        "nomad": "6 (REO)",
+        "cost": "41,500eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

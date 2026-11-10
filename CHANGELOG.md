@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.24.0
+
+- **Art redrawn to the 2077 setting.** Every aerodyne, aerozep and ground vehicle has new sheet art
+  and a new top-down token, described from the game's own models: aerodynes with their thrusters
+  set into the hull (no rotors or pods), aerozeps as long slab-sided hulls on lift fans, the Kujira
+  as a twin-hull carrier with stepped decks, and each car, truck and bike line by its in-game shape
+  and colors. The looks are in `tools/gen/ride_prompts.py`.
+- **Boats, submersibles and ACPAs redrawn too.** The eight Hydrosubsidium, Arasaka and Zetatech
+  boats are angular offshore-powerboat wedges in the game's car styling, and each has its own
+  picture (the Bimac jetski and the Anguilla yacht had each other's). The six ACPAs are man-sized
+  hydraulic exoskeletons under bolted plate rather than giant robots, with tokens seen from straight
+  overhead. Token sizes follow the new art: Bimac 1 square (was 5), Viper 3 (was 5), Dumbo 3
+  (was 2), Anguilla 5 (was 1).
+- **Mook portraits redrawn and cut out.** All 136 portraits follow the factions' in-game looks and
+  have a transparent background, so they sit cleanly in a token ring and in overlays that show the
+  portrait on its own. The looks are in `tools/gen/data/mook_text.json`.
+- **Named mooks stand on the map as top-down tokens:** Kurt Hansen, Melissa Rory, Sandayu Oda and
+  Sasquatch. Any mook with a token in `assets/art/tokens/` uses it instead of the ring portrait.
+- **New vehicles** (an actor and an item each), liveries on their base model's numbers:
+  *Militech Manticore "MaxTac"*, *Militech Manticore "Herakles" (MaxTac)*, *Villefort Columbus
+  V340-F NCPD "Tactical"* (8 seats), *Chevillon Centurion 1000 "REO Meatwagon"* (an old box
+  ambulance), *Chevillon Thrax 388 Jefferson "Combat Cab"* and *Chevillon Emperor 620 Ragnar
+  "Combat Cab"*. And one Iconic: *Quadra Turbo-R “Bigfoot” (Sasquatch’s Cab)*, a supercar in a cab's
+  paint (MOVE 80, NOS ×3).
+- **New mooks, Neon Hub's own stat blocks** built to the ranges of Corgo's (their sheets say so):
+  **REO Meatwagon** (Paramedic, Driver, Senior Medtech, Hired Gun) and **Combat Cab** (Battledriver,
+  Shotgun Rider, Veteran Battledriver, and the boss **Sasquatch**: Moto 10, Drive Land Vehicle 20).
+- The two Surveyors' tokens are 3 squares like the other aerodynes (they were 1).
+
 ## 1.23.0
 
 - **Range Table Modifications change the table.** The book's one *Range Table Modification* entry is

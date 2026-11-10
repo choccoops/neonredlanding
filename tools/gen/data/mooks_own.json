@@ -1,0 +1,1007 @@
+{
+ "_about": "Neon Hub's own stat blocks, built like Corgo's (mooks.json) but written by us: REO Meatwagon's 2070s crews (the cut-rate ground counterpart of Trauma Team's four) and Combat Cab's battledrivers.",
+ "mooks": [
+  {
+   "faction": "REO Meatwagon",
+   "title": "Paramedic",
+   "level": "Hardened Mook",
+   "name": "REO Paramedic",
+   "roles": "Medtech: Medicine 3 (Cryo 1 ⦁ Medtech [Pharm] 2)",
+   "rep": 1,
+   "facedown": 5,
+   "hp": 30,
+   "ds": 5,
+   "sw": 0,
+   "com": 10,
+   "stats": {
+    "init": 6,
+    "cool": 4,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Medical Tech",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Paramedic",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 6,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Medium Pistol",
+     "rof": 2,
+     "dmg": "2d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "body": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Airhypo (w/ x1 Speedheal) x1",
+    "Biomonitor",
+    "Cryobag",
+    "Medscanner",
+    "Medtech Bag",
+    "Radio Communicator"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "reo-meatwagon-paramedic",
+   "own": true
+  },
+  {
+   "faction": "REO Meatwagon",
+   "title": "Driver",
+   "level": "Mook",
+   "name": "REO Driver",
+   "roles": "Nomad: Moto 2",
+   "rep": 0,
+   "facedown": 4,
+   "hp": 30,
+   "ds": 6,
+   "sw": 0,
+   "com": 10,
+   "stats": {
+    "init": 6,
+    "cool": 4,
+    "move": 4
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Drive Land Vehicle",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Land Vehicle Tech",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Paramedic",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 6,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shotgun",
+     "rof": 1,
+     "dmg": "5d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "body": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Flashlight",
+    "Radio Communicator",
+    "Tech Bag"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "reo-meatwagon-driver",
+   "own": true
+  },
+  {
+   "faction": "REO Meatwagon",
+   "title": "Senior Medtech",
+   "level": "Hardened Lieutenant",
+   "name": "REO Senior Medtech",
+   "roles": "Medtech: Medicine 4 (Cryo 1 ⦁ Surgery 1 ⦁ Medtech [Pharm] 2)",
+   "rep": 2,
+   "facedown": 6,
+   "hp": 35,
+   "ds": 5,
+   "sw": 0,
+   "com": 12,
+   "stats": {
+    "init": 6,
+    "cool": 5,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 13,
+     "with": ""
+    },
+    {
+     "name": "Medical Tech",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Paramedic",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Surgery",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Tactics",
+     "base": 8,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy Pistol",
+     "rof": 2,
+     "dmg": "3d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "body": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Airhypo (w/ x1 Speedheal) x2",
+    "Airhypo (w/ x1 Bounce Back) x1",
+    "Biomonitor",
+    "Cryobag",
+    "Medscanner",
+    "Medtech Bag",
+    "Radio Communicator"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "reo-meatwagon-senior-medtech",
+   "own": true
+  },
+  {
+   "faction": "REO Meatwagon",
+   "title": "Hired Gun",
+   "level": "Hardened Lieutenant",
+   "name": "REO Hired Gun",
+   "roles": "Solo: Combat Awareness 4",
+   "rep": 2,
+   "facedown": 7,
+   "hp": 40,
+   "ds": 7,
+   "sw": 0,
+   "com": 13,
+   "stats": {
+    "init": 7,
+    "cool": 5,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Tactics",
+     "base": 10,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Assault Rifle",
+     "rof": 1,
+     "dmg": "5d6"
+    },
+    {
+     "name": "Heavy Pistol",
+     "rof": 2,
+     "dmg": "3d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "body": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Radio Communicator",
+    "Flashlight"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "reo-meatwagon-hired-gun",
+   "own": true
+  },
+  {
+   "faction": "Combat Cab",
+   "title": "Battledriver",
+   "level": "Hardened Mook",
+   "name": "Combat Cab Battledriver",
+   "roles": "Nomad: Moto 3",
+   "rep": 2,
+   "facedown": 6,
+   "hp": 35,
+   "ds": 6,
+   "sw": 0,
+   "com": 11,
+   "stats": {
+    "init": 7,
+    "cool": 5,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Drive Land Vehicle",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Land Vehicle Tech",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Streetwise",
+     "base": 10,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Heavy Pistol",
+     "rof": 2,
+     "dmg": "3d6"
+    },
+    {
+     "name": "Shotgun",
+     "rof": 1,
+     "dmg": "5d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "body": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Neuroport",
+    "Radio Communicator",
+    "Flashlight"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "combat-cab-battledriver",
+   "own": true
+  },
+  {
+   "faction": "Combat Cab",
+   "title": "Shotgun Rider",
+   "level": "Hardened Mook",
+   "name": "Combat Cab Shotgun Rider",
+   "roles": "Solo: Combat Awareness 3",
+   "rep": 2,
+   "facedown": 6,
+   "hp": 35,
+   "ds": 7,
+   "sw": 0,
+   "com": 12,
+   "stats": {
+    "init": 7,
+    "cool": 5,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 9,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 7,
+     "with": ""
+    },
+    {
+     "name": "Tactics",
+     "base": 8,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Shotgun",
+     "rof": 1,
+     "dmg": "5d6"
+    },
+    {
+     "name": "Heavy SMG",
+     "rof": 1,
+     "dmg": "3d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Kevlar",
+     "sp": 7
+    },
+    "body": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Radio Communicator",
+    "Flashlight"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "combat-cab-shotgun-rider",
+   "own": true
+  },
+  {
+   "faction": "Combat Cab",
+   "title": "Veteran Battledriver",
+   "level": "Elite Hardened Lieutenant",
+   "name": "Combat Cab Veteran Battledriver",
+   "roles": "Nomad: Moto 4 Solo: Combat Awareness 3",
+   "rep": 3,
+   "facedown": 7,
+   "hp": 40,
+   "ds": 7,
+   "sw": 0,
+   "com": 13,
+   "stats": {
+    "init": 7,
+    "cool": 6,
+    "move": 5
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Drive Land Vehicle",
+     "base": 16,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 7,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Land Vehicle Tech",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 11,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 6,
+     "with": ""
+    },
+    {
+     "name": "Streetwise",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Tactics",
+     "base": 10,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Very Heavy Pistol",
+     "rof": 1,
+     "dmg": "4d6"
+    },
+    {
+     "name": "Assault Rifle",
+     "rof": 1,
+     "dmg": "5d6"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "body": {
+     "type": "Light Armorjack",
+     "sp": 11
+    },
+    "melee": [
+     2,
+     4
+    ]
+   },
+   "gear": [
+    "Neuroport",
+    "Radio Communicator",
+    "Flashlight"
+   ],
+   "cyber": [],
+   "layout": "mook",
+   "slug": "combat-cab-veteran-battledriver",
+   "own": true
+  },
+  {
+   "faction": "Combat Cab",
+   "title": "Sasquatch",
+   "level": "Elite Hardened Boss",
+   "name": "Sasquatch",
+   "roles": "Nomad: Moto 10 Solo: Combat Awareness 4",
+   "rep": 8,
+   "facedown": 0,
+   "hp": 60,
+   "ds": 12,
+   "sw": 30,
+   "com": 17,
+   "stats": {
+    "int": 6,
+    "ref": 10,
+    "dex": 7,
+    "tech": 7,
+    "cool": 8,
+    "will": 8,
+    "luck": 0,
+    "move": 6,
+    "body": 12,
+    "emp": 4,
+    "empMax": 7
+   },
+   "skills": [
+    {
+     "name": "Athletics",
+     "base": 15,
+     "with": ""
+    },
+    {
+     "name": "Autofire",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Brawling",
+     "base": 17,
+     "with": ""
+    },
+    {
+     "name": "Concentration",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Drive Land Vehicle",
+     "base": 20,
+     "with": ""
+    },
+    {
+     "name": "Education",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Endurance",
+     "base": 16,
+     "with": ""
+    },
+    {
+     "name": "Evasion",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "First Aid",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Handgun",
+     "base": 16,
+     "with": ""
+    },
+    {
+     "name": "Heavy Weapons",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Interrogation",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Land Vehicle Tech",
+     "base": 17,
+     "with": ""
+    },
+    {
+     "name": "Language (English)",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Language (Streetslang)",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Local Expert (Night City)",
+     "base": 18,
+     "with": ""
+    },
+    {
+     "name": "Melee Weapon",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Perception",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Persuasion",
+     "base": 10,
+     "with": ""
+    },
+    {
+     "name": "Resist Torture/Drugs",
+     "base": 16,
+     "with": ""
+    },
+    {
+     "name": "Shoulder Arms",
+     "base": 16,
+     "with": ""
+    },
+    {
+     "name": "Stealth",
+     "base": 8,
+     "with": ""
+    },
+    {
+     "name": "Streetwise",
+     "base": 15,
+     "with": ""
+    },
+    {
+     "name": "Tactics",
+     "base": 14,
+     "with": ""
+    },
+    {
+     "name": "Trading",
+     "base": 12,
+     "with": ""
+    },
+    {
+     "name": "Wilderness Survival",
+     "base": 12,
+     "with": ""
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Very Heavy Pistol",
+     "skill": "Handgun Base 16",
+     "base": 0,
+     "rof": 1,
+     "dmg": "4d6",
+     "ammo": "x8 Armor-Piercing",
+     "notes": ""
+    },
+    {
+     "name": "Shotgun",
+     "skill": "Shoulder Arms Base 16",
+     "base": 0,
+     "rof": 1,
+     "dmg": "5d6",
+     "ammo": "x4 Slug",
+     "notes": "Racked behind the driver's seat"
+    },
+    {
+     "name": "Heavy Melee Weapon",
+     "skill": "Melee Weapon Base 14",
+     "base": 0,
+     "rof": 2,
+     "dmg": "3d6",
+     "ammo": "",
+     "notes": "A tire iron"
+    }
+   ],
+   "chooseWeapon": false,
+   "armor": {
+    "head": {
+     "type": "Subdermal Armor",
+     "sp": 11
+    },
+    "body": {
+     "type": "Subdermal Armor",
+     "sp": 11
+    }
+   },
+   "gear": [
+    "Armor-Piercing Very Heavy Pistol Ammo x16",
+    "Radio Communicator",
+    "Tech Bag",
+    "Flashlight"
+   ],
+   "cyber": [
+    "Cybereye (w/ Low Light/Infrared/UV) x2",
+    "Cyberaudio (w/ Level Damper)",
+    "Grafted Muscle & Bone Lace",
+    "Neuroport (w/ Pain Editor)",
+    "Subdermal Armor",
+    "Exotic Bodysculpt (Sasquatch)"
+   ],
+   "layout": "full",
+   "slug": "sasquatch",
+   "own": true
+  }
+ ]
+}

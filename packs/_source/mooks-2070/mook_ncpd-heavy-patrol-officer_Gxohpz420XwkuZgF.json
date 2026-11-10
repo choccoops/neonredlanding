@@ -3194,9 +3194,6 @@
   "prototypeToken": {
     "name": "NCPD Heavy Patrol Officer",
     "actorLink": false,
-    "texture": {
-      "src": "modules/cpr-neon-hub/assets/art/mooks/ncpd-heavy-patrol-officer.webp"
-    },
     "width": 1,
     "height": 1,
     "disposition": -1,
@@ -3204,6 +3201,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/mooks/ncpd-heavy-patrol-officer.webp"
     },
     "ring": {
       "enabled": true,

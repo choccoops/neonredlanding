@@ -3273,9 +3273,6 @@
   "prototypeToken": {
     "name": "NCPD Veteran Patrol Officer",
     "actorLink": false,
-    "texture": {
-      "src": "modules/cpr-neon-hub/assets/art/mooks/ncpd-veteran-patrol-officer.webp"
-    },
     "width": 1,
     "height": 1,
     "disposition": -1,
@@ -3283,6 +3280,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/mooks/ncpd-veteran-patrol-officer.webp"
     },
     "ring": {
       "enabled": true,

@@ -5400,9 +5400,6 @@
   "prototypeToken": {
     "name": "Sandayu Oda",
     "actorLink": false,
-    "texture": {
-      "src": "modules/cpr-neon-hub/assets/art/mooks/sandayu-oda.webp"
-    },
     "width": 1,
     "height": 1,
     "disposition": -1,
@@ -5411,12 +5408,11 @@
     "bar1": {
       "attribute": "derivedStats.hp"
     },
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/sandayu-oda.webp"
+    },
     "ring": {
-      "enabled": true,
-      "colors": {
-        "ring": "#ff2a6d",
-        "background": "#07070b"
-      }
+      "enabled": false
     }
   },
   "flags": {

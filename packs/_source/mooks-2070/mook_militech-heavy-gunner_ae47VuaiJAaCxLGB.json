@@ -2475,7 +2475,8 @@
             "book": "Item Compendium (2070)",
             "chapter": "Weapons"
           },
-          "weaponType2070": "power"
+          "weaponType2070": "power",
+          "autofireRounds": 20
         }
       }
     },
@@ -3887,9 +3888,6 @@
   "prototypeToken": {
     "name": "Militech Heavy Gunner",
     "actorLink": false,
-    "texture": {
-      "src": "modules/cpr-neon-hub/assets/art/mooks/militech-heavy-gunner.webp"
-    },
     "width": 1,
     "height": 1,
     "disposition": -1,
@@ -3897,6 +3895,9 @@
     "displayBars": 20,
     "bar1": {
       "attribute": "derivedStats.hp"
+    },
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/mooks/militech-heavy-gunner.webp"
     },
     "ring": {
       "enabled": true,

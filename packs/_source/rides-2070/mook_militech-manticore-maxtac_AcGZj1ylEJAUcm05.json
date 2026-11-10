@@ -1,0 +1,173 @@
+{
+  "_id": "AcGZj1ylEJAUcm05",
+  "_key": "!actors!AcGZj1ylEJAUcm05",
+  "name": "Militech Manticore \"MaxTac\"",
+  "type": "mook",
+  "img": "modules/cpr-neon-hub/assets/art/rides/militech-manticore-maxtac.webp",
+  "folder": "m9502MsBefPanNon",
+  "system": {
+    "stats": {
+      "move": {
+        "value": 40
+      }
+    },
+    "derivedStats": {
+      "hp": {
+        "value": 120,
+        "max": 120
+      }
+    },
+    "information": {
+      "description": "<p><em>AV-4 Multipurpose Aerodyne.</em> Upgrades: Armored Chassis, Bulletproof Glass [x2], Bulwark Armor, Communications Center, CrystalDome, Heavy Chassis, TUp (Uses Autofire [Machine Gun 5]) Onboard Machine Gun (w/ Autoloader), Reinforced Thrusters, Seating Upgrade [x2]. The Manticore in MaxTac's black and blue: the one that lands when a cyberpsycho call goes out.</p><p><strong>Cost:</strong> 80,000eb<br><strong>Nomad:</strong> 10 (MaxTac)<br><strong>SDP:</strong> 120<br><strong>SP:</strong> 15<br><strong>Seats:</strong> 10<br><strong>MOVE:</strong> 40<br><strong>Speed:</strong> 200 mph</p><p><small>Item Compendium (2070) • Vehicles</small></p>",
+      "alias": "",
+      "history": "",
+      "notes": ""
+    }
+  },
+  "items": [
+    {
+      "_id": "LEtL0kHTpDEAADaw",
+      "name": "Militech Manticore \"MaxTac\" Armor (SP15)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/armor/flak_body.svg",
+      "system": {
+        "bodyLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": true,
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "description": {
+          "value": "<p>The vehicle's or suit's own armor. Ablates like any armor.</p>"
+        }
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!AcGZj1ylEJAUcm05.LEtL0kHTpDEAADaw"
+    }
+  ],
+  "effects": [],
+  "prototypeToken": {
+    "name": "Militech Manticore \"MaxTac\"",
+    "actorLink": true,
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/militech-manticore-maxtac.webp"
+    },
+    "width": 3,
+    "height": 3,
+    "disposition": 0,
+    "displayName": 20,
+    "displayBars": 20,
+    "bar1": {
+      "attribute": "derivedStats.hp"
+    },
+    "ring": {
+      "enabled": false
+    }
+  },
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "core": {
+      "sheetClass": "mmutons-cyberpunk-red-vas.VehicleSheet"
+    },
+    "mmutons-cyberpunk-red-vas": {
+      "positions": [
+        {
+          "id": "d9uzm0CgUZzMOhCs",
+          "name": "Cockpit",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": true,
+          "occupants": []
+        },
+        {
+          "id": "EqUeCm6EiLoqvfYI",
+          "name": "Gunner",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Heavy Weapons, Autofire, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "hgLoqNXxr6qh6dbI",
+          "name": "Co-Pilot",
+          "builtIn": false,
+          "maxOccupants": 1,
+          "canControlWeapons": true,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Pilot Air Vehicle, Air Vehicle Tech, Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        },
+        {
+          "id": "4yk3uOP6XcbqUOmH",
+          "name": "Cabin",
+          "builtIn": false,
+          "maxOccupants": 7,
+          "canControlWeapons": false,
+          "bulletproofGlass": true,
+          "glassHpMax": 30,
+          "glassHp": 30,
+          "skills": "Evasion",
+          "statMods": "",
+          "matchVehicleMove": false,
+          "matchOccupantMove": false,
+          "grantsTokenControl": false,
+          "occupants": []
+        }
+      ]
+    },
+    "cpr-neon-hub": {
+      "vehicle2070": {
+        "kind": "air",
+        "seats": 10,
+        "nomad": "10 (MaxTac)",
+        "cost": "80,000eb"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

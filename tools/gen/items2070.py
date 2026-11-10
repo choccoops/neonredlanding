@@ -111,6 +111,8 @@ def read_markup():
 
 PISTOL_DVS = ["13", "15", "20", "25", "30", "35", "—", "—"]
 RIFLE_DVS = ["17", "16", "15", "13", "15", "20", "25", "30"]
+VEHICLE_HEADER = ["Vehicle", "Cost", "Nomad", "SDP", "SP", "Seats", "MOVE", "Speed", "Type, upgrades & notes"]
+AIR, LAND = ["**Air Vehicles**"] + [""] * 8, ["**Land Vehicles**"] + [""] * 8
 ADDITIONS = [
     ("Weapons", "Pistols", "card", {
         "name": "Microwaver", "cost": "500eb (Expensive)", "tier": "grn", "skill": "Handgun", "range": "Pistol", "damage": "None", "rof": "1",
@@ -151,6 +153,40 @@ ADDITIONS = [
          "Borgware; needs an Integrated Netstation and two or more integrated decks. Your integrated decks run as one: Programs and Hardware in "
          "any of them count as installed in the deck you Jack In with. Once per Turn, derez one of your Programs and rez another in the same NET "
          "Action. Overheat or Short Circuit on one deck hits them all.", ""])),
+    # Liveries the book doesn't list: the same vehicle in a force's colors, on the base model's numbers.
+    ("Vehicles", "", "table", (VEHICLE_HEADER, AIR, [
+        'Militech Manticore "MaxTac"', "80,000eb", "10 (MaxTac)", "120", "15", "10", "40", "200 mph",
+        "*AV-4 Multipurpose Aerodyne.* Upgrades: Armored Chassis, Bulletproof Glass [x2], Bulwark Armor, Communications Center, CrystalDome, "
+        "Heavy Chassis, TUp (Uses Autofire [Machine Gun 5]) Onboard Machine Gun (w/ Autoloader), Reinforced Thrusters, Seating Upgrade [x2]. "
+        "The Manticore in MaxTac's black and blue: the one that lands when a cyberpsycho call goes out."])),
+    ("Vehicles", "", "table", (VEHICLE_HEADER, AIR, [
+        'Militech Manticore "Herakles" (MaxTac)', "63,000eb", "10 (MaxTac)", "120", "13", "8", "40", "200 mph",
+        "AV-4: Armored Chassis, Bulletproof Glass, Heavy Chassis, Seating Upgrade, Onboard Machine Gun, Vehicle Heavy Weapon Mount. "
+        "The older Herakles airframe MaxTac keeps flying as a second-line squad carrier."])),
+    ("Vehicles", "", "table", (VEHICLE_HEADER, LAND, [
+        'Villefort Columbus V340-F NCPD "Tactical"', "52,000eb", "7 (NCPD)", "70", "13", "8", "20", "100 mph",
+        "Compact Groundcar: Armored Chassis, Bulletproof Glass [x2], Combat Plow, Communications Center, Heavy Chassis, Reinforced Tires, "
+        "Seating Upgrade [x3]. The NCPD's tactical van: a driver, a shotgun seat and a squad of six on benches in the back."])),
+    ("Vehicles", "", "table", (VEHICLE_HEADER, LAND, [
+        'Chevillon Centurion 1000 "REO Meatwagon"', "41,500eb", "6 (REO)", "70", "—", "2", "25", "125 mph",
+        "Compact Groundcar: Ambulance Conversion, Combat Plow, Heavy Chassis, Improved Engine. A decades-old box ambulance on a truck "
+        "frame, the kind REO still runs on its city contract in the 2070s. Its bay has beds for 4 patients and seats for 2 medics, with a "
+        "cryopump, a medscanner and a Medtech Bag aboard. No armor, and the glass is only glass."])),
+    ("Vehicles", "", "table", (VEHICLE_HEADER, LAND, [
+        'Chevillon Thrax 388 Jefferson "Combat Cab"', "46,500eb", "7 (Combat Cab)", "70", "13", "5", "20", "100 mph",
+        "*Compact Groundcar.* Upgrades: Armored Chassis, Bulletproof Glass [x2], Combat Plow, Communications Center, Heavy Chassis, "
+        "Reinforced Tires. The battledrivers' cab: it takes a fare anywhere in the city, the Combat Zone included."])),
+    ("Vehicles", "", "table", (VEHICLE_HEADER, LAND, [
+        'Chevillon Emperor 620 Ragnar "Combat Cab"', "47,500eb", "7 (Combat Cab)", "70", "13", "5", "20", "100 mph",
+        "*Compact Groundcar.* Upgrades: Armored Chassis, Bulletproof Glass [x2], Combat Plow, Communications Center, Heavy Chassis, "
+        "Onboard Machine Gun, Reinforced Tires, Smuggling Upgrade. The big cab, for big fares and bad districts."])),
+    ("Iconics", "", "table", (VEHICLE_HEADER, [
+        "Quadra Turbo-R “Bigfoot” (Sasquatch’s Cab)", "Not for sale (Super Luxury)", "10 (Combat Cab)", "50", "13", "4", "80", "400 mph",
+        "*Iconic Super Groundcar.* Upgrades: Armored Chassis (w/ Stalwart Shell), Bulletproof Glass [x2], Communications Center, "
+        "TUp (Turbocharged) Improved Engine, NOS [x3], Seating Upgrade, Security Upgrade (Advanced). Also: TUp (Improved) Racing Tires. "
+        "Racing tires: +2 to Maneuvers on pavement. Ablation to its SP is 1 less (min 0). Basic driving needs Drive Land Vehicle Skill "
+        "Base 14. A supercar in a Combat Cab's paint, checkered band, meter and roof light: nobody expects the taxi to do 400. It answers "
+        "one call in a thousand, and only Sasquatch drives it."])),
 ]
 
 
@@ -159,11 +195,11 @@ def additions(events, raw):
     have = {plain(n).lower() for n in re.findall(r'"name": "([^"]+)"', raw)} | {plain(l.split("|")[1]).lower() for l in raw.split("\n") if l.startswith("| ")}
     for chapter, h1, kind, data in ADDITIONS:
         where = {"chapter": chapter, "h1": h1, "h2": "", "h3": "", "tag": ""}
-        name = data["name"] if kind == "card" else data[1][0]
+        name = data["name"] if kind == "card" else data[-1][0]  # a table's last row; a vehicle's first is its group
         if name.lower() in have:
             continue
         NOTES.append(f"not printed in the book yet, using Neon Hub's entry: {name}")
-        events.append(dict(where, kind="card", card=data) if kind == "card" else dict(where, kind="table", title="", header=data[0], rows=[data[1]]))
+        events.append(dict(where, kind="card", card=data) if kind == "card" else dict(where, kind="table", title="", header=data[0], rows=list(data[1:])))
     return events
 
 

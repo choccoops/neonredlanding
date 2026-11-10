@@ -4970,9 +4970,6 @@
   "prototypeToken": {
     "name": "Melissa Rory",
     "actorLink": false,
-    "texture": {
-      "src": "modules/cpr-neon-hub/assets/art/mooks/melissa-rory.webp"
-    },
     "width": 1,
     "height": 1,
     "disposition": -1,
@@ -4981,12 +4978,11 @@
     "bar1": {
       "attribute": "derivedStats.hp"
     },
+    "texture": {
+      "src": "modules/cpr-neon-hub/assets/art/tokens/melissa-rory.webp"
+    },
     "ring": {
-      "enabled": true,
-      "colors": {
-        "ring": "#ff2a6d",
-        "background": "#07070b"
-      }
+      "enabled": false
     }
   },
   "flags": {

@@ -11,12 +11,16 @@ const mooks = all.filter((d) => d.flags["cpr-neon-hub"]?.mook2070);
 const drones = all.filter((d) => d.flags["cpr-neon-hub"]?.drone2070);
 const folders = docs.filter((d) => d._key?.startsWith("!folders!"));
 const file = (src) => path.join(root, src.replace("modules/cpr-neon-hub/", ""));
+const own = (m) => !!m.flags["cpr-neon-hub"].mook2070.own; // Neon Hub's own stat blocks (data/mooks_own.json)
+const NAMED = ["Kurt Hansen", "Melissa Rory", "Sandayu Oda", "Sasquatch"];
 
-test("the Mook Pack has Corgo's 128 mooks in 20 factions, and the 29 drones", () => {
-  assert.equal(mooks.length, 128);
+test("the Mook Pack has Corgo's 128 mooks in 20 factions, Neon Hub's own 8 in 2 more, and the 29 drones", () => {
+  assert.equal(mooks.length, 136);
+  assert.equal(mooks.filter(own).length, 8);
+  assert.deepEqual([...new Set(mooks.filter(own).map((m) => m.flags["cpr-neon-hub"].mook2070.faction))].sort(), ["Combat Cab", "REO Meatwagon"]);
   assert.equal(drones.length, 29);
   assert.equal(all.length, mooks.length + drones.length);
-  assert.equal(folders.length, 21);
+  assert.equal(folders.length, 23);
   for (const m of all) assert.ok(folders.some((f) => f._id === m.folder), `${m.name} is in a folder`);
   assert.equal(new Set(all.map((m) => m.name)).size, all.length, "names are unique");
 });
@@ -25,9 +29,25 @@ test("every mook has its own portrait as art and token", () => {
   for (const m of mooks) {
     assert.match(m.img, /^modules\/cpr-neon-hub\/assets\/art\/mooks\/.+\.webp$/, m.name);
     assert.ok(existsSync(file(m.img)), `${m.img} exists`);
-    assert.equal(m.prototypeToken.texture.src, m.img);
     assert.equal(m.prototypeToken.actorLink, false, "spawned mooks are unlinked");
+    // the named ones stand on the map as a top-down token; everyone else shows the portrait in a ring
+    if (NAMED.includes(m.name)) {
+      assert.match(m.prototypeToken.texture.src, /^modules\/cpr-neon-hub\/assets\/art\/tokens\/.+\.webp$/, m.name);
+      assert.ok(existsSync(file(m.prototypeToken.texture.src)), `${m.prototypeToken.texture.src} exists`);
+      assert.equal(m.prototypeToken.ring.enabled, false, m.name);
+    } else {
+      assert.equal(m.prototypeToken.texture.src, m.img);
+      assert.equal(m.prototypeToken.ring.enabled, true, m.name);
+    }
   }
+});
+
+test("Sasquatch: Combat Cab's boss, Moto 10 and a Drive Land Vehicle base of 20", () => {
+  const s = mooks.find((m) => m.name === "Sasquatch");
+  assert.equal(s.flags["cpr-neon-hub"].mook2070.faction, "Combat Cab");
+  assert.match(s.system.information.notes, /Nomad: Moto 10/);
+  const drive = s.items.find((i) => i.type === "skill" && i.name === "Drive Land Vehicle");
+  assert.equal(s.system.stats.ref.value + drive.system.level, 20);
 });
 
 test("mooks carry the core Skills, the core cyberware containers and their attacks", () => {
@@ -74,9 +94,13 @@ test("a mook's Skill totals match its stat block", () => {
 });
 
 test("descriptions are Neon Hub's own and credit Corgo", () => {
-  for (const m of mooks) {
+  for (const m of mooks.filter((x) => !own(x))) {
     assert.match(m.system.information.description, /Corgopolis/);
     assert.match(m.system.information.description, /Homebrew Content Policy/);
+  }
+  for (const m of mooks.filter(own)) {
+    assert.match(m.system.information.description, /Stat block by Neon Hub/);
+    assert.doesNotMatch(m.system.information.description, /Corgopolis/);
   }
 });
 

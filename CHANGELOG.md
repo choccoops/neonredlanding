@@ -17,12 +17,12 @@
   Painducer; and the Apogee itself) carry `flags.cpr-neon-hub.countsAsBorgware`. Neon At Home
   1.14.0 reads it for the 2070 Maximum Humanity: −4 for that piece in place of −2.
 - **Burst guns spend their bursts.** A weapon whose card says *Single Shot fires a 3-round
-  burst* (the Yukimura, the Masamune, the Kenshin and some forty more) now spends that many
+  burst* (the Yukimura, the Masamune, the Kenshin: thirty weapons in all) now spends that many
   rounds on a Single Shot or Aimed Shot. One that *won't fire with fewer* is refused by Cyberpunk
   RED's own ammo check; one that *empties the magazine* fires what's left. A card that says
   *Autofire uses 6 rounds instead of 10* (or 3 shells) is spent at that count, before the
-  attachments' own changes. Both are read from the card's text, so weapons already on sheets
-  count without being replaced.
+  attachments' own changes, and *An Aimed Shot fires 2 rounds* spends 2 on an Aimed Shot. All
+  are read from the card's text, so weapons already on sheets count without being replaced.
 
 ## 1.24.0
 

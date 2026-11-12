@@ -21,7 +21,8 @@ const cardText = (weapon) => String(weapon?.system?.description?.value ?? "").re
 
 /**
  * What a weapon's own card says about the rounds it spends, read from its text so copies already on
- * sheets count too: { autofire: rounds an Autofire spends | null, burst: { rounds, every, short } | null }.
+ * sheets count too: { autofire: rounds an Autofire spends | null, burst: { rounds, every, short } | null,
+ * aimed: rounds an Aimed Shot spends | null }.
  * A burst is what one Single Shot fires ("every": every attack); `short` says what happens with fewer
  * rounds left than a burst: "refuse" (it won't fire) or "empty" (it fires what's left).
  */
@@ -30,12 +31,15 @@ export function cardRounds(weapon) {
   const af = t.match(/Autofire uses (\d+) (?:rounds|shells)/i);
   const b = t.match(/(Single Shot fires|Every shot is) an? (\d+)-round burst([^.]*)\./i);
   const burst = b ? { rounds: Number(b[2]), every: /every/i.test(b[1]), short: /won't fire/i.test(b[3]) ? "refuse" : "empty" } : null;
-  return { autofire: af ? Number(af[1]) : null, burst: burst && burst.rounds > 1 ? burst : null };
+  const aimed = t.match(/An Aimed Shot fires (\d+) rounds/i);
+  return { autofire: af ? Number(af[1]) : null, burst: burst && burst.rounds > 1 ? burst : null, aimed: aimed ? Number(aimed[1]) : null };
 }
 
 /** The rounds one Single Shot spends: a burst gun's count (what's left, when it fires short), else 1. */
-export function shotRounds(weapon, left = Infinity) {
-  const { burst } = cardRounds(weapon);
+export function shotRounds(weapon, left = Infinity, { aimed = false } = {}) {
+  const { burst, aimed: aimedRounds } = cardRounds(weapon);
+  // "An Aimed Shot fires 2 rounds": it needs them all.
+  if (aimed && aimedRounds) return aimedRounds;
   if (!burst) return 1;
   return burst.short === "refuse" ? burst.rounds : Math.max(1, Math.min(burst.rounds, Number(left) || 0));
 }
@@ -100,7 +104,7 @@ export const BurstRounds = {
           // One shot: a burst gun spends its burst (Cyberpunk RED's own ammo check then refuses a gun that won't fire short).
           if (!(n > 1)) {
             try {
-              return n === 1 ? shotRounds(this, this.system?.magazine?.value) : n;
+              return n === 1 ? shotRounds(this, this.system?.magazine?.value, { aimed: /Aimed/.test(String(cprRoll?.constructor?.name ?? "")) }) : n;
             } catch (err) {
               console.warn(`${MODULE_ID} | burst rounds`, err);
               return n;

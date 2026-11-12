@@ -76,13 +76,16 @@ test("a weapon's own card: the rounds its Autofire spends, and a Single Shot tha
   assert.deepEqual(cardRounds(gun("Single Shot fires a 3-round burst. With fewer than 3 left, it empties the magazine for 2d6.")).burst, { rounds: 3, every: false, short: "empty" });
   assert.deepEqual(cardRounds(gun("Every shot is a 3-round burst; it won't fire with fewer than 3 left. Ablates 1 extra SP.")).burst, { rounds: 3, every: true, short: "refuse" });
   assert.deepEqual(cardRounds(gun("Single Shot fires a 3-round burst that counts as Armor-Piercing; it won't fire with fewer than 3 left.")).burst, { rounds: 3, every: false, short: "refuse" });
-  assert.deepEqual(cardRounds(gun("Aimed Shots deal +1d6 (6d6).")), { autofire: null, burst: null });
   const yukimura = gun("Single Shot fires a 3-round burst (or empties the magazine).");
   assert.equal(shotRounds(yukimura, 12), 3);
   assert.equal(shotRounds(yukimura, 2), 2, "fires what's left");
   assert.equal(shotRounds(yukimura, 0), 1, "empty: Cyberpunk RED's own check refuses it");
   assert.equal(shotRounds(gun("Every shot is a 2-round burst; it won't fire with fewer than 2 left."), 1), 2, "so the ammo check refuses the shot");
   assert.equal(shotRounds(gun("Nothing special."), 9), 1);
+  const hercules = gun("An Aimed Shot fires 2 rounds for +1d6 (6d6).");
+  assert.equal(shotRounds(hercules, 9, { aimed: true }), 2);
+  assert.equal(shotRounds(hercules, 9), 1, "a plain shot is one round");
+  assert.deepEqual(cardRounds(gun("Aimed Shots deal +1d6 (6d6).")), { autofire: null, burst: null, aimed: null });
 
   // Through the wrap: a single shot spends the burst; Autofire still goes by the card.
   const proto = { loadMixins() { this.bulletConsumption = (roll) => (roll.auto ? 10 : 1); } };

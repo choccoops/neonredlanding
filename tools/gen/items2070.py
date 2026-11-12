@@ -283,6 +283,8 @@ def item(type_, name, system, desc, path, src="", tag="", img=None, flags=None, 
            "folder": folder("items-2070", path, COLORS.get(path[0])), "sort": len(ITEMS) * 10,
            "system": system, "effects": effects or [], "flags": {**MIGRATION, MOD: {"source2070": {"book": SOURCE, "chapter": path[0]}, **(flags or {})}},
            "ownership": {"default": 0}}
+    if type_ in ("cyberware", "itemUpgrade") and COUNTS_AS_BORGWARE.search(desc):
+        doc["flags"][MOD]["countsAsBorgware"] = True
     if not effects and not skip_fx:
         usage, doc["effects"] = effects_for(doc, desc, path)
         if usage:
@@ -882,6 +884,12 @@ def guess_cyber_type(name, effect, default):
     return default
 
 
+NO_ENHANCEMENT = re.compile(r"cyberfinger", re.I)
+# An Operating System or Enhancement whose entry says its piece counts as Borgware (Core Ch09: -4 Maximum Humanity in place
+# of -2), or a piece that says so of itself. Neon At Home reads the flag for the 2070 Maximum Humanity.
+COUNTS_AS_BORGWARE = re.compile(r"counts as Borgware", re.I)
+
+
 def cyber(name, ctype, install, cost, hlv, slots, effect, path, src="", tag="", extra=None):
     slots = strip(slots)
     gives = re.search(r"gives\s+(\d+)", slots)
@@ -890,8 +898,11 @@ def cyber(name, ctype, install, cost, hlv, slots, effect, path, src="", tag="", 
               "size": 0 if foundational else max(0, num(slots, 1) if re.search(r"\d", slots) else 1),
               "price": {"market": price(cost)}, "usage": "installed", "brand": "", "core": False, "isWeapon": False, "isElectronic": True,
               "concealable": {"concealable": False, "isConcealed": False}, "providesHardening": False,
-              "installedItems": {"allowed": foundational, "allowedTypes": ["cyberware"] if foundational else ["itemUpgrade"], "list": [],
-                                 "slots": int(gives.group(1)) if gives else 0, "usedSlots": 0}}
+              # Every piece of chrome has one Enhancement slot (Core Ch09), which is also where an Operating System goes, so
+              # upgrades can be installed without editing the item. Cyberfingers have none: they're the modular part.
+              "installedItems": {"allowed": foundational or not NO_ENHANCEMENT.search(name),
+                                 "allowedTypes": (["cyberware"] if foundational else []) + ([] if NO_ENHANCEMENT.search(name) else ["itemUpgrade"]) or ["itemUpgrade"],
+                                 "list": [], "slots": int(gives.group(1)) if gives else 0, "usedSlots": 0}}
     if extra:
         system.update(extra)
     return item("cyberware", name, system, para(inline(effect), f"<strong>Install:</strong> {inline(install.title())} • <strong>HL:</strong> {hlv['static']}{' (' + hlv['roll'] + ')' if hlv['roll'] not in ('', '0') else ''}"), path, src, tag)

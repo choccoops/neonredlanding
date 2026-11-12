@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.25.0
+
+- **Chrome takes its upgrades without editing the item.** Every piece of 2070 cyberware has one
+  Enhancement slot (Core Rules Ch09), which is also where an Operating System goes, but the Item
+  Compendium's chrome shipped with Cyberpunk RED's "installed items" switch off: a Sandevistan
+  had to be edited before its Operating System would install. All 291 pieces now ship with it on
+  (Cyberfingers excepted: they have no Enhancement slot), and limbs and other foundational pieces
+  accept upgrades beside their options.
+- **Chrome already in your world is fixed once.** The first time a GM opens the world after
+  updating, every 2070 piece of chrome on character sheets, on unlinked tokens and in the Items
+  sidebar gets the switch turned on, and an older copy dropped on a sheet later is fixed as it
+  lands. To run it again: `game.modules.get("cpr-neon-hub").api.items.fixChromeSlots()`.
+- **Counts as Borgware.** The Operating Systems and Enhancements whose entry says their piece
+  counts as Borgware for Maximum Humanity (Falcon OS, Baldur OS, Endo-Lace Bracing, Firewall Port,
+  Painducer; and the Apogee itself) carry `flags.cpr-neon-hub.countsAsBorgware`. Neon At Home
+  1.14.0 reads it for the 2070 Maximum Humanity: −4 for that piece in place of −2.
+
 ## 1.24.0
 
 - **Art redrawn to the 2077 setting.** Every aerodyne, aerozep and ground vehicle has new sheet art

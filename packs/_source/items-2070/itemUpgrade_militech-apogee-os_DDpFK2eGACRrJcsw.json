@@ -1,0 +1,102 @@
+{
+  "_id": "DDpFK2eGACRrJcsw",
+  "_key": "!items!DDpFK2eGACRrJcsw",
+  "name": "Militech 'Apogee' OS",
+  "type": "itemUpgrade",
+  "img": "modules/cpr-neon-hub/assets/items/upgrades/operatingSystem.svg",
+  "folder": "ck5IQhmypDhNEFQL",
+  "sort": 17790,
+  "system": {
+    "type": "cyberware",
+    "size": 0,
+    "price": {
+      "market": 25000
+    },
+    "installLocation": "mall",
+    "brand": "",
+    "concealable": {
+      "concealable": false,
+      "isConcealed": false
+    },
+    "isElectronic": false,
+    "description": {
+      "value": "<p>An Iconic Sandevistan OS (follows the Operating System rules). One more Neuralware slot; counts as Borgware for your Maximum Humanity; without an FBC or Cyberspine, 1d6 Humanity Loss per activation. Activates for free: +6 Initiative for 3 Rounds, dodge bullets whatever your REF, ignore MOVE and Evasion penalties, +2 to Aimed Shots. <strong>Out of turn:</strong> you can activate it freely on someone else's Turn, and if that puts your Initiative ahead of theirs, you interrupt them and act immediately. If you Held your Action to activate it, for any reason, you interrupt automatically, whatever the Initiative. A Solo can reassign Combat Awareness points for free on every Aimed Shot, alternate firing mode or Martial Arts Special Move. 20-Round cooldown, or reactivate early for 3 Humanity Loss, then 6, then 9. <strong>Category • Fabrication:</strong> Super Luxury • DV29 - 25,000eb - 5 Months</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false,
+    "usage": "toggled"
+  },
+  "effects": [
+    {
+      "_id": "7HsdKa1kfBzeuwoz",
+      "_key": "!items.effects!DDpFK2eGACRrJcsw.7HsdKa1kfBzeuwoz",
+      "name": "Militech 'Apogee' OS (active)",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.aimedShot",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "bonuses.initiative",
+          "mode": 2,
+          "value": "6",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat",
+              "1": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              },
+              "1": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Iconics"
+      },
+      "countsAsBorgware": true
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

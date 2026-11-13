@@ -314,7 +314,7 @@ Hooks.once("init", () => {
      * (a message), or null. weaponMods.check is the same call. weaponMods.burstRounds(weapon, mode, upgrades, ammoVariety):
      * the rounds its Autofire or Suppressive Fire spends; weaponMods.shellAutofire(upgrades, ammoVariety): the control
      * group's shell rule ({ shells, shellDodge }) or null.
-     * fixChromeSlots(): GM, switch on "installed items" on every 2070 piece of chrome in the world, so Operating Systems
+     * fixChromeSlots(): GM, switch on "installed items" on every piece of chrome in the world (Neon Hub's, or CPR's by name), so Operating Systems
      * and Enhancements go in (run once by itself after updating).
      */
     items: {
@@ -322,7 +322,7 @@ Hooks.once("init", () => {
       usingDvTables: () => Items2070.usingDvTables,
       rangeMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) },
       weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade), burstRounds, shellAutofire },
-      /** GM: open every 2070 piece of chrome in the world to upgrades again (it runs by itself once). Returns the count. */
+      /** GM: open every piece of chrome in the world to upgrades again (it runs by itself once). Returns the count. */
       fixChromeSlots: () => ChromeSlots.migrate()
     },
 

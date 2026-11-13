@@ -941,7 +941,7 @@ selected token's character, or their own.
 
 | Module | Windows |
 | --- | --- |
-| Neon Combat Manager | **Night City Map**, Holocall, Biomon Link, Plot Die, Condition Lab (GM) |
+| Neon Combat Manager | **Night City Map**, Holocall, Biomon Link, Plot Die, Weapon Rebuilds, Condition Lab (GM), Install Weapon Animations (GM) |
 | Neon At Home | Home, Loadout, Cyberdeck, Vehicle Bay, Weaponbench, Maintenance, Downtime, Biomonitor, Deep Dive, Perk Tree, Spend IP |
 
 - **Monk's Active Tile Triggers.** The same action is in MATT's own action list as *Open a Neon

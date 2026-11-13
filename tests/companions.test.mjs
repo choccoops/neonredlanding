@@ -30,7 +30,8 @@ const SOURCES = {
   "cpr-neon-at-home": process.env.NEON_HOME_SRC ?? "/home/eduardo/Documents/neonathome"
 };
 const NAMES = {
-  "Night City Map": "map", Holocall: "holocall", "Biomon Link": "biomon", "Plot Die": "stakes", "Condition Lab": "lab", Home: "home",
+  "Night City Map": "map", Holocall: "holocall", "Biomon Link": "biomon", "Plot Die": "stakes", "Weapon Rebuilds": "rebuilds", "Condition Lab": "lab",
+  "Install Weapon Animations": "arsenal", Home: "home",
   Loadout: "loadout", Cyberdeck: "deck", "Vehicle Bay": "bay", Weaponbench: "bench", Maintenance: "maintenance", Downtime: "downtime",
   Biomonitor: "biomonitor", "Deep Dive": "deepDive", "Perk Tree": "perkTree", "Spend IP": "spendIp"
 };

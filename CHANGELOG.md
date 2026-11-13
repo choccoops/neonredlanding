@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.26.0
+
+- **Weapon Rebuilds and Install Weapon Animations.** *Open a Neon module window* (hub buttons and
+  the MATT action) opens Neon Combat Manager's two new windows, as its macros do: Weapon Rebuilds
+  (a Power gun's ricochet, a Tech gun's charge) for the selected token's character or your own,
+  and, for the GM, Install Weapon Animations (Neon Arsenal's animations into Automated Animations).
+
 ## 1.25.0
 
 - **Chrome takes its upgrades without editing the item.** Every piece of 2070 cyberware has one

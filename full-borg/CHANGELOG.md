@@ -2,6 +2,10 @@
 
 Neon Hub: Full Borg is released with Neon Hub, at the same version.
 
+## 1.25.1
+
+- Released with Neon Hub 1.25.1. No changes to Full Borg.
+
 ## 1.20.0
 
 - Released with Neon Hub 1.20.0. No changes to Full Borg.

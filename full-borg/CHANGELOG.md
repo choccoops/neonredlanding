@@ -2,6 +2,10 @@
 
 Neon Hub: Full Borg is released with Neon Hub, at the same version.
 
+## 1.26.2
+
+- The bodies' chrome takes Operating Systems and Enhancements ("installed items" switched on, as in the Item Compendium since Neon Hub 1.25.0), and their Operating Systems carry the "counts as Borgware" flag.
+
 ## 1.26.1
 
 - Released with Neon Hub 1.26.1. No changes to Full Borg.

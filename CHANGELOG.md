@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.26.2
+
+- **Fixed: the Militech 'Apogee' OS wouldn't go into a Sandevistan.** It's in the Item Compendium's Iconics chapter, and it had come in as a piece of Internal Body cyberware instead of an Operating System. Neither CPR's upgrade list nor Neon Hub's drop could see it. It's now an upgrade for chrome like every other OS: size 0, 25,000eb, still counting as Borgware, with its +6 Initiative and +2 Aimed Shots as an effect to switch on. It has the Operating System icon. An Apogee already on a sheet is the old item: delete it and take the new one from the compendium.
+- **Full Borg: the bodies' chrome takes upgrades too.** The 25 bodies' chrome now has "installed items" switched on like the Item Compendium's (1.25.0), and their Operating Systems carry the "counts as Borgware" flag. A body installed with Go Metal from now on has it; one installed earlier gets it from Neon Hub's world fix-up.
+
 ## 1.26.1
 
 - **Drop an Operating System straight onto chrome.** Drag an OS or Enhancement from the Item Compendium (or the Items sidebar, or another sheet) onto a piece of chrome's row in the Cyberware tab, and it goes on the sheet and into that piece. Cyberpunk RED has no way to drop an upgrade onto chrome, so before this the upgrade had to be put on the sheet first.

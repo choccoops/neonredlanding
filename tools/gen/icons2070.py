@@ -290,6 +290,9 @@ def upgrade_icon(name, path, sysdir=""):
         for pat, rel in SYSTEM_UPGRADE_ICONS:
             if re.search(pat, low) and (not sysdir or os.path.exists(os.path.join(sysdir, "icons/compendium", rel))):
                 return None, rel
+    # an Operating System outside its folder (the Iconic Militech 'Apogee' OS sits with the Iconic Cyberware)
+    if leaf not in FOLDER_ICONS and re.search(r"\bos$", low):
+        return "operatingSystem", None
     return FOLDER_ICONS.get(leaf) or "upgrade", None
 
 

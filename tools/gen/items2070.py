@@ -1510,7 +1510,12 @@ def route(ev):
             d = rowdict(header, r)
             name = d["Cyberware"]
             effect = d.get("Effect", "")
-            if chapter == "Iconics":
+            if chapter == "Iconics" and re.search(r"\bOS\b", plain(name)) and "Operating System rules" in effect:
+                # An Iconic Operating System (the Militech 'Apogee' OS) is an upgrade for chrome like any other OS, so it
+                # installs into the implant it runs instead of taking a slot of its own.
+                upgrade(name, "cyberware", d.get("Category • Fabrication", ""), "0",
+                        para(inline(f"{effect} **Category • Fabrication:** {d.get('Category • Fabrication', '')}")), ("Iconics", "Iconic Cyberware"), tag=tag)
+            elif chapter == "Iconics":
                 hlcol = d.get("HL", "")
                 hlv = hl(hlcol.split("•")[0])
                 inst = install_of(hlcol)

@@ -285,3 +285,18 @@ test("an upgrade dropped on a chrome row goes into that piece; anything else is 
   assert.equal(calls.installed.length, 2);
   assert.equal(sande.id, "s");
 });
+
+test("every Operating System in the compendium is an upgrade for chrome, Iconic ones included", () => {
+  const oses = load().filter((d) => d.system && (/\bOS$/.test(d.name) || /Operating System rules/.test(d.system.description?.value ?? "")));
+  assert.ok(oses.length >= 9, `${oses.length} OSes`);
+  for (const os of oses) {
+    assert.equal(os.type, "itemUpgrade", `${os.name} is an upgrade, so it installs into its implant`);
+    assert.equal(os.system.type, "cyberware", os.name);
+    assert.equal(os.system.size, 0, os.name);
+  }
+  const apogee = oses.find((d) => /Apogee/.test(d.name));
+  assert.ok(apogee, "the Iconic Militech 'Apogee' OS");
+  assert.equal(apogee.flags[MOD].countsAsBorgware, true);
+  assert.equal(apogee.system.price.market, 25000);
+  assert.match(apogee.img, /operatingSystem\.svg$/);
+});

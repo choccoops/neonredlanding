@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.26.1
+
+- **Drop an Operating System straight onto chrome.** Drag an OS or Enhancement from the Item Compendium (or the Items sidebar, or another sheet) onto a piece of chrome's row in the Cyberware tab, and it goes on the sheet and into that piece. Cyberpunk RED has no way to drop an upgrade onto chrome, so before this the upgrade had to be put on the sheet first.
+- **Manage Upgrades shows on every piece of chrome that takes upgrades**, not only when an upgrade is already on the sheet. With none to fit, it says how to add one instead of opening an empty list. "0 Option Slots" on a Sandevistan is right: Operating Systems and Enhancements take no slots.
+
 ## 1.26.0
 
 - **Fixed: a Sandevistan still wouldn't take its Operating System.** 1.25.0 only fixed half of it. Two things in Cyberpunk RED 0.92.4 still stood in the way:

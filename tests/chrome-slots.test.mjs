@@ -21,7 +21,7 @@ globalThis.game = {
   packs: new Map([[`${MOD}.items-2070`, { getIndex: async () => [{ name: "Sandevistan", type: "cyberware" }, { name: "Kerenzikov", type: "cyberware" }, { name: "Berserk", type: "cyberware" }, { name: "Militech ‘Falcon’ OS", type: "itemUpgrade" }] }]])
 };
 globalThis.Actor = class {};
-const { ChromeSlots, slotFix, eligible, normName, wantsUpgradeButton, SLOTS_SETTING, SLOTS_VERSION } = await import("../scripts/items/chrome-slots.js");
+const { ChromeSlots, slotFix, eligible, normName, takesUpgrades, upgradeChoices, isUpgradeDrop, SLOTS_SETTING, SLOTS_VERSION } = await import("../scripts/items/chrome-slots.js");
 ChromeSlots.init();
 
 const chrome = (name, ii = {}, flags = { [MOD]: { source2070: { book: "Item Compendium (2070)" } } }) => ({
@@ -131,18 +131,22 @@ test("SLOTS_VERSION 2 runs the fix-up again over a world 1.25.0 already did, and
   assert.deepEqual(dropped.sourced, { "system.installedItems.allowed": true });
 });
 
-test("the Cyberware tab's chrome gets a Manage Upgrades button when an upgrade could go in or is in", () => {
+test("every piece of chrome that takes upgrades gets the button; the picker offers loose cyberware upgrades and its own", () => {
   const sande = { _id: "s", type: "cyberware", system: { installedItems: { allowed: true, allowedTypes: ["itemUpgrade"], list: [] } } };
   const falcon = { _id: "f", type: "itemUpgrade", system: { type: "cyberware" } };
   const scope = { _id: "w", type: "itemUpgrade", system: { type: "weapon" } };
-  assert.equal(wantsUpgradeButton(sande, [sande, falcon]), true, "a loose OS on the sheet");
-  assert.equal(wantsUpgradeButton(sande, [sande, scope]), false, "only a weapon upgrade around");
+  assert.equal(takesUpgrades(sande), true, "with or without an upgrade on the sheet (the world this was reported from had none)");
+  assert.equal(takesUpgrades({ ...sande, system: { installedItems: { allowed: false, allowedTypes: ["itemUpgrade"], list: [] } } }), false, "closed chrome");
+  assert.equal(takesUpgrades({ ...sande, system: { core: true, installedItems: sande.system.installedItems } }), false, "CPR's core boxes");
+  assert.equal(takesUpgrades({ ...scope }), false);
+  assert.deepEqual(upgradeChoices(sande, [sande, falcon, scope]).map((i) => i._id), ["f"], "a loose OS, not a weapon upgrade");
+  assert.deepEqual(upgradeChoices(sande, [sande]), [], "nothing to fit");
   const fitted = { ...sande, system: { installedItems: { ...sande.system.installedItems, list: ["f"] } } };
-  assert.equal(wantsUpgradeButton(fitted, [fitted, falcon]), true, "its OS is in: the button takes it out again");
+  assert.deepEqual(upgradeChoices(fitted, [fitted, falcon]).map((i) => i._id), ["f"], "its own OS, to take out again");
   const other = { _id: "k", type: "cyberware", system: { installedItems: { allowed: true, allowedTypes: ["itemUpgrade"], list: [] } } };
-  assert.equal(wantsUpgradeButton(other, [other, fitted, falcon]), false, "the only OS is already in another piece");
-  assert.equal(wantsUpgradeButton({ ...sande, system: { installedItems: { allowed: false, allowedTypes: ["itemUpgrade"], list: [] } } }, [falcon]), false, "closed chrome");
-  assert.equal(wantsUpgradeButton({ ...sande, system: { core: true, installedItems: sande.system.installedItems } }, [falcon]), false, "CPR's core boxes");
+  assert.deepEqual(upgradeChoices(other, [other, fitted, falcon]), [], "the only OS is already in another piece");
+  assert.equal(isUpgradeDrop({ type: "itemUpgrade" }), true, "a compendium index entry has only its type");
+  assert.equal(isUpgradeDrop({ type: "weapon" }), false);
 });
 
 // Why the button exists: CPR 0.92.4's Cyberware tab filters upgrades by `type` (always "itemUpgrade") where it means
@@ -158,33 +162,126 @@ test("CPR's Cyberware tab still hides Manage Upgrades on chrome", (t) => {
   assert.match(container, /installedItems\.allowed &&/, "CPR still needs the switch on to offer the chrome as a target");
 });
 
-test("the button lands on the right rows and opens CPR's own upgrade picker", async () => {
+// A fake sheet: rows, their action boxes, listeners, and the documents behind them.
+function fakeSheet({ withOS = true } = {}) {
   globalThis.HTMLElement = class {};
   globalThis.document = {
     createElement: () => ({ dataset: {}, attrs: {}, listeners: {}, setAttribute(k, v) { this.attrs[k] = v; }, addEventListener(k, fn) { this.listeners[k] = fn; } })
   };
-  const opened = [];
-  const doc = (data) => ({ ...data, id: data._id, sheet: { _manageInstalledItems: async (type) => opened.push([data._id, type]) } });
+  const calls = { opened: [], installed: [], created: [], notes: [] };
+  globalThis.ui = { notifications: { info: (m) => calls.notes.push(["info", m]), warn: (m) => calls.notes.push(["warn", m]), error: (m) => calls.notes.push(["error", m]) } };
+  const list = [];
+  const actor = Object.assign(new Actor(), {
+    name: "V",
+    items: Object.assign(list, { get: (id) => list.find((i) => i.id === id) }),
+    async createEmbeddedDocuments(type, docs) {
+      const made = docs.map((d, n) => doc({ ...d, _id: `new${n}` }));
+      calls.created.push(...made.map((m) => m.name));
+      list.push(...made);
+      return made;
+    }
+  });
+  function doc(data) {
+    const d = {
+      ...data, id: data._id, parent: actor, actor,
+      toObject: () => structuredClone({ ...data }),
+      sheet: { _manageInstalledItems: async (type) => calls.opened.push([data._id, type]) },
+      async installItems(items) { calls.installed.push([data._id, items.map((i) => i.id)]); return true; }
+    };
+    d.system = { ...data.system, isInstalled: !!data.system?.isInstalled, installedIn: data.system?.installedIn ?? [] };
+    return d;
+  }
   const sande = doc({ _id: "s", name: "Sandevistan", type: "cyberware", flags: {}, system: { installedItems: { allowed: true, allowedTypes: ["itemUpgrade"], list: [] } } });
   const closed = doc({ _id: "c", name: "Old Implant", type: "cyberware", flags: {}, system: { installedItems: { allowed: false, allowedTypes: [], list: [] } } });
-  const falcon = doc({ _id: "f", name: "Militech ‘Falcon’ OS", type: "itemUpgrade", flags: {}, system: { type: "cyberware" } });
-  const list = [sande, closed, falcon];
-  const actor = Object.assign(new Actor(), { items: Object.assign(list, { get: (id) => list.find((i) => i.id === id) }) });
+  list.push(sande, closed);
+  if (withOS) list.push(doc({ _id: "f", name: "Militech ‘Falcon’ OS", type: "itemUpgrade", flags: {}, system: { type: "cyberware" } }));
   const row = (id, existing = null) => {
     const actions = { added: [], querySelector: () => existing, append(el) { this.added.push(el); } };
-    return { dataset: { itemId: id }, actions, querySelector: (sel) => (sel.includes("cyberware-actions") ? actions : null) };
+    return { dataset: { itemId: id }, actions, listeners: {}, addEventListener(k, fn) { this.listeners[k] = fn; }, querySelector: (sel) => (sel.includes("cyberware-actions") ? actions : null) };
   };
+  return { actor, calls, doc, row, sande };
+}
+const tick = () => new Promise((r) => setTimeout(r, 0));
+const dropEvent = (data) => ({ stopped: false, prevented: false, data, preventDefault() { this.prevented = true; }, stopPropagation() { this.stopped = true; } });
+
+test("the button lands on the right rows and opens CPR's own upgrade picker", async () => {
+  const { actor, calls, row } = fakeSheet();
   const rows = [row("s"), row("c"), row("s", {})];
-  const root = { querySelectorAll: () => rows };
-  ChromeSlots.decorate({ actor, isEditable: true }, [root]);
+  ChromeSlots.decorate({ actor, isEditable: true }, [{ querySelectorAll: () => rows }]);
   assert.equal(rows[0].actions.added.length, 1, "the Sandevistan gets one");
   assert.equal(rows[1].actions.added.length, 0, "closed chrome doesn't");
   assert.equal(rows[2].actions.added.length, 0, "a row that already has CPR's button doesn't get a second");
+  assert.ok(rows[0].listeners.drop && rows[2].listeners.drop && !rows[1].listeners.drop, "open chrome takes drops");
   const button = rows[0].actions.added[0];
   assert.match(button.className, /neon-hub-upgrades/);
   await button.listeners.click({ preventDefault() {}, stopPropagation() {} });
-  await new Promise((r) => setTimeout(r, 0));
-  assert.deepEqual(opened, [["s", "itemUpgrade"]]);
-  ChromeSlots.decorate({ actor, isEditable: false }, [{ querySelectorAll: () => [row("s")] }]);
-  assert.equal(opened.length, 1, "nothing on a sheet you can't edit");
+  await tick();
+  assert.deepEqual(calls.opened, [["s", "itemUpgrade"]]);
+  ChromeSlots.decorate({ actor, isEditable: true }, [{ querySelectorAll: () => [rows[0]] }]);
+  assert.equal(rows[0].actions.added.length, 1, "a re-render doesn't stack a second button");
+  const ro = row("s");
+  ChromeSlots.decorate({ actor, isEditable: false }, [{ querySelectorAll: () => [ro] }]);
+  assert.equal(ro.actions.added.length, 0, "nothing on a sheet you can't edit");
+});
+
+test("with no upgrade on the sheet the button still shows, and says how to get one there", async () => {
+  const { actor, calls, row } = fakeSheet({ withOS: false });
+  const r = row("s");
+  ChromeSlots.decorate({ actor, isEditable: true }, [{ querySelectorAll: () => [r] }]);
+  assert.equal(r.actions.added.length, 1);
+  await r.actions.added[0].listeners.click({ preventDefault() {}, stopPropagation() {} });
+  await tick();
+  assert.deepEqual(calls.opened, [], "no empty picker");
+  assert.equal(calls.notes[0][0], "info");
+  assert.match(calls.notes[0][1], /NEONHUB\.ChromeSlots\.NoneToFit/);
+});
+
+test("an upgrade dropped on a chrome row goes into that piece; anything else is left to CPR's sheet", async () => {
+  const { actor, calls, doc, row, sande } = fakeSheet({ withOS: false });
+  const falconPack = { name: "Militech ‘Falcon’ OS", type: "itemUpgrade", system: { type: "cyberware" }, toObject: () => ({ name: "Militech ‘Falcon’ OS", type: "itemUpgrade", system: { type: "cyberware" }, _id: "packId" }) };
+  const scopePack = { name: "Sniping Scope", type: "itemUpgrade", system: { type: "weapon" } };
+  const docs = { "Compendium.cpr-neon-hub.items-2070.Item.f": falconPack, "Compendium.x.Item.scope": scopePack };
+  const index = { "Compendium.cpr-neon-hub.items-2070.Item.f": { type: "itemUpgrade" }, "Compendium.x.Item.scope": { type: "itemUpgrade" }, "Compendium.x.Item.gun": { type: "weapon" } };
+  globalThis.fromUuidSync = (u) => index[u] ?? actor.items.find((i) => `Actor.V.Item.${i.id}` === u) ?? null;
+  globalThis.fromUuid = async (u) => docs[u] ?? actor.items.find((i) => `Actor.V.Item.${i.id}` === u) ?? null;
+  // Compat.getDragEventData reads the event through Foundry's TextEditor (found with foundry.utils.getProperty).
+  globalThis.foundry = { utils: { getProperty: (o, k) => k.split(".").reduce((x, p) => x?.[p], o) } };
+  globalThis.TextEditor = { getDragEventData: (e) => e.data };
+  const r = row("s");
+  ChromeSlots.decorate({ actor, isEditable: true }, [{ querySelectorAll: () => [r] }]);
+
+  const fromPack = dropEvent({ type: "Item", uuid: "Compendium.cpr-neon-hub.items-2070.Item.f" });
+  r.listeners.drop(fromPack);
+  assert.ok(fromPack.stopped && fromPack.prevented, "CPR's sheet doesn't also make a copy");
+  await tick(); await tick();
+  assert.deepEqual(calls.created, ["Militech ‘Falcon’ OS"], "a compendium OS is put on the sheet first");
+  assert.deepEqual(calls.installed, [["s", ["new0"]]], "then into the Sandevistan, through CPR's install");
+  assert.match(calls.notes.at(-1)[1], /Fitted/);
+
+  const gun = dropEvent({ type: "Item", uuid: "Compendium.x.Item.gun" });
+  r.listeners.drop(gun);
+  assert.ok(!gun.stopped, "a weapon dropped on the row goes on to CPR as usual");
+
+  const scope = dropEvent({ type: "Item", uuid: "Compendium.x.Item.scope" });
+  r.listeners.drop(scope);
+  await tick(); await tick();
+  assert.match(calls.notes.at(-1)[1], /WrongKind/, "a weapon upgrade isn't for chrome");
+  assert.equal(calls.installed.length, 1);
+
+  // An OS already on the sheet and loose: installed as it is, no copy.
+  const loose = doc({ _id: "o", name: "Zetatech ‘Reflex-Plus’ OS", type: "itemUpgrade", flags: {}, system: { type: "cyberware" } });
+  actor.items.push(loose);
+  r.listeners.drop(dropEvent({ type: "Item", uuid: "Actor.V.Item.o" }));
+  await tick(); await tick();
+  assert.deepEqual(calls.installed.at(-1), ["s", ["o"]]);
+  assert.equal(calls.created.length, 1);
+
+  // One already installed in another piece isn't pulled out of it.
+  const busy = doc({ _id: "b", name: "Moore Tech ‘Matterhorn’ OS", type: "itemUpgrade", flags: {}, system: { type: "cyberware", isInstalled: true, installedIn: ["k"] } });
+  actor.items.push(busy);
+  r.listeners.drop(dropEvent({ type: "Item", uuid: "Actor.V.Item.b" }));
+  await tick(); await tick();
+  assert.match(calls.notes.at(-1)[1], /InstalledElsewhere/);
+  assert.equal(calls.installed.length, 2);
+  assert.equal(sande.id, "s");
 });

@@ -826,9 +826,10 @@ Some lines are left in the text, for the GM to apply at the table:
 - a weapon's bonuses to its own attacks.
 
 **Operating Systems and Enhancements.** Every piece of chrome has one Enhancement slot, which is also where an Operating
-System goes. Put the upgrade on the character, then click **Manage Upgrades** (the superpowers icon) on the chrome's
-row in the Cyberware tab. Cyberpunk RED 0.92.4 doesn't show that button on chrome itself, so Neon Hub adds it. You can
-also use the upgrade's own install button in the Gear tab. CPR's own chrome and older copies are opened to upgrades
+System goes. Drag the OS or Enhancement from the Item Compendium onto the chrome's row in the Cyberware tab, and it
+goes on the sheet and into that piece. Or put it on the character, then click **Manage Upgrades** (the superpowers
+icon) on the chrome's row. Cyberpunk RED 0.92.4 doesn't show that button on chrome itself, so Neon Hub adds it. The
+upgrade's own install button in the Gear tab works too. Upgrades take no slots, so "0 Option Slots" is fine. CPR's own chrome and older copies are opened to upgrades
 once, when the GM first loads the world after updating; `api.items.fixChromeSlots()` runs it again.
 
 Items are dragged into the world or onto sheets as usual. The vehicles' crew seats and glass can be

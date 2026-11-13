@@ -16,7 +16,9 @@ const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
  * - CPR's Cyberware tab never offers "Manage Upgrades" on chrome: its row template filters the actor's
  *   upgrades by `type` ("itemUpgrade") instead of `system.type` ("cyberware"), so the list is always
  *   empty, and installed chrome opens read-only, without the item sheet's own control. Neon Hub adds
- *   the button to those rows and opens CPR's own upgrade picker from it.
+ *   the button to every piece of chrome that takes upgrades and opens CPR's own upgrade picker from it.
+ *   CPR also has no way to drop an upgrade onto chrome: an Operating System dragged from the compendium
+ *   onto a chrome row now lands on the sheet and goes straight into that piece.
  */
 export const SLOTS_SETTING = "chromeSlotsMigration";
 /** Raise to run the fix-up again in every world. 2: chrome recognised by name too (CPR's own, unflagged copies). */
@@ -52,19 +54,24 @@ export function slotFix(item, names = null) {
   return Object.keys(out).length ? out : null;
 }
 
-/**
- * Should this chrome row get a "Manage Upgrades" button? Yes when it takes upgrades and has one in it, or
- * the actor has a cyberware upgrade that isn't installed anywhere (CPR's own rule for the button, with the
- * right field). `items` is the actor's items as plain data ({ _id, type, system }).
- */
-export function wantsUpgradeButton(item, items) {
+/** Does this piece of chrome take upgrades (and so get a Manage Upgrades button and accept a dropped one)? */
+export function takesUpgrades(item) {
   const ii = item?.system?.installedItems;
-  if (item?.type !== "cyberware" || item.system?.core || !ii?.allowed || !ii.allowedTypes?.includes("itemUpgrade")) return false;
-  const byId = new Map(items.map((i) => [i._id, i]));
-  if ((ii.list ?? []).some((id) => byId.get(id)?.type === "itemUpgrade")) return true;
-  const installed = new Set(items.flatMap((i) => i.system?.installedItems?.list ?? []));
-  return items.some((i) => i.type === "itemUpgrade" && i.system?.type === "cyberware" && !installed.has(i._id));
+  return item?.type === "cyberware" && !item.system?.core && !!ii?.allowed && !!ii.allowedTypes?.includes("itemUpgrade");
 }
+
+/**
+ * What CPR's picker would offer this chrome: the actor's cyberware upgrades not installed anywhere, plus the
+ * ones already in it. `items` is the actor's items as plain data ({ _id, type, system }).
+ */
+export function upgradeChoices(item, items) {
+  const mine = new Set(item?.system?.installedItems?.list ?? []);
+  const installed = new Set(items.flatMap((i) => i.system?.installedItems?.list ?? []));
+  return items.filter((i) => i.type === "itemUpgrade" && i.system?.type === "cyberware" && (mine.has(i._id) || !installed.has(i._id)));
+}
+
+/** Is this dropped item (a Document, or a compendium index entry with only { type }) an upgrade a chrome row should take? */
+export const isUpgradeDrop = (doc) => doc?.type === "itemUpgrade";
 
 const plain = (i) => ({ _id: i.id, type: i.type, name: i.name, system: i.system, flags: i.flags });
 
@@ -139,36 +146,95 @@ export const ChromeSlots = {
     return n;
   },
 
-  /** Add "Manage Upgrades" to the Cyberware tab's chrome rows that should have it and don't. */
+  /** Add "Manage Upgrades" to the Cyberware tab's chrome rows that take upgrades, and let an upgrade be dropped on them. */
   decorate(sheet, html) {
     const actor = sheet.actor ?? sheet.document;
     if (!(actor instanceof Actor) || !sheet.isEditable) return;
     const root = html instanceof HTMLElement ? html : html?.[0];
     if (!root) return;
-    const items = actor.items.map(plain);
     for (const row of root.querySelectorAll("li.item[data-item-id]")) {
       const actions = row.querySelector(":scope > .cyberware-actions");
-      if (!actions || actions.querySelector('[data-action-type="manage-upgrades"], .neon-hub-upgrades')) continue;
+      if (!actions || row.dataset.neonHubUpgrades) continue;
       const item = actor.items.get(row.dataset.itemId);
-      if (!item || !wantsUpgradeButton(plain(item), items)) continue;
-      const button = document.createElement("a");
-      button.className = "item-action neon-hub-upgrades";
-      button.dataset.tooltip = L("NEONHUB.ChromeSlots.Manage");
-      button.setAttribute("aria-label", L("NEONHUB.ChromeSlots.Manage"));
-      button.innerHTML = '<i class="fab fa-superpowers"></i>';
-      button.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        this.manage(item).catch((err) => console.warn(`${MODULE_ID} | manage upgrades`, err));
-      });
-      actions.append(button);
+      if (!item || !takesUpgrades(plain(item))) continue;
+      row.dataset.neonHubUpgrades = "1";
+      // CPR's own button would only be there if it ever fixes its filter; don't add a second.
+      if (!actions.querySelector('[data-action-type="manage-upgrades"]')) {
+        const button = document.createElement("a");
+        button.className = "item-action neon-hub-upgrades";
+        button.dataset.tooltip = L("NEONHUB.ChromeSlots.Manage");
+        button.setAttribute("aria-label", L("NEONHUB.ChromeSlots.Manage"));
+        button.innerHTML = '<i class="fab fa-superpowers"></i>';
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          this.manage(item).catch((err) => console.warn(`${MODULE_ID} | manage upgrades`, err));
+        });
+        actions.append(button);
+      }
+      row.addEventListener("dragover", (event) => event.preventDefault());
+      row.addEventListener("drop", (event) => this.onDrop(item, event));
     }
   },
 
-  /** CPR's own upgrade picker for a piece of chrome (the one its item sheet opens), or the sheet itself. */
+  /** CPR's own upgrade picker for a piece of chrome (the one its item sheet opens), or how to get an upgrade there. */
   async manage(item) {
+    if (!upgradeChoices(plain(item), item.actor.items.map(plain)).length) {
+      return ui.notifications.info(L("NEONHUB.ChromeSlots.NoneToFit", { item: item.name }));
+    }
     const sheet = item.sheet;
     if (typeof sheet?._manageInstalledItems === "function") return sheet._manageInstalledItems("itemUpgrade");
     return sheet?.render(true, { editable: true });
+  },
+
+  /**
+   * An upgrade dropped on a chrome row: it goes into that piece (put on the sheet first when it comes from a
+   * compendium, the sidebar or another actor). Anything else is left to CPR's sheet. Decided as the event is
+   * dispatched, from the drag data alone, so CPR's own drop handler doesn't also make a copy.
+   */
+  onDrop(item, event) {
+    let data = null;
+    try {
+      data = Compat.getDragEventData(event);
+    } catch {
+      return;
+    }
+    if (data?.type !== "Item" || !data.uuid) return;
+    let quick = null;
+    try {
+      quick = fromUuidSync(data.uuid);
+    } catch {
+      return;
+    }
+    if (!isUpgradeDrop(quick)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    this.fit(item, data.uuid).catch((err) => {
+      console.warn(`${MODULE_ID} | dropping an upgrade on ${item.name}`, err);
+      ui.notifications.error(L("NEONHUB.ChromeSlots.DropFailed", { item: item.name }));
+    });
+  },
+
+  /** Put the upgrade at `uuid` into a piece of chrome, through CPR's own install. */
+  async fit(item, uuid) {
+    const actor = item.actor;
+    const source = await fromUuid(uuid);
+    if (!source || source.type !== "itemUpgrade") return;
+    if (source.system?.type !== "cyberware") {
+      return ui.notifications.warn(L("NEONHUB.ChromeSlots.WrongKind", { upgrade: source.name, item: item.name }));
+    }
+    let upgrade = source.parent === actor ? source : null;
+    if (upgrade?.system.isInstalled) {
+      if (upgrade.system.installedIn?.includes(item.id)) return;
+      return ui.notifications.warn(L("NEONHUB.ChromeSlots.InstalledElsewhere", { upgrade: upgrade.name }));
+    }
+    if (!upgrade) {
+      const data = source.toObject();
+      delete data._id;
+      [upgrade] = await actor.createEmbeddedDocuments("Item", [data]);
+      if (!upgrade) return;
+    }
+    const done = await item.installItems([upgrade]);
+    if (done) ui.notifications.info(L("NEONHUB.ChromeSlots.Fitted", { upgrade: upgrade.name, item: item.name }));
   }
 };

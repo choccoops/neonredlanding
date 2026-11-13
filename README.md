@@ -825,6 +825,12 @@ Some lines are left in the text, for the GM to apply at the table:
 - armor penalties, which CPR applies itself;
 - a weapon's bonuses to its own attacks.
 
+**Operating Systems and Enhancements.** Every piece of chrome has one Enhancement slot, which is also where an Operating
+System goes. Put the upgrade on the character, then click **Manage Upgrades** (the superpowers icon) on the chrome's
+row in the Cyberware tab. Cyberpunk RED 0.92.4 doesn't show that button on chrome itself, so Neon Hub adds it. You can
+also use the upgrade's own install button in the Gear tab. CPR's own chrome and older copies are opened to upgrades
+once, when the GM first loads the world after updating; `api.items.fixChromeSlots()` runs it again.
+
 Items are dragged into the world or onto sheets as usual. The vehicles' crew seats and glass can be
 changed on the vehicle sheet's setup.
 

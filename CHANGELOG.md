@@ -2,6 +2,10 @@
 
 ## 1.26.0
 
+- **Fixed: a Sandevistan still wouldn't take its Operating System.** 1.25.0 only fixed half of it. Two things in Cyberpunk RED 0.92.4 still stood in the way:
+  - **No button on the Cyberware tab.** CPR's chrome rows check for spare upgrades by the wrong field: an upgrade's kind (always "upgrade") where they mean what it fits ("cyberware"). So "Manage Upgrades" never showed on any installed chrome. Clicking the chrome only opens it read-only, without that control either. Neon Hub now adds **Manage Upgrades** to those rows when an upgrade could go in, or one is already in. It opens CPR's own picker.
+  - **CPR's own chrome stayed closed.** The fix-up only touched chrome carrying Neon Hub's mark. CPR's own Sandevistan, Kerenzikov, Berserk and the rest ship with "installed items" off too, and so do copies made before the mark or brought in without it. Chrome is now also recognised by its name in the Item Compendium (2070s). The world fix-up runs once more for it, and dropped copies are opened as they arrive.
+  - The upgrade's own install button in the Gear tab works too, now that the chrome is open.
 - **Weapon Rebuilds and Install Weapon Animations.** *Open a Neon module window* (hub buttons and
   the MATT action) opens Neon Combat Manager's two new windows, as its macros do: Weapon Rebuilds
   (a Power gun's ricochet, a Tech gun's charge) for the selected token's character or your own,

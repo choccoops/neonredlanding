@@ -43,6 +43,7 @@ import { FashionApp } from "./fashion/fashion-app.js";
 import { DISTRICTS } from "./fashion/fashion-data.js";
 import { Items2070 } from "./items/items-2070.js";
 import { WeaponMods } from "./items/weapon-mods.js";
+import { ChromeSlots } from "./items/chrome-slots.js";
 import { BurstRounds, burstRounds, shellAutofire } from "./items/burst-rounds.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -73,6 +74,7 @@ Hooks.once("init", () => {
   FashionOps.init();
   Items2070.register();
   WeaponMods.init();
+  ChromeSlots.init();
   // Before the world's items are prepared, so every weapon gets it.
   BurstRounds.patch();
   HubHover.init();
@@ -312,12 +314,16 @@ Hooks.once("init", () => {
      * (a message), or null. weaponMods.check is the same call. weaponMods.burstRounds(weapon, mode, upgrades, ammoVariety):
      * the rounds its Autofire or Suppressive Fire spends; weaponMods.shellAutofire(upgrades, ammoVariety): the control
      * group's shell rule ({ shells, shellDodge }) or null.
+     * fixChromeSlots(): GM, switch on "installed items" on every 2070 piece of chrome in the world, so Operating Systems
+     * and Enhancements go in (run once by itself after updating).
      */
     items: {
       useDvTables: (on = true) => Items2070.useDvTables(on),
       usingDvTables: () => Items2070.usingDvTables,
       rangeMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade) },
-      weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade), burstRounds, shellAutofire }
+      weaponMods: { check: (weapon, upgrade) => WeaponMods.check(weapon, upgrade), burstRounds, shellAutofire },
+      /** GM: open every 2070 piece of chrome in the world to upgrades again (it runs by itself once). Returns the count. */
+      fixChromeSlots: () => ChromeSlots.migrate()
     },
 
     /** Troubleshooting: the lit button images loaded on this client and the button under the pointer. */
@@ -329,6 +335,7 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", () => {
   HubSocket.init();
+  ChromeSlots.ready().catch((err) => console.warn(`${MODULE_ID} | chrome upgrade slots`, err));
   HQOps.init();
   LifestyleOps.init();
   HubSocket.on("openShop", ({ uuid }) => MATT.openShop(uuid));

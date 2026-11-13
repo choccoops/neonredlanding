@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.25.0
+
+- **Chrome takes its upgrades without editing the item.** Every piece of 2070 cyberware has one
+  Enhancement slot (Core Rules Ch09), which is also where an Operating System goes, but the Item
+  Compendium's chrome shipped with Cyberpunk RED's "installed items" switch off: a Sandevistan
+  had to be edited before its Operating System would install. All 291 pieces now ship with it on
+  (Cyberfingers excepted: they have no Enhancement slot), and limbs and other foundational pieces
+  accept upgrades beside their options.
+- **Chrome already in your world is fixed once.** The first time a GM opens the world after
+  updating, every 2070 piece of chrome on character sheets, on unlinked tokens and in the Items
+  sidebar gets the switch turned on, and an older copy dropped on a sheet later is fixed as it
+  lands. To run it again: `game.modules.get("cpr-neon-hub").api.items.fixChromeSlots()`.
+- **Counts as Borgware.** The Operating Systems and Enhancements whose entry says their piece
+  counts as Borgware for Maximum Humanity (Falcon OS, Baldur OS, Endo-Lace Bracing, Firewall Port,
+  Painducer; and the Apogee itself) carry `flags.cpr-neon-hub.countsAsBorgware`. Neon At Home
+  1.14.0 reads it for the 2070 Maximum Humanity: −4 for that piece in place of −2.
+- **Burst guns spend their bursts.** A weapon whose card says *Single Shot fires a 3-round
+  burst* (the Yukimura, the Masamune, the Kenshin: thirty weapons in all) now spends that many
+  rounds on a Single Shot or Aimed Shot. One that *won't fire with fewer* is refused by Cyberpunk
+  RED's own ammo check; one that *empties the magazine* fires what's left. A card that says
+  *Autofire uses 6 rounds instead of 10* (or 3 shells) is spent at that count, before the
+  attachments' own changes, and *An Aimed Shot fires 2 rounds* spends 2 on an Aimed Shot. All
+  are read from the card's text, so weapons already on sheets count without being replaced.
+
 ## 1.24.0
 
 - **Art redrawn to the 2077 setting.** Every aerodyne, aerozep and ground vehicle has new sheet art

@@ -17,6 +17,33 @@ export const BURST_BY_NAME = {
   "Burst Governor": { less: 5, min: 5 }
 };
 
+const cardText = (weapon) => String(weapon?.system?.description?.value ?? "").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ");
+
+/**
+ * What a weapon's own card says about the rounds it spends, read from its text so copies already on
+ * sheets count too: { autofire: rounds an Autofire spends | null, burst: { rounds, every, short } | null,
+ * aimed: rounds an Aimed Shot spends | null }.
+ * A burst is what one Single Shot fires ("every": every attack); `short` says what happens with fewer
+ * rounds left than a burst: "refuse" (it won't fire) or "empty" (it fires what's left).
+ */
+export function cardRounds(weapon) {
+  const t = cardText(weapon);
+  const af = t.match(/Autofire uses (\d+) (?:rounds|shells)/i);
+  const b = t.match(/(Single Shot fires|Every shot is) an? (\d+)-round burst([^.]*)\./i);
+  const burst = b ? { rounds: Number(b[2]), every: /every/i.test(b[1]), short: /won't fire/i.test(b[3]) ? "refuse" : "empty" } : null;
+  const aimed = t.match(/An Aimed Shot fires (\d+) rounds/i);
+  return { autofire: af ? Number(af[1]) : null, burst: burst && burst.rounds > 1 ? burst : null, aimed: aimed ? Number(aimed[1]) : null };
+}
+
+/** The rounds one Single Shot spends: a burst gun's count (what's left, when it fires short), else 1. */
+export function shotRounds(weapon, left = Infinity, { aimed = false } = {}) {
+  const { burst, aimed: aimedRounds } = cardRounds(weapon);
+  // "An Aimed Shot fires 2 rounds": it needs them all.
+  if (aimed && aimedRounds) return aimedRounds;
+  if (!burst) return 1;
+  return burst.short === "refuse" ? burst.rounds : Math.max(1, Math.min(burst.rounds, Number(left) || 0));
+}
+
 /** What an upgrade does to a burst's rounds, or null. */
 export function burstModOf(upgrade) {
   if (upgrade?.type !== "itemUpgrade") return null;
@@ -38,7 +65,7 @@ export function burstRounds(weapon, mode, upgrades = [], ammoVariety = "") {
   const mods = upgrades.map(burstModOf).filter(Boolean);
   const group = mods.find((m) => m.slugs || m.shells);
   if (mode === "autofire" && group?.shells && ammoVariety === "shotgunShell") return group.shells;
-  let n = Number(flagsOf(weapon)[ROUNDS_FLAG]) || 10;
+  let n = Number(flagsOf(weapon)[ROUNDS_FLAG]) || cardRounds(weapon).autofire || 10;
   if (mode === "autofire" && group?.slugs && ammoVariety === "shotgunSlug") n = group.slugs;
   if (mods.some((m) => m.double)) n *= 2;
   if (mode === "autofire") {
@@ -74,7 +101,15 @@ export const BurstRounds = {
       if (typeof own === "function" && !own[WRAPPED]) {
         const wrapped = function (cprRoll) {
           const n = own.call(this, cprRoll);
-          if (!(n > 1)) return n;
+          // One shot: a burst gun spends its burst (Cyberpunk RED's own ammo check then refuses a gun that won't fire short).
+          if (!(n > 1)) {
+            try {
+              return n === 1 ? shotRounds(this, this.system?.magazine?.value, { aimed: /Aimed/.test(String(cprRoll?.constructor?.name ?? "")) }) : n;
+            } catch (err) {
+              console.warn(`${MODULE_ID} | burst rounds`, err);
+              return n;
+            }
+          }
           try {
             return BurstRounds.rounds(this) ?? n;
           } catch (err) {

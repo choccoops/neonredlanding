@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "EZLZkbrqTDSoCpEN",
+        "6kwp91rnna2WvTop",
         "gci90v2AAGDanQck",
         "5VdafzwTL5mfkuzN",
         "LVFtCBOn4hZXWNNO"
@@ -68,7 +68,7 @@
       "description": "<p>Street punks who made it to a seat at Night City's top merc bar. Competent and experienced, but loyal mainly to the pay.</p><p><em>Mercs:</em> Freelance edgerunners, from first-gig blazers to near-legends.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Local Expert (GM's Choice) 8 (the GM picks which)</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) (ROF 1, ?)</p><p>Weapon: GM's Choice (Cost Limit: 250eb) (ROF 1, ?)</p><p>Melee SP (head/body): 6/6</p><p>Grenade: Grenade (GM's Choice) x1 (load it in the Thrown Weapon)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Local Expert (GM's Choice) 8 (the GM picks which)</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) (ROF 1, ?)</p><p>Weapon: GM's Choice (Cost Limit: 250eb) (ROF 1, ?)</p><p>Melee SP (head/body): 6/6</p><p>Grenade: Grenade (GM's Choice) x1 (load it in the Thrown Weapon)</p><p>Also carries, at the GM's choice: Cyberware (GM's Choice [Cost Limit: 1,000eb])</p>"
     }
   },
   "items": [
@@ -2125,7 +2125,7 @@
             "cyberware"
           ],
           "list": [
-            "F1HYL77ZFtJtpxkr"
+            "64CWjDxyic2kpBQH"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2283,11 +2283,10 @@
             "cyberware"
           ],
           "list": [
-            "oiO0eX1qUSnlZqHW",
-            "zDZdQdF7G3ZqbeAJ"
+            "17hwtLGkgbtN93n7"
           ],
           "slots": 7,
-          "usedSlots": 2
+          "usedSlots": 1
         },
         "isElectronic": false,
         "isFoundational": true,
@@ -2400,7 +2399,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2433,70 +2432,8 @@
       }
     },
     {
-      "_id": "oiO0eX1qUSnlZqHW",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.oiO0eX1qUSnlZqHW",
-      "name": "Internal Body Cyberware Hardened Shielding",
-      "type": "cyberware",
-      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/hardend_shielding.svg",
-      "system": {
-        "type": "cyberwareInternal",
-        "installLocation": "hospital",
-        "humanityLoss": {
-          "static": 14,
-          "roll": "4d6"
-        },
-        "isFoundational": false,
-        "size": 1,
-        "price": {
-          "market": 1000
-        },
-        "usage": "installed",
-        "brand": "",
-        "core": false,
-        "isWeapon": false,
-        "isElectronic": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "providesHardening": false,
-        "installedItems": {
-          "allowed": false,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 0,
-          "usedSlots": 0
-        },
-        "description": {
-          "value": "<p>All your Internal Body cyberware can't be disabled by shock, microwaver, EMP or non-Black ICE effects.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Cyberware"
-          }
-        }
-      }
-    },
-    {
-      "_id": "zDZdQdF7G3ZqbeAJ",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.zDZdQdF7G3ZqbeAJ",
+      "_id": "17hwtLGkgbtN93n7",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.17hwtLGkgbtN93n7",
       "name": "Nasal Filters",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/nasal_filters.svg",
@@ -2523,7 +2460,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2557,8 +2494,8 @@
       }
     },
     {
-      "_id": "EZLZkbrqTDSoCpEN",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.EZLZkbrqTDSoCpEN",
+      "_id": "6kwp91rnna2WvTop",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.6kwp91rnna2WvTop",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2587,11 +2524,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "uTeVH20NO01r0LSf",
-            "1DguCCqdtOWqFph8"
+            "mm8YFvwH7r19a1s6",
+            "GuyAKkJTkxKpDHeB"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -2622,8 +2560,8 @@
       }
     },
     {
-      "_id": "uTeVH20NO01r0LSf",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.uTeVH20NO01r0LSf",
+      "_id": "mm8YFvwH7r19a1s6",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.mm8YFvwH7r19a1s6",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2650,7 +2588,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2684,8 +2622,8 @@
       }
     },
     {
-      "_id": "1DguCCqdtOWqFph8",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.1DguCCqdtOWqFph8",
+      "_id": "GuyAKkJTkxKpDHeB",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.GuyAKkJTkxKpDHeB",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2712,7 +2650,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2733,7 +2671,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!1SWQr5yEsZLMSnY3.1DguCCqdtOWqFph8.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!1SWQr5yEsZLMSnY3.GuyAKkJTkxKpDHeB.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2786,8 +2724,8 @@
       }
     },
     {
-      "_id": "F1HYL77ZFtJtpxkr",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.F1HYL77ZFtJtpxkr",
+      "_id": "64CWjDxyic2kpBQH",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.64CWjDxyic2kpBQH",
       "name": "Subdermal Armor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
@@ -2814,7 +2752,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2848,8 +2786,8 @@
       }
     },
     {
-      "_id": "IaeUUyaVca1SV5Ni",
-      "_key": "!actors.items!1SWQr5yEsZLMSnY3.IaeUUyaVca1SV5Ni",
+      "_id": "E0CpDWB6LyvPnaj6",
+      "_key": "!actors.items!1SWQr5yEsZLMSnY3.E0CpDWB6LyvPnaj6",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

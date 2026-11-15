@@ -2,6 +2,12 @@
 
 Neon Hub: Full Borg is released with Neon Hub, at the same version.
 
+## 1.26.3
+
+- **The bodies' built-in blades attack.** The Kawakami's Mantis Blades and the Fuma's Monowire are cyberware weapons
+  like the Item Compendium's (Neon Hub 1.26.3), so they are in the Fight tab once the body is on. The Phoenix Security
+  Unit's machine gun attacks with Autofire (it had no Skill).
+
 ## 1.26.2
 
 - The bodies' chrome takes Operating Systems and Enhancements ("installed items" switched on, as in the Item Compendium since Neon Hub 1.25.0), and their Operating Systems carry the "counts as Borgware" flag.

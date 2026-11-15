@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "k6DKVhz2EwuMUlfO",
-        "nHB0MH6TaVOw3fXW",
-        "mXUMNpsQxNe16jRQ",
+        "jNtVw3sx9T6gQE0H",
+        "mGox8UQPqIjjpoSk",
+        "6Gke7vBVQeppiAZW",
         "KZp75ZSPAGqijv6g",
         "0G1Zmjlzttj58SYJ",
         "poP3Wn1LkShHKCO1"
@@ -2127,7 +2127,7 @@
             "cyberware"
           ],
           "list": [
-            "SRIJA9wO8b22aEE7"
+            "Ndtv0Lq10mjJsS6E"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2285,7 +2285,7 @@
             "cyberware"
           ],
           "list": [
-            "h5kn85T1ybvjdr7j"
+            "kmBLsgipelWlC1ar"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2410,13 +2410,13 @@
       "_key": "!actors.items!6xKRDiU7TiWvFWtD.JXLKhJIX9nWlD80i",
       "name": "Techtronika SPT-32 Grad",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Heavy Weapons",
         "weaponType": "sniperRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "6d6",
         "rof": 1,
         "handsReq": 2,
@@ -2553,9 +2553,9 @@
       "_key": "!actors.items!6xKRDiU7TiWvFWtD.qp90j5Ef6dIV04fe"
     },
     {
-      "_id": "Z8rso1zB1AAXf5vo",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.Z8rso1zB1AAXf5vo",
-      "name": "Light Armorjack",
+      "_id": "MqjU7EZBxnY9ovfX",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.MqjU7EZBxnY9ovfX",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2585,10 +2585,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 11,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2621,8 +2621,76 @@
       }
     },
     {
-      "_id": "k6DKVhz2EwuMUlfO",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.k6DKVhz2EwuMUlfO",
+      "_id": "AISjmM9ropEDbiGu",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.AISjmM9ropEDbiGu",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "jNtVw3sx9T6gQE0H",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.jNtVw3sx9T6gQE0H",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2651,10 +2719,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "G9Y0oB6WEnuNqwC5"
+            "7zcILo8whjhJS28h"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2685,8 +2754,8 @@
       }
     },
     {
-      "_id": "G9Y0oB6WEnuNqwC5",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.G9Y0oB6WEnuNqwC5",
+      "_id": "7zcILo8whjhJS28h",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.7zcILo8whjhJS28h",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2713,7 +2782,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2747,8 +2816,8 @@
       }
     },
     {
-      "_id": "nHB0MH6TaVOw3fXW",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.nHB0MH6TaVOw3fXW",
+      "_id": "mGox8UQPqIjjpoSk",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.mGox8UQPqIjjpoSk",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2777,10 +2846,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "liI53JdSRbXPVewl"
+            "xxNy1NqZBtHVMpmQ"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2811,8 +2881,8 @@
       }
     },
     {
-      "_id": "liI53JdSRbXPVewl",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.liI53JdSRbXPVewl",
+      "_id": "xxNy1NqZBtHVMpmQ",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.xxNy1NqZBtHVMpmQ",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2839,7 +2909,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2873,8 +2943,8 @@
       }
     },
     {
-      "_id": "h5kn85T1ybvjdr7j",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.h5kn85T1ybvjdr7j",
+      "_id": "kmBLsgipelWlC1ar",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.kmBLsgipelWlC1ar",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -2901,7 +2971,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2922,7 +2992,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!6xKRDiU7TiWvFWtD.h5kn85T1ybvjdr7j.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!6xKRDiU7TiWvFWtD.kmBLsgipelWlC1ar.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2975,8 +3045,8 @@
       }
     },
     {
-      "_id": "SRIJA9wO8b22aEE7",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.SRIJA9wO8b22aEE7",
+      "_id": "Ndtv0Lq10mjJsS6E",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.Ndtv0Lq10mjJsS6E",
       "name": "Kaleidoscopic Electric Reflection System (KERS)",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
@@ -3003,7 +3073,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3037,8 +3107,8 @@
       }
     },
     {
-      "_id": "mXUMNpsQxNe16jRQ",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.mXUMNpsQxNe16jRQ",
+      "_id": "6Gke7vBVQeppiAZW",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.6Gke7vBVQeppiAZW",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3067,11 +3137,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "OUGnfGSvTLqLNmoM",
-            "F6VoZ54tA9dxznIL"
+            "hpzeqTst27ibDjAE",
+            "SHq4JPYlXwqA4HvP"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -3102,8 +3173,8 @@
       }
     },
     {
-      "_id": "OUGnfGSvTLqLNmoM",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.OUGnfGSvTLqLNmoM",
+      "_id": "hpzeqTst27ibDjAE",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.hpzeqTst27ibDjAE",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3130,7 +3201,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3164,8 +3235,8 @@
       }
     },
     {
-      "_id": "F6VoZ54tA9dxznIL",
-      "_key": "!actors.items!6xKRDiU7TiWvFWtD.F6VoZ54tA9dxznIL",
+      "_id": "SHq4JPYlXwqA4HvP",
+      "_key": "!actors.items!6xKRDiU7TiWvFWtD.SHq4JPYlXwqA4HvP",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3192,7 +3263,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

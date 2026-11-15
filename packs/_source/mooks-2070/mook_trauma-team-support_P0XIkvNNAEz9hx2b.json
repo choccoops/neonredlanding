@@ -59,7 +59,7 @@
       ],
       "list": [
         "8rk6B4Q66r09rIQ3",
-        "LwZ0sXpBa47l5BSm",
+        "0aWAgWHqNxtowUJn",
         "z2hUlInDXRhwcybD",
         "B62G2qk5zoO4OyVK",
         "rdRFNf4YD8WZi1LW",
@@ -70,7 +70,7 @@
       "description": "<p>The gunners of a Trauma Team unit, with top smartguns, grenades, combat chrome and a license to shoot whoever gets in the way.</p><p><em>Trauma Team:</em> The armored ambulance service that only saves subscribers.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 4 Medtech: Medicine 1 (Medtech [Pharm] 1)</p><p>With gear or role bonuses: Resist Torture/Drugs 12 (14)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 3,000eb) (ROF 1, ?)</p><p>Melee SP (head/body): 6/7</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Scrambler/Descrambler)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 4 Medtech: Medicine 1 (Medtech [Pharm] 1)</p><p>With gear or role bonuses: Resist Torture/Drugs 12 (14)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 3,000eb) (ROF 1, ?)</p><p>Melee SP (head/body): 6/7</p>"
     }
   },
   "items": [
@@ -2504,7 +2504,7 @@
     {
       "_id": "MaX35d7TVPC3afwv",
       "_key": "!actors.items!P0XIkvNNAEz9hx2b.MaX35d7TVPC3afwv",
-      "name": "Kiroshi T.O.P.",
+      "name": "Kiroshi Tactical Optics Platform",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2545,7 +2545,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Trauma Team Support:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p><strong>Trauma Team Support:</strong> Kiroshi T.O.P.</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2572,7 +2572,7 @@
     {
       "_id": "ahb4gJVM0KWBiyZk",
       "_key": "!actors.items!P0XIkvNNAEz9hx2b.ahb4gJVM0KWBiyZk",
-      "name": "Heavy Armorjack",
+      "name": "Heavy Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2721,7 +2721,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2785,7 +2785,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "q8S5nuOv6xndF602"
@@ -2847,7 +2848,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2921,76 +2922,8 @@
       }
     },
     {
-      "_id": "ECrmd8F9gjN9Iobs",
-      "_key": "!actors.items!P0XIkvNNAEz9hx2b.ECrmd8F9gjN9Iobs",
-      "name": "Kiroshi Tactical Optics Platform",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 1000
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 12,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Trauma Team Support:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "LwZ0sXpBa47l5BSm",
-      "_key": "!actors.items!P0XIkvNNAEz9hx2b.LwZ0sXpBa47l5BSm",
+      "_id": "0aWAgWHqNxtowUJn",
+      "_key": "!actors.items!P0XIkvNNAEz9hx2b.0aWAgWHqNxtowUJn",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3019,11 +2952,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "0IK93nH2VKynVqGN",
-            "ThJWATiVWyGulXld"
+            "3n6JPBz4fnVHzYjP",
+            "EGv82IXkhHPPZyto"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -3054,8 +2988,8 @@
       }
     },
     {
-      "_id": "0IK93nH2VKynVqGN",
-      "_key": "!actors.items!P0XIkvNNAEz9hx2b.0IK93nH2VKynVqGN",
+      "_id": "3n6JPBz4fnVHzYjP",
+      "_key": "!actors.items!P0XIkvNNAEz9hx2b.3n6JPBz4fnVHzYjP",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3082,7 +3016,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3116,8 +3050,8 @@
       }
     },
     {
-      "_id": "ThJWATiVWyGulXld",
-      "_key": "!actors.items!P0XIkvNNAEz9hx2b.ThJWATiVWyGulXld",
+      "_id": "EGv82IXkhHPPZyto",
+      "_key": "!actors.items!P0XIkvNNAEz9hx2b.EGv82IXkhHPPZyto",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3144,7 +3078,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3178,6 +3112,50 @@
       }
     },
     {
+      "_id": "VkPxPbEpRClXSrVn",
+      "_key": "!actors.items!P0XIkvNNAEz9hx2b.VkPxPbEpRClXSrVn",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Trauma Team Support:</strong> includes Level Damper, Scrambler/Descrambler</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
       "_id": "z2hUlInDXRhwcybD",
       "_key": "!actors.items!P0XIkvNNAEz9hx2b.z2hUlInDXRhwcybD",
       "name": "Subdermal Grip",
@@ -3206,7 +3184,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3268,7 +3246,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "qsSKtCErej3RUNIM",
-        "Z5Y7vuwNZru4mUSR",
+        "MKyJsCz88HLfi7hu",
+        "qbizVokxtWIUV6zu",
         "ygiytPlPprs8rhO3",
         "4et1qRrzfcn8grFR",
         "PZJLoXg0OAIJhIRO"
@@ -69,7 +69,7 @@
       "description": "<p>Despite the name, a field commander running response teams from behind good armor and smart pistols.</p><p><em>Kang Tao:</em> The Chinese smartgun maker's own security, as sharp as its guns.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4 Enforcer: Officer 2 (Authority 2)</p><p>Melee SP (head/body): 7/7</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Radio Communicator)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4 Enforcer: Officer 2 (Authority 2)</p><p>Melee SP (head/body): 7/7</p>"
     }
   },
   "items": [
@@ -2471,9 +2471,9 @@
       }
     },
     {
-      "_id": "PKDz9nyzFv0YS3CP",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.PKDz9nyzFv0YS3CP",
-      "name": "Heavy Armorjack",
+      "_id": "9uX1Jaa8XYZmBkJv",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.9uX1Jaa8XYZmBkJv",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2503,10 +2503,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 13,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2539,8 +2539,76 @@
       }
     },
     {
-      "_id": "qsSKtCErej3RUNIM",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.qsSKtCErej3RUNIM",
+      "_id": "g5e1WFHunUshwJbU",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.g5e1WFHunUshwJbU",
+      "name": "Heavy Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP13. −2 REF, DEX and MOVE.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "MKyJsCz88HLfi7hu",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.MKyJsCz88HLfi7hu",
       "name": "Flashlight Cyberfinger",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
@@ -2601,8 +2669,8 @@
       }
     },
     {
-      "_id": "n3hArkTkgzsPosIT",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.n3hArkTkgzsPosIT",
+      "_id": "hm3UharOjisiq0zt",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.hm3UharOjisiq0zt",
       "name": "Improved Smart Ammunition (Heavy Pistol)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -2656,8 +2724,8 @@
       }
     },
     {
-      "_id": "Z5Y7vuwNZru4mUSR",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.Z5Y7vuwNZru4mUSR",
+      "_id": "qbizVokxtWIUV6zu",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.qbizVokxtWIUV6zu",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2686,10 +2754,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "jxvIAjxrZBniWSMb"
+            "gUqjbqBwcUItooam"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2720,8 +2789,8 @@
       }
     },
     {
-      "_id": "jxvIAjxrZBniWSMb",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.jxvIAjxrZBniWSMb",
+      "_id": "gUqjbqBwcUItooam",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.gUqjbqBwcUItooam",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2748,7 +2817,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2782,8 +2851,52 @@
       }
     },
     {
-      "_id": "a8O79Wg9Duq7mH9K",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.a8O79Wg9Duq7mH9K",
+      "_id": "HfJgb0dE41y7x9Rq",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.HfJgb0dE41y7x9Rq",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Kang Tao Heavy:</strong> includes Level Damper, Radio Communicator</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "dRSvTOfpMsR0B8p4",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.dRSvTOfpMsR0B8p4",
       "name": "Smart Glasses",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2826,8 +2939,8 @@
       }
     },
     {
-      "_id": "aaTKCslOqvAmkIq4",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.aaTKCslOqvAmkIq4",
+      "_id": "iPC6xN01fednyAL7",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.iPC6xN01fednyAL7",
       "name": "Grenade (Smoke)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/smoke.svg",
@@ -2881,8 +2994,8 @@
       }
     },
     {
-      "_id": "j5mDQ93cGGyayen4",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.j5mDQ93cGGyayen4",
+      "_id": "G5QJ4yBfNcGxCUCR",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.G5QJ4yBfNcGxCUCR",
       "name": "Video Camera",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2925,8 +3038,8 @@
       }
     },
     {
-      "_id": "iU9dhLh7CdQNAr8u",
-      "_key": "!actors.items!0lG5FNE4arrZSzQP.iU9dhLh7CdQNAr8u",
+      "_id": "Xgnt6DbQjXI6IWpB",
+      "_key": "!actors.items!0lG5FNE4arrZSzQP.Xgnt6DbQjXI6IWpB",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -2974,7 +3087,7 @@
             "ammo"
           ],
           "list": [
-            "aaTKCslOqvAmkIq4"
+            "iPC6xN01fednyAL7"
           ],
           "slots": 3,
           "usedSlots": 0

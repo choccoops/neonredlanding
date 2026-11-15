@@ -36,6 +36,10 @@ const NAMES = {
   Biomonitor: "biomonitor", "Deep Dive": "deepDive", "Perk Tree": "perkTree", "Spend IP": "spendIp"
 };
 
+// Macros that aren't a window the Hub offers a button for: the GM's Humanity Loss roll (Neon Combat Manager), and
+// Give Inspiration (Neon At Home), which acts on the selected tokens.
+const NOT_WINDOWS = new Set(["Humanity Loss", "Give Inspiration"]);
+
 test("each window opens through the same API call as its module's macro", (t) => {
   let checked = 0;
   for (const [id, src] of Object.entries(SOURCES)) {
@@ -44,7 +48,7 @@ test("each window opens through the same API call as its module's macro", (t) =>
       t.diagnostic(`${id}: macro sources not found, skipped`);
       continue;
     }
-    const macros = readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(path.join(dir, f), "utf8"))).filter((m) => m.command);
+    const macros = readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(path.join(dir, f), "utf8"))).filter((m) => m.command && !NOT_WINDOWS.has(m.name.split(": ")[1]));
     const ours = Object.keys(COMPANION_WINDOWS).filter((k) => k.startsWith(`${id}/`)).sort();
     const theirs = macros.map((m) => `${id}/${NAMES[m.name.split(": ")[1]]}`).sort();
     assert.deepEqual(ours, theirs, `${id}: one window per macro`);

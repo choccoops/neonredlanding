@@ -68,7 +68,7 @@
       "description": "<p>Squad leaders who've all been under fire and come out on top, now commanding heavier units guarding Barghest's key sites.</p><p><em>Barghest:</em> Kurt Hansen's militia, the deserter army that holds Dogtown.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Carries one of the listed weapons (GM's choice); both are on the sheet.</p><p>With gear or role bonuses: Evasion 14 (12)</p><p>Melee SP (head/body): 5/6</p><p>Also carries (no catalog item): x1 Black Lace (in Bodyweight Autoinjector)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Carries one of the listed weapons (GM's choice); both are on the sheet.</p><p>With gear or role bonuses: Evasion 14 (12)</p><p>Melee SP (head/body): 5/6</p>"
     }
   },
   "items": [
@@ -2307,7 +2307,7 @@
             "cyberware"
           ],
           "list": [
-            "KaA1o6Ga124SAWnE"
+            "E8hEDYdf5SA9B1H8"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2432,13 +2432,13 @@
       "_key": "!actors.items!KkoEk8I6RKp4RT14.F7tsK1QnSsgT73DI",
       "name": "Tsunami Arms Kyubi",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "6d6",
         "rof": 1,
         "handsReq": 2,
@@ -2618,7 +2618,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP9, no armor penalty. Built-in anti-smog mask and Smart Ears. Lowering the visor is an Action; down, it works as a stealth headset (throat mic and earbud nobody nearby can hear) and Perception to recognize you takes −2.</p><p><strong>Cost:</strong> 1,200eb (V. Expensive)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Barghest Veteran Sergeant:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Zetatech Tank Commander Headset</p><p>Head SP9, no armor penalty. Built-in anti-smog mask and Smart Ears. Lowering the visor is an Action; down, it works as a stealth headset (throat mic and earbud nobody nearby can hear) and Perception to recognize you takes −2.</p><p><strong>Cost:</strong> 1,200eb (V. Expensive)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2645,7 +2645,7 @@
     {
       "_id": "OHNYJTIAwHwmVO09",
       "_key": "!actors.items!KkoEk8I6RKp4RT14.OHNYJTIAwHwmVO09",
-      "name": "Hybrid Armorjack",
+      "name": "Hybrid Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2711,76 +2711,8 @@
       }
     },
     {
-      "_id": "cYE8h2AVnNc4TPjb",
-      "_key": "!actors.items!KkoEk8I6RKp4RT14.cYE8h2AVnNc4TPjb",
-      "name": "Ballistic Mask",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 1200
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 9,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Barghest Veteran Sergeant:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Zetatech Tank Commander Headset</p><p>Head SP9, no armor penalty. Built-in anti-smog mask and Smart Ears. Lowering the visor is an Action; down, it works as a stealth headset (throat mic and earbud nobody nearby can hear) and Perception to recognize you takes −2.</p><p><strong>Cost:</strong> 1,200eb (V. Expensive)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "KaA1o6Ga124SAWnE",
-      "_key": "!actors.items!KkoEk8I6RKp4RT14.KaA1o6Ga124SAWnE",
+      "_id": "E8hEDYdf5SA9B1H8",
+      "_key": "!actors.items!KkoEk8I6RKp4RT14.E8hEDYdf5SA9B1H8",
       "name": "Bodyweight Autoinjector",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
@@ -2807,7 +2739,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2839,6 +2771,44 @@
           }
         }
       }
+    },
+    {
+      "_id": "d4LSfMt96CxPbnfP",
+      "name": "Black Lace",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "consumed": "Black Lace Primary",
+        "description": {
+          "value": "<p><strong>Barghest Veteran Sergeant:</strong> in the Bodyweight Autoinjector</p><p><strong>Primary Effect</strong></p>\n<p>Dose lasts 24 hours.</p>\n<ul>\n  <li>\n    The user rolls 2d6 Humanity Loss which is returned if they pass the\n    Secondary Effect save\n  </li>\n  <li>The user ignores Seriously Wounded wound states for the duration</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<ul>\n  <li>On Fail Humanity loss is not returned</li>\n  <li>Unless experiencing the primary effect, REF -2</li>\n</ul>\n"
+        },
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 50
+        },
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 357
+        },
+        "usage": "snorted"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!KkoEk8I6RKp4RT14.d4LSfMt96CxPbnfP"
     },
     {
       "_id": "09SL1wNIzLhMMeOV",
@@ -2926,7 +2896,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "NWjtmrJYCMlMexzL"
@@ -2988,7 +2959,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

@@ -2399,13 +2399,13 @@
       "_key": "!actors.items!xV1PPaVIFgASxSbM.EAsMzE9ktOfr9hJm",
       "name": "Kang Tao L-69 Zhuo",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_smart.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_excellent_smart.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 1,
+        "attackmod": 2,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2473,9 +2473,9 @@
       }
     },
     {
-      "_id": "Z5NYkV2ZtcV8tUaH",
-      "_key": "!actors.items!xV1PPaVIFgASxSbM.Z5NYkV2ZtcV8tUaH",
-      "name": "Hybrid Armorjack",
+      "_id": "eLICifYT4EH7aO7E",
+      "_key": "!actors.items!xV1PPaVIFgASxSbM.eLICifYT4EH7aO7E",
+      "name": "Hybrid Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2543,7 +2543,7 @@
     {
       "_id": "TIUw6tW807beuNIU",
       "_key": "!actors.items!xV1PPaVIFgASxSbM.TIUw6tW807beuNIU",
-      "name": "Hybrid Armorjack",
+      "name": "Hybrid Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2584,7 +2584,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p><strong>Arasaka Assault Specialist:</strong> Hybrid Armorjack (w/ Combat Weave &amp; Superheavy Plates)</p><p>A Medium Armorjack at −2 REF and DEX, −1 MOVE.</p><p><strong>Cost:</strong> 250eb (Expensive)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Arasaka Assault Specialist:</strong> TUp Hybrid Armorjack</p><p>A Medium Armorjack at −2 REF and DEX, −1 MOVE.</p><p><strong>Cost:</strong> 250eb (Expensive)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2683,7 +2683,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "3XiulNThtYW0YaY8",
@@ -2746,7 +2747,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2964,7 +2965,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "kRJ3iDcz3W4U6Hei"
@@ -3026,7 +3028,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3088,7 +3090,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3150,7 +3152,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

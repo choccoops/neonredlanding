@@ -2399,13 +2399,13 @@
       "_key": "!actors.items!SNyIqvP0MB9g7Dwq.CnxERhUvfAF8mscv",
       "name": "Arasaka TKI-20 Shingen",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_standard_smart.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_excellent_smart.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "heavySmg",
         "isRanged": true,
-        "quality": "standard",
-        "attackmod": 1,
+        "quality": "excellent",
+        "attackmod": 2,
         "damage": "4d6",
         "rof": 1,
         "handsReq": 2,
@@ -2542,9 +2542,9 @@
       "_key": "!actors.items!SNyIqvP0MB9g7Dwq.Q4BFiGZBjbABbVaw"
     },
     {
-      "_id": "T3VaF33ysRDp3CZA",
-      "_key": "!actors.items!SNyIqvP0MB9g7Dwq.T3VaF33ysRDp3CZA",
-      "name": "Kevlar",
+      "_id": "uGrwem7J9HZ4n2vn",
+      "_key": "!actors.items!SNyIqvP0MB9g7Dwq.uGrwem7J9HZ4n2vn",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2612,7 +2612,7 @@
     {
       "_id": "AlqC1YJD2WN2vxQj",
       "_key": "!actors.items!SNyIqvP0MB9g7Dwq.AlqC1YJD2WN2vxQj",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2708,7 +2708,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "XHVULyZvkonGQSmQ",
@@ -2771,7 +2772,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2945,7 +2946,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "RMJpjYOXaC1kQ1Bx"
@@ -3007,7 +3009,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3069,7 +3071,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3131,7 +3133,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

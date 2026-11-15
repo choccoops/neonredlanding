@@ -2329,7 +2329,7 @@
       "_key": "!actors.items!jAXdHB5WmANH98w6.yfxKReclRxWr6Jzd",
       "name": "Throwing Knife",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
@@ -2374,7 +2374,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Valentino Macho:</strong> Can be thrown as half of a ROF 2 Attack and still halve SP when thrown; stands in for the Throwing Knife (x3) [Can be thrown as half of a ROF 2 Attack and still halve SP when thrown]; ×3</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Valentino Macho:</strong> a Medium Melee Weapon with the block's numbers; the catalog has no Throwing Knife; Can be thrown as half of a ROF 2 Attack and still halve SP when thrown; ×3</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2469,16 +2469,16 @@
       "_key": "!actors.items!jAXdHB5WmANH98w6.TASEKSlbRzQ55MPz"
     },
     {
-      "_id": "VwdXiMassrEeAQIT",
-      "_key": "!actors.items!jAXdHB5WmANH98w6.VwdXiMassrEeAQIT",
-      "name": "PQ Shotgun",
+      "_id": "xczj7md1Tnpsbw8O",
+      "_key": "!actors.items!jAXdHB5WmANH98w6.xczj7md1Tnpsbw8O",
+      "name": "Shotgun (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun_poor.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "5d6",
         "rof": 1,
@@ -2506,7 +2506,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 500
+          "market": 100
         },
         "brand": "",
         "installedItems": {
@@ -2521,7 +2521,7 @@
         },
         "unarmedAutomaticCalculation": true,
         "description": {
-          "value": "<p><strong>Valentino Macho:</strong> Typically a DB-4 Igla or Ironfake Variant Pozhar; stands in for the PQ Shotgun [Typically a DB-4 Igla or Ironfake Variant Pozhar]</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Valentino Macho:</strong> Typically a DB-4 Igla or Ironfake Variant Pozhar</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2616,9 +2616,9 @@
       "_key": "!actors.items!jAXdHB5WmANH98w6.Rq1hRtmggvmOLs5s"
     },
     {
-      "_id": "tkfVVQqZigShBhN5",
-      "_key": "!actors.items!jAXdHB5WmANH98w6.tkfVVQqZigShBhN5",
-      "name": "Leathers",
+      "_id": "ih2SggewBJlJBSUx",
+      "_key": "!actors.items!jAXdHB5WmANH98w6.ih2SggewBJlJBSUx",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2686,7 +2686,7 @@
     {
       "_id": "cqvHwrtaSsAhUE54",
       "_key": "!actors.items!jAXdHB5WmANH98w6.cqvHwrtaSsAhUE54",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2845,7 +2845,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3012,7 +3012,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3171,7 +3171,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "bavo2dwVog59xM3Q",
@@ -3235,7 +3236,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3297,7 +3298,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3399,7 +3400,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

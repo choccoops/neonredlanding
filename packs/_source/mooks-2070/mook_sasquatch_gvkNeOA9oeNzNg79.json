@@ -72,7 +72,7 @@
       "description": "<p>Combat Cab's legend: a driver sculpted head to toe into a sasquatch who has never lost a fare, a race or an argument about the route. Dispatch sends him maybe once in a thousand calls. If Bigfoot pulls up, get in.</p><p><em>Combat Cab:</em> The armored taxi outfit that takes a fare anywhere in Night City, the Combat Zone included: \"leave the combat to us.\"</p><p><small>Stat block by Neon Hub. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Boss • <strong>Reputation:</strong> 8 • <strong>COM#:</strong> 17 • <strong>Role:</strong> Nomad: Moto 10 Solo: Combat Awareness 4</p><p>Also carries (no catalog item): Exotic Bodysculpt (Sasquatch)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Boss • <strong>Reputation:</strong> 8 • <strong>COM#:</strong> 17 • <strong>Role:</strong> Nomad: Moto 10 Solo: Combat Awareness 4</p>"
     }
   },
   "items": [
@@ -2260,7 +2260,9 @@
             "itemUpgrade",
             "cyberware"
           ],
-          "list": [],
+          "list": [
+            "6j7wgmmccPd4C0gj"
+          ],
           "slots": 7,
           "usedSlots": 0
         },
@@ -2389,7 +2391,7 @@
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
       "system": {
-        "weaponSkill": "Handgun Base 16",
+        "weaponSkill": "Handgun",
         "weaponType": "vHeavyPistol",
         "isRanged": true,
         "quality": "standard",
@@ -2465,7 +2467,7 @@
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Shotgun.svg",
       "system": {
-        "weaponSkill": "Shoulder Arms Base 16",
+        "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
         "quality": "standard",
@@ -2542,7 +2544,7 @@
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
       "system": {
-        "weaponSkill": "Melee Weapon Base 14",
+        "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
         "isRanged": false,
         "quality": "standard",
@@ -2682,7 +2684,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2798,7 +2800,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2968,7 +2970,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "p6lldXM8VL4KBQ0n"
@@ -3030,7 +3033,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3094,7 +3097,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "jOko0rjv1sYGeEZg"
@@ -3156,7 +3160,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3220,7 +3224,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "zfHqaiVksZO9JO93",
@@ -3283,7 +3288,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3345,7 +3350,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3449,7 +3454,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "MFckJWQEuKr0MA89"
@@ -3511,7 +3517,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3573,7 +3579,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3583,6 +3589,68 @@
         },
         "description": {
           "value": "<p>Body and head SP11. Same stacking and self-repair rules as Skin Weave.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6j7wgmmccPd4C0gj",
+      "_key": "!actors.items!gvkNeOA9oeNzNg79.6j7wgmmccPd4C0gj",
+      "name": "Exotic Bodysculpting",
+      "type": "cyberware",
+      "img": "modules/cpr-neon-hub/assets/items/cyberware/fashionware.svg",
+      "system": {
+        "type": "fashionware",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 14,
+          "roll": "4d6"
+        },
+        "isFoundational": false,
+        "size": 0,
+        "price": {
+          "market": 1000
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Takes no slot. Surgery rather than chrome: an inhuman look such as fur, scales, a muzzle, a tail or claws, all cosmetic. Every Exotic package includes it. A Medtech can do it in 4 hours (DV17 Surgery, 500eb of materials).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",

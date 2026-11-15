@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/talon_foot.svg",
   "folder": "9kQh4EzqIkr9LhlV",
-  "sort": 9610,
+  "sort": 9640,
   "system": {
     "type": "cyberLeg",
     "installLocation": "clinic",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Melee Weapon",
+    "weaponType": "lightMelee",
+    "isRanged": false,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "1d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Light Melee blade, concealed. Fits a meat leg.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

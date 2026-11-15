@@ -2500,7 +2500,7 @@
     {
       "_id": "9SdJwh0JO9tKC85K",
       "_key": "!actors.items!EUlZ59ikr7uOwR7U.9SdJwh0JO9tKC85K",
-      "name": "Nightstalker Ballistic Mask",
+      "name": "'Nightstalker' Ballistic Mask",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2541,7 +2541,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Barghest Sniper:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Smart Glasses, Zetatech Tank Commander Headset</p><p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2568,7 +2568,7 @@
     {
       "_id": "VylB7H5SkmCFgLCG",
       "_key": "!actors.items!EUlZ59ikr7uOwR7U.VylB7H5SkmCFgLCG",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2664,7 +2664,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "V8nQuR6usQfMzfmd"
@@ -2718,15 +2719,15 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2734,6 +2735,28 @@
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Brawling",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
           "value": "<p>Cyberarm option, 2 slots. The reinforced fist is an Excellent Heavy Melee Weapon used with Brawling. That arm ignores BODY penalties of weapons needing BODY 11 or less, and wields melee weapons as BODY 11. A pair: pry doors, move Thick cover, Choke and Slam as BODY 11.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (4d6/2[RoundUp])</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
@@ -2790,7 +2813,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "O10vEdHLzPwBomKk"
@@ -2844,15 +2868,15 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2860,6 +2884,28 @@
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Brawling",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
           "value": "<p>Cyberarm option, 2 slots. The reinforced fist is an Excellent Heavy Melee Weapon used with Brawling. That arm ignores BODY penalties of weapons needing BODY 11 or less, and wields melee weapons as BODY 11. A pair: pry doors, move Thick cover, Choke and Slam as BODY 11.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (4d6/2[RoundUp])</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
@@ -2916,7 +2962,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "PeuLDtKOvn7GiNs9"
@@ -2978,7 +3025,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3007,74 +3054,6 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
-          }
-        }
-      }
-    },
-    {
-      "_id": "ovotQru8T4aYzv4v",
-      "_key": "!actors.items!EUlZ59ikr7uOwR7U.ovotQru8T4aYzv4v",
-      "name": "'Nightstalker' Ballistic Mask",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 5000
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 11,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Barghest Sniper:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Smart Glasses, Zetatech Tank Commander Headset</p><p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
           }
         }
       }

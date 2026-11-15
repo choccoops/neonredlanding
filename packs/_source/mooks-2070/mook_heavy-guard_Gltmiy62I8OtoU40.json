@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "KklJxL9j8CG1YJj9",
+        "uci3hZX2eL1aQgNP",
         "tAvgXjgQxslwfZD9",
         "525xkWp6kr6tigDq",
         "Qw9QaXVxw8ftHkGD"
@@ -2281,7 +2281,7 @@
             "cyberware"
           ],
           "list": [
-            "5mPQveB99EanbKuJ"
+            "vZNZO1oUja8VPeV8"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2395,9 +2395,9 @@
       "_key": "!actors.items!Gltmiy62I8OtoU40.Xsc95ALt5IVq6tqU"
     },
     {
-      "_id": "yX6msrE1TnkwoC3r",
-      "_key": "!actors.items!Gltmiy62I8OtoU40.yX6msrE1TnkwoC3r",
-      "name": "Heavy Armorjack",
+      "_id": "rCZBv0nkc6su6Nar",
+      "_key": "!actors.items!Gltmiy62I8OtoU40.rCZBv0nkc6su6Nar",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2427,10 +2427,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 13,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2463,8 +2463,76 @@
       }
     },
     {
-      "_id": "5mPQveB99EanbKuJ",
-      "_key": "!actors.items!Gltmiy62I8OtoU40.5mPQveB99EanbKuJ",
+      "_id": "lMdVInFiwmX3m94o",
+      "_key": "!actors.items!Gltmiy62I8OtoU40.lMdVInFiwmX3m94o",
+      "name": "Heavy Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP13. −2 REF, DEX and MOVE.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "vZNZO1oUja8VPeV8",
+      "_key": "!actors.items!Gltmiy62I8OtoU40.vZNZO1oUja8VPeV8",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -2491,7 +2559,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2512,7 +2580,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!Gltmiy62I8OtoU40.5mPQveB99EanbKuJ.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!Gltmiy62I8OtoU40.vZNZO1oUja8VPeV8.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2565,8 +2633,8 @@
       }
     },
     {
-      "_id": "KklJxL9j8CG1YJj9",
-      "_key": "!actors.items!Gltmiy62I8OtoU40.KklJxL9j8CG1YJj9",
+      "_id": "uci3hZX2eL1aQgNP",
+      "_key": "!actors.items!Gltmiy62I8OtoU40.uci3hZX2eL1aQgNP",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2595,7 +2663,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

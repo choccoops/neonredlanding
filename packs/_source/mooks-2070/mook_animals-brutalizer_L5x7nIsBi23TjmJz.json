@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "sBqy1Cidk2DbNjR8",
+        "uaF1rH7ieLV1dEfi",
         "jhWSGnwqzLVcIdYe",
         "TljTDZ8OPOBGDyCy",
         "L9rwWLUlJhjFq03q"
@@ -68,7 +68,7 @@
       "description": "<p>Beats down anyone beneath them. The shotgun is just for the first hit before they close in.</p><p><em>Animals:</em> A gang that worships raw muscle, fed on hormone cocktails and grafted bone.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Martial Arts (GM's Choice) 12 (the GM picks which)</p><p>Melee SP (head/body): 4/4</p><p>Also carries (no catalog item): Improved Smart Shotgun Slugs x10</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Martial Arts (GM's Choice) 12 (the GM picks which)</p><p>Melee SP (head/body): 4/4</p>"
     }
   },
   "items": [
@@ -2125,7 +2125,7 @@
             "cyberware"
           ],
           "list": [
-            "CiZKZrtZgqfx2DLQ"
+            "6Tboog7D9Uk6PKeL"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2329,7 +2329,7 @@
     {
       "name": "Martial Arts",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/martial_arts.svg",
       "system": {
         "ammoVariety": [],
         "attackmod": 0,
@@ -2477,7 +2477,7 @@
     {
       "name": "Skinweave",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
       "system": {
         "description": {
           "value": ""
@@ -2576,7 +2576,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2650,8 +2650,63 @@
       }
     },
     {
-      "_id": "sBqy1Cidk2DbNjR8",
-      "_key": "!actors.items!L5x7nIsBi23TjmJz.sBqy1Cidk2DbNjR8",
+      "_id": "aiMPEVCnqxt0P2g5",
+      "_key": "!actors.items!L5x7nIsBi23TjmJz.aiMPEVCnqxt0P2g5",
+      "name": "Improved Smart Ammunition (Shotgun Slug)",
+      "type": "ammo",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+      "system": {
+        "variety": "shotgunSlug",
+        "type": "smart",
+        "amount": 10,
+        "price": {
+          "market": 50
+        },
+        "ablationValue": 1,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "overrides": {
+          "autofire": {
+            "minimum": 0,
+            "mode": "none",
+            "value": 0
+          },
+          "damage": {
+            "minimum": "",
+            "mode": "none",
+            "value": ""
+          }
+        },
+        "description": {
+          "value": "<p>Bullets, slugs, shells, grenades, rockets (for arrows, see Improved Smart Arrows). Smart weapons only; a Smartgun Link doesn't count. Ignore visual obscurement. A miss by 5 or less retries at 14 + 1d10 (+ LUCK). It replaced the old Smart Ammunition: anything that still calls for Smart Ammunition or Smart Rockets means this.</p><p><strong>Cost:</strong> 50eb (Costly) /10 • 500eb per grenade/rocket (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
+          }
+        }
+      }
+    },
+    {
+      "_id": "uaF1rH7ieLV1dEfi",
+      "_key": "!actors.items!L5x7nIsBi23TjmJz.uaF1rH7ieLV1dEfi",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2680,7 +2735,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2712,8 +2768,8 @@
       }
     },
     {
-      "_id": "CiZKZrtZgqfx2DLQ",
-      "_key": "!actors.items!L5x7nIsBi23TjmJz.CiZKZrtZgqfx2DLQ",
+      "_id": "6Tboog7D9Uk6PKeL",
+      "_key": "!actors.items!L5x7nIsBi23TjmJz.6Tboog7D9Uk6PKeL",
       "name": "Skin Weave",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
@@ -2740,7 +2796,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

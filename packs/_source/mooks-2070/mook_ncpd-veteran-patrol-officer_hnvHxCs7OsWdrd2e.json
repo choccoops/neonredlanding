@@ -2326,15 +2326,15 @@
     {
       "_id": "WhV5aVkZG11fq1eg",
       "_key": "!actors.items!hnvHxCs7OsWdrd2e.WhV5aVkZG11fq1eg",
-      "name": "Militech M221 Saratoga",
+      "name": "Militech M221 Saratoga (Military)",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_excellent_power.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "smg",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "2d6",
         "rof": 2,
         "handsReq": 1,
@@ -2482,7 +2482,7 @@
       "_key": "!actors.items!hnvHxCs7OsWdrd2e.cGf5uEhz2xWffBE6",
       "name": "Electric Baton",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/StunBaton.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
@@ -2622,9 +2622,9 @@
       "_key": "!actors.items!hnvHxCs7OsWdrd2e.sqmgSlsJKHvggpi5"
     },
     {
-      "_id": "8u4nJ1YVFxsqEX87",
-      "_key": "!actors.items!hnvHxCs7OsWdrd2e.8u4nJ1YVFxsqEX87",
-      "name": "Kevlar",
+      "_id": "PBv1Izr2o7HQYDmF",
+      "_key": "!actors.items!hnvHxCs7OsWdrd2e.PBv1Izr2o7HQYDmF",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2692,7 +2692,7 @@
     {
       "_id": "w0Ficd2yokX3dAdh",
       "_key": "!actors.items!hnvHxCs7OsWdrd2e.w0Ficd2yokX3dAdh",
-      "name": "Hybrid Armorjack",
+      "name": "Hybrid Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2986,7 +2986,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "1oB6k2GXxPkMpchB"
@@ -3048,7 +3049,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3110,7 +3111,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

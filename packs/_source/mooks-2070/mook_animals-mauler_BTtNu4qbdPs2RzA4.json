@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "M00giS0rGcjGwmL8",
+        "M4FU6XEAySXnbxZM",
         "4iDlevZ9CuFD7OkF",
         "waT4tyl6vvdfH8o9",
         "4q2APT9hiAxukgLZ"
@@ -68,7 +68,7 @@
       "description": "<p>A better Bouncer, smart enough to wear a suit so clients see a professional. Light on armor, heavy on weapons.</p><p><em>Animals:</em> A gang that worships raw muscle, fed on hormone cocktails and grafted bone.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Martial Arts (GM's Choice) 11 (the GM picks which)</p><p>Melee SP (head/body): 4/4</p><p>Also carries (no catalog item): Businesswear Fashion</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Martial Arts (GM's Choice) 11 (the GM picks which)</p><p>Melee SP (head/body): 4/4</p>"
     }
   },
   "items": [
@@ -2125,7 +2125,7 @@
             "cyberware"
           ],
           "list": [
-            "aESqctqStnUs0C0q"
+            "zkFdPJbB3XIQbanH"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2283,7 +2283,7 @@
             "cyberware"
           ],
           "list": [
-            "YQVRWia5FNU7TkfX"
+            "xhcKV2LitaMGk4N0"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2329,7 +2329,7 @@
     {
       "name": "Martial Arts",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/martial_arts.svg",
       "system": {
         "ammoVariety": [],
         "attackmod": 0,
@@ -2401,7 +2401,7 @@
       "_key": "!actors.items!BTtNu4qbdPs2RzA4.pPzwTZAuDwtBl8I9",
       "name": "Heavy Melee Weapon",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
@@ -2473,7 +2473,7 @@
     {
       "_id": "HWCODFyI4jKNVQyI",
       "_key": "!actors.items!BTtNu4qbdPs2RzA4.HWCODFyI4jKNVQyI",
-      "name": "Darra Polytechnic DR-5 Nova",
+      "name": "Darra Polytechnic DR5 Nova",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/heavyPistol_poor_power.svg",
       "system": {
@@ -2550,7 +2550,7 @@
     {
       "name": "Skinweave",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
       "system": {
         "description": {
           "value": ""
@@ -2583,8 +2583,208 @@
       }
     },
     {
-      "_id": "YQVRWia5FNU7TkfX",
-      "_key": "!actors.items!BTtNu4qbdPs2RzA4.YQVRWia5FNU7TkfX",
+      "_id": "frKSOZ5vtYVeUHS1",
+      "name": "Businesswear Jacket",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "jacket",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.frKSOZ5vtYVeUHS1"
+    },
+    {
+      "_id": "7XbUtl1lGuf4ufvA",
+      "name": "Businesswear Top",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 50
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "top",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.7XbUtl1lGuf4ufvA"
+    },
+    {
+      "_id": "fDXodSXOjaTx5Sf9",
+      "name": "Businesswear Bottoms",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_bottoms.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "bottoms",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.fDXodSXOjaTx5Sf9"
+    },
+    {
+      "_id": "BnGHrh9X3E1jzn30",
+      "name": "Businesswear Footwear",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "footwear",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.BnGHrh9X3E1jzn30"
+    },
+    {
+      "_id": "xhcKV2LitaMGk4N0",
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.xhcKV2LitaMGk4N0",
       "name": "Enhanced Antibodies",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/enhanced_antibodies.svg",
@@ -2611,7 +2811,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2645,8 +2845,8 @@
       }
     },
     {
-      "_id": "M00giS0rGcjGwmL8",
-      "_key": "!actors.items!BTtNu4qbdPs2RzA4.M00giS0rGcjGwmL8",
+      "_id": "M4FU6XEAySXnbxZM",
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.M4FU6XEAySXnbxZM",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2675,7 +2875,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2707,8 +2908,8 @@
       }
     },
     {
-      "_id": "aESqctqStnUs0C0q",
-      "_key": "!actors.items!BTtNu4qbdPs2RzA4.aESqctqStnUs0C0q",
+      "_id": "zkFdPJbB3XIQbanH",
+      "_key": "!actors.items!BTtNu4qbdPs2RzA4.zkFdPJbB3XIQbanH",
       "name": "Skin Weave",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
@@ -2735,7 +2936,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

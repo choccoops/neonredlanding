@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "ClapBX27A1NRs0Fn",
+        "rFMkYMv1uFq073f6",
         "RguvrTCa0lCvxMzD",
         "qDrrsUPRcnIZtXC1",
         "ECwA0cBZn2ESKOZQ"
@@ -68,7 +68,7 @@
       "description": "<p>A merc in their first weeks, burning fast and high without care for their own skin. Not inept, just green.</p><p><em>Mercs:</em> Freelance edgerunners, from first-gig blazers to near-legends.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 4 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 1</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice (Cost Limit: 250eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p><p>Also carries (no catalog item): Blace Lace x1 (in Bodyweight Autoinjector)</p>"
+      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 4 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 1</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice (Cost Limit: 250eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p>"
     }
   },
   "items": [
@@ -2282,7 +2282,7 @@
           ],
           "list": [
             "2jvqwogcioBjIpkQ",
-            "9nXJE9Vaj63aN3C4"
+            "CZGc6ZSbtrGcSSa4"
           ],
           "slots": 7,
           "usedSlots": 2
@@ -2396,9 +2396,9 @@
       "_key": "!actors.items!em5zZB9OQ4hQZ466.nKwVWcZjQyGUFx9B"
     },
     {
-      "_id": "s3pTrZSsUSOTSB0b",
-      "_key": "!actors.items!em5zZB9OQ4hQZ466.s3pTrZSsUSOTSB0b",
-      "name": "Leather",
+      "_id": "fnXXsDV8rm6vzoHL",
+      "_key": "!actors.items!em5zZB9OQ4hQZ466.fnXXsDV8rm6vzoHL",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2439,7 +2439,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Blazer:</strong> Leather</p><p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2466,7 +2466,7 @@
     {
       "_id": "JmmzJZ1iWf806XOK",
       "_key": "!actors.items!em5zZB9OQ4hQZ466.JmmzJZ1iWf806XOK",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2615,7 +2615,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2649,8 +2649,46 @@
       }
     },
     {
-      "_id": "ClapBX27A1NRs0Fn",
-      "_key": "!actors.items!em5zZB9OQ4hQZ466.ClapBX27A1NRs0Fn",
+      "_id": "iztLjjLlHpVeauPM",
+      "name": "Black Lace",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "consumed": "Black Lace Primary",
+        "description": {
+          "value": "<p><strong>Blazer:</strong> in the Bodyweight Autoinjector</p><p><strong>Primary Effect</strong></p>\n<p>Dose lasts 24 hours.</p>\n<ul>\n  <li>\n    The user rolls 2d6 Humanity Loss which is returned if they pass the\n    Secondary Effect save\n  </li>\n  <li>The user ignores Seriously Wounded wound states for the duration</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<ul>\n  <li>On Fail Humanity loss is not returned</li>\n  <li>Unless experiencing the primary effect, REF -2</li>\n</ul>\n"
+        },
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 50
+        },
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 357
+        },
+        "usage": "snorted"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!em5zZB9OQ4hQZ466.iztLjjLlHpVeauPM"
+    },
+    {
+      "_id": "rFMkYMv1uFq073f6",
+      "_key": "!actors.items!em5zZB9OQ4hQZ466.rFMkYMv1uFq073f6",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2679,7 +2717,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2711,8 +2750,8 @@
       }
     },
     {
-      "_id": "9nXJE9Vaj63aN3C4",
-      "_key": "!actors.items!em5zZB9OQ4hQZ466.9nXJE9Vaj63aN3C4",
+      "_id": "CZGc6ZSbtrGcSSa4",
+      "_key": "!actors.items!em5zZB9OQ4hQZ466.CZGc6ZSbtrGcSSa4",
       "name": "Toxin Binders",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/toxin_binders.svg",
@@ -2739,7 +2778,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2760,7 +2799,7 @@
       "effects": [
         {
           "_id": "hOK98Q5sYo12A0eb",
-          "_key": "!actors.items.effects!em5zZB9OQ4hQZ466.9nXJE9Vaj63aN3C4.hOK98Q5sYo12A0eb",
+          "_key": "!actors.items.effects!em5zZB9OQ4hQZ466.CZGc6ZSbtrGcSSa4.hOK98Q5sYo12A0eb",
           "name": "Toxin Binders",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2813,8 +2852,8 @@
       }
     },
     {
-      "_id": "0z1R8dIZ5uVwhKhW",
-      "_key": "!actors.items!em5zZB9OQ4hQZ466.0z1R8dIZ5uVwhKhW",
+      "_id": "Y7h4fYnrqM6Sa8mZ",
+      "_key": "!actors.items!em5zZB9OQ4hQZ466.Y7h4fYnrqM6Sa8mZ",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

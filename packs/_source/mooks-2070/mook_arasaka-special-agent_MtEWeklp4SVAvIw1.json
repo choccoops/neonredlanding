@@ -61,7 +61,7 @@
         "7Re8KCsoFqgOioqI",
         "b5kuVMRXlApheEbf",
         "QTmwbiatOSxxIwMU",
-        "erASVxiuhiBInVBX",
+        "IsSnYLV4JxzCRlYZ",
         "FwaXAefzAV8rd9WW",
         "fy5cO15UQLhcNuKf",
         "Tuismyfr44FGFoE5"
@@ -2393,33 +2393,47 @@
       "_key": "!actors.items!MtEWeklp4SVAvIw1.Tuismyfr44FGFoE5"
     },
     {
-      "name": "Martial Arts (Martial Arts (Arasaka-Te))",
+      "_id": "bgn2vZwXrwGuddY4",
+      "_key": "!actors.items!MtEWeklp4SVAvIw1.bgn2vZwXrwGuddY4",
+      "name": "Martial Arts (Arasaka-te)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_chrome.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Arasaka-te)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2429,27 +2443,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Arasaka-te Attacks</strong> with the Martial Arts (Arasaka-te) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Arasaka-Te))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2457,10 +2459,14 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "CiVGQKdVvEsKKTTC",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.CiVGQKdVvEsKKTTC"
+      }
     },
     {
       "_id": "lFhvK6uYkJF0SHSG",
@@ -2646,7 +2652,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP12, no armor penalty. Built-in Smart Glasses (an extra slot) with Anti-Dazzle and Low Light/Infrared/UV. With Melee Weapon 7+ or Combat Awareness 2+: +1 to Melee Weapon attacks (+2 on Aimed Shots). Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Arasaka Special Agent:</strong> includes TUp Smart Glasses, +1 bonus to Melee Weapon Attack Checks, or +2 if making an Aimed Shot</p><p>Head SP12, no armor penalty. Built-in Smart Glasses (an extra slot) with Anti-Dazzle and Low Light/Infrared/UV. With Melee Weapon 7+ or Combat Awareness 2+: +1 to Melee Weapon attacks (+2 on Aimed Shots). Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2713,7 +2719,7 @@
     {
       "_id": "ht7C1chR2UTJjC23",
       "_key": "!actors.items!MtEWeklp4SVAvIw1.ht7C1chR2UTJjC23",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2809,7 +2815,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "th1HoolWu9n2syF8",
@@ -2872,7 +2879,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2974,7 +2981,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3038,7 +3045,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "RFVx4l9ThKAyMhfi",
@@ -3101,7 +3109,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3163,7 +3171,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3227,7 +3235,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "B2xCJOu6uGdlBelz",
@@ -3290,7 +3299,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3352,7 +3361,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3469,7 +3478,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3503,116 +3512,8 @@
       }
     },
     {
-      "_id": "nIAXiJr3ttQDZCS9",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.nIAXiJr3ttQDZCS9",
-      "name": "Neo-Kabuto",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 5000
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 12,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Arasaka Special Agent:</strong> includes TUp Smart Glasses, +1 bonus to Melee Weapon Attack Checks, or +2 if making an Aimed Shot</p><p>Head SP12, no armor penalty. Built-in Smart Glasses (an extra slot) with Anti-Dazzle and Low Light/Infrared/UV. With Melee Weapon 7+ or Combat Awareness 2+: +1 to Melee Weapon attacks (+2 on Aimed Shots). Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [
-        {
-          "_id": "fRlSRO6hDjUPwnsr",
-          "_key": "!actors.items.effects!MtEWeklp4SVAvIw1.nIAXiJr3ttQDZCS9.fRlSRO6hDjUPwnsr",
-          "name": "Neo-Kabuto (situational)",
-          "img": "icons/svg/aura.svg",
-          "type": "base",
-          "system": {},
-          "changes": [
-            {
-              "key": "bonuses.meleeWeapon",
-              "mode": 2,
-              "value": "1",
-              "priority": null
-            }
-          ],
-          "disabled": false,
-          "transfer": true,
-          "origin": null,
-          "duration": {},
-          "description": "",
-          "statuses": [],
-          "tint": "#ffffff",
-          "sort": 0,
-          "flags": {
-            "cyberpunk-red-core": {
-              "changes": {
-                "cats": {
-                  "0": "skill"
-                },
-                "situational": {
-                  "0": {
-                    "isSituational": true,
-                    "onByDefault": false
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "erASVxiuhiBInVBX",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.erASVxiuhiBInVBX",
+      "_id": "IsSnYLV4JxzCRlYZ",
+      "_key": "!actors.items!MtEWeklp4SVAvIw1.IsSnYLV4JxzCRlYZ",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3641,11 +3542,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "yqitKAxsYCsAQZxE",
-            "0bOPWiTiTO6Z03lP"
+            "5tXammAfnMpsqbP7",
+            "WgvARrg7HWUwALxZ"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -3676,8 +3578,8 @@
       }
     },
     {
-      "_id": "yqitKAxsYCsAQZxE",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.yqitKAxsYCsAQZxE",
+      "_id": "5tXammAfnMpsqbP7",
+      "_key": "!actors.items!MtEWeklp4SVAvIw1.5tXammAfnMpsqbP7",
       "name": "Kerenzikov",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
@@ -3704,7 +3606,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3738,8 +3640,8 @@
       }
     },
     {
-      "_id": "0bOPWiTiTO6Z03lP",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.0bOPWiTiTO6Z03lP",
+      "_id": "WgvARrg7HWUwALxZ",
+      "_key": "!actors.items!MtEWeklp4SVAvIw1.WgvARrg7HWUwALxZ",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3766,7 +3668,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3800,8 +3702,8 @@
       }
     },
     {
-      "_id": "NWguxdtwd88Dl9dt",
-      "_key": "!actors.items!MtEWeklp4SVAvIw1.NWguxdtwd88Dl9dt",
+      "_id": "rTB34mdLWEPYYp5n",
+      "_key": "!actors.items!MtEWeklp4SVAvIw1.rTB34mdLWEPYYp5n",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

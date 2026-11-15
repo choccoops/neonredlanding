@@ -158,13 +158,13 @@
       "_key": "!actors.items!Lf87JZksTqhmlTyt.r4WyEjJOjAPq5NpH",
       "name": "Hello Cutie Pwr-Up Happy Dancer",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_excellent_power.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "heavySmg",
         "isRanged": true,
-        "quality": "standard",
-        "attackmod": 0,
+        "quality": "excellent",
+        "attackmod": 1,
         "damage": "3d6",
         "rof": 1,
         "handsReq": 1,
@@ -610,13 +610,13 @@
       "_key": "!actors.items!Lf87JZksTqhmlTyt.lofHLASOrepWGRTS",
       "name": "Hello Cutie Pwr-Up Thundercat",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat_excellent.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
         "isRanged": false,
-        "quality": "standard",
-        "attackmod": 0,
+        "quality": "excellent",
+        "attackmod": 1,
         "damage": "2d6",
         "rof": 2,
         "handsReq": 2,
@@ -706,10 +706,10 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
@@ -722,6 +722,28 @@
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "medMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "1d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
           "value": "<p>Cyberarm Option. Retractable monomolecular cat claws: Excellent Quality Medium Melee, 1d6, concealed without a Check. Ignores armor entirely if it's below SP11. While they're out, that hand can't hold anything.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },

@@ -2399,13 +2399,13 @@
       "_key": "!actors.items!KXujU8zyYPdrUi2D.MqMPEUDQBg3x4EMB",
       "name": "Arasaka HJSH-18 Masamune",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2472,9 +2472,9 @@
       }
     },
     {
-      "_id": "r6xS45DgFrBYUwAq",
-      "_key": "!actors.items!KXujU8zyYPdrUi2D.r6xS45DgFrBYUwAq",
-      "name": "Heavy Armorjack",
+      "_id": "Lg5v8NPBUmJ5T3md",
+      "_key": "!actors.items!KXujU8zyYPdrUi2D.Lg5v8NPBUmJ5T3md",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2540,36 +2540,69 @@
       }
     },
     {
-      "name": "Flak",
+      "_id": "0zGKvPSKfBda8PN2",
+      "_key": "!actors.items!KXujU8zyYPdrUi2D.0zGKvPSKfBda8PN2",
+      "name": "Flak (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
-        "description": {
-          "value": "<p><strong>Arasaka Soldier:</strong> Flak (w/ Combat Weave)</p>"
-        },
         "price": {
-          "market": 0
+          "market": 500
         },
         "penalty": 0,
+        "equipped": "equipped",
         "usage": "equipped",
-        "isHeadLocation": false,
-        "isBodyLocation": true,
-        "headLocation": {
-          "sp": 0,
-          "ablation": 0
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
         },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
         "bodyLocation": {
           "sp": 15,
           "ablation": 0
         },
-        "equipped": "equipped"
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p><strong>Arasaka Soldier:</strong> Flak (w/ Combat Weave)</p><p>SP15. −4 REF, DEX and MOVE. Plated vest and pants.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
       },
-      "_id": "wnoDkvsoTSMfk5A5",
-      "_key": "!actors.items!KXujU8zyYPdrUi2D.wnoDkvsoTSMfk5A5",
+      "effects": [],
       "flags": {
         "cyberpunk-red-core": {
           "_migration": {
             "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
           }
         }
       }
@@ -2605,7 +2638,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "NTaCYQ1Rfkr9hngR",
@@ -2668,7 +2702,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2787,7 +2821,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "C87AihEFVIEDqcC3"
@@ -2849,7 +2884,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2911,7 +2946,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2973,7 +3008,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

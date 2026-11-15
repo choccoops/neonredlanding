@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "j7nxnZzOvUuOuVfk",
-        "QFm6bLezrAjhGCQr",
-        "2KRVaAn5wE6sa7jr",
+        "330H5x0y2nI8k0XC",
+        "Vbd0J720BfAiLMem",
+        "khpg4iw6iXoKRQqF",
         "J1MnGYIa8g9RwdJo",
         "MdDlJDqwLOYkwI22",
         "1WJlcRMRu4chWngU"
@@ -70,7 +70,7 @@
       "description": "<p>One of the gang's ring champions, given designer drugs and combat chrome. No guns, and doesn't need them.</p><p><em>Animals:</em> A gang that worships raw muscle, fed on hormone cocktails and grafted bone.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): Always on x1 dose of Juice</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>Melee SP (head/body): 6/6</p>"
     }
   },
   "items": [
@@ -2127,7 +2127,7 @@
             "cyberware"
           ],
           "list": [
-            "CsNaDmJLYyu9YJzj"
+            "grVMqQotQ49fyAsT"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2401,7 +2401,7 @@
       "_key": "!actors.items!35V8Rumlu1tBiSQj.rJ8oEqArL4dtv9Ov",
       "name": "Repurposed Sledgehammer",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sledgehammer.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "vHeavyMelee",
@@ -2473,7 +2473,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": "<p><strong>Animals Undertaker:</strong> TUp Subdermal Armor</p>"
@@ -2506,7 +2506,51 @@
       }
     },
     {
-      "_id": "d8M5u7H1WAIBB0Of",
+      "_id": "2aQSIq1gFrFdMH2e",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.2aQSIq1gFrFdMH2e",
+      "name": "Juice",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "toggled",
+        "consumed": "None",
+        "brand": "",
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p><strong>Primary (1 month):</strong> 1d6 Humanity Loss on the dose. Takes 24 hours of doing nothing else to administer, never in a fight; a second dose in the month is an overdose (hospital and Addiction Therapy). BODY +3, HP and Death Save included, stacking with chrome. Fits of rage. No effect on FBCs or anyone with an internal Linear Frame. <strong>Secondary (DV29):</strong> addicted; COOL −2 and REF −1 for good (min 1); without Juice running, BODY and MOVE −2 and you crave it. Rapidetox ends the high, not the habit: only Addiction Therapy does.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Drugs"
+          }
+        }
+      }
+    },
+    {
+      "_id": "8ZnP8dIDgN7VL0x2",
       "name": "Black Lace",
       "type": "drug",
       "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
@@ -2541,11 +2585,11 @@
           }
         }
       },
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.d8M5u7H1WAIBB0Of"
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.8ZnP8dIDgN7VL0x2"
     },
     {
-      "_id": "j7nxnZzOvUuOuVfk",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.j7nxnZzOvUuOuVfk",
+      "_id": "330H5x0y2nI8k0XC",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.330H5x0y2nI8k0XC",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2574,10 +2618,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "QYkqKUUBpHqq55au"
+            "khAQKWdBClK6dyTW"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2608,8 +2653,8 @@
       }
     },
     {
-      "_id": "QYkqKUUBpHqq55au",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.QYkqKUUBpHqq55au",
+      "_id": "khAQKWdBClK6dyTW",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.khAQKWdBClK6dyTW",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2636,7 +2681,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2670,8 +2715,8 @@
       }
     },
     {
-      "_id": "QFm6bLezrAjhGCQr",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.QFm6bLezrAjhGCQr",
+      "_id": "Vbd0J720BfAiLMem",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.Vbd0J720BfAiLMem",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2700,10 +2745,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "E2UqYXcTwlJ843Do"
+            "OG4PysUwJtOSYZVx"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2734,8 +2780,8 @@
       }
     },
     {
-      "_id": "E2UqYXcTwlJ843Do",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.E2UqYXcTwlJ843Do",
+      "_id": "OG4PysUwJtOSYZVx",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.OG4PysUwJtOSYZVx",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2762,7 +2808,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2796,8 +2842,8 @@
       }
     },
     {
-      "_id": "2KRVaAn5wE6sa7jr",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.2KRVaAn5wE6sa7jr",
+      "_id": "khpg4iw6iXoKRQqF",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.khpg4iw6iXoKRQqF",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2826,10 +2872,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "S9EreJiujKmSLeaG"
+            "AWFYkRXDN6dVvcvq"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2860,8 +2907,8 @@
       }
     },
     {
-      "_id": "S9EreJiujKmSLeaG",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.S9EreJiujKmSLeaG",
+      "_id": "AWFYkRXDN6dVvcvq",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.AWFYkRXDN6dVvcvq",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2888,7 +2935,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2909,7 +2956,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!35V8Rumlu1tBiSQj.S9EreJiujKmSLeaG.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!35V8Rumlu1tBiSQj.AWFYkRXDN6dVvcvq.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2962,8 +3009,8 @@
       }
     },
     {
-      "_id": "CsNaDmJLYyu9YJzj",
-      "_key": "!actors.items!35V8Rumlu1tBiSQj.CsNaDmJLYyu9YJzj",
+      "_id": "grVMqQotQ49fyAsT",
+      "_key": "!actors.items!35V8Rumlu1tBiSQj.grVMqQotQ49fyAsT",
       "name": "Subdermal Armor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
@@ -2990,7 +3037,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

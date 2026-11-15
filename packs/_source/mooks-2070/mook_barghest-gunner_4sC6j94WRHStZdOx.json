@@ -73,7 +73,7 @@
       "description": "<p>A giant in superheavy armor with a gun to match, milspec chrome and ex-special-forces training. Short of a tank, among the toughest things in Night City.</p><p><em>Barghest:</em> Kurt Hansen's militia, the deserter army that holds Dogtown.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 10 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>With gear or role bonuses: Athletics 18 (13), Brawling 18 (13), Evasion 18 (13), Stealth 12 (7)</p><p>Melee SP (head/body): 7/8</p><p>Also carries (no catalog item): M-98A3 Advanced Combat Helmet (Functions as Anti-Smog Breathing Mask, TUp Smart Ears [w/ Amplified Hearing, Level Dampers, &amp; Radio Communicator], TUp Smart Glasses [w/ Anti-Dazzle, Low Light/Infrared/UV, &amp; Targeting Scope], and Zetatech Tank Commander Headset)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 10 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>With gear or role bonuses: Athletics 18 (13), Brawling 18 (13), Evasion 18 (13), Stealth 12 (7)</p><p>Melee SP (head/body): 7/8</p>"
     }
   },
   "items": [
@@ -2432,7 +2432,7 @@
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_excellent_power.svg",
       "system": {
-        "weaponSkill": "N/A",
+        "weaponSkill": "Autofire",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "excellent",
@@ -2504,36 +2504,69 @@
       }
     },
     {
-      "name": "M-98A3 Helmet",
+      "_id": "goYDiyyPdgEydO6P",
+      "_key": "!actors.items!4sC6j94WRHStZdOx.goYDiyyPdgEydO6P",
+      "name": "M-98A3 Enhanced Combat Helmet",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor_Head.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
-        "description": {
-          "value": ""
-        },
         "price": {
-          "market": 0
+          "market": 6500
         },
         "penalty": 0,
+        "equipped": "equipped",
         "usage": "equipped",
-        "isHeadLocation": true,
-        "isBodyLocation": false,
-        "headLocation": {
-          "sp": 14,
-          "ablation": 0
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
         },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": false,
+        "isHeadLocation": true,
         "bodyLocation": {
           "sp": 0,
           "ablation": 0
         },
-        "equipped": "equipped"
+        "headLocation": {
+          "sp": 14,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p><strong>Barghest Gunner:</strong> includes Anti-Smog Breathing Mask, TUp Smart Ears, TUp Smart Glasses, and Zetatech Tank Commander Headset</p><p><strong>Barghest Gunner:</strong> M-98A3 Helmet</p><p>Head SP14; −2 REF, DEX and MOVE. Built-in anti-smog mask, Smart Ears (an extra slot) with Amplified Hearing, Level Dampers and radio, Smart Glasses (an extra slot) with Anti-Dazzle, Low Light/Infrared/UV and Targeting Scope, and a stealth headset.</p><p><strong>Cost:</strong> 6,500eb (Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
       },
-      "_id": "RjUhJoXwyJaKDVAE",
-      "_key": "!actors.items!4sC6j94WRHStZdOx.RjUhJoXwyJaKDVAE",
+      "effects": [],
       "flags": {
         "cyberpunk-red-core": {
           "_migration": {
             "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
           }
         }
       }
@@ -2541,7 +2574,7 @@
     {
       "_id": "9SsHTTOx8VuRwhKg",
       "_key": "!actors.items!4sC6j94WRHStZdOx.9SsHTTOx8VuRwhKg",
-      "name": "Heavy Flak",
+      "name": "Heavy Flak Armor (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2637,7 +2670,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "bwpsWgRwKpde6EZU"
@@ -2699,7 +2733,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2763,7 +2797,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "YAeVzcq5TDHPVljk"
@@ -2825,7 +2860,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2889,7 +2924,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "ydL82wWLMLDQGukI"
@@ -2951,7 +2987,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3015,7 +3051,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "8iuByxWam1MJWSb9"
@@ -3077,7 +3114,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3238,7 +3275,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3340,7 +3377,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3444,7 +3481,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "xLgI0wdw1YNv3Ub2",
@@ -3508,7 +3546,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3570,7 +3608,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3632,7 +3670,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

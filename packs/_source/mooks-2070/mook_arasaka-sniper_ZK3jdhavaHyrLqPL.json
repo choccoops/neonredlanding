@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "MqDpiaWCphPrMfbO",
-        "iKkC4y1g80lkujo1",
-        "TmnQBasN9A0nljj7",
+        "oDsiLojcpXcQyaEb",
+        "VodQURrD796btDDG",
+        "2Udzad0C2mz6w6nk",
         "6qeftpUKtIm0AOwB",
         "CuGj8f1TxMtyQmrN",
         "R3lJQnT5xSAKNJTL"
@@ -70,7 +70,7 @@
       "description": "<p>Overwatch for high-value clients, with an excellent record. Slow to fire, rarely needs a second shot.</p><p><em>Arasaka:</em> The Japanese megacorp's security arm, from lobby guards to cyberninjas.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Perception 10 (12)</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): Nobunaga Rifle Ammunition [Functions as Armor-Piercing, High Precision, and Incendiary Ammunition] x16</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Perception 10 (12)</p><p>Melee SP (head/body): 6/6</p>"
     }
   },
   "items": [
@@ -2406,13 +2406,13 @@
       "_key": "!actors.items!ZK3jdhavaHyrLqPL.1UcAknOB0IdFm4UF",
       "name": "Arasaka JSH-X12 Nobunaga",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "sniperRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2549,9 +2549,9 @@
       "_key": "!actors.items!ZK3jdhavaHyrLqPL.cxP3scI4oJd8HfeJ"
     },
     {
-      "_id": "srkxzHzGEoO83I2W",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.srkxzHzGEoO83I2W",
-      "name": "Light Armorjack",
+      "_id": "LcKAm90v9tPtuUDL",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.LcKAm90v9tPtuUDL",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2581,10 +2581,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 11,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2617,8 +2617,76 @@
       }
     },
     {
-      "_id": "MqDpiaWCphPrMfbO",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.MqDpiaWCphPrMfbO",
+      "_id": "IxJNktuBOP28VsaY",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.IxJNktuBOP28VsaY",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "oDsiLojcpXcQyaEb",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.oDsiLojcpXcQyaEb",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2647,11 +2715,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "imGNAoACwvxQfcV3",
-            "pr3ElLpzbViscvtI"
+            "Ld4KYB8KQiLXs87g",
+            "kpyJgWraOjbggYiT"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -2682,8 +2751,8 @@
       }
     },
     {
-      "_id": "imGNAoACwvxQfcV3",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.imGNAoACwvxQfcV3",
+      "_id": "Ld4KYB8KQiLXs87g",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.Ld4KYB8KQiLXs87g",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2710,7 +2779,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2731,7 +2800,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!ZK3jdhavaHyrLqPL.imGNAoACwvxQfcV3.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!ZK3jdhavaHyrLqPL.Ld4KYB8KQiLXs87g.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2784,8 +2853,8 @@
       }
     },
     {
-      "_id": "pr3ElLpzbViscvtI",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.pr3ElLpzbViscvtI",
+      "_id": "kpyJgWraOjbggYiT",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.kpyJgWraOjbggYiT",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2812,7 +2881,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2846,8 +2915,63 @@
       }
     },
     {
-      "_id": "iKkC4y1g80lkujo1",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.iKkC4y1g80lkujo1",
+      "_id": "fZpU28C6QwHbZcs0",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.fZpU28C6QwHbZcs0",
+      "name": "Nobunaga Rifle Ammunition",
+      "type": "ammo",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+      "system": {
+        "variety": "rifle",
+        "type": "armorPiercing",
+        "amount": 16,
+        "price": {
+          "market": 500
+        },
+        "ablationValue": 2,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "overrides": {
+          "autofire": {
+            "minimum": 0,
+            "mode": "none",
+            "value": 0
+          },
+          "damage": {
+            "minimum": "",
+            "mode": "none",
+            "value": ""
+          }
+        },
+        "description": {
+          "value": "<p>Armor-Piercing rifle rounds for the Arasaka JSH-X12 Nobunaga, the only thing it loads. They also count as High Precision and Incendiary Ammunition.</p><p><strong>Cost:</strong> 500eb (Expensive) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
+          }
+        }
+      }
+    },
+    {
+      "_id": "VodQURrD796btDDG",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.VodQURrD796btDDG",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2874,7 +2998,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2908,8 +3032,8 @@
       }
     },
     {
-      "_id": "TmnQBasN9A0nljj7",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.TmnQBasN9A0nljj7",
+      "_id": "2Udzad0C2mz6w6nk",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.2Udzad0C2mz6w6nk",
       "name": "Subdermal Grip",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_grip.svg",
@@ -2936,7 +3060,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2970,8 +3094,8 @@
       }
     },
     {
-      "_id": "pPlAJslOYmqSKOXg",
-      "_key": "!actors.items!ZK3jdhavaHyrLqPL.pPlAJslOYmqSKOXg",
+      "_id": "4GHlIUd1ZfDHzwiS",
+      "_key": "!actors.items!ZK3jdhavaHyrLqPL.4GHlIUd1ZfDHzwiS",
       "name": "Techgogs",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",

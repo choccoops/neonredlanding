@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/big_knucks.svg",
   "folder": "9kQh4EzqIkr9LhlV",
-  "sort": 9030,
+  "sort": 9060,
   "system": {
     "type": "cyberArm",
     "installLocation": "clinic",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Brawling",
+    "weaponType": "medMelee",
+    "isRanged": false,
+    "quality": "standard",
+    "attackmod": 0,
+    "damage": "2d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Armored knuckles: Medium Melee (2d6, ROF 2), concealed. Can be the only cyberware in a meat arm.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

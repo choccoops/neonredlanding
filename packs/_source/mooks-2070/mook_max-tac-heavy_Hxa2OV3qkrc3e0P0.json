@@ -63,7 +63,7 @@
         "7jzWJ0CyuAmOi8U0",
         "uDaYyo8RJ27oxTpc",
         "M0aMH2ufh552V93e",
-        "UD7nv6S4JqmcfIWk",
+        "1cIWdEiDlrBTJ82g",
         "PcmCtNOnPir9liyr",
         "A0CRab6EIcmELdDt",
         "bdlWbtgGkU8LN6YR"
@@ -2406,7 +2406,7 @@
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
       "system": {
-        "weaponSkill": "N/A",
+        "weaponSkill": "Autofire",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "standard",
@@ -2479,7 +2479,7 @@
     {
       "_id": "KWMG1zqyk1uo4sHw",
       "_key": "!actors.items!Hxa2OV3qkrc3e0P0.KWMG1zqyk1uo4sHw",
-      "name": "Max-Helm",
+      "name": "Gibson Battlegear Max-Helm",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2520,7 +2520,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>MAX-TAC Heavy:</strong> includes Smart Ears, Smart Glasses</p><p><strong>MAX-TAC Heavy:</strong> Max-Helm</p><p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2547,7 +2547,7 @@
     {
       "_id": "xc3LQWopPpVMMQBu",
       "_key": "!actors.items!Hxa2OV3qkrc3e0P0.xc3LQWopPpVMMQBu",
-      "name": "Max-Vest",
+      "name": "Gibson Battlegear Max-Vest (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2588,7 +2588,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p><strong>MAX-TAC Heavy:</strong> Max-Vest (w/ Superheavy Plating)</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>MAX-TAC Heavy:</strong> includes Proxishield</p><p><strong>MAX-TAC Heavy:</strong> Max-Vest (w/ Superheavy Plating)</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2643,7 +2643,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "DyGrCr2reux8fJKV"
@@ -2705,7 +2706,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2769,7 +2770,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "SngmGdDMqeB9GNZi"
@@ -2831,7 +2833,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2895,7 +2897,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "vvzZY0k1CqrVt3a0",
@@ -2958,7 +2961,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3020,7 +3023,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3084,7 +3087,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "lGMRv9m2ulyIlJsr",
@@ -3147,7 +3151,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3209,7 +3213,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3370,7 +3374,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3472,7 +3476,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3546,144 +3550,8 @@
       }
     },
     {
-      "_id": "WQSmY2PH9bXXXOBu",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.WQSmY2PH9bXXXOBu",
-      "name": "Gibson Battlegear Max-Helm",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 10000
-        },
-        "penalty": 1,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 16,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>MAX-TAC Heavy:</strong> includes Smart Ears, Smart Glasses</p><p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "3fHU9MoA4lHXqyBj",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.3fHU9MoA4lHXqyBj",
-      "name": "Gibson Battlegear Max-Vest (Body)",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 15000
-        },
-        "penalty": 1,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": true,
-        "isHeadLocation": false,
-        "bodyLocation": {
-          "sp": 16,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>MAX-TAC Heavy:</strong> includes Proxishield</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "UD7nv6S4JqmcfIWk",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.UD7nv6S4JqmcfIWk",
+      "_id": "1cIWdEiDlrBTJ82g",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.1cIWdEiDlrBTJ82g",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3712,12 +3580,13 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "SryN179wgdHGlhAa",
-            "gmXsj30fjxSmHTO6",
-            "OOBWcmXGH0aDzQMZ"
+            "i90zJPlLYzBnOlFq",
+            "V94rvBeuhuZaJnW5",
+            "S0d8Z6ZVAKwKKENq"
           ],
           "slots": 5,
           "usedSlots": 3
@@ -3748,8 +3617,8 @@
       }
     },
     {
-      "_id": "SryN179wgdHGlhAa",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.SryN179wgdHGlhAa",
+      "_id": "i90zJPlLYzBnOlFq",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.i90zJPlLYzBnOlFq",
       "name": "Interface Plugs",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3776,7 +3645,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3810,8 +3679,8 @@
       }
     },
     {
-      "_id": "gmXsj30fjxSmHTO6",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.gmXsj30fjxSmHTO6",
+      "_id": "V94rvBeuhuZaJnW5",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.V94rvBeuhuZaJnW5",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3838,7 +3707,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3872,8 +3741,8 @@
       }
     },
     {
-      "_id": "OOBWcmXGH0aDzQMZ",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.OOBWcmXGH0aDzQMZ",
+      "_id": "S0d8Z6ZVAKwKKENq",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.S0d8Z6ZVAKwKKENq",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3900,7 +3769,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3934,8 +3803,8 @@
       }
     },
     {
-      "_id": "8eDubQgTOmI2QsBV",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.8eDubQgTOmI2QsBV",
+      "_id": "IcqhDntO2GAptxA3",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.IcqhDntO2GAptxA3",
       "name": "Tracer Ammunition (Rifle)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -3989,8 +3858,8 @@
       }
     },
     {
-      "_id": "thl0tEFWhVJXOF3Q",
-      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.thl0tEFWhVJXOF3Q",
+      "_id": "O7hacOZULADnUaap",
+      "_key": "!actors.items!Hxa2OV3qkrc3e0P0.O7hacOZULADnUaap",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

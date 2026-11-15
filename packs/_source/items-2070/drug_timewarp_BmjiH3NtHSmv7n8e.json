@@ -1,0 +1,89 @@
+{
+  "_id": "BmjiH3NtHSmv7n8e",
+  "_key": "!items!BmjiH3NtHSmv7n8e",
+  "name": "Timewarp",
+  "type": "drug",
+  "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/timewarp.svg",
+  "folder": "QJtdts7pZXxqtDvw",
+  "sort": 14160,
+  "system": {
+    "price": {
+      "market": 100
+    },
+    "amount": 1,
+    "equipped": "owned",
+    "usage": "snorted",
+    "consumed": "None",
+    "brand": "",
+    "concealable": {
+      "concealable": true,
+      "isConcealed": false
+    },
+    "description": {
+      "value": "<p>Primary (1 minute): +3 to Initiative rolls; taken mid-fight, your place in the Initiative Queue rises by 3. Secondary (DV17): addicted; −2 to Initiative rolls unless dosed.</p><p><strong>Cost:</strong> 100eb (Premium) /dose</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+    },
+    "source": {
+      "book": "Item Compendium (2070)",
+      "page": 0
+    },
+    "revealed": true,
+    "favorite": false
+  },
+  "effects": [
+    {
+      "_id": "kEh64xJXdZArVJoa",
+      "_key": "!items.effects!BmjiH3NtHSmv7n8e.kEh64xJXdZArVJoa",
+      "name": "Timewarp",
+      "img": "icons/svg/aura.svg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "bonuses.initiative",
+          "mode": 2,
+          "value": "3",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "transfer": true,
+      "origin": null,
+      "duration": {},
+      "description": "",
+      "statuses": [],
+      "tint": "#ffffff",
+      "sort": 0,
+      "flags": {
+        "cyberpunk-red-core": {
+          "changes": {
+            "cats": {
+              "0": "combat"
+            },
+            "situational": {
+              "0": {
+                "isSituational": false,
+                "onByDefault": false
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "flags": {
+    "cyberpunk-red-core": {
+      "_migration": {
+        "current": 33
+      }
+    },
+    "cpr-neon-hub": {
+      "source2070": {
+        "book": "Item Compendium (2070)",
+        "chapter": "Drugs"
+      }
+    }
+  },
+  "ownership": {
+    "default": 0
+  }
+}

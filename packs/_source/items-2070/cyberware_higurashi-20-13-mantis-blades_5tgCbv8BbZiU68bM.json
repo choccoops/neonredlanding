@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "modules/cpr-neon-hub/assets/items/derived/cyber_cyberware_popup_melee_weapon_iconic.svg",
   "folder": "ck5IQhmypDhNEFQL",
-  "sort": 17760,
+  "sort": 17970,
   "system": {
     "type": "cyberArm",
     "installLocation": "hospital",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Melee Weapon",
+    "weaponType": "heavyMelee",
+    "isRanged": false,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>A pair for paired cyberarms (2 slots each); counts as two Borgware. Each is a Mantis Blade (Excellent Heavy Melee, concealed, free to pop and stow; that hand is busy while out). Both out: wield them as one Excellent ROF2 Very Heavy Melee Weapon with 4m reach, no climbing penalty. Their Critical Injuries roll three times; you choose. With Speedware active and +4 Initiative bonuses, damage 1s are rerolled until they don't. <strong>Category • Fabrication:</strong> Luxury • DV29 - 5,000eb - 1 Month</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 14 (4d6)</p><p><small>Item Compendium (2070) • Iconics</small></p>"
     },

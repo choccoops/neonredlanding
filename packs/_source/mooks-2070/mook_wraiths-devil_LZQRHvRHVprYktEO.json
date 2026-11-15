@@ -2400,7 +2400,7 @@
       "_key": "!actors.items!LZQRHvRHVprYktEO.OUWrdnoZTNQwAwRI",
       "name": "MilitiaTech N342s Fighter",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_poor_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
@@ -2473,16 +2473,16 @@
       }
     },
     {
-      "_id": "zOlF6aLpDEVQRIE3",
-      "_key": "!actors.items!LZQRHvRHVprYktEO.zOlF6aLpDEVQRIE3",
-      "name": "PQ Medium Melee",
+      "_id": "EhhXoBOcet45pJC5",
+      "_key": "!actors.items!LZQRHvRHVprYktEO.EhhXoBOcet45pJC5",
+      "name": "Medium Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "2d6",
         "rof": 2,
@@ -2507,7 +2507,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 50
+          "market": 20
         },
         "brand": "",
         "installedItems": {
@@ -2522,7 +2522,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Wraiths Devil:</strong> stands in for the PQ Medium Melee (x2); ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Wraiths Devil:</strong> ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2547,9 +2547,9 @@
       }
     },
     {
-      "_id": "LZhLTd5fP47PKz93",
-      "_key": "!actors.items!LZQRHvRHVprYktEO.LZhLTd5fP47PKz93",
-      "name": "Leathers",
+      "_id": "gRDtjuxRYIKBesbk",
+      "_key": "!actors.items!LZQRHvRHVprYktEO.gRDtjuxRYIKBesbk",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2617,7 +2617,7 @@
     {
       "_id": "6oRFUmb8oACjrLOs",
       "_key": "!actors.items!LZQRHvRHVprYktEO.6oRFUmb8oACjrLOs",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2749,7 +2749,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2813,7 +2813,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2928,7 +2929,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

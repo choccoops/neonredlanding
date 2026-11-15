@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "oSMTbyb0hLCIlz91",
+        "y787Mbtsb5oSbtX4",
         "WvWe0ZFUsmQZn7DK",
         "TjbMKfZDYfChf84o",
         "ZlxajzRN2g9y1MhU"
@@ -2393,16 +2393,16 @@
       "_key": "!actors.items!XWoyIo1os61E0byx.3sJCej5J2LblYe7p"
     },
     {
-      "_id": "HJISJw7McKzRAaGx",
-      "_key": "!actors.items!XWoyIo1os61E0byx.HJISJw7McKzRAaGx",
+      "_id": "U6jHyk1i7wvGuPsE",
+      "_key": "!actors.items!XWoyIo1os61E0byx.U6jHyk1i7wvGuPsE",
       "name": "PQ SMG or Pistol",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/SMG_poor.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "smg",
         "isRanged": true,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "2d6",
         "rof": 1,
@@ -2429,7 +2429,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 100
+          "market": 50
         },
         "brand": "",
         "installedItems": {
@@ -2444,7 +2444,7 @@
         },
         "unarmedAutomaticCalculation": true,
         "description": {
-          "value": "<p><strong>Voodoo Boys Malfini:</strong> Typically an Ironfake Variant of another weapon; stands in for the PQ SMG or Pistol [Typically an Ironfake Variant of another weapon]</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Voodoo Boys Malfini:</strong> a SMG with the block's numbers; the catalog has no PQ SMG or Pistol; Typically an Ironfake Variant of another weapon</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2469,9 +2469,9 @@
       }
     },
     {
-      "_id": "k6iYzD7IaM4vksrg",
-      "_key": "!actors.items!XWoyIo1os61E0byx.k6iYzD7IaM4vksrg",
-      "name": "Leathers",
+      "_id": "x44mMAzw7o3kDeL0",
+      "_key": "!actors.items!XWoyIo1os61E0byx.x44mMAzw7o3kDeL0",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2501,10 +2501,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 4,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2537,8 +2537,76 @@
       }
     },
     {
-      "_id": "oSMTbyb0hLCIlz91",
-      "_key": "!actors.items!XWoyIo1os61E0byx.oSMTbyb0hLCIlz91",
+      "_id": "IiWOl2NgU2U4a593",
+      "_key": "!actors.items!XWoyIo1os61E0byx.IiWOl2NgU2U4a593",
+      "name": "Leathers (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 20
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 4,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "y787Mbtsb5oSbtX4",
+      "_key": "!actors.items!XWoyIo1os61E0byx.y787Mbtsb5oSbtX4",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2567,10 +2635,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "mWtl5Ubx5UlZBvSg"
+            "fjkKqHHiGwVI78rv"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2601,8 +2670,8 @@
       }
     },
     {
-      "_id": "mWtl5Ubx5UlZBvSg",
-      "_key": "!actors.items!XWoyIo1os61E0byx.mWtl5Ubx5UlZBvSg",
+      "_id": "fjkKqHHiGwVI78rv",
+      "_key": "!actors.items!XWoyIo1os61E0byx.fjkKqHHiGwVI78rv",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2629,7 +2698,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

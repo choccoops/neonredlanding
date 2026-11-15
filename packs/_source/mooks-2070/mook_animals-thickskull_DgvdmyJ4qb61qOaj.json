@@ -58,10 +58,10 @@
         "cyberware"
       ],
       "list": [
-        "CB06fJhdi74k0kvb",
-        "TrB1JXLLnKW7dbMp",
-        "1cuVrHyXrqSt89tO",
-        "kYanSS5n3Ilbqa7r",
+        "hYSejLom116pAPTd",
+        "eLR93mt6cE9TRRZQ",
+        "z8CL7NBG1atzicOV",
+        "1Wf6TckxerAFFDhd",
         "Q88fEpQPjUmioy4Q",
         "FCVpOcwhZKffG5Tq",
         "JV7PwYQwWfXgbR76"
@@ -71,7 +71,7 @@
       "description": "<p>The pack's best fighters: fast, hard to kill and proud of their title belts. They shun guns and crush skulls by hand.</p><p><em>Animals:</em> A gang that worships raw muscle, fed on hormone cocktails and grafted bone.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Mini-Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 9 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>Martial Arts (GM's Choice) 16 (the GM picks which)</p><p>With gear or role bonuses: Brawling 16 (14), Evasion 14 (12), Martial Arts (Boxing) 18 (16), Martial Arts (GM's Choice) 16 (14), Stealth 8 (6)</p><p>Melee SP (head/body): 7/7</p><p>Also carries (no catalog item): Always on x1 dose of Juice</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Mini-Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 9 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>Martial Arts (GM's Choice) 16 (the GM picks which)</p><p>With gear or role bonuses: Brawling 16 (14), Evasion 14 (12), Martial Arts (Boxing) 18 (16), Martial Arts (GM's Choice) 16 (14), Stealth 8 (6)</p><p>Melee SP (head/body): 7/7</p>"
     }
   },
   "items": [
@@ -2323,9 +2323,9 @@
             "cyberware"
           ],
           "list": [
-            "rEagflMuoN5pMmKA",
-            "GqsO8PEnBVV3yzyK",
-            "TDwgfuwRJP9iqj8y"
+            "X3oQk6vFzFuubd46",
+            "Sm9jAVlcCnGJNb1q",
+            "hHMbJe2X0VjRu2Ph"
           ],
           "slots": 7,
           "usedSlots": 5
@@ -2439,33 +2439,47 @@
       "_key": "!actors.items!DgvdmyJ4qb61qOaj.FOw3trYEHStJp6hj"
     },
     {
-      "name": "Martial Arts (Martial Arts (Boxing))",
+      "_id": "KzynM38B823L1TIF",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.KzynM38B823L1TIF",
+      "name": "Martial Arts (Boxing)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_fist.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Boxing)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "4d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2475,27 +2489,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Boxing Attacks</strong> with the Martial Arts (Boxing) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Boxing))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2503,15 +2505,19 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "DD9V88aVX6kHlNX1",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.DD9V88aVX6kHlNX1"
+      }
     },
     {
       "name": "Heavy Subdermal",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2544,7 +2550,51 @@
       }
     },
     {
-      "_id": "EcpeU9tGBavDdrjH",
+      "_id": "PqO837NbBfv5O5v3",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.PqO837NbBfv5O5v3",
+      "name": "Juice",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "toggled",
+        "consumed": "None",
+        "brand": "",
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p><strong>Primary (1 month):</strong> 1d6 Humanity Loss on the dose. Takes 24 hours of doing nothing else to administer, never in a fight; a second dose in the month is an overdose (hospital and Addiction Therapy). BODY +3, HP and Death Save included, stacking with chrome. Fits of rage. No effect on FBCs or anyone with an internal Linear Frame. <strong>Secondary (DV29):</strong> addicted; COOL −2 and REF −1 for good (min 1); without Juice running, BODY and MOVE −2 and you crave it. Rapidetox ends the high, not the habit: only Addiction Therapy does.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Drugs"
+          }
+        }
+      }
+    },
+    {
+      "_id": "xPDmXd7xfeb8bjZz",
       "name": "Black Lace",
       "type": "drug",
       "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
@@ -2579,11 +2629,11 @@
           }
         }
       },
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.EcpeU9tGBavDdrjH"
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.xPDmXd7xfeb8bjZz"
     },
     {
-      "_id": "CB06fJhdi74k0kvb",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.CB06fJhdi74k0kvb",
+      "_id": "hYSejLom116pAPTd",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.hYSejLom116pAPTd",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2612,10 +2662,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "lSU1HAn5PqsP47Vy"
+            "Bbx85NUQp9cf38yo"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2646,8 +2697,8 @@
       }
     },
     {
-      "_id": "lSU1HAn5PqsP47Vy",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.lSU1HAn5PqsP47Vy",
+      "_id": "Bbx85NUQp9cf38yo",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.Bbx85NUQp9cf38yo",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2674,7 +2725,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2708,8 +2759,8 @@
       }
     },
     {
-      "_id": "TrB1JXLLnKW7dbMp",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.TrB1JXLLnKW7dbMp",
+      "_id": "eLR93mt6cE9TRRZQ",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.eLR93mt6cE9TRRZQ",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2738,10 +2789,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "sk2vFxx9fY2YEZ8d"
+            "zyHE6HhtEv13dB31"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2772,8 +2824,8 @@
       }
     },
     {
-      "_id": "sk2vFxx9fY2YEZ8d",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.sk2vFxx9fY2YEZ8d",
+      "_id": "zyHE6HhtEv13dB31",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.zyHE6HhtEv13dB31",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2800,7 +2852,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2834,8 +2886,8 @@
       }
     },
     {
-      "_id": "rEagflMuoN5pMmKA",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.rEagflMuoN5pMmKA",
+      "_id": "X3oQk6vFzFuubd46",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.X3oQk6vFzFuubd46",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -2862,7 +2914,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2883,7 +2935,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.rEagflMuoN5pMmKA.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.X3oQk6vFzFuubd46.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2936,8 +2988,8 @@
       }
     },
     {
-      "_id": "1cuVrHyXrqSt89tO",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.1cuVrHyXrqSt89tO",
+      "_id": "z8CL7NBG1atzicOV",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.z8CL7NBG1atzicOV",
       "name": "Heavy Subdermal Plating",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
@@ -2964,7 +3016,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2998,8 +3050,8 @@
       }
     },
     {
-      "_id": "kYanSS5n3Ilbqa7r",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.kYanSS5n3Ilbqa7r",
+      "_id": "1Wf6TckxerAFFDhd",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.1Wf6TckxerAFFDhd",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3028,11 +3080,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "Ib3pdXaU5hZNNQkh",
-            "lBxdNNYHmSSmZ0sA"
+            "72DkeaspbVg9uhdT",
+            "zHpfGohTDHHwpmdi"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -3063,8 +3116,8 @@
       }
     },
     {
-      "_id": "Ib3pdXaU5hZNNQkh",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.Ib3pdXaU5hZNNQkh",
+      "_id": "72DkeaspbVg9uhdT",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.72DkeaspbVg9uhdT",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -3091,7 +3144,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3112,7 +3165,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.Ib3pdXaU5hZNNQkh.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.72DkeaspbVg9uhdT.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3165,8 +3218,8 @@
       }
     },
     {
-      "_id": "lBxdNNYHmSSmZ0sA",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.lBxdNNYHmSSmZ0sA",
+      "_id": "zHpfGohTDHHwpmdi",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.zHpfGohTDHHwpmdi",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3193,7 +3246,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3227,8 +3280,8 @@
       }
     },
     {
-      "_id": "GqsO8PEnBVV3yzyK",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.GqsO8PEnBVV3yzyK",
+      "_id": "Sm9jAVlcCnGJNb1q",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.Sm9jAVlcCnGJNb1q",
       "name": "Titanium Bones",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
@@ -3255,7 +3308,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3289,8 +3342,8 @@
       }
     },
     {
-      "_id": "TDwgfuwRJP9iqj8y",
-      "_key": "!actors.items!DgvdmyJ4qb61qOaj.TDwgfuwRJP9iqj8y",
+      "_id": "hHMbJe2X0VjRu2Ph",
+      "_key": "!actors.items!DgvdmyJ4qb61qOaj.hHMbJe2X0VjRu2Ph",
       "name": "Sycust Cyberspine",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
@@ -3317,7 +3370,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3338,7 +3391,7 @@
       "effects": [
         {
           "_id": "Cwsap6mjeJf7WrLV",
-          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.TDwgfuwRJP9iqj8y.Cwsap6mjeJf7WrLV",
+          "_key": "!actors.items.effects!DgvdmyJ4qb61qOaj.hHMbJe2X0VjRu2Ph.Cwsap6mjeJf7WrLV",
           "name": "Sycust Cyberspine",
           "img": "icons/svg/aura.svg",
           "type": "base",

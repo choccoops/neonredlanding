@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "zTCgZp9ecEAAiE9B",
-        "A8w4Md1kSuMlUfrQ",
+        "qmZho21xcEzPZ7Vh",
+        "uZqZCKyjIPokfijO",
         "KvKlMP6Z8SHRZ5BT",
         "NiybWyYOfXJk7xGO",
         "BOx8cmBl0tk4ijGZ"
@@ -69,7 +69,7 @@
       "description": "<p>When police reach a cyberpsycho before MAX-TAC, the armory hands its heaviest gear to those strong enough to carry it.</p><p><em>NCPD:</em> Night City's police, from beat cops to SWAT.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Brawling 13 (11), Evasion 13 (11), Stealth 8 (6)</p><p>Melee SP (head/body): 7/7</p><p>Also carries (no catalog item): Ion Cuffs x1</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Brawling 13 (11), Evasion 13 (11), Stealth 8 (6)</p><p>Melee SP (head/body): 7/7</p>"
     }
   },
   "items": [
@@ -2375,7 +2375,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>NCPD Superheavy Patrol Officer:</strong> stands in for the Constitutional Arms HAR; Rolls 3d6 (drop lowest) for Autofire Damage. Can only load Non-Basic Ammunition. Requires BODY 8+ to wield.</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>NCPD Superheavy Patrol Officer:</strong> a Heavy SMG with the block's numbers; the catalog has no Constitutional Arms HAR; Rolls 3d6 (drop lowest) for Autofire Damage. Can only load Non-Basic Ammunition. Requires BODY 8+ to wield.</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2451,7 +2451,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>NCPD Superheavy Patrol Officer:</strong> stands in for the Underbarrel Grenade Launcher</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>NCPD Superheavy Patrol Officer:</strong> a Grenade Launcher with the block's numbers; the catalog has no Underbarrel Grenade Launcher</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2546,9 +2546,9 @@
       "_key": "!actors.items!cI6L7oLoXL7x0iiS.ITTOJKgI93RWywtv"
     },
     {
-      "_id": "7nkrqXl8jXYE3W3N",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.7nkrqXl8jXYE3W3N",
-      "name": "Heavy Armorjack",
+      "_id": "XHOQqzEyPxbNESPf",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.XHOQqzEyPxbNESPf",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2578,10 +2578,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 13,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2614,8 +2614,76 @@
       }
     },
     {
-      "_id": "ECt4YscfsRxBiGnC",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.ECt4YscfsRxBiGnC",
+      "_id": "wjCqkEjw3omZ0ts3",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.wjCqkEjw3omZ0ts3",
+      "name": "Heavy Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP13. −2 REF, DEX and MOVE.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "SWJyR5ea2QokelBF",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.SWJyR5ea2QokelBF",
       "name": "Anti-Smog Breathing Mask",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2658,8 +2726,8 @@
       }
     },
     {
-      "_id": "a422FVS25rNbmAAt",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.a422FVS25rNbmAAt",
+      "_id": "ckTSrVcBa7CPYVWl",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.ckTSrVcBa7CPYVWl",
       "name": "Grenade (Armor-Piercing)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/armor-piercing.svg",
@@ -2713,8 +2781,8 @@
       }
     },
     {
-      "_id": "XDeIiyA8GaxnjVhP",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.XDeIiyA8GaxnjVhP",
+      "_id": "X24ThLlIu5Dym5Dj",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.X24ThLlIu5Dym5Dj",
       "name": "Armor-Piercing Ammunition (Heavy Pistol)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -2768,8 +2836,8 @@
       }
     },
     {
-      "_id": "VQElIDtjNU3yJMEh",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.VQElIDtjNU3yJMEh",
+      "_id": "hi5RNfWPc0sJtv3v",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.hi5RNfWPc0sJtv3v",
       "name": "Improved EMP Ammunition",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2812,8 +2880,52 @@
       }
     },
     {
-      "_id": "zTCgZp9ecEAAiE9B",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.zTCgZp9ecEAAiE9B",
+      "_id": "s1jORfyE8UtHvhrx",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.s1jORfyE8UtHvhrx",
+      "name": "Ion Cuffs",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/ion_cuffs.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Handcuffs for chromed suspects. The limbs still move, but every non-hardened option in a non-hardened Cyberlimb they bind stops working until the cuffs come off. Easily broken with BODY 13 or higher.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "qmZho21xcEzPZ7Vh",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.qmZho21xcEzPZ7Vh",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2842,10 +2954,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "ljG9oaVuZ1a1iZea"
+            "MdB0ESZjsQcJnXmp"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2876,8 +2989,8 @@
       }
     },
     {
-      "_id": "ljG9oaVuZ1a1iZea",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.ljG9oaVuZ1a1iZea",
+      "_id": "MdB0ESZjsQcJnXmp",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.MdB0ESZjsQcJnXmp",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2904,7 +3017,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2938,8 +3051,8 @@
       }
     },
     {
-      "_id": "A8w4Md1kSuMlUfrQ",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.A8w4Md1kSuMlUfrQ",
+      "_id": "uZqZCKyjIPokfijO",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.uZqZCKyjIPokfijO",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2966,7 +3079,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3000,8 +3113,8 @@
       }
     },
     {
-      "_id": "UuQHTcEGpgFEPpjk",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.UuQHTcEGpgFEPpjk",
+      "_id": "w1E9EnzJHf9eOc7k",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.w1E9EnzJHf9eOc7k",
       "name": "Smart Glasses",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -3044,8 +3157,8 @@
       }
     },
     {
-      "_id": "Tn4eqCQtHUvdVIQu",
-      "_key": "!actors.items!cI6L7oLoXL7x0iiS.Tn4eqCQtHUvdVIQu",
+      "_id": "hfDEIf4aX8tTQPV1",
+      "_key": "!actors.items!cI6L7oLoXL7x0iiS.hfDEIf4aX8tTQPV1",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -3093,7 +3206,7 @@
             "ammo"
           ],
           "list": [
-            "a422FVS25rNbmAAt"
+            "ckTSrVcBa7CPYVWl"
           ],
           "slots": 3,
           "usedSlots": 0

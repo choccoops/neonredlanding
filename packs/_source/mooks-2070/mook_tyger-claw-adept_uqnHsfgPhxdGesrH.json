@@ -2367,33 +2367,47 @@
       "_key": "!actors.items!uqnHsfgPhxdGesrH.pjOFRiuEWulOLqad"
     },
     {
-      "name": "Martial Arts (Martial Arts (Karate))",
+      "_id": "UUjzog2GzlWeE28Z",
+      "_key": "!actors.items!uqnHsfgPhxdGesrH.UUjzog2GzlWeE28Z",
+      "name": "Martial Arts (Karate)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_fist.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Karate)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2403,27 +2417,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Karate Attacks</strong> with the Martial Arts (Karate) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Karate))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2431,23 +2433,27 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "EqKVeXLBp8whJQlf",
-      "_key": "!actors.items!uqnHsfgPhxdGesrH.EqKVeXLBp8whJQlf"
+      }
     },
     {
-      "_id": "GSsEJZPFY4sBLHza",
-      "_key": "!actors.items!uqnHsfgPhxdGesrH.GSsEJZPFY4sBLHza",
+      "_id": "H3en0Ah9zDKmeuJO",
+      "_key": "!actors.items!uqnHsfgPhxdGesrH.H3en0Ah9zDKmeuJO",
       "name": "Katana",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword_excellent.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
-        "weaponType": "vHeavyMelee",
+        "weaponType": "heavyMelee",
         "isRanged": false,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "3d6",
         "rof": 2,
         "handsReq": 2,
@@ -2471,7 +2477,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 5000
+          "market": 500
         },
         "brand": "",
         "installedItems": {
@@ -2481,12 +2487,12 @@
             "ammo"
           ],
           "list": [],
-          "slots": 0,
+          "slots": 3,
           "usedSlots": 0
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Tyger Claw Adept:</strong> Two-Handed EQ Heavy Melee</p><p>Once a minute, Action: coat the blade with up to three different fluids for 1 minute (canisters 100eb; reload all chambers with an Action). <strong>Fire:</strong> damage through armor ignites (2 HP at end of each Turn until put out). <strong>Acid:</strong> ablates 2. <strong>Wound Salt:</strong> a Foreign Object crit also inflicts a second, different crit (no Bonus Damage).</p><p><em>Cryo-quenched diamond steel that drips on command, named for the sword in the old stories.</em></p><p><strong>Class:</strong> EQ two-handed Exotic Very Heavy Melee<br><strong>Damage:</strong> 4d6<br><strong>Alt. fire:</strong> Coatings</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Tyger Claw Adept:</strong> a Heavy Melee Weapon with the block's numbers; the catalog has no Katana; Two-Handed EQ Heavy Melee</p><p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (excellent quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2583,7 +2589,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2646,7 +2652,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "mJyUdHNbBn1KjoIU"
@@ -2708,7 +2715,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2772,7 +2779,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "qXvEA0SS92DdxSeg"
@@ -2834,7 +2842,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2898,7 +2906,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "r2QVrlKN0iEdWMFq",
@@ -2961,7 +2970,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3023,7 +3032,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3127,7 +3136,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "hWSl7BF6Kp03aTtJ",
@@ -3190,7 +3200,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3292,7 +3302,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3354,7 +3364,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

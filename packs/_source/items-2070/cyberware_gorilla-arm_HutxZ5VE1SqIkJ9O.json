@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
   "folder": "9kQh4EzqIkr9LhlV",
-  "sort": 9130,
+  "sort": 9160,
   "system": {
     "type": "cyberArm",
     "installLocation": "hospital",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Brawling",
+    "weaponType": "heavyMelee",
+    "isRanged": false,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Cyberarm option, 2 slots. The reinforced fist is an Excellent Heavy Melee Weapon used with Brawling. That arm ignores BODY penalties of weapons needing BODY 11 or less, and wields melee weapons as BODY 11. A pair: pry doors, move Thick cover, Choke and Slam as BODY 11.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (4d6/2[RoundUp])</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

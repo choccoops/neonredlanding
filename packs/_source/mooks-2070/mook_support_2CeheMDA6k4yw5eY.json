@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "63oDioURQ7XKleyl",
-        "qYSFMqkxLhN4Yubb",
-        "nZmSZYtkr3KKbEyY",
+        "Dawqxkk8aA7oauVc",
+        "xuTwbwKTcR24vpNg",
+        "UBXguVNQbNl6m263",
         "RozityOu5kLqJbbU",
         "BqmWSP4faBGfq4i8",
         "fKptv1sMfJ6wD0zP"
@@ -2283,10 +2283,10 @@
             "cyberware"
           ],
           "list": [
-            "7CezNhwkEy2oPsTd",
             "AnOkyH9HYTqU0v7o",
-            "CUM2DBJ4NzmR5ebl",
-            "T4S8JxwS6VmGngT6"
+            "IWJkmGblE6zokMc2",
+            "UIcrpMbb2Had5vyU",
+            "tNcM87uyqhFi2Y6Q"
           ],
           "slots": 7,
           "usedSlots": 4
@@ -2406,7 +2406,7 @@
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_poor_power.svg",
       "system": {
-        "weaponSkill": "N/A",
+        "weaponSkill": "Autofire",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "poor",
@@ -2478,9 +2478,9 @@
       }
     },
     {
-      "_id": "EHvejfhaWDOnsPNF",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.EHvejfhaWDOnsPNF",
-      "name": "Heavy Armorjack",
+      "_id": "hjcxoTtHrvNnqezA",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.hjcxoTtHrvNnqezA",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2510,10 +2510,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 13,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2546,8 +2546,76 @@
       }
     },
     {
-      "_id": "7ywqyhJlPwyEcIFk",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.7ywqyhJlPwyEcIFk",
+      "_id": "bW0PIWEdEUKck6k7",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.bW0PIWEdEUKck6k7",
+      "name": "Heavy Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 13,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP13. −2 REF, DEX and MOVE.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "uvb76EL5Sh7e84Ol",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.uvb76EL5Sh7e84Ol",
       "name": "Grenade (Armor-Piercing)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/armor-piercing.svg",
@@ -2601,7 +2669,7 @@
       }
     },
     {
-      "_id": "rlNNPUlJCiCnATYj",
+      "_id": "LgjlRrCC7C5j9zzg",
       "name": "Black Lace",
       "type": "drug",
       "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
@@ -2636,69 +2704,7 @@
           }
         }
       },
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.rlNNPUlJCiCnATYj"
-    },
-    {
-      "_id": "7CezNhwkEy2oPsTd",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.7CezNhwkEy2oPsTd",
-      "name": "Clutch Padding",
-      "type": "cyberware",
-      "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
-      "system": {
-        "type": "cyberwareInternal",
-        "installLocation": "clinic",
-        "humanityLoss": {
-          "static": 3,
-          "roll": "1d6"
-        },
-        "isFoundational": false,
-        "size": 1,
-        "price": {
-          "market": 500
-        },
-        "usage": "installed",
-        "brand": "",
-        "core": false,
-        "isWeapon": false,
-        "isElectronic": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "providesHardening": false,
-        "installedItems": {
-          "allowed": false,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 0,
-          "usedSlots": 0
-        },
-        "description": {
-          "value": "<p>Your BODY counts 1 higher for weapon BODY requirements; up to 3 installs (+3).</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Cyberware"
-          }
-        }
-      }
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.LgjlRrCC7C5j9zzg"
     },
     {
       "_id": "AnOkyH9HYTqU0v7o",
@@ -2729,7 +2735,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2763,8 +2769,70 @@
       }
     },
     {
-      "_id": "63oDioURQ7XKleyl",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.63oDioURQ7XKleyl",
+      "_id": "IWJkmGblE6zokMc2",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.IWJkmGblE6zokMc2",
+      "name": "Clutch Padding",
+      "type": "cyberware",
+      "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
+      "system": {
+        "type": "cyberwareInternal",
+        "installLocation": "clinic",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>Your BODY counts 1 higher for weapon BODY requirements; up to 3 installs (+3).</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "Dawqxkk8aA7oauVc",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.Dawqxkk8aA7oauVc",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2793,10 +2861,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "4Oby9z4qLeO03YrA"
+            "PcR4fC22fAt8yB4u"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2827,8 +2896,8 @@
       }
     },
     {
-      "_id": "4Oby9z4qLeO03YrA",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.4Oby9z4qLeO03YrA",
+      "_id": "PcR4fC22fAt8yB4u",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.PcR4fC22fAt8yB4u",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2855,7 +2924,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2889,8 +2958,8 @@
       }
     },
     {
-      "_id": "qYSFMqkxLhN4Yubb",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.qYSFMqkxLhN4Yubb",
+      "_id": "xuTwbwKTcR24vpNg",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.xuTwbwKTcR24vpNg",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2919,10 +2988,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "sTyf5rEms6J43Jim"
+            "Xl944nvwPRyw3AR1"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2953,8 +3023,8 @@
       }
     },
     {
-      "_id": "sTyf5rEms6J43Jim",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.sTyf5rEms6J43Jim",
+      "_id": "Xl944nvwPRyw3AR1",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.Xl944nvwPRyw3AR1",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2981,7 +3051,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3015,8 +3085,8 @@
       }
     },
     {
-      "_id": "CUM2DBJ4NzmR5ebl",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.CUM2DBJ4NzmR5ebl",
+      "_id": "UIcrpMbb2Had5vyU",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.UIcrpMbb2Had5vyU",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -3043,7 +3113,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3064,7 +3134,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!2CeheMDA6k4yw5eY.CUM2DBJ4NzmR5ebl.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!2CeheMDA6k4yw5eY.UIcrpMbb2Had5vyU.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3117,8 +3187,8 @@
       }
     },
     {
-      "_id": "T4S8JxwS6VmGngT6",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.T4S8JxwS6VmGngT6",
+      "_id": "tNcM87uyqhFi2Y6Q",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.tNcM87uyqhFi2Y6Q",
       "name": "Nasal Filters",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/nasal_filters.svg",
@@ -3145,7 +3215,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3179,8 +3249,8 @@
       }
     },
     {
-      "_id": "nZmSZYtkr3KKbEyY",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.nZmSZYtkr3KKbEyY",
+      "_id": "UBXguVNQbNl6m263",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.UBXguVNQbNl6m263",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3209,10 +3279,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "NmAXKkv4Lf8VECNl"
+            "BIsAHPNQVaqaaSOz"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -3243,8 +3314,8 @@
       }
     },
     {
-      "_id": "NmAXKkv4Lf8VECNl",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.NmAXKkv4Lf8VECNl",
+      "_id": "BIsAHPNQVaqaaSOz",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.BIsAHPNQVaqaaSOz",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3271,7 +3342,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3305,8 +3376,8 @@
       }
     },
     {
-      "_id": "UaE4bA4I64XXlU83",
-      "_key": "!actors.items!2CeheMDA6k4yw5eY.UaE4bA4I64XXlU83",
+      "_id": "jWhZsbH3n8PL6zwe",
+      "_key": "!actors.items!2CeheMDA6k4yw5eY.jWhZsbH3n8PL6zwe",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -3354,7 +3425,7 @@
             "ammo"
           ],
           "list": [
-            "7ywqyhJlPwyEcIFk"
+            "uvb76EL5Sh7e84Ol"
           ],
           "slots": 3,
           "usedSlots": 0

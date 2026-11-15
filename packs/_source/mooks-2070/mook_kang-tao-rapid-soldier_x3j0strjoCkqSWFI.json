@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "vgrHzT8AMJ9aML2X",
-        "LM4nYXLtQqNQLxPC",
+        "UtIrYjAQnWqarZNe",
+        "PJc9zaWTz1nlbIyY",
         "eyaFR6JMd2C7Ob99",
         "Lt7ky7nU07yOdcRY",
         "ZiFw6VG4cUKStoLs"
@@ -69,7 +69,7 @@
       "description": "<p>Heavier guns, heavier armor and a harder attitude; the street nickname 'Rapid' stuck over the in-house 'assault specialist'.</p><p><em>Kang Tao:</em> The Chinese smartgun maker's own security, as sharp as its guns.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Radio Communicator)</p>"
+      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Melee SP (head/body): 6/6</p>"
     }
   },
   "items": [
@@ -2328,13 +2328,13 @@
       "_key": "!actors.items!x3j0strjoCkqSWFI.WdAYPfMgHlXY8hdE",
       "name": "Kang Tao L-69 Zhuo",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_smart.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_excellent_smart.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
-        "quality": "standard",
-        "attackmod": 1,
+        "quality": "excellent",
+        "attackmod": 2,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2549,9 +2549,9 @@
       "_key": "!actors.items!x3j0strjoCkqSWFI.r34c1X09M3OuK8mv"
     },
     {
-      "_id": "FY8SF4nXPGxgUHCw",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.FY8SF4nXPGxgUHCw",
-      "name": "Medium Armorjack",
+      "_id": "FBsIUYp8GtnvNw7C",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.FBsIUYp8GtnvNw7C",
+      "name": "Medium Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2581,10 +2581,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 12,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2617,8 +2617,76 @@
       }
     },
     {
-      "_id": "G62JQo4fkgwnjroy",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.G62JQo4fkgwnjroy",
+      "_id": "1egiIhy2xYmICuUl",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.1egiIhy2xYmICuUl",
+      "name": "Medium Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP12. −2 REF, DEX and MOVE. Typical street wear.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bUmxd7fxLTJ9iGIl",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.bUmxd7fxLTJ9iGIl",
       "name": "Anti-Smog Breathing Mask",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2661,8 +2729,8 @@
       }
     },
     {
-      "_id": "vgrHzT8AMJ9aML2X",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.vgrHzT8AMJ9aML2X",
+      "_id": "UtIrYjAQnWqarZNe",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.UtIrYjAQnWqarZNe",
       "name": "Flashlight Cyberfinger",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
@@ -2723,8 +2791,8 @@
       }
     },
     {
-      "_id": "VTI2lAp51ckgXdx0",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.VTI2lAp51ckgXdx0",
+      "_id": "cDwMa6skQnBMHSwR",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.cDwMa6skQnBMHSwR",
       "name": "Improved Smart Ammunition (Shotgun Shell)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -2778,8 +2846,8 @@
       }
     },
     {
-      "_id": "LM4nYXLtQqNQLxPC",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.LM4nYXLtQqNQLxPC",
+      "_id": "PJc9zaWTz1nlbIyY",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.PJc9zaWTz1nlbIyY",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2808,10 +2876,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "vxQ79HZkt2Q3FAOb"
+            "4Otlt9DiTMMMXY8E"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2842,8 +2911,8 @@
       }
     },
     {
-      "_id": "vxQ79HZkt2Q3FAOb",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.vxQ79HZkt2Q3FAOb",
+      "_id": "4Otlt9DiTMMMXY8E",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.4Otlt9DiTMMMXY8E",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2870,7 +2939,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2904,8 +2973,52 @@
       }
     },
     {
-      "_id": "bjJs2nIeGANoVj8F",
-      "_key": "!actors.items!x3j0strjoCkqSWFI.bjJs2nIeGANoVj8F",
+      "_id": "iZIzjuaRlEXeaP1V",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.iZIzjuaRlEXeaP1V",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Kang Tao Rapid Soldier:</strong> includes Level Damper, Radio Communicator</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "EzbQOiXqL5FAWG5R",
+      "_key": "!actors.items!x3j0strjoCkqSWFI.EzbQOiXqL5FAWG5R",
       "name": "Smart Glasses",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",

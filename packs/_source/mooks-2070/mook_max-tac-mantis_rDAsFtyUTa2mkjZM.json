@@ -58,11 +58,11 @@
         "cyberware"
       ],
       "list": [
+        "5r6iU2ku4HSSdmZa",
         "fobzxlBdXqhAp3PR",
-        "dE64MJjf7fEKsdmu",
-        "EhYHnTUsfFGMRRTN",
-        "CDDprzKuXIyiOGDX",
-        "657PGst4JGzwal2k",
+        "gWDElde1M9FhVSB5",
+        "0WjLK1rqTzvOd6S3",
+        "0p3w6KIKXoedCFvc",
         "SLHqGkCUDa0vf6UM",
         "v8SfJHKzRK3CeEg5",
         "d8XiZJodgjeOwaFU"
@@ -2366,33 +2366,47 @@
       "_key": "!actors.items!rDAsFtyUTa2mkjZM.d8XiZJodgjeOwaFU"
     },
     {
-      "name": "Martial Arts (Martial Arts (Karate))",
+      "_id": "gLsbVgAhHyesW35h",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.gLsbVgAhHyesW35h",
+      "name": "Martial Arts (Karate)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_fist.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Karate)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2402,90 +2416,8 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
-        },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
-        "source": {
-          "book": "Core",
-          "page": 176
-        },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Karate))",
-        "weaponType": "martialArts"
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        }
-      },
-      "_id": "RiBOQmHfObVs9xO2",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.RiBOQmHfObVs9xO2"
-    },
-    {
-      "_id": "tKwIQvhvBIwJAXyA",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.tKwIQvhvBIwJAXyA",
-      "name": "Mantis Blade",
-      "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
-      "system": {
-        "weaponSkill": "Melee Weapon",
-        "weaponType": "heavyMelee",
-        "isRanged": false,
-        "quality": "excellent",
-        "attackmod": 0,
-        "damage": "3d6",
-        "rof": 2,
-        "handsReq": 2,
-        "magazine": {
-          "value": 0,
-          "max": 0,
-          "ammoData": null
-        },
-        "ammoVariety": [],
-        "usesType": "magazine",
-        "fireModes": {
-          "autoFire": 0,
-          "suppressiveFire": false
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "dvTable": "",
-        "critFailEffect": "jammed",
-        "equipped": "equipped",
-        "usage": "equipped",
-        "price": {
-          "market": 100
-        },
-        "brand": "",
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade",
-            "ammo"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>MAX-TAC Mantis:</strong> stands in for the Mantis Blade x2 (EQ); ×2</p><p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Karate Attacks</strong> with the Martial Arts (Karate) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2504,81 +2436,7 @@
         "cpr-neon-hub": {
           "source2070": {
             "book": "Item Compendium (2070)",
-            "chapter": "Weapons"
-          }
-        }
-      }
-    },
-    {
-      "_id": "5KqNFYQTakdTYghF",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.5KqNFYQTakdTYghF",
-      "name": "Spring-Loaded Dual Mantis Blades",
-      "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
-      "system": {
-        "weaponSkill": "Melee Weapon",
-        "weaponType": "vHeavyMelee",
-        "isRanged": false,
-        "quality": "excellent",
-        "attackmod": 0,
-        "damage": "4d6",
-        "rof": 1,
-        "handsReq": 2,
-        "magazine": {
-          "value": 0,
-          "max": 0,
-          "ammoData": null
-        },
-        "ammoVariety": [],
-        "usesType": "magazine",
-        "fireModes": {
-          "autoFire": 0,
-          "suppressiveFire": false
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "dvTable": "",
-        "critFailEffect": "jammed",
-        "equipped": "equipped",
-        "usage": "equipped",
-        "price": {
-          "market": 500
-        },
-        "brand": "",
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade",
-            "ammo"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "unarmedAutomaticCalculation": false,
-        "description": {
-          "value": "<p><strong>MAX-TAC Mantis:</strong> Has a 4m/yds range w/ Jump Boosters; stands in for the Spring-Loaded Dual Mantis Blades (EQ) [Has a 4m/yds range w/ Jump Boosters]</p><p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Weapons"
+            "chapter": "Martial Arts"
           }
         }
       }
@@ -2650,13 +2508,13 @@
           }
         }
       },
-      "_id": "WG9L5JlHzXEhMJgO",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.WG9L5JlHzXEhMJgO"
+      "_id": "gshfsq9WjjuFaNQe",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.gshfsq9WjjuFaNQe"
     },
     {
-      "_id": "PPlgYLLx0B3EtIC5",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.PPlgYLLx0B3EtIC5",
-      "name": "Max-Helm",
+      "_id": "H3Rq85z513xed7a5",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.H3Rq85z513xed7a5",
+      "name": "Gibson Battlegear Max-Helm",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2697,7 +2555,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>MAX-TAC Mantis:</strong> includes Smart Ears, Smart Glasses</p><p><strong>MAX-TAC Mantis:</strong> Max-Helm</p><p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2722,9 +2580,9 @@
       }
     },
     {
-      "_id": "IHhj0lCdxN9PgaYX",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.IHhj0lCdxN9PgaYX",
-      "name": "Max-Vest",
+      "_id": "Q9un2mUPoJKftqrm",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.Q9un2mUPoJKftqrm",
+      "name": "Gibson Battlegear Max-Vest (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2765,7 +2623,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p><strong>MAX-TAC Mantis:</strong> Max-Vest (Both have an Ultralight Rebuild)</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>MAX-TAC Mantis:</strong> includes Proxishield</p><p><strong>MAX-TAC Mantis:</strong> Max-Vest (Both have an Ultralight Rebuild)</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2785,6 +2643,155 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "5r6iU2ku4HSSdmZa",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.5r6iU2ku4HSSdmZa",
+      "name": "Cyberarm",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": true,
+        "size": 0,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "cyberware",
+            "itemUpgrade"
+          ],
+          "list": [
+            "YUEPiZhLLZkPruMT"
+          ],
+          "slots": 4,
+          "usedSlots": 2
+        },
+        "description": {
+          "value": "<p>Foundation. Doesn't need pairing. Comes with a free Standard Hand.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "YUEPiZhLLZkPruMT",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.YUEPiZhLLZkPruMT",
+      "name": "Mantis Blade",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_melee_weapon.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 2,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": true,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
+        "description": {
+          "value": "<p><strong>MAX-TAC Mantis:</strong> ×2</p><p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
           }
         }
       }
@@ -2820,7 +2827,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "Jl6vLeOFSxXpeK3J"
@@ -2874,150 +2882,46 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "providesHardening": false,
-        "installedItems": {
-          "allowed": false,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 0,
-          "usedSlots": 0
-        },
-        "description": {
-          "value": "<p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Cyberware"
-          }
-        }
-      }
-    },
-    {
-      "_id": "dE64MJjf7fEKsdmu",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.dE64MJjf7fEKsdmu",
-      "name": "Cyberarm",
-      "type": "cyberware",
-      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
-      "system": {
-        "type": "cyberArm",
-        "installLocation": "hospital",
-        "humanityLoss": {
-          "static": 7,
-          "roll": "2d6"
-        },
-        "isFoundational": true,
-        "size": 0,
-        "price": {
-          "market": 500
-        },
-        "usage": "installed",
-        "brand": "",
-        "core": false,
-        "isWeapon": false,
-        "isElectronic": true,
-        "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
-          ],
-          "list": [
-            "jg172UziNaSj036O"
-          ],
-          "slots": 4,
-          "usedSlots": 2
-        },
-        "description": {
-          "value": "<p>Foundation. Doesn't need pairing. Comes with a free Standard Hand.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Cyberware"
-          }
-        }
-      }
-    },
-    {
-      "_id": "jg172UziNaSj036O",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.jg172UziNaSj036O",
-      "name": "Mantis Blade",
-      "type": "cyberware",
-      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_melee_weapon.svg",
-      "system": {
-        "type": "cyberArm",
-        "installLocation": "hospital",
-        "humanityLoss": {
-          "static": 7,
-          "roll": "2d6"
-        },
-        "isFoundational": false,
-        "size": 2,
-        "price": {
-          "market": 500
-        },
-        "usage": "installed",
-        "brand": "",
-        "core": false,
-        "isWeapon": false,
-        "isElectronic": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "providesHardening": false,
-        "installedItems": {
-          "allowed": false,
-          "allowedTypes": [
             "itemUpgrade"
           ],
           "list": [],
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "4d6",
+        "rof": 1,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+          "value": "<p><strong>MAX-TAC Mantis:</strong> Has a 4m/yds range w/ Jump Boosters</p><p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -3042,8 +2946,8 @@
       }
     },
     {
-      "_id": "EhYHnTUsfFGMRRTN",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.EhYHnTUsfFGMRRTN",
+      "_id": "gWDElde1M9FhVSB5",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.gWDElde1M9FhVSB5",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -3072,11 +2976,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "YsSpkx28kLPEYxeK",
-            "X8rOKd0PIug3Tj7o"
+            "vyMOqVi9LLsVWXgQ",
+            "P4zDLAO2i7wjydYm"
           ],
           "slots": 4,
           "usedSlots": 4
@@ -3107,8 +3012,8 @@
       }
     },
     {
-      "_id": "YsSpkx28kLPEYxeK",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.YsSpkx28kLPEYxeK",
+      "_id": "vyMOqVi9LLsVWXgQ",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.vyMOqVi9LLsVWXgQ",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -3135,7 +3040,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3169,8 +3074,8 @@
       }
     },
     {
-      "_id": "X8rOKd0PIug3Tj7o",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.X8rOKd0PIug3Tj7o",
+      "_id": "P4zDLAO2i7wjydYm",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.P4zDLAO2i7wjydYm",
       "name": "Leeroy Ligament System",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -3197,7 +3102,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3218,7 +3123,7 @@
       "effects": [
         {
           "_id": "yOfceUw2vjhZbGx0",
-          "_key": "!actors.items.effects!rDAsFtyUTa2mkjZM.X8rOKd0PIug3Tj7o.yOfceUw2vjhZbGx0",
+          "_key": "!actors.items.effects!rDAsFtyUTa2mkjZM.P4zDLAO2i7wjydYm.yOfceUw2vjhZbGx0",
           "name": "Leeroy Ligament System",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3271,8 +3176,8 @@
       }
     },
     {
-      "_id": "CDDprzKuXIyiOGDX",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.CDDprzKuXIyiOGDX",
+      "_id": "0WjLK1rqTzvOd6S3",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.0WjLK1rqTzvOd6S3",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -3301,11 +3206,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "4lrJ2J3UPpTTe2BO",
-            "P8ghjuX8bamaeInd"
+            "d2vusgqiE3JzuTAX",
+            "dmNcJDTJSPLGwJWf"
           ],
           "slots": 4,
           "usedSlots": 4
@@ -3336,8 +3242,8 @@
       }
     },
     {
-      "_id": "4lrJ2J3UPpTTe2BO",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.4lrJ2J3UPpTTe2BO",
+      "_id": "d2vusgqiE3JzuTAX",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.d2vusgqiE3JzuTAX",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -3364,7 +3270,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3398,8 +3304,8 @@
       }
     },
     {
-      "_id": "P8ghjuX8bamaeInd",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.P8ghjuX8bamaeInd",
+      "_id": "dmNcJDTJSPLGwJWf",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.dmNcJDTJSPLGwJWf",
       "name": "Leeroy Ligament System",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -3426,7 +3332,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3447,7 +3353,7 @@
       "effects": [
         {
           "_id": "yOfceUw2vjhZbGx0",
-          "_key": "!actors.items.effects!rDAsFtyUTa2mkjZM.P8ghjuX8bamaeInd.yOfceUw2vjhZbGx0",
+          "_key": "!actors.items.effects!rDAsFtyUTa2mkjZM.dmNcJDTJSPLGwJWf.yOfceUw2vjhZbGx0",
           "name": "Leeroy Ligament System",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3500,144 +3406,8 @@
       }
     },
     {
-      "_id": "uA3eoYg0EXDxuNA0",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.uA3eoYg0EXDxuNA0",
-      "name": "Gibson Battlegear Max-Helm",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 10000
-        },
-        "penalty": 1,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 16,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>MAX-TAC Mantis:</strong> includes Smart Ears, Smart Glasses</p><p>Head SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. Built-in Smart Ears (Level Damper, radio) and Smart Glasses with 8 option slots. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 10,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "S8FspfqGqCz2Js2p",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.S8FspfqGqCz2Js2p",
-      "name": "Gibson Battlegear Max-Vest (Body)",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 15000
-        },
-        "penalty": 1,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": true,
-        "isHeadLocation": false,
-        "bodyLocation": {
-          "sp": 16,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>MAX-TAC Mantis:</strong> includes Proxishield</p><p>Body SP16; −1 REF, −2 DEX and MOVE. Ablation against it is 1 less (min 0), and Martial Arts don't halve it. One External Body Cyberware slot that ignores install requirements (no SP-granting chrome); you use what's in it with no Humanity Loss or slot cost. Takes Subdermal Armor enhancements. Regains 1 SP at the end of each day it loses none.</p><p><strong>Cost:</strong> 15,000eb (Super-Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "657PGst4JGzwal2k",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.657PGst4JGzwal2k",
+      "_id": "0p3w6KIKXoedCFvc",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.0p3w6KIKXoedCFvc",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3666,13 +3436,14 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "snBrIPZEDzKUlSAG",
-            "lW38gzlFaxqWBQQ0",
-            "OVwHk1fy7Gbc8nWk",
-            "d8hRuMi10GHqUxoW"
+            "o2DiWykQ9UHQth4j",
+            "2aqjLclC3UkdY4cL",
+            "ksFHTCu6DlO3epMl",
+            "WBveCTZdWoc0nugU"
           ],
           "slots": 5,
           "usedSlots": 4
@@ -3703,8 +3474,8 @@
       }
     },
     {
-      "_id": "snBrIPZEDzKUlSAG",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.snBrIPZEDzKUlSAG",
+      "_id": "o2DiWykQ9UHQth4j",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.o2DiWykQ9UHQth4j",
       "name": "Kerenzikov",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
@@ -3731,7 +3502,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3765,8 +3536,8 @@
       }
     },
     {
-      "_id": "lW38gzlFaxqWBQQ0",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.lW38gzlFaxqWBQQ0",
+      "_id": "2aqjLclC3UkdY4cL",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.2aqjLclC3UkdY4cL",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3793,7 +3564,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3827,8 +3598,8 @@
       }
     },
     {
-      "_id": "OVwHk1fy7Gbc8nWk",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.OVwHk1fy7Gbc8nWk",
+      "_id": "ksFHTCu6DlO3epMl",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.ksFHTCu6DlO3epMl",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3855,7 +3626,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3889,8 +3660,8 @@
       }
     },
     {
-      "_id": "d8hRuMi10GHqUxoW",
-      "_key": "!actors.items!rDAsFtyUTa2mkjZM.d8hRuMi10GHqUxoW",
+      "_id": "WBveCTZdWoc0nugU",
+      "_key": "!actors.items!rDAsFtyUTa2mkjZM.WBveCTZdWoc0nugU",
       "name": "Synaptic Accelerator",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3917,7 +3688,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

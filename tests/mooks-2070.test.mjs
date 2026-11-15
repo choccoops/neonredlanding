@@ -123,3 +123,108 @@ test("drones: their compendium stats, CN as the base of their attacks, art and a
     assert.ok(existsSync(file(d.prototypeToken.texture.src)), `${d.name} token exists`);
   }
 });
+
+const catalog = new Map(readdirSync(path.join(root, "packs/_source/items-2070")).filter((f) => f.endsWith(".json"))
+  .map((f) => JSON.parse(readFileSync(path.join(root, "packs/_source/items-2070", f), "utf8"))).filter((d) => d.system).map((d) => [`${d.type}|${d.name}`, d]));
+const attacks = (m) => m.items.filter((i) => i.type === "weapon" || i.system.isWeapon);
+const attackBase = (m, w) => {
+  const skill = m.items.find((i) => i.type === "skill" && i.name === w.system.weaponSkill);
+  return m.system.stats[skill.system.stat].value + skill.system.level + (w.system.attackmod || 0);
+};
+
+test("every weapon attacks with a Skill its mook has", () => {
+  for (const m of all) {
+    const skills = new Set(m.items.filter((i) => i.type === "skill").map((i) => i.name));
+    for (const w of attacks(m)) assert.ok(skills.has(w.system.weaponSkill), `${m.name}: ${w.name} attacks with ${w.system.weaponSkill}`);
+  }
+});
+
+test("an item a mook shares with the Item Compendium is that item: its name, its icon, its flags", () => {
+  let shared = 0;
+  for (const m of mooks) {
+    for (const i of m.items) {
+      const src = catalog.get(`${i.type}|${i.name}`);
+      if (!src) continue;
+      shared += 1;
+      if ((i.system.quality ?? "") === (src.system.quality ?? "")) assert.equal(i.img, src.img, `${m.name}: ${i.name}`);
+      assert.deepEqual(i.flags["cpr-neon-hub"]?.source2070, src.flags["cpr-neon-hub"]?.source2070, `${m.name}: ${i.name}`);
+    }
+    for (const i of m.items.filter((x) => x.type === "weapon")) assert.ok(existsSync(file(i.img)) || i.img.startsWith("systems/"), `${m.name}: ${i.img}`);
+  }
+  assert.ok(shared > 1500, `${shared} catalog items on the mooks`);
+});
+
+test("armor is the catalog's head and body pieces, and nothing is worn twice", () => {
+  for (const m of mooks) {
+    const names = m.items.filter((i) => i.type === "armor").map((i) => i.name);
+    assert.equal(new Set(names).size, names.length, `${m.name}: ${names}`);
+  }
+  const ganger = mooks.find((m) => m.items.some((i) => i.name === "Kevlar® (Body)"));
+  assert.ok(ganger, "Kevlar comes as the catalog's Kevlar® (Body)");
+  assert.ok(!mooks.some((m) => m.items.some((i) => i.type === "armor" && ["Kevlar", "Max-Helm", "Light Armorjack"].includes(i.name))));
+});
+
+test("Kurt Hansen: Fang, Bald Eagle and Wild Dog are the Iconics, at his printed attack bases", () => {
+  const kurt = mooks.find((m) => m.name === "Kurt Hansen");
+  const w = (name) => kurt.items.find((i) => i.type === "weapon" && i.name.startsWith(name));
+  const fang = w("Fang");
+  assert.equal(fang.name, "Fang (Kurt Hansen’s Knife)");
+  assert.match(fang.img, /CombatKnife_excellent_iconic\.svg$/);
+  assert.equal(fang.system.quality, "excellent");
+  assert.match(fang.system.description.value, /deal \+1d6/, "its special rules come with it");
+  assert.equal(fang.system.weaponSkill, "Melee Weapon");
+  assert.deepEqual([attackBase(kurt, fang), attackBase(kurt, w("Bald Eagle")), attackBase(kurt, w("Wild Dog (")), attackBase(kurt, w("Martial Arts"))], [15, 17, 18, 14]);
+  assert.equal(w("Wild Dog (").system.weaponSkill, "Autofire");
+});
+
+test("chrome that is a weapon attacks from the body: Mantis Blades are the installed piece, not a second item", () => {
+  const mantis = mooks.filter((m) => m.items.some((i) => i.type === "cyberware" && i.name === "Mantis Blade"));
+  assert.ok(mantis.length > 0);
+  for (const m of mantis) {
+    assert.ok(m.items.filter((i) => i.name === "Mantis Blade").every((i) => i.type === "cyberware" && i.system.isWeapon), m.name);
+    assert.ok(!m.items.some((i) => i.type === "weapon" && /Mantis Blades?$/.test(i.name)), m.name);
+  }
+});
+
+test("nothing a mook carries is left without an item, bar the GM's own picks and its ride", () => {
+  const notes = (m) => m.system.information.notes;
+  for (const m of mooks) assert.doesNotMatch(notes(m), /no catalog item/, m.name);
+  const has = (name, type, item) => mooks.find((m) => m.name === name).items.find((i) => i.type === type && i.name === item);
+  assert.ok(has("Kurt Hansen", "gear", "Dog Tags"));
+  assert.ok(has("Melissa Rory", "gear", "Ion Cuffs"));
+  assert.ok(has("Trauma Team Medic", "gear", "Cryopump"), "a Cryobag is the Cryopump");
+  assert.match(has("Trauma Team Medic", "gear", "Smart Ears").system.description.value, /includes Level Damper, Scrambler\/Descrambler/);
+  assert.equal(has("Hardened Triggerman", "drug", "Timewarp").system.amount, 1);
+  assert.equal(has("Arasaka Sniper", "ammo", "Nobunaga Rifle Ammunition").system.amount, 16);
+  assert.ok(has("Sasquatch", "cyberware", "Exotic Bodysculpting"));
+  // a maker's model the catalog doesn't list is the standard piece under its name, with its options fitted
+  const arm = has("Arasaka Agent/Executioner", "cyberware", "Arasaka Corpochrome Cyberarm");
+  assert.equal(arm.system.type, "cyberArm");
+  assert.ok(arm.system.installedItems.list.length > 0);
+  // the CEMK port is the 2070 book's Cybersuite, and the deck in it is on the sheet
+  const runners = mooks.filter((m) => m.items.some((i) => i.name === "Cybersuite"));
+  assert.equal(runners.length, 7);
+  const generic = ["Cyberdeck", "Cyberdeck (Excellent)", "Cyberdeck (Poor)"];
+  for (const m of runners) {
+    const decks = m.items.filter((i) => i.type === "cyberdeck");
+    assert.equal(decks.length, 1, m.name);
+    // a named deck from the Item Compendium, its slots filled with quickhacks and no more
+    const ii = decks[0].system.installedItems;
+    assert.ok(!generic.includes(decks[0].name), `${m.name}: ${decks[0].name}`);
+    const loaded = ii.list.map((id) => m.items.find((i) => i._id === id));
+    assert.ok(loaded.length >= 5 && loaded.every((i) => i?.type === "program"), m.name);
+    assert.equal(ii.usedSlots, loaded.reduce((n, i) => n + i.system.size, 0), m.name);
+    assert.ok(ii.usedSlots <= ii.slots, `${m.name}: ${ii.usedSlots} of ${ii.slots} slots`);
+    assert.match(notes(m), /Programs for a NET Architecture run \(not loaded/, m.name);
+  }
+  const deckOf = (name) => mooks.find((m) => m.name === name).items.find((i) => i.type === "cyberdeck").name;
+  assert.deepEqual([deckOf("Arasaka Netrunner"), deckOf("NetWatch Special Agent"), deckOf("Voodoo Boys Manbo")],
+    ["Arasaka Shadow Mk.5", "NetWatch Netdriver Mk.1", "Raven Mk.3 Viral"]);
+  assert.ok(!mooks.some((m) => /cryobag/i.test(JSON.stringify(m))), "the Cryobag is the Cryopump everywhere");
+  // a block's ride is the vehicle item, a model from Neon Hub's vehicles, and the notes say which
+  const ride = (name) => mooks.find((m) => m.name === name).items.filter((i) => i.type === "vehicle").map((i) => i.name);
+  assert.deepEqual(ride("Trauma Team Pilot"), ["Trauma Team Atlus"]);
+  for (const n of ["Aldecaldos Nomad", "Aldecaldos Gunslinger", "Wraiths Bane"]) assert.deepEqual(ride(n), ['Brennan Apollo "Harriet"'], n);
+  assert.equal(mooks.filter((m) => m.items.some((i) => i.type === "vehicle")).length, 4);
+  assert.match(notes(mooks.find((m) => m.name === "Aldecaldos Gunslinger")), /Ride \(.+\): Brennan Apollo "Harriet" \(add NOS\)/);
+});

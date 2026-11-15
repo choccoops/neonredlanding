@@ -239,6 +239,11 @@ def fix_text(s):
     return s
 
 
+# The system's own icon for a piece it also carries, where the type's default would be a blank box.
+NAMED_ICONS = {"ion cuffs": f"{SYS}/the_12_days_of_gearmas/ion_cuffs.svg", "timewarp": f"{SYS}/hornets_pharmacy/timewarp.svg",
+               "smart ears": f"{SYS}/gear/auto_leveldampeningear_protectors.svg"}
+
+
 # Items Neon Hub already ships (Street Goods, Lifestyle 2070s, Fashion 2070s) aren't repeated here.
 ELSEWHERE = set()
 SKIPPED = []
@@ -270,6 +275,7 @@ def item(type_, name, system, desc, path, src="", tag="", img=None, flags=None, 
     system.setdefault("source", {"book": SOURCE, "page": 0})
     system.setdefault("revealed", True)
     system.setdefault("favorite", False)
+    img = img or NAMED_ICONS.get(name.lower())
     if type_ == "cyberware" and not img:
         img = cyber_img(name, system.get("type"), path)
     if type_ == "itemUpgrade" and not img:
@@ -470,9 +476,32 @@ RANGE_ALIAS = {"Long-Barrel Pistol": "Long Barrel Pistol", "Anti-Materiel Rifle"
                "Crossbow": "Bow", "Machine Gun": "Assault Rifle", "Shortbow": "Shortbow", "Longbow": "Longbow"}
 
 
-def wimg(wtype, quality="standard", rebuild=None, iconic=False):
+# A melee weapon's icon follows what it is (a knife, a katana, a baton), not only how heavy it is. Named ones by their
+# Cyberpunk 2077 model, the rest by a word in the name; anything else keeps its class's icon.
+MELEE_NAMED = {"Sword": ("scalpel", "byakko", "tsumetogi", "satori", "jinchu-maru", "errata", "black unicorn", "gwynbleidd", "cocktail stick"),
+               "CombatKnife": ("stinger", "headhunter", "nehan", "blue fang", "fang (", "punknife"),
+               "Tomahawk": ("agaou",), "StunBaton": ("murphy", "tinker bell", "cottonmouth"), "BaseballBat": ("bfc-9000", "baby boomer"),
+               "Chainsaw": ("volkodav",), "LeadPipe": ("phallustiff",)}
+MELEE_WORDS = [(r"chainsaw|chainsword|cut-o-matic|chainripp", "Chainsaw"), (r"katana|wakizashi|sword|mantis|blade|saber", "Sword"),
+               (r"machete|cleaver", "Machete"), (r"knife|dirk|dagger|kaiken|tanto|shiv|bayonet|\bfangs?\b", "CombatKnife"), (r"baton", "StunBaton"),
+               (r"sledgehammer|hammer|spade|jackhammer", "Sledgehammer"), (r"tomahawk|\baxe\b|\bclaw\b", "Tomahawk"), (r"crowbar", "Crowbar"),
+               (r"kanabo|spiked", "SpikedBat"), (r"\bbat\b", "BaseballBat"), (r"\bpipe\b|\bclub\b", "LeadPipe"),
+               (r"naginata|spear|glaive|halberd|mono-three", "Naginata")]
+MELEE_TYPES = ("lightMelee", "medMelee", "heavyMelee", "vHeavyMelee")
+
+
+def melee_icon(name):
+    """The system weapon icon a melee weapon's name calls for, or None."""
+    low = plain(name).lower().replace("’", "'")
+    for base, names in MELEE_NAMED.items():
+        if any(low.startswith(n) or low == n for n in names):
+            return base
+    return next((base for pat, base in MELEE_WORDS if re.search(pat, low)), None)
+
+
+def wimg(wtype, quality="standard", rebuild=None, iconic=False, name=""):
     """The system's icon for the weapon type and quality; with a 2070s type or as an Iconic, Neon Hub's copy with its badges."""
-    base = WIMG.get(wtype)
+    base = (melee_icon(name) if name and wtype in MELEE_TYPES else None) or WIMG.get(wtype)
     if not base:
         return IMG["weapon"]
     if (rebuild or iconic) and SYSDIR:
@@ -612,11 +641,13 @@ def dv_table(rng, ranged, cls=""):
 
 def quality_of(text):
     t = text.lower()
-    return "excellent" if "excellent" in t else "poor" if "poor quality" in t or re.search(r"\bpq\b", t) else "standard"
+    return "excellent" if "excellent" in t or re.search(r"\beq\b", t) else "poor" if "poor quality" in t or re.search(r"\bpq\b", t) else "standard"
 
 
 def weapon_system(w, cls, cost, rebuild=None):
     skill = strip(w.get("skill")) or "Melee Weapon"
+    if skill in ("N/A", "—", "-"):  # a gun that only fires Autofire and Suppressive Fire prints no Skill of its own
+        skill = "Autofire" if "Autofire" in strip(w.get("modes")) else "Heavy Weapons"
     ranged = skill not in MELEE_SKILLS
     wtype = weapon_type(cls, skill, w.get("range", ""))
     q = quality_of(cls)
@@ -661,7 +692,7 @@ def add_card(ev, path):
     rb = rebuild_of(w.get("attachments"), w.get("class"))
     wtype, q, system = weapon_system(w, cls, w.get("cost"), rb)
     rb = rb if system["isRanged"] else None
-    doc = item("weapon", w["name"], system, weapon_desc(w, cls), path, src, img=wimg(wtype, q, rb, path[0] == "Iconics"),
+    doc = item("weapon", w["name"], system, weapon_desc(w, cls), path, src, img=wimg(wtype, q, rb, path[0] == "Iconics", w["name"]),
                flags={"weaponType2070": rb} if rb else None)
     if doc:
         CARDS[plain(w["name"]).lower()] = (w, cls)
@@ -683,7 +714,7 @@ def add_variant(row, header, path, tag):
     wtype, q, system = weapon_system(w, cls2, cost, rb)
     rb = rb if system["isRanged"] else None
     desc = para(inline(listing), f"<strong>Based on:</strong> {inline(base)}", f"<strong>{inline(header[2])}:</strong> {inline(cost)}")
-    return item("weapon", name, system, desc, path, tag=tag, img=wimg(wtype, q, rb, path[0] == "Iconics"), flags={"weaponType2070": rb} if rb else None)
+    return item("weapon", name, system, desc, path, tag=tag, img=wimg(wtype, q, rb, path[0] == "Iconics", name), flags={"weaponType2070": rb} if rb else None)
 
 
 def add_generic(ev, path):
@@ -722,7 +753,7 @@ def add_generic(ev, path):
 
 
 # ------------------------------------------------------------------ ammo
-VARIETY_WORDS = [("arrow", ["arrow"]), ("bullet", ["medPistol", "heavyPistol", "vHeavyPistol", "rifle"]), ("slug", ["shotgunSlug"]),
+VARIETY_WORDS = [("arrow", ["arrow"]), ("bullet", ["medPistol", "heavyPistol", "vHeavyPistol", "rifle"]), ("rifle round", ["rifle"]), ("slug", ["shotgunSlug"]),
                  ("shell", ["shotgunShell"]), ("grenade", ["grenade"]), ("rocket", ["rocket"]), ("modball", ["paintball"])]
 ALL_VARIETIES = ["arrow", "medPistol", "heavyPistol", "vHeavyPistol", "rifle", "shotgunSlug", "shotgunShell", "grenade", "rocket"]
 VLABEL = {"arrow": "Arrow", "medPistol": "Medium Pistol", "heavyPistol": "Heavy Pistol", "vHeavyPistol": "Very Heavy Pistol", "rifle": "Rifle",
@@ -758,7 +789,8 @@ def add_ammo(row, path, tag):
     vs = ammo_varieties(name, effect)
     if not vs or "adapter kit" in name.lower():  # a kit works on a grenade; it isn't one to load
         return item("gear", name, gear_sys(cost), para(inline(effect), f"<strong>Cost:</strong> {inline(cost)}"), path, src, tag)
-    atype = next((v for k, v in ATYPE if k in name.lower()), "basic")
+    # by its name, or by what its entry opens with (a gun's own rounds: "Armor-Piercing rifle rounds for ...")
+    atype = next((v for k, v in ATYPE if k in name.lower()), None) or next((v for k, v in ATYPE if effect.lower().startswith(k)), "basic")
     per_ten = "/10" in cost or "for 10" in cost
     grenade_price = re.search(r"([\d,]+)eb per grenade", cost)
     for v in vs:
@@ -890,7 +922,31 @@ NO_ENHANCEMENT = re.compile(r"cyberfinger", re.I)
 COUNTS_AS_BORGWARE = re.compile(r"counts as Borgware", re.I)
 
 
+# Chrome that is a melee weapon: on the sheet it attacks like one (CPR lists installed cyberware weapons in the Fight tab).
+# (class, damage, ROF, Skill, quality), from each entry's own words; a class's usual damage and ROF where it gives none.
+CYBER_WEAPONS = {"Big Knucks": ("medMelee", "2d6", 2, "Brawling", "standard"), "ChainRipp": ("vHeavyMelee", "4d6", 1, "Melee Weapon", "standard"),
+                 "Combat Jaw": ("vHeavyMelee", "4d6", 1, "Brawling", "standard"), "Combat Tail": ("heavyMelee", "3d6", 2, "Melee Weapon", "standard"),
+                 "Cybersnake": ("vHeavyMelee", "4d6", 1, "Melee Weapon", "standard"), "Gorilla Arm": ("heavyMelee", "3d6", 2, "Brawling", "excellent"),
+                 "Hello Cutie Mono-Paw": ("medMelee", "1d6", 2, "Melee Weapon", "excellent"),
+                 "Higurashi 20-13 Mantis Blades": ("heavyMelee", "3d6", 2, "Melee Weapon", "excellent"),
+                 "Mantis Blade": ("heavyMelee", "3d6", 2, "Melee Weapon", "excellent"), "Medtool Cyberfinger": ("lightMelee", "1d6", 2, "Melee Weapon", "excellent"),
+                 "Monowire": ("heavyMelee", "3d6", 2, "Melee Weapon", "standard"), "Rippers": ("medMelee", "2d6", 2, "Melee Weapon", "standard"),
+                 "Scratchers": ("lightMelee", "1d6", 2, "Melee Weapon", "standard"), "Slice 'N Dice": ("medMelee", "2d6", 2, "Melee Weapon", "standard"),
+                 "Talon Foot": ("lightMelee", "1d6", 2, "Melee Weapon", "standard"), "Vampyres": ("lightMelee", "1d6", 2, "Melee Weapon", "excellent"),
+                 "Wolvers": ("heavyMelee", "3d6", 2, "Melee Weapon", "standard")}
+
+
+def cyber_weapon(name):
+    wtype, dmg, rof, skill, q = CYBER_WEAPONS[name]
+    return {"isWeapon": True, "weaponSkill": skill, "weaponType": wtype, "isRanged": False, "quality": q, "attackmod": 1 if q == "excellent" else 0,
+            "damage": dmg, "rof": rof, "handsReq": 1, "magazine": {"value": 0, "max": 0, "ammoData": None}, "ammoVariety": [], "usesType": "magazine",
+            "fireModes": {"autoFire": 0, "suppressiveFire": False}, "dvTable": "", "critFailEffect": "jammed", "unarmedAutomaticCalculation": False,
+            "concealable": {"concealable": True, "isConcealed": False}}
+
+
 def cyber(name, ctype, install, cost, hlv, slots, effect, path, src="", tag="", extra=None):
+    if plain(name) in CYBER_WEAPONS and not extra:
+        extra = cyber_weapon(plain(name))
     slots = strip(slots)
     gives = re.search(r"gives\s+(\d+)", slots)
     foundational = bool(gives) or effect.lower().startswith("foundation")
@@ -1421,8 +1477,30 @@ CH = {"Weapons": "Weapons", "Ammo, Attachments, Mods & Explosives": None, "Armor
       "Invented Tech Upgrades": "Invented Tech", "Iconics": "Iconics"}
 
 
+def add_vehicle_class(row, header, tag):
+    """A class's base model, with no upgrades, as a vehicle item for a character sheet (it has no named model, so no ride of its own)."""
+    d = rowdict(header, row)
+    full = plain(d["Class"])
+    name = re.sub(r"\s*\(.*\)$", "", full)
+    kind = vehicle_kind(None, full)
+    key, rel = ICONS.vehicle_icon(name, full, kind)
+    seats = strip(d.get("Seats"))
+    desc = para(inline(f"The base {full}: the class as it leaves the lot, with no upgrades. Named 2070 models start from these numbers."),
+                fields_html({"Cost": d.get("Cost"), "Moto": d.get("Moto"), "SDP": d.get("SDP"), "Seats": seats, "MOVE": d.get("MOVE"), "Speed": d.get("Speed")}))
+    item("vehicle", name, {"sdp": num(d.get("SDP")), "seats": max(1, num(seats, 1)), "speedCombat": num(d.get("MOVE")),
+                           "speedNarrative": strip(d.get("Speed")), "price": {"market": price(d.get("Cost"))}, "brand": "",
+                           "concealable": {"concealable": False, "isConcealed": False},
+                           "installedItems": {"allowed": True, "allowedTypes": ["itemUpgrade"], "list": [], "slots": 3, "usedSlots": 0}},
+         desc, ("Vehicles & Upgrades", "Vehicles (for character sheets)", "Base Classes"), tag=tag,
+         img=f"{SYS}/{rel}" if rel else f"{ASSETS}/vehicles/{key}.svg")
+
+
 def route(ev):
     chapter, h1 = ev["chapter"], ev["h1"]
+    if h1 == "Vehicle Classes" and ev["kind"] == "table" and ev["header"][0] == "Class":
+        for r in ev["rows"]:
+            add_vehicle_class(r, ev["header"], ev["tag"])
+        return
     if chapter.startswith("Living") or chapter.startswith("Using") or h1 in SKIP_SECTIONS:
         return
     tag = ev["tag"]

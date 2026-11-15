@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "Mnbz3rftR8YMjLEv",
+        "RECLZIXdM630dPeo",
         "9zIlTf6IFDBTCcTh",
         "2MS7rcO4xgGLnTGX",
         "JFi4eciabQavCw23"
@@ -2203,7 +2203,7 @@
             "cyberware"
           ],
           "list": [
-            "hr49SDhKkvGzfQOq"
+            "hKgg0vAgm3CZnAm6"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2395,16 +2395,16 @@
       "_key": "!actors.items!pRunY17uMQgDyGwO.590556OhK1z60YAM"
     },
     {
-      "_id": "LopY2Z02gT3EGvvE",
-      "_key": "!actors.items!pRunY17uMQgDyGwO.LopY2Z02gT3EGvvE",
-      "name": "PQ Heavy Melee",
+      "_id": "xNHymrXKhsqdR9Z5",
+      "_key": "!actors.items!pRunY17uMQgDyGwO.xNHymrXKhsqdR9Z5",
+      "name": "Heavy Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "3d6",
         "rof": 2,
@@ -2429,7 +2429,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 100
+          "market": 50
         },
         "brand": "",
         "installedItems": {
@@ -2444,7 +2444,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Tyger Claw Hunter:</strong> stands in for the PQ Heavy Melee</p><p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2469,9 +2469,9 @@
       }
     },
     {
-      "_id": "U4vWHL77ATa2fAqJ",
-      "_key": "!actors.items!pRunY17uMQgDyGwO.U4vWHL77ATa2fAqJ",
-      "name": "Leathers",
+      "_id": "3NFbxk6JadK20Xek",
+      "_key": "!actors.items!pRunY17uMQgDyGwO.3NFbxk6JadK20Xek",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2501,10 +2501,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 4,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2537,8 +2537,76 @@
       }
     },
     {
-      "_id": "hr49SDhKkvGzfQOq",
-      "_key": "!actors.items!pRunY17uMQgDyGwO.hr49SDhKkvGzfQOq",
+      "_id": "zhHRHVGEaNk1QKiT",
+      "_key": "!actors.items!pRunY17uMQgDyGwO.zhHRHVGEaNk1QKiT",
+      "name": "Leathers (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 20
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 4,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "hKgg0vAgm3CZnAm6",
+      "_key": "!actors.items!pRunY17uMQgDyGwO.hKgg0vAgm3CZnAm6",
       "name": "EMP Threading",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/emp_threading.svg",
@@ -2565,7 +2633,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2599,8 +2667,8 @@
       }
     },
     {
-      "_id": "Mnbz3rftR8YMjLEv",
-      "_key": "!actors.items!pRunY17uMQgDyGwO.Mnbz3rftR8YMjLEv",
+      "_id": "RECLZIXdM630dPeo",
+      "_key": "!actors.items!pRunY17uMQgDyGwO.RECLZIXdM630dPeo",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2629,7 +2697,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

@@ -60,7 +60,7 @@
       "list": [
         "xopBMXwOgR6SUObq",
         "cvF5gCJx0iS8HP90",
-        "ssDCkwWNudfclLZg",
+        "L5fGR0KvjvM5SFkr",
         "KwRGFt5W6ySRugez",
         "krtjrgoWshIrsqN0",
         "66Enp9W4eoiqByBH"
@@ -70,7 +70,7 @@
       "description": "<p>NetWatch's standard field agent, chromed and net-capable, usually with a partner in case things get hairy.</p><p><em>NetWatch:</em> The Net's police, as dangerous in meatspace as in it.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Netrunner: Interface 3</p><p>With gear or role bonuses: Library Search 10 (12)</p><p>Melee SP (head/body): 4/6</p><p>Programs: GM's Choice (No Cost Limit)</p><p>Also carries (no catalog item): Neuroport Cyberdeck Port (in Neuroport)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Netrunner: Interface 3</p><p>With gear or role bonuses: Library Search 10 (12)</p><p>Melee SP (head/body): 4/6</p><p>Programs for a NET Architecture run (not loaded: the deck's slots hold its quickhacks): GM's Choice (No Cost Limit)</p>"
     }
   },
   "items": [
@@ -2127,7 +2127,7 @@
             "cyberware"
           ],
           "list": [
-            "EzyzdGRKgvRR24L8"
+            "CHQXH3PBC9q6bO9b"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2476,7 +2476,7 @@
     {
       "name": "Skinweave",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor_Head.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
       "system": {
         "description": {
           "value": ""
@@ -2511,7 +2511,7 @@
     {
       "_id": "EBt6qnbP2cNLB4gV",
       "_key": "!actors.items!2Y2UXN51n7cfofMz.EBt6qnbP2cNLB4gV",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2704,7 +2704,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2852,15 +2852,17 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "RhE7moQUMMjiDMF3",
-            "KaqmLQNhbuxky3CJ",
-            "aRmsKw8Sj2R1wQY6"
+            "jFTUBLnYM5mBCg7b",
+            "uvhPa3RfiLdeOWR9",
+            "9zExTvfn3tUdTpPf",
+            "zddFG3sqwkYhOA5K"
           ],
           "slots": 5,
-          "usedSlots": 3
+          "usedSlots": 4
         },
         "description": {
           "value": "<p>Required for all non-medical cyberware. Contains: <strong>Neural Link</strong> (5 Neuralware slots, none used by the rest), <strong>Holophone</strong>, <strong>Biomonitor</strong>, <strong>Virtu</strong> (virtual experiences; full immersion when deep diving), <strong>HUD</strong> (labels, transcripts, subtitles; shown in any cybereye, replacing the Chyron), <strong>two Shard Slots</strong> (chipware sockets) and a <strong>Personal Link</strong> (pull-out interface plug). Has a basic firewall (Chapter 10 of the Core Rules).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
@@ -2888,8 +2890,483 @@
       }
     },
     {
-      "_id": "RhE7moQUMMjiDMF3",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.RhE7moQUMMjiDMF3",
+      "_id": "Vz6Ot27tfWf28Ksa",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.Vz6Ot27tfWf28Ksa",
+      "name": "Microtech Warrior",
+      "type": "cyberdeck",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberdeck.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "quality": "standard",
+        "size": 1,
+        "installLocation": "mall",
+        "equipped": "equipped",
+        "isElectronic": true,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "program"
+          ],
+          "list": [
+            "0GRZO3t8F1sPK1Fe",
+            "7AKkXgHHzq138ugd",
+            "vJuA7TDcouXqgqni",
+            "D044o4VBjifa4heD",
+            "eHP9avnljTYP4DXB",
+            "QIG4KcXaGWBWLf2N",
+            "d8dmzsLDwobzvLS9"
+          ],
+          "slots": 7,
+          "usedSlots": 7
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "brand": "",
+        "description": {
+          "value": "<p><strong>Netwatch Officer:</strong> in the Cybersuite; listed as EQ Cyberdeck</p><p>After you Jack In, rez one Armor Program free.</p><p><strong>Slots:</strong> 7 Program-only<br><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "0GRZO3t8F1sPK1Fe",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.0GRZO3t8F1sPK1Fe",
+      "name": "Scannerz",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 50
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>List the target's installed chrome, how many Self-ICE they run, and any deck they carry. Tells you what your other quickhacks can hit.</p><p><strong>Type:</strong> Intel<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 3 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7AKkXgHHzq138ugd",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.7AKkXgHHzq138ugd",
+      "name": "Comms Jam",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>They can't call, text or receive for 20 Rounds. They won't hear the alarm until someone shouts it.</p><p><strong>Type:</strong> Covert<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "vJuA7TDcouXqgqni",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.vJuA7TDcouXqgqni",
+      "name": "Impair Movement",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 50
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>MOVE −1 for 20 Rounds. At 0 they can't use Move Actions.</p><p><strong>Type:</strong> Control<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 3 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "D044o4VBjifa4heD",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.D044o4VBjifa4heD",
+      "name": "Sonic Shock",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Damaged Ear (no Bonus Damage) for 20 Rounds.</p><p><strong>Type:</strong> Control<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "eHP9avnljTYP4DXB",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.eHP9avnljTYP4DXB",
+      "name": "Weapon Glitch",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Their linked weapon jams (an Action to clear) and they're −2 to hit with it for 3 Rounds. It looks like a bad round.</p><p><strong>Type:</strong> Control<br><strong>Needs:</strong> Smart weapon or Smartgun Link<br><strong>DV:</strong> 8<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "QIG4KcXaGWBWLf2N",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.QIG4KcXaGWBWLf2N",
+      "name": "Short Circuit",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>The GM picks 3 pieces of their chrome (not cyberarms, legs, eyes, audio suite, Neuroport or Cybersuite; options in them count). Off for 20 Rounds. Also works on a drone or turret that isn't on an architecture: 3d6 to it.</p><p><strong>Type:</strong> Control<br><strong>DV:</strong> 8<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d8dmzsLDwobzvLS9",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.d8dmzsLDwobzvLS9",
+      "name": "Q-KRASH",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 1000
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Their deck can't run quickhacks for 20 Rounds, or until they clear it with an Action and DV13 Electronics/Security Tech.</p><p><strong>Type:</strong> Combat<br><strong>Needs:</strong> Netrunner's deck<br><strong>DV:</strong> 12<br><strong>Cooldown:</strong> 15 Rnd<br><strong>Slots:</strong> 1</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "jFTUBLnYM5mBCg7b",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.jFTUBLnYM5mBCg7b",
+      "name": "Cybersuite",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberdeck.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>HOUSE RULE. Neuralware foundation; takes 1 Neural Link slot. Requires Neuroport. Replaces the Neuroport Cyberdeck Port. Installs one Cyberdeck inside your Neuroport, Hardware slots and all. Range 20m to architectures, 50m to Neuroports and vehicles. Swapping the deck is a Clinic job (1 hour). Branded models with built-in quickhacks: see Netrunning Gear.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "uvhPa3RfiLdeOWR9",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.uvhPa3RfiLdeOWR9",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2916,7 +3393,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2950,8 +3427,8 @@
       }
     },
     {
-      "_id": "KaqmLQNhbuxky3CJ",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.KaqmLQNhbuxky3CJ",
+      "_id": "9zExTvfn3tUdTpPf",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.9zExTvfn3tUdTpPf",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2978,7 +3455,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2999,7 +3476,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!2Y2UXN51n7cfofMz.KaqmLQNhbuxky3CJ.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!2Y2UXN51n7cfofMz.9zExTvfn3tUdTpPf.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3052,8 +3529,8 @@
       }
     },
     {
-      "_id": "aRmsKw8Sj2R1wQY6",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.aRmsKw8Sj2R1wQY6",
+      "_id": "zddFG3sqwkYhOA5K",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.zddFG3sqwkYhOA5K",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3080,7 +3557,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3114,8 +3591,8 @@
       }
     },
     {
-      "_id": "EzyzdGRKgvRR24L8",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.EzyzdGRKgvRR24L8",
+      "_id": "CHQXH3PBC9q6bO9b",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.CHQXH3PBC9q6bO9b",
       "name": "Skin Weave",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
@@ -3142,7 +3619,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3176,8 +3653,8 @@
       }
     },
     {
-      "_id": "ssDCkwWNudfclLZg",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.ssDCkwWNudfclLZg",
+      "_id": "L5fGR0KvjvM5SFkr",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.L5fGR0KvjvM5SFkr",
       "name": "Subdermal Grip",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_grip.svg",
@@ -3204,7 +3681,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3238,8 +3715,8 @@
       }
     },
     {
-      "_id": "xlzad8mtlnLbRVS6",
-      "_key": "!actors.items!2Y2UXN51n7cfofMz.xlzad8mtlnLbRVS6",
+      "_id": "sT1Bn8zB6B8s9ops",
+      "_key": "!actors.items!2Y2UXN51n7cfofMz.sT1Bn8zB6B8s9ops",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

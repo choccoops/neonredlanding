@@ -70,7 +70,7 @@
       "description": "<p>You've never heard of them, and never will. Pulled from the NUSA's best units for its most clandestine missions, each picks a loadout for the job.</p><p><em>NUSA:</em> The New United States' deniable operatives.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 10 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Athletics 12 (10), Brawling 14 (12), Evasion 14 (12), Martial Arts (Militech Commando Training) 14 (12), Stealth 11 (9)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 3,000eb) (ROF 1, ?)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 1,000eb) (ROF 1, ?)</p><p>Melee SP (head/body): 7/7</p><p>Also carries (no catalog item): Ion Cuffs x1</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 10 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 4</p><p>With gear or role bonuses: Athletics 12 (10), Brawling 14 (12), Evasion 14 (12), Martial Arts (Militech Commando Training) 14 (12), Stealth 11 (9)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 3,000eb) (ROF 1, ?)</p><p>Weapon: GM's Choice of Ranged Weapon (Cost Limit: 1,000eb) (ROF 1, ?)</p><p>Melee SP (head/body): 7/7</p>"
     }
   },
   "items": [
@@ -2351,33 +2351,47 @@
       "_key": "!actors.items!dhLefrx1vdOj58Bu.3OlYavhQkX6ErS7F"
     },
     {
-      "name": "Martial Arts (Martial Arts (Militech Commando Training))",
+      "_id": "fm1YduE2dN3qD4ft",
+      "_key": "!actors.items!dhLefrx1vdOj58Bu.fm1YduE2dN3qD4ft",
+      "name": "Martial Arts (Militech Commando)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_chrome.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Militech Commando Training)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2387,27 +2401,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Militech Commando Attacks</strong> with the Martial Arts (Militech Commando) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Militech Commando Training))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2415,19 +2417,23 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "cregjU63LEiuIb2d",
-      "_key": "!actors.items!dhLefrx1vdOj58Bu.cregjU63LEiuIb2d"
+      }
     },
     {
       "_id": "7BcD8P8RjWb3g26c",
       "name": "Combat Knife",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife_excellent.svg",
       "system": {
         "ammoVariety": [],
-        "attackmod": 0,
+        "attackmod": 1,
         "brand": "",
         "canIgnoreArmor": true,
         "concealable": {
@@ -2631,7 +2637,7 @@
     {
       "_id": "M2XpDi7TU4K1ZrOx",
       "_key": "!actors.items!dhLefrx1vdOj58Bu.M2XpDi7TU4K1ZrOx",
-      "name": "Heavy Armorjack",
+      "name": "Heavy Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2727,7 +2733,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "9AHENLcUadj3vujg"
@@ -2789,7 +2796,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2853,7 +2860,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "uQ0gPFka0SiDv1y9"
@@ -2915,7 +2923,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2949,50 +2957,26 @@
       }
     },
     {
-      "_id": "6XgllflkhpBCHsrp",
-      "_key": "!actors.items!dhLefrx1vdOj58Bu.6XgllflkhpBCHsrp",
-      "name": "M-98A3 Enhanced Combat Helmet",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "_id": "QQGMPQW2H6IuOECb",
+      "_key": "!actors.items!dhLefrx1vdOj58Bu.QQGMPQW2H6IuOECb",
+      "name": "Ion Cuffs",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/the_12_days_of_gearmas/ion_cuffs.svg",
       "system": {
         "price": {
-          "market": 6500
+          "market": 500
         },
-        "penalty": 2,
-        "equipped": "equipped",
-        "usage": "equipped",
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
         "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
         "concealable": {
           "concealable": false,
           "isConcealed": false
         },
         "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 14,
-          "ablation": 0
-        },
         "description": {
-          "value": "<p>Head SP14; −2 REF, DEX and MOVE. Built-in anti-smog mask, Smart Ears (an extra slot) with Amplified Hearing, Level Dampers and radio, Smart Glasses (an extra slot) with Anti-Dazzle, Low Light/Infrared/UV and Targeting Scope, and a stealth headset.</p><p><strong>Cost:</strong> 6,500eb (Luxury)</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p>Handcuffs for chromed suspects. The limbs still move, but every non-hardened option in a non-hardened Cyberlimb they bind stops working until the cuffs come off. Easily broken with BODY 13 or higher.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -3011,7 +2995,7 @@
         "cpr-neon-hub": {
           "source2070": {
             "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
+            "chapter": "Gear & Goods"
           }
         }
       }
@@ -3047,7 +3031,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "eUNzSHFgZidCpFJT",
@@ -3110,7 +3095,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3172,7 +3157,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

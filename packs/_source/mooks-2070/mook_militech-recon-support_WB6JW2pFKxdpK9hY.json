@@ -2326,7 +2326,7 @@
     {
       "_id": "Lkb9bpT7CB5R4Gbl",
       "_key": "!actors.items!WB6JW2pFKxdpK9hY.Lkb9bpT7CB5R4Gbl",
-      "name": "Constitutional Arms Tactician",
+      "name": "Constitutional Arms M2038 Tactician",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_power.svg",
       "system": {
@@ -2376,7 +2376,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Class:</strong> Shotgun • POWER<br><strong>Range table:</strong> Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Militech Recon Support:</strong> listed as Constitutional Arms Tactician</p><p><strong>Class:</strong> Shotgun • POWER<br><strong>Range table:</strong> Shotgun<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Shotgun Shell<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2549,9 +2549,9 @@
       "_key": "!actors.items!WB6JW2pFKxdpK9hY.J0dEaDhqLS2p9FpA"
     },
     {
-      "_id": "A7rhftu69N7NMNXz",
-      "_key": "!actors.items!WB6JW2pFKxdpK9hY.A7rhftu69N7NMNXz",
-      "name": "Kevlar",
+      "_id": "nsG0dZFL03HpTLnA",
+      "_key": "!actors.items!WB6JW2pFKxdpK9hY.nsG0dZFL03HpTLnA",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2619,7 +2619,7 @@
     {
       "_id": "hd2H2svmTvttvh6z",
       "_key": "!actors.items!WB6JW2pFKxdpK9hY.hd2H2svmTvttvh6z",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2715,7 +2715,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2775,7 +2776,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

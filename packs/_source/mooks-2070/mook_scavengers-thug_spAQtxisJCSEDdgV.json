@@ -2395,16 +2395,16 @@
       "_key": "!actors.items!spAQtxisJCSEDdgV.FLHWN6iWorylmQau"
     },
     {
-      "_id": "KEmJnSLPFRtmG8Tf",
-      "_key": "!actors.items!spAQtxisJCSEDdgV.KEmJnSLPFRtmG8Tf",
-      "name": "PQ Medium Melee",
+      "_id": "tM5xaWGsZ3KWH9b5",
+      "_key": "!actors.items!spAQtxisJCSEDdgV.tM5xaWGsZ3KWH9b5",
+      "name": "Medium Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "2d6",
         "rof": 2,
@@ -2429,7 +2429,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 50
+          "market": 20
         },
         "brand": "",
         "installedItems": {
@@ -2444,7 +2444,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Scavenger Thug:</strong> stands in for the PQ Medium Melee</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2471,7 +2471,7 @@
     {
       "_id": "gaiMbjYoCHOenGnH",
       "_key": "!actors.items!spAQtxisJCSEDdgV.gaiMbjYoCHOenGnH",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2620,7 +2620,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2684,7 +2684,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

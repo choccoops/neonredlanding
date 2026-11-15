@@ -434,3 +434,53 @@ test("burst attachments and the 20-round guns say what their bursts spend", asyn
   assert.deepEqual(twenty, ["Militech EX-75 IronWind", "Militech Mk. 31 HMG", "Militiatech N32 Huge-Man-Gun"]);
   assert.ok(items.docs.filter((d) => d.flags["cpr-neon-hub"]?.autofireRounds).every((d) => d.flags["cpr-neon-hub"].autofireRounds === 20));
 });
+
+test("weapons: an EQ class is Excellent, every gun has a Skill, and a melee weapon's icon is what it is", () => {
+  const weapons = items.docs.filter((d) => d.type === "weapon");
+  const skills = new Set(["Handgun", "Shoulder Arms", "Heavy Weapons", "Archery", "Autofire", "Melee Weapon", "Brawling", "Athletics", "Pilot Air Vehicle"]);
+  for (const w of weapons) {
+    assert.ok(skills.has(w.system.weaponSkill) || w.system.weaponSkill.startsWith("Martial Arts ("), `${w.name}: ${w.system.weaponSkill}`);
+    const cls = /<strong>Class:<\/strong> ([^<]*)/.exec(w.system.description.value)?.[1] ?? "";
+    if (/\bEQ\b|Excellent/.test(cls)) {
+      assert.equal(w.system.quality, "excellent", w.name);
+      assert.ok(w.system.attackmod >= 1, `${w.name} +1 to attacks`);
+    }
+  }
+  const by = (name) => weapons.find((w) => w.name === name);
+  assert.match(by("Fang (Kurt Hansen’s Knife)").img, /CombatKnife_excellent_iconic\.svg$/);
+  assert.match(by("Arasaka Murasame Katana").img, /Sword/);
+  assert.match(by("Electric Baton").img, /StunBaton/);
+  assert.match(by("Repurposed Sledgehammer").img, /Sledgehammer/);
+  assert.equal(by("Wild Dog (Kurt’s Lmg)").system.weaponSkill, "Autofire");
+  for (const w of weapons) if (w.img.startsWith("modules/")) assert.ok(existsSync(path.join(root, w.img.replace("modules/cpr-neon-hub/", ""))), w.img);
+});
+
+test("chrome that is a weapon is one on the sheet: Mantis Blade, Gorilla Arm, Wolvers and the rest", () => {
+  const chrome = (name) => items.docs.find((d) => d.type === "cyberware" && d.name === name);
+  assert.equal(items.docs.filter((d) => d.type === "cyberware" && d.system.isWeapon).length, 18);
+  assert.deepEqual([chrome("Mantis Blade").system.weaponType, chrome("Mantis Blade").system.damage, chrome("Mantis Blade").system.rof,
+    chrome("Mantis Blade").system.quality, chrome("Mantis Blade").system.attackmod], ["heavyMelee", "3d6", 2, "excellent", 1]);
+  assert.equal(chrome("Gorilla Arm").system.weaponSkill, "Brawling");
+  assert.deepEqual([chrome("Wolvers").system.damage, chrome("Wolvers").system.rof, chrome("Wolvers").system.weaponSkill], ["3d6", 2, "Melee Weapon"]);
+  assert.equal(chrome("Subdermal Armor").system.isWeapon, false);
+});
+
+test("what the mook blocks carry is in the catalog: Interface RED gear, bodysculpting, the Nobunaga's rounds, the base vehicle classes", () => {
+  const by = (type, name) => items.docs.find((d) => d.type === type && d.name === name);
+  assert.equal(by("gear", "Ion Cuffs").system.price.market, 500);
+  assert.match(by("gear", "Ion Cuffs").img, /ion_cuffs\.svg$/);
+  assert.equal(by("gear", "Smart Ears").system.price.market, 1000);
+  assert.equal(by("gear", "Dog Tags").system.price.market, 10);
+  const warp = by("drug", "Timewarp");
+  assert.deepEqual(warp.effects.flatMap((e) => e.changes.map((c) => [c.key, c.value])), [["bonuses.initiative", "3"]]);
+  const rounds = by("ammo", "Nobunaga Rifle Ammunition");
+  assert.deepEqual([rounds.system.variety, rounds.system.type, rounds.system.amount, rounds.system.price.market], ["rifle", "armorPiercing", 10, 500]);
+  const sculpt = by("cyberware", "Exotic Bodysculpting");
+  assert.deepEqual([sculpt.system.type, sculpt.system.humanityLoss.static, sculpt.system.size], ["fashionware", 14, 0]);
+  assert.equal(by("cyberware", "Standard Bodysculpting").system.humanityLoss.static, 0);
+  const classes = items.docs.filter((d) => d.type === "vehicle" && items.folders.find((f) => f._id === d.folder)?.name === "Base Classes");
+  assert.equal(classes.length, 14);
+  const bike = by("vehicle", "Roadbike");
+  assert.deepEqual([bike.system.sdp, bike.system.seats, bike.system.speedCombat, bike.system.price.market], [35, 2, 20, 20000]);
+  assert.ok(!rides.docs.some((a) => a.name === "Roadbike"), "a class has no ride of its own");
+});

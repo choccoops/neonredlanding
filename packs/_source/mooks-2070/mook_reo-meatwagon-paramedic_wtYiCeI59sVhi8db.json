@@ -58,19 +58,19 @@
         "cyberware"
       ],
       "list": [
-        "e1yl9TXNblWO6Az7",
-        "4bzAt0poKJd5KsJP",
-        "MA8KybGhMIptNC7I",
+        "BtPfnLLmUKL8wkLN",
+        "27wuh5wRXTc2Jg3e",
+        "Yi1M7jxlbCzz7JDZ",
         "u2RShfIFzC1wSlUR",
         "R2ulcWSf7A9iuoSO",
         "2TYCuUKRyY2R66UO"
       ]
     },
     "information": {
-      "description": "<p>Twelve-hour shifts, a cryobag and a jacket that reports back to the company. Some of them still try to get you there alive.</p><p><em>REO Meatwagon:</em> The cut-rate ambulance outfit the city pays to take the calls Trauma Team won't, in ground rigs older than their crews.</p><p><small>Stat block by Neon Hub. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
+      "description": "<p>Twelve-hour shifts, a cryopump and a jacket that reports back to the company. Some of them still try to get you there alive.</p><p><em>REO Meatwagon:</em> The cut-rate ambulance outfit the city pays to take the calls Trauma Team won't, in ground rigs older than their crews.</p><p><small>Stat block by Neon Hub. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Medtech: Medicine 3 (Cryo 1 ⦁ Medtech [Pharm] 2)</p><p>Melee SP (head/body): 2/4</p><p>Also carries (no catalog item): x1 Speedheal (in Airhypo); Cryobag</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Medtech: Medicine 3 (Cryo 1 ⦁ Medtech [Pharm] 2)</p><p>Melee SP (head/body): 2/4</p>"
     }
   },
   "items": [
@@ -2231,7 +2231,7 @@
             "cyberware"
           ],
           "list": [
-            "F2q0GcaEmVzniXNf"
+            "9WNg76Nii2zYCXEw"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2499,9 +2499,9 @@
       "_key": "!actors.items!wtYiCeI59sVhi8db.1bfGlLUZy9gJnMla"
     },
     {
-      "_id": "d2tW7O4mhhVnGU6X",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.d2tW7O4mhhVnGU6X",
-      "name": "Kevlar",
+      "_id": "yXvEp8tzZgOGAmql",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.yXvEp8tzZgOGAmql",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2531,10 +2531,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 7,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2567,8 +2567,76 @@
       }
     },
     {
-      "_id": "e1yl9TXNblWO6Az7",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.e1yl9TXNblWO6Az7",
+      "_id": "AT2PpFUKsP1Y5USp",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.AT2PpFUKsP1Y5USp",
+      "name": "Kevlar® (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 50
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 7,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP7. No penalty. Can be cut into anything from a business suit to a bikini.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "BtPfnLLmUKL8wkLN",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.BtPfnLLmUKL8wkLN",
       "name": "Airhypo Cyberfinger",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
@@ -2629,8 +2697,46 @@
       }
     },
     {
-      "_id": "F2q0GcaEmVzniXNf",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.F2q0GcaEmVzniXNf",
+      "_id": "T3xMeA7NWK5WSHZQ",
+      "name": "Speedheal",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/speedheal.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "consumed": "None",
+        "description": {
+          "value": "<p><strong>REO Paramedic:</strong> in the Airhypo</p><p>\n  Injecting a target with Speedheal immediately causes them to heal HP equal to\n  their BODY plus their WILL. This effect does not work on Mortally Wounded\n  targets, and can only be used on a target once per day.\n</p>\n"
+        },
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 0
+        },
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 150
+        },
+        "usage": "toggled"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!wtYiCeI59sVhi8db.T3xMeA7NWK5WSHZQ"
+    },
+    {
+      "_id": "9WNg76Nii2zYCXEw",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.9WNg76Nii2zYCXEw",
       "name": "Biomonitor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/biomonitor.svg",
@@ -2657,7 +2763,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2691,8 +2797,52 @@
       }
     },
     {
-      "_id": "4bzAt0poKJd5KsJP",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.4bzAt0poKJd5KsJP",
+      "_id": "uX1K41oHKQYgHYkh",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.uX1K41oHKQYgHYkh",
+      "name": "Cryopump",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+      "system": {
+        "price": {
+          "market": 5000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Medtech only. Bag a willing or unconscious patient as an Action (uses 1 charge; 50eb to recharge). Stasis for up to a week: Unconscious, no Death Saves, behind 15 HP cover, can be operated on through the bag.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "27wuh5wRXTc2Jg3e",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.27wuh5wRXTc2Jg3e",
       "name": "Medscanner (arm)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/medscanner.svg",
@@ -2719,7 +2869,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2740,7 +2890,7 @@
       "effects": [
         {
           "_id": "rzwOmRe6coB0OOZ1",
-          "_key": "!actors.items.effects!wtYiCeI59sVhi8db.4bzAt0poKJd5KsJP.rzwOmRe6coB0OOZ1",
+          "_key": "!actors.items.effects!wtYiCeI59sVhi8db.27wuh5wRXTc2Jg3e.rzwOmRe6coB0OOZ1",
           "name": "Medscanner (arm)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2804,8 +2954,8 @@
       }
     },
     {
-      "_id": "V4mOHx7IdQk6WVhn",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.V4mOHx7IdQk6WVhn",
+      "_id": "zOWrewEWcGxeeQsr",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.zOWrewEWcGxeeQsr",
       "name": "Medtech Bag",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2848,8 +2998,8 @@
       }
     },
     {
-      "_id": "MA8KybGhMIptNC7I",
-      "_key": "!actors.items!wtYiCeI59sVhi8db.MA8KybGhMIptNC7I",
+      "_id": "Yi1M7jxlbCzz7JDZ",
+      "_key": "!actors.items!wtYiCeI59sVhi8db.Yi1M7jxlbCzz7JDZ",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2876,7 +3026,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

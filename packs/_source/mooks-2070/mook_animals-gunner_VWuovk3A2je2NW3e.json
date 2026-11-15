@@ -2393,16 +2393,16 @@
       "_key": "!actors.items!VWuovk3A2je2NW3e.wJmI6quRelNF4eHH"
     },
     {
-      "_id": "gPH9Q8AVsYrQjmMf",
-      "_key": "!actors.items!VWuovk3A2je2NW3e.gPH9Q8AVsYrQjmMf",
-      "name": "PQ Heavy SMG",
+      "_id": "eEUgd8EBX8dvkd54",
+      "_key": "!actors.items!VWuovk3A2je2NW3e.eEUgd8EBX8dvkd54",
+      "name": "Heavy SMG (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/heavySMG.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/heavySMG_poor.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "heavySmg",
         "isRanged": true,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "3d6",
         "rof": 1,
@@ -2429,7 +2429,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 100
+          "market": 50
         },
         "brand": "",
         "installedItems": {
@@ -2444,7 +2444,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Animals Gunner:</strong> Typically a Budget Arms Guillotine or Ironfake M221 Saratoga; stands in for the PQ Heavy SMG [Typically a Budget Arms Guillotine or Ironfake M221 Saratoga]</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Animals Gunner:</strong> Typically a Budget Arms Guillotine or Ironfake M221 Saratoga</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2471,7 +2471,7 @@
     {
       "_id": "CILjPaZlYcGDtUMn",
       "_key": "!actors.items!VWuovk3A2je2NW3e.CILjPaZlYcGDtUMn",
-      "name": "Leather",
+      "name": "Leathers (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2512,7 +2512,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Animals Gunner:</strong> Leather</p><p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2567,7 +2567,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

@@ -2570,7 +2570,7 @@
     {
       "_id": "ruh7w0P1JmBszG3V",
       "_key": "!actors.items!lbS8WFUTCAtOI1pt.ruh7w0P1JmBszG3V",
-      "name": "Executive Armor",
+      "name": "Torrell and Chiang Executive Armor (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2611,7 +2611,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Light Armorjack (SP11) that looks like Neo-Militarism. Each day it loses no SP, nanomachines restore 1 lost SP.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Arasaka Senior Guard:</strong> Executive Armor</p><p>Light Armorjack (SP11) that looks like Neo-Militarism. Each day it loses no SP, nanomachines restore 1 lost SP.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2721,7 +2721,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2781,7 +2782,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2843,7 +2844,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

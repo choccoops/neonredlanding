@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
   "folder": "9kQh4EzqIkr9LhlV",
-  "sort": 9190,
+  "sort": 9220,
   "system": {
     "type": "cyberArm",
     "installLocation": "clinic",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Melee Weapon",
+    "weaponType": "medMelee",
+    "isRanged": false,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "1d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Cyberarm Option. Retractable monomolecular cat claws: Excellent Quality Medium Melee, 1d6, concealed without a Check. Ignores armor entirely if it's below SP11. While they're out, that hand can't hold anything.</p><p><strong>Install:</strong> Clinic • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

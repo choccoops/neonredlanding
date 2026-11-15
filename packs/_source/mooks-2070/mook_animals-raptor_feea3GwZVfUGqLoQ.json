@@ -2399,7 +2399,7 @@
       "_key": "!actors.items!feea3GwZVfUGqLoQ.PqhDcYoEdZ4hiBOg",
       "name": "Malachor Arms Encore",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/veryHeavyPistol_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/veryHeavyPistol_poor_power.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "vHeavyPistol",
@@ -2474,7 +2474,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2537,7 +2537,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2597,7 +2598,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

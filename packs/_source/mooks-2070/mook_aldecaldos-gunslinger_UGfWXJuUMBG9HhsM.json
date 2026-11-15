@@ -69,7 +69,7 @@
       "description": "<p>A seasoned Aldecaldo who leads small bands of riders into the city or takes contracts of their own. Well armed and lightly chromed; not corp-merc tough, but close enough.</p><p><em>Aldecaldos:</em> The biggest nomad family on Night City's edge, riding in from the Badlands for work.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Nomad: Moto 3 Solo: Combat Awareness 2</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) [Typically an Excellent Quality weapon] (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p><p>Also carries (no catalog item): Roadbike (w/ NOS &amp; Smuggling Upgrade)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Nomad: Moto 3 Solo: Combat Awareness 2</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) [Typically an Excellent Quality weapon] (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p><p>Ride (its item is on the sheet; the vehicle to put on the map is in Neon Hub's vehicles compendium): Brennan Apollo \"Harriet\" (add NOS), for the block's Roadbike (w/ NOS &amp; Smuggling Upgrade)</p>"
     }
   },
   "items": [
@@ -2420,9 +2420,9 @@
       "_key": "!actors.items!UGfWXJuUMBG9HhsM.SnWqQfFJq2685dgy"
     },
     {
-      "_id": "83L5AugJHaNk3muq",
-      "_key": "!actors.items!UGfWXJuUMBG9HhsM.83L5AugJHaNk3muq",
-      "name": "Kevlar",
+      "_id": "8fIeifDWQatFcvTZ",
+      "_key": "!actors.items!UGfWXJuUMBG9HhsM.8fIeifDWQatFcvTZ",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2490,7 +2490,7 @@
     {
       "_id": "wxXDJSqDNsNaprVz",
       "_key": "!actors.items!UGfWXJuUMBG9HhsM.wxXDJSqDNsNaprVz",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2586,7 +2586,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "47QPXn0LjyQQbtWq",
@@ -2649,7 +2650,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2711,7 +2712,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2773,7 +2774,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2802,6 +2803,59 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "uXmnPqve3ks66PlB",
+      "_key": "!actors.items!UGfWXJuUMBG9HhsM.uXmnPqve3ks66PlB",
+      "name": "Brennan Apollo \"Harriet\"",
+      "type": "vehicle",
+      "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+      "system": {
+        "sdp": 35,
+        "seats": 2,
+        "speedCombat": 20,
+        "speedNarrative": "100 mph",
+        "price": {
+          "market": 21000
+        },
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>Aldecaldos Gunslinger:</strong> listed as Roadbike (w/ NOS &amp; Smuggling Upgrade); add NOS</p><p>Roadbike: Smuggling Upgrade (saddlebags). <em>Formerly the AmeriCar Harriet 100.</em></p><p><strong>Cost:</strong> 21,000eb<br><strong>Nomad:</strong> 2<br><strong>SDP:</strong> 35<br><strong>SP:</strong> 0<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles &amp; Upgrades</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Vehicles & Upgrades"
           }
         }
       }

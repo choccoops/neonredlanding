@@ -62,7 +62,8 @@
         "v8C3Luylgi26TqAm",
         "WTinALhD4pAtB2DF",
         "YivxyqaZx1oMRRuD",
-        "BoCWaj7d9wxXazHv",
+        "PQ7yfoxbSxR5D0zo",
+        "no5xUAy3y8JZ1PMt",
         "WcVc4SfVLYPW1KRF",
         "DA724s3VyQnqQQIl",
         "FBgFoUsIY3G6YXpW"
@@ -72,7 +73,7 @@
       "description": "<p>Maelstrom's basic blade-wielders. Every member carries more chrome than other gangers, since initiation means losing their eyes, and sometimes a limb, awake.</p><p><em>Maelstrom:</em> Chrome-mad gangers who carve out their own eyes to join.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 2 • <strong>COM#:</strong> 8</p><p>Melee SP (head/body): 0/2</p><p>Also carries (no catalog item): Medical-Grade Cyberarm</p>"
+      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 2 • <strong>COM#:</strong> 8</p><p>Melee SP (head/body): 0/2</p>"
     }
   },
   "items": [
@@ -2397,16 +2398,16 @@
       "_key": "!actors.items!Rqe7fljxbQmxiT3H.76O93Ogb1uLZuep9"
     },
     {
-      "_id": "2P7Out91PrSlhdfK",
-      "_key": "!actors.items!Rqe7fljxbQmxiT3H.2P7Out91PrSlhdfK",
-      "name": "PQ Medium Melee",
+      "_id": "Ftlm1gXWxLFEj8k9",
+      "_key": "!actors.items!Rqe7fljxbQmxiT3H.Ftlm1gXWxLFEj8k9",
+      "name": "Medium Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "2d6",
         "rof": 2,
@@ -2431,7 +2432,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 50
+          "market": 20
         },
         "brand": "",
         "installedItems": {
@@ -2446,7 +2447,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Maelstrom Scout:</strong> stands in for the PQ Medium Melee</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2473,7 +2474,7 @@
     {
       "_id": "QTPsRsURBQdENkxd",
       "_key": "!actors.items!Rqe7fljxbQmxiT3H.QTPsRsURBQdENkxd",
-      "name": "Leathers",
+      "name": "Leathers (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2569,7 +2570,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "ti4Kx7FyvC9abtwu"
@@ -2631,7 +2633,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2695,7 +2697,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "YX404WK74yJWg2un"
@@ -2757,7 +2760,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2821,7 +2824,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "k8RhZ0UkiltsANpW"
@@ -2883,7 +2887,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2947,7 +2951,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "gaSDq7xgIDEV4FT3"
@@ -3009,7 +3014,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3043,8 +3048,86 @@
       }
     },
     {
-      "_id": "BoCWaj7d9wxXazHv",
-      "_key": "!actors.items!Rqe7fljxbQmxiT3H.BoCWaj7d9wxXazHv",
+      "_id": "PQ7yfoxbSxR5D0zo",
+      "name": "Medical Grade Cyberarm",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": false,
+        "damage": "1d6",
+        "description": {
+          "value": "<p>A medical grade cyberarm. Does not allow options to be installed.</p>\n"
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "notApplicable",
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "isElectronic": true,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 0,
+        "source": {
+          "book": "Core",
+          "page": 226
+        },
+        "type": "cyberArm",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "Archery",
+        "weaponType": "assaultRifle"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!Rqe7fljxbQmxiT3H.PQ7yfoxbSxR5D0zo"
+    },
+    {
+      "_id": "no5xUAy3y8JZ1PMt",
+      "_key": "!actors.items!Rqe7fljxbQmxiT3H.no5xUAy3y8JZ1PMt",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3073,7 +3156,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

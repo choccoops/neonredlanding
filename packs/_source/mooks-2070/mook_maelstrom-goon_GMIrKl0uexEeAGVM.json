@@ -63,6 +63,8 @@
         "9W5TjoXLQ0efO6cZ",
         "Ej6qks16XslGMWKO",
         "P6jN16QFSWZdLtpV",
+        "qBiz3ViQj0rKYz9N",
+        "Q0FsfjZ9w3sSrQwN",
         "CR6eSNSLvhpOJ8cd",
         "VyeyPYGYISMeNYOf",
         "qTzZemQQRh3b4JaK"
@@ -72,7 +74,7 @@
       "description": "<p>The gang's tougher rank-and-file, with more implants, combat drugs and bigger guns. All that chrome leaves them open to EMP.</p><p><em>Maelstrom:</em> Chrome-mad gangers who carve out their own eyes to join.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 3 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Melee SP (head/body): 4/4</p><p>Also carries (no catalog item): Medical Grade Cyberarm x2</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 3 • <strong>COM#:</strong> 10 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Melee SP (head/body): 4/4</p>"
     }
   },
   "items": [
@@ -2129,7 +2131,7 @@
             "cyberware"
           ],
           "list": [
-            "6vKnNjw7g3b9ChQe"
+            "eVkWGO7gRGowzePD"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2478,7 +2480,7 @@
     {
       "name": "FleshWeave",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
       "system": {
         "description": {
           "value": ""
@@ -2596,7 +2598,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "lrOX4gb511F6bpK5"
@@ -2658,7 +2661,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2722,7 +2725,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "QvKnlcGXEKDoDLYy"
@@ -2784,7 +2788,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2848,7 +2852,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "x9ixJjXwOrzY8ViX"
@@ -2910,7 +2915,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2974,7 +2979,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "tVpWOhdUttAHKIgX"
@@ -3036,7 +3042,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3100,7 +3106,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -3132,8 +3139,164 @@
       }
     },
     {
-      "_id": "EHuc8eFj2NlWbvrM",
-      "_key": "!actors.items!GMIrKl0uexEeAGVM.EHuc8eFj2NlWbvrM",
+      "_id": "qBiz3ViQj0rKYz9N",
+      "name": "Medical Grade Cyberarm",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": false,
+        "damage": "1d6",
+        "description": {
+          "value": "<p>A medical grade cyberarm. Does not allow options to be installed.</p>\n"
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "notApplicable",
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "isElectronic": true,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 0,
+        "source": {
+          "book": "Core",
+          "page": 226
+        },
+        "type": "cyberArm",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "Archery",
+        "weaponType": "assaultRifle"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!GMIrKl0uexEeAGVM.qBiz3ViQj0rKYz9N"
+    },
+    {
+      "_id": "Q0FsfjZ9w3sSrQwN",
+      "name": "Medical Grade Cyberarm",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
+      "system": {
+        "ammoVariety": [],
+        "attackmod": 0,
+        "brand": "",
+        "canIgnoreArmor": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "core": false,
+        "damage": "1d6",
+        "description": {
+          "value": "<p>A medical grade cyberarm. Does not allow options to be installed.</p>\n"
+        },
+        "dvTable": "",
+        "favorite": false,
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "humanityLoss": {
+          "roll": "0",
+          "static": 0
+        },
+        "ignoreArmorPercent": 50,
+        "installLocation": "notApplicable",
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade",
+            "cyberware"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "isElectronic": true,
+        "isFoundational": true,
+        "isRanged": false,
+        "isWeapon": false,
+        "magazine": {
+          "ammoData": null,
+          "max": 0,
+          "value": 0
+        },
+        "price": {
+          "market": 0
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "rof": 1,
+        "size": 0,
+        "source": {
+          "book": "Core",
+          "page": 226
+        },
+        "type": "cyberArm",
+        "unarmedAutomaticCalculation": true,
+        "usage": "toggled",
+        "usesType": "magazine",
+        "weaponSkill": "Archery",
+        "weaponType": "assaultRifle"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!GMIrKl0uexEeAGVM.Q0FsfjZ9w3sSrQwN"
+    },
+    {
+      "_id": "FmajJ4mecVXSWJXW",
+      "_key": "!actors.items!GMIrKl0uexEeAGVM.FmajJ4mecVXSWJXW",
       "name": "S-KEEF",
       "type": "drug",
       "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
@@ -3176,8 +3339,8 @@
       }
     },
     {
-      "_id": "6vKnNjw7g3b9ChQe",
-      "_key": "!actors.items!GMIrKl0uexEeAGVM.6vKnNjw7g3b9ChQe",
+      "_id": "eVkWGO7gRGowzePD",
+      "_key": "!actors.items!GMIrKl0uexEeAGVM.eVkWGO7gRGowzePD",
       "name": "Sycust Fleshweave",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
@@ -3204,7 +3367,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3238,8 +3401,8 @@
       }
     },
     {
-      "_id": "PT8mhDBdxFbbeQCt",
-      "_key": "!actors.items!GMIrKl0uexEeAGVM.PT8mhDBdxFbbeQCt",
+      "_id": "165VmuYEdnBlkodD",
+      "_key": "!actors.items!GMIrKl0uexEeAGVM.165VmuYEdnBlkodD",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

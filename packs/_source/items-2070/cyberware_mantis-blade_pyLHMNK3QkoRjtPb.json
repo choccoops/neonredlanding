@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_melee_weapon.svg",
   "folder": "9kQh4EzqIkr9LhlV",
-  "sort": 9240,
+  "sort": 9270,
   "system": {
     "type": "cyberArm",
     "installLocation": "hospital",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Melee Weapon",
+    "weaponType": "heavyMelee",
+    "isRanged": false,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "3d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

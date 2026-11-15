@@ -2397,7 +2397,7 @@
     {
       "_id": "2GMl3ogUXw3XktXF",
       "_key": "!actors.items!J63Dyr7VyvWHm5vQ.2GMl3ogUXw3XktXF",
-      "name": "M2038 Tactician",
+      "name": "Constitutional Arms M2038 Tactician",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_power.svg",
       "system": {
@@ -2473,9 +2473,9 @@
       }
     },
     {
-      "_id": "lvzvCJBWEaW59dgq",
-      "_key": "!actors.items!J63Dyr7VyvWHm5vQ.lvzvCJBWEaW59dgq",
-      "name": "Heavy Armorjack",
+      "_id": "FNsVNdZSJvhPfS9y",
+      "_key": "!actors.items!J63Dyr7VyvWHm5vQ.FNsVNdZSJvhPfS9y",
+      "name": "Heavy Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2541,36 +2541,69 @@
       }
     },
     {
-      "name": "Flak",
+      "_id": "hRyGjvlMTgm3tH5V",
+      "_key": "!actors.items!J63Dyr7VyvWHm5vQ.hRyGjvlMTgm3tH5V",
+      "name": "Flak (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
-        "description": {
-          "value": "<p><strong>Arasaka Assault Specialist:</strong> Flak (w/ Ultralight Rebuild)</p>"
-        },
         "price": {
-          "market": 0
+          "market": 500
         },
         "penalty": 0,
+        "equipped": "equipped",
         "usage": "equipped",
-        "isHeadLocation": false,
-        "isBodyLocation": true,
-        "headLocation": {
-          "sp": 0,
-          "ablation": 0
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
         },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
         "bodyLocation": {
           "sp": 15,
           "ablation": 0
         },
-        "equipped": "equipped"
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p><strong>Arasaka Assault Specialist:</strong> Flak (w/ Ultralight Rebuild)</p><p>SP15. −4 REF, DEX and MOVE. Plated vest and pants.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
       },
-      "_id": "VdYYKbVLtgwyGyPj",
-      "_key": "!actors.items!J63Dyr7VyvWHm5vQ.VdYYKbVLtgwyGyPj",
+      "effects": [],
       "flags": {
         "cyberpunk-red-core": {
           "_migration": {
             "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
           }
         }
       }
@@ -2606,7 +2639,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "VEPhpK4f4wWJDf6v",
@@ -2669,7 +2703,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2788,7 +2822,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "klP0iTR1zao7R0q1"
@@ -2850,7 +2885,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2912,7 +2947,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2974,7 +3009,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

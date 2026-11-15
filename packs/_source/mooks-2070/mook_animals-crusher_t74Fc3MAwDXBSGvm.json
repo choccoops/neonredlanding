@@ -2404,7 +2404,7 @@
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
       "system": {
-        "weaponSkill": "N/A",
+        "weaponSkill": "Autofire",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "standard",
@@ -2477,7 +2477,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2578,7 +2578,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "0ByppKMGLLbiC19z"
@@ -2640,7 +2641,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2759,7 +2760,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2819,7 +2821,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2921,7 +2923,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

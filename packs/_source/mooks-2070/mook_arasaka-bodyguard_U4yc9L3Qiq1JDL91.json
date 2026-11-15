@@ -58,12 +58,12 @@
         "cyberware"
       ],
       "list": [
-        "QGkr5tJFkrj0tWxx",
-        "l7KMV4AA3bnbERDC",
-        "YzD9RcNEjbwvvAlG",
-        "wRQ5z231Huyc9RD3",
-        "ImXb0cHGfBNyG1L6",
-        "kG9zGbhTrZiBrH4U",
+        "1FCJW4fZDr5fQdtq",
+        "rMI1ElMYQtjqVquY",
+        "zHrRwc0HTiQdzT8C",
+        "nypZ1hlp7vsDlxPC",
+        "tbS7VGJdWBrs3dNH",
+        "wuirO7uKYQrrXoqz",
         "Tgq0ZoqY1IfXZEwh",
         "YgzNvhVVAhGhTUeD",
         "hskARJKSvsOKwmPy"
@@ -73,7 +73,7 @@
       "description": "<p>Personal security for executives who like to walk the streets. Well dressed, well chromed, very good at the job.</p><p><em>Arasaka:</em> The Japanese megacorp's security arm, from lobby guards to cyberninjas.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Melee SP (head/body): 7/7</p><p>Also carries (no catalog item): Businesswear Fashion</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Melee SP (head/body): 7/7</p>"
     }
   },
   "items": [
@@ -2325,8 +2325,8 @@
             "cyberware"
           ],
           "list": [
-            "AegiADK6oLpgfIGj",
-            "FDeQKd3Is3dOEK72"
+            "7kGuZRPezeHgAKtV",
+            "x6reziSl7vqKf8pu"
           ],
           "slots": 7,
           "usedSlots": 2
@@ -2370,33 +2370,47 @@
       "_key": "!actors.items!U4yc9L3Qiq1JDL91.hskARJKSvsOKwmPy"
     },
     {
-      "name": "Martial Arts (Martial Arts (Arasaka-Te))",
+      "_id": "41vOC5XuKSdbub8L",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.41vOC5XuKSdbub8L",
+      "name": "Martial Arts (Arasaka-te)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_chrome.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Arasaka-te)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2406,27 +2420,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Arasaka-te Attacks</strong> with the Martial Arts (Arasaka-te) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Arasaka-Te))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2434,17 +2436,21 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "mecerEUrDhJAfYru",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.mecerEUrDhJAfYru"
+      }
     },
     {
       "_id": "eSCqavMycQRR78dn",
       "_key": "!actors.items!U4yc9L3Qiq1JDL91.eSCqavMycQRR78dn",
       "name": "Electric Baton",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/StunBaton.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
@@ -2586,7 +2592,7 @@
     {
       "name": "Heavy Subdermal",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2619,8 +2625,208 @@
       }
     },
     {
-      "_id": "QGkr5tJFkrj0tWxx",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.QGkr5tJFkrj0tWxx",
+      "_id": "XmLzQ3VZe5iw8IUG",
+      "name": "Businesswear Jacket",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "jacket",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.XmLzQ3VZe5iw8IUG"
+    },
+    {
+      "_id": "wMwJvFxzMbMHWcdB",
+      "name": "Businesswear Top",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 50
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "top",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.wMwJvFxzMbMHWcdB"
+    },
+    {
+      "_id": "XSStoRyjGcVHpOOF",
+      "name": "Businesswear Bottoms",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_bottoms.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "bottoms",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.XSStoRyjGcVHpOOF"
+    },
+    {
+      "_id": "gzdHxrNo1sI2VOof",
+      "name": "Businesswear Footwear",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "footwear",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.gzdHxrNo1sI2VOof"
+    },
+    {
+      "_id": "1FCJW4fZDr5fQdtq",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.1FCJW4fZDr5fQdtq",
       "name": "Cyberarm",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -2649,7 +2855,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 4,
@@ -2681,8 +2888,8 @@
       }
     },
     {
-      "_id": "l7KMV4AA3bnbERDC",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.l7KMV4AA3bnbERDC",
+      "_id": "rMI1ElMYQtjqVquY",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.rMI1ElMYQtjqVquY",
       "name": "Cyberarm",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -2711,7 +2918,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 4,
@@ -2743,8 +2951,8 @@
       }
     },
     {
-      "_id": "YzD9RcNEjbwvvAlG",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.YzD9RcNEjbwvvAlG",
+      "_id": "zHrRwc0HTiQdzT8C",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.zHrRwc0HTiQdzT8C",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2773,10 +2981,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "qCiDo6cjvyrDdxg2"
+            "RTEp9sho78oT1mKL"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2807,8 +3016,8 @@
       }
     },
     {
-      "_id": "qCiDo6cjvyrDdxg2",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.qCiDo6cjvyrDdxg2",
+      "_id": "RTEp9sho78oT1mKL",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.RTEp9sho78oT1mKL",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2835,7 +3044,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2869,8 +3078,8 @@
       }
     },
     {
-      "_id": "wRQ5z231Huyc9RD3",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.wRQ5z231Huyc9RD3",
+      "_id": "nypZ1hlp7vsDlxPC",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.nypZ1hlp7vsDlxPC",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2899,10 +3108,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "yug1XLsqZjJHICTw"
+            "n5ooZSx7fimUegY5"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2933,8 +3143,8 @@
       }
     },
     {
-      "_id": "yug1XLsqZjJHICTw",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.yug1XLsqZjJHICTw",
+      "_id": "n5ooZSx7fimUegY5",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.n5ooZSx7fimUegY5",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2961,7 +3171,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2995,8 +3205,8 @@
       }
     },
     {
-      "_id": "AegiADK6oLpgfIGj",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.AegiADK6oLpgfIGj",
+      "_id": "7kGuZRPezeHgAKtV",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.7kGuZRPezeHgAKtV",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -3023,7 +3233,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3044,7 +3254,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!U4yc9L3Qiq1JDL91.AegiADK6oLpgfIGj.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!U4yc9L3Qiq1JDL91.7kGuZRPezeHgAKtV.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3097,8 +3307,8 @@
       }
     },
     {
-      "_id": "ImXb0cHGfBNyG1L6",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.ImXb0cHGfBNyG1L6",
+      "_id": "tbS7VGJdWBrs3dNH",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.tbS7VGJdWBrs3dNH",
       "name": "Heavy Subdermal Plating",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
@@ -3125,7 +3335,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3159,8 +3369,8 @@
       }
     },
     {
-      "_id": "kG9zGbhTrZiBrH4U",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.kG9zGbhTrZiBrH4U",
+      "_id": "wuirO7uKYQrrXoqz",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.wuirO7uKYQrrXoqz",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3189,10 +3399,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "hi1kWoDtIZP1JVld"
+            "z3oB9CLmWOKzIln0"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -3223,8 +3434,8 @@
       }
     },
     {
-      "_id": "hi1kWoDtIZP1JVld",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.hi1kWoDtIZP1JVld",
+      "_id": "z3oB9CLmWOKzIln0",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.z3oB9CLmWOKzIln0",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3251,7 +3462,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3285,8 +3496,8 @@
       }
     },
     {
-      "_id": "FDeQKd3Is3dOEK72",
-      "_key": "!actors.items!U4yc9L3Qiq1JDL91.FDeQKd3Is3dOEK72",
+      "_id": "x6reziSl7vqKf8pu",
+      "_key": "!actors.items!U4yc9L3Qiq1JDL91.x6reziSl7vqKf8pu",
       "name": "Toxin Binders",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/toxin_binders.svg",
@@ -3313,7 +3524,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3334,7 +3545,7 @@
       "effects": [
         {
           "_id": "hOK98Q5sYo12A0eb",
-          "_key": "!actors.items.effects!U4yc9L3Qiq1JDL91.FDeQKd3Is3dOEK72.hOK98Q5sYo12A0eb",
+          "_key": "!actors.items.effects!U4yc9L3Qiq1JDL91.x6reziSl7vqKf8pu.hOK98Q5sYo12A0eb",
           "name": "Toxin Binders",
           "img": "icons/svg/aura.svg",
           "type": "base",

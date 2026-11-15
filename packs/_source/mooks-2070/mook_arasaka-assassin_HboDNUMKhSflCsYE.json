@@ -2369,33 +2369,47 @@
       "_key": "!actors.items!HboDNUMKhSflCsYE.zd33OeDpzigczyAv"
     },
     {
-      "name": "Martial Arts (Martial Arts (Karate))",
+      "_id": "Z88Ha1evfqRPH8Wp",
+      "_key": "!actors.items!HboDNUMKhSflCsYE.Z88Ha1evfqRPH8Wp",
+      "name": "Martial Arts (Karate)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_fist.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Karate)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2405,27 +2419,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Karate Attacks</strong> with the Martial Arts (Karate) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Karate))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2433,17 +2435,21 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "3UC015aZJyeDyVmR",
-      "_key": "!actors.items!HboDNUMKhSflCsYE.3UC015aZJyeDyVmR"
+      }
     },
     {
       "_id": "q5pefZp1fA9zPuRZ",
       "_key": "!actors.items!HboDNUMKhSflCsYE.q5pefZp1fA9zPuRZ",
       "name": "Kendachi Mono-Katana",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "vHeavyMelee",
@@ -2488,7 +2494,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Arasaka Assassin:</strong> stands in for the Kendachi Mono-Katana; Ignores armor below SP7. Requires a valid Biometric Key.</p><p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Arasaka Assassin:</strong> a Very Heavy Melee Weapon with the block's numbers; the catalog has no Kendachi Mono-Katana; Ignores armor below SP7. Requires a valid Biometric Key.</p><p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2583,9 +2589,9 @@
       "_key": "!actors.items!HboDNUMKhSflCsYE.1mPfhz4XLEwdutYN"
     },
     {
-      "_id": "Q2t4GqrXTAhq4YgS",
-      "_key": "!actors.items!HboDNUMKhSflCsYE.Q2t4GqrXTAhq4YgS",
-      "name": "Kevlar",
+      "_id": "sn6iwjCJDXrkNKip",
+      "_key": "!actors.items!HboDNUMKhSflCsYE.sn6iwjCJDXrkNKip",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2653,7 +2659,7 @@
     {
       "_id": "h6smxxwbJLjLHvEM",
       "_key": "!actors.items!HboDNUMKhSflCsYE.h6smxxwbJLjLHvEM",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2749,7 +2755,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "mv7FHJ9KgzYXetDY",
@@ -2812,7 +2819,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2874,7 +2881,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2938,7 +2945,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "7YYSbU6XMwo2SJnI",
@@ -3001,7 +3009,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3063,7 +3071,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3127,7 +3135,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "AToM03ens6VraVyW"
@@ -3189,7 +3198,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3253,7 +3262,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "BbgT6CEZno7uMWMH"
@@ -3315,7 +3325,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3432,7 +3442,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3496,7 +3506,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "F28kSrIo58SDsTS9",
@@ -3560,7 +3571,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3622,7 +3633,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3724,7 +3735,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3830,7 +3841,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

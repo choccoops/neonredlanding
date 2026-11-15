@@ -68,7 +68,7 @@
       "description": "<p>A guard with real combat time, better training or a fat gear budget, enough to put down punks who underestimate a corporate contract.</p><p><em>Generics:</em> Security for hire, guarding whatever the client pays for.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Radio Communicator)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Solo: Combat Awareness 2</p><p>Weapon: GM's Choice (Cost Limit: 1,500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p>"
     }
   },
   "items": [
@@ -2393,9 +2393,9 @@
       "_key": "!actors.items!Bq1uoo508CYcFuEH.OUkFhizUtd9iHwzj"
     },
     {
-      "_id": "5fwGHxuAHwr55Uq7",
-      "_key": "!actors.items!Bq1uoo508CYcFuEH.5fwGHxuAHwr55Uq7",
-      "name": "Kevlar",
+      "_id": "SNfFeLcyLcIoUeCZ",
+      "_key": "!actors.items!Bq1uoo508CYcFuEH.SNfFeLcyLcIoUeCZ",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2463,7 +2463,7 @@
     {
       "_id": "Txz1jGBmdLKWVLoj",
       "_key": "!actors.items!Bq1uoo508CYcFuEH.Txz1jGBmdLKWVLoj",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2614,7 +2614,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2646,8 +2647,52 @@
       }
     },
     {
-      "_id": "pj9ady6DhuTsNq1f",
-      "_key": "!actors.items!Bq1uoo508CYcFuEH.pj9ady6DhuTsNq1f",
+      "_id": "L9ZacNNHailVbxWB",
+      "_key": "!actors.items!Bq1uoo508CYcFuEH.L9ZacNNHailVbxWB",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Veteran Security Guard:</strong> includes Level Damper, Radio Communicator</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "fUZogocGcx9SvsLL",
+      "_key": "!actors.items!Bq1uoo508CYcFuEH.fUZogocGcx9SvsLL",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

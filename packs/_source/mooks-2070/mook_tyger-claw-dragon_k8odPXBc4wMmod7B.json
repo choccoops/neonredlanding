@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "3ToB5A636e6I0kk3",
-        "s3LqbF7tyV1ozZzt",
-        "3vG6SyyFYmEgca5h",
+        "0rOG5wkQh5SRSw5L",
+        "wHHwXRTXZ82r8qnp",
+        "dwpatceTKfZsH8C5",
         "nBKOLCvjWD8SXm60",
         "GKOogVsbRAc99HxQ",
         "9tzbaglzIr82Rsip"
@@ -2327,7 +2327,7 @@
     {
       "name": "Martial Arts",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/martial_arts.svg",
       "system": {
         "ammoVariety": [],
         "attackmod": 0,
@@ -2549,9 +2549,9 @@
       }
     },
     {
-      "_id": "8koLgQ3JCIMGUgEA",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.8koLgQ3JCIMGUgEA",
-      "name": "Light Armorjack",
+      "_id": "EionrjYLNtJPlm2S",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.EionrjYLNtJPlm2S",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2581,10 +2581,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 11,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2617,8 +2617,76 @@
       }
     },
     {
-      "_id": "iz52XPMO6DqaJtK1",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.iz52XPMO6DqaJtK1",
+      "_id": "uzx0j0uY0gR2l6SN",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.uzx0j0uY0gR2l6SN",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3AW7l2KpMNmzB4bI",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.3AW7l2KpMNmzB4bI",
       "name": "Armor-Piercing Ammunition (Very Heavy Pistol)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -2672,8 +2740,8 @@
       }
     },
     {
-      "_id": "3ToB5A636e6I0kk3",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.3ToB5A636e6I0kk3",
+      "_id": "0rOG5wkQh5SRSw5L",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.0rOG5wkQh5SRSw5L",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2702,10 +2770,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "sPTTA1a3x927o8A5"
+            "GY6ei92BRMkCeOkc"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2736,8 +2805,8 @@
       }
     },
     {
-      "_id": "sPTTA1a3x927o8A5",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.sPTTA1a3x927o8A5",
+      "_id": "GY6ei92BRMkCeOkc",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.GY6ei92BRMkCeOkc",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2764,7 +2833,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2798,8 +2867,8 @@
       }
     },
     {
-      "_id": "s3LqbF7tyV1ozZzt",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.s3LqbF7tyV1ozZzt",
+      "_id": "wHHwXRTXZ82r8qnp",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.wHHwXRTXZ82r8qnp",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2828,10 +2897,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "0nJRJSiZ4haIHmZP"
+            "Wqfb7uAWhHhQKFOc"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2862,8 +2932,8 @@
       }
     },
     {
-      "_id": "0nJRJSiZ4haIHmZP",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.0nJRJSiZ4haIHmZP",
+      "_id": "Wqfb7uAWhHhQKFOc",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.Wqfb7uAWhHhQKFOc",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2890,7 +2960,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2924,8 +2994,8 @@
       }
     },
     {
-      "_id": "3vG6SyyFYmEgca5h",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.3vG6SyyFYmEgca5h",
+      "_id": "dwpatceTKfZsH8C5",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.dwpatceTKfZsH8C5",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2954,13 +3024,14 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "G3R0ylbwmPPNZ7Rz",
-            "PchVkmrHoF4yfWoV",
-            "iGkQj3VKrSlFIi9e",
-            "ePOgdgKXp2vjLjOU"
+            "T82NhcQJ6Pg3p1Be",
+            "HArOkFXwTp01VyO0",
+            "0cqR6lnoZwhUmTUb",
+            "fwWEZnbtyAzctKtz"
           ],
           "slots": 5,
           "usedSlots": 4
@@ -2991,8 +3062,8 @@
       }
     },
     {
-      "_id": "G3R0ylbwmPPNZ7Rz",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.G3R0ylbwmPPNZ7Rz",
+      "_id": "T82NhcQJ6Pg3p1Be",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.T82NhcQJ6Pg3p1Be",
       "name": "Kerenzikov",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
@@ -3019,7 +3090,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3053,8 +3124,8 @@
       }
     },
     {
-      "_id": "PchVkmrHoF4yfWoV",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.PchVkmrHoF4yfWoV",
+      "_id": "HArOkFXwTp01VyO0",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.HArOkFXwTp01VyO0",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3081,7 +3152,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3115,8 +3186,8 @@
       }
     },
     {
-      "_id": "iGkQj3VKrSlFIi9e",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.iGkQj3VKrSlFIi9e",
+      "_id": "0cqR6lnoZwhUmTUb",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.0cqR6lnoZwhUmTUb",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -3143,7 +3214,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3164,7 +3235,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!k8odPXBc4wMmod7B.iGkQj3VKrSlFIi9e.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!k8odPXBc4wMmod7B.0cqR6lnoZwhUmTUb.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3217,8 +3288,8 @@
       }
     },
     {
-      "_id": "ePOgdgKXp2vjLjOU",
-      "_key": "!actors.items!k8odPXBc4wMmod7B.ePOgdgKXp2vjLjOU",
+      "_id": "fwWEZnbtyAzctKtz",
+      "_key": "!actors.items!k8odPXBc4wMmod7B.fwWEZnbtyAzctKtz",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3245,7 +3316,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

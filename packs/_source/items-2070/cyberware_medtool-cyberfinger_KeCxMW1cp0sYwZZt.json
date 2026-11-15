@@ -5,7 +5,7 @@
   "type": "cyberware",
   "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
   "folder": "cjjrF4HRweI8RtiU",
-  "sort": 9820,
+  "sort": 9850,
   "system": {
     "type": "cyberArm",
     "installLocation": "mall",
@@ -21,10 +21,10 @@
     "usage": "installed",
     "brand": "",
     "core": false,
-    "isWeapon": false,
+    "isWeapon": true,
     "isElectronic": true,
     "concealable": {
-      "concealable": false,
+      "concealable": true,
       "isConcealed": false
     },
     "providesHardening": false,
@@ -37,6 +37,28 @@
       "slots": 0,
       "usedSlots": 0
     },
+    "weaponSkill": "Melee Weapon",
+    "weaponType": "lightMelee",
+    "isRanged": false,
+    "quality": "excellent",
+    "attackmod": 1,
+    "damage": "1d6",
+    "rof": 2,
+    "handsReq": 1,
+    "magazine": {
+      "value": 0,
+      "max": 0,
+      "ammoData": null
+    },
+    "ammoVariety": [],
+    "usesType": "magazine",
+    "fireModes": {
+      "autoFire": 0,
+      "suppressiveFire": false
+    },
+    "dvTable": "",
+    "critFailEffect": "jammed",
+    "unarmedAutomaticCalculation": false,
     "description": {
       "value": "<p>Needs a Modular Finger Cyberhand. Surgical tools; an Excellent Light Melee Weapon. A pair gives a Medtech +1 to Surgery (not with a MicroWaldo).</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
     },

@@ -59,11 +59,11 @@
       ],
       "list": [
         "nMTT0hg4td6qmnDw",
-        "UytBf3gHFkB14qDN",
         "vluilhuqY6AmTNtm",
-        "mRI4pNd7W24ElsYD",
-        "SgT4UXIcGqzX08k8",
-        "Wz6KosxwlUr06WVM",
+        "79a1Sry8PevY0u3c",
+        "za1CEi3rln054san",
+        "Y45HYE8PYjmROeHp",
+        "sJITdVnMv9A4ioyk",
         "Q7HMMuG4UpnNsolR",
         "w5e9HiDR6cIjkIje",
         "gI10de0W0a3SRkhY"
@@ -73,7 +73,7 @@
       "description": "<p>The heart of Trauma Team: superbly equipped and trained to undo almost any fatal injury, for subscribers. Not fighters, but don't underestimate them.</p><p><em>Trauma Team:</em> The armored ambulance service that only saves subscribers.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Medtech: Medicine 4 (Cryo 1 ⦁ Surgery 2 ⦁ Medtech [Pharm] 1)</p><p>With gear or role bonuses: First Aid 12 (14), Paramedic 14 (16), Resist Torture/Drugs 10 (12)</p><p>Melee SP (head/body): 6/7</p><p>Also carries (no catalog item): x1 Speedheal (in Airhypo); x1 Speedheal (in Airhypo); x1 Bounce Back (in Airhypo); Cryobag; Smart Ears (w/ Level Damper &amp; Scrambler/Descrambler)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Medtech: Medicine 4 (Cryo 1 ⦁ Surgery 2 ⦁ Medtech [Pharm] 1)</p><p>With gear or role bonuses: First Aid 12 (14), Paramedic 14 (16), Resist Torture/Drugs 10 (12)</p><p>Melee SP (head/body): 6/7</p>"
     }
   },
   "items": [
@@ -2260,7 +2260,7 @@
             "cyberware"
           ],
           "list": [
-            "W91OqrSGnbAUMoMX"
+            "FSfhurxK6dHEqOdT"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2340,7 +2340,7 @@
             "cyberware"
           ],
           "list": [
-            "0U8tZSRy0kaCGPed"
+            "KHbIXgTnNR6TBKfS"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2533,7 +2533,7 @@
     {
       "_id": "Zh23VPI7G8Ixznww",
       "_key": "!actors.items!8CrT9zAqazWlOQEr.Zh23VPI7G8Ixznww",
-      "name": "Kiroshi T.O.P.",
+      "name": "Kiroshi Tactical Optics Platform",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2574,7 +2574,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Trauma Team Medic:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p><strong>Trauma Team Medic:</strong> Kiroshi T.O.P.</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2601,7 +2601,7 @@
     {
       "_id": "NNuXz8yWxkG7LCDA",
       "_key": "!actors.items!8CrT9zAqazWlOQEr.NNuXz8yWxkG7LCDA",
-      "name": "Heavy Armorjack",
+      "name": "Heavy Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2729,51 +2729,32 @@
       }
     },
     {
-      "_id": "UytBf3gHFkB14qDN",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.UytBf3gHFkB14qDN",
-      "name": "Airhypo Cyberfinger",
-      "type": "cyberware",
-      "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
+      "_id": "gSZ9Oog0zQYIsOce",
+      "name": "Speedheal",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/speedheal.svg",
       "system": {
-        "type": "cyberArm",
-        "installLocation": "mall",
-        "humanityLoss": {
-          "static": 3,
-          "roll": "1d6"
-        },
-        "isFoundational": false,
-        "size": 1,
-        "price": {
-          "market": 100
-        },
-        "usage": "installed",
+        "amount": 1,
         "brand": "",
-        "core": false,
-        "isWeapon": false,
-        "isElectronic": true,
         "concealable": {
           "concealable": false,
           "isConcealed": false
         },
-        "providesHardening": false,
-        "installedItems": {
-          "allowed": false,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 0,
-          "usedSlots": 0
-        },
+        "consumed": "None",
         "description": {
-          "value": "<p>An Airhypo in the finger.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+          "value": "<p><strong>Trauma Team Medic:</strong> in the Airhypo</p><p>\n  Injecting a target with Speedheal immediately causes them to heal HP equal to\n  their BODY plus their WILL. This effect does not work on Mortally Wounded\n  targets, and can only be used on a target once per day.\n</p>\n"
         },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 0
         },
         "revealed": true,
-        "favorite": false
+        "source": {
+          "book": "Core",
+          "page": 150
+        },
+        "usage": "toggled"
       },
       "effects": [],
       "flags": {
@@ -2781,14 +2762,9 @@
           "_migration": {
             "current": 33
           }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Cyberware"
-          }
         }
-      }
+      },
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.gSZ9Oog0zQYIsOce"
     },
     {
       "_id": "vluilhuqY6AmTNtm",
@@ -2853,8 +2829,152 @@
       }
     },
     {
-      "_id": "W91OqrSGnbAUMoMX",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.W91OqrSGnbAUMoMX",
+      "_id": "8n9jzX54IDonPSnz",
+      "name": "Speedheal",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/speedheal.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "consumed": "None",
+        "description": {
+          "value": "<p><strong>Trauma Team Medic:</strong> in the Airhypo</p><p>\n  Injecting a target with Speedheal immediately causes them to heal HP equal to\n  their BODY plus their WILL. This effect does not work on Mortally Wounded\n  targets, and can only be used on a target once per day.\n</p>\n"
+        },
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 0
+        },
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 150
+        },
+        "usage": "toggled"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.8n9jzX54IDonPSnz"
+    },
+    {
+      "_id": "79a1Sry8PevY0u3c",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.79a1Sry8PevY0u3c",
+      "name": "Airhypo Cyberfinger",
+      "type": "cyberware",
+      "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
+      "system": {
+        "type": "cyberArm",
+        "installLocation": "mall",
+        "humanityLoss": {
+          "static": 3,
+          "roll": "1d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": false,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>An Airhypo in the finger.</p><p><strong>Install:</strong> Mall • <strong>HL:</strong> 3 (1d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "tFg7Q81464Xfbbt3",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.tFg7Q81464Xfbbt3",
+      "name": "Bounce-Back",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg",
+      "system": {
+        "price": {
+          "market": 0
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "toggled",
+        "consumed": "None",
+        "brand": "",
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p><strong>Trauma Team Medic:</strong> in the Airhypo</p><p>A Medtech's Pharmaceutical. Heals 5 HP at once, and for 3 Rounds your existing Critical Injuries deal no damage (new ones still do). Stabilizing or Quick Fixing you meanwhile is +2, and a Quick Fix takes one Action. Twice a day at most, never while one is running.</p><p><strong>Cost:</strong> Medtech-made Pharmaceutical (no market price listed)</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Drugs"
+          }
+        }
+      }
+    },
+    {
+      "_id": "FSfhurxK6dHEqOdT",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.FSfhurxK6dHEqOdT",
       "name": "Biomonitor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/biomonitor.svg",
@@ -2881,7 +3001,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2915,50 +3035,26 @@
       }
     },
     {
-      "_id": "nVUEnxlbiytNuvcK",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.nVUEnxlbiytNuvcK",
-      "name": "Kiroshi Tactical Optics Platform",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "_id": "B8okjKKRGOywx1wg",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.B8okjKKRGOywx1wg",
+      "name": "Cryopump",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
       "system": {
         "price": {
-          "market": 1000
+          "market": 5000
         },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
         "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
         "concealable": {
           "concealable": false,
           "isConcealed": false
         },
         "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 12,
-          "ablation": 0
-        },
         "description": {
-          "value": "<p><strong>Trauma Team Medic:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p>Medtech only. Bag a willing or unconscious patient as an Action (uses 1 charge; 50eb to recharge). Stasis for up to a week: Unconscious, no Death Saves, behind 15 HP cover, can be operated on through the bag.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2977,14 +3073,14 @@
         "cpr-neon-hub": {
           "source2070": {
             "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
+            "chapter": "Gear & Goods"
           }
         }
       }
     },
     {
-      "_id": "mRI4pNd7W24ElsYD",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.mRI4pNd7W24ElsYD",
+      "_id": "za1CEi3rln054san",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.za1CEi3rln054san",
       "name": "Medscanner (arm)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/medscanner.svg",
@@ -3011,7 +3107,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3032,7 +3128,7 @@
       "effects": [
         {
           "_id": "rzwOmRe6coB0OOZ1",
-          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.mRI4pNd7W24ElsYD.rzwOmRe6coB0OOZ1",
+          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.za1CEi3rln054san.rzwOmRe6coB0OOZ1",
           "name": "Medscanner (arm)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3096,8 +3192,8 @@
       }
     },
     {
-      "_id": "Mt6Tq5IEA3JSoFHI",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.Mt6Tq5IEA3JSoFHI",
+      "_id": "dhrWqzRGuHzz2QRI",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.dhrWqzRGuHzz2QRI",
       "name": "Medtech Bag",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -3140,8 +3236,8 @@
       }
     },
     {
-      "_id": "SgT4UXIcGqzX08k8",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.SgT4UXIcGqzX08k8",
+      "_id": "Y45HYE8PYjmROeHp",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.Y45HYE8PYjmROeHp",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3170,10 +3266,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "Mfi3S44SAK1RpQxF"
+            "1Rt4h2Jq14DPoS1G"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -3204,8 +3301,8 @@
       }
     },
     {
-      "_id": "Mfi3S44SAK1RpQxF",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.Mfi3S44SAK1RpQxF",
+      "_id": "1Rt4h2Jq14DPoS1G",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.1Rt4h2Jq14DPoS1G",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3232,7 +3329,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3266,8 +3363,52 @@
       }
     },
     {
-      "_id": "Wz6KosxwlUr06WVM",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.Wz6KosxwlUr06WVM",
+      "_id": "leZCLw17q1q9kyvI",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.leZCLw17q1q9kyvI",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Trauma Team Medic:</strong> includes Level Damper, Scrambler/Descrambler</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "sJITdVnMv9A4ioyk",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.sJITdVnMv9A4ioyk",
       "name": "Subdermal Grip",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_grip.svg",
@@ -3294,7 +3435,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3328,8 +3469,8 @@
       }
     },
     {
-      "_id": "0U8tZSRy0kaCGPed",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.0U8tZSRy0kaCGPed",
+      "_id": "KHbIXgTnNR6TBKfS",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.KHbIXgTnNR6TBKfS",
       "name": "Toxin Binders",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/toxin_binders.svg",
@@ -3356,7 +3497,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3377,7 +3518,7 @@
       "effects": [
         {
           "_id": "hOK98Q5sYo12A0eb",
-          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.0U8tZSRy0kaCGPed.hOK98Q5sYo12A0eb",
+          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.KHbIXgTnNR6TBKfS.hOK98Q5sYo12A0eb",
           "name": "Toxin Binders",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3430,8 +3571,8 @@
       }
     },
     {
-      "_id": "BwgyeWaddZLYkGTf",
-      "_key": "!actors.items!8CrT9zAqazWlOQEr.BwgyeWaddZLYkGTf",
+      "_id": "in280VMMCT2BvDJY",
+      "_key": "!actors.items!8CrT9zAqazWlOQEr.in280VMMCT2BvDJY",
       "name": "Trauma Team MedScan",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -3461,7 +3602,7 @@
       "effects": [
         {
           "_id": "hDSfPWlMzdgEffXU",
-          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.BwgyeWaddZLYkGTf.hDSfPWlMzdgEffXU",
+          "_key": "!actors.items.effects!8CrT9zAqazWlOQEr.in280VMMCT2BvDJY.hDSfPWlMzdgEffXU",
           "name": "Trauma Team MedScan (situational)",
           "img": "icons/svg/aura.svg",
           "type": "base",

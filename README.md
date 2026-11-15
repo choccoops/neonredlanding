@@ -694,7 +694,7 @@ Three compendiums carry the *Cyberpunk: The Unification Era* Item Compendium int
 from the book's own tables and text (its stats, its 2070 names and prices). Each item's footer names
 the Item Compendium (2070) chapter it's from:
 
-- **Neon Hub: Item Compendium (2070s)**, about 1,900 Cyberpunk RED items in the book's chapters:
+- **Neon Hub: Item Compendium (2070s)**, about 2,000 Cyberpunk RED items in the book's chapters:
   weapons (the 2070s catalog by class, generic weapons in three qualities and, for guns, as Power,
   Smart and Tech, variants and iconics),
   the Martial Arts Forms (each a Skill and a weapon to attack with),

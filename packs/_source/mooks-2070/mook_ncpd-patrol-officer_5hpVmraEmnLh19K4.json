@@ -2483,7 +2483,7 @@
       "_key": "!actors.items!5hpVmraEmnLh19K4.7A4nGKcKWyPPhKKh",
       "name": "Electric Baton",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/StunBaton.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
@@ -2623,9 +2623,9 @@
       "_key": "!actors.items!5hpVmraEmnLh19K4.3Ep8glnlvsGi1KvM"
     },
     {
-      "_id": "YFI99VcDeB1MzdVF",
-      "_key": "!actors.items!5hpVmraEmnLh19K4.YFI99VcDeB1MzdVF",
-      "name": "Kevlar",
+      "_id": "5kzMTgAe4oh4j2P6",
+      "_key": "!actors.items!5hpVmraEmnLh19K4.5kzMTgAe4oh4j2P6",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2693,7 +2693,7 @@
     {
       "_id": "3VDUQ6BJTdNwUODh",
       "_key": "!actors.items!5hpVmraEmnLh19K4.3VDUQ6BJTdNwUODh",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2994,7 +2994,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -3054,7 +3055,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

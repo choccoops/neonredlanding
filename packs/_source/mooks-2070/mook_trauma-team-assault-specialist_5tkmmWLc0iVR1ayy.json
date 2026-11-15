@@ -60,7 +60,7 @@
       "list": [
         "oABsiXqiJUg2zcCN",
         "ejct1VYx5b8b861E",
-        "38EQcrqObmWazjBf",
+        "2eEXJWLeLLL7B21Y",
         "NatfiCbLKIEsTYPJ",
         "ULJSq8OwZPwiF0X6",
         "bOrZzEPoGZuCcHo7",
@@ -71,7 +71,7 @@
       "description": "<p>Combat pros hired to escort Trauma Team into the worst districts. Not medics; paid escorts.</p><p><em>Trauma Team:</em> The armored ambulance service that only saves subscribers.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Mini-Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 9 • <strong>COM#:</strong> 15 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>With gear or role bonuses: Athletics 14 (12), Brawling 14 (12), Evasion 15 (13), Resist Torture/Drugs 12 (14), Stealth 8 (6)</p><p>Melee SP (head/body): 6/8</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Scrambler/Descrambler)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Mini-Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 9 • <strong>COM#:</strong> 15 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>With gear or role bonuses: Athletics 14 (12), Brawling 14 (12), Evasion 15 (13), Resist Torture/Drugs 12 (14), Stealth 8 (6)</p><p>Melee SP (head/body): 6/8</p>"
     }
   },
   "items": [
@@ -2458,7 +2458,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Trauma Team Assault Specialist:</strong> stands in for the Underbarrel Grenade Launcher</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Trauma Team Assault Specialist:</strong> a Grenade Launcher with the block's numbers; the catalog has no Underbarrel Grenade Launcher</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2555,7 +2555,7 @@
     {
       "_id": "GAIo6bQ63MQPLRyr",
       "_key": "!actors.items!5tkmmWLc0iVR1ayy.GAIo6bQ63MQPLRyr",
-      "name": "Kiroshi T.O.P.",
+      "name": "Kiroshi Tactical Optics Platform",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2596,7 +2596,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Trauma Team Assault Specialist:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p><strong>Trauma Team Assault Specialist:</strong> Kiroshi T.O.P.</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2623,7 +2623,7 @@
     {
       "_id": "oASzoCrCNJYBsyeP",
       "_key": "!actors.items!5tkmmWLc0iVR1ayy.oASzoCrCNJYBsyeP",
-      "name": "Heavy Armorjack",
+      "name": "Heavy Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2772,7 +2772,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2836,7 +2836,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "tvkR6myTGAUPrMrI"
@@ -2898,7 +2899,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2962,7 +2963,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "qo3S7iuWkCvzAUWv"
@@ -3024,7 +3026,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3058,76 +3060,8 @@
       }
     },
     {
-      "_id": "WNRJ1xvJYLYLzKTV",
-      "_key": "!actors.items!5tkmmWLc0iVR1ayy.WNRJ1xvJYLYLzKTV",
-      "name": "Kiroshi Tactical Optics Platform",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 1000
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 12,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Trauma Team Assault Specialist:</strong> includes Anti-Smog Breathing Mask, Flashlight, Radio Communicator, Smart Glasses</p><p>Head SP12, no armor penalty. Built-in anti-smog mask, flashlight, radio and Smart Glasses with Anti-Dazzle. The visor drops for free; down, your face is hidden and the glasses' options work.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
-          }
-        }
-      }
-    },
-    {
-      "_id": "38EQcrqObmWazjBf",
-      "_key": "!actors.items!5tkmmWLc0iVR1ayy.38EQcrqObmWazjBf",
+      "_id": "2eEXJWLeLLL7B21Y",
+      "_key": "!actors.items!5tkmmWLc0iVR1ayy.2eEXJWLeLLL7B21Y",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3156,11 +3090,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "RotVg7kFVvxGLkLJ",
-            "qd1LbBg1SkNoW6r7"
+            "jAodfCBDPshdOi9s",
+            "lXCMGEhf8KTyhKhT"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -3191,8 +3126,8 @@
       }
     },
     {
-      "_id": "RotVg7kFVvxGLkLJ",
-      "_key": "!actors.items!5tkmmWLc0iVR1ayy.RotVg7kFVvxGLkLJ",
+      "_id": "jAodfCBDPshdOi9s",
+      "_key": "!actors.items!5tkmmWLc0iVR1ayy.jAodfCBDPshdOi9s",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3219,7 +3154,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3253,8 +3188,8 @@
       }
     },
     {
-      "_id": "qd1LbBg1SkNoW6r7",
-      "_key": "!actors.items!5tkmmWLc0iVR1ayy.qd1LbBg1SkNoW6r7",
+      "_id": "lXCMGEhf8KTyhKhT",
+      "_key": "!actors.items!5tkmmWLc0iVR1ayy.lXCMGEhf8KTyhKhT",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3281,7 +3216,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3315,6 +3250,50 @@
       }
     },
     {
+      "_id": "Y6SpNLH30fO6nWxB",
+      "_key": "!actors.items!5tkmmWLc0iVR1ayy.Y6SpNLH30fO6nWxB",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Trauma Team Assault Specialist:</strong> includes Level Damper, Scrambler/Descrambler</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
       "_id": "NatfiCbLKIEsTYPJ",
       "_key": "!actors.items!5tkmmWLc0iVR1ayy.NatfiCbLKIEsTYPJ",
       "name": "Subdermal Grip",
@@ -3343,7 +3322,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3405,7 +3384,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

@@ -2397,16 +2397,16 @@
       "_key": "!actors.items!czAIoauSNuOjuDRf.nY4HqP90a9tenwtb"
     },
     {
-      "_id": "jnWDIl4Yt8PqAgma",
-      "_key": "!actors.items!czAIoauSNuOjuDRf.jnWDIl4Yt8PqAgma",
-      "name": "PQ Very Heavy Melee",
+      "_id": "pdw0LnTkLgFjsNAM",
+      "_key": "!actors.items!czAIoauSNuOjuDRf.pdw0LnTkLgFjsNAM",
+      "name": "Very Heavy Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "vHeavyMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "4d6",
         "rof": 1,
@@ -2431,7 +2431,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 500
+          "market": 100
         },
         "brand": "",
         "installedItems": {
@@ -2446,7 +2446,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Voodoo Boys Spirit:</strong> stands in for the PQ Very Heavy Melee</p><p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2473,7 +2473,7 @@
     {
       "_id": "oihk6GngxgnqRVCD",
       "_key": "!actors.items!czAIoauSNuOjuDRf.oihk6GngxgnqRVCD",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2569,7 +2569,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "jtWUbkepjsiTONOm"
@@ -2631,7 +2632,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2695,7 +2696,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "A06hNk5340GB5YCH"
@@ -2757,7 +2759,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2819,7 +2821,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2883,7 +2885,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "2Zh74xpQdmiqNnl2",
@@ -2946,7 +2949,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3048,7 +3051,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

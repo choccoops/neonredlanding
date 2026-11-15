@@ -2329,7 +2329,7 @@
     {
       "name": "Martial Arts",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/martial_arts.svg",
       "system": {
         "ammoVariety": [],
         "attackmod": 0,
@@ -2401,13 +2401,13 @@
       "_key": "!actors.items!dLbPltvOo8x0J3H1.SQSDZYLrahqFOkdY",
       "name": "Rostović DB-2 Testera",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "3d6",
         "rof": 1,
         "handsReq": 2,
@@ -2477,7 +2477,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2671,7 +2671,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2775,7 +2775,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "hFjVciUxxxgNd08N"
@@ -2837,7 +2838,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2899,7 +2900,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

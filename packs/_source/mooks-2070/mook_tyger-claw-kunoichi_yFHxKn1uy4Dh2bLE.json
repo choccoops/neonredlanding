@@ -2372,33 +2372,47 @@
       "_key": "!actors.items!yFHxKn1uy4Dh2bLE.WTCBbeM7d29vl89e"
     },
     {
-      "name": "Martial Arts (Martial Arts (Karate))",
+      "_id": "vfaDFcjrzGAGiawY",
+      "_key": "!actors.items!yFHxKn1uy4Dh2bLE.vfaDFcjrzGAGiawY",
+      "name": "Martial Arts (Karate)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/unarmed.svg",
+      "img": "modules/cpr-neon-hub/assets/items/derived/martial_fist.svg",
       "system": {
-        "ammoVariety": [],
+        "weaponSkill": "Martial Arts (Karate)",
+        "weaponType": "martialArts",
+        "isRanged": false,
+        "quality": "standard",
         "attackmod": 0,
-        "brand": "",
-        "canIgnoreArmor": true,
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "critFailEffect": "jammed",
         "damage": "3d6",
-        "description": {
-          "value": "<p>Throwing hands, does not ignore half armor.</p>\n"
+        "rof": 2,
+        "handsReq": 1,
+        "canIgnoreArmor": true,
+        "ignoreArmorPercent": 50,
+        "ignoreBelowSP": 0,
+        "unarmedAutomaticCalculation": false,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
         },
-        "dvTable": "",
-        "equipped": "equipped",
-        "favorite": false,
+        "ammoVariety": [],
+        "usesType": "magazine",
         "fireModes": {
           "autoFire": 0,
           "suppressiveFire": false
         },
-        "handsReq": 1,
-        "ignoreArmorPercent": 50,
-        "ignoreBelowSP": 0,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "equipped": "equipped",
+        "usage": "equipped",
+        "price": {
+          "market": 0
+        },
+        "brand": "",
         "installedItems": {
           "allowed": false,
           "allowedTypes": [
@@ -2408,27 +2422,15 @@
           "slots": 0,
           "usedSlots": 0
         },
-        "isRanged": false,
-        "magazine": {
-          "ammoData": null,
-          "max": 0,
-          "value": 0
+        "description": {
+          "value": "<p><strong>Karate Attacks</strong> with the Martial Arts (Karate) Skill: ROF2, ignoring half the target's SP (round up), for Brawling damage by BODY: 1d6 at BODY 4 or less, 2d6 at 5–6, 3d6 at 7–10, 4d6 at 11+. Its Special Moves are on the Skill.</p><p><small>Item Compendium (2070) • Martial Arts</small></p>"
         },
-        "price": {
-          "market": 0
-        },
-        "quality": "standard",
-        "revealed": true,
-        "rof": 2,
         "source": {
-          "book": "Core",
-          "page": 176
+          "book": "Item Compendium (2070)",
+          "page": 0
         },
-        "unarmedAutomaticCalculation": false,
-        "usage": "equipped",
-        "usesType": "magazine",
-        "weaponSkill": "Martial Arts (Martial Arts (Karate))",
-        "weaponType": "martialArts"
+        "revealed": true,
+        "favorite": false
       },
       "effects": [],
       "flags": {
@@ -2436,10 +2438,14 @@
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Martial Arts"
+          }
         }
-      },
-      "_id": "kDVxBg99BfKRhct8",
-      "_key": "!actors.items!yFHxKn1uy4Dh2bLE.kDVxBg99BfKRhct8"
+      }
     },
     {
       "_id": "BpdQoS4WI6narKfk",
@@ -2519,9 +2525,9 @@
       }
     },
     {
-      "_id": "xWMuB9wpv2qCD6dO",
-      "_key": "!actors.items!yFHxKn1uy4Dh2bLE.xWMuB9wpv2qCD6dO",
-      "name": "Kendachi Mono-Wakizashi",
+      "_id": "jOyfZfY1FzRQeXlB",
+      "_key": "!actors.items!yFHxKn1uy4Dh2bLE.jOyfZfY1FzRQeXlB",
+      "name": "Kendachi M-35 Mono-Wakizashi",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
       "system": {
@@ -2532,7 +2538,7 @@
         "attackmod": 0,
         "damage": "3d6",
         "rof": 2,
-        "handsReq": 2,
+        "handsReq": 1,
         "magazine": {
           "value": 0,
           "max": 0,
@@ -2553,7 +2559,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 100
+          "market": 1000
         },
         "brand": "",
         "installedItems": {
@@ -2563,12 +2569,12 @@
             "ammo"
           ],
           "list": [],
-          "slots": 3,
+          "slots": 0,
           "usedSlots": 0
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Tyger Claw Kunoichi:</strong> stands in for the Kendachi Mono-Wakizashi; Ignores armor below SP7. Requires a valid Biometric Key.</p><p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Tyger Claw Kunoichi:</strong> listed as Kendachi Mono-Wakizashi; Ignores armor below SP7. Requires a valid Biometric Key.</p><p>With the biometric key: ignores armor under SP7. It hisses like a mantis.</p><p><em>The sensible monoblade: fits indoors, in a car, in a crowd.</em></p><p><strong>Class:</strong> One-handed Exotic Heavy Melee<br><strong>Damage:</strong> 3d6</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2665,7 +2671,7 @@
     {
       "name": "Subdermal Armor",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_armor.svg",
       "system": {
         "description": {
           "value": ""
@@ -2766,7 +2772,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "6bAMDQXnJlOY8Asf"
@@ -2828,7 +2835,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2892,7 +2899,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "JEBbrJfGn2qMr9bF"
@@ -2954,7 +2962,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3018,7 +3026,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "2f3vW9PmBBf4cuRr"
@@ -3080,7 +3089,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3144,7 +3153,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "agQ37kThdQNsL6oX"
@@ -3206,7 +3216,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3270,7 +3280,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "14gaApeJLr5DO6fH",
@@ -3333,7 +3344,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3395,7 +3406,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3459,7 +3470,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "Glp71sqWuzdaVJet",
@@ -3522,7 +3534,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3584,7 +3596,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3646,7 +3658,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3710,7 +3722,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "7Cbp8cWSPykKpEBw",
@@ -3773,7 +3786,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3835,7 +3848,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

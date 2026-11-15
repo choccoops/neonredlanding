@@ -68,7 +68,7 @@
       "description": "<p>An exile with a scavenged SMG, a knife and a grudge against the nomad clans. Weak alone, but never alone.</p><p><em>Wraiths:</em> Nomad outcasts who raid convoys in the Badlands.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 4 • <strong>COM#:</strong> 10</p><p>Melee SP (head/body): 2/4</p><p>Also carries (no catalog item): Drug (GM's Choice) x2</p>"
+      "notes": "<p><strong>Threat:</strong> Mook • <strong>Reputation:</strong> 0 • <strong>Facedown #:</strong> 4 • <strong>COM#:</strong> 10</p><p>Melee SP (head/body): 2/4</p><p>Also carries, at the GM's choice: Drug (GM's Choice) x2</p>"
     }
   },
   "items": [
@@ -2547,16 +2547,16 @@
       }
     },
     {
-      "_id": "DkDvZeu0d1eExQXv",
-      "_key": "!actors.items!5hS6DMGhQBPVVksi.DkDvZeu0d1eExQXv",
-      "name": "PQ Medium Melee",
+      "_id": "b9qeBDVMhUIhCyvI",
+      "_key": "!actors.items!5hS6DMGhQBPVVksi.b9qeBDVMhUIhCyvI",
+      "name": "Medium Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "2d6",
         "rof": 2,
@@ -2581,7 +2581,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 50
+          "market": 20
         },
         "brand": "",
         "installedItems": {
@@ -2596,7 +2596,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Wraiths Marauder:</strong> stands in for the PQ Medium Melee (x2); ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Wraiths Marauder:</strong> ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2621,9 +2621,9 @@
       }
     },
     {
-      "_id": "VeUlL0A4xm5fOeLM",
-      "_key": "!actors.items!5hS6DMGhQBPVVksi.VeUlL0A4xm5fOeLM",
-      "name": "Leathers",
+      "_id": "8MA7y1CNRUsEgVJC",
+      "_key": "!actors.items!5hS6DMGhQBPVVksi.8MA7y1CNRUsEgVJC",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2691,7 +2691,7 @@
     {
       "_id": "otSleKCNEHlKwk6W",
       "_key": "!actors.items!5hS6DMGhQBPVVksi.otSleKCNEHlKwk6W",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2787,7 +2787,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

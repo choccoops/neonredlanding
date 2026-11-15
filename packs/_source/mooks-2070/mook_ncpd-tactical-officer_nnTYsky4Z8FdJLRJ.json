@@ -58,11 +58,11 @@
         "cyberware"
       ],
       "list": [
-        "mtoZ2Q7NxLKd6nYM",
-        "ohoqyFpZZxIKRHAZ",
-        "QtNooz5B6MeFrNoW",
-        "Oeq4Rn4cx0rQK2Fd",
-        "LePaHJI4IdskVYNs",
+        "4sIYYybEjYT2MKs0",
+        "pdMNYwrJgJrHl3S2",
+        "GZP3vY1eMuqWM1Kf",
+        "QjuzKa9AMIdTl7cZ",
+        "zU0Z5vvGbrOapK5n",
         "WXfD670gzbUbztnl",
         "95Rk70O2MoZu3nun",
         "7TPM5SQxJcJzRXQ1"
@@ -2403,7 +2403,7 @@
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
       "system": {
-        "weaponSkill": "N/A",
+        "weaponSkill": "Autofire",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "standard",
@@ -2474,9 +2474,77 @@
       }
     },
     {
-      "_id": "RRa69EQeY1PrVv3w",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.RRa69EQeY1PrVv3w",
-      "name": "Flak Armor",
+      "_id": "Z4OzL0qVxpXznItL",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.Z4OzL0qVxpXznItL",
+      "name": "Flak (Head)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": false,
+        "isHeadLocation": true,
+        "bodyLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 15,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p><strong>NCPD Tactical Officer:</strong> Flak Armor</p><p>SP15. −4 REF, DEX and MOVE. Plated vest and pants.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "vcKvEcQkRRrvaEHJ",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.vcKvEcQkRRrvaEHJ",
+      "name": "Flak (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2507,17 +2575,17 @@
           "usedSlots": 0
         },
         "isBodyLocation": true,
-        "isHeadLocation": true,
+        "isHeadLocation": false,
         "bodyLocation": {
           "sp": 15,
           "ablation": 0
         },
         "headLocation": {
-          "sp": 15,
+          "sp": 0,
           "ablation": 0
         },
         "description": {
-          "value": "<p>Flak, SP16; −4 REF, −5 DEX and MOVE.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>NCPD Tactical Officer:</strong> Flak Armor</p><p>SP15. −4 REF, DEX and MOVE. Plated vest and pants.</p><p><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2542,8 +2610,8 @@
       }
     },
     {
-      "_id": "mtoZ2Q7NxLKd6nYM",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.mtoZ2Q7NxLKd6nYM",
+      "_id": "4sIYYybEjYT2MKs0",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.4sIYYybEjYT2MKs0",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2572,10 +2640,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "V5iKttSHCUwYyDRh"
+            "uwjiicHbQvfJRfV7"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2606,8 +2675,8 @@
       }
     },
     {
-      "_id": "V5iKttSHCUwYyDRh",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.V5iKttSHCUwYyDRh",
+      "_id": "uwjiicHbQvfJRfV7",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.uwjiicHbQvfJRfV7",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2634,7 +2703,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2668,8 +2737,8 @@
       }
     },
     {
-      "_id": "ohoqyFpZZxIKRHAZ",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.ohoqyFpZZxIKRHAZ",
+      "_id": "pdMNYwrJgJrHl3S2",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.pdMNYwrJgJrHl3S2",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2698,10 +2767,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "wNKUPQoXBM0oCw75"
+            "wWkepC4ddgdWReJr"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2732,8 +2802,8 @@
       }
     },
     {
-      "_id": "wNKUPQoXBM0oCw75",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.wNKUPQoXBM0oCw75",
+      "_id": "wWkepC4ddgdWReJr",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.wWkepC4ddgdWReJr",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2760,7 +2830,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2794,8 +2864,8 @@
       }
     },
     {
-      "_id": "QtNooz5B6MeFrNoW",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.QtNooz5B6MeFrNoW",
+      "_id": "GZP3vY1eMuqWM1Kf",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.GZP3vY1eMuqWM1Kf",
       "name": "Flashlight Cyberfinger",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",
@@ -2856,50 +2926,6 @@
       }
     },
     {
-      "_id": "Upxb3bzbvOxTVjcA",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.Upxb3bzbvOxTVjcA",
-      "name": "Handcuffs",
-      "type": "gear",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
-      "system": {
-        "price": {
-          "market": 50
-        },
-        "amount": 1,
-        "equipped": "owned",
-        "usage": "carried",
-        "brand": "",
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "description": {
-          "value": "<p>Easily broken with BODY above 10.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Gear & Goods"
-          }
-        }
-      }
-    },
-    {
       "_id": "XVwPYWTdGz66RxGm",
       "_key": "!actors.items!nnTYsky4Z8FdJLRJ.XVwPYWTdGz66RxGm",
       "name": "Handcuffs",
@@ -2944,8 +2970,52 @@
       }
     },
     {
-      "_id": "Oeq4Rn4cx0rQK2Fd",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.Oeq4Rn4cx0rQK2Fd",
+      "_id": "lCKOOcVxEqwD2ziP",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.lCKOOcVxEqwD2ziP",
+      "name": "Handcuffs",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
+      "system": {
+        "price": {
+          "market": 50
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p>Easily broken with BODY above 10.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "QjuzKa9AMIdTl7cZ",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.QjuzKa9AMIdTl7cZ",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2974,10 +3044,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "C65B9gnDtva8OClx"
+            "gtu3Mn3lkwzEEsq3"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -3008,8 +3079,8 @@
       }
     },
     {
-      "_id": "C65B9gnDtva8OClx",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.C65B9gnDtva8OClx",
+      "_id": "gtu3Mn3lkwzEEsq3",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.gtu3Mn3lkwzEEsq3",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -3036,7 +3107,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3070,8 +3141,8 @@
       }
     },
     {
-      "_id": "LePaHJI4IdskVYNs",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.LePaHJI4IdskVYNs",
+      "_id": "zU0Z5vvGbrOapK5n",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.zU0Z5vvGbrOapK5n",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -3098,7 +3169,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3132,8 +3203,8 @@
       }
     },
     {
-      "_id": "PoxetwtKdTVWfeJ9",
-      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.PoxetwtKdTVWfeJ9",
+      "_id": "IcpIa4czUtAtOYoh",
+      "_key": "!actors.items!nnTYsky4Z8FdJLRJ.IcpIa4czUtAtOYoh",
       "name": "Video Camera",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",

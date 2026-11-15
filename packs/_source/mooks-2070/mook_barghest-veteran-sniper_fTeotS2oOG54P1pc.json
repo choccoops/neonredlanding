@@ -62,7 +62,7 @@
         "gfkFGykjx10qeTlr",
         "OSUEYVc9Tt46pNeb",
         "wzKJnEyx1uvzz41j",
-        "drUxx3LIzOz1w0Ei",
+        "U4aYpBTNxiqnuqW8",
         "e4bUjnqAL4zFlDTP",
         "TocxhK5nsoQ00Vqn",
         "RMUw0pTuqJHT8BNk"
@@ -72,7 +72,7 @@
       "description": "<p>Better at everything a sniper does. Few exist, and you need a tank or plenty of fodder to draw their fire. Otherwise, hide.</p><p><em>Barghest:</em> Kurt Hansen's militia, the deserter army that holds Dogtown.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>Carries one of the listed weapons (GM's choice); both are on the sheet.</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): High-Velocity Ammo x8</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Boss • <strong>Reputation:</strong> 4 • <strong>Facedown #:</strong> 8 • <strong>COM#:</strong> 16 • <strong>Role:</strong> Solo: Combat Awareness 6</p><p>Carries one of the listed weapons (GM's choice); both are on the sheet.</p><p>Melee SP (head/body): 6/6</p>"
     }
   },
   "items": [
@@ -2357,13 +2357,13 @@
       "_key": "!actors.items!fTeotS2oOG54P1pc.CieLt4QTwty7o25A",
       "name": "Tsunami Arms Nekomata",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_standard_tech.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SniperRifle_excellent_tech.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "sniperRifle",
         "isRanged": true,
-        "quality": "standard",
-        "attackmod": 0,
+        "quality": "excellent",
+        "attackmod": 1,
         "damage": "6d6",
         "rof": 1,
         "handsReq": 2,
@@ -2502,7 +2502,7 @@
     {
       "_id": "H9Gfh71C3FlCLag9",
       "_key": "!actors.items!fTeotS2oOG54P1pc.H9Gfh71C3FlCLag9",
-      "name": "Nightstalker Ballistic Mask",
+      "name": "'Nightstalker' Ballistic Mask",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2543,7 +2543,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Barghest Veteran Sniper:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Smart Glasses, Zetatech Tank Commander Headset</p><p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2570,7 +2570,7 @@
     {
       "_id": "A4fV6I6nMbRMfWX1",
       "_key": "!actors.items!fTeotS2oOG54P1pc.A4fV6I6nMbRMfWX1",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2666,7 +2666,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "UFjtOlUJC8AnzAUe"
@@ -2728,7 +2729,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2792,7 +2793,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "fj06OnR7PWXFUd4J"
@@ -2854,7 +2856,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2918,7 +2920,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "a2GDhqKcgZ0EW0IT"
@@ -2980,7 +2983,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3044,7 +3047,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "JZXUcuZSMafw12to"
@@ -3106,7 +3110,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3140,8 +3144,63 @@
       }
     },
     {
-      "_id": "drUxx3LIzOz1w0Ei",
-      "_key": "!actors.items!fTeotS2oOG54P1pc.drUxx3LIzOz1w0Ei",
+      "_id": "cpjLMCAebjAYk7Ee",
+      "_key": "!actors.items!fTeotS2oOG54P1pc.cpjLMCAebjAYk7Ee",
+      "name": "High Velocity Ammunition (Rifle)",
+      "type": "ammo",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
+      "system": {
+        "variety": "rifle",
+        "type": "special",
+        "amount": 8,
+        "price": {
+          "market": 40
+        },
+        "ablationValue": 1,
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "overrides": {
+          "autofire": {
+            "minimum": 0,
+            "mode": "none",
+            "value": 0
+          },
+          "damage": {
+            "minimum": "",
+            "mode": "none",
+            "value": ""
+          }
+        },
+        "description": {
+          "value": "<p>Bullets. Dodging an attack with this ammunition is at −2.</p><p><strong>Cost:</strong> 40eb (Costly) /10 (price per 10)</p><p><small>Item Compendium (2070) • Ammo &amp; Explosives</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Ammo & Explosives"
+          }
+        }
+      }
+    },
+    {
+      "_id": "U4aYpBTNxiqnuqW8",
+      "_key": "!actors.items!fTeotS2oOG54P1pc.U4aYpBTNxiqnuqW8",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -3170,10 +3229,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "IBvB4Wh8PAj8lARd"
+            "yawqjnDDtonz7fmR"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -3204,8 +3264,8 @@
       }
     },
     {
-      "_id": "IBvB4Wh8PAj8lARd",
-      "_key": "!actors.items!fTeotS2oOG54P1pc.IBvB4Wh8PAj8lARd",
+      "_id": "yawqjnDDtonz7fmR",
+      "_key": "!actors.items!fTeotS2oOG54P1pc.yawqjnDDtonz7fmR",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -3232,7 +3292,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3261,74 +3321,6 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
-          }
-        }
-      }
-    },
-    {
-      "_id": "TDtlhvMHCkYcyw97",
-      "_key": "!actors.items!fTeotS2oOG54P1pc.TDtlhvMHCkYcyw97",
-      "name": "'Nightstalker' Ballistic Mask",
-      "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
-      "system": {
-        "price": {
-          "market": 5000
-        },
-        "penalty": 0,
-        "equipped": "equipped",
-        "usage": "equipped",
-        "brand": "",
-        "isShield": false,
-        "shieldHitPoints": {
-          "value": 0,
-          "max": 0
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "isElectronic": false,
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "isBodyLocation": false,
-        "isHeadLocation": true,
-        "bodyLocation": {
-          "sp": 0,
-          "ablation": 0
-        },
-        "headLocation": {
-          "sp": 11,
-          "ablation": 0
-        },
-        "description": {
-          "value": "<p><strong>Barghest Veteran Sniper:</strong> includes Anti-Smog Breathing Mask, Smart Ears, Smart Glasses, Zetatech Tank Commander Headset</p><p>Head SP11, no armor penalty. Built-in anti-smog mask, Smart Ears and Smart Glasses with a fixed Targeting Scope and TeleOptics (no slots used). Lowering the visor is an Action; down, it's a stealth headset, the glasses' options work, and Perception to recognize you takes −4.</p><p><strong>Cost:</strong> 5,000eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Armor & Shields"
           }
         }
       }

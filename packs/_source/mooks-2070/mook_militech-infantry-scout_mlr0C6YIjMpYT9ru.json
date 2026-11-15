@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "4ffdt98vzeWGliYV",
-        "O5yd9iht2HVCwwca",
+        "Xu5lOkpn1jvn3cPH",
+        "tYWxPacOsEGzVikf",
         "FRIqmisKaUv6pLZ3",
         "hbOnlcJ4MbxDt9tI",
         "dLwqVMMrHPOXCfsc"
@@ -2326,15 +2326,15 @@
     {
       "_id": "U9rVKQva7VW7J2IP",
       "_key": "!actors.items!mlr0C6YIjMpYT9ru.U9rVKQva7VW7J2IP",
-      "name": "Militech M251s Ajax",
+      "name": "Militech M251S Ajax",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2403,7 +2403,7 @@
     {
       "_id": "tw7rmYE7T2yZytsr",
       "_key": "!actors.items!mlr0C6YIjMpYT9ru.tw7rmYE7T2yZytsr",
-      "name": "Militech M-76e Omaha",
+      "name": "Militech M-76E Omaha",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/heavyPistol_standard_tech.svg",
       "system": {
@@ -2548,9 +2548,9 @@
       "_key": "!actors.items!mlr0C6YIjMpYT9ru.OXKjbHYETttMqK9H"
     },
     {
-      "_id": "hIYEUAq8MM2uGPvv",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.hIYEUAq8MM2uGPvv",
-      "name": "Medium Armorjack",
+      "_id": "YgzcgP7Gtz8C75zq",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.YgzcgP7Gtz8C75zq",
+      "name": "Medium Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2580,10 +2580,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 12,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2616,8 +2616,76 @@
       }
     },
     {
-      "_id": "sefxwMUpOhQSjTUb",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.sefxwMUpOhQSjTUb",
+      "_id": "k56HT2kSdgms0GKE",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.k56HT2kSdgms0GKE",
+      "name": "Medium Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP12. −2 REF, DEX and MOVE. Typical street wear.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "9dfg7TP7HFIRCAFC",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.9dfg7TP7HFIRCAFC",
       "name": "Grenade (Flashbang)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/flashbang.svg",
@@ -2671,8 +2739,8 @@
       }
     },
     {
-      "_id": "4ffdt98vzeWGliYV",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.4ffdt98vzeWGliYV",
+      "_id": "Xu5lOkpn1jvn3cPH",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.Xu5lOkpn1jvn3cPH",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2701,10 +2769,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "DloZNHNAVW6BetmO"
+            "0pzj8USFcMcQ6Qbb"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2735,8 +2804,8 @@
       }
     },
     {
-      "_id": "DloZNHNAVW6BetmO",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.DloZNHNAVW6BetmO",
+      "_id": "0pzj8USFcMcQ6Qbb",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.0pzj8USFcMcQ6Qbb",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2763,7 +2832,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2797,8 +2866,8 @@
       }
     },
     {
-      "_id": "O5yd9iht2HVCwwca",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.O5yd9iht2HVCwwca",
+      "_id": "tYWxPacOsEGzVikf",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.tYWxPacOsEGzVikf",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2825,7 +2894,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2859,8 +2928,8 @@
       }
     },
     {
-      "_id": "hSgZN9ovH7hUlyVV",
-      "_key": "!actors.items!mlr0C6YIjMpYT9ru.hSgZN9ovH7hUlyVV",
+      "_id": "egI1gzMIsA10j3y6",
+      "_key": "!actors.items!mlr0C6YIjMpYT9ru.egI1gzMIsA10j3y6",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -2908,7 +2977,7 @@
             "ammo"
           ],
           "list": [
-            "sefxwMUpOhQSjTUb"
+            "9dfg7TP7HFIRCAFC"
           ],
           "slots": 3,
           "usedSlots": 0

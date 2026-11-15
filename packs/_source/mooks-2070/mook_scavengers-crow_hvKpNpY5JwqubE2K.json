@@ -2549,9 +2549,9 @@
       "_key": "!actors.items!hvKpNpY5JwqubE2K.ojgjAJfNeNw0Kk9b"
     },
     {
-      "_id": "Zx0u9gKH582Q9WwM",
-      "_key": "!actors.items!hvKpNpY5JwqubE2K.Zx0u9gKH582Q9WwM",
-      "name": "Leathers",
+      "_id": "9nIya1of8Khm2BKi",
+      "_key": "!actors.items!hvKpNpY5JwqubE2K.9nIya1of8Khm2BKi",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2619,7 +2619,7 @@
     {
       "_id": "zAYM2Dhck1LZhTWx",
       "_key": "!actors.items!hvKpNpY5JwqubE2K.zAYM2Dhck1LZhTWx",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2806,7 +2806,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2870,7 +2870,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

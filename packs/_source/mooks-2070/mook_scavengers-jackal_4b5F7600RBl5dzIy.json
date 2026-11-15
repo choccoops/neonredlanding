@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "iB7yuGLjyldiZGi6",
-        "x0ygFO42kHljbc42",
-        "s06QnsjI6BPZ1m63",
+        "G9xGLIHry8kgvYqG",
+        "fUUlkDvGzbcpZPDB",
+        "9mD7C5R4gyrhUlEW",
         "fgPOdm7XDjAJpB8A",
         "uyIiNim6tlyoT6df",
         "e4eS8kThv76lYX9o"
@@ -2127,7 +2127,7 @@
             "cyberware"
           ],
           "list": [
-            "0ZcwumY70LFQDVGt"
+            "ryE3FyT5W5xO5Auy"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2397,9 +2397,9 @@
       "_key": "!actors.items!4b5F7600RBl5dzIy.HcoLlSbHNL1AUpv0"
     },
     {
-      "_id": "dRNE8ZuIKO6OUKnj",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.dRNE8ZuIKO6OUKnj",
-      "name": "Kevlar",
+      "_id": "oKu4QabFPeAQBs3f",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.oKu4QabFPeAQBs3f",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2429,10 +2429,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 7,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2465,8 +2465,76 @@
       }
     },
     {
-      "_id": "iB7yuGLjyldiZGi6",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.iB7yuGLjyldiZGi6",
+      "_id": "PY3xaq8jKwlhFY6l",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.PY3xaq8jKwlhFY6l",
+      "name": "Kevlar® (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 50
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 7,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP7. No penalty. Can be cut into anything from a business suit to a bikini.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "G9xGLIHry8kgvYqG",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.G9xGLIHry8kgvYqG",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2495,10 +2563,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "sB1uyp4m3HsApp0q"
+            "Jw5p5oh55Y20uZd0"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2529,8 +2598,8 @@
       }
     },
     {
-      "_id": "sB1uyp4m3HsApp0q",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.sB1uyp4m3HsApp0q",
+      "_id": "Jw5p5oh55Y20uZd0",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.Jw5p5oh55Y20uZd0",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2557,7 +2626,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2591,8 +2660,8 @@
       }
     },
     {
-      "_id": "x0ygFO42kHljbc42",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.x0ygFO42kHljbc42",
+      "_id": "fUUlkDvGzbcpZPDB",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.fUUlkDvGzbcpZPDB",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2621,10 +2690,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "jFXYW9HDFT6DJAoB"
+            "ESvFHrzCbnPozc55"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2655,8 +2725,8 @@
       }
     },
     {
-      "_id": "jFXYW9HDFT6DJAoB",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.jFXYW9HDFT6DJAoB",
+      "_id": "ESvFHrzCbnPozc55",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.ESvFHrzCbnPozc55",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -2683,7 +2753,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2717,8 +2787,8 @@
       }
     },
     {
-      "_id": "0ZcwumY70LFQDVGt",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.0ZcwumY70LFQDVGt",
+      "_id": "ryE3FyT5W5xO5Auy",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.ryE3FyT5W5xO5Auy",
       "name": "Kaleidoscopic Electric Reflection System (KERS)",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
@@ -2745,7 +2815,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2779,8 +2849,8 @@
       }
     },
     {
-      "_id": "s06QnsjI6BPZ1m63",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.s06QnsjI6BPZ1m63",
+      "_id": "9mD7C5R4gyrhUlEW",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.9mD7C5R4gyrhUlEW",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2809,10 +2879,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "y5VvO9rfMtR4aH8a"
+            "d6FhSOCjMtYSB6GA"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2843,8 +2914,8 @@
       }
     },
     {
-      "_id": "y5VvO9rfMtR4aH8a",
-      "_key": "!actors.items!4b5F7600RBl5dzIy.y5VvO9rfMtR4aH8a",
+      "_id": "d6FhSOCjMtYSB6GA",
+      "_key": "!actors.items!4b5F7600RBl5dzIy.d6FhSOCjMtYSB6GA",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2871,7 +2942,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2892,7 +2963,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!4b5F7600RBl5dzIy.y5VvO9rfMtR4aH8a.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!4b5F7600RBl5dzIy.d6FhSOCjMtYSB6GA.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",

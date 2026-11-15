@@ -2331,12 +2331,12 @@
       "_key": "!actors.items!HFL5rKa3JAFsbZFq.8v4Lca2kulYFqb7R",
       "name": "PQ Double-Barrel Shotgun",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_tech.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_poor_tech.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "shotgun",
         "isRanged": true,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "5d6",
         "rof": 1,
@@ -2552,9 +2552,9 @@
       "_key": "!actors.items!HFL5rKa3JAFsbZFq.id7rJRYd9avTvFad"
     },
     {
-      "_id": "ofT8Y4GeDD2O0BEr",
-      "_key": "!actors.items!HFL5rKa3JAFsbZFq.ofT8Y4GeDD2O0BEr",
-      "name": "Leathers",
+      "_id": "1Zh6I9sz6X4uaquu",
+      "_key": "!actors.items!HFL5rKa3JAFsbZFq.1Zh6I9sz6X4uaquu",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2622,7 +2622,7 @@
     {
       "_id": "yJvmdnGxsoVr49il",
       "_key": "!actors.items!HFL5rKa3JAFsbZFq.yJvmdnGxsoVr49il",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2811,7 +2811,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "gnD9IDmlVfWI4JLd"
@@ -2873,7 +2874,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2937,7 +2938,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "uIlThFzvawKtsNyv"
@@ -2999,7 +3001,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3061,7 +3063,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3125,7 +3127,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

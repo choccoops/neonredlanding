@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "ZkydtABjO2gxukx2",
-        "YJi7rZSR3joUGBjM",
+        "bORab3bIaqI97qpB",
+        "gQQLYH2bR1tViULr",
         "sgwRe9eCBq2x13nH",
         "uplplBEWrtbZmG1W",
         "3SjmKLyps3soR3oh"
@@ -69,7 +69,7 @@
       "description": "<p>Back to being a PMC, Lazarus fields some of the world's best special forces for hire, and they may be stronger than they let on.</p><p><em>Lazarus Group:</em> A private military company that hires out special forces.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 5</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): Smart Ears (w/ Level Damper &amp; Radio Communicator)</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Solo: Combat Awareness 5</p><p>Melee SP (head/body): 6/6</p>"
     }
   },
   "items": [
@@ -2326,15 +2326,15 @@
     {
       "_id": "Pw93uMmBFMbuLJLE",
       "_key": "!actors.items!6hKtHKvtifPpAHUx.Pw93uMmBFMbuLJLE",
-      "name": "Militech Ajax",
+      "name": "Militech M251S Ajax",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_excellent_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "5d6",
         "rof": 1,
         "handsReq": 2,
@@ -2375,7 +2375,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Lazarus Operator:</strong> w/ Burst Mod Internals {Selective}, Silencer, &amp; Sling; EQ</p><p><strong>Class:</strong> EQ Assault Rifle • POWER<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Assault Rifle 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Lazarus Operator:</strong> listed as Militech Ajax; w/ Burst Mod Internals {Selective}, Silencer, &amp; Sling; EQ</p><p><strong>Class:</strong> EQ Assault Rifle • POWER<br><strong>Range table:</strong> Assault Rifle<br><strong>Damage:</strong> 5d6<br><strong>Alt. fire:</strong> Autofire (Assault Rifle 4), Suppressive Fire<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2548,9 +2548,9 @@
       "_key": "!actors.items!6hKtHKvtifPpAHUx.R4TBtOEzsHIIbFre"
     },
     {
-      "_id": "Ccd4v6l1VPhHwaku",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.Ccd4v6l1VPhHwaku",
-      "name": "Light Armorjack",
+      "_id": "RORWOFR8nQ320wBp",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.RORWOFR8nQ320wBp",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2580,10 +2580,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 12,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2616,8 +2616,76 @@
       }
     },
     {
-      "_id": "ZkydtABjO2gxukx2",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.ZkydtABjO2gxukx2",
+      "_id": "lhJ330arAlzGFrvj",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.lhJ330arAlzGFrvj",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bORab3bIaqI97qpB",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.bORab3bIaqI97qpB",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2646,11 +2714,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "D4pYOBkEbs7TCyWp",
-            "ZVzYtpNk8yKl6DCP"
+            "h7MBcKY9O5bZrqKS",
+            "ZytkTJOAQPxIKMGd"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -2681,8 +2750,8 @@
       }
     },
     {
-      "_id": "D4pYOBkEbs7TCyWp",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.D4pYOBkEbs7TCyWp",
+      "_id": "h7MBcKY9O5bZrqKS",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.h7MBcKY9O5bZrqKS",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -2709,7 +2778,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2743,8 +2812,8 @@
       }
     },
     {
-      "_id": "ZVzYtpNk8yKl6DCP",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.ZVzYtpNk8yKl6DCP",
+      "_id": "ZytkTJOAQPxIKMGd",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.ZytkTJOAQPxIKMGd",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2771,7 +2840,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2805,8 +2874,52 @@
       }
     },
     {
-      "_id": "pXweBLXofkx3jh4Z",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.pXweBLXofkx3jh4Z",
+      "_id": "hAwlghmOPOzIrwGV",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.hAwlghmOPOzIrwGV",
+      "name": "Smart Ears",
+      "type": "gear",
+      "img": "systems/cyberpunk-red-core/icons/compendium/gear/auto_leveldampeningear_protectors.svg",
+      "system": {
+        "price": {
+          "market": 1000
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "carried",
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "description": {
+          "value": "<p><strong>Lazarus Operator:</strong> includes Level Damper, Radio Communicator</p><p>Worn ears with a fixed Radio Scanner/Music Player and two Cyberaudio option slots; you get what's fitted while you wear them, with no Humanity Loss. Fitting or removing an option takes an hour. One set at a time.</p><p><strong>Cost:</strong> 1,000eb</p><p><small>Item Compendium (2070) • Gear &amp; Goods</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Gear & Goods"
+          }
+        }
+      }
+    },
+    {
+      "_id": "dJAo0skFcfruoX30",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.dJAo0skFcfruoX30",
       "name": "Smart Glasses",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2849,8 +2962,8 @@
       }
     },
     {
-      "_id": "gqxkR8asCCeVkMcE",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.gqxkR8asCCeVkMcE",
+      "_id": "KSUA2kZHyusMgcy2",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.KSUA2kZHyusMgcy2",
       "name": "Grenade (Smoke)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/smoke.svg",
@@ -2904,8 +3017,8 @@
       }
     },
     {
-      "_id": "YJi7rZSR3joUGBjM",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.YJi7rZSR3joUGBjM",
+      "_id": "gQQLYH2bR1tViULr",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.gQQLYH2bR1tViULr",
       "name": "Subdermal Grip",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/subdermal_grip.svg",
@@ -2932,7 +3045,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2966,8 +3079,8 @@
       }
     },
     {
-      "_id": "Xf98n7T54DUK6LMS",
-      "_key": "!actors.items!6hKtHKvtifPpAHUx.Xf98n7T54DUK6LMS",
+      "_id": "tgTheFHDSKpmDWJM",
+      "_key": "!actors.items!6hKtHKvtifPpAHUx.tgTheFHDSKpmDWJM",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -3015,7 +3128,7 @@
             "ammo"
           ],
           "list": [
-            "gqxkR8asCCeVkMcE"
+            "KSUA2kZHyusMgcy2"
           ],
           "slots": 3,
           "usedSlots": 0

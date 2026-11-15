@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "je2oaZZlQ0L2dJbc",
-        "raMyjSVEhGISK8JP",
+        "iK5y8doBFi3vJb6v",
+        "gdVbAws2kf64XrAh",
         "3X7WyBCA314H2uJZ",
         "HvNnhF9ahu1RaGeQ",
         "fP4nPuqsg8lQVqmf"
@@ -69,7 +69,7 @@
       "description": "<p>A Triggerman with more fights, more gear and more wins; nearly a real cyberpunk.</p><p><em>Mercs:</em> Freelance edgerunners, from first-gig blazers to near-legends.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 3</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p><p>Also carries (no catalog item): x1 Timewarp (in Bodyweight Autoinjector)</p>"
+      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Solo: Combat Awareness 3</p><p>With gear or role bonuses: Resist Torture/Drugs 8 (10)</p><p>Weapon: GM's Choice (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 4/6</p>"
     }
   },
   "items": [
@@ -2283,7 +2283,7 @@
           ],
           "list": [
             "HvhS1TBoqnzPBwkd",
-            "XQc7WRcJUergFk39"
+            "VlcH4BEE63j6MlHQ"
           ],
           "slots": 7,
           "usedSlots": 2
@@ -2397,9 +2397,9 @@
       "_key": "!actors.items!DAyyoK3wFWEpQEqY.SQnLzZEmHIamjtea"
     },
     {
-      "_id": "BMdgEw3dV2BFjAC4",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.BMdgEw3dV2BFjAC4",
-      "name": "Kevlar",
+      "_id": "hXOLkfDlYVbC4x7P",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.hXOLkfDlYVbC4x7P",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2467,7 +2467,7 @@
     {
       "_id": "8b5E86p0ylyBG16N",
       "_key": "!actors.items!DAyyoK3wFWEpQEqY.8b5E86p0ylyBG16N",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2616,7 +2616,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2650,8 +2650,92 @@
       }
     },
     {
-      "_id": "je2oaZZlQ0L2dJbc",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.je2oaZZlQ0L2dJbc",
+      "_id": "vWqAPApVb6cngoX0",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.vWqAPApVb6cngoX0",
+      "name": "Timewarp",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/hornets_pharmacy/timewarp.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "amount": 1,
+        "equipped": "owned",
+        "usage": "snorted",
+        "consumed": "None",
+        "brand": "",
+        "concealable": {
+          "concealable": true,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p><strong>Hardened Triggerman:</strong> in the Bodyweight Autoinjector</p><p>Primary (1 minute): +3 to Initiative rolls; taken mid-fight, your place in the Initiative Queue rises by 3. Secondary (DV17): addicted; −2 to Initiative rolls unless dosed.</p><p><strong>Cost:</strong> 100eb (Premium) /dose</p><p><small>Item Compendium (2070) • Drugs</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [
+        {
+          "_id": "kEh64xJXdZArVJoa",
+          "_key": "!actors.items.effects!DAyyoK3wFWEpQEqY.vWqAPApVb6cngoX0.kEh64xJXdZArVJoa",
+          "name": "Timewarp",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.initiative",
+              "mode": 2,
+              "value": "3",
+              "priority": null
+            }
+          ],
+          "disabled": true,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "combat"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": false,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Drugs"
+          }
+        }
+      }
+    },
+    {
+      "_id": "iK5y8doBFi3vJb6v",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.iK5y8doBFi3vJb6v",
       "name": "Cyberaudio Suite",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberaudio_suite.svg",
@@ -2680,11 +2764,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "WsiCrngkU5oVWSMY",
-            "1K6UpMnMlI03SJe8"
+            "Kj9SdDWxoaMML01o",
+            "sRHqewke5qSm9ibh"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -2715,8 +2800,8 @@
       }
     },
     {
-      "_id": "WsiCrngkU5oVWSMY",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.WsiCrngkU5oVWSMY",
+      "_id": "Kj9SdDWxoaMML01o",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.Kj9SdDWxoaMML01o",
       "name": "Level Damper",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/level_damper.svg",
@@ -2743,7 +2828,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2777,8 +2862,8 @@
       }
     },
     {
-      "_id": "1K6UpMnMlI03SJe8",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.1K6UpMnMlI03SJe8",
+      "_id": "sRHqewke5qSm9ibh",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.sRHqewke5qSm9ibh",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2805,7 +2890,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2839,8 +2924,8 @@
       }
     },
     {
-      "_id": "raMyjSVEhGISK8JP",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.raMyjSVEhGISK8JP",
+      "_id": "gdVbAws2kf64XrAh",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.gdVbAws2kf64XrAh",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2869,7 +2954,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2901,8 +2987,8 @@
       }
     },
     {
-      "_id": "XQc7WRcJUergFk39",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.XQc7WRcJUergFk39",
+      "_id": "VlcH4BEE63j6MlHQ",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.VlcH4BEE63j6MlHQ",
       "name": "Toxin Binders",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/toxin_binders.svg",
@@ -2929,7 +3015,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2950,7 +3036,7 @@
       "effects": [
         {
           "_id": "hOK98Q5sYo12A0eb",
-          "_key": "!actors.items.effects!DAyyoK3wFWEpQEqY.XQc7WRcJUergFk39.hOK98Q5sYo12A0eb",
+          "_key": "!actors.items.effects!DAyyoK3wFWEpQEqY.VlcH4BEE63j6MlHQ.hOK98Q5sYo12A0eb",
           "name": "Toxin Binders",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3003,8 +3089,8 @@
       }
     },
     {
-      "_id": "N2O2Z38Wb9onjS9v",
-      "_key": "!actors.items!DAyyoK3wFWEpQEqY.N2O2Z38Wb9onjS9v",
+      "_id": "RdJSnINZ44fhsi8N",
+      "_key": "!actors.items!DAyyoK3wFWEpQEqY.RdJSnINZ44fhsi8N",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",

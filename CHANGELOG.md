@@ -1,5 +1,57 @@
 # Changelog
 
+## 1.26.3
+
+- **Fixed: Excellent Quality weapons were Standard.** 132 weapons whose class reads "EQ" (Fang, Bald Eagle, the Tsunami
+  Arms line, most Iconics) are now Excellent Quality with their +1 to attacks, and their icons show it.
+- **Fixed: eight machine guns had no Skill.** The guns that only fire Autofire and Suppressive Fire (Wild Dog, the
+  Mk. 31 HMG, the M2067 Defender, the L-Star and the rest) attack with Autofire; they had "N/A".
+- **Melee weapons look like what they are.** A knife has a knife's icon, a katana a sword's, and so on for batons,
+  hammers, axes, machetes and crowbars, in place of one icon per weight class (Fang had a baseball bat on a mook and a
+  sword in the compendium).
+- **Chrome that is a weapon attacks from the sheet.** Mantis Blade, Higurashi 20-13 Mantis Blades, Gorilla Arm, Wolvers,
+  Monowire, Rippers, Scratchers, Big Knucks, Slice 'N Dice, Cybersnake, ChainRipp, Combat Jaw, Combat Tail, Talon Foot,
+  Vampyres, Medtool Cyberfinger and Hello Cutie Mono-Paw are cyberware weapons, so once installed they are in the Fight
+  tab with their class's damage and ROF.
+- **Mook Pack rebuilt on the current Item Compendium.** The mooks' items had fallen behind the compendium. Now:
+  - a weapon the compendium carries is that item under its own name, with its icon, rules text and flags (Kurt
+    Hansen's Fang, Bald Eagle and Wild Dog are the Iconics); one it doesn't carry keeps the block's name on its class's
+    generic item, with an icon to match;
+  - the named bosses' weapons attack with a real Skill at the printed base (they pointed at "Melee Weapon Base 15");
+  - Martial Arts are the compendium's forms, attacking with the mook's own Martial Arts Skill;
+  - Mantis Blades and Gorilla Arms attack from the installed chrome, in place of a second, stand-in weapon;
+  - armor is the compendium's head piece and body piece under their own names (*Kevlar® (Head)*, *Kevlar® (Body)*), and
+    16 mooks no longer wear the same helmet or vest twice;
+  - doses carried in an Airhypo or Autoinjector, Concealment Sleeves, Businesswear and ammo listed without a caliber
+    are on the sheet as items.
+- **New in the Item Compendium, from what the mooks carry.** Each is also a new entry in the Item Compendium PDF:
+  - *Ion Cuffs* (500eb) and the drug *Timewarp* (100eb a dose, +3 Initiative for a minute), from Interface RED 4;
+  - *Smart Ears* (1,000eb), from Interface RED 5;
+  - *Standard Bodysculpting* and *Exotic Bodysculpting* (1,000eb, 14 Humanity Loss) as Fashionware, from the core
+    rulebook's surgery table;
+  - *Nobunaga Rifle Ammunition* (500eb for 10), the Armor-Piercing rounds the Arasaka Nobunaga's own entry names;
+  - *Dog Tags* (10eb), our own;
+  - the 14 **base vehicle classes** (Roadbike, Compact Groundcar, AV-4 and the rest) as vehicle items in a new
+    *Base Classes* folder, on the numbers in the book's Vehicle Classes table. They are items for a character sheet;
+    a class has no painted ride of its own.
+- **No mook is left with "no catalog item" in its notes.**
+  - A *Neuroport Cyberdeck Port* is the 2070 book's **Cybersuite**, installed in the Neuroport.
+  - **The seven netrunners carry a named deck loaded with quickhacks.** Their blocks say only "Cyberdeck", so each
+    has a deck from the Item Compendium at the block's price, its slots filled with quickhacks that suit the faction:
+    Arasaka's runs an Arasaka Shadow Mk.5, NetWatch's Officer a Microtech Warrior and its Special Agent the NetWatch
+    Netdriver Mk.1, the Scavengers' Spider a Microtech Hydra, the Tyger Claws' Jonin a Kirama Advanced Deck, and the
+    Voodoo Boys a Microtech Scout and, for the Manbo, a Raven Mk.3 Viral. The block's Programs for a NET Architecture
+    stay in the notes, as the deck's slots are full.
+  - A Trauma Team *Cryobag* is the **Cryopump**, which is what the core rulebook's Trauma Team carries.
+  - A maker's own model of a standard piece (the *Arasaka Corpochrome Cyberarm*) is the standard piece under that
+    name, with its options fitted.
+  - **A mook's ride is on its sheet.** Cyberpunk RED's mook sheet doesn't list vehicle items, so Neon Hub now adds
+    any a mook owns to the end of its Special Gear list (click one to open it). The Mook Pack's riders carry theirs
+    as a model from Neon Hub's vehicles: the nomads' Roadbike with a Smuggling Upgrade is the Brennan Apollo
+    "Harriet", and the Trauma Team Pilot has the Trauma Team Atlus. The notes name it too.
+  - What the block leaves to the GM (a drug, a piece of chrome, magazines for a gun the GM picks) is listed as the
+    GM's choice.
+
 ## 1.26.2
 
 - **Fixed: the Militech 'Apogee' OS wouldn't go into a Sandevistan.** It's in the Item Compendium's Iconics chapter, and it had come in as a piece of Internal Body cyberware instead of an Operating System. Neither CPR's upgrade list nor Neon Hub's drop could see it. It's now an upgrade for chrome like every other OS: size 0, 25,000eb, still counting as Borgware, with its +6 Initiative and +2 Aimed Shots as an effect to switch on. It has the Operating System icon. An Apogee already on a sheet is the old item: delete it and take the new one from the compendium.

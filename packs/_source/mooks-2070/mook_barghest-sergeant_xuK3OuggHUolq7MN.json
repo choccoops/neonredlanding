@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "LFwLmwBWZrx5yBnt",
-        "cRUb7AcZR2bhcZEg",
+        "ME3c2b1B9gxx1hsd",
+        "yNh3blQNKbusRnfz",
         "jN4aTGiD0MxCJ43a",
         "WhrGISS0nXKaksq0",
         "H7gdw5QuevDZDfmE"
@@ -69,7 +69,7 @@
       "description": "<p>Small-time veterans and proven recruits who lead squads around Dogtown, keeping them on a leash while doing Hansen's dirty work.</p><p><em>Barghest:</em> Kurt Hansen's militia, the deserter army that holds Dogtown.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Enforcer: Officer 2 (Authority 2) Solo: Combat Awareness 2</p><p><strong>Enforcer:</strong> When interacting with other BARGHEST members that they have some level of seniority over, Sergeants gain a +2 bonus to Acting, Bribery, Conversation, Interrogation, and Persuasion Skill Checks against them thanks to the Authority Veteran Ability.</p><p>With gear or role bonuses: Conversation 6 (8), Evasion 12 (10), Persuasion 6 (8)</p><p>Melee SP (head/body): 4/6</p><p>Also carries (no catalog item): x1 Black Lace (in Bodyweight Autoinjector)</p>"
+      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 3 • <strong>Facedown #:</strong> 7 • <strong>COM#:</strong> 14 • <strong>Role:</strong> Enforcer: Officer 2 (Authority 2) Solo: Combat Awareness 2</p><p><strong>Enforcer:</strong> When interacting with other BARGHEST members that they have some level of seniority over, Sergeants gain a +2 bonus to Acting, Bribery, Conversation, Interrogation, and Persuasion Skill Checks against them thanks to the Authority Veteran Ability.</p><p>With gear or role bonuses: Conversation 6 (8), Evasion 12 (10), Persuasion 6 (8)</p><p>Melee SP (head/body): 4/6</p>"
     }
   },
   "items": [
@@ -2431,7 +2431,7 @@
     {
       "_id": "0jt7hOFRPSVuf7rs",
       "_key": "!actors.items!xuK3OuggHUolq7MN.0jt7hOFRPSVuf7rs",
-      "name": "Militech M-76e Omaha",
+      "name": "Militech M-76E Omaha",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/heavyPistol_standard_tech.svg",
       "system": {
@@ -2576,9 +2576,9 @@
       "_key": "!actors.items!xuK3OuggHUolq7MN.K0gQHTDHe2d8qqEW"
     },
     {
-      "_id": "dxsPyxcIyU2pzWLk",
-      "_key": "!actors.items!xuK3OuggHUolq7MN.dxsPyxcIyU2pzWLk",
-      "name": "Kevlar",
+      "_id": "oNwRpA2qH1qPtDEF",
+      "_key": "!actors.items!xuK3OuggHUolq7MN.oNwRpA2qH1qPtDEF",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2646,7 +2646,7 @@
     {
       "_id": "2nldQ1rC1sZkr09q",
       "_key": "!actors.items!xuK3OuggHUolq7MN.2nldQ1rC1sZkr09q",
-      "name": "Medium Armorjack",
+      "name": "Medium Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2740,7 +2740,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2774,8 +2774,46 @@
       }
     },
     {
-      "_id": "LFwLmwBWZrx5yBnt",
-      "_key": "!actors.items!xuK3OuggHUolq7MN.LFwLmwBWZrx5yBnt",
+      "_id": "zlekkvBMmsmzS00Q",
+      "name": "Black Lace",
+      "type": "drug",
+      "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "consumed": "Black Lace Primary",
+        "description": {
+          "value": "<p><strong>Barghest Sergeant:</strong> in the Bodyweight Autoinjector</p><p><strong>Primary Effect</strong></p>\n<p>Dose lasts 24 hours.</p>\n<ul>\n  <li>\n    The user rolls 2d6 Humanity Loss which is returned if they pass the\n    Secondary Effect save\n  </li>\n  <li>The user ignores Seriously Wounded wound states for the duration</li>\n</ul>\n<p><strong>Secondary Effect (DV17)</strong></p>\n<p>\n  When the dose wears off, the user rolls\n  <strong>WILL + Resist Torture/Drugs + 1d10 against Secondary DV</strong>.\n</p>\n<ul>\n  <li>On Fail Humanity loss is not returned</li>\n  <li>Unless experiencing the primary effect, REF -2</li>\n</ul>\n"
+        },
+        "equipped": "owned",
+        "favorite": false,
+        "price": {
+          "market": 50
+        },
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 357
+        },
+        "usage": "snorted"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!xuK3OuggHUolq7MN.zlekkvBMmsmzS00Q"
+    },
+    {
+      "_id": "ME3c2b1B9gxx1hsd",
+      "_key": "!actors.items!xuK3OuggHUolq7MN.ME3c2b1B9gxx1hsd",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2804,10 +2842,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "aoRRHmni0aGq01Ai"
+            "MXcp0Fd3ZIMPaNNj"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2838,8 +2877,8 @@
       }
     },
     {
-      "_id": "aoRRHmni0aGq01Ai",
-      "_key": "!actors.items!xuK3OuggHUolq7MN.aoRRHmni0aGq01Ai",
+      "_id": "MXcp0Fd3ZIMPaNNj",
+      "_key": "!actors.items!xuK3OuggHUolq7MN.MXcp0Fd3ZIMPaNNj",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2866,7 +2905,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2900,8 +2939,8 @@
       }
     },
     {
-      "_id": "cRUb7AcZR2bhcZEg",
-      "_key": "!actors.items!xuK3OuggHUolq7MN.cRUb7AcZR2bhcZEg",
+      "_id": "yNh3blQNKbusRnfz",
+      "_key": "!actors.items!xuK3OuggHUolq7MN.yNh3blQNKbusRnfz",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2928,7 +2967,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

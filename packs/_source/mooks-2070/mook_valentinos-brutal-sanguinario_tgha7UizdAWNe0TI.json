@@ -2329,7 +2329,7 @@
       "_key": "!actors.items!tgha7UizdAWNe0TI.jRaoPjDr1AbJaxJ9",
       "name": "Throwing Knife",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/BaseballBat.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/CombatKnife.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "medMelee",
@@ -2374,7 +2374,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Valentino Brutal Sanguinario:</strong> Can be thrown as half of a ROF 2 Attack and still halve SP when thrown; stands in for the Throwing Knife (x2) [Can be thrown as half of a ROF 2 Attack and still halve SP when thrown]; ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Valentino Brutal Sanguinario:</strong> a Medium Melee Weapon with the block's numbers; the catalog has no Throwing Knife; Can be thrown as half of a ROF 2 Attack and still halve SP when thrown; ×2</p><p><strong>Examples:</strong> Baseball bat, crowbar, machete</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2401,9 +2401,9 @@
     {
       "_id": "c2xFtXtCgwBilCjr",
       "_key": "!actors.items!tgha7UizdAWNe0TI.c2xFtXtCgwBilCjr",
-      "name": "BigWave Foxtail",
+      "name": "Tsunami Arms Kyubi",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/AssaultRifle_poor_power.svg",
       "system": {
         "weaponSkill": "Shoulder Arms",
         "weaponType": "assaultRifle",
@@ -2450,7 +2450,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Valentino Brutal Sanguinario:</strong> PQ; Ironfake Variant Kyubi</p><p><strong>Class:</strong> EQ Assault Rifle • POWER<br><strong>Range table:</strong> Marksman Rifle<br><strong>Damage:</strong> 6d6, Drop Lowest<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Valentino Brutal Sanguinario:</strong> listed as BigWave Foxtail; PQ; Ironfake Variant Kyubi</p><p><strong>Class:</strong> EQ Assault Rifle • POWER<br><strong>Range table:</strong> Marksman Rifle<br><strong>Damage:</strong> 6d6, Drop Lowest<br><strong>Built-in:</strong> Power Rebuild</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2548,7 +2548,7 @@
     {
       "name": "Skinweave",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skin_weave.svg",
       "system": {
         "description": {
           "value": ""
@@ -2666,7 +2666,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2726,7 +2727,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

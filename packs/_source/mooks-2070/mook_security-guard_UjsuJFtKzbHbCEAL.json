@@ -2326,15 +2326,15 @@
     {
       "_id": "UQVjiPoq1DtuFGZq",
       "_key": "!actors.items!UjsuJFtKzbHbCEAL.UQVjiPoq1DtuFGZq",
-      "name": "Militech M221 Saratoga",
+      "name": "Militech M221 Saratoga (Civilian)",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_excellent_power.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "smg",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "2d6",
         "rof": 1,
         "handsReq": 1,
@@ -2405,7 +2405,7 @@
       "_key": "!actors.items!UjsuJFtKzbHbCEAL.xEwIRA0EFL93sIOq",
       "name": "Electric Baton",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/StunBaton.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
@@ -2545,9 +2545,9 @@
       "_key": "!actors.items!UjsuJFtKzbHbCEAL.U0bxD3Iq5yq9UjiA"
     },
     {
-      "_id": "W945cOUhDTKjzIhy",
-      "_key": "!actors.items!UjsuJFtKzbHbCEAL.W945cOUhDTKjzIhy",
-      "name": "Leather",
+      "_id": "PW3oiP1FWPIjbd6w",
+      "_key": "!actors.items!UjsuJFtKzbHbCEAL.PW3oiP1FWPIjbd6w",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2588,7 +2588,7 @@
           "ablation": 0
         },
         "description": {
-          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+          "value": "<p><strong>Security Guard:</strong> Leather</p><p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2615,7 +2615,7 @@
     {
       "_id": "vlAspsM9WlkeArAd",
       "_key": "!actors.items!UjsuJFtKzbHbCEAL.vlAspsM9WlkeArAd",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2711,7 +2711,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2771,7 +2772,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

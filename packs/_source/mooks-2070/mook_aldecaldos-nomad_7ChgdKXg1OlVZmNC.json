@@ -69,7 +69,7 @@
       "description": "<p>An ordinary Aldecaldo rider: no legend, but a cut above the punks they meet on the city's edges. Usually seen on a big bike in the Badlands, sometimes in Pacifica for a job.</p><p><em>Aldecaldos:</em> The biggest nomad family on Night City's edge, riding in from the Badlands for work.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Nomad: Moto 2</p><p>Weapon: GM's Choice (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p><p>Also carries (no catalog item): Roadbike (w/ Smuggling Upgrade)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Mook • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 12 • <strong>Role:</strong> Nomad: Moto 2</p><p>Weapon: GM's Choice (Cost Limit: 500eb) (ROF 1, ?)</p><p>Melee SP (head/body): 2/4</p><p>Ride (its item is on the sheet; the vehicle to put on the map is in Neon Hub's vehicles compendium): Brennan Apollo \"Harriet\", for the block's Roadbike (w/ Smuggling Upgrade)</p>"
     }
   },
   "items": [
@@ -2420,9 +2420,9 @@
       "_key": "!actors.items!7ChgdKXg1OlVZmNC.n3575y3bsF9rDXSj"
     },
     {
-      "_id": "Cz9u6FQkrgMN89X6",
-      "_key": "!actors.items!7ChgdKXg1OlVZmNC.Cz9u6FQkrgMN89X6",
-      "name": "Leathers",
+      "_id": "bbqKkxWlPwccbIvB",
+      "_key": "!actors.items!7ChgdKXg1OlVZmNC.bbqKkxWlPwccbIvB",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2490,7 +2490,7 @@
     {
       "_id": "HwcEUB7n3l3NNL2M",
       "_key": "!actors.items!7ChgdKXg1OlVZmNC.HwcEUB7n3l3NNL2M",
-      "name": "Kevlar",
+      "name": "Kevlar® (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2586,7 +2586,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,
@@ -2646,7 +2647,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2675,6 +2676,59 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "BwZHf8N0p9nzeuKN",
+      "_key": "!actors.items!7ChgdKXg1OlVZmNC.BwZHf8N0p9nzeuKN",
+      "name": "Brennan Apollo \"Harriet\"",
+      "type": "vehicle",
+      "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+      "system": {
+        "sdp": 35,
+        "seats": 2,
+        "speedCombat": 20,
+        "speedNarrative": "100 mph",
+        "price": {
+          "market": 21000
+        },
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>Aldecaldos Nomad:</strong> listed as Roadbike (w/ Smuggling Upgrade)</p><p>Roadbike: Smuggling Upgrade (saddlebags). <em>Formerly the AmeriCar Harriet 100.</em></p><p><strong>Cost:</strong> 21,000eb<br><strong>Nomad:</strong> 2<br><strong>SDP:</strong> 35<br><strong>SP:</strong> 0<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles &amp; Upgrades</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Vehicles & Upgrades"
           }
         }
       }

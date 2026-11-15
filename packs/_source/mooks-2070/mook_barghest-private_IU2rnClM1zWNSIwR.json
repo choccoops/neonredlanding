@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "MtQ3IG8RjChUkhAJ",
-        "RQaamDUPLd7xqsLm",
+        "BJIRX2dqrlY68Opm",
+        "sNvc19clYB5IsM7z",
         "O3RoKUxxm3sImpJ8",
         "qYEDaJ78TIvSZASE",
         "NOIL9XecLYFtHQRI"
@@ -2572,9 +2572,9 @@
       "_key": "!actors.items!IU2rnClM1zWNSIwR.3VdeUxn6CSukdqo2"
     },
     {
-      "_id": "otFRpqzGF7VxSPeD",
-      "_key": "!actors.items!IU2rnClM1zWNSIwR.otFRpqzGF7VxSPeD",
-      "name": "Kevlar",
+      "_id": "Z6nOhGJQhr6RQ53S",
+      "_key": "!actors.items!IU2rnClM1zWNSIwR.Z6nOhGJQhr6RQ53S",
+      "name": "Kevlar® (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2604,10 +2604,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 7,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2640,8 +2640,76 @@
       }
     },
     {
-      "_id": "MtQ3IG8RjChUkhAJ",
-      "_key": "!actors.items!IU2rnClM1zWNSIwR.MtQ3IG8RjChUkhAJ",
+      "_id": "bhidwXcKx22uSq7B",
+      "_key": "!actors.items!IU2rnClM1zWNSIwR.bhidwXcKx22uSq7B",
+      "name": "Kevlar® (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 50
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 7,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP7. No penalty. Can be cut into anything from a business suit to a bikini.</p><p><strong>Cost:</strong> 50eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "BJIRX2dqrlY68Opm",
+      "_key": "!actors.items!IU2rnClM1zWNSIwR.BJIRX2dqrlY68Opm",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2670,10 +2738,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "ugoTFDcu6TnlTPk1"
+            "gBS3PpxmbIHebWFM"
           ],
           "slots": 5,
           "usedSlots": 1
@@ -2704,8 +2773,8 @@
       }
     },
     {
-      "_id": "ugoTFDcu6TnlTPk1",
-      "_key": "!actors.items!IU2rnClM1zWNSIwR.ugoTFDcu6TnlTPk1",
+      "_id": "gBS3PpxmbIHebWFM",
+      "_key": "!actors.items!IU2rnClM1zWNSIwR.gBS3PpxmbIHebWFM",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2732,7 +2801,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2766,8 +2835,8 @@
       }
     },
     {
-      "_id": "RQaamDUPLd7xqsLm",
-      "_key": "!actors.items!IU2rnClM1zWNSIwR.RQaamDUPLd7xqsLm",
+      "_id": "sNvc19clYB5IsM7z",
+      "_key": "!actors.items!IU2rnClM1zWNSIwR.sNvc19clYB5IsM7z",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2794,7 +2863,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

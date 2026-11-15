@@ -58,8 +58,8 @@
         "cyberware"
       ],
       "list": [
-        "09OZoq10ggGuhZ5I",
-        "LuYVhoaqwE85DOC3",
+        "kxJzj6nMBmNwt904",
+        "mWsPZqv9H7sC1bmK",
         "XG3mCRviZz58Kw4b",
         "I82xwcx3tfqXMDmX",
         "iZilDihNa4fenNqd"
@@ -2546,9 +2546,9 @@
       "_key": "!actors.items!IYcoPnxNChP9O35B.x5YXDOr9MklLNdIY"
     },
     {
-      "_id": "xhWJ88Jl2YlhlF1K",
-      "_key": "!actors.items!IYcoPnxNChP9O35B.xhWJ88Jl2YlhlF1K",
-      "name": "Light Armorjack",
+      "_id": "aemMQcnuxaqs5a1A",
+      "_key": "!actors.items!IYcoPnxNChP9O35B.aemMQcnuxaqs5a1A",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2578,10 +2578,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 11,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2614,8 +2614,76 @@
       }
     },
     {
-      "_id": "09OZoq10ggGuhZ5I",
-      "_key": "!actors.items!IYcoPnxNChP9O35B.09OZoq10ggGuhZ5I",
+      "_id": "jXumabfIGUnmhySH",
+      "_key": "!actors.items!IYcoPnxNChP9O35B.jXumabfIGUnmhySH",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "kxJzj6nMBmNwt904",
+      "_key": "!actors.items!IYcoPnxNChP9O35B.kxJzj6nMBmNwt904",
       "name": "Radio Communicator (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/radio_communicator.svg",
@@ -2642,7 +2710,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2676,8 +2744,8 @@
       }
     },
     {
-      "_id": "LuYVhoaqwE85DOC3",
-      "_key": "!actors.items!IYcoPnxNChP9O35B.LuYVhoaqwE85DOC3",
+      "_id": "mWsPZqv9H7sC1bmK",
+      "_key": "!actors.items!IYcoPnxNChP9O35B.mWsPZqv9H7sC1bmK",
       "name": "Flashlight Cyberfinger",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/cyberfinger.svg",

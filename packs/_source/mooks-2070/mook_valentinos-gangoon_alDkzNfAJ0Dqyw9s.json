@@ -2395,16 +2395,16 @@
       "_key": "!actors.items!alDkzNfAJ0Dqyw9s.5MtUG0Tr9LtQoTtn"
     },
     {
-      "_id": "H7Iv7tOyi5yDpY1G",
-      "_key": "!actors.items!alDkzNfAJ0Dqyw9s.H7Iv7tOyi5yDpY1G",
-      "name": "PQ Very Heavy Pistol",
+      "_id": "Y9xF7UN19vwwYjkD",
+      "_key": "!actors.items!alDkzNfAJ0Dqyw9s.Y9xF7UN19vwwYjkD",
+      "name": "Very Heavy Pistol (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/veryHeavyPistol_poor.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "vHeavyPistol",
         "isRanged": true,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "4d6",
         "rof": 1,
@@ -2431,7 +2431,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 100
+          "market": 50
         },
         "brand": "",
         "installedItems": {
@@ -2446,7 +2446,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Valentino Gangoon:</strong> Typically an Ironfake Variant of another weapon; stands in for the PQ Very Heavy Pistol [Typically an Ironfake Variant of another weapon]</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Valentino Gangoon:</strong> Typically an Ironfake Variant of another weapon</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2473,7 +2473,7 @@
     {
       "_id": "kwIrKRMqxY99qQKt",
       "_key": "!actors.items!alDkzNfAJ0Dqyw9s.kwIrKRMqxY99qQKt",
-      "name": "Leathers",
+      "name": "Leathers (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2567,7 +2567,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2631,7 +2631,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

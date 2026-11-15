@@ -58,16 +58,16 @@
         "cyberware"
       ],
       "list": [
-        "mSWs4nnuIOyca806",
-        "JUgRQnI8HvyuJeUE",
-        "bqUFOyZkAiwErGPp",
-        "l4Zpj4IVuufsFzy8",
-        "irW7F2OctimO0hbp",
-        "vzpCGBVJMAZfUDPL",
-        "DIlmHH2ZgH5yUfBq",
-        "IlIiLM2dLP3UDDvc",
-        "bDqlMHxf1MiNXMY6",
-        "cwWu7qJ0HfvIAtBy",
+        "h0e30jFutkmKZEfx",
+        "DuGYP08Qp8b70Z7A",
+        "HpnsB97QqWRLMlog",
+        "noOUgH1Rx99r6N1c",
+        "WaRtLaC6kE9ScyES",
+        "c5q0D12bYK0Oxgsp",
+        "sZbc1DQPmfKe9Xtx",
+        "fOk3h9s8ts9g9yVg",
+        "sKtugHrb5vkHJx2Y",
+        "FwdUmGvcmctHS5zV",
         "Xbov2ok1AxiEUgqv",
         "vOxLMs7tL8sWLZnC",
         "DHL9FLBusghT5Q6B"
@@ -77,7 +77,7 @@
       "description": "<p>Hanako Arasaka's personal bodyguard and one of the deadliest cyberninjas alive, with custom chrome most mercs never see. Honor drives him to fight alone, which a well-laid trap (with plenty of EMPs) might exploit.</p><p><em>Arasaka:</em> The Japanese megacorp's security arm, from lobby guards to cyberninjas.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Elite Hardened Boss • <strong>Reputation:</strong> 9 • <strong>COM#:</strong> 18 • <strong>Role:</strong> Solo: Combat Awareness 8</p><p>With gear or role bonuses: Evasion 16 (17), Melee Weapon 16 (17/18), Perception 16 (18/20)</p><p>Head armor: After this armor spends 10 minutes not losing any SP, it restores itself to SP 12. Anyone attempting to fire Smart or Improved Smart Ammunition at Oda suffers a -2 penalty to their Attack Check.</p><p>Also carries (no catalog item): 'Kagami' Neo-Kabuto (Has TUp Smart Glasses [w/ Anti-Dazzle, Image Enhance, &amp; Targeting Scope], +1 bonus to Evasion Skill Checks and Melee Weapon Attack Checks [+2 if making an Aimed Shot])</p>"
+      "notes": "<p><strong>Threat:</strong> Elite Hardened Boss • <strong>Reputation:</strong> 9 • <strong>COM#:</strong> 18 • <strong>Role:</strong> Solo: Combat Awareness 8</p><p>With gear or role bonuses: Evasion 16 (17), Melee Weapon 16 (17/18), Perception 16 (18/20)</p><p>Head armor: After this armor spends 10 minutes not losing any SP, it restores itself to SP 12. Anyone attempting to fire Smart or Improved Smart Ammunition at Oda suffers a -2 penalty to their Attack Check.</p>"
     }
   },
   "items": [
@@ -2225,8 +2225,8 @@
             "cyberware"
           ],
           "list": [
-            "7YfCsEcEYs8zPr8A",
-            "hjpNONBie2l7oGEi"
+            "3fDBdqoGKMCDpvQr",
+            "uUNYo2qwZM8QE58B"
           ],
           "slots": 7,
           "usedSlots": 3
@@ -2384,9 +2384,9 @@
             "cyberware"
           ],
           "list": [
-            "h8sWKc3oI3tnmWUW",
-            "c3ejbkU2NwYB0YKE",
-            "RBCG6UOJHpYC7vbn"
+            "9oeWM2tXEX2SU2Xq",
+            "Dyru7xC3zDmnaW97",
+            "mSOkPkn0btotA1re"
           ],
           "slots": 7,
           "usedSlots": 3
@@ -2434,13 +2434,13 @@
       "_key": "!actors.items!MIOYDdhFMLEnSRXc.EwHJqvwdceJ0Zkgz",
       "name": "Arasaka TKI-20 Shingen",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_standard_smart.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/heavySMG_excellent_smart.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "heavySmg",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 1,
+        "attackmod": 2,
         "damage": "4d6",
         "rof": 1,
         "handsReq": 2,
@@ -2507,87 +2507,13 @@
       }
     },
     {
-      "_id": "cthrIOaERpzJVL72",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.cthrIOaERpzJVL72",
-      "name": "Custom Monoblade Mantis Blades",
-      "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Sword.svg",
-      "system": {
-        "weaponSkill": "Melee Weapon",
-        "weaponType": "heavyMelee",
-        "isRanged": false,
-        "quality": "excellent",
-        "attackmod": 0,
-        "damage": "3d6",
-        "rof": 2,
-        "handsReq": 2,
-        "magazine": {
-          "value": 0,
-          "max": 0,
-          "ammoData": null
-        },
-        "ammoVariety": [],
-        "usesType": "magazine",
-        "fireModes": {
-          "autoFire": 0,
-          "suppressiveFire": false
-        },
-        "concealable": {
-          "concealable": false,
-          "isConcealed": false
-        },
-        "dvTable": "",
-        "critFailEffect": "jammed",
-        "equipped": "equipped",
-        "usage": "equipped",
-        "price": {
-          "market": 100
-        },
-        "brand": "",
-        "installedItems": {
-          "allowed": true,
-          "allowedTypes": [
-            "itemUpgrade",
-            "ammo"
-          ],
-          "list": [],
-          "slots": 3,
-          "usedSlots": 0
-        },
-        "unarmedAutomaticCalculation": false,
-        "description": {
-          "value": "<p><strong>Sandayu Oda:</strong> EQ; stands in for the Custom Monoblade Mantis Blades (x2) [EQ]; Ignores armor below SP 11.; ×2</p><p><strong>Examples:</strong> Lead pipe, sword, spiked bat</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
-        },
-        "source": {
-          "book": "Item Compendium (2070)",
-          "page": 0
-        },
-        "revealed": true,
-        "favorite": false
-      },
-      "effects": [],
-      "flags": {
-        "cyberpunk-red-core": {
-          "_migration": {
-            "current": 33
-          }
-        },
-        "cpr-neon-hub": {
-          "source2070": {
-            "book": "Item Compendium (2070)",
-            "chapter": "Weapons"
-          }
-        }
-      }
-    },
-    {
-      "_id": "d9Dz4eNpuM93o4uX",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.d9Dz4eNpuM93o4uX",
+      "_id": "LmQdqPOEPNghIzOp",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.LmQdqPOEPNghIzOp",
       "name": "Martial Arts (Arasaka-te)",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/derived/martial_chrome.svg",
       "system": {
-        "weaponSkill": "Martial Arts (Arasaka-Te)",
+        "weaponSkill": "Martial Arts (Arasaka-te)",
         "weaponType": "martialArts",
         "isRanged": false,
         "quality": "standard",
@@ -2657,17 +2583,17 @@
       }
     },
     {
-      "_id": "6puNeP52sEgdfee3",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.6puNeP52sEgdfee3",
-      "name": "Jinchu-Maru",
+      "_id": "VrsnEgOa8NXatufn",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.VrsnEgOa8NXatufn",
+      "name": "Jinchu-Maru (Oda’s Sword)",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/Sword_standard_iconic.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/Sword_excellent_iconic.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "heavyMelee",
         "isRanged": false,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 2,
         "damage": "3d6",
         "rof": 2,
         "handsReq": 2,
@@ -2797,48 +2723,121 @@
           }
         }
       },
-      "_id": "gvc8cttzR2eCmVof",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.gvc8cttzR2eCmVof"
+      "_id": "ukN1IvWQX2NhLmpp",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.ukN1IvWQX2NhLmpp"
     },
     {
-      "name": "'Kagami' Neo-Kabuto",
+      "_id": "5s6eGmc8ptFtNCHX",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.5s6eGmc8ptFtNCHX",
+      "name": "Arasaka \"Kagami\" Neo-Kabuto",
       "type": "armor",
-      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor_Head.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
-        "description": {
-          "value": "<p><strong>Sandayu Oda:</strong> \"Kagami\" Neo-Kabuto</p>"
-        },
         "price": {
-          "market": 0
+          "market": 10000
         },
         "penalty": 0,
+        "equipped": "equipped",
         "usage": "equipped",
-        "isHeadLocation": true,
-        "isBodyLocation": false,
-        "headLocation": {
-          "sp": 12,
-          "ablation": 0
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
         },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": false,
+        "isHeadLocation": true,
         "bodyLocation": {
           "sp": 0,
           "ablation": 0
         },
-        "equipped": "equipped"
+        "headLocation": {
+          "sp": 12,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p><strong>Sandayu Oda:</strong> includes TUp Smart Glasses, +1 bonus to Evasion Skill Checks, Melee Weapon Attack Checks</p><p><strong>Sandayu Oda:</strong> \"Kagami\" Neo-Kabuto</p><p>Head SP13, no armor penalty; ablation against it is 1 less (min 0). Built-in Smart Glasses (an extra slot) with Anti-Dazzle, Image Enhance and Targeting Scope. With Melee Weapon 7+ and Evasion 7+, or Combat Awareness 6+: +1 to Melee Weapon (+2 on Aimed Shots) and Evasion. Improved Smart shots at you take −2. After 10 minutes without losing SP, it's back to SP13.</p><p><strong>Cost:</strong> Super Luxury</p><p><small>Item Compendium (2070) • Iconics</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
       },
-      "_id": "vQL6GwtXx8ZkdKH3",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.vQL6GwtXx8ZkdKH3",
+      "effects": [
+        {
+          "_id": "wAyyxetWHbyF9u7c",
+          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.5s6eGmc8ptFtNCHX.wAyyxetWHbyF9u7c",
+          "name": "Arasaka \"Kagami\" Neo-Kabuto (situational)",
+          "img": "icons/svg/aura.svg",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "bonuses.meleeWeapon",
+              "mode": 2,
+              "value": "1",
+              "priority": null
+            }
+          ],
+          "disabled": false,
+          "transfer": true,
+          "origin": null,
+          "duration": {},
+          "description": "",
+          "statuses": [],
+          "tint": "#ffffff",
+          "sort": 0,
+          "flags": {
+            "cyberpunk-red-core": {
+              "changes": {
+                "cats": {
+                  "0": "skill"
+                },
+                "situational": {
+                  "0": {
+                    "isSituational": true,
+                    "onByDefault": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
       "flags": {
         "cyberpunk-red-core": {
           "_migration": {
             "current": 33
           }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Iconics"
+          }
         }
       }
     },
     {
-      "_id": "fsfdmUSxBOoGO8Hn",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.fsfdmUSxBOoGO8Hn",
-      "name": "Light Armorjack",
+      "_id": "8lx1rGQNpzVhSLjf",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.8lx1rGQNpzVhSLjf",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2904,8 +2903,8 @@
       }
     },
     {
-      "_id": "CHHT7KXaflpkeOD9",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.CHHT7KXaflpkeOD9",
+      "_id": "z1tv8eis4y7AfKop",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.z1tv8eis4y7AfKop",
       "name": "Grenade (Flashbang)",
       "type": "ammo",
       "img": "modules/cpr-neon-hub/assets/items/grenades/flashbang.svg",
@@ -2959,8 +2958,8 @@
       }
     },
     {
-      "_id": "lQYsr4rzKZT9y1QF",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.lQYsr4rzKZT9y1QF",
+      "_id": "vl5YSbRDyyKlDpkW",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.vl5YSbRDyyKlDpkW",
       "name": "Improved Smart Ammunition (Heavy Pistol)",
       "type": "ammo",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Ammo.svg",
@@ -3014,8 +3013,8 @@
       }
     },
     {
-      "_id": "mSWs4nnuIOyca806",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.mSWs4nnuIOyca806",
+      "_id": "h0e30jFutkmKZEfx",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.h0e30jFutkmKZEfx",
       "name": "Advanced Neural Link",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/neural_link.svg",
@@ -3044,7 +3043,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 4,
@@ -3076,8 +3076,8 @@
       }
     },
     {
-      "_id": "h8sWKc3oI3tnmWUW",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.h8sWKc3oI3tnmWUW",
+      "_id": "9oeWM2tXEX2SU2Xq",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.9oeWM2tXEX2SU2Xq",
       "name": "Blood Pump",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
@@ -3104,7 +3104,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3138,8 +3138,8 @@
       }
     },
     {
-      "_id": "JUgRQnI8HvyuJeUE",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.JUgRQnI8HvyuJeUE",
+      "_id": "DuGYP08Qp8b70Z7A",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.DuGYP08Qp8b70Z7A",
       "name": "Chrome Compressor",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/borgware_iconic.svg",
@@ -3166,7 +3166,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3200,8 +3200,8 @@
       }
     },
     {
-      "_id": "bqUFOyZkAiwErGPp",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.bqUFOyZkAiwErGPp",
+      "_id": "HpnsB97QqWRLMlog",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.HpnsB97QqWRLMlog",
       "name": "Cyberarm",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -3230,11 +3230,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "wKT4Ltty4fboxrVq",
-            "jTpGfMWtdmmzy4vK"
+            "zvLNDky13PzwAtnd",
+            "zwdoNigmy1od0dPk"
           ],
           "slots": 4,
           "usedSlots": 3
@@ -3265,8 +3266,8 @@
       }
     },
     {
-      "_id": "wKT4Ltty4fboxrVq",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.wKT4Ltty4fboxrVq",
+      "_id": "zvLNDky13PzwAtnd",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.zvLNDky13PzwAtnd",
       "name": "Reinforced Cyberlimb Upgrade",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -3293,7 +3294,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3327,8 +3328,8 @@
       }
     },
     {
-      "_id": "jTpGfMWtdmmzy4vK",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.jTpGfMWtdmmzy4vK",
+      "_id": "zwdoNigmy1od0dPk",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.zwdoNigmy1od0dPk",
       "name": "Mantis Blade",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_melee_weapon.svg",
@@ -3347,15 +3348,15 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3363,8 +3364,30 @@
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 2,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+          "value": "<p><strong>Sandayu Oda:</strong> EQ; Ignores armor below SP 11.; ×2</p><p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -3389,8 +3412,8 @@
       }
     },
     {
-      "_id": "l4Zpj4IVuufsFzy8",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.l4Zpj4IVuufsFzy8",
+      "_id": "noOUgH1Rx99r6N1c",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.noOUgH1Rx99r6N1c",
       "name": "Cyberarm",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -3419,11 +3442,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "JP6gC7lMKgprfG9x",
-            "i4n65qxoYdAZwDmj"
+            "x6RbEhnnf3QSe0dY",
+            "25Lljtq2jTSfXUCT"
           ],
           "slots": 4,
           "usedSlots": 3
@@ -3454,8 +3478,8 @@
       }
     },
     {
-      "_id": "JP6gC7lMKgprfG9x",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.JP6gC7lMKgprfG9x",
+      "_id": "x6RbEhnnf3QSe0dY",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.x6RbEhnnf3QSe0dY",
       "name": "Reinforced Cyberlimb Upgrade",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberarm.svg",
@@ -3482,7 +3506,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3516,8 +3540,8 @@
       }
     },
     {
-      "_id": "i4n65qxoYdAZwDmj",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.i4n65qxoYdAZwDmj",
+      "_id": "25Lljtq2jTSfXUCT",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.25Lljtq2jTSfXUCT",
       "name": "Mantis Blade",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/popup_melee_weapon.svg",
@@ -3536,15 +3560,15 @@
         "usage": "installed",
         "brand": "",
         "core": false,
-        "isWeapon": false,
+        "isWeapon": true,
         "isElectronic": true,
         "concealable": {
-          "concealable": false,
+          "concealable": true,
           "isConcealed": false
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3552,6 +3576,28 @@
           "slots": 0,
           "usedSlots": 0
         },
+        "weaponSkill": "Melee Weapon",
+        "weaponType": "heavyMelee",
+        "isRanged": false,
+        "quality": "excellent",
+        "attackmod": 1,
+        "damage": "3d6",
+        "rof": 2,
+        "handsReq": 1,
+        "magazine": {
+          "value": 0,
+          "max": 0,
+          "ammoData": null
+        },
+        "ammoVariety": [],
+        "usesType": "magazine",
+        "fireModes": {
+          "autoFire": 0,
+          "suppressiveFire": false
+        },
+        "dvTable": "",
+        "critFailEffect": "jammed",
+        "unarmedAutomaticCalculation": false,
         "description": {
           "value": "<p>Cyberarm or cyberleg option, 2 slots. A one-handed Excellent Heavy Melee Weapon, concealed without a Check, drawn and stowed for free. While it's out, that hand can't hold anything (legs don't care, unless it's a Prehensile Foot). A pair in paired limbs, both out: no climbing penalty.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
         },
@@ -3578,8 +3624,8 @@
       }
     },
     {
-      "_id": "irW7F2OctimO0hbp",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.irW7F2OctimO0hbp",
+      "_id": "WaRtLaC6kE9ScyES",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.WaRtLaC6kE9ScyES",
       "name": "Cyberaudio Suite",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberaudio_suite.svg",
@@ -3608,12 +3654,13 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "Mqnzdvb1kTi46bhg",
-            "Qs6ehU52aLGUXuS4",
-            "8PdayX39FlcUA21H"
+            "TuiJPU5fOjXZNkhY",
+            "EfnNXyg4criUbUeE",
+            "Iaz37CusErLGuvkV"
           ],
           "slots": 3,
           "usedSlots": 3
@@ -3644,8 +3691,8 @@
       }
     },
     {
-      "_id": "Mqnzdvb1kTi46bhg",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.Mqnzdvb1kTi46bhg",
+      "_id": "TuiJPU5fOjXZNkhY",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.TuiJPU5fOjXZNkhY",
       "name": "Amplified Hearing",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/amplified_hearing.svg",
@@ -3672,7 +3719,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3693,7 +3740,7 @@
       "effects": [
         {
           "_id": "pL1CKNaCTZNbLkEk",
-          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.Mqnzdvb1kTi46bhg.pL1CKNaCTZNbLkEk",
+          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.TuiJPU5fOjXZNkhY.pL1CKNaCTZNbLkEk",
           "name": "Amplified Hearing (situational)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3746,8 +3793,8 @@
       }
     },
     {
-      "_id": "Qs6ehU52aLGUXuS4",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.Qs6ehU52aLGUXuS4",
+      "_id": "EfnNXyg4criUbUeE",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.EfnNXyg4criUbUeE",
       "name": "Homing Tracer (implant)",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/homing_tracer.svg",
@@ -3774,7 +3821,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3808,8 +3855,8 @@
       }
     },
     {
-      "_id": "8PdayX39FlcUA21H",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.8PdayX39FlcUA21H",
+      "_id": "Iaz37CusErLGuvkV",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.Iaz37CusErLGuvkV",
       "name": "Level Damper",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/level_damper.svg",
@@ -3836,7 +3883,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3870,8 +3917,8 @@
       }
     },
     {
-      "_id": "vzpCGBVJMAZfUDPL",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.vzpCGBVJMAZfUDPL",
+      "_id": "c5q0D12bYK0Oxgsp",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.c5q0D12bYK0Oxgsp",
       "name": "Cybereye",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cybereye.svg",
@@ -3900,10 +3947,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "dra7fTKSviHWZipW"
+            "x0fLs72HNeypmtPO"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -3934,8 +3982,8 @@
       }
     },
     {
-      "_id": "dra7fTKSviHWZipW",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.dra7fTKSviHWZipW",
+      "_id": "x0fLs72HNeypmtPO",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.x0fLs72HNeypmtPO",
       "name": "Low Light / Infrared / UV",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/lowlight_ir_uv.svg",
@@ -3962,7 +4010,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3996,8 +4044,8 @@
       }
     },
     {
-      "_id": "DIlmHH2ZgH5yUfBq",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.DIlmHH2ZgH5yUfBq",
+      "_id": "sZbc1DQPmfKe9Xtx",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.sZbc1DQPmfKe9Xtx",
       "name": "Cybereye",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cybereye.svg",
@@ -4026,10 +4074,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "ySW2uRlqujcDd1DQ"
+            "HaHsuab4t5n4WFZy"
           ],
           "slots": 3,
           "usedSlots": 2
@@ -4060,8 +4109,8 @@
       }
     },
     {
-      "_id": "ySW2uRlqujcDd1DQ",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.ySW2uRlqujcDd1DQ",
+      "_id": "HaHsuab4t5n4WFZy",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.HaHsuab4t5n4WFZy",
       "name": "Low Light / Infrared / UV",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/lowlight_ir_uv.svg",
@@ -4088,7 +4137,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4122,8 +4171,8 @@
       }
     },
     {
-      "_id": "IlIiLM2dLP3UDDvc",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.IlIiLM2dLP3UDDvc",
+      "_id": "fOk3h9s8ts9g9yVg",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.fOk3h9s8ts9g9yVg",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -4152,11 +4201,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "jV25015POzA61srN",
-            "R6NgetwoyU3DAXha"
+            "FIQC5f20BVLMmnvx",
+            "dSJHhnsorVRgbBeg"
           ],
           "slots": 3,
           "usedSlots": 3
@@ -4187,8 +4237,8 @@
       }
     },
     {
-      "_id": "jV25015POzA61srN",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.jV25015POzA61srN",
+      "_id": "FIQC5f20BVLMmnvx",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.FIQC5f20BVLMmnvx",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -4215,7 +4265,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4249,8 +4299,8 @@
       }
     },
     {
-      "_id": "R6NgetwoyU3DAXha",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.R6NgetwoyU3DAXha",
+      "_id": "dSJHhnsorVRgbBeg",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.dSJHhnsorVRgbBeg",
       "name": "Skate Foot",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skate_foot.svg",
@@ -4277,7 +4327,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4311,8 +4361,8 @@
       }
     },
     {
-      "_id": "bDqlMHxf1MiNXMY6",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.bDqlMHxf1MiNXMY6",
+      "_id": "sKtugHrb5vkHJx2Y",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.sKtugHrb5vkHJx2Y",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -4341,11 +4391,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "ZL9U3Ifsau7VzG01",
-            "ySRpLw8U3Dvm5hFs"
+            "2qTkQ8SGvuYC9r0V",
+            "EkOpAdBU4KHfmro4"
           ],
           "slots": 3,
           "usedSlots": 3
@@ -4376,8 +4427,8 @@
       }
     },
     {
-      "_id": "ZL9U3Ifsau7VzG01",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.ZL9U3Ifsau7VzG01",
+      "_id": "2qTkQ8SGvuYC9r0V",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.2qTkQ8SGvuYC9r0V",
       "name": "Jump Booster",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/jump_booster.svg",
@@ -4404,7 +4455,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4438,8 +4489,8 @@
       }
     },
     {
-      "_id": "ySRpLw8U3Dvm5hFs",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.ySRpLw8U3Dvm5hFs",
+      "_id": "EkOpAdBU4KHfmro4",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.EkOpAdBU4KHfmro4",
       "name": "Skate Foot",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/skate_foot.svg",
@@ -4466,7 +4517,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4500,8 +4551,8 @@
       }
     },
     {
-      "_id": "c3ejbkU2NwYB0YKE",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.c3ejbkU2NwYB0YKE",
+      "_id": "Dyru7xC3zDmnaW97",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.Dyru7xC3zDmnaW97",
       "name": "Grafted Muscle and Bone Lace",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/grafted_muscle_and_bone_lace.svg",
@@ -4533,7 +4584,7 @@
             "itemUpgrade"
           ],
           "list": [
-            "HjjFnlOEvdjB0HS8"
+            "vuJyok6UYVUMi2fn"
           ],
           "slots": 0,
           "usedSlots": 0
@@ -4551,7 +4602,7 @@
       "effects": [
         {
           "_id": "xDZpMcSynh0xdb2s",
-          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.c3ejbkU2NwYB0YKE.xDZpMcSynh0xdb2s",
+          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.Dyru7xC3zDmnaW97.xDZpMcSynh0xdb2s",
           "name": "Grafted Muscle and Bone Lace",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -4604,8 +4655,8 @@
       }
     },
     {
-      "_id": "HjjFnlOEvdjB0HS8",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.HjjFnlOEvdjB0HS8",
+      "_id": "vuJyok6UYVUMi2fn",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.vuJyok6UYVUMi2fn",
       "name": "Epimorphic Skeleton",
       "type": "itemUpgrade",
       "img": "modules/cpr-neon-hub/assets/items/upgrades/cyberEnhancement.svg",
@@ -4648,8 +4699,8 @@
       }
     },
     {
-      "_id": "cwWu7qJ0HfvIAtBy",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.cwWu7qJ0HfvIAtBy",
+      "_id": "FwdUmGvcmctHS5zV",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.FwdUmGvcmctHS5zV",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -4678,15 +4729,16 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "xz8ijlvXOoED1n6Y",
-            "mdHZQW9vbMEHe8fA",
-            "XYlcMtIbZ2Yj8RjL",
-            "f43qBH5PFxkQxtoB",
-            "xtevSF3apQsQ9OhP",
-            "HgeFWqeZOaN2fkHy"
+            "fpoKd6M2C2kKhOPe",
+            "KcZt7vgm43h5Ti5J",
+            "erZHmTnlV7ufbdQa",
+            "oxUuOxcYwoushSMT",
+            "glZ6hFfsqG1vIsCN",
+            "ok9nYHMKSlfYc3Dp"
           ],
           "slots": 6,
           "usedSlots": 6
@@ -4717,8 +4769,8 @@
       }
     },
     {
-      "_id": "xz8ijlvXOoED1n6Y",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.xz8ijlvXOoED1n6Y",
+      "_id": "fpoKd6M2C2kKhOPe",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.fpoKd6M2C2kKhOPe",
       "name": "Atomic Sensors",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -4745,7 +4797,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4779,8 +4831,8 @@
       }
     },
     {
-      "_id": "mdHZQW9vbMEHe8fA",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.mdHZQW9vbMEHe8fA",
+      "_id": "KcZt7vgm43h5Ti5J",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.KcZt7vgm43h5Ti5J",
       "name": "Kerenzikov",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
@@ -4807,7 +4859,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4841,8 +4893,8 @@
       }
     },
     {
-      "_id": "XYlcMtIbZ2Yj8RjL",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.XYlcMtIbZ2Yj8RjL",
+      "_id": "erZHmTnlV7ufbdQa",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.erZHmTnlV7ufbdQa",
       "name": "Pain Editor",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/pain_editor.svg",
@@ -4869,7 +4921,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4903,8 +4955,8 @@
       }
     },
     {
-      "_id": "f43qBH5PFxkQxtoB",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.f43qBH5PFxkQxtoB",
+      "_id": "oxUuOxcYwoushSMT",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.oxUuOxcYwoushSMT",
       "name": "Reflex Tuner",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -4931,7 +4983,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -4952,7 +5004,7 @@
       "effects": [
         {
           "_id": "JqohFyPoRq2d2YSw",
-          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.f43qBH5PFxkQxtoB.JqohFyPoRq2d2YSw",
+          "_key": "!actors.items.effects!MIOYDdhFMLEnSRXc.oxUuOxcYwoushSMT.JqohFyPoRq2d2YSw",
           "name": "Reflex Tuner (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -5005,8 +5057,8 @@
       }
     },
     {
-      "_id": "xtevSF3apQsQ9OhP",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.xtevSF3apQsQ9OhP",
+      "_id": "glZ6hFfsqG1vIsCN",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.glZ6hFfsqG1vIsCN",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -5033,7 +5085,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -5067,8 +5119,8 @@
       }
     },
     {
-      "_id": "HgeFWqeZOaN2fkHy",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.HgeFWqeZOaN2fkHy",
+      "_id": "ok9nYHMKSlfYc3Dp",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.ok9nYHMKSlfYc3Dp",
       "name": "Synaptic Accelerator",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -5095,7 +5147,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -5129,8 +5181,8 @@
       }
     },
     {
-      "_id": "7YfCsEcEYs8zPr8A",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.7YfCsEcEYs8zPr8A",
+      "_id": "3fDBdqoGKMCDpvQr",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.3fDBdqoGKMCDpvQr",
       "name": "Optical Camo",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/color_shift.svg",
@@ -5157,7 +5209,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -5191,8 +5243,8 @@
       }
     },
     {
-      "_id": "hjpNONBie2l7oGEi",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.hjpNONBie2l7oGEi",
+      "_id": "uUNYo2qwZM8QE58B",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.uUNYo2qwZM8QE58B",
       "name": "ProxiShield",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
@@ -5219,7 +5271,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -5253,8 +5305,8 @@
       }
     },
     {
-      "_id": "RBCG6UOJHpYC7vbn",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.RBCG6UOJHpYC7vbn",
+      "_id": "mSOkPkn0btotA1re",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.mSOkPkn0btotA1re",
       "name": "ThreatEvac",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/internal.svg",
@@ -5281,7 +5333,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -5315,8 +5367,8 @@
       }
     },
     {
-      "_id": "7lsgnwGBlQp0p57s",
-      "_key": "!actors.items!MIOYDdhFMLEnSRXc.7lsgnwGBlQp0p57s",
+      "_id": "JMIADyy0C4IctEpi",
+      "_key": "!actors.items!MIOYDdhFMLEnSRXc.JMIADyy0C4IctEpi",
       "name": "Thrown Weapon",
       "type": "weapon",
       "img": "systems/cyberpunk-red-core/icons/compendium/weapons/thrown_weapon.svg",
@@ -5364,7 +5416,7 @@
             "ammo"
           ],
           "list": [
-            "CHHT7KXaflpkeOD9"
+            "z1tv8eis4y7AfKop"
           ],
           "slots": 3,
           "usedSlots": 0

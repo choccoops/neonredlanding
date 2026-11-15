@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "dAQCbh60Uuk40zZu",
+        "rGte4IQl7KkxT7Ru",
         "0Teo4Wehxd7wwq8n",
         "jLA38cguseesZTY1",
         "UMZWodvO4trnplrH"
@@ -68,7 +68,7 @@
       "description": "<p>Information brokers and datafort defenders. Weak in a straight fight, but they keep the Tygers aware of everything on their turf.</p><p><em>Tyger Claws:</em> Japantown's yakuza-style gang, blades, bikes and neon tattoos.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Netrunner: Interface 3</p><p>With gear or role bonuses: Library Search 10 (12)</p><p>Melee SP (head/body): 2/6</p><p>Programs: Armor, Banhammer x2, Nervescrub, Speedy Gonzalez, Wisp</p><p>Also carries (no catalog item): Businesswear; Neuroport Cyberdeck Port (in Neuroport)</p>"
+      "notes": "<p><strong>Threat:</strong> Lieutenant • <strong>Reputation:</strong> 1 • <strong>Facedown #:</strong> 5 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Netrunner: Interface 3</p><p>With gear or role bonuses: Library Search 10 (12)</p><p>Melee SP (head/body): 2/6</p><p>Programs for a NET Architecture run (not loaded: the deck's slots hold its quickhacks): Armor, Banhammer x2, Nervescrub, Speedy Gonzalez, Wisp</p>"
     }
   },
   "items": [
@@ -2496,9 +2496,9 @@
       }
     },
     {
-      "_id": "RKkgGBtYhcMgKx0o",
-      "_key": "!actors.items!ngW1VFQR9cRpVYKG.RKkgGBtYhcMgKx0o",
-      "name": "Leathers",
+      "_id": "vmUbQjh7YomiAYAm",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.vmUbQjh7YomiAYAm",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2566,7 +2566,7 @@
     {
       "_id": "Tl8oquta79qfmOfO",
       "_key": "!actors.items!ngW1VFQR9cRpVYKG.Tl8oquta79qfmOfO",
-      "name": "Light Armorjack",
+      "name": "Light Armorjack (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2632,8 +2632,208 @@
       }
     },
     {
-      "_id": "drPhaMYBGjzxGQaG",
-      "_key": "!actors.items!ngW1VFQR9cRpVYKG.drPhaMYBGjzxGQaG",
+      "_id": "iGDznnVmwQK2v9TJ",
+      "name": "Businesswear Jacket",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_jacket.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "jacket",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.iGDznnVmwQK2v9TJ"
+    },
+    {
+      "_id": "zhETWVSPsS7WO4iT",
+      "name": "Businesswear Top",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_top.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 50
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "top",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.zhETWVSPsS7WO4iT"
+    },
+    {
+      "_id": "6e1LQTENXarvCYuZ",
+      "name": "Businesswear Bottoms",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_bottoms.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "bottoms",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.6e1LQTENXarvCYuZ"
+    },
+    {
+      "_id": "SJPyZoNATpivGEZl",
+      "name": "Businesswear Footwear",
+      "type": "clothing",
+      "img": "systems/cyberpunk-red-core/icons/compendium/clothing/generic_footwear.svg",
+      "system": {
+        "amount": 1,
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "description": {
+          "value": "<p>\n  Your typical corporative clothing. Show everyone that you're here and you mean\n  business.\n</p>\n"
+        },
+        "equipped": "equipped",
+        "favorite": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isElectronic": false,
+        "price": {
+          "market": 500
+        },
+        "providesHardening": false,
+        "revealed": true,
+        "source": {
+          "book": "Core",
+          "page": 356
+        },
+        "style": "businesswear",
+        "type": "footwear",
+        "usage": "equipped"
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        }
+      },
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.SJPyZoNATpivGEZl"
+    },
+    {
+      "_id": "jlRlwYZalv5UeH2G",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.jlRlwYZalv5UeH2G",
       "name": "Infovisor",
       "type": "gear",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Gear.svg",
@@ -2663,7 +2863,7 @@
       "effects": [
         {
           "_id": "bsbWnRlJAXotJfHY",
-          "_key": "!actors.items.effects!ngW1VFQR9cRpVYKG.drPhaMYBGjzxGQaG.bsbWnRlJAXotJfHY",
+          "_key": "!actors.items.effects!ngW1VFQR9cRpVYKG.jlRlwYZalv5UeH2G.bsbWnRlJAXotJfHY",
           "name": "Infovisor (situational)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -2716,8 +2916,8 @@
       }
     },
     {
-      "_id": "dAQCbh60Uuk40zZu",
-      "_key": "!actors.items!ngW1VFQR9cRpVYKG.dAQCbh60Uuk40zZu",
+      "_id": "rGte4IQl7KkxT7Ru",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.rGte4IQl7KkxT7Ru",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2746,13 +2946,15 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "okEdoUtswGnOHOme"
+            "UbxXOduBXn0kaTAz",
+            "ZHHo1pLzDQ5E85kj"
           ],
           "slots": 5,
-          "usedSlots": 1
+          "usedSlots": 2
         },
         "description": {
           "value": "<p>Required for all non-medical cyberware. Contains: <strong>Neural Link</strong> (5 Neuralware slots, none used by the rest), <strong>Holophone</strong>, <strong>Biomonitor</strong>, <strong>Virtu</strong> (virtual experiences; full immersion when deep diving), <strong>HUD</strong> (labels, transcripts, subtitles; shown in any cybereye, replacing the Chyron), <strong>two Shard Slots</strong> (chipware sockets) and a <strong>Personal Link</strong> (pull-out interface plug). Has a basic firewall (Chapter 10 of the Core Rules).</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
@@ -2780,8 +2982,381 @@
       }
     },
     {
-      "_id": "okEdoUtswGnOHOme",
-      "_key": "!actors.items!ngW1VFQR9cRpVYKG.okEdoUtswGnOHOme",
+      "_id": "LzNEcAsQJiJJDKoa",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.LzNEcAsQJiJJDKoa",
+      "name": "Kirama Advanced Deck",
+      "type": "cyberdeck",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Cyberdeck.svg",
+      "system": {
+        "price": {
+          "market": 500
+        },
+        "quality": "standard",
+        "size": 1,
+        "installLocation": "mall",
+        "equipped": "equipped",
+        "isElectronic": true,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade",
+            "program"
+          ],
+          "list": [
+            "tQQnJ3BFLIhslsbk",
+            "vvn9DxKo4989i47x",
+            "T9yEW5pglpLM6po5",
+            "hT3JyU2EINV2Gh54",
+            "myuILiwE51pneBuP"
+          ],
+          "slots": 5,
+          "usedSlots": 5
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "brand": "",
+        "description": {
+          "value": "<p><strong>Tyger Claw Jonin:</strong> in the Cybersuite; listed as Cyberdeck</p><p>Unsafe Jack Outs count as safe.</p><p><strong>Slots:</strong> 5 either<br><strong>Cost:</strong> 500eb</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "tQQnJ3BFLIhslsbk",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.tQQnJ3BFLIhslsbk",
+      "name": "PopUp-geddon",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Ads flood their HUD: −2 to Checks that need sight for 3 Rounds. Everyone gets ad spam. Nobody suspects a thing.</p><p><strong>Type:</strong> Covert<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "vvn9DxKo4989i47x",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.vvn9DxKo4989i47x",
+      "name": "Sonic Shock",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 100
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Damaged Ear (no Bonus Damage) for 20 Rounds.</p><p><strong>Type:</strong> Control<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "T9yEW5pglpLM6po5",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.T9yEW5pglpLM6po5",
+      "name": "Impair Movement",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 50
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>MOVE −1 for 20 Rounds. At 0 they can't use Move Actions.</p><p><strong>Type:</strong> Control<br><strong>DV:</strong> 6<br><strong>Cooldown:</strong> 3 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "hT3JyU2EINV2Gh54",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.hT3JyU2EINV2Gh54",
+      "name": "Weapon Glitch",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p>Their linked weapon jams (an Action to clear) and they're −2 to hit with it for 3 Rounds. It looks like a bad round.</p><p><strong>Type:</strong> Control<br><strong>Needs:</strong> Smart weapon or Smartgun Link<br><strong>DV:</strong> 8<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><strong>Quiet</strong> (◆): keeps a Ghost run hidden.</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "myuILiwE51pneBuP",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.myuILiwE51pneBuP",
+      "name": "Overheat",
+      "type": "program",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Program.svg",
+      "system": {
+        "class": "booster",
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "installLocation": "mall",
+        "isRezzed": false,
+        "usage": "toggled",
+        "atk": 0,
+        "def": 0,
+        "rez": 0,
+        "per": 0,
+        "spd": 0,
+        "interface": 0,
+        "damage": {
+          "standard": "1d6",
+          "blackIce": "1d6"
+        },
+        "description": {
+          "value": "<p><strong>On Fire:</strong> 4 to HP at the end of each of their Turns (no armor, no ablation) until they spend an Action to put it out.</p><p><strong>Type:</strong> Combat<br><strong>DV:</strong> 8<br><strong>Cooldown:</strong> 6 Rnd<br><strong>Slots:</strong> 1</p><p><small>Item Compendium (2070) • Netrunning</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Netrunning"
+          }
+        }
+      }
+    },
+    {
+      "_id": "UbxXOduBXn0kaTAz",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.UbxXOduBXn0kaTAz",
+      "name": "Cybersuite",
+      "type": "cyberware",
+      "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberdeck.svg",
+      "system": {
+        "type": "neuralWare",
+        "installLocation": "hospital",
+        "humanityLoss": {
+          "static": 7,
+          "roll": "2d6"
+        },
+        "isFoundational": false,
+        "size": 1,
+        "price": {
+          "market": 500
+        },
+        "usage": "installed",
+        "brand": "",
+        "core": false,
+        "isWeapon": false,
+        "isElectronic": true,
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "providesHardening": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 0,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p>HOUSE RULE. Neuralware foundation; takes 1 Neural Link slot. Requires Neuroport. Replaces the Neuroport Cyberdeck Port. Installs one Cyberdeck inside your Neuroport, Hardware slots and all. Range 20m to architectures, 50m to Neuroports and vehicles. Swapping the deck is a Clinic job (1 hour). Branded models with built-in quickhacks: see Netrunning Gear.</p><p><strong>Install:</strong> Hospital • <strong>HL:</strong> 7 (2d6)</p><p><small>Item Compendium (2070) • Cyberware</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "ZHHo1pLzDQ5E85kj",
+      "_key": "!actors.items!ngW1VFQR9cRpVYKG.ZHHo1pLzDQ5E85kj",
       "name": "Self-ICE",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/neuralware.svg",
@@ -2808,7 +3383,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],

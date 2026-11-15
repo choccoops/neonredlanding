@@ -58,9 +58,9 @@
         "cyberware"
       ],
       "list": [
-        "niOKlfmWrnylyK8g",
-        "IvnBE4mq763UB3Ur",
-        "8Nr5wbqnXrgFqsMQ",
+        "nDR80zv0EUbaZFEQ",
+        "nUywSc8jf0r5bBQW",
+        "lX346cMveWVHYM2N",
         "tqIV2Y2yBAMEUCcz",
         "zOgQkyK8gFpwm3Xh",
         "rmygwyty1KcHjEEU"
@@ -70,7 +70,7 @@
       "description": "<p>The bane of convoys: capable fighters with implants for fast, deadly ambushes.</p><p><em>Wraiths:</em> Nomad outcasts who raid convoys in the Badlands.</p><p><small>Stat block from Corgo's 77 Collection: Mooks by Corgopolis, unofficial content under R. Talsorian Games' Homebrew Content Policy. Portrait: Neon Hub fan art of the Cyberpunk 2077 setting (CD PROJEKT RED), free to use, not for sale.</small></p>",
       "alias": "",
       "history": "",
-      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Nomad: Moto 2 Solo: Combat Awareness 3</p><p>Melee SP (head/body): 6/6</p><p>Also carries (no catalog item): Roadbike (w/ Smuggling Upgrade)</p>"
+      "notes": "<p><strong>Threat:</strong> Hardened Lieutenant • <strong>Reputation:</strong> 2 • <strong>Facedown #:</strong> 6 • <strong>COM#:</strong> 13 • <strong>Role:</strong> Nomad: Moto 2 Solo: Combat Awareness 3</p><p>Melee SP (head/body): 6/6</p><p>Ride (its item is on the sheet; the vehicle to put on the map is in Neon Hub's vehicles compendium): Brennan Apollo \"Harriet\", for the block's Roadbike (w/ Smuggling Upgrade)</p>"
     }
   },
   "items": [
@@ -2397,7 +2397,7 @@
     {
       "_id": "B0BMb3OR6JCBgO48",
       "_key": "!actors.items!ciTnt3lMgc8znJiF.B0BMb3OR6JCBgO48",
-      "name": "Militech Crusher",
+      "name": "Militech Crusher (Circa 207X)",
       "type": "weapon",
       "img": "modules/cpr-neon-hub/assets/items/weapons/Shotgun_standard_power.svg",
       "system": {
@@ -2473,9 +2473,9 @@
       }
     },
     {
-      "_id": "fBaxTTWvupRFtWnm",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.fBaxTTWvupRFtWnm",
-      "name": "Light Armorjack",
+      "_id": "obVuzjqVGh91hvpc",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.obVuzjqVGh91hvpc",
+      "name": "Light Armorjack (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2505,10 +2505,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 11,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2541,7 +2541,75 @@
       }
     },
     {
-      "_id": "ozDbBoHu7QzW8caC",
+      "_id": "1g4XJWwuuQNqoPNt",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.1g4XJWwuuQNqoPNt",
+      "name": "Light Armorjack (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 100
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 11,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP11. No penalty. Kevlar® with plastic mesh in the weave.</p><p><strong>Cost:</strong> 100eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "Z0BSWdM7RYZfgmbc",
       "name": "Black Lace",
       "type": "drug",
       "img": "systems/cyberpunk-red-core/icons/compendium/drugs/black_lace.svg",
@@ -2576,11 +2644,11 @@
           }
         }
       },
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.ozDbBoHu7QzW8caC"
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.Z0BSWdM7RYZfgmbc"
     },
     {
-      "_id": "niOKlfmWrnylyK8g",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.niOKlfmWrnylyK8g",
+      "_id": "nDR80zv0EUbaZFEQ",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.nDR80zv0EUbaZFEQ",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2609,10 +2677,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "hWInsM9s7JKmsq0m"
+            "4hgJCfYIpYPyRWuD"
           ],
           "slots": 3,
           "usedSlots": 1
@@ -2643,8 +2712,8 @@
       }
     },
     {
-      "_id": "hWInsM9s7JKmsq0m",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.hWInsM9s7JKmsq0m",
+      "_id": "4hgJCfYIpYPyRWuD",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.4hgJCfYIpYPyRWuD",
       "name": "Reinforced Tendons",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2671,7 +2740,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2705,8 +2774,8 @@
       }
     },
     {
-      "_id": "IvnBE4mq763UB3Ur",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.IvnBE4mq763UB3Ur",
+      "_id": "nUywSc8jf0r5bBQW",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.nUywSc8jf0r5bBQW",
       "name": "Cyberleg",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2735,10 +2804,11 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "aSBfAiVdJgY27rrz"
+            "DPzoRXugD9junBry"
           ],
           "slots": 3,
           "usedSlots": 1
@@ -2769,8 +2839,8 @@
       }
     },
     {
-      "_id": "aSBfAiVdJgY27rrz",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.aSBfAiVdJgY27rrz",
+      "_id": "DPzoRXugD9junBry",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.DPzoRXugD9junBry",
       "name": "Reinforced Tendons",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/cyberleg.svg",
@@ -2797,7 +2867,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2831,8 +2901,8 @@
       }
     },
     {
-      "_id": "8Nr5wbqnXrgFqsMQ",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.8Nr5wbqnXrgFqsMQ",
+      "_id": "lX346cMveWVHYM2N",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.lX346cMveWVHYM2N",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2861,11 +2931,12 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
-            "BkHO2AzlJkrxB7sy",
-            "GNUg7sMqOkqbH0LX"
+            "lgNu1JPmPXfogTnJ",
+            "qJS5UIkmsVyuRN03"
           ],
           "slots": 5,
           "usedSlots": 2
@@ -2896,8 +2967,8 @@
       }
     },
     {
-      "_id": "BkHO2AzlJkrxB7sy",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.BkHO2AzlJkrxB7sy",
+      "_id": "lgNu1JPmPXfogTnJ",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.lgNu1JPmPXfogTnJ",
       "name": "Kerenzikov",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/kerenzikov.svg",
@@ -2924,7 +2995,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2958,8 +3029,8 @@
       }
     },
     {
-      "_id": "GNUg7sMqOkqbH0LX",
-      "_key": "!actors.items!ciTnt3lMgc8znJiF.GNUg7sMqOkqbH0LX",
+      "_id": "qJS5UIkmsVyuRN03",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.qJS5UIkmsVyuRN03",
       "name": "Sandevistan",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/sandevistan.svg",
@@ -2986,7 +3057,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -3007,7 +3078,7 @@
       "effects": [
         {
           "_id": "lfOiTCwDPtUI1a6w",
-          "_key": "!actors.items.effects!ciTnt3lMgc8znJiF.GNUg7sMqOkqbH0LX.lfOiTCwDPtUI1a6w",
+          "_key": "!actors.items.effects!ciTnt3lMgc8znJiF.qJS5UIkmsVyuRN03.lfOiTCwDPtUI1a6w",
           "name": "Sandevistan (active)",
           "img": "icons/svg/aura.svg",
           "type": "base",
@@ -3055,6 +3126,59 @@
           "source2070": {
             "book": "Item Compendium (2070)",
             "chapter": "Cyberware"
+          }
+        }
+      }
+    },
+    {
+      "_id": "pyiFeSUukhnUlqc9",
+      "_key": "!actors.items!ciTnt3lMgc8znJiF.pyiFeSUukhnUlqc9",
+      "name": "Brennan Apollo \"Harriet\"",
+      "type": "vehicle",
+      "img": "modules/cpr-neon-hub/assets/items/vehicles/roadbike.svg",
+      "system": {
+        "sdp": 35,
+        "seats": 2,
+        "speedCombat": 20,
+        "speedNarrative": "100 mph",
+        "price": {
+          "market": 21000
+        },
+        "brand": "",
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "description": {
+          "value": "<p><strong>Wraiths Bane:</strong> listed as Roadbike (w/ Smuggling Upgrade)</p><p>Roadbike: Smuggling Upgrade (saddlebags). <em>Formerly the AmeriCar Harriet 100.</em></p><p><strong>Cost:</strong> 21,000eb<br><strong>Nomad:</strong> 2<br><strong>SDP:</strong> 35<br><strong>SP:</strong> 0<br><strong>Seats:</strong> 2<br><strong>MOVE:</strong> 20<br><strong>Speed:</strong> 100 mph</p><p><small>Item Compendium (2070) • Vehicles &amp; Upgrades</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Vehicles & Upgrades"
           }
         }
       }

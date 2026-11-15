@@ -2397,16 +2397,16 @@
       "_key": "!actors.items!MBXBboTebyaAZzPQ.FkyqAd8CQEz2AtEP"
     },
     {
-      "_id": "cS2LrOWSb0KfeTR4",
-      "_key": "!actors.items!MBXBboTebyaAZzPQ.cS2LrOWSb0KfeTR4",
-      "name": "PQ Very Heavy Melee",
+      "_id": "pHMmalHFKl9hStp4",
+      "_key": "!actors.items!MBXBboTebyaAZzPQ.pHMmalHFKl9hStp4",
+      "name": "Very Heavy Melee Weapon (Poor)",
       "type": "weapon",
-      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw.svg",
+      "img": "systems/cyberpunk-red-core/icons/compendium/weapons/Chainsaw_poor.svg",
       "system": {
         "weaponSkill": "Melee Weapon",
         "weaponType": "vHeavyMelee",
         "isRanged": false,
-        "quality": "standard",
+        "quality": "poor",
         "attackmod": 0,
         "damage": "4d6",
         "rof": 1,
@@ -2431,7 +2431,7 @@
         "equipped": "equipped",
         "usage": "equipped",
         "price": {
-          "market": 500
+          "market": 100
         },
         "brand": "",
         "installedItems": {
@@ -2446,7 +2446,7 @@
         },
         "unarmedAutomaticCalculation": false,
         "description": {
-          "value": "<p><strong>Valentino Seasoned Thug:</strong> stands in for the PQ Very Heavy Melee</p><p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (standard quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
+          "value": "<p><strong>Examples:</strong> Chainsaw, sledgehammer, naginata</p><p><strong>Generic weapon</strong> (poor quality).</p><p><small>Item Compendium (2070) • Weapons</small></p>"
         },
         "source": {
           "book": "Item Compendium (2070)",
@@ -2473,7 +2473,7 @@
     {
       "_id": "xHxCjWniZBTRE7G9",
       "_key": "!actors.items!MBXBboTebyaAZzPQ.xHxCjWniZBTRE7G9",
-      "name": "Leathers",
+      "name": "Leathers (Body)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2569,7 +2569,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "GS81q8eEglqjUfbb"
@@ -2631,7 +2632,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2695,7 +2696,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [
             "g6iS37yBGiwt6m1t"
@@ -2757,7 +2759,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2819,7 +2821,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2883,7 +2885,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

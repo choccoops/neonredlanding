@@ -58,7 +58,7 @@
         "cyberware"
       ],
       "list": [
-        "UOHCEeObNO8rVNoD",
+        "dRIKlrHO6kB8nnmG",
         "TbvHNB2fK9l9x18Z",
         "zWMD2Ex1H1c9YaxG",
         "LbnYajDXXirKlZ1c"
@@ -2125,7 +2125,7 @@
             "cyberware"
           ],
           "list": [
-            "5tUqPBlUwKgmqvhZ"
+            "y1ZMyMQj8ivFyjSu"
           ],
           "slots": 7,
           "usedSlots": 1
@@ -2327,15 +2327,15 @@
     {
       "_id": "HEuOcQ0aPlAVCOrq",
       "_key": "!actors.items!1oRHJ2FOpffb8mLD.HEuOcQ0aPlAVCOrq",
-      "name": "Militech M221 Saratoga",
+      "name": "Militech M221 Saratoga (Civilian)",
       "type": "weapon",
-      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_standard_power.svg",
+      "img": "modules/cpr-neon-hub/assets/items/weapons/SMG_excellent_power.svg",
       "system": {
         "weaponSkill": "Handgun",
         "weaponType": "smg",
         "isRanged": true,
         "quality": "excellent",
-        "attackmod": 0,
+        "attackmod": 1,
         "damage": "2d6",
         "rof": 1,
         "handsReq": 1,
@@ -2549,9 +2549,9 @@
       "_key": "!actors.items!1oRHJ2FOpffb8mLD.gV9wKTlYvHZDiDTH"
     },
     {
-      "_id": "khC0T7Bc2B6Gl44y",
-      "_key": "!actors.items!1oRHJ2FOpffb8mLD.khC0T7Bc2B6Gl44y",
-      "name": "Leathers",
+      "_id": "94D7jy9phJKWmhu9",
+      "_key": "!actors.items!1oRHJ2FOpffb8mLD.94D7jy9phJKWmhu9",
+      "name": "Leathers (Head)",
       "type": "armor",
       "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
       "system": {
@@ -2581,10 +2581,10 @@
           "slots": 3,
           "usedSlots": 0
         },
-        "isBodyLocation": true,
+        "isBodyLocation": false,
         "isHeadLocation": true,
         "bodyLocation": {
-          "sp": 4,
+          "sp": 0,
           "ablation": 0
         },
         "headLocation": {
@@ -2617,8 +2617,76 @@
       }
     },
     {
-      "_id": "5tUqPBlUwKgmqvhZ",
-      "_key": "!actors.items!1oRHJ2FOpffb8mLD.5tUqPBlUwKgmqvhZ",
+      "_id": "AaqEVZT2xXfZBz61",
+      "_key": "!actors.items!1oRHJ2FOpffb8mLD.AaqEVZT2xXfZBz61",
+      "name": "Leathers (Body)",
+      "type": "armor",
+      "img": "systems/cyberpunk-red-core/icons/compendium/default/Default_Armor.svg",
+      "system": {
+        "price": {
+          "market": 20
+        },
+        "penalty": 0,
+        "equipped": "equipped",
+        "usage": "equipped",
+        "brand": "",
+        "isShield": false,
+        "shieldHitPoints": {
+          "value": 0,
+          "max": 0
+        },
+        "concealable": {
+          "concealable": false,
+          "isConcealed": false
+        },
+        "isElectronic": false,
+        "installedItems": {
+          "allowed": true,
+          "allowedTypes": [
+            "itemUpgrade"
+          ],
+          "list": [],
+          "slots": 3,
+          "usedSlots": 0
+        },
+        "isBodyLocation": true,
+        "isHeadLocation": false,
+        "bodyLocation": {
+          "sp": 4,
+          "ablation": 0
+        },
+        "headLocation": {
+          "sp": 0,
+          "ablation": 0
+        },
+        "description": {
+          "value": "<p>SP4. No penalty. Padded riding leathers.</p><p><strong>Cost:</strong> 20eb</p><p><small>Item Compendium (2070) • Armor &amp; Shields</small></p>"
+        },
+        "source": {
+          "book": "Item Compendium (2070)",
+          "page": 0
+        },
+        "revealed": true,
+        "favorite": false
+      },
+      "effects": [],
+      "flags": {
+        "cyberpunk-red-core": {
+          "_migration": {
+            "current": 33
+          }
+        },
+        "cpr-neon-hub": {
+          "source2070": {
+            "book": "Item Compendium (2070)",
+            "chapter": "Armor & Shields"
+          }
+        }
+      }
+    },
+    {
+      "_id": "y1ZMyMQj8ivFyjSu",
+      "_key": "!actors.items!1oRHJ2FOpffb8mLD.y1ZMyMQj8ivFyjSu",
       "name": "Kaleidoscopic Electric Reflection System (KERS)",
       "type": "cyberware",
       "img": "modules/cpr-neon-hub/assets/items/cyberware/external.svg",
@@ -2645,7 +2713,7 @@
         },
         "providesHardening": false,
         "installedItems": {
-          "allowed": false,
+          "allowed": true,
           "allowedTypes": [
             "itemUpgrade"
           ],
@@ -2679,8 +2747,8 @@
       }
     },
     {
-      "_id": "UOHCEeObNO8rVNoD",
-      "_key": "!actors.items!1oRHJ2FOpffb8mLD.UOHCEeObNO8rVNoD",
+      "_id": "dRIKlrHO6kB8nnmG",
+      "_key": "!actors.items!1oRHJ2FOpffb8mLD.dRIKlrHO6kB8nnmG",
       "name": "Neuroport",
       "type": "cyberware",
       "img": "systems/cyberpunk-red-core/icons/compendium/cyberware/interface_plugs.svg",
@@ -2709,7 +2777,8 @@
         "installedItems": {
           "allowed": true,
           "allowedTypes": [
-            "cyberware"
+            "cyberware",
+            "itemUpgrade"
           ],
           "list": [],
           "slots": 5,

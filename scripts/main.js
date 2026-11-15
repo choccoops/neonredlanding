@@ -44,6 +44,7 @@ import { DISTRICTS } from "./fashion/fashion-data.js";
 import { Items2070 } from "./items/items-2070.js";
 import { WeaponMods } from "./items/weapon-mods.js";
 import { ChromeSlots } from "./items/chrome-slots.js";
+import { MookRides } from "./items/mook-rides.js";
 import { BurstRounds, burstRounds, shellAutofire } from "./items/burst-rounds.js";
 
 const L = (k, d) => (d ? game.i18n.format(k, d) : game.i18n.localize(k));
@@ -75,6 +76,7 @@ Hooks.once("init", () => {
   Items2070.register();
   WeaponMods.init();
   ChromeSlots.init();
+  MookRides.init();
   // Before the world's items are prepared, so every weapon gets it.
   BurstRounds.patch();
   HubHover.init();

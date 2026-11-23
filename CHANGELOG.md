@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.26.4
+
+- **Cloaks only fall to watchers at Alert.** Optical Camo, FBC Chameleon Coating and the Militech M97 Ghostsuit now
+  all say the same thing: you're hidden from all sight, Low Light / Infrared / UV included, and only watchers at
+  **Alert** or higher may try a DV17 Perception Check to spot you, which they must beat. Against Optical Camo they're
+  also at −4. Optical Camo keeps its free Stealth Checks, its targeting contest and its 10-minute recharge; the other
+  two still switch on after a minute still and drop if you move more than 2 m/yds in a Round. The Chameleon Coating
+  text is updated in the Full Borg bodies that carry it (Fūma, Arachne, Nemesis), and Optical Camo in Sandayu Oda's.
+- **Thermal Damping** hides you from thermal sensors and heat-seeking gear, since Optical Camo already hides you
+  from infrared eyes. Its 5-minute recharge is unchanged.
+
 ## 1.26.3
 
 - **Fixed: Excellent Quality weapons were Standard.** 132 weapons whose class reads "EQ" (Fang, Bald Eagle, the Tsunami

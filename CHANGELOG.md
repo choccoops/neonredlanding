@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.27.0
+
+- **The Journal's gigs can be kept by other modules.** Two additions to the API (`api.journal`): `saveGig(entry,
+  data)` changes a gig's record (the fields given, over what it has), and `showToPlayers(entry, on)` does what the
+  eye button does. Neon Combat Manager 1.57.0 uses them to file the gigs on its city map under Gigs and keep the two
+  in step.
+
 ## 1.26.4
 
 - **Cloaks only fall to watchers at Alert.** Optical Camo, FBC Chameleon Coating and the Militech M97 Ghostsuit now

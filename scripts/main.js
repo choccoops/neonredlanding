@@ -252,6 +252,10 @@ Hooks.once("init", () => {
         return page ? JournalStore.data(page) : null;
       },
       moveGig: (entry, action) => GigOps.move(entry, action),
+      /** GM: change a gig's record, merged over what it has: { status, client, location, briefing, crew, rewards, ... }. */
+      saveGig: (entry, data) => GigOps.patch(entry, data),
+      /** GM: show an entry to every player (or hide it), as its eye button does. */
+      showToPlayers: (entry, on = true) => JournalStore.setPlayersSee(entry, on),
       setObjective: (entry, id, state) => GigOps.setObjective(entry, id, state),
       payGig: (entry, plan) => GigOps.payout(entry, plan),
       /** GM: a new draft screamsheet issue; roll stories into it; publish it to everyone. */

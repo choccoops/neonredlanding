@@ -36,6 +36,12 @@ export const GigOps = {
     return JournalStore.save(page, { ...gig, status, dates });
   },
 
+  /** Change a gig's record: the fields given, over what it has (for other modules, through the API). */
+  async patch(entry, data = {}) {
+    const { page, gig } = this._gig(entry);
+    return JournalStore.save(page, { ...gig, ...(data && typeof data === "object" ? data : {}) });
+  },
+
   /** Set an objective open, done or failed. */
   async setObjective(entry, id, state) {
     const { page, gig } = this._gig(entry);

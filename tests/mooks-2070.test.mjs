@@ -30,14 +30,16 @@ test("every mook has its own portrait as art and token", () => {
     assert.match(m.img, /^modules\/cpr-neon-hub\/assets\/art\/mooks\/.+\.webp$/, m.name);
     assert.ok(existsSync(file(m.img)), `${m.img} exists`);
     assert.equal(m.prototypeToken.actorLink, false, "spawned mooks are unlinked");
-    // the named ones stand on the map as a top-down token; everyone else shows the portrait in a ring
+    // the named ones stand on the map as a top-down token; everyone else as the portrait cropped into a round token.
+    // Foundry's own token ring is off: it sits behind its picture and crops nothing, so a cut-out bust spilled over it.
     if (NAMED.includes(m.name)) {
       assert.match(m.prototypeToken.texture.src, /^modules\/cpr-neon-hub\/assets\/art\/tokens\/.+\.webp$/, m.name);
       assert.ok(existsSync(file(m.prototypeToken.texture.src)), `${m.prototypeToken.texture.src} exists`);
       assert.equal(m.prototypeToken.ring.enabled, false, m.name);
     } else {
-      assert.equal(m.prototypeToken.texture.src, m.img);
-      assert.equal(m.prototypeToken.ring.enabled, true, m.name);
+      assert.equal(m.prototypeToken.texture.src, m.img.replace("/art/mooks/", "/art/ring/"), m.name);
+      assert.ok(existsSync(file(m.prototypeToken.texture.src)), `${m.prototypeToken.texture.src} exists`);
+      assert.equal(m.prototypeToken.ring.enabled, false, m.name);
     }
   }
 });

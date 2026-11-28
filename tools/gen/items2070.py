@@ -1046,7 +1046,10 @@ def actor(name, img, system, items, path, flags, token=None):
     ring, texture = {}, None
     if os.path.exists(os.path.join(ROOT, "assets/art/rides", f"{slug}.webp")):
         img = f"{RIDE_ART}/{slug}.webp"
-        ring = {"ring": {"enabled": True, "colors": {"ring": "#05d9e8", "background": "#07070b"}}}
+        ring = {"ring": {"enabled": False}}
+        # no top-down token (a cyberpet): the art cropped to a round token (tools/gen/ring_tokens.py), as Foundry's ring crops nothing
+        if os.path.exists(os.path.join(ROOT, "assets/art/ring", f"{slug}.webp")):
+            texture = f"modules/{MOD}/assets/art/ring/{slug}.webp"
     # a top-down token (assets/art/tokens/<slug>.webp, cut out on a clear background) takes the map instead, at its size in squares
     if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{slug}.webp")):
         texture = f"{TOKEN_ART}/{slug}.webp"

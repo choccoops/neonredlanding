@@ -641,8 +641,10 @@ class Mook:
         # named from the block's heading (Corgo's row labels repeat in two places); bosses by their own name
         prefix = PREFIX.get(faction, faction)
         name = b["name"] if b["layout"] == "full" else f"{prefix} {b['title']}".strip()
-        # a named mook with a top-down token (assets/art/tokens) uses it; everyone else shows the portrait in a ring
-        token = {"texture": {"src": img}, "ring": {"enabled": True, "colors": {"ring": "#ff2a6d", "background": "#07070b"}}}
+        # a named mook with a top-down token (assets/art/tokens) uses it; everyone else stands as the portrait in a round token
+        # a round token made from the portrait (tools/gen/ring_tokens.py): Foundry's own ring doesn't crop the picture it frames
+        round_ = f"assets/art/ring/{b['slug']}.webp"
+        token = {"texture": {"src": f"modules/{G.MOD}/{round_}" if os.path.exists(os.path.join(ROOT, round_)) else img}, "ring": {"enabled": False}}
         if os.path.exists(os.path.join(ROOT, "assets/art/tokens", f"{b['slug']}.webp")):
             token = {"texture": {"src": f"modules/{G.MOD}/assets/art/tokens/{b['slug']}.webp"}, "ring": {"enabled": False}}
         return {"_id": self.aid, "_key": f"!actors!{self.aid}", "name": name, "type": "mook", "img": img, "folder": folder(faction),

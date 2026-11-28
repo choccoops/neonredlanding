@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.27.1
+
+- **Fixed: mook tokens spilled over their ring.** The 132 mooks without a top-down token stood on the map as their
+  cut-out portrait inside Foundry's token ring. That ring is drawn behind the picture, smaller than the token, and
+  crops nothing, so shoulders and guns hung over it. Each now has a round token of its own: the portrait framed on
+  the head and shoulders, cropped to a disc, inside a ring drawn in the look of Foundry's own (a dark steel band with two lit magenta lines). The eight
+  cyberpets get the same in cyan. The portraits on the sheets are unchanged.
+  A mook already imported into a world, or a token already on a scene, keeps its old picture: import it again from
+  the compendium, or set the token's image to the file of the same name in `assets/art/ring/` and switch its
+  Dynamic Ring off.
+
 ## 1.27.0
 
 - **The Journal's gigs can be kept by other modules.** Two additions to the API (`api.journal`): `saveGig(entry,

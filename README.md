@@ -722,7 +722,7 @@ the Item Compendium (2070) chapter it's from:
   CPR's mook sheet. Every actor has its own painted art on the sheet. The vehicles and ACPAs take a
   top-down token for the map, cut out on a clear background and sized by the ride (bikes and ACPAs
   one square, cars two, trucks, aircraft and boats three, ships and airships five); the cyberpets
-  show their art in a token ring.
+  stand as a round token, their art cropped into a cyan ring.
 - **Neon Hub: DV Tables (2070s)**, the 2070 Standard range tables from the 2070 Core Rules (Chapter 07):
   Snubnose, Pistol and Long Barrel Pistol, Subcompact SMG and SMG, the three shotguns, Carbine,
   Assault, Battle, Marksman, Scout, Sniper and Anti-materiel Rifles, Shortbow, Bow and Longbow,
@@ -864,7 +864,7 @@ faction:
   drives the Iconic *Quadra Turbo-R “Bigfoot”*).
 
 Every mook has a painted portrait in its faction's Cyberpunk 2077 look, on a transparent
-background; its token shows it in a token ring. The named ones (Kurt Hansen, Melissa Rory, Sandayu
+background; its token is that portrait cropped into a round, magenta-ringed token. The named ones (Kurt Hansen, Melissa Rory, Sandayu
 Oda, Sasquatch) stand on the map as top-down tokens instead. Tokens are unlinked, so each one
 dropped is its own copy.
 

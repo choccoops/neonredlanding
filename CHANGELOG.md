@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.27.2
+
+- **The Superheavy Guard's portrait is redrawn.** It showed two people, a guard in a cap with an armored figure
+  behind her. It is now the one guard the block describes, in black armor over the contractors' slate-grey uniform, with a
+  sealed navy helmet and a machine gun, and its round token is rebuilt from it.
+
 ## 1.27.1
 
 - **Fixed: mook tokens spilled over their ring.** The 132 mooks without a top-down token stood on the map as their
